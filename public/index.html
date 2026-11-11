@@ -1037,6 +1037,21 @@ const UI_COPY = {
     form_softgels: "М'які капсули (Omega, D3)",
     form_tablets: "Таблетки",
     form_apparel: "Текстиль / шкарпетки / одяг",
+    context_before_or_after_training: "До або після тренування",
+    context_during_training: "Під час тренування",
+    context_daily_use: "Щоденне використання",
+    context_evening_or_bedtime: "Увечері або перед сном",
+    context_hiking_or_camping: "У поході або кемпінгу",
+    context_travel_or_road: "У дорозі / подорожі",
+    context_work_or_study: "На роботі або навчанні",
+    context_gift: "У подарунок",
+    timing_before_or_after_training: "До або після тренування",
+    timing_during_training: "Під час тренування",
+    timing_daily_use: "Щоденне використання",
+    timing_evening_or_bedtime: "Увечері або перед сном",
+    place_hiking_or_camping: "У поході або кемпінгу",
+    place_travel_or_road: "У дорозі / подорожі",
+    place_work_or_study: "На роботі або навчанні",
     cardPrice: "Вартість за знімком:",
     openCardBtn: "Переглянути набір на сайті Race Expert →"
   },
@@ -1115,6 +1130,21 @@ const UI_COPY = {
     form_softgels: "Мягкие капсулы (Omega, D3)",
     form_tablets: "Таблетки",
     form_apparel: "Текстиль / носки / одежда",
+    context_before_or_after_training: "До или после тренировки",
+    context_during_training: "Во время тренировки",
+    context_daily_use: "Ежедневное использование",
+    context_evening_or_bedtime: "Вечером или перед сном",
+    context_hiking_or_camping: "В походе или кемпинге",
+    context_travel_or_road: "В дороге / путешествии",
+    context_work_or_study: "На работе или учёбе",
+    context_gift: "В подарок",
+    timing_before_or_after_training: "До или после тренировки",
+    timing_during_training: "Во время тренировки",
+    timing_daily_use: "Ежедневное использование",
+    timing_evening_or_bedtime: "Вечером или перед сном",
+    place_hiking_or_camping: "В походе или кемпинге",
+    place_travel_or_road: "В дороге / путешествии",
+    place_work_or_study: "На работе или учёбе",
     cardPrice: "Цена по снимку:",
     openCardBtn: "Перейти к набору на сайте Race Expert →"
   }
@@ -1146,12 +1176,27 @@ function optionLabel(qId, val) {
     component_class: "class_",
     membership: "membership_",
     use_scenario: "scenario_",
+    use_timing: "context_",
+    use_place: "context_",
     race_format: "race_",
     season: "season_",
     product_form: "form_"
   };
   const p = prefixes[qId] || "";
-  return tr(p + val);
+  let label = tr(p + val);
+  if (label === (p + val)) {
+    label = tr("context_" + val);
+  }
+  if (label === ("context_" + val)) {
+    label = tr("timing_" + val);
+  }
+  if (label === ("timing_" + val)) {
+    label = tr("place_" + val);
+  }
+  if (label === ("place_" + val)) {
+    label = tr(val);
+  }
+  return label;
 }
 
 function renderScreen() {
