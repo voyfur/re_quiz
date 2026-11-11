@@ -1369,6 +1369,7 @@ function showErrorMessage(msg) {
 function createKitCard(item, badgeType = "match") {
   const card = document.createElement("article");
   card.className = "p-5 rounded-2xl border border-slate-800 bg-slate-950/70 space-y-3.5 hover:border-slate-700 transition relative overflow-hidden";
+  card.dataset.sku = item.sku || "";
 
   let badgeHtml = "";
   if (badgeType === "near_miss") {
@@ -1380,16 +1381,19 @@ function createKitCard(item, badgeType = "match") {
     badgeHtml = '<span class="px-2.5 py-1 rounded-md text-xs font-bold ' + color + ' border">' + item.match_score_pct + '% відповідність</span>';
   }
 
+  const stockBadge = '<span class="card-stock-badge text-[11px] font-semibold px-2 py-0.5 rounded border border-emerald-500/30 bg-emerald-500/10 text-emerald-400">● ' + (appState.locale === "ru" ? "В наличии" : "В наявності") + '</span>';
+
   const topRow = '<div class="flex items-center justify-between gap-2">' +
     '<span class="text-xs font-mono text-slate-500">№ ' + item.catalog_row + ' · ' + (item.sku || 'RE-KIT') + '</span>' +
-    '<div class="flex items-center gap-2">' + badgeHtml + '</div>' +
+    '<div class="flex items-center gap-2">' + stockBadge + badgeHtml + '</div>' +
     '</div>';
 
   const title = '<h3 class="text-lg font-bold text-white tracking-tight leading-snug">' + item.title + '</h3>';
 
   const priceBlock = '<div class="flex items-baseline gap-2 pt-0.5">' +
-    '<span class="text-2xl font-bold font-mono text-brand-500">' + item.price_uah.toLocaleString() + ' ₴</span>' +
+    '<span class="card-price text-2xl font-bold font-mono text-brand-500">' + item.price_uah.toLocaleString() + ' ₴</span>' +
     '<span class="text-xs text-slate-500">' + tr("cardPrice") + ' ' + item.price_snapshot_date + '</span>' +
+    '<span class="card-live-indicator text-[11px] text-emerald-400 font-medium hidden">● live</span>' +
     '</div>';
 
   const reasons = (item.reasons || []).map(r => '<li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-emerald-400 font-bold shrink-0">✓</span><span>' + r + '</span></li>').join("");
@@ -1450,6 +1454,53 @@ function renderFinalResults() {
   } else {
     floorSec.classList.add("hidden");
   }
+
+  // Live stock verification check via OpenCart MySQL API
+  checkLiveStock();
+}
+
+function checkLiveStock() {
+  const cards = document.querySelectorAll("article[data-sku]");
+  const skus = Array.from(cards).map(c => c.dataset.sku).filter(s => s && s !== "RE-KIT");
+  if (skus.length === 0) return;
+
+  fetch("/api/check-stock", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ skus: skus })
+  })
+  .then(res => res.ok ? res.json() : null)
+  .then(data => {
+    if (!data || !data.stocks) return;
+    cards.forEach(card => {
+      const sku = card.dataset.sku;
+      const stock = data.stocks[sku];
+      if (!stock) return;
+      const badge = card.querySelector(".card-stock-badge");
+      if (badge) {
+        if (stock.in_stock) {
+          badge.className = "card-stock-badge text-[11px] font-semibold px-2 py-0.5 rounded border border-emerald-500/40 bg-emerald-500/20 text-emerald-300";
+          badge.textContent = appState.locale === "ru" ? "● В наличии" : "● В наявності";
+        } else {
+          badge.className = "card-stock-badge text-[11px] font-semibold px-2 py-0.5 rounded border border-rose-500/40 bg-rose-500/20 text-rose-300";
+          badge.textContent = appState.locale === "ru" ? "○ Под заказ" : "○ Під замовлення";
+        }
+      }
+      if (stock.live_price_uah) {
+        const priceEl = card.querySelector(".card-price");
+        if (priceEl) {
+          priceEl.textContent = stock.live_price_uah.toLocaleString() + " ₴";
+        }
+        const liveInd = card.querySelector(".card-live-indicator");
+        if (liveInd) {
+          liveInd.classList.remove("hidden");
+        }
+      }
+    });
+  })
+  .catch(() => {
+    // Offline or static file mode: ignore network error gracefully
+  });
 }
 
 // 8-Directional Resizing Controller
