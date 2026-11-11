@@ -13,6 +13,7 @@
 - Matcher prioritizes in-stock candidates (`-int(in_stock)`), synchronizes live prices, and falls back to Next Best Match if a top match is out of stock.
 - Server provides `/api/check-stock` endpoint and `verify_stock: true` support in `/api/draft/recommend`.
 - UI renders live stock status badges (green `● В наявності`, red `○ Немає в наявності`) and live price synchronization notes.
+- Git repository initialized and pushed to GitHub remote `https://github.com/voyfur/re_quiz` (branch `main`). Secrets (`.env`) excluded via `.gitignore`.
 - Full technical documentation maintained under wiki/projects/quiz-engine-technical-documentation.md.
 - MySQL access guide maintained under wiki/sources/mysql-readonly-access-and-product-query-guide.md.
 
