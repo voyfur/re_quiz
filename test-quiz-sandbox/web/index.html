@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101c2a">
+    <title>Тестовый квиз Race Expert</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Race Expert quiz sandbox">
+        <span class="brand-mark" aria-hidden="true">RE</span>
+        <span>RACE EXPERT <small>QUIZ LAB</small></span>
+      </a>
+      <label class="language-switch">
+        <span class="sr-only" data-i18n="languageLabel">Язык</span>
+        <select id="locale" aria-label="Language">
+          <option value="ru">Русский</option>
+          <option value="uk">Українська</option>
+        </select>
+      </label>
+    </header>
+
+    <main class="page-shell">
+      <section class="intro">
+        <p class="eyebrow" data-i18n="eyebrow">Локальная тестовая версия</p>
+        <h1 data-i18n="title">Подбор наборов Race Expert</h1>
+        <p class="intro-copy" data-i18n="intro">Ответьте на несколько вопросов. Квиз сопоставит ответы с тегами и составом 206 наборов из локального снимка каталога.</p>
+      </section>
+
+      <aside class="test-notice" aria-label="Test only notice">
+        <span class="notice-icon" aria-hidden="true">!</span>
+        <div>
+          <strong>TEST ONLY</strong>
+          <p data-i18n="notice">Экспериментальная логика ещё не утверждена. Результаты — альтернативы для проверки тегов каталога, не оценка безопасности, эффективности или совместимости. Ответы не сохраняются.</p>
+        </div>
+      </aside>
+
+      <div class="content-grid">
+        <section class="quiz-panel" aria-labelledby="quiz-title">
+          <div class="wizard-progress">
+            <div class="progress-caption">
+              <span id="step-counter" data-i18n="stepCounter">Шаг 1 из 4</span>
+              <span id="step-name" data-i18n="stepName1">Ваша цель</span>
+            </div>
+            <div id="progress-track" class="progress-track" role="progressbar" aria-valuemin="1" aria-valuemax="4" aria-valuenow="1" aria-label="Прогресс квиза">
+              <span id="progress-fill"></span>
+            </div>
+          </div>
+
+          <form id="quiz-form">
+            <section class="quiz-step" data-step="0">
+              <div class="section-heading">
+                <span class="step-number">01</span>
+                <div>
+                  <h2 id="quiz-title" tabindex="-1" data-i18n="step1Title">Для чего вы ищете набор?</h2>
+                  <p data-i18n="step1Subtitle">Выберите близкую тему. Это не выбор готового набора — квиз сам найдёт варианты.</p>
+                </div>
+              </div>
+              <fieldset class="goal-field">
+                <legend class="field-label" data-i18n="goalLegend">Что вам ближе?</legend>
+                <div id="goal-options" class="goal-options" role="radiogroup" aria-label="Цель подбора"></div>
+              </fieldset>
+            </section>
+
+            <section class="quiz-step" data-step="1" hidden>
+              <div class="section-heading">
+                <span class="step-number">02</span>
+                <div>
+                  <h2 tabindex="-1" data-i18n="step2Title">Что ещё учесть?</h2>
+                  <p data-i18n="step2Subtitle">Уточните активность или формат набора. Этот шаг можно пропустить.</p>
+                </div>
+              </div>
+              <div class="field-grid">
+                <div class="field">
+                  <label for="sport" data-i18n="sportLabel">Вид спорта</label>
+                  <select id="sport"><option value="" data-i18n="anySport">Любой / не учитывать</option></select>
+                </div>
+                <div class="field">
+                  <label for="item-type" data-i18n="typeLabel">Тип набора</label>
+                  <select id="item-type"><option value="" data-i18n="anyType">Любой тип</option></select>
+                </div>
+                <div class="field">
+                  <label for="form" data-i18n="formLabel">Форма товара</label>
+                  <select id="form"><option value="" data-i18n="anyForm">Любая форма</option></select>
+                </div>
+                <div class="field">
+                  <label for="race-format" data-i18n="raceFormatLabel">Формат старта</label>
+                  <select id="race-format"><option value="" data-i18n="anyRaceFormat">Не учитывать</option></select>
+                </div>
+                <div class="field field-wide">
+                  <label for="component" data-i18n="componentLabel">Компонент в составе</label>
+                  <select id="component"><option value="" data-i18n="anyComponent">Не фильтровать по компоненту</option></select>
+                </div>
+              </div>
+            </section>
+
+            <section class="quiz-step" data-step="2" hidden>
+              <div class="section-heading">
+                <span class="step-number">03</span>
+                <div>
+                  <h2 tabindex="-1" data-i18n="step3Title">Есть ли важные ограничения?</h2>
+                  <p data-i18n="step3Subtitle">Укажите только то, что нужно учесть. Необязательные поля можно оставить пустыми.</p>
+                </div>
+              </div>
+              <div class="field-grid">
+                <div class="field">
+                  <label for="max-price" data-i18n="budgetLabel">Максимальная цена, грн</label>
+                  <input id="max-price" type="number" min="0" step="1" inputmode="numeric" data-i18n-placeholder="budgetPlaceholder" placeholder="Без ограничения">
+                </div>
+                <div class="field">
+                  <label for="shoe-size" data-i18n="shoeLabel">Размер обуви</label>
+                  <input id="shoe-size" type="number" min="1" max="70" step="1" inputmode="numeric" data-i18n-placeholder="shoePlaceholder" placeholder="Не учитывать">
+                  <small class="field-help" data-i18n="shoeHelp">Применяется только к наборам с подтверждённым диапазоном размера.</small>
+                </div>
+                <div class="field">
+                  <label for="caffeine" data-i18n="caffeineLabel">Кофеин</label>
+                  <select id="caffeine">
+                    <option value="any" data-i18n="caffeineAny">Не учитывать</option>
+                    <option value="avoid" data-i18n="caffeineAvoid">Только если отсутствие подтверждено</option>
+                  </select>
+                </div>
+                <label class="check-control stock-control">
+                  <input id="in-stock" type="checkbox">
+                  <span data-i18n="stockOnly">Только наборы с явно отмеченным наличием</span>
+                </label>
+              </div>
+            </section>
+
+            <section class="quiz-step" data-step="3" hidden>
+              <div class="section-heading">
+                <span class="step-number">04</span>
+                <div>
+                  <h2 tabindex="-1" data-i18n="step4Title">Сколько вариантов показать?</h2>
+                  <p data-i18n="step4Subtitle">Подбор вернёт только подходящие наборы; если их меньше, лишние не добавит.</p>
+                </div>
+              </div>
+              <fieldset class="count-field">
+                <legend class="field-label" data-i18n="resultCountLabel">Количество вариантов</legend>
+                <div class="count-options">
+                  <label class="count-option"><input type="radio" name="result_count" value="1"><span>1</span></label>
+                  <label class="count-option"><input type="radio" name="result_count" value="2"><span>2</span></label>
+                  <label class="count-option"><input type="radio" name="result_count" value="3" checked><span>3</span></label>
+                </div>
+              </fieldset>
+              <div class="answer-review">
+                <h3 data-i18n="reviewTitle">Ваши ответы</h3>
+                <ul id="answer-summary" class="answer-summary"></ul>
+              </div>
+            </section>
+
+            <p id="form-error" class="form-error" role="alert" hidden></p>
+            <nav class="wizard-actions" aria-label="Quiz navigation">
+              <button id="back-button" class="back-button" type="button" data-i18n="back" hidden>Назад</button>
+              <button id="next-button" class="submit-button" type="button">
+                <span data-i18n="continue">Продолжить</span>
+                <span aria-hidden="true">→</span>
+              </button>
+              <button id="submit-button" class="submit-button" type="submit" hidden>
+                <span data-i18n="showMatches">Показать варианты</span>
+                <span aria-hidden="true">↗</span>
+              </button>
+            </nav>
+          </form>
+        </section>
+
+        <aside class="data-panel">
+          <p class="eyebrow" data-i18n="dataEyebrow">Снимок данных</p>
+          <h2 data-i18n="dataTitle">Что учитывает прототип</h2>
+          <ul class="data-list">
+            <li data-i18n="dataPrice">Цена всего набора в гривнах и дата снимка.</li>
+            <li data-i18n="dataUnknown">Неизвестное значение остаётся неизвестным; квиз не заполняет пробелы догадками.</li>
+            <li data-i18n="dataCaffeine">В каталоге нет подтверждения отсутствия кофеина — строгий фильтр остановит подбор.</li>
+            <li data-i18n="dataDistance">Числовой дистанции в карточках нет. Формат старта показывается только как текстовый тег каталога.</li>
+            <li data-i18n="dataDuration">Тег «3 месяца» может относиться к абонементу клуба, поэтому срок не используется как длительность приёма.</li>
+            <li data-i18n="dataLimits">Возраст, вес покупателя и аллергены не предлагаются: подтверждённых структурированных данных недостаточно.</li>
+          </ul>
+          <div class="catalog-stats">
+            <span class="stat-number" id="catalog-count">206</span>
+            <span data-i18n="catalogCountLabel">наборов в локальном снимке</span>
+            <small><span data-i18n="priceSnapshotLabel">Цены на дату</span> <time id="snapshot-date">2026-11-06</time></small>
+          </div>
+        </aside>
+      </div>
+
+      <section id="results-section" class="results-section" aria-live="polite" aria-busy="false">
+        <div id="results-heading" class="results-heading" hidden>
+          <div>
+            <p class="eyebrow" data-i18n="resultsEyebrow">Результат тестового подбора</p>
+            <h2 id="results-title"></h2>
+          </div>
+          <span class="alternative-label" data-i18n="alternativeLabel">Варианты-альтернативы</span>
+        </div>
+        <p id="results-message" class="results-message" role="status"></p>
+        <div id="results-list" class="results-list"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>RACE EXPERT · LOCAL QUIZ LAB</span>
+      <span data-i18n="footer">Тестовый каталог и правила не подключены к сайту и не сохраняют ответы.</span>
+    </footer>
+  </body>
+</html>

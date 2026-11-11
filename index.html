@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3efe6">
+  <title>Питання про підбір товарів</title>
+  <style>
+    :root {
+      --paper: #f3efe6; --surface: #fffdf8; --ink: #203c3a; --muted: #697674;
+      --line: #d9dfd7; --accent: #cb5d3d; --accent-dark: #a9452c;
+      --sage: #dce8db; --gold: #d5ad58; --success: #216c4b; --danger: #9c3c31;
+      --shadow: 0 24px 60px rgba(32,60,58,.08), 0 3px 12px rgba(32,60,58,.04);
+      --display: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      --body: "Avenir Next", "Helvetica Neue", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-width: 320px; color: var(--ink); background:
+      radial-gradient(ellipse at 90% 4%, rgba(213,173,88,.14), transparent 25rem),
+      linear-gradient(135deg, rgba(255,255,255,.28), transparent 55%), var(--paper);
+      font: 16px/1.55 var(--body);
+    }
+    button, textarea, input, select { font: inherit; }
+    .site-header, .layout, footer { width: min(1240px, calc(100% - 48px)); margin-inline: auto; }
+    .site-header { display:flex; align-items:center; justify-content:space-between; padding:22px 0 17px; border-bottom:1px solid rgba(32,60,58,.16); }
+    .brand { display:flex; align-items:center; gap:11px; color:var(--ink); text-decoration:none; font-size:.76rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+    .brand-mark { display:grid; width:34px; height:34px; place-items:center; border:1px solid var(--ink); border-radius:50%; font:600 1.15rem var(--display); }
+    .header-note { color:var(--muted); font-size:.8rem; letter-spacing:.03em; text-align:right; }
+    .layout { display:grid; grid-template-columns:220px minmax(0,1fr); gap:34px; align-items:start; margin-top:42px; margin-bottom:72px; }
+    .rail { position:sticky; top:24px; padding-top:20px; }
+    .rail-kicker, .eyebrow, .step-count, .question-id, .module-tag { font-size:.69rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
+    .rail-kicker { margin:0 0 17px; color:var(--accent-dark); }
+    .step-nav { display:grid; gap:6px; margin:0; padding:0; list-style:none; }
+    .step-nav button { display:grid; grid-template-columns:34px 1fr; align-items:center; gap:11px; width:100%; padding:12px 10px; border:0; border-radius:9px; background:transparent; color:var(--muted); text-align:left; }
+    .step-nav button.active { background:var(--sage); color:var(--ink); }
+    .nav-number { color:var(--accent); font:1.4rem/1 var(--display); }
+    .nav-copy { font-size:.84rem; line-height:1.25; font-weight:700; }
+    .rail-note { margin-top:34px; padding:16px 17px; border-left:3px solid var(--gold); background:rgba(255,253,248,.66); color:var(--muted); font-size:.82rem; }
+    .rail-note strong { display:block; margin-bottom:4px; color:var(--ink); }
+    .main-column { min-width:0; }
+    .intro { max-width:830px; padding:0 8px 25px 13px; }
+    .eyebrow { margin:0 0 10px; color:var(--accent-dark); }
+    h1, h2, h3, p { margin-top:0; }
+    h1 { max-width:780px; margin-bottom:14px; font:500 clamp(2.35rem,4.7vw,4.25rem)/1.03 var(--display); letter-spacing:-.045em; }
+    .intro-copy { max-width:700px; margin:0; color:#536461; font-size:1rem; }
+    .sheet { overflow:hidden; border:1px solid rgba(32,60,58,.12); border-radius:20px; background:var(--surface); box-shadow:var(--shadow); }
+    .progress-head { display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 32px 18px; border-bottom:1px solid var(--line); }
+    .step-count { margin:0 0 3px; color:var(--accent-dark); }
+    .step-title { margin:0; font:500 1.3rem var(--display); }
+    .step-counter { color:var(--muted); font-size:.75rem; font-weight:800; letter-spacing:.12em; }
+    .progress-track { height:4px; background:#e8ece5; }
+    .progress-fill { width:20%; height:100%; background:var(--accent); transition:width .32s cubic-bezier(.2,.7,.2,1); }
+    .form-step { padding:28px 32px 32px; }
+    .form-step[hidden], .module-questions[hidden] { display:none; }
+    .step-lead { max-width:720px; margin:0 0 23px; color:var(--muted); font-size:.93rem; }
+    .respondent-field { margin-bottom:25px; padding:17px 19px 18px; border:1px solid var(--line); border-radius:12px; background:#fbfaf5; }
+    .respondent-field label { display:block; margin-bottom:7px; font-weight:750; }
+    .optional { color:var(--muted); font-size:.77rem; font-weight:500; }
+    .question-list, .module-stack { display:grid; gap:16px; }
+    .question-card { padding:19px 20px; border:1px solid var(--line); border-radius:12px; background:rgba(255,255,255,.68); }
+    .question-card:focus-within { border-color:rgba(203,93,61,.64); box-shadow:0 0 0 3px rgba(203,93,61,.08); }
+    .question-heading { display:flex; flex-wrap:wrap; align-items:baseline; gap:5px 12px; margin-bottom:10px; }
+    .question-id { color:var(--accent-dark); }
+    .question-role { color:#7d8985; font-size:.74rem; }
+    .question-prompt { display:block; margin:0 0 13px; font:500 1.12rem/1.38 var(--display); letter-spacing:-.01em; }
+    .choice-list { display:grid; gap:9px; margin:14px 0 0; padding:0; border:0; }
+    .choice-list legend { margin-bottom:8px; font-weight:750; }
+    .choice-option { display:flex; align-items:flex-start; gap:10px; padding:11px 12px; border:1px solid var(--line); border-radius:8px; background:#fff; cursor:pointer; }
+    .choice-option:has(input:checked) { border-color:var(--accent); background:#fff8f5; }
+    .choice-option input { flex:0 0 auto; width:18px; height:18px; margin:2px 0 0; accent-color:var(--accent); }
+    textarea, input[type="text"], select { width:100%; min-height:47px; padding:11px 13px; border:1px solid #cbd4cd; border-radius:8px; outline:none; background:#fff; color:var(--ink); }
+    textarea { min-height:108px; resize:vertical; }
+    textarea::placeholder, input::placeholder { color:#98a39f; }
+    textarea:focus, input:focus, select:focus { border-color:var(--accent); box-shadow:0 0 0 3px rgba(203,93,61,.12); }
+    .field-error { border-color:var(--danger)!important; }
+    .field-hint { margin:6px 0 0; color:var(--muted); font-size:.78rem; }
+    .error-banner, .submit-status { display:none; margin-top:18px; padding:12px 14px; border-radius:8px; font-size:.88rem; }
+    .error-banner.visible { display:block; background:#fae9e4; color:var(--danger); }
+    .submit-status.visible { display:block; }
+    .submit-status.success { background:#e7f3eb; color:var(--success); }
+    .submit-status.error { background:#fae9e4; color:var(--danger); }
+    .module-card { overflow:hidden; border:1px solid var(--line); border-radius:13px; background:#fffefa; }
+    .module-card[hidden] { display:none; }
+    .module-top { display:grid; grid-template-columns:minmax(0,1fr) 220px; align-items:center; gap:18px; padding:17px 19px; background:#f8f8f1; }
+    .module-tag { display:block; margin-bottom:4px; color:var(--accent-dark); }
+    .module-title { margin:0 0 3px; font:500 1.22rem var(--display); }
+    .module-description { margin:0; color:var(--muted); font-size:.82rem; }
+    .module-questions { display:grid; gap:13px; padding:17px; border-top:1px solid var(--line); }
+    .module-questions .question-card { padding:15px; }
+    .module-questions textarea { min-height:88px; }
+    .privacy-note { margin:0; padding:11px 13px; border-left:3px solid var(--gold); background:#fbf5e8; color:#635439; font-size:.82rem; }
+    .review-meta { padding:14px 16px; border-radius:9px; background:var(--sage); }
+    .review-section { margin-top:23px; }
+    .review-section h3 { margin-bottom:8px; font:500 1.2rem var(--display); }
+    .review-item { padding:11px 0; border-bottom:1px solid var(--line); }
+    .review-label { margin:0 0 4px; color:var(--accent-dark); font-size:.74rem; font-weight:800; }
+    .review-answer { margin:0; white-space:pre-wrap; overflow-wrap:anywhere; color:#405552; }
+    .actions { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:26px; }
+    .button { min-height:47px; padding:10px 17px; border:1px solid transparent; border-radius:8px; cursor:pointer; font-weight:750; transition:background .16s ease, transform .16s ease; }
+    .button:hover:not(:disabled) { transform:translateY(-1px); }
+    .button:disabled { opacity:.6; cursor:wait; }
+    .button-primary { background:var(--ink); color:#fff; }
+    .button-primary:hover:not(:disabled) { background:#315b56; }
+    .button-send { background:var(--accent); color:#fff; }
+    .button-send:hover:not(:disabled) { background:var(--accent-dark); }
+    .button-secondary { border-color:var(--line); background:transparent; color:var(--ink); }
+    .fine-print { margin:17px 0 0; color:var(--muted); font-size:.76rem; }
+    footer { margin-top:-42px; margin-bottom:30px; color:#7b8781; font-size:.75rem; }
+    @media (max-width:900px) {
+      .layout { grid-template-columns:1fr; gap:17px; margin-top:28px; }
+      .rail { position:static; padding:0; }
+      .rail-kicker, .rail-note { display:none; }
+      .step-nav { grid-template-columns:repeat(5,1fr); }
+      .step-nav button { grid-template-columns:27px 1fr; padding:9px 7px; }
+      .nav-copy { font-size:.73rem; }
+      .intro { padding-left:0; }
+    }
+    @media (max-width:620px) {
+      .site-header, .layout, footer { width:calc(100% - 28px); }
+      .site-header { padding-top:15px; }
+      .header-note { max-width:140px; font-size:.7rem; }
+      .layout { margin-top:22px; }
+      .step-nav button { display:flex; flex-direction:column; align-items:flex-start; gap:5px; min-height:65px; }
+      .nav-copy { font-size:.66rem; }
+      h1 { font-size:clamp(2.2rem,12vw,3.3rem); }
+      .intro-copy { font-size:.92rem; }
+      .progress-head { padding:17px 17px 15px; }
+      .step-title { font-size:1.12rem; }
+      .form-step { padding:21px 15px 19px; }
+      .question-card { padding:16px 14px; }
+      .question-prompt { font-size:1.05rem; }
+      .module-top { grid-template-columns:1fr; gap:12px; padding:15px; }
+      .module-questions { padding:11px; }
+      .button { min-height:45px; padding-inline:12px; font-size:.85rem; }
+      footer { margin-top:-29px; }
+    }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; transition-duration:.01ms!important; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#"><span class="brand-mark" aria-hidden="true">R</span><span>Race Expert / товари</span></a>
+    <div class="header-note">Питання до замовника</div>
+  </header>
+  <div class="layout">
+    <aside class="rail" aria-label="Етапи анкети">
+      <p class="rail-kicker">Порядок заповнення</p>
+      <nav><ul class="step-nav" id="stepNav">
+        <li><button type="button" data-nav-step="0" aria-current="step" disabled><span class="nav-number">01</span><span class="nav-copy">Сценарій</span></button></li>
+        <li><button type="button" data-nav-step="1" aria-current="false" disabled><span class="nav-number">02</span><span class="nav-copy">Вхідні дані</span></button></li>
+        <li><button type="button" data-nav-step="2" aria-current="false" disabled><span class="nav-number">03</span><span class="nav-copy">Бюджет і результат</span></button></li>
+        <li><button type="button" data-nav-step="3" aria-current="false" disabled><span class="nav-number">04</span><span class="nav-copy">Каталог і правила</span></button></li>
+        <li><button type="button" data-nav-step="4" aria-current="false" disabled><span class="nav-number">05</span><span class="nav-copy">Перевірка</span></button></li>
+      </ul></nav>
+      <div class="rail-note"><strong>Бюджет обирає покупець</strong>Квіз враховує відповідь під час підбору набору.</div>
+    </aside>
+    <main class="main-column">
+      <section class="intro">
+        <p class="eyebrow">Проєкт № 5 · питання до вас</p>
+        <h1>Узгодьмо логіку квізу</h1>
+      </section>
+      <div class="sheet">
+        <div class="progress-head">
+          <div><p class="step-count" id="stepCount">КРОК 1 ІЗ 5</p><h2 class="step-title" id="stepTitle">Сценарій</h2></div>
+          <span class="step-counter" id="stepCounter">01 / 05</span>
+        </div>
+        <div class="progress-track" id="progressTrack" role="progressbar" aria-label="Прогрес анкети" aria-valuemin="0" aria-valuemax="100" aria-valuenow="20"><div class="progress-fill" id="progressFill"></div></div>
+        <form id="surveyForm" novalidate>
+          <section class="form-step" data-step="0">
+            <p class="step-lead">Спочатку визначимо, що квіз має пропонувати та для кого.</p>
+            <div class="question-list">
+              <article class="question-card">
+                <div class="question-heading"><span class="question-id">Питання 1</span></div>
+                <label class="question-prompt" for="Q-01">Ви хочете, щоб у першій версії квіз підбирав лише готові набори, які вже є на вашому сайті? *</label>
+                <select id="Q-01" data-qid="Q-01" aria-required="true">
+                  <option value="">Оберіть відповідь</option>
+                  <option value="ready_sets_only">Так, лише готові набори</option>
+                  <option value="ready_sets_and_more">Ні, хочу додати інші формати</option>
+                </select>
+                <p class="field-hint">Приклад: «Так, у першій версії лише готові набори».</p>
+                <div id="extraFormats" hidden>
+                  <fieldset class="choice-list">
+                    <legend>Якщо потрібно більше, що ще додати?</legend>
+                    <label class="choice-option" for="formatProducts"><input id="formatProducts" type="checkbox" value="individual_products" data-format-choice>Окремі товари</label>
+                    <label class="choice-option" for="formatCategories"><input id="formatCategories" type="checkbox" value="categories" data-format-choice>Сторінки категорій або груп товарів</label>
+                    <label class="choice-option" for="formatNewSets"><input id="formatNewSets" type="checkbox" value="new_sets" data-format-choice>Нові набори, складені з товарів</label>
+                  </fieldset>
+                  <input id="Q-01-EXTRA" type="hidden" data-qid="Q-01-EXTRA" data-label="Додаткові формати" data-focus-id="formatProducts">
+                  <p class="field-hint">Оберіть один або кілька варіантів.</p>
+                </div>
+              </article>
+              <article class="question-card">
+                <div class="question-heading"><span class="question-id">Питання 2</span></div>
+                <label class="question-prompt" for="Q-02">Скільки квізів ви плануєте на першому етапі: один загальний із вибором теми чи окремі за темами? Які одну-дві потреби включити спочатку? *</label>
+                <p class="field-hint">Приклад: «Один квіз; спочатку підбір набору для бігу на 10 км. Пізніше додамо інші потреби». Це лише приклад.</p>
+                <textarea id="Q-02" data-qid="Q-02" maxlength="8000" placeholder="Опишіть перший етап…" aria-required="true"></textarea>
+              </article>
+              <article class="question-card">
+                <div class="question-heading"><span class="question-id">Питання 3</span></div>
+                <label class="question-prompt" for="Q-03">Окрім бюджету з питання 5, які відповіді покупця мають впливати на підбір? Назвіть лише те, що змінює результат. *</label>
+                <p class="field-hint">Приклад: «Для бігу важливі дистанція й тривалість забігу; інші дані поки не використовуємо».</p>
+                <textarea id="Q-03" data-qid="Q-03" maxlength="8000" placeholder="Перелічіть важливі відповіді покупця…" aria-required="true"></textarea>
+              </article>
+            </div>
+            <div class="error-banner" role="alert"></div>
+            <div class="actions"><span></span><button class="button button-primary" type="button" data-next>Продовжити <span aria-hidden="true">→</span></button></div>
+          </section>
+
+          <section class="form-step" data-step="1" hidden>
+            <p class="step-lead">Покажіть на прикладах, як відповідь покупця веде до потрібного результату.</p>
+            <div class="question-list">
+              <article class="question-card">
+                <div class="question-heading"><span class="question-id">Питання 4</span></div>
+                <label class="question-prompt" for="Q-04">Наведіть приклади відповідей покупця і правильного результату для вибраного формату. Додайте 5–10 звичайних випадків і кілька випадків, коли результату бути не повинно. *</label>
+                <p class="field-hint">Приклад: «10 км → набір [посилання]; якщо відповідного набору немає — повідомити про це». Додайте посилання або назви товарів чи наборів.</p>
+                <textarea id="Q-04" data-qid="Q-04" maxlength="12000" placeholder="Відповідь покупця → очікуваний результат…" aria-required="true"></textarea>
+              </article>
+              <article class="question-card">
+                <div class="question-heading"><span class="question-id">Питання 5</span></div>
+                <label class="question-prompt" for="Q-05">Які варіанти бюджету має запропонувати квіз покупцеві? Квіз має врахувати його вибір під час підбору набору. Чи повинна повна ціна набору входити у вибраний діапазон? *</label>
+                <p class="field-hint">Приклад: квіз питає «Який ваш бюджет?» і пропонує «500–1000 грн», «1000–2000 грн» та «без обмежень». Це лише приклад; точні діапазони ще треба визначити.</p>
+                <textarea id="Q-05" data-qid="Q-05" maxlength="8000" placeholder="Запишіть потрібні діапазони та правило ціни набору…" aria-required="true"></textarea>
+              </article>
+            </div>
+            <div class="error-banner" role="alert"></div>
+            <div class="actions"><button class="button button-secondary" type="button" data-prev>← Назад</button><button class="button button-primary" type="button" data-next>Продовжити <span aria-hidden="true">→</span></button></div>
+          </section>
+
+          <section class="form-step" data-step="2" hidden>
+            <p class="step-lead">Уточнімо обмеження та те, що покупець побачить після підбору.</p>
+            <div class="question-list">
+              <article class="question-card">
+                <div class="question-heading"><span class="question-id">Питання 6</span></div>
+                <label class="question-prompt" for="Q-06">У яких випадках квіз має поставити уточнювальне запитання або не давати рекомендацію? Якщо будуть добавки чи товари з обмеженнями, які перевірки потрібні та хто їх затвердить? *</label>
+                <p class="field-hint">Приклад: «Якщо ситуація не покрита погодженими правилами, не радити товар і запропонувати консультацію».</p>
+                <textarea id="Q-06" data-qid="Q-06" maxlength="10000" placeholder="Опишіть обмеження й перевірки…" aria-required="true"></textarea>
+              </article>
+              <article class="question-card">
+                <div class="question-heading"><span class="question-id">Питання 7</span></div>
+                <label class="question-prompt" for="Q-07">Що показати покупцеві після підбору і яку дію запропонувати? *</label>
+                <p class="field-hint">Приклад: «Показати набір, його ціну, коротке пояснення та кнопку переходу на сторінку набору».</p>
+                <textarea id="Q-07" data-qid="Q-07" maxlength="8000" placeholder="Опишіть результат і наступний крок…" aria-required="true"></textarea>
+              </article>
+            </div>
+            <div class="error-banner" role="alert"></div>
+            <div class="actions"><button class="button button-secondary" type="button" data-prev>← Назад</button><button class="button button-primary" type="button" data-next>Продовжити <span aria-hidden="true">→</span></button></div>
+          </section>
+
+          <section class="form-step" data-step="3" hidden>
+            <p class="step-lead">З’ясуймо, звідки квіз братиме дані та хто погоджуватиме правила.</p>
+            <div class="question-list">
+              <article class="question-card">
+                <div class="question-heading"><span class="question-id">Питання 8</span></div>
+                <label class="question-prompt" for="Q-08">Яку платформу й базу даних використовує ваш сайт для каталогу? Якщо не знаєте, до кого мені звернутися, щоб це з’ясувати? Паролі й токени тут не пишіть. *</label>
+                <p class="field-hint">Приклад: «Платформа — [назва]. Про спосіб доступу до каталогу запитайте [ім’я або роль]».</p>
+                <textarea id="Q-08" data-qid="Q-08" maxlength="8000" placeholder="Платформа, база даних або контакт для уточнення…" aria-required="true"></textarea>
+              </article>
+              <article class="question-card">
+                <div class="question-heading"><span class="question-id">Питання 9</span></div>
+                <label class="question-prompt" for="Q-09">Хто затверджуватиме правила рекомендацій і як ви хочете дізнаватися про зміни каталогу, що впливають на підбір? *</label>
+                <p class="field-hint">Приклад: «Правила затверджую я; про зміни каталогу мене повідомляє [ім’я або роль]».</p>
+                <textarea id="Q-09" data-qid="Q-09" maxlength="8000" placeholder="Вкажіть відповідальних і спосіб повідомлення…" aria-required="true"></textarea>
+              </article>
+            </div>
+
+            <div class="module-stack" style="margin-top:18px">
+              <article class="module-card" data-module-container="ready_sets">
+                <div class="module-top"><div><span class="module-tag">Основна гілка</span><h3 class="module-title">Якщо квіз підбирає готові набори</h3><p class="module-description">Відповідайте про наявні набори на сайті.</p></div></div>
+                <div class="module-questions">
+                  <article class="question-card">
+                    <div class="question-heading"><span class="question-id">Готові набори · 1</span></div>
+                    <label class="question-prompt" for="SET-01">Які готові набори включити: за дистанціями, за потребами чи лише окремі сторінки? *</label>
+                    <p class="field-hint">Приклад: «Почати з наборів на 10, 21 і 42 км; потрібні сторінки надішлю».</p>
+                    <textarea id="SET-01" data-qid="SET-01" data-label="Готові набори · Які набори включити" maxlength="8000" placeholder="Назвіть набори або сторінки…" aria-required="true"></textarea>
+                  </article>
+                  <article class="question-card">
+                    <div class="question-heading"><span class="question-id">Готові набори · 2</span></div>
+                    <label class="question-prompt" for="SET-02">Показувати набір цілком чи окремі товари з його складу? Що робити, якщо набору немає в наявності? *</label>
+                    <p class="field-hint">Приклад: «Показувати весь набір; окремі товари замість нього не підбирати».</p>
+                    <textarea id="SET-02" data-qid="SET-02" data-label="Готові набори · Як показувати та що робити за відсутності" maxlength="8000" placeholder="Опишіть правило показу й наявності…" aria-required="true"></textarea>
+                  </article>
+                </div>
+              </article>
+
+              <article class="module-card" data-module-container="individual_products" hidden>
+                <div class="module-top"><div><span class="module-tag">Додаткова гілка</span><h3 class="module-title">Якщо окремо підбирати товари</h3><p class="module-description">Показується лише якщо ви обрали окремі товари в питанні 1.</p></div></div>
+                <div class="module-questions">
+                  <article class="question-card">
+                    <div class="question-heading"><span class="question-id">Окремі товари · 1</span></div>
+                    <label class="question-prompt" for="PRODUCT-01">Скільки товарів показувати: один найкращий, кілька альтернатив чи товари, що доповнюють один одного? *</label>
+                    <p class="field-hint">Приклад: «До трьох товарів, що доповнюють один одного; спочатку найвідповідніший».</p>
+                    <textarea id="PRODUCT-01" data-qid="PRODUCT-01" data-label="Окремі товари · Скільки й у якому порядку показувати" maxlength="8000" placeholder="Опишіть кількість і порядок…" aria-required="true"></textarea>
+                  </article>
+                  <article class="question-card">
+                    <div class="question-heading"><span class="question-id">Окремі товари · 2</span></div>
+                    <label class="question-prompt" for="PRODUCT-02">Які додаткові дані про товари, яких не видно на сайті, потрібно врахувати? *</label>
+                    <p class="field-hint">Приклад: «Потрібна внутрішня позначка [назва поля]; решту даних беремо з карток сайту».</p>
+                    <textarea id="PRODUCT-02" data-qid="PRODUCT-02" data-label="Окремі товари · Додаткові внутрішні дані" maxlength="8000" placeholder="Перелічіть додаткові дані або напишіть, що їх немає…" aria-required="true"></textarea>
+                  </article>
+                </div>
+              </article>
+
+              <article class="module-card" data-module-container="categories" hidden>
+                <div class="module-top"><div><span class="module-tag">Додаткова гілка</span><h3 class="module-title">Якщо показувати категорії або групи товарів</h3><p class="module-description">Показується лише якщо ви обрали цей формат у питанні 1.</p></div></div>
+                <div class="module-questions">
+                  <article class="question-card">
+                    <div class="question-heading"><span class="question-id">Категорії та групи</span></div>
+                    <label class="question-prompt" for="CATEGORY-01">Показувати наявну категорію сайту чи окрему добірку для квізу? На яку сторінку має перейти покупець? *</label>
+                    <p class="field-hint">Приклад: «Показувати наявну категорію “Електроліти (гідратація)”».</p>
+                    <textarea id="CATEGORY-01" data-qid="CATEGORY-01" data-label="Категорії та групи · Яку сторінку показувати" maxlength="8000" placeholder="Назвіть категорію або потрібну сторінку…" aria-required="true"></textarea>
+                  </article>
+                </div>
+              </article>
+
+              <article class="module-card" data-module-container="new_sets" hidden>
+                <div class="module-top"><div><span class="module-tag">Додаткова гілка</span><h3 class="module-title">Якщо складати нові набори з товарів</h3><p class="module-description">Показується лише якщо ви обрали цей формат у питанні 1.</p></div></div>
+                <div class="module-questions">
+                  <article class="question-card">
+                    <div class="question-heading"><span class="question-id">Нові набори · 1</span></div>
+                    <label class="question-prompt" for="NEWSET-01">Які товари можна поєднувати, у якій кількості та як рахувати загальну ціну? Хто затверджуватиме поєднання? *</label>
+                    <p class="field-hint">Приклад: «Не більше трьох товарів; сума в межах бюджету; поєднання затверджує [фахівець]».</p>
+                    <textarea id="NEWSET-01" data-qid="NEWSET-01" data-label="Нові набори · Правила складання й ціна" maxlength="8000" placeholder="Опишіть дозволені товари, кількість і ціну…" aria-required="true"></textarea>
+                  </article>
+                  <article class="question-card">
+                    <div class="question-heading"><span class="question-id">Нові набори · 2</span></div>
+                    <label class="question-prompt" for="NEWSET-02">Що робити, якщо одного товару з набору немає в наявності? *</label>
+                    <p class="field-hint">Приклад: «Показати лише заздалегідь погоджену заміну».</p>
+                    <textarea id="NEWSET-02" data-qid="NEWSET-02" data-label="Нові набори · Що робити, якщо товару немає" maxlength="8000" placeholder="Прибрати набір, показати решту чи запропонувати заміну?…" aria-required="true"></textarea>
+                  </article>
+                </div>
+              </article>
+            </div>
+            <div class="error-banner" role="alert"></div>
+            <div class="actions"><button class="button button-secondary" type="button" data-prev>← Назад</button><button class="button button-primary" type="button" data-next>Перевірити відповіді <span aria-hidden="true">→</span></button></div>
+          </section>
+
+          <section class="form-step" data-step="4" hidden>
+            <p class="step-lead">Перегляньте відповіді. Їх буде надіслано одним файлом у Telegram після підтвердження.</p>
+            <div id="reviewContent"></div>
+            <div class="submit-status" id="submitStatus" role="status" aria-live="polite"></div>
+            <div class="actions"><button class="button button-secondary" type="button" data-prev>← Назад</button><button class="button button-send" id="submitButton" type="button">Надіслати відповіді</button></div>
+            <p class="fine-print" id="finePrint">Після натискання кнопки відповіді надійдуть замовнику в Telegram.</p>
+          </section>
+        </form>
+      </div>
+    </main>
+  </div>
+  <footer>Race Expert · Питання про логіку підбору</footer>
+  <script>
+    const stepTitles = ["Сценарій", "Вхідні дані", "Бюджет і результат", "Каталог і правила", "Перевірка відповідей"];
+    const panels = Array.from(document.querySelectorAll(".form-step"));
+    const questions = Array.from(document.querySelectorAll("[data-qid]"));
+    const navButtons = Array.from(document.querySelectorAll("[data-nav-step]"));
+    const fill = document.getElementById("progressFill");
+    const track = document.getElementById("progressTrack");
+    const count = document.getElementById("stepCount");
+    const title = document.getElementById("stepTitle");
+    const counter = document.getElementById("stepCounter");
+    const review = document.getElementById("reviewContent");
+    const finePrint = document.getElementById("finePrint");
+    const submitButton = document.getElementById("submitButton");
+    const statusBox = document.getElementById("submitStatus");
+    const modeField = document.getElementById("Q-01");
+    const extraFormats = document.getElementById("extraFormats");
+    const formatNames = {
+      individual_products: "Окремі товари",
+      categories: "Сторінки категорій або груп товарів",
+      new_sets: "Нові набори з товарів"
+    };
+    let current = 0;
+    let sending = false;
+    let sent = false;
+
+    function isActive(field) { return !field.closest("[hidden]:not(.form-step)"); }
+    function clearError(panel) {
+      const banner = panel.querySelector(".error-banner");
+      if (banner) { banner.textContent = ""; banner.classList.remove("visible"); }
+      panel.querySelectorAll(".field-error").forEach(function(field) { field.classList.remove("field-error"); });
+    }
+    function validatePanel(index) {
+      const panel = panels[index];
+      clearError(panel);
+      const empty = Array.from(panel.querySelectorAll("[data-qid]")).find(function(field) {
+        return isActive(field) && !field.value.trim();
+      });
+      if (!empty) return true;
+      const banner = panel.querySelector(".error-banner");
+      banner.textContent = "Будь ласка, заповніть усі питання цього кроку та оберіть формати результату.";
+      banner.classList.add("visible");
+      empty.classList.add("field-error");
+      const focusTarget = document.getElementById(empty.dataset.focusId || empty.id);
+      if (focusTarget) focusTarget.focus({ preventScroll: true });
+      empty.scrollIntoView({ behavior: "smooth", block: "center" });
+      return false;
+    }
+    function questionLabel(field) {
+      if (field.dataset.label) return field.dataset.label;
+      const prompt = field.closest(".question-card")?.querySelector(".question-prompt");
+      return prompt ? prompt.textContent.replace(/\s*\*$/, "").trim() : "Відповідь";
+    }
+    function questionAnswer(field) {
+      if (field.id === "Q-01") return field.options[field.selectedIndex]?.text || "—";
+      if (field.id === "Q-01-EXTRA") {
+        return field.value.split(",").filter(Boolean).map(function(value) { return formatNames[value] || value; }).join(", ") || "—";
+      }
+      return field.value.trim() || "—";
+    }
+    function makeReviewItem(field) {
+      const row = document.createElement("div");
+      row.className = "review-item";
+      const label = document.createElement("p");
+      label.className = "review-label";
+      label.textContent = questionLabel(field);
+      const answer = document.createElement("p");
+      answer.className = "review-answer";
+      answer.textContent = questionAnswer(field);
+      row.append(label, answer);
+      return row;
+    }
+    function renderReview() {
+      review.replaceChildren();
+      const section = document.createElement("section");
+      section.className = "review-section";
+      const heading = document.createElement("h3");
+      heading.textContent = "Ваші відповіді";
+      section.append(heading);
+      const activeQuestions = questions.filter(isActive);
+      activeQuestions.forEach(function(field) { section.append(makeReviewItem(field)); });
+      review.append(section);
+      finePrint.textContent = "Буде надіслано " + activeQuestions.length + " відповідей у Telegram.";
+    }
+    function updateModules() {
+      const selected = Array.from(document.querySelectorAll("[data-format-choice]:checked")).map(function(input) { return input.value; });
+      const extraSelected = modeField.value === "ready_sets_and_more";
+      extraFormats.hidden = !extraSelected;
+      const extraField = document.getElementById("Q-01-EXTRA");
+      extraField.value = extraSelected ? selected.join(",") : "";
+      document.querySelectorAll("[data-module-container]").forEach(function(module) {
+        if (module.dataset.moduleContainer === "ready_sets") return;
+        const active = extraSelected && selected.includes(module.dataset.moduleContainer);
+        module.hidden = !active;
+        if (!active) module.querySelectorAll("[data-qid]").forEach(function(field) { field.value = ""; field.classList.remove("field-error"); });
+      });
+      if (!extraSelected) document.querySelectorAll("[data-format-choice]").forEach(function(input) { input.checked = false; });
+    }
+    function buildPayload() {
+      const answers = {};
+      const labels = {};
+      questions.filter(isActive).forEach(function(field) {
+        const id = field.dataset.qid;
+        answers[id] = field.value.trim();
+        labels[id] = questionLabel(field);
+      });
+      return { answers: answers, labels: labels };
+    }
+    function setStep(step) {
+      current = step;
+      panels.forEach(function(panel, index) { panel.hidden = index !== step; });
+      navButtons.forEach(function(button, index) {
+        button.classList.toggle("active", index === step);
+        button.setAttribute("aria-current", index === step ? "step" : "false");
+      });
+      const percent = Math.round(((step + 1) / panels.length) * 100);
+      fill.style.width = percent + "%";
+      track.setAttribute("aria-valuenow", String(percent));
+      count.textContent = "КРОК " + (step + 1) + " ІЗ " + panels.length;
+      counter.textContent = String(step + 1).padStart(2, "0") + " / " + String(panels.length).padStart(2, "0");
+      title.textContent = stepTitles[step];
+      if (step === panels.length - 1) renderReview();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    modeField.addEventListener("change", updateModules);
+    document.querySelectorAll("[data-format-choice]").forEach(function(input) { input.addEventListener("change", updateModules); });
+    document.querySelectorAll("[data-next]").forEach(function(button) {
+      button.addEventListener("click", function() {
+        if (validatePanel(current)) setStep(Math.min(panels.length - 1, current + 1));
+      });
+    });
+    document.querySelectorAll("[data-prev]").forEach(function(button) {
+      button.addEventListener("click", function() { setStep(Math.max(0, current - 1)); });
+    });
+    panels.forEach(function(panel) {
+      panel.addEventListener("input", function(event) { event.target.classList.remove("field-error"); });
+      panel.addEventListener("change", function(event) { event.target.classList.remove("field-error"); });
+    });
+    submitButton.addEventListener("click", async function() {
+      if (sending || sent) return;
+      for (let i = 0; i < panels.length - 1; i++) {
+        if (!validatePanel(i)) { setStep(i); return; }
+      }
+      sending = true;
+      submitButton.disabled = true;
+      submitButton.textContent = "Надсилаю…";
+      statusBox.className = "submit-status visible";
+      statusBox.textContent = "Надсилаю файл з усіма відповідями в Telegram.";
+      try {
+        const response = await fetch("/api/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(buildPayload())
+        });
+        const result = await response.json();
+        if (!response.ok || !result.ok) throw new Error(result.message || "Не вдалося надіслати відповіді.");
+        sent = true;
+        statusBox.className = "submit-status visible success";
+        statusBox.textContent = "Відповіді надіслано в Telegram.";
+        submitButton.textContent = "Надіслано";
+      } catch (err) {
+        statusBox.className = "submit-status visible error";
+        statusBox.textContent = err.message || "Не вдалося надіслати. Відповіді залишилися у формі — спробуйте ще раз.";
+        submitButton.disabled = false;
+        submitButton.textContent = "Повторити надсилання";
+      } finally {
+        sending = false;
+      }
+    });
+    updateModules();
+    setStep(0);
+  </script>
+</body>
+</html>

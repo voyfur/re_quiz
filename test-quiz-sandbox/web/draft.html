@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#008080">
+    <title>Квиз Race Expert — черновик</title>
+    <link rel="stylesheet" href="draft.css">
+    <script src="catalog_data.js" defer></script>
+    <script src="client_matcher.js" defer></script>
+    <script src="draft.js" defer></script>
+  </head>
+  <body>
+    <main class="window" aria-labelledby="window-title">
+      <header class="title-bar">
+        <h1 id="window-title" data-i18n="windowTitle">Квиз Race Expert — просмотр черновика</h1>
+        <div class="window-buttons" aria-hidden="true">
+          <span>_</span><span>□</span><span>×</span>
+        </div>
+      </header>
+
+      <nav class="menu-bar" aria-label="Меню">
+        <span data-i18n="menuFile">Файл</span>
+        <span data-i18n="menuHelp">Справка</span>
+        <label class="language-choice">
+          <span data-i18n="languageLabel">Язык</span>
+          <select id="locale">
+            <option value="ru">Русский</option>
+            <option value="uk">Українська</option>
+          </select>
+        </label>
+      </nav>
+
+      <div class="client-area">
+        <aside class="notice" role="note">
+          <strong data-i18n="testLabel">ТЕСТОВАЯ ВЕРСИЯ</strong>
+          <span data-i18n="testNotice">Это первый просмотр покупательского квиза. Цена взята из локального снимка; состав и наличие на сайте не обновляются.</span>
+        </aside>
+
+        <p id="launch-error" class="form-error" role="alert" hidden></p>
+
+        <form id="quiz-form">
+          <div class="step-meta">
+            <span id="step-counter">Вопрос 1</span>
+            <span class="step-track" aria-hidden="true"><span id="step-fill"></span></span>
+          </div>
+
+          <section id="question-step" class="step">
+            <h2 id="question-title" tabindex="-1"></h2>
+            <p id="question-hint" class="hint"></p>
+            <fieldset id="question-fieldset">
+              <legend id="question-legend"></legend>
+              <div id="question-options" class="goal-options"></div>
+              <div id="question-number-wrap" class="field" hidden>
+                <label id="question-number-label" for="question-number"></label>
+                <input id="question-number" type="number" step="1" inputmode="numeric">
+                <small id="question-number-hint" class="hint"></small>
+              </div>
+            </fieldset>
+          </section>
+
+          <p id="form-error" class="form-error" role="alert" hidden></p>
+
+          <nav class="actions" aria-label="Действия квиза">
+            <button id="back-button" type="button" hidden data-i18n="back">Назад</button>
+            <button id="next-button" type="button" data-i18n="continue">Продолжить</button>
+            <button id="submit-button" type="submit" hidden data-i18n="showResults">Показать варианты</button>
+          </nav>
+        </form>
+
+        <section id="results-section" class="results" aria-live="polite" hidden>
+          <div class="results-heading">
+            <div>
+              <p class="eyebrow" data-i18n="resultsLabel">Результат тестового подбора</p>
+              <h2 id="results-title"></h2>
+            </div>
+            <button id="edit-button" type="button" data-i18n="editAnswers">Изменить ответы</button>
+          </div>
+          <p id="results-message" class="hint"></p>
+          <div id="fallback-actions" class="results-actions" hidden></div>
+          <div id="results-list" class="results-list"></div>
+        </section>
+      </div>
+
+      <footer class="status-bar">
+        <span id="status-text" data-i18n="statusReady">Готово</span>
+        <span id="catalog-status" data-i18n="catalogStatus">Локальный каталог · 206 наборов</span>
+      </footer>
+    </main>
+  </body>
+</html>

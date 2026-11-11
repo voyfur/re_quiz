@@ -1,0 +1,592 @@
+{
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.agents/skills/llm-wiki-session-memory/scripts/apply_content_curation.py": {
+    "mtime": 1793778785.2016804,
+    "ast_hash": "f9c5909b7851850d9faf5b193e975438",
+    "semantic_hash": "f9c5909b7851850d9faf5b193e975438"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.agents/skills/llm-wiki-session-memory/scripts/apply_media_curation.py": {
+    "mtime": 1793778785.2019093,
+    "ast_hash": "9930b8d81ca9defc101747a5cce938f7",
+    "semantic_hash": "9930b8d81ca9defc101747a5cce938f7"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.agents/skills/llm-wiki-session-memory/scripts/audit_content.py": {
+    "mtime": 1793778785.2021365,
+    "ast_hash": "5d2cd3d055b45b1ca9f5ca30a60ad893",
+    "semantic_hash": "5d2cd3d055b45b1ca9f5ca30a60ad893"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.agents/skills/llm-wiki-session-memory/scripts/bootstrap.py": {
+    "mtime": 1793778785.2023818,
+    "ast_hash": "5617fa9f742c6056716d2580220cb5ff",
+    "semantic_hash": "5617fa9f742c6056716d2580220cb5ff"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.agents/skills/llm-wiki-session-memory/scripts/install_codex_prompt.py": {
+    "mtime": 1793778785.2026007,
+    "ast_hash": "0ef49eeba89f4ab6a1558056cfe5c110",
+    "semantic_hash": "0ef49eeba89f4ab6a1558056cfe5c110"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.agents/skills/llm-wiki-session-memory/scripts/lint_content.py": {
+    "mtime": 1793778785.2028215,
+    "ast_hash": "96156b61f3f1c6d0301efd4c0c285bbf",
+    "semantic_hash": "96156b61f3f1c6d0301efd4c0c285bbf"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.agents/skills/llm-wiki-session-memory/scripts/lint_memory.py": {
+    "mtime": 1793778785.2030602,
+    "ast_hash": "a7580c1cbda2884a2e7414ae9cf2abe2",
+    "semantic_hash": "a7580c1cbda2884a2e7414ae9cf2abe2"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.agents/skills/llm-wiki-session-memory/scripts/migrate_content_cards.py": {
+    "mtime": 1793778785.2035513,
+    "ast_hash": "5aa9b5b2953edc5d7ff0e442fd3faa6d",
+    "semantic_hash": "5aa9b5b2953edc5d7ff0e442fd3faa6d"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.agents/skills/llm-wiki-session-memory/scripts/propose_content_curation.py": {
+    "mtime": 1793778785.2038627,
+    "ast_hash": "d24c61ea47372445158a6a4dcb528d44",
+    "semantic_hash": "d24c61ea47372445158a6a4dcb528d44"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.agents/skills/llm-wiki-session-memory/scripts/propose_media_curation.py": {
+    "mtime": 1793778785.204116,
+    "ast_hash": "42b53f1e414927ce4e501ccb84a27f96",
+    "semantic_hash": "42b53f1e414927ce4e501ccb84a27f96"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.agents/skills/llm-wiki-session-memory/scripts/query_content.py": {
+    "mtime": 1793778785.2043304,
+    "ast_hash": "9fd556b2507723755754a8a03acf98ff",
+    "semantic_hash": "9fd556b2507723755754a8a03acf98ff"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.agents/skills/llm-wiki-session-memory/scripts/query_memory.py": {
+    "mtime": 1793778785.2045357,
+    "ast_hash": "0752c19f1c7a63784f37f0e9bd30fc57",
+    "semantic_hash": "0752c19f1c7a63784f37f0e9bd30fc57"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.agents/skills/llm-wiki-session-memory/scripts/rebuild_content_index.py": {
+    "mtime": 1793778785.2047477,
+    "ast_hash": "cac246f04cd926648c8fbeafaf06f285",
+    "semantic_hash": "cac246f04cd926648c8fbeafaf06f285"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.agents/skills/llm-wiki-session-memory/scripts/save_memory.py": {
+    "mtime": 1793778785.2049606,
+    "ast_hash": "0ea1969b0c6a2232ca951ec7c7c7cb3b",
+    "semantic_hash": "0ea1969b0c6a2232ca951ec7c7c7cb3b"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.agents/skills/llm-wiki-session-memory/scripts/wiki_memory.py": {
+    "mtime": 1793778785.2053518,
+    "ast_hash": "c93c1d6a86300794e3a961287e73bf47",
+    "semantic_hash": "c93c1d6a86300794e3a961287e73bf47"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.agents/skills/llm-wiki-session-memory/tests/test_memory_cli.py": {
+    "mtime": 1793778785.2086556,
+    "ast_hash": "42165a8eb398e492e7d9f8bab3242a4d",
+    "semantic_hash": "42165a8eb398e492e7d9f8bab3242a4d"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/server.py": {
+    "mtime": 1793869413.8095634,
+    "ast_hash": "56a112a4a6c8c9ef3cd43c3c1cc9bf2e",
+    "semantic_hash": "56a112a4a6c8c9ef3cd43c3c1cc9bf2e"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/test-quiz-sandbox/catalog.json": {
+    "mtime": 1794223596.2825098,
+    "ast_hash": "da22af8c02a68935218539cb02c619e1",
+    "semantic_hash": "da22af8c02a68935218539cb02c619e1"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/test-quiz-sandbox/catalog_builder.py": {
+    "mtime": 1794221640.6554666,
+    "ast_hash": "d32aad2294c50b234c57d1dbde661b57",
+    "semantic_hash": "d32aad2294c50b234c57d1dbde661b57"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/test-quiz-sandbox/matcher.py": {
+    "mtime": 1794226040.169518,
+    "ast_hash": "48a226b2bb4b72e52daf61c820fdc10f",
+    "semantic_hash": "48a226b2bb4b72e52daf61c820fdc10f"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/test-quiz-sandbox/server.py": {
+    "mtime": 1794225420.672154,
+    "ast_hash": "a333b15c9a0b3a9b44f171e0efe8a62c",
+    "semantic_hash": "a333b15c9a0b3a9b44f171e0efe8a62c"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/test-quiz-sandbox/tests/test_api.py": {
+    "mtime": 1794225756.4724326,
+    "ast_hash": "7c690a5df568a8ad24ff400303cf68d0",
+    "semantic_hash": "7c690a5df568a8ad24ff400303cf68d0"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/test-quiz-sandbox/tests/test_catalog.py": {
+    "mtime": 1794221547.337222,
+    "ast_hash": "022b8bc084980832bed7dc1eb4d51112",
+    "semantic_hash": "022b8bc084980832bed7dc1eb4d51112"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/test-quiz-sandbox/tests/test_matcher.py": {
+    "mtime": 1794225343.4273329,
+    "ast_hash": "98c61f859e7e5416c999b1f1f4e32786",
+    "semantic_hash": "98c61f859e7e5416c999b1f1f4e32786"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/test-quiz-sandbox/web/app.js": {
+    "mtime": 1794226040.1895998,
+    "ast_hash": "75084767301434803e3ebd4241ec6325",
+    "semantic_hash": "75084767301434803e3ebd4241ec6325"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.agents/skills/llm-wiki-session-memory/README.md": {
+    "mtime": 1793778785.1980827,
+    "ast_hash": "cb3ceac5c8bb4d39b70a2a271481f6ea",
+    "semantic_hash": "cb3ceac5c8bb4d39b70a2a271481f6ea"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.agents/skills/llm-wiki-session-memory/SKILL.md": {
+    "mtime": 1793778785.198725,
+    "ast_hash": "fd094d3a67e01107182e8cefba45d9d0",
+    "semantic_hash": "fd094d3a67e01107182e8cefba45d9d0"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.agents/skills/llm-wiki-session-memory/agents/openai.yaml": {
+    "mtime": 1793778785.199145,
+    "ast_hash": "1ff34a683ebbab92d6f54266f21aa168",
+    "semantic_hash": "1ff34a683ebbab92d6f54266f21aa168"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.agents/skills/llm-wiki-session-memory/docs/superpowers/plans/2026-07-23-card-taxonomy-quality.md": {
+    "mtime": 1793778785.2000484,
+    "ast_hash": "6f95d0b8fe6f5a2d0bb556917f0e5c54",
+    "semantic_hash": "6f95d0b8fe6f5a2d0bb556917f0e5c54"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.agents/skills/llm-wiki-session-memory/docs/superpowers/specs/2026-07-23-card-taxonomy-quality-design.md": {
+    "mtime": 1793778785.2004364,
+    "ast_hash": "0ae5c0827e71396e34c3a7f3f6179dfd",
+    "semantic_hash": "0ae5c0827e71396e34c3a7f3f6179dfd"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.agents/skills/llm-wiki-session-memory/references/content-card-schema.md": {
+    "mtime": 1793778785.2008243,
+    "ast_hash": "fccbedd8216d9e5d8e75618eedb12c91",
+    "semantic_hash": "fccbedd8216d9e5d8e75618eedb12c91"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.agents/skills/llm-wiki-session-memory/references/session-schema.md": {
+    "mtime": 1793778785.2010763,
+    "ast_hash": "16ffbce09c012905c6347dc886fa06f7",
+    "semantic_hash": "16ffbce09c012905c6347dc886fa06f7"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.agents/skills/llm-wiki-session-memory/references/tagging.md": {
+    "mtime": 1793778785.201307,
+    "ast_hash": "bbdb015e80a410b31481a8055d356cdd",
+    "semantic_hash": "bbdb015e80a410b31481a8055d356cdd"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.agents/skills/llm-wiki-session-memory/templates/AGENTS-snippet.md": {
+    "mtime": 1793778785.205716,
+    "ast_hash": "ee9b914877b5c15548e2d398d548ef5b",
+    "semantic_hash": "ee9b914877b5c15548e2d398d548ef5b"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.agents/skills/llm-wiki-session-memory/templates/AGENTS.md": {
+    "mtime": 1793778785.2059083,
+    "ast_hash": "df419eab5a3d53d0cba2e090f5003b1a",
+    "semantic_hash": "df419eab5a3d53d0cba2e090f5003b1a"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.agents/skills/llm-wiki-session-memory/templates/commands/save-memory.md": {
+    "mtime": 1793778785.2062318,
+    "ast_hash": "2b5a3b47c0d28a5958380c605875fb48",
+    "semantic_hash": "2b5a3b47c0d28a5958380c605875fb48"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.agents/skills/llm-wiki-session-memory/templates/prompts/save-memory.md": {
+    "mtime": 1793778785.2065892,
+    "ast_hash": "107678c295cb28eab832eff7f32fcd8d",
+    "semantic_hash": "107678c295cb28eab832eff7f32fcd8d"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.agents/skills/llm-wiki-session-memory/templates/wiki/index.md": {
+    "mtime": 1793778785.207598,
+    "ast_hash": "a209a726a5fce7abbd5e1453ff584642",
+    "semantic_hash": "a209a726a5fce7abbd5e1453ff584642"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.agents/skills/llm-wiki-session-memory/templates/wiki/log.md": {
+    "mtime": 1793778785.2077706,
+    "ast_hash": "3fc4788ac130d94291dec305c215b0ab",
+    "semantic_hash": "3fc4788ac130d94291dec305c215b0ab"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.agents/skills/llm-wiki-session-memory/templates/wiki/session-handoff.md": {
+    "mtime": 1793778785.2079496,
+    "ast_hash": "75ccb4386430f9d5c0e732e6fb504b83",
+    "semantic_hash": "75ccb4386430f9d5c0e732e6fb504b83"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.agents/skills/llm-wiki-session-memory/templates/wiki/tag-taxonomy.yml": {
+    "mtime": 1793778785.2082791,
+    "ast_hash": "e13803de99b973a409ef97c5241ed747",
+    "semantic_hash": "e13803de99b973a409ef97c5241ed747"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.playwright-cli/page-2026-11-04T12-47-21-032Z.yml": {
+    "mtime": 1793796441.0328193,
+    "ast_hash": "7bc946eaf9070afd656239a228001bda",
+    "semantic_hash": "7bc946eaf9070afd656239a228001bda"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.playwright-cli/page-2026-11-04T12-49-47-887Z.yml": {
+    "mtime": 1793796587.8886678,
+    "ast_hash": "0767cfda85385bac4d5a8a53a9f9a370",
+    "semantic_hash": "0767cfda85385bac4d5a8a53a9f9a370"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.playwright-cli/page-2026-11-04T12-50-38-808Z.yml": {
+    "mtime": 1793796638.8099182,
+    "ast_hash": "7a547ca985a07ddd11442717fdf098e2",
+    "semantic_hash": "7a547ca985a07ddd11442717fdf098e2"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.playwright-cli/page-2026-11-04T12-51-11-360Z.yml": {
+    "mtime": 1793796671.3609862,
+    "ast_hash": "2dcbe6c524cdab0ae77bd7d4e9900a15",
+    "semantic_hash": "2dcbe6c524cdab0ae77bd7d4e9900a15"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.playwright-cli/page-2026-11-04T12-52-39-863Z.yml": {
+    "mtime": 1793796759.864587,
+    "ast_hash": "f6b0ba52ee9a126b7ae6cae7af627a4a",
+    "semantic_hash": "f6b0ba52ee9a126b7ae6cae7af627a4a"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.playwright-cli/page-2026-11-04T12-53-12-413Z.yml": {
+    "mtime": 1793796792.4146285,
+    "ast_hash": "a585d9fb0dc37675fc07cf8feb0daaa7",
+    "semantic_hash": "a585d9fb0dc37675fc07cf8feb0daaa7"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.playwright-cli/page-2026-11-04T12-55-50-316Z.yml": {
+    "mtime": 1793796950.3178155,
+    "ast_hash": "3672109ee61d096b830c9936fb185416",
+    "semantic_hash": "3672109ee61d096b830c9936fb185416"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.playwright-cli/page-2026-11-04T12-57-20-346Z.yml": {
+    "mtime": 1793797040.347615,
+    "ast_hash": "8b29154b6edca6c0f4ae0c82f5a6fbcb",
+    "semantic_hash": "8b29154b6edca6c0f4ae0c82f5a6fbcb"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/.playwright-cli/page-2026-11-04T14-45-41-329Z.yml": {
+    "mtime": 1793803541.3297832,
+    "ast_hash": "83f0a5a30a8ce98240ff6cc4c45d03eb",
+    "semantic_hash": "83f0a5a30a8ce98240ff6cc4c45d03eb"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/AGENTS.md": {
+    "mtime": 1793778829.9500518,
+    "ast_hash": "df419eab5a3d53d0cba2e090f5003b1a",
+    "semantic_hash": "df419eab5a3d53d0cba2e090f5003b1a"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/commands/save-memory.md": {
+    "mtime": 1793778829.961147,
+    "ast_hash": "2b5a3b47c0d28a5958380c605875fb48",
+    "semantic_hash": "2b5a3b47c0d28a5958380c605875fb48"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/index.html": {
+    "mtime": 1793869957.934124,
+    "ast_hash": "4cc8b40300339a04dcfc9a2fbd3b9a75",
+    "semantic_hash": "4cc8b40300339a04dcfc9a2fbd3b9a75"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/intent.md": {
+    "mtime": 1794229382.6073663,
+    "ast_hash": "7c2cb50b28b85977a3d85bfc0d9c4c4a",
+    "semantic_hash": "7c2cb50b28b85977a3d85bfc0d9c4c4a"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sessions/2026-11-04-address-questionnaire-to-one-client.md": {
+    "mtime": 1793806292.6961997,
+    "ast_hash": "d5d3f975a4d11ab47cf32adb8e376038",
+    "semantic_hash": "d5d3f975a4d11ab47cf32adb8e376038"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sessions/2026-11-04-connect-telegram-and-test-questionnaire-delivery.md": {
+    "mtime": 1793803819.0028555,
+    "ast_hash": "52bf4b03c4fe13c4662f4945d921a1d5",
+    "semantic_hash": "52bf4b03c4fe13c4662f4945d921a1d5"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sessions/2026-11-04-deploy-quiz-questionnaire-by-ip.md": {
+    "mtime": 1793803336.571669,
+    "ast_hash": "c0ae855dc17fd1b9575cd96c88e071d6",
+    "semantic_hash": "c0ae855dc17fd1b9575cd96c88e071d6"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sessions/2026-11-04-quiz-questionnaire-requirements-catalog-source-a.md": {
+    "mtime": 1793798088.7192407,
+    "ast_hash": "2f6963dc6342ed23a6a7277fa9c1a62f",
+    "semantic_hash": "2f6963dc6342ed23a6a7277fa9c1a62f"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sessions/2026-11-04-quiz-questionnaire-wording-ukrainian-plain-langu.md": {
+    "mtime": 1793800865.2353334,
+    "ast_hash": "79aa8e7d2f38cb7bfb63862dc033c0d6",
+    "semantic_hash": "79aa8e7d2f38cb7bfb63862dc033c0d6"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sessions/2026-11-04-reconcile-questionnaire-with-set-first-project-s.md": {
+    "mtime": 1793805998.6887054,
+    "ast_hash": "4e6fc56072cedd7d037aa6be171a412e",
+    "semantic_hash": "4e6fc56072cedd7d037aa6be171a412e"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sessions/2026-11-04-revise-questionnaire-around-result-type-and-site.md": {
+    "mtime": 1793804776.470415,
+    "ast_hash": "bc593297bf44eea2978dd016a104d969",
+    "semantic_hash": "bc593297bf44eea2978dd016a104d969"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sessions/2026-11-04-session.md": {
+    "mtime": 1793795513.4395943,
+    "ast_hash": "369b299b7cec443d4ffd4db60e24ec3a",
+    "semantic_hash": "369b299b7cec443d4ffd4db60e24ec3a"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sessions/2026-11-04-telegram.md": {
+    "mtime": 1793797194.543117,
+    "ast_hash": "0c0be67fb95a647ed17d758ca064cc0f",
+    "semantic_hash": "0c0be67fb95a647ed17d758ca064cc0f"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sessions/2026-11-04-update-questionnaire-form-to-13-ukrainian-questi.md": {
+    "mtime": 1793802270.2894459,
+    "ast_hash": "f0a8c2e14981ce09c95e3a23a1683089",
+    "semantic_hash": "f0a8c2e14981ce09c95e3a23a1683089"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sessions/2026-11-06-complete-quiz-project-status-and-next-chat-hando.md": {
+    "mtime": 1793971972.34276,
+    "ast_hash": "ebb3629dbbd0a6612376ac5019540a3a",
+    "semantic_hash": "ebb3629dbbd0a6612376ac5019540a3a"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sessions/2026-11-06-record-owner-answers-to-quiz-logic-questionnaire.md": {
+    "mtime": 1793969046.1062644,
+    "ast_hash": "043f45bea03bef7745616fccf5c18c3d",
+    "semantic_hash": "043f45bea03bef7745616fccf5c18c3d"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sessions/2026-11-09-athlete-product-selection-research.md": {
+    "mtime": 1794227286.3983784,
+    "ast_hash": "b0451b16d130a1f5d616683b968c9d96",
+    "semantic_hash": "b0451b16d130a1f5d616683b968c9d96"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sources/2026-11-04-backend-scope-no-advertising.md": {
+    "mtime": 1793785112.641586,
+    "ast_hash": "b12398c7a0ceb91260d4e1a6bcdf367d",
+    "semantic_hash": "b12398c7a0ceb91260d4e1a6bcdf367d"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sources/2026-11-04-budget-is-buyer-input.md": {
+    "mtime": 1793806680.237612,
+    "ast_hash": "df7083579e88749336311efc8ad2a896",
+    "semantic_hash": "df7083579e88749336311efc8ad2a896"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sources/2026-11-04-html-form-13-question-update.md": {
+    "mtime": 1793802234.9196286,
+    "ast_hash": "4f62b265c8612a0dc4b107111cb29c18",
+    "semantic_hash": "4f62b265c8612a0dc4b107111cb29c18"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sources/2026-11-04-local-html-telegram-form-request.md": {
+    "mtime": 1793789250.1957583,
+    "ast_hash": "751cc61c67918deda63d5e6596e912f7",
+    "semantic_hash": "751cc61c67918deda63d5e6596e912f7"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sources/2026-11-04-market-languages-scope.md": {
+    "mtime": 1793783987.237931,
+    "ast_hash": "b5dd119dcff516f8dcf5be375d66bc50",
+    "semantic_hash": "b5dd119dcff516f8dcf5be375d66bc50"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sources/2026-11-04-owner-questionnaire-feedback.md": {
+    "mtime": 1793782634.2188058,
+    "ast_hash": "7e2a0822543a1a95d485495401ef3a24",
+    "semantic_hash": "7e2a0822543a1a95d485495401ef3a24"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sources/2026-11-04-project-5-quiz.md": {
+    "mtime": 1793780054.8829594,
+    "ast_hash": "5ca1475667858133f59d93fbce04ce14",
+    "semantic_hash": "5ca1475667858133f59d93fbce04ce14"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sources/2026-11-04-questionnaire-addressed-to-single-client.md": {
+    "mtime": 1793806266.634649,
+    "ast_hash": "2795a4ebb9d83ba5035649c8a7a940c5",
+    "semantic_hash": "2795a4ebb9d83ba5035649c8a7a940c5"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sources/2026-11-04-questionnaire-buyer-inputs-not-full-quiz.md": {
+    "mtime": 1793799712.2988062,
+    "ast_hash": "76ff6247b30013b270399805fdef3c9b",
+    "semantic_hash": "76ff6247b30013b270399805fdef3c9b"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sources/2026-11-04-questionnaire-feedback-result-type-gating.md": {
+    "mtime": 1793804660.1915004,
+    "ast_hash": "bc39989ac2ca91d07acbfa9558cc738c",
+    "semantic_hash": "bc39989ac2ca91d07acbfa9558cc738c"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sources/2026-11-04-questionnaire-question-3-clarification.md": {
+    "mtime": 1793785972.4427543,
+    "ast_hash": "fc213f5fe8ac661cce6164680c958fb2",
+    "semantic_hash": "fc213f5fe8ac661cce6164680c958fb2"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sources/2026-11-04-questionnaire-rule-basis-and-coverage.md": {
+    "mtime": 1793801409.1691124,
+    "ast_hash": "817d8b869e7c50c43183d685dbb3b28f",
+    "semantic_hash": "817d8b869e7c50c43183d685dbb3b28f"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sources/2026-11-04-questionnaire-ukrainian-simple-list.md": {
+    "mtime": 1793800818.4399805,
+    "ast_hash": "3aa7a44c5b4ba27f77dbf1c1506de2a6",
+    "semantic_hash": "3aa7a44c5b4ba27f77dbf1c1506de2a6"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sources/2026-11-04-quiz-deployed-by-ip.md": {
+    "mtime": 1793803190.693476,
+    "ast_hash": "c642e51159aa14546c4591256476aab8",
+    "semantic_hash": "c642e51159aa14546c4591256476aab8"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sources/2026-11-04-quiz-logic-question-audit.md": {
+    "mtime": 1793787053.3684936,
+    "ast_hash": "7b3e722d9d8272c1b9f7b225de2477c5",
+    "semantic_hash": "7b3e722d9d8272c1b9f7b225de2477c5"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sources/2026-11-04-quiz-owner-questionnaire-request.md": {
+    "mtime": 1793781169.1439152,
+    "ast_hash": "363791927d4435cc33319749c758481e",
+    "semantic_hash": "363791927d4435cc33319749c758481e"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sources/2026-11-04-quiz-questionnaire-catalog-and-matching.md": {
+    "mtime": 1793797984.8160386,
+    "ast_hash": "5bc1d544392a0b7e4048dbb2d0cdee3e",
+    "semantic_hash": "5bc1d544392a0b7e4048dbb2d0cdee3e"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sources/2026-11-04-quiz-recommendation-may-include-multiple-products.md": {
+    "mtime": 1793786248.9019058,
+    "ast_hash": "edfd126e46974bc5902b7a684d99b468",
+    "semantic_hash": "edfd126e46974bc5902b7a684d99b468"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sources/2026-11-04-race-expert-public-catalog-review.md": {
+    "mtime": 1793804660.209483,
+    "ast_hash": "c46f7404307bde422954966da5b3ea78",
+    "semantic_hash": "c46f7404307bde422954966da5b3ea78"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sources/2026-11-04-telegram-connected-and-tested.md": {
+    "mtime": 1793803773.5741506,
+    "ast_hash": "d8e43dbc9051a7d8500efa22e21e62a9",
+    "semantic_hash": "d8e43dbc9051a7d8500efa22e21e62a9"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sources/2026-11-05-quiz-owner-questionnaire-answers.md": {
+    "mtime": 1793968870.5822582,
+    "ast_hash": "fae73396e667025f8195f89ea074c978",
+    "semantic_hash": "fae73396e667025f8195f89ea074c978"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sources/2026-11-06-206-set-follow-up-verifications.md": {
+    "mtime": 1793983938.3137183,
+    "ast_hash": "980285a03252716b8e55df4c290eb116",
+    "semantic_hash": "980285a03252716b8e55df4c290eb116"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sources/2026-11-06-approved-tags-for-206-sets.md": {
+    "mtime": 1793977383.4258547,
+    "ast_hash": "9135f73b986b0f56e7ff59c5e7ef7c62",
+    "semantic_hash": "9135f73b986b0f56e7ff59c5e7ef7c62"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sources/2026-11-06-scope-206-needs-sets.md": {
+    "mtime": 1793975635.1033788,
+    "ast_hash": "adf6cab72a3290fff2d7c9042847c7dd",
+    "semantic_hash": "adf6cab72a3290fff2d7c9042847c7dd"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sources/2026-11-09-athlete-product-selection-research-request.md": {
+    "mtime": 1794226428.576311,
+    "ast_hash": "45b20e92618e40b819df4f9b6631bc63",
+    "semantic_hash": "45b20e92618e40b819df4f9b6631bc63"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sources/2026-11-09-quiz-matching-rules-spec-request.md": {
+    "mtime": 1794209498.5684605,
+    "ast_hash": "1e83fcb9653fabcb3fd3e37c27578005",
+    "semantic_hash": "1e83fcb9653fabcb3fd3e37c27578005"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sources/2026-11-09-standalone-test-quiz-request.md": {
+    "mtime": 1794223379.8535414,
+    "ast_hash": "5ca11fcfb5eb6d3b4b4f8c7bc4741e8d",
+    "semantic_hash": "5ca11fcfb5eb6d3b4b4f8c7bc4741e8d"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/raw/sources/2026-11-09-v1-ready-sets-only-scope-and-portable-catalog.md": {
+    "mtime": 1794218032.5546098,
+    "ast_hash": "bea34168f1f161124581c2bce6da4c5e",
+    "semantic_hash": "bea34168f1f161124581c2bce6da4c5e"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/spec.md": {
+    "mtime": 1794229566.2062516,
+    "ast_hash": "40aacdf969d222a18da5e704a709c1f9",
+    "semantic_hash": "40aacdf969d222a18da5e704a709c1f9"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/test-quiz-sandbox/IMPLEMENTATION_PLAN.md": {
+    "mtime": 1794224741.0104392,
+    "ast_hash": "b1483e6ea2c52b9497a5dfefe745a44f",
+    "semantic_hash": "b1483e6ea2c52b9497a5dfefe745a44f"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/test-quiz-sandbox/README.md": {
+    "mtime": 1794224087.7575998,
+    "ast_hash": "cb192750e3ce365d88d07560595cd8cc",
+    "semantic_hash": "cb192750e3ce365d88d07560595cd8cc"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/test-quiz-sandbox/TEST_PLAN.md": {
+    "mtime": 1794224740.9334261,
+    "ast_hash": "36672ac7e52c8b15aab4404e5eb5c14e",
+    "semantic_hash": "36672ac7e52c8b15aab4404e5eb5c14e"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/test-quiz-sandbox/tickets/TEST-01-catalog-snapshot.md": {
+    "mtime": 1794223272.7154927,
+    "ast_hash": "5d3011407cca4099bb0546ed24ab7613",
+    "semantic_hash": "5d3011407cca4099bb0546ed24ab7613"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/test-quiz-sandbox/tickets/TEST-02-local-recommendation-flow.md": {
+    "mtime": 1794223272.7638934,
+    "ast_hash": "1faf779c14160f33820450897dd8dc23",
+    "semantic_hash": "1faf779c14160f33820450897dd8dc23"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/test-quiz-sandbox/tickets/TEST-03-safe-filter-behavior.md": {
+    "mtime": 1794223272.8109643,
+    "ast_hash": "9deb7d5bb9371e3ef241fb6f2e23e935",
+    "semantic_hash": "9deb7d5bb9371e3ef241fb6f2e23e935"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/test-quiz-sandbox/tickets/TEST-04-bilingual-local-api.md": {
+    "mtime": 1794224741.032844,
+    "ast_hash": "d2bbb7bf440ec6d87eb7f61d08ab6f09",
+    "semantic_hash": "d2bbb7bf440ec6d87eb7f61d08ab6f09"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/test-quiz-sandbox/web/index.html": {
+    "mtime": 1794225484.802014,
+    "ast_hash": "8b2ae3537e59aab2815d63f97ed62b09",
+    "semantic_hash": "8b2ae3537e59aab2815d63f97ed62b09"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/wiki/index.md": {
+    "mtime": 1794227186.5268714,
+    "ast_hash": "d06bfc0783ca3b31b12a6e87fd480a38",
+    "semantic_hash": "d06bfc0783ca3b31b12a6e87fd480a38"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/wiki/log.md": {
+    "mtime": 1794227353.4248862,
+    "ast_hash": "a425a3f4be00e87392c9518f7068ff9f",
+    "semantic_hash": "a425a3f4be00e87392c9518f7068ff9f"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/wiki/projects/project-5-quiz-product-set-generator.md": {
+    "mtime": 1794228534.2351356,
+    "ast_hash": "5bfa2300b1deed79f7996b15f7742b99",
+    "semantic_hash": "5bfa2300b1deed79f7996b15f7742b99"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/wiki/projects/quiz-athlete-product-selection-research.md": {
+    "mtime": 1794228534.1931295,
+    "ast_hash": "53ec3afb7e401f031fa7fefb99263ee4",
+    "semantic_hash": "53ec3afb7e401f031fa7fefb99263ee4"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/wiki/projects/quiz-matching-rules-technical-brief.md": {
+    "mtime": 1794228534.2169173,
+    "ast_hash": "44ecaffba653bcad70872224ec858ee0",
+    "semantic_hash": "44ecaffba653bcad70872224ec858ee0"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/wiki/projects/quiz-owner-discovery-questionnaire-v2.md": {
+    "mtime": 1793801409.194031,
+    "ast_hash": "31bf65560fef1bfe0f71520ae98662dc",
+    "semantic_hash": "31bf65560fef1bfe0f71520ae98662dc"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/wiki/projects/quiz-owner-discovery-questionnaire-v3.md": {
+    "mtime": 1793868840.8499758,
+    "ast_hash": "df6c9fbcd30ea03435e157dd21fa6acf",
+    "semantic_hash": "df6c9fbcd30ea03435e157dd21fa6acf"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/wiki/projects/quiz-owner-discovery-questionnaire.md": {
+    "mtime": 1793787252.0363874,
+    "ast_hash": "1e6d56057523e793f2fec0ac1a463d62",
+    "semantic_hash": "1e6d56057523e793f2fec0ac1a463d62"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/wiki/projects/quiz-test-sandbox.md": {
+    "mtime": 1794224741.0788493,
+    "ast_hash": "5673e49d366e2fd0b9f604784fe012d8",
+    "semantic_hash": "5673e49d366e2fd0b9f604784fe012d8"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/wiki/projects/race-expert-need-sets-206-analysis.md": {
+    "mtime": 1793984117.3323095,
+    "ast_hash": "4990aec52ba8df97ea6b7a46a3b73aaf",
+    "semantic_hash": "4990aec52ba8df97ea6b7a46a3b73aaf"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/wiki/projects/race-expert-set-catalog-2026-11-06.md": {
+    "mtime": 1793975000.9286013,
+    "ast_hash": "ed55b33f71bd679de5b4dbceab59d211",
+    "semantic_hash": "ed55b33f71bd679de5b4dbceab59d211"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/wiki/session-handoff.md": {
+    "mtime": 1794227333.286351,
+    "ast_hash": "2f62b5f141ab12338eb5b22f4f3de96d",
+    "semantic_hash": "2f62b5f141ab12338eb5b22f4f3de96d"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/wiki/source-manifest.md": {
+    "mtime": 1794227186.567215,
+    "ast_hash": "febc3e4e10712177c05e34f1c3d931c4",
+    "semantic_hash": "febc3e4e10712177c05e34f1c3d931c4"
+  },
+  "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/wiki/tag-taxonomy.yml": {
+    "mtime": 1793778829.9578593,
+    "ast_hash": "e13803de99b973a409ef97c5241ed747",
+    "semantic_hash": "e13803de99b973a409ef97c5241ed747"
+  }
+}

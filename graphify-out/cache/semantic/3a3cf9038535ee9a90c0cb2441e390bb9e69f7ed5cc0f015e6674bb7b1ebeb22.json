@@ -1,0 +1,1 @@
+{"nodes": [], "edges": [{"source": "web_app", "target": "test_quiz_sandbox_server", "relation": "shares_data_with", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "test-quiz-sandbox/web/app.js", "source_location": "344, 424", "weight": 1.0}], "hyperedges": []}

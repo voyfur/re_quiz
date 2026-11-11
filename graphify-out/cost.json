@@ -1,0 +1,13 @@
+{
+  "runs": [
+    {
+      "date": "2026-11-09T14:03:15.838220+00:00",
+      "input_tokens": 115308,
+      "output_tokens": 11200,
+      "files": 118,
+      "token_usage_note": "Only chunk 3 usage was reported by the subagent; the other chunk token fields remained placeholders."
+    }
+  ],
+  "total_input_tokens": 115308,
+  "total_output_tokens": 11200
+}

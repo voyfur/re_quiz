@@ -1,0 +1,11 @@
+# Secrets and local runtime files
+.env
+.env.local
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.playwright-cli/
+*.log
+.DS_Store
+
+
