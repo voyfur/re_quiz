@@ -205,6 +205,10 @@ def build():
     for (const key of ANSWER_SIGNAL_FIELDS) {{
       const vals = asSet(answers[key]);
       if (vals.size === 0) continue;
+      if (key === "activity" && vals.has("other")) {{
+        matched.push(key);
+        continue;
+      }}
       const sigs = softSignals(record, key);
       if (sigs.size === 0) {{
         if (STEERING_ANSWER_FIELDS.includes(key)) return null;

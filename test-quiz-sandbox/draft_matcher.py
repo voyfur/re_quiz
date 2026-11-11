@@ -315,6 +315,9 @@ def _candidate_fit(candidate, answers):
         vals = _as_set(answers.get(key))
         if not vals:
             continue
+        if key == "activity" and "other" in vals:
+            matched.append(key)
+            continue
         signals = _soft_signals(record, key)
         if not signals:
             if key in STEERING_ANSWER_FIELDS:
