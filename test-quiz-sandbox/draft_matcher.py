@@ -317,6 +317,8 @@ def _candidate_fit(candidate, answers):
             continue
         signals = _soft_signals(record, key)
         if not signals:
+            if key in STEERING_ANSWER_FIELDS:
+                return None
             unknown.append(key)
         elif vals & signals:
             matched.append(key)
@@ -393,8 +395,9 @@ def _question_plan(candidates, goal_group, answers):
     remaining = candidates
     answered = answers
 
-    # Early termination: if ≤3 candidates remain, skip to budget
-    if len(remaining) <= 3:
+    # Early termination: if <= 3 candidates remain or user already answered 2 follow-up questions, skip directly to budget
+    answered_followups = [k for k in answered if k not in ("max_price_uah", "locale")]
+    if len(remaining) <= 3 or len(answered_followups) >= 2:
         if remaining and "max_price_uah" not in answered:
             prices = [record["price_uah"] for record, _seller, _components in remaining if isinstance(record.get("price_uah"), int)]
             questions.append({
@@ -407,90 +410,81 @@ def _question_plan(candidates, goal_group, answers):
             })
         return questions
 
-    if "activity" not in answered:
-        values = _values_in(remaining, "activity", ACTIVITY_OPTIONS_BY_GOAL[goal_group])
-        if values:
-            values = sorted(set(values) | {"other"})
-        if len(values) > 1:
-            add("activity", values, "question_activity")
-
+    # 1. Primary filter: Component Class (What type of product do you need in the kit?)
     if "component_class" not in answered:
-        values = _values_in(remaining, "component_class", COMPONENT_CLASSES_BY_GOAL[goal_group])
+        values = _values_in(remaining, "component_class", COMPONENT_CLASSES_BY_GOAL.get(goal_group, set()))
         if len(values) > 1:
             add("component_class", values, "question_component_class")
 
-    if "use_scenario" not in answered:
-        allowed = USE_SCENARIOS_BY_GOAL[goal_group]
-        values = _values_in(remaining, "use_scenario", allowed)
-        if len(values) > 1 and _would_split(remaining, "use_scenario", allowed):
-            add("use_scenario", values, "question_use_scenario")
+    # 2. Activity (Sport): only for sport-specific goals where sport is a deciding factor; NEVER for recovery or daily
+    if "activity" not in answered and goal_group not in ("recovery", "daily"):
+        allowed = ACTIVITY_OPTIONS_BY_GOAL.get(goal_group, set())
+        values = _values_in(remaining, "activity", allowed)
+        if values and len(values) > 1:
+            values = sorted(set(values) | {"other"})
+            add("activity", values, "question_activity")
 
-    if "use_timing" not in answered:
-        allowed = USE_TIMINGS_BY_GOAL[goal_group]
-        values = _values_in(remaining, "use_timing", allowed)
-        if len(values) > 1 and _would_split(remaining, "use_timing", allowed):
-            add("use_timing", values, "question_use_timing")
+    # 3. Contextual Refinement (Choose at most ONE high-signal question based on component_class):
+    comp_class = answered.get("component_class")
 
-    if "use_place" not in answered:
-        allowed = USE_PLACES_BY_GOAL[goal_group]
-        values = _values_in(remaining, "use_place", allowed)
-        if len(values) > 1 and _would_split(remaining, "use_place", allowed):
-            add("use_place", values, "question_use_place")
+    # A. If Apparel / Footwear: ask shoe_size and season
+    if comp_class == "apparel_footwear" or (goal_group == "gear" and comp_class != "sports_accessories"):
+        if "shoe_size" not in answered:
+            has_size = any(
+                record.get("matching_evidence", {}).get("size_sensitive")
+                and _size_ranges(record)
+                for record, _seller, _components in remaining
+            )
+            if has_size:
+                ranges = sorted({
+                    "{}-{}".format(lower, upper)
+                    for record, _seller, _components in remaining
+                    for lower, upper in _size_ranges(record)
+                })
+                questions.append({"id": "shoe_size", "title_key": "question_shoe_size", "type": "number", "min": 1, "max": 70, "ranges": ranges})
 
-    event_branch = (
-        goal_group == "running"
-        or bool(_as_set(answers.get("activity")) & {"running", "cycling"})
-        or bool(_as_set(answers.get("use_scenario")) & {"event_preparation"})
-    )
-    if "race_format" not in answered and event_branch:
-        allowed = {"half_marathon", "marathon", "race_or_event_preparation", "ultra_or_long_distance"}
-        values = _values_in(remaining, "race_format", allowed)
-        if len(values) > 1 and _would_split(remaining, "race_format", allowed):
-            add("race_format", values, "question_race_format")
+        if "season" not in answered:
+            values = _values_in(remaining, "season", {"cold", "warm"})
+            if len(values) > 1 and _would_split(remaining, "season", {"cold", "warm"}):
+                add("season", values, "question_season")
 
-    weather_branch = (
-        goal_group in {"running", "hydration", "outdoors", "gear"}
-        or bool(_as_set(answers.get("activity")) & {"running", "cycling", "hiking", "walking"})
-    )
-    if "season" not in answered and weather_branch:
-        allowed = {"cold", "warm"}
-        values = _values_in(remaining, "season", allowed)
-        if len(values) > 1 and _would_split(remaining, "season", allowed):
-            add("season", values, "question_season")
+    # B. If Recovery: ask timing (evening/bedtime vs post-training); NEVER ask place for bedtime!
+    elif goal_group == "recovery" or comp_class == "supplements_vitamins_minerals":
+        if "use_timing" not in answered:
+            allowed = USE_TIMINGS_BY_GOAL.get(goal_group, set())
+            values = _values_in(remaining, "use_timing", allowed)
+            if len(values) > 1 and _would_split(remaining, "use_timing", allowed):
+                add("use_timing", values, "question_use_timing")
 
-    if "product_form" not in answered:
-        allowed = PRODUCT_FORMS_BY_GOAL[goal_group]
+    # C. If Running nutrition/hydration: check race format only if event preparation
+    elif goal_group == "running":
+        if "use_scenario" not in answered:
+            allowed = USE_SCENARIOS_BY_GOAL.get(goal_group, set())
+            values = _values_in(remaining, "use_scenario", allowed)
+            if len(values) > 1 and _would_split(remaining, "use_scenario", allowed):
+                add("use_scenario", values, "question_use_scenario")
+        elif answered.get("use_scenario") == "event_preparation" and "race_format" not in answered:
+            allowed = {"half_marathon", "marathon", "race_or_event_preparation", "ultra_or_long_distance"}
+            values = _values_in(remaining, "race_format", allowed)
+            if len(values) > 1 and _would_split(remaining, "race_format", allowed):
+                add("race_format", values, "question_race_format")
+
+    # D. If Outdoors: ask camping vs travel or dehydrated meal form
+    elif goal_group == "outdoors":
+        if "use_place" not in answered:
+            allowed = USE_PLACES_BY_GOAL.get(goal_group, set())
+            values = _values_in(remaining, "use_place", allowed)
+            if len(values) > 1 and _would_split(remaining, "use_place", allowed):
+                add("use_place", values, "question_use_place")
+
+    # Product form: ask only if forms vary and not apparel
+    if "product_form" not in answered and comp_class != "apparel_footwear":
+        allowed = PRODUCT_FORMS_BY_GOAL.get(goal_group, set())
         values = _values_in(remaining, "product_form", allowed)
-        if len(values) > 1 and _would_split(remaining, "product_form", allowed):
+        if len(values) > 1 and _would_split(remaining, "product_form", allowed, min_signals=3):
             add("product_form", values, "question_product_form")
 
-    # Membership: ask only when both included and non-included sets exist
-    if "membership" not in answered:
-        has_included = any(
-            _membership_status(record) == "included"
-            for record, _, _ in remaining
-        )
-        has_without = any(
-            _membership_status(record) not in ("included", "mentioned")
-            for record, _, _ in remaining
-        )
-        if has_included and has_without:
-            add("membership", ["yes", "no"], "question_membership")
-
-    if "shoe_size" not in answered and goal_group in SIZE_GOALS:
-        has_size = any(
-            record.get("matching_evidence", {}).get("size_sensitive")
-            and _size_ranges(record)
-            for record, _seller, _components in remaining
-        )
-        if has_size:
-            ranges = sorted({
-                "{}-{}".format(lower, upper)
-                for record, _seller, _components in remaining
-                for lower, upper in _size_ranges(record)
-            })
-            questions.append({"id": "shoe_size", "title_key": "question_shoe_size", "type": "number", "min": 1, "max": 70, "ranges": ranges})
-
+    # Budget question is always appended at the end
     if remaining and "max_price_uah" not in answered:
         prices = [record["price_uah"] for record, _seller, _components in remaining if isinstance(record.get("price_uah"), int)]
         questions.append({

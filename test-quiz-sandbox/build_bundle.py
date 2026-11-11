@@ -207,6 +207,7 @@ def build():
       if (vals.size === 0) continue;
       const sigs = softSignals(record, key);
       if (sigs.size === 0) {{
+        if (STEERING_ANSWER_FIELDS.includes(key)) return null;
         unknown.push(key);
       }} else if (intersect(vals, sigs).size > 0) {{
         matched.push(key);
@@ -287,7 +288,9 @@ def build():
     const remaining = candidates;
     const answered = answers || {{}};
 
-    if (remaining.length <= 3) {{
+    // Early termination: if <= 3 candidates remain or user already answered 2 follow-up questions, skip directly to budget
+    const answeredFollowups = Object.keys(answered).filter(k => !["max_price_uah", "locale"].includes(k));
+    if (remaining.length <= 3 || answeredFollowups.length >= 2) {{
       if (remaining.length > 0 && !("max_price_uah" in answered)) {{
         const prices = remaining.map(([r]) => r.price_uah).filter(p => typeof p === "number");
         questions.push({{
@@ -302,91 +305,94 @@ def build():
       return questions;
     }}
 
-    if (!("activity" in answered)) {{
-      let vals = valuesIn(remaining, "activity", CONSTANTS.ACTIVITY_OPTIONS_BY_GOAL[goalGroup] || []);
-      if (vals.length > 0) vals = [...new Set([...vals, "other"])].sort();
-      if (vals.length > 1) add("activity", vals, "question_activity");
-    }}
-
+    // 1. Primary filter: Component Class (What type of product do you need in the kit?)
     if (!("component_class" in answered)) {{
       const vals = valuesIn(remaining, "component_class", CONSTANTS.COMPONENT_CLASSES_BY_GOAL[goalGroup] || []);
       if (vals.length > 1) add("component_class", vals, "question_component_class");
     }}
 
-    if (!("use_scenario" in answered)) {{
-      const allowed = CONSTANTS.USE_SCENARIOS_BY_GOAL[goalGroup] || [];
-      const vals = valuesIn(remaining, "use_scenario", allowed);
-      if (vals.length > 1 && wouldSplit(remaining, "use_scenario", allowed)) {{
-        add("use_scenario", vals, "question_use_scenario");
+    // 2. Activity (Sport): only for sport-specific goals where sport is a deciding factor; NEVER for recovery or daily
+    if (!("activity" in answered) && !["recovery", "daily"].includes(goalGroup)) {{
+      let vals = valuesIn(remaining, "activity", CONSTANTS.ACTIVITY_OPTIONS_BY_GOAL[goalGroup] || []);
+      if (vals.length > 1) {{
+        vals = [...new Set([...vals, "other"])].sort();
+        add("activity", vals, "question_activity");
       }}
     }}
 
-    if (!("use_timing" in answered)) {{
-      const allowed = CONSTANTS.USE_TIMINGS_BY_GOAL[goalGroup] || [];
-      const vals = valuesIn(remaining, "use_timing", allowed);
-      if (vals.length > 1 && wouldSplit(remaining, "use_timing", allowed)) {{
-        add("use_timing", vals, "question_use_timing");
+    // 3. Contextual Refinement (Choose at most ONE high-signal question based on component_class):
+    const compClass = answered.component_class;
+
+    // A. If Apparel / Footwear: ask shoe_size and season
+    if (compClass === "apparel_footwear" || (goalGroup === "gear" && compClass !== "sports_accessories")) {{
+      if (!("shoe_size" in answered)) {{
+        const hasSize = remaining.some(([r]) => r.matching_evidence?.size_sensitive && sizeRanges(r).length > 0);
+        if (hasSize) {{
+          const s = new Set();
+          remaining.forEach(([r]) => {{
+            sizeRanges(r).forEach(([lo, hi]) => s.add(`${{lo}}-${{hi}}`));
+          }});
+          questions.push({{
+            id: "shoe_size",
+            title_key: "question_shoe_size",
+            type: "number",
+            min: 1,
+            max: 70,
+            ranges: [...s].sort()
+          }});
+        }}
+      }}
+      if (!("season" in answered)) {{
+        const allowed = ["cold", "warm"];
+        const vals = valuesIn(remaining, "season", allowed);
+        if (vals.length > 1 && wouldSplit(remaining, "season", allowed)) {{
+          add("season", vals, "question_season");
+        }}
+      }}
+    }}
+    // B. If Recovery: ask timing (evening/bedtime vs post-training); NEVER ask place for bedtime!
+    else if (goalGroup === "recovery" || compClass === "supplements_vitamins_minerals") {{
+      if (!("use_timing" in answered)) {{
+        const allowed = CONSTANTS.USE_TIMINGS_BY_GOAL[goalGroup] || [];
+        const vals = valuesIn(remaining, "use_timing", allowed);
+        if (vals.length > 1 && wouldSplit(remaining, "use_timing", allowed)) {{
+          add("use_timing", vals, "question_use_timing");
+        }}
+      }}
+    }}
+    // C. If Running nutrition/hydration: check race format only if event preparation
+    else if (goalGroup === "running") {{
+      if (!("use_scenario" in answered)) {{
+        const allowed = CONSTANTS.USE_SCENARIOS_BY_GOAL[goalGroup] || [];
+        const vals = valuesIn(remaining, "use_scenario", allowed);
+        if (vals.length > 1 && wouldSplit(remaining, "use_scenario", allowed)) {{
+          add("use_scenario", vals, "question_use_scenario");
+        }}
+      }} else if (answered.use_scenario === "event_preparation" && !("race_format" in answered)) {{
+        const allowed = ["half_marathon", "marathon", "race_or_event_preparation", "ultra_or_long_distance"];
+        const vals = valuesIn(remaining, "race_format", allowed);
+        if (vals.length > 1 && wouldSplit(remaining, "race_format", allowed)) {{
+          add("race_format", vals, "question_race_format");
+        }}
+      }}
+    }}
+    // D. If Outdoors: ask camping vs travel or dehydrated meal form
+    else if (goalGroup === "outdoors") {{
+      if (!("use_place" in answered)) {{
+        const allowed = CONSTANTS.USE_PLACES_BY_GOAL[goalGroup] || [];
+        const vals = valuesIn(remaining, "use_place", allowed);
+        if (vals.length > 1 && wouldSplit(remaining, "use_place", allowed)) {{
+          add("use_place", vals, "question_use_place");
+        }}
       }}
     }}
 
-    if (!("use_place" in answered)) {{
-      const allowed = CONSTANTS.USE_PLACES_BY_GOAL[goalGroup] || [];
-      const vals = valuesIn(remaining, "use_place", allowed);
-      if (vals.length > 1 && wouldSplit(remaining, "use_place", allowed)) {{
-        add("use_place", vals, "question_use_place");
-      }}
-    }}
-
-    const eventBranch = goalGroup === "running"
-      || asSet(answered.activity).has("running") || asSet(answered.activity).has("cycling")
-      || asSet(answered.use_scenario).has("event_preparation");
-    if (!("race_format" in answered) && eventBranch) {{
-      const allowed = ["half_marathon", "marathon", "race_or_event_preparation", "ultra_or_long_distance"];
-      const vals = valuesIn(remaining, "race_format", allowed);
-      if (vals.length > 1 && wouldSplit(remaining, "race_format", allowed)) {{
-        add("race_format", vals, "question_race_format");
-      }}
-    }}
-
-    const weatherBranch = ["running", "hydration", "outdoors", "gear"].includes(goalGroup)
-      || [...asSet(answered.activity)].some(x => ["running", "cycling", "hiking", "walking"].includes(x));
-    if (!("season" in answered) && weatherBranch) {{
-      const allowed = ["cold", "warm"];
-      const vals = valuesIn(remaining, "season", allowed);
-      if (vals.length > 1 && wouldSplit(remaining, "season", allowed)) {{
-        add("season", vals, "question_season");
-      }}
-    }}
-
-    if (!("product_form" in answered)) {{
+    // Product form: ask only if forms vary and not apparel
+    if (!("product_form" in answered) && compClass !== "apparel_footwear") {{
       const allowed = CONSTANTS.PRODUCT_FORMS_BY_GOAL[goalGroup] || [];
       const vals = valuesIn(remaining, "product_form", allowed);
-      if (vals.length > 1 && wouldSplit(remaining, "product_form", allowed)) {{
+      if (vals.length > 1 && wouldSplit(remaining, "product_form", allowed, 3)) {{
         add("product_form", vals, "question_product_form");
-      }}
-    }}
-
-    if (!("membership" in answered)) {{
-      const hasInc = remaining.some(([r]) => membershipStatus(r) === "included");
-      const hasWithout = remaining.some(([r]) => !["included", "mentioned"].includes(membershipStatus(r)));
-      if (hasInc && hasWithout) add("membership", ["yes", "no"], "question_membership");
-    }}
-
-    if (!("shoe_size" in answered) && CONSTANTS.SIZE_GOALS.includes(goalGroup)) {{
-      const hasSize = remaining.some(([r]) => r.matching_evidence?.size_sensitive && sizeRanges(r).length > 0);
-      if (hasSize) {{
-        const s = new Set();
-        remaining.forEach(([r]) => {{
-          sizeRanges(r).forEach(([lo, hi]) => s.add(`${{lo}}-${{hi}}`));
-        }});
-        questions.push({{
-          id: "shoe_size",
-          title_key: "question_shoe_size",
-          type: "number",
-          min: 1,
-          max: 70,
-          ranges: [...s].sort()
-        }});
       }}
     }}
 

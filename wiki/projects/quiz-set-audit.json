@@ -4090,7 +4090,6 @@
           "component_classes_from_listed_names": [
             "club_membership",
             "creatine_preworkout",
-            "protein_carbohydrate_food",
             "sports_accessories"
           ],
           "archived_page_component_titles": [
@@ -17504,7 +17503,6 @@
           "component_classes_from_listed_names": [
             "club_membership",
             "creatine_preworkout",
-            "protein_carbohydrate_food",
             "sports_accessories",
             "supplements_vitamins_minerals"
           ],
@@ -18074,7 +18072,6 @@
             "club_membership",
             "creatine_preworkout",
             "hydration_items",
-            "protein_carbohydrate_food",
             "sports_accessories"
           ],
           "archived_page_component_titles": [],
@@ -22266,7 +22263,6 @@
           "component_classes_from_listed_names": [
             "club_membership",
             "creatine_preworkout",
-            "protein_carbohydrate_food",
             "supplements_vitamins_minerals"
           ],
           "archived_page_component_titles": [
@@ -23112,7 +23108,6 @@
           },
           "component_classes_from_listed_names": [
             "hydration_items",
-            "protein_carbohydrate_food",
             "sports_accessories",
             "supplements_vitamins_minerals"
           ],
@@ -23896,8 +23891,7 @@
           },
           "component_classes_from_listed_names": [
             "club_membership",
-            "creatine_preworkout",
-            "protein_carbohydrate_food"
+            "creatine_preworkout"
           ],
           "archived_page_component_titles": [
             "Абонемент в спортивний клуб Race Expert на 3 місяці - 1500 грн.",
@@ -28063,9 +28057,7 @@
             "classification": "no_sport_signal",
             "gate_policy": "Recorded sport/activity mentions are relevance signals, not proof of exclusive compatibility. A hard activity exclusion requires a separately reviewed source fact; tags alone are never a negative filter."
           },
-          "component_classes_from_listed_names": [
-            "protein_carbohydrate_food"
-          ],
+          "component_classes_from_listed_names": [],
           "archived_page_component_titles": [],
           "component_independent_source_rows": 0,
           "component_rows_total": 3,
@@ -30314,9 +30306,7 @@
             "classification": "no_sport_signal",
             "gate_policy": "Recorded sport/activity mentions are relevance signals, not proof of exclusive compatibility. A hard activity exclusion requires a separately reviewed source fact; tags alone are never a negative filter."
           },
-          "component_classes_from_listed_names": [
-            "protein_carbohydrate_food"
-          ],
+          "component_classes_from_listed_names": [],
           "archived_page_component_titles": [],
           "component_independent_source_rows": 0,
           "component_rows_total": 2,
@@ -30778,7 +30768,6 @@
           "component_classes_from_listed_names": [
             "club_membership",
             "hydration_items",
-            "protein_carbohydrate_food",
             "sports_accessories"
           ],
           "archived_page_component_titles": [],
@@ -32655,7 +32644,6 @@
           },
           "component_classes_from_listed_names": [
             "club_membership",
-            "protein_carbohydrate_food",
             "supplements_vitamins_minerals"
           ],
           "archived_page_component_titles": [
@@ -33968,8 +33956,7 @@
             "gate_policy": "Recorded sport/activity mentions are relevance signals, not proof of exclusive compatibility. A hard activity exclusion requires a separately reviewed source fact; tags alone are never a negative filter."
           },
           "component_classes_from_listed_names": [
-            "club_membership",
-            "protein_carbohydrate_food"
+            "club_membership"
           ],
           "archived_page_component_titles": [
             "Mind Shi Cordyceps Mushroom - 935 грн",
@@ -35289,7 +35276,6 @@
           "component_classes_from_listed_names": [
             "apparel_footwear",
             "hydration_items",
-            "protein_carbohydrate_food",
             "sports_accessories"
           ],
           "archived_page_component_titles": [],
@@ -40972,7 +40958,6 @@
           },
           "component_classes_from_listed_names": [
             "club_membership",
-            "protein_carbohydrate_food",
             "sports_accessories"
           ],
           "archived_page_component_titles": [
@@ -44609,8 +44594,7 @@
           },
           "component_classes_from_listed_names": [
             "club_membership",
-            "hydration_items",
-            "protein_carbohydrate_food"
+            "hydration_items"
           ],
           "archived_page_component_titles": [],
           "component_independent_source_rows": 0,
@@ -53158,7 +53142,6 @@
             "apparel_footwear",
             "club_membership",
             "hydration_items",
-            "protein_carbohydrate_food",
             "sports_accessories"
           ],
           "archived_page_component_titles": [
@@ -55421,7 +55404,6 @@
           "component_classes_from_listed_names": [
             "apparel_footwear",
             "club_membership",
-            "protein_carbohydrate_food",
             "sports_accessories"
           ],
           "archived_page_component_titles": [
@@ -56168,7 +56150,6 @@
           },
           "component_classes_from_listed_names": [
             "club_membership",
-            "protein_carbohydrate_food",
             "sports_accessories"
           ],
           "archived_page_component_titles": [
@@ -56837,7 +56818,6 @@
           },
           "component_classes_from_listed_names": [
             "club_membership",
-            "protein_carbohydrate_food",
             "sports_accessories"
           ],
           "archived_page_component_titles": [
@@ -57648,7 +57628,6 @@
           "component_classes_from_listed_names": [
             "apparel_footwear",
             "club_membership",
-            "protein_carbohydrate_food",
             "sports_accessories"
           ],
           "archived_page_component_titles": [
@@ -59168,7 +59147,6 @@
           "component_classes_from_listed_names": [
             "apparel_footwear",
             "club_membership",
-            "protein_carbohydrate_food",
             "sports_accessories"
           ],
           "archived_page_component_titles": [
@@ -59912,7 +59890,6 @@
           },
           "component_classes_from_listed_names": [
             "club_membership",
-            "protein_carbohydrate_food",
             "sports_accessories"
           ],
           "archived_page_component_titles": [
@@ -60603,7 +60580,6 @@
             "apparel_footwear",
             "club_membership",
             "hydration_items",
-            "protein_carbohydrate_food",
             "sports_accessories"
           ],
           "archived_page_component_titles": [
@@ -61384,7 +61360,6 @@
             "apparel_footwear",
             "club_membership",
             "hydration_items",
-            "protein_carbohydrate_food",
             "sports_accessories"
           ],
           "archived_page_component_titles": [
@@ -62141,7 +62116,6 @@
           "component_classes_from_listed_names": [
             "apparel_footwear",
             "club_membership",
-            "protein_carbohydrate_food",
             "sports_accessories"
           ],
           "archived_page_component_titles": [
@@ -63551,7 +63525,6 @@
           },
           "component_classes_from_listed_names": [
             "club_membership",
-            "protein_carbohydrate_food",
             "sports_accessories"
           ],
           "archived_page_component_titles": [
@@ -64181,7 +64154,6 @@
           },
           "component_classes_from_listed_names": [
             "club_membership",
-            "protein_carbohydrate_food",
             "sports_accessories"
           ],
           "archived_page_component_titles": [
@@ -64798,7 +64770,6 @@
           },
           "component_classes_from_listed_names": [
             "club_membership",
-            "protein_carbohydrate_food",
             "sports_accessories"
           ],
           "archived_page_component_titles": [
@@ -65459,7 +65430,6 @@
           },
           "component_classes_from_listed_names": [
             "club_membership",
-            "protein_carbohydrate_food",
             "sports_accessories"
           ],
           "archived_page_component_titles": [
@@ -66501,7 +66471,6 @@
             "gate_policy": "Recorded sport/activity mentions are relevance signals, not proof of exclusive compatibility. A hard activity exclusion requires a separately reviewed source fact; tags alone are never a negative filter."
           },
           "component_classes_from_listed_names": [
-            "protein_carbohydrate_food",
             "sports_accessories"
           ],
           "archived_page_component_titles": [
@@ -67553,7 +67522,6 @@
             "gate_policy": "Recorded sport/activity mentions are relevance signals, not proof of exclusive compatibility. A hard activity exclusion requires a separately reviewed source fact; tags alone are never a negative filter."
           },
           "component_classes_from_listed_names": [
-            "protein_carbohydrate_food",
             "sports_accessories"
           ],
           "archived_page_component_titles": [],
@@ -67952,7 +67920,6 @@
             "gate_policy": "Recorded sport/activity mentions are relevance signals, not proof of exclusive compatibility. A hard activity exclusion requires a separately reviewed source fact; tags alone are never a negative filter."
           },
           "component_classes_from_listed_names": [
-            "protein_carbohydrate_food",
             "sports_accessories"
           ],
           "archived_page_component_titles": [],
@@ -72308,7 +72275,6 @@
           "component_classes_from_listed_names": [
             "club_membership",
             "creatine_preworkout",
-            "protein_carbohydrate_food",
             "sports_accessories",
             "supplements_vitamins_minerals"
           ],
@@ -74933,7 +74899,6 @@
             "gate_policy": "Recorded sport/activity mentions are relevance signals, not proof of exclusive compatibility. A hard activity exclusion requires a separately reviewed source fact; tags alone are never a negative filter."
           },
           "component_classes_from_listed_names": [
-            "protein_carbohydrate_food",
             "supplements_vitamins_minerals"
           ],
           "archived_page_component_titles": [
@@ -85411,7 +85376,6 @@
           },
           "component_classes_from_listed_names": [
             "creatine_preworkout",
-            "protein_carbohydrate_food",
             "sports_accessories"
           ],
           "archived_page_component_titles": [
@@ -90536,7 +90500,6 @@
           "component_classes_from_listed_names": [
             "club_membership",
             "hydration_items",
-            "protein_carbohydrate_food",
             "sports_accessories"
           ],
           "archived_page_component_titles": [
@@ -101299,8 +101262,7 @@
             "gate_policy": "Recorded sport/activity mentions are relevance signals, not proof of exclusive compatibility. A hard activity exclusion requires a separately reviewed source fact; tags alone are never a negative filter."
           },
           "component_classes_from_listed_names": [
-            "creatine_preworkout",
-            "protein_carbohydrate_food"
+            "creatine_preworkout"
           ],
           "archived_page_component_titles": [
             "Креатин Nutriversum Creatine (без смаку) 300 г, 1 шт. - 859 грн/шт.",
@@ -106054,7 +106016,6 @@
           "component_classes_from_listed_names": [
             "club_membership",
             "hydration_items",
-            "protein_carbohydrate_food",
             "sports_accessories",
             "supplements_vitamins_minerals"
           ],
@@ -108021,7 +107982,6 @@
             "gate_policy": "Recorded sport/activity mentions are relevance signals, not proof of exclusive compatibility. A hard activity exclusion requires a separately reviewed source fact; tags alone are never a negative filter."
           },
           "component_classes_from_listed_names": [
-            "protein_carbohydrate_food",
             "sports_accessories"
           ],
           "archived_page_component_titles": [],
@@ -123978,7 +123938,6 @@
           "component_classes_from_listed_names": [
             "apparel_footwear",
             "club_membership",
-            "protein_carbohydrate_food",
             "sports_accessories"
           ],
           "archived_page_component_titles": [
@@ -125294,7 +125253,6 @@
             "gate_policy": "Recorded sport/activity mentions are relevance signals, not proof of exclusive compatibility. A hard activity exclusion requires a separately reviewed source fact; tags alone are never a negative filter."
           },
           "component_classes_from_listed_names": [
-            "protein_carbohydrate_food",
             "sports_accessories"
           ],
           "archived_page_component_titles": [],
@@ -125780,7 +125738,6 @@
             "gate_policy": "Recorded sport/activity mentions are relevance signals, not proof of exclusive compatibility. A hard activity exclusion requires a separately reviewed source fact; tags alone are never a negative filter."
           },
           "component_classes_from_listed_names": [
-            "protein_carbohydrate_food",
             "sports_accessories"
           ],
           "archived_page_component_titles": [],
@@ -126348,7 +126305,6 @@
           },
           "component_classes_from_listed_names": [
             "club_membership",
-            "protein_carbohydrate_food",
             "sports_accessories"
           ],
           "archived_page_component_titles": [
@@ -126807,7 +126763,6 @@
             "gate_policy": "Recorded sport/activity mentions are relevance signals, not proof of exclusive compatibility. A hard activity exclusion requires a separately reviewed source fact; tags alone are never a negative filter."
           },
           "component_classes_from_listed_names": [
-            "protein_carbohydrate_food",
             "sports_accessories"
           ],
           "archived_page_component_titles": [],
