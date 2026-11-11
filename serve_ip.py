@@ -10,6 +10,18 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 PUBLIC_DIR = ROOT / "public"
 
+import json
+import sys
+
+SANDBOX_DIR = ROOT / "test-quiz-sandbox"
+if str(SANDBOX_DIR) not in sys.path:
+    sys.path.insert(0, str(SANDBOX_DIR))
+
+try:
+    from stock_checker import check_stock
+except ImportError:
+    check_stock = None
+
 def get_local_ips():
     ips = ["127.0.0.1"]
     try:
@@ -28,6 +40,50 @@ def get_local_ips():
 class QuietHandler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=str(PUBLIC_DIR), **kwargs)
+
+    def do_GET(self):
+        if self.path == "/api/health":
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.end_headers()
+            self.wfile.write(json.dumps({"status": "ok", "app": "Race Expert Quiz Local"}).encode("utf-8"))
+            return
+        return super().do_GET()
+
+    def do_POST(self):
+        if self.path == "/api/check-stock":
+            length = int(self.headers.get("Content-Length", 0))
+            if length <= 0 or length > 65536:
+                self.send_response(400)
+                self.end_headers()
+                return
+            try:
+                body = json.loads(self.rfile.read(length).decode("utf-8"))
+                skus = body.get("skus", [])
+                stock_data = check_stock(skus) if check_stock else {}
+                response_bytes = json.dumps({"ok": True, "stocks": stock_data}).encode("utf-8")
+                self.send_response(200)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.send_header("Access-Control-Allow-Origin", "*")
+                self.end_headers()
+                self.wfile.write(response_bytes)
+                return
+            except Exception as e:
+                self.send_response(500)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.end_headers()
+                self.wfile.write(json.dumps({"error": str(e)}).encode("utf-8"))
+                return
+        self.send_response(404)
+        self.end_headers()
+
+    def do_OPTIONS(self):
+        self.send_response(204)
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+        self.send_header("Access-Control-Allow-Headers", "Content-Type")
+        self.end_headers()
 
     def log_message(self, format_string, *args):
         print(f"[RaceExpert Quiz] {self.address_string()} - {format_string % args}")
