@@ -253,3 +253,13 @@ python3 .agents/skills/race-expert-kit-onboarding/scripts/ingest_kit.py /tmp/new
 # Аудит соответствия нового набора:
 python3 .agents/skills/race-expert-kit-onboarding/scripts/audit_new_kit.py <ROW_NUMBER>
 ```
+
+---
+
+## 10. Публикация в Git-репозиторий
+
+Весь проект (исходный код, движки подбора, веб-интерфейсы, бандлы, база знаний, тесты и документация) размещён в GitHub-репозитории:
+
+- **URL**: [`https://github.com/voyfur/re_quiz`](https://github.com/voyfur/re_quiz)
+- **Ветка по умолчанию**: `main`
+- **Безопасность учетных данных**: Файлы секретов (`.env`, `.env.local`), логи и кэши полностью исключены из репозитория с помощью `.gitignore`. Конфигурация доступа к базе данных и SSH осуществляется исключительно через локальные переменные окружения.
