@@ -1,0 +1,5240 @@
+[
+  {
+    "test_id": "FOOD-001",
+    "name": "Runner energy bars during run",
+    "category": "Sweet Bars",
+    "persona": "Марафонець-любитель",
+    "intent": "Шукає вуглеводні батончики для підживлення під час тривалого бігу",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "running",
+      "product_form": "bars",
+      "use_timing": "during_training",
+      "max_price_uah": 1500,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 1,
+      "general_count": 0,
+      "relaxed_count": 10,
+      "returned_count": 1,
+      "results": [
+        {
+          "sku": "RE11659",
+          "title": "Набір «Тиждень бігуна»",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою.",
+            "Час прийому: розраховано на вживання під час тренувань на ходу.",
+            "Бюджет: 1500 ₴ — точно відповідає вашому бюджетному очікуванню."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-002",
+    "name": "Marathoner carbohydrate bars race prep",
+    "category": "Sweet Bars",
+    "persona": "Асфальтний бігун",
+    "intent": "Потрібні енергетичні батончики для тренувань перед марафоном",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "running",
+      "product_form": "bars",
+      "use_timing": "during_training",
+      "max_price_uah": 1600,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 1,
+      "general_count": 0,
+      "relaxed_count": 10,
+      "returned_count": 1,
+      "results": [
+        {
+          "sku": "RE11659",
+          "title": "Набір «Тиждень бігуна»",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою.",
+            "Час прийому: розраховано на вживання під час тренувань на ходу.",
+            "Бюджет: 1500 ₴ — укладається в ліміт 1600 ₴ (запас 100 ₴)."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-003",
+    "name": "Cyclist protein bars long ride",
+    "category": "Sweet Bars",
+    "persona": "Шосейний велосипедист",
+    "intent": "Шукає протеїнові батончики для тривалого виїзду на 80+ км",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "cycling",
+      "product_form": "bars",
+      "use_timing": "during_training",
+      "max_price_uah": 1500,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 1,
+      "general_count": 0,
+      "relaxed_count": 2,
+      "returned_count": 1,
+      "results": [
+        {
+          "sku": "RE11659",
+          "title": "Набір «Тиждень бігуна»",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою.",
+            "Час прийому: розраховано на вживання під час тренувань на ходу.",
+            "Бюджет: 1500 ₴ — точно відповідає вашому бюджетному очікуванню."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-004",
+    "name": "Hiker sweet energy bars",
+    "category": "Sweet Bars",
+    "persona": "Хайкер Карпати",
+    "intent": "Потрібні компактні солодкі батончики для перекусів на маршруті",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "product_form": "bars",
+      "use_timing": "during_training",
+      "max_price_uah": 1500,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "no_exact_match",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 20,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "ZERO_RESULTS_UNEXPECTED"
+      ],
+      "flaws": [
+        "Повна відсутність результатів (0 товарів, 0 near-miss, 0 floor-anchor) для валідного запиту."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-005",
+    "name": "Runner standalone bars no club",
+    "category": "Sweet Bars",
+    "persona": "Студент-легкоатлет",
+    "intent": "Хоче купити тільки батончики без підписки на клуб",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "running",
+      "product_form": "bars",
+      "membership": "no",
+      "max_price_uah": 1500,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 5,
+      "general_count": 0,
+      "relaxed_count": 2,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE11659",
+          "title": "Набір «Тиждень бігуна»",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою.",
+            "Бюджет: 1500 ₴ — точно відповідає вашому бюджетному очікуванню."
+          ]
+        },
+        {
+          "sku": "Nabir_1118",
+          "title": "Набір «Міцна основа 2.0»",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою.",
+            "Бюджет: 1500 ₴ — точно відповідає вашому бюджетному очікуванню."
+          ]
+        },
+        {
+          "sku": "Nabir_1131",
+          "title": "Набір «Протеїновий заряд»",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою.",
+            "Бюджет: 1500 ₴ — точно відповідає вашому бюджетному очікуванню."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-006",
+    "name": "Cyclist bulk box bars with club",
+    "category": "Sweet Bars",
+    "persona": "Регулярний шосейник",
+    "intent": "Хоче великий бокс батончиків із клубною знижкою/абонементом",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "cycling",
+      "product_form": "bars",
+      "membership": "yes",
+      "max_price_uah": 1500,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 1,
+      "general_count": 0,
+      "relaxed_count": 0,
+      "returned_count": 1,
+      "results": [
+        {
+          "sku": "RE89450",
+          "title": "Набір «Fitly мікс» — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою.",
+            "Бюджет: 1500 ₴ — точно відповідає вашому бюджетному очікуванню."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-007",
+    "name": "Runner post-run protein bars",
+    "category": "Sweet Bars",
+    "persona": "Бігунка після тренування",
+    "intent": "Білковий перекус після інтенсивного темпового тренування",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "running",
+      "product_form": "bars",
+      "use_timing": "before_or_after_training",
+      "max_price_uah": 1500,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 8,
+      "general_count": 0,
+      "relaxed_count": 3,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE89450",
+          "title": "Набір «Fitly мікс» — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою.",
+            "Час прийому: розраховано на вживання до або після тренування для підзарядки.",
+            "Бюджет: 1500 ₴ — точно відповідає вашому бюджетному очікуванню."
+          ]
+        },
+        {
+          "sku": "RE11659",
+          "title": "Набір «Тиждень бігуна»",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою.",
+            "Час прийому: розраховано на вживання до або після тренування для підзарядки.",
+            "Бюджет: 1500 ₴ — точно відповідає вашому бюджетному очікуванню."
+          ]
+        },
+        {
+          "sku": "Nabir_1129",
+          "title": "Набір «Енергетичний перекус Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою.",
+            "Час прийому: розраховано на вживання до або після тренування для підзарядки.",
+            "Бюджет: 1500 ₴ — точно відповідає вашому бюджетному очікуванню."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-008",
+    "name": "Daily desk worker healthy snack bars",
+    "category": "Sweet Bars",
+    "persona": "Офісний працівник/бігун",
+    "intent": "Корисний солодкий перекус замість шоколадок до кави",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "running",
+      "product_form": "bars",
+      "use_timing": "daily_use",
+      "max_price_uah": 1500,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 3,
+      "general_count": 0,
+      "relaxed_count": 8,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE11019",
+          "title": "Набір «Щоденний комфорт Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою.",
+            "Час прийому: розраховано на вживання протягом дня для стабільного тонусу.",
+            "Бюджет: 1500 ₴ — точно відповідає вашому бюджетному очікуванню."
+          ]
+        },
+        {
+          "sku": "RE11490",
+          "title": "Набір «LipoBar Мікс»",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою.",
+            "Час прийому: розраховано на вживання протягом дня для стабільного тонусу.",
+            "Бюджет: 1500 ₴ — точно відповідає вашому бюджетному очікуванню."
+          ]
+        },
+        {
+          "sku": "RE11788",
+          "title": "Набір «LipoBar Мікс Race Expert Club» — абонемент на 3 месяца",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою.",
+            "Час прийому: розраховано на вживання протягом дня для стабільного тонусу.",
+            "Бюджет: 1500 ₴ — точно відповідає вашому бюджетному очікуванню."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "CRITICAL_FAIL_NON_FOOD_LEAK"
+      ],
+      "flaws": [
+        "ВИТІК НЕХАРЧОВИХ ТОВАРІВ У СНЕКИ: Товар [RE11019] «Набір «Щоденний комфорт Race Expert Club» — абонемент на 3 місяці» містить сторонні предмети: Шкарпетки + шейкер + скляна пляшка + брелок (одяг та аксесуари)."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-009",
+    "name": "Cyclist energy bars low budget 800 UAH",
+    "category": "Sweet Bars",
+    "persona": "Бюджетний велосипедист",
+    "intent": "Шукає недорогу пачку батончиків до 800 грн",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "cycling",
+      "product_form": "bars",
+      "max_price_uah": 800,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "floor_anchor",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 0,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": [
+        {
+          "sku": "RE89450",
+          "title": "Набір «Fitly мікс» — абонемент на 3 місяці",
+          "price_uah": 1500
+        },
+        {
+          "sku": "RE11659",
+          "title": "Набір «Тиждень бігуна»",
+          "price_uah": 1500
+        }
+      ]
+    },
+    "evaluation": {
+      "verdict": "WARN",
+      "defect_codes": [
+        "WARN_BUDGET_BELOW_MINIMUM"
+      ],
+      "flaws": [
+        "Бюджет 800 грн нижчий за мінімальну ціну харчових наборів у каталозі (1149 грн). Спрацював floor_anchor."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-010",
+    "name": "Ultra runner energy bars high budget 2500 UAH",
+    "category": "Sweet Bars",
+    "persona": "Ультрамарафонець",
+    "intent": "Готовий витратити 2500 грн на якісний запас батончиків",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "running",
+      "product_form": "bars",
+      "max_price_uah": 2500,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 9,
+      "general_count": 0,
+      "relaxed_count": 2,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE89450",
+          "title": "Набір «Fitly мікс» — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою.",
+            "Бюджет: 1500 ₴ — укладається в ліміт 2500 ₴ (запас 1000 ₴)."
+          ]
+        },
+        {
+          "sku": "RE11659",
+          "title": "Набір «Тиждень бігуна»",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою.",
+            "Бюджет: 1500 ₴ — укладається в ліміт 2500 ₴ (запас 1000 ₴)."
+          ]
+        },
+        {
+          "sku": "Nabir_1129",
+          "title": "Набір «Енергетичний перекус Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою.",
+            "Бюджет: 1500 ₴ — укладається в ліміт 2500 ₴ (запас 1000 ₴)."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "WARN",
+      "defect_codes": [
+        "WARN_HIGH_BUDGET_CATALOG_CEILING"
+      ],
+      "flaws": [
+        "СТЕЛЯ КАТАЛОГУ: Покупець готовий сплатити 2500 грн, але найдорожчий набір у каталозі коштує 1500 грн. Магазин втрачає чек на преміум/bulk наборах."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-011",
+    "name": "Runner general bars selection",
+    "category": "Sweet Bars",
+    "persona": "Любитель бігу 10 км",
+    "intent": "Батончики для бігу на регулярні тренування",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "running",
+      "product_form": "bars",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 9,
+      "general_count": 0,
+      "relaxed_count": 2,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE89450",
+          "title": "Набір «Fitly мікс» — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE11659",
+          "title": "Набір «Тиждень бігуна»",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "Nabir_1129",
+          "title": "Набір «Енергетичний перекус Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-012",
+    "name": "Cyclist bars no club membership",
+    "category": "Sweet Bars",
+    "persona": "Грейвел-райдер",
+    "intent": "Батончики без додаткових клубних послуг",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "cycling",
+      "product_form": "bars",
+      "membership": "no",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 1,
+      "general_count": 0,
+      "relaxed_count": 1,
+      "returned_count": 1,
+      "results": [
+        {
+          "sku": "RE11659",
+          "title": "Набір «Тиждень бігуна»",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-013",
+    "name": "Hiker bars with club membership",
+    "category": "Sweet Bars",
+    "persona": "Член турклубу",
+    "intent": "Батончики з абонементом Race Expert Club",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "product_form": "bars",
+      "membership": "yes",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "general_auto",
+      "exact_count": 0,
+      "general_count": 5,
+      "relaxed_count": 10,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE89418",
+          "title": "Набір м'ясних снеків (соєвий соус) Race Expert Club — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE89416",
+          "title": "Набір м'ясних снеків (мед, гірчиця) Race Expert Club — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE11495",
+          "title": "Набір «Похідна їжа ЇDLO Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-014",
+    "name": "Runner protein bars ru locale",
+    "category": "Sweet Bars",
+    "persona": "Русскоязычный бегун",
+    "intent": "Протеиновые батончики после пробежек",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "running",
+      "product_form": "bars",
+      "locale": "ru"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 9,
+      "general_count": 0,
+      "relaxed_count": 2,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE89450",
+          "title": "Набір «Fitly мікс» — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Целевое назначение: специально скомплектован под задачу «Перекусы и питание».",
+            "Форма продукта: удобный формат — батончики, легко брать с собой."
+          ]
+        },
+        {
+          "sku": "RE11659",
+          "title": "Набір «Тиждень бігуна»",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Целевое назначение: специально скомплектован под задачу «Перекусы и питание».",
+            "Форма продукта: удобный формат — батончики, легко брать с собой."
+          ]
+        },
+        {
+          "sku": "Nabir_1129",
+          "title": "Набір «Енергетичний перекус Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Целевое назначение: специально скомплектован под задачу «Перекусы и питание».",
+            "Форма продукта: удобный формат — батончики, легко брать с собой."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-015",
+    "name": "Runner energy bars uk locale",
+    "category": "Sweet Bars",
+    "persona": "Україномовний бігун",
+    "intent": "Енергетичні батончики на тренування",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "running",
+      "product_form": "bars",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 9,
+      "general_count": 0,
+      "relaxed_count": 2,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE89450",
+          "title": "Набір «Fitly мікс» — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE11659",
+          "title": "Набір «Тиждень бігуна»",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "Nabir_1129",
+          "title": "Набір «Енергетичний перекус Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-016",
+    "name": "Triathlete energy bars during training",
+    "category": "Sweet Bars",
+    "persona": "Тріатлет на велоетпапі",
+    "intent": "Легкозасвоювані солодкі вуглеводні батончики",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "cycling",
+      "product_form": "bars",
+      "use_timing": "during_training",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 1,
+      "general_count": 0,
+      "relaxed_count": 2,
+      "returned_count": 1,
+      "results": [
+        {
+          "sku": "RE11659",
+          "title": "Набір «Тиждень бігуна»",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою.",
+            "Час прийому: розраховано на вживання під час тренувань на ходу."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-017",
+    "name": "Trail runner compact bars 1000 UAH",
+    "category": "Sweet Bars",
+    "persona": "Трейлраннер",
+    "intent": "Компактний набір батончиків до 1000 грн",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "running",
+      "product_form": "bars",
+      "max_price_uah": 1000,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "floor_anchor",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 0,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": [
+        {
+          "sku": "RE89450",
+          "title": "Набір «Fitly мікс» — абонемент на 3 місяці",
+          "price_uah": 1500
+        },
+        {
+          "sku": "RE11659",
+          "title": "Набір «Тиждень бігуна»",
+          "price_uah": 1500
+        }
+      ]
+    },
+    "evaluation": {
+      "verdict": "WARN",
+      "defect_codes": [
+        "WARN_BUDGET_BELOW_MINIMUM"
+      ],
+      "flaws": [
+        "Бюджет 1000 грн нижчий за мінімальну ціну харчових наборів у каталозі (1149 грн). Спрацював floor_anchor."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-018",
+    "name": "Cyclist component class protein_carbohydrate_food",
+    "category": "Sweet Bars",
+    "persona": "Велотурист",
+    "intent": "Вибір категорії спортивне харчування та батончики",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "cycling",
+      "component_class": "protein_carbohydrate_food",
+      "product_form": "bars",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 2,
+      "general_count": 0,
+      "relaxed_count": 1,
+      "returned_count": 2,
+      "results": [
+        {
+          "sku": "RE89450",
+          "title": "Набір «Fitly мікс» — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Категорія товарів: у наборі саме Спортивне харчування та батончики (без сторонніх речей).",
+            "Форма продукту: зручний формат — батончики, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE11659",
+          "title": "Набір «Тиждень бігуна»",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Категорія товарів: у наборі саме Спортивне харчування та батончики (без сторонніх речей).",
+            "Форма продукту: зручний формат — батончики, легко брати із собою."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "CRITICAL_FAIL_DECEPTIVE_EXPLANATION"
+      ],
+      "flaws": [
+        "НЕПРАВДИВЕ ПОЯСНЕННЯ У КАРТЦІ: Двигун стверджує 'у наборі саме Спортивне харчування та батончики (без сторонніх речей)', але набір [RE89450] «Набір «Fitly мікс» — абонемент на 3 місяці» містить 3-місячний абонемент у клуб або велику банку порошку."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-019",
+    "name": "Runner bars without foreign items guarantee",
+    "category": "Sweet Bars",
+    "persona": "Свідомий покупець",
+    "intent": "Потрібні ТІЛЬКИ батончики, без пляшок та капсул",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "running",
+      "component_class": "protein_carbohydrate_food",
+      "product_form": "bars",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 9,
+      "general_count": 0,
+      "relaxed_count": 2,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE89450",
+          "title": "Набір «Fitly мікс» — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Категорія товарів: у наборі саме Спортивне харчування та батончики (без сторонніх речей).",
+            "Форма продукту: зручний формат — батончики, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE11659",
+          "title": "Набір «Тиждень бігуна»",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Категорія товарів: у наборі саме Спортивне харчування та батончики (без сторонніх речей).",
+            "Форма продукту: зручний формат — батончики, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "Nabir_1129",
+          "title": "Набір «Енергетичний перекус Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Категорія товарів: у наборі саме Спортивне харчування та батончики (без сторонніх речей).",
+            "Форма продукту: зручний формат — батончики, легко брати із собою."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "CRITICAL_FAIL_DECEPTIVE_EXPLANATION"
+      ],
+      "flaws": [
+        "НЕПРАВДИВЕ ПОЯСНЕННЯ У КАРТЦІ: Двигун стверджує 'у наборі саме Спортивне харчування та батончики (без сторонніх речей)', але набір [RE89450] «Набір «Fitly мікс» — абонемент на 3 місяці» містить 3-місячний абонемент у клуб або велику банку порошку.",
+        "НЕПРАВДИВЕ ПОЯСНЕННЯ У КАРТЦІ: Двигун стверджує 'у наборі саме Спортивне харчування та батончики (без сторонніх речей)', але набір [Nabir_1129] «Набір «Енергетичний перекус Race Expert Club» — абонемент на 3 місяці» містить 3-місячний абонемент у клуб або велику банку порошку."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-020",
+    "name": "Daily commuter pocket bars 1300 UAH",
+    "category": "Sweet Bars",
+    "persona": "Активний містянин",
+    "intent": "Зручні кишенькові батончики на щодень до 1300 грн",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "running",
+      "product_form": "bars",
+      "max_price_uah": 1300,
+      "use_timing": "daily_use",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "no_match",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 0,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [
+        {
+          "sku": "RE11019",
+          "title": "Набір «Щоденний комфорт Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1500
+        },
+        {
+          "sku": "RE11490",
+          "title": "Набір «LipoBar Мікс»",
+          "price_uah": 1500
+        },
+        {
+          "sku": "RE11788",
+          "title": "Набір «LipoBar Мікс Race Expert Club» — абонемент на 3 месяца",
+          "price_uah": 1500
+        }
+      ],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "WARN",
+      "defect_codes": [
+        "WARN_BUDGET_FLOOR_POISONING"
+      ],
+      "flaws": [
+        "ОТРУЄННЯ БЮДЖЕТНОГО ЯКОРЯ: При бюджеті 1300 грн система рекомендує як найдешевшу альтернативу нехарчовий набір ['RE11019'] (Anabolic Mass 1кг або капсули грибів), оскільки вони помилково позначені найдешевшими 'снеками' (1149/1215 грн)."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-021",
+    "name": "Busy runner meal replacement shake after training",
+    "category": "Meal Shakes",
+    "persona": "Зайнятий бігун",
+    "intent": "Не встигає поїсти після вечірнього бігу, шукає повноцінний напій Napiy",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "running",
+      "product_form": "liquid",
+      "use_timing": "before_or_after_training",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "no_exact_match",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 11,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "ZERO_RESULTS_UNEXPECTED"
+      ],
+      "flaws": [
+        "Повна відсутність результатів (0 товарів, 0 near-miss, 0 floor-anchor) для валідного запиту."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-022",
+    "name": "Cyclist meal replacement drinks touring",
+    "category": "Meal Shakes",
+    "persona": "Веломандрівник",
+    "intent": "Шукає рідку розумну їжу в дорогу у форматі рідини",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "cycling",
+      "product_form": "liquid",
+      "use_timing": "daily_use",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "no_exact_match",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 3,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "ZERO_RESULTS_UNEXPECTED"
+      ],
+      "flaws": [
+        "Повна відсутність результатів (0 товарів, 0 near-miss, 0 floor-anchor) для валідного запиту."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-023",
+    "name": "Hiker ready-to-drink meal shakes food_or_meal",
+    "category": "Meal Shakes",
+    "persona": "Піший турист",
+    "intent": "Шукає формат їжі smart-food / напої Napiy для стоянок",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "product_form": "food_or_meal",
+      "use_timing": "before_or_after_training",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 11,
+      "general_count": 5,
+      "relaxed_count": 4,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою.",
+            "Час прийому: розраховано на вживання до або після тренування для підзарядки."
+          ]
+        },
+        {
+          "sku": "RE89329",
+          "title": "Набір «Набір м'ясних снеків М'яско ToGo Фруктово-гострий Race Expert Club» — абонемент на 3 месяца",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою.",
+            "Час прийому: розраховано на вживання до або після тренування для підзарядки."
+          ]
+        },
+        {
+          "sku": "RE89328",
+          "title": "Набір «Набір м'ясних снеків М'яско ToGo Солодко-пікантний Race Expert Club» — абонемент на 3 месяца",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою.",
+            "Час прийому: розраховано на вживання до або після тренування для підзарядки."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-024",
+    "name": "Office worker daily meal replacement drink",
+    "category": "Meal Shakes",
+    "persona": "Офісний працівник",
+    "intent": "Здоровий обід у шейкері замість фастфуду на роботі",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "running",
+      "product_form": "liquid",
+      "use_timing": "daily_use",
+      "max_price_uah": 1500,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "no_exact_match",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 11,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "ZERO_RESULTS_UNEXPECTED"
+      ],
+      "flaws": [
+        "Повна відсутність результатів (0 товарів, 0 near-miss, 0 floor-anchor) для валідного запиту."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-025",
+    "name": "Runner meal shake no club membership",
+    "category": "Meal Shakes",
+    "persona": "Бігун-індивідуал",
+    "intent": "Шукає смарт-фуд напої Napiy без клубної картки",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "running",
+      "product_form": "liquid",
+      "membership": "no",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "no_exact_match",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 7,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "ZERO_RESULTS_UNEXPECTED"
+      ],
+      "flaws": [
+        "Повна відсутність результатів (0 товарів, 0 near-miss, 0 floor-anchor) для валідного запиту."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-026",
+    "name": "Cyclist meal shakes with 3-mo club membership",
+    "category": "Meal Shakes",
+    "persona": "Велосипедист-ентузіаст",
+    "intent": "Хоче набір 'Розумна їжа' разом з абонементом у клуб",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "cycling",
+      "product_form": "liquid",
+      "membership": "yes",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "no_exact_match",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 1,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "ZERO_RESULTS_UNEXPECTED"
+      ],
+      "flaws": [
+        "Повна відсутність результатів (0 товарів, 0 near-miss, 0 floor-anchor) для валідного запиту."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-027",
+    "name": "Hiker quick liquid nutrition 1300 UAH",
+    "category": "Meal Shakes",
+    "persona": "Хайкер на вихідні",
+    "intent": "Шукає набір рідкого перекусу до 1300 грн (наприклад, Мандрівний смаколик 1249 грн)",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "product_form": "liquid",
+      "max_price_uah": 1300,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 1,
+      "general_count": 0,
+      "relaxed_count": 0,
+      "returned_count": 1,
+      "results": [
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — рідкі шоти, легко брати із собою.",
+            "Бюджет: 1249 ₴ — укладається в ліміт 1300 ₴ (запас 51 ₴)."
+          ]
+        }
+      ],
+      "near_miss_results": [
+        {
+          "sku": "RE11557",
+          "title": "Набір «Розумна їжа Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1500
+        },
+        {
+          "sku": "RE89418",
+          "title": "Набір м'ясних снеків (соєвий соус) Race Expert Club — абонемент на 3 місяці",
+          "price_uah": 1500
+        },
+        {
+          "sku": "RE89416",
+          "title": "Набір м'ясних снеків (мед, гірчиця) Race Expert Club — абонемент на 3 місяці",
+          "price_uah": 1500
+        }
+      ],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-028",
+    "name": "Runner meal replacement shakes 1600 UAH",
+    "category": "Meal Shakes",
+    "persona": "Марафонець на дієті",
+    "intent": "Шукає поживні рідкі коктейлі до 1600 грн",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "running",
+      "product_form": "liquid",
+      "max_price_uah": 1600,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "no_exact_match",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 11,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "ZERO_RESULTS_UNEXPECTED"
+      ],
+      "flaws": [
+        "Повна відсутність результатів (0 товарів, 0 near-miss, 0 floor-anchor) для валідного запиту."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-029",
+    "name": "Budget buyer meal shakes under 900 UAH",
+    "category": "Meal Shakes",
+    "persona": "Студент на підготовці",
+    "intent": "Шукає недорогий смарт-напій до 900 грн",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "running",
+      "product_form": "liquid",
+      "max_price_uah": 900,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "no_match",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 0,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "ZERO_RESULTS_UNEXPECTED"
+      ],
+      "flaws": [
+        "Повна відсутність результатів (0 товарів, 0 near-miss, 0 floor-anchor) для валідного запиту."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-030",
+    "name": "High budget buyer meal shake kit 2500 UAH",
+    "category": "Meal Shakes",
+    "persona": "Підприємець-бігун",
+    "intent": "Готовий придбати запас смарт-фуду на 2500 грн",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "running",
+      "product_form": "liquid",
+      "max_price_uah": 2500,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "no_exact_match",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 11,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "ZERO_RESULTS_UNEXPECTED"
+      ],
+      "flaws": [
+        "Повна відсутність результатів (0 товарів, 0 near-miss, 0 floor-anchor) для валідного запиту."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-031",
+    "name": "Athlete meal shake before_or_after uk locale",
+    "category": "Meal Shakes",
+    "persona": "Спортсмен любитель",
+    "intent": "Рідке харчування до або після тренування",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "running",
+      "product_form": "liquid",
+      "use_timing": "before_or_after_training",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "no_exact_match",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 11,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "ZERO_RESULTS_UNEXPECTED"
+      ],
+      "flaws": [
+        "Повна відсутність результатів (0 товарів, 0 near-miss, 0 floor-anchor) для валідного запиту."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-032",
+    "name": "Athlete meal shake before_or_after ru locale",
+    "category": "Meal Shakes",
+    "persona": "Спортсмен любитель",
+    "intent": "Жидкое питание до или после тренировки",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "running",
+      "product_form": "liquid",
+      "use_timing": "before_or_after_training",
+      "locale": "ru"
+    },
+    "execution": {
+      "status": "no_exact_match",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 11,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "ZERO_RESULTS_UNEXPECTED"
+      ],
+      "flaws": [
+        "Повна відсутність результатів (0 товарів, 0 near-miss, 0 floor-anchor) для валідного запиту."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-033",
+    "name": "Multi-sport athlete meal shake component class",
+    "category": "Meal Shakes",
+    "persona": "Спортивний ентузіаст",
+    "intent": "Вибір класу protein_carbohydrate_food у форматі рідини",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "cycling",
+      "component_class": "protein_carbohydrate_food",
+      "product_form": "liquid",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "no_exact_match",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 3,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "ZERO_RESULTS_UNEXPECTED"
+      ],
+      "flaws": [
+        "Повна відсутність результатів (0 товарів, 0 near-miss, 0 floor-anchor) для валідного запиту."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-034",
+    "name": "Backpacker meal shake hiking 1400 UAH",
+    "category": "Meal Shakes",
+    "persona": "Легкохід у Карпатах",
+    "intent": "Шукає набір смарт-фуду та сублімованих ягід до 1400 грн",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "product_form": "food_or_meal",
+      "max_price_uah": 1400,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 2,
+      "general_count": 0,
+      "relaxed_count": 0,
+      "returned_count": 2,
+      "results": [
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою.",
+            "Бюджет: 1249 ₴ — укладається в ліміт 1400 ₴ (запас 151 ₴)."
+          ]
+        },
+        {
+          "sku": "RE11721",
+          "title": "Набір «Сублімований мікс Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1389,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою.",
+            "Бюджет: 1389 ₴ — точно відповідає вашому бюджетному очікуванню."
+          ]
+        }
+      ],
+      "near_miss_results": [
+        {
+          "sku": "RE89329",
+          "title": "Набір «Набір м'ясних снеків М'яско ToGo Фруктово-гострий Race Expert Club» — абонемент на 3 месяца",
+          "price_uah": 1500
+        },
+        {
+          "sku": "RE89328",
+          "title": "Набір «Набір м'ясних снеків М'яско ToGo Солодко-пікантний Race Expert Club» — абонемент на 3 месяца",
+          "price_uah": 1500
+        },
+        {
+          "sku": "RE89327",
+          "title": "«Набір м'ясних снеків М'яско ToGo «Класика з цитрусом», 8 шт»",
+          "price_uah": 1500
+        }
+      ],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-035",
+    "name": "Commuter liquid meal shake daily use",
+    "category": "Meal Shakes",
+    "persona": "Активний водій/бігун",
+    "intent": "Харчування в авто/дорозі на щодень",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "running",
+      "product_form": "liquid",
+      "use_timing": "daily_use",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "no_exact_match",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 11,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "ZERO_RESULTS_UNEXPECTED"
+      ],
+      "flaws": [
+        "Повна відсутність результатів (0 товарів, 0 near-miss, 0 floor-anchor) для валідного запиту."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-036",
+    "name": "Hiker savory chicken chips RyabChick hiking",
+    "category": "Savory Meat Jerky",
+    "persona": "Гірський турист",
+    "intent": "Шукає солоні сушені м'ясні снеки (РябChick) замість солодких батончиків",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 20,
+      "general_count": 0,
+      "relaxed_count": 0,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Склад: сертифікована спортивна продукція з перевіреною сумісністю."
+          ]
+        },
+        {
+          "sku": "RE11721",
+          "title": "Набір «Сублімований мікс Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1389,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Склад: сертифікована спортивна продукція з перевіреною сумісністю."
+          ]
+        },
+        {
+          "sku": "RE89418",
+          "title": "Набір м'ясних снеків (соєвий соус) Race Expert Club — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Склад: сертифікована спортивна продукція з перевіреною сумісністю."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-037",
+    "name": "Cyclist savory dried meat Myasko ToGo long ride",
+    "category": "Savory Meat Jerky",
+    "persona": "Бреветчик 200 км",
+    "intent": "Потрібне в'ялене м'ясо М'яско ToGo для сольового та білкового балансу на дистанції",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "cycling",
+      "product_form": "food_or_meal",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "no_exact_match",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 3,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "ZERO_RESULTS_UNEXPECTED"
+      ],
+      "flaws": [
+        "Повна відсутність результатів (0 товарів, 0 near-miss, 0 floor-anchor) для валідного запиту."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-038",
+    "name": "Runner savory jerky after run",
+    "category": "Savory Meat Jerky",
+    "persona": "Трейловий ультрабігун",
+    "intent": "Не переносить солодке після 4 годин бігу, шукає солоне курча чи яловичину",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "running",
+      "product_form": "food_or_meal",
+      "use_timing": "before_or_after_training",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "no_exact_match",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 11,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "ZERO_RESULTS_UNEXPECTED"
+      ],
+      "flaws": [
+        "Повна відсутність результатів (0 товарів, 0 near-miss, 0 floor-anchor) для валідного запиту."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-039",
+    "name": "Savory meat jerky without club membership",
+    "category": "Savory Meat Jerky",
+    "persona": "Покупець снеків",
+    "intent": "Хоче купити набір в'яленого м'яса (8 шт) БЕЗ клубного абонемента",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "product_form": "food_or_meal",
+      "membership": "no",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 3,
+      "general_count": 2,
+      "relaxed_count": 0,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE89327",
+          "title": "«Набір м'ясних снеків М'яско ToGo «Класика з цитрусом», 8 шт»",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE89324",
+          "title": "«Набір м'ясних снеків М'яско ToGo «Курка та индейка», 8 шт»",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE89330",
+          "title": "«Набір м'ясних снеків М'яско ToGo «Цитрус та Азія», 8 шт»",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-040",
+    "name": "Savory meat jerky with club subscription",
+    "category": "Savory Meat Jerky",
+    "persona": "Постійний клієнт",
+    "intent": "Хоче великий бокс РябChick або М'яско ToGo з клубним абонементом",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "membership": "yes",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 15,
+      "general_count": 0,
+      "relaxed_count": 0,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Склад: сертифікована спортивна продукція з перевіреною сумісністю."
+          ]
+        },
+        {
+          "sku": "RE11721",
+          "title": "Набір «Сублімований мікс Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1389,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Склад: сертифікована спортивна продукція з перевіреною сумісністю."
+          ]
+        },
+        {
+          "sku": "RE89418",
+          "title": "Набір м'ясних снеків (соєвий соус) Race Expert Club — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Склад: сертифікована спортивна продукція з перевіреною сумісністю."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-041",
+    "name": "Hiker savory meat jerky 1500 UAH",
+    "category": "Savory Meat Jerky",
+    "persona": "Карпатський мандрівник",
+    "intent": "М'ясний раціон на похід вартістю до 1500 грн",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "product_form": "food_or_meal",
+      "max_price_uah": 1500,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 12,
+      "general_count": 7,
+      "relaxed_count": 1,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою.",
+            "Бюджет: 1249 ₴ — укладається в ліміт 1500 ₴ (запас 251 ₴)."
+          ]
+        },
+        {
+          "sku": "RE11721",
+          "title": "Набір «Сублімований мікс Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1389,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою.",
+            "Бюджет: 1389 ₴ — укладається в ліміт 1500 ₴ (запас 111 ₴)."
+          ]
+        },
+        {
+          "sku": "RE89329",
+          "title": "Набір «Набір м'ясних снеків М'яско ToGo Фруктово-гострий Race Expert Club» — абонемент на 3 месяца",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою.",
+            "Бюджет: 1500 ₴ — точно відповідає вашому бюджетному очікуванню."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-042",
+    "name": "Cyclist non-sweet protein meat snacks",
+    "category": "Savory Meat Jerky",
+    "persona": "Гревел-байкер",
+    "intent": "Вимагає несолодкий білковий перекус, ненавидить шоколад",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "cycling",
+      "product_form": "food_or_meal",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "no_exact_match",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 3,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "ZERO_RESULTS_UNEXPECTED"
+      ],
+      "flaws": [
+        "Повна відсутність результатів (0 товарів, 0 near-miss, 0 floor-anchor) для валідного запиту."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-043",
+    "name": "Trail runner salty meat snacks",
+    "category": "Savory Meat Jerky",
+    "persona": "Трейловий бігун Чорногора",
+    "intent": "Потрібні солоні снеки для відновлення солей на ходу",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "running",
+      "product_form": "food_or_meal",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "no_exact_match",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 11,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "ZERO_RESULTS_UNEXPECTED"
+      ],
+      "flaws": [
+        "Повна відсутність результатів (0 товарів, 0 near-miss, 0 floor-anchor) для валідного запиту."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-044",
+    "name": "Hiker chicken jerky RyabChick soy sauce",
+    "category": "Savory Meat Jerky",
+    "persona": "Любитель курки",
+    "intent": "Шукає саме курячі сушені слайси в соєвому соусі (RE89418)",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 20,
+      "general_count": 0,
+      "relaxed_count": 0,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Склад: сертифікована спортивна продукція з перевіреною сумісністю."
+          ]
+        },
+        {
+          "sku": "RE11721",
+          "title": "Набір «Сублімований мікс Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1389,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Склад: сертифікована спортивна продукція з перевіреною сумісністю."
+          ]
+        },
+        {
+          "sku": "RE89418",
+          "title": "Набір м'ясних снеків (соєвий соус) Race Expert Club — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Склад: сертифікована спортивна продукція з перевіреною сумісністю."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-045",
+    "name": "Hiker honey mustard meat snacks RyabChick",
+    "category": "Savory Meat Jerky",
+    "persona": "Любитель пікантного",
+    "intent": "Шукає сушену курку медово-гірчичну (RE89416)",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 20,
+      "general_count": 0,
+      "relaxed_count": 0,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Склад: сертифікована спортивна продукція з перевіреною сумісністю."
+          ]
+        },
+        {
+          "sku": "RE11721",
+          "title": "Набір «Сублімований мікс Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1389,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Склад: сертифікована спортивна продукція з перевіреною сумісністю."
+          ]
+        },
+        {
+          "sku": "RE89418",
+          "title": "Набір м'ясних снеків (соєвий соус) Race Expert Club — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Склад: сертифікована спортивна продукція з перевіреною сумісністю."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-046",
+    "name": "Hiker pork dried meat Myasko ToGo",
+    "category": "Savory Meat Jerky",
+    "persona": "Шанувальник свинини",
+    "intent": "Шукає ситне в'ялене м'ясо свинини (RE89301)",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "product_form": "food_or_meal",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 12,
+      "general_count": 7,
+      "relaxed_count": 1,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE11721",
+          "title": "Набір «Сублімований мікс Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1389,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE89329",
+          "title": "Набір «Набір м'ясних снеків М'яско ToGo Фруктово-гострий Race Expert Club» — абонемент на 3 месяца",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-047",
+    "name": "Cyclist citrus dried meat Myasko ToGo",
+    "category": "Savory Meat Jerky",
+    "persona": "Шосейний гонщик",
+    "intent": "Шукає в'ялене м'ясо з цитрусовим акцентом (RE89327)",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "cycling",
+      "product_form": "food_or_meal",
+      "membership": "no",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "no_exact_match",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 2,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "ZERO_RESULTS_UNEXPECTED"
+      ],
+      "flaws": [
+        "Повна відсутність результатів (0 товарів, 0 near-miss, 0 floor-anchor) для валідного запиту."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-048",
+    "name": "Runner standalone 8-pack meat jerky no membership",
+    "category": "Savory Meat Jerky",
+    "persona": "Бігун вихідного дня",
+    "intent": "Хоче купити набір снеків 8 шт без підписки (RE89324, RE89326, RE89327)",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "running",
+      "product_form": "food_or_meal",
+      "membership": "no",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "no_exact_match",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 7,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "ZERO_RESULTS_UNEXPECTED"
+      ],
+      "flaws": [
+        "Повна відсутність результатів (0 товарів, 0 near-miss, 0 floor-anchor) для валідного запиту."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-049",
+    "name": "Buyer meat jerky low budget 1000 UAH",
+    "category": "Savory Meat Jerky",
+    "persona": "Студент на дієті",
+    "intent": "Шукає м'ясні снеки до 1000 грн (перевірка порогу цін)",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "product_form": "food_or_meal",
+      "max_price_uah": 1000,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "no_match",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 0,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249
+        }
+      ],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "WARN",
+      "defect_codes": [
+        "WARN_BUDGET_BELOW_MINIMUM"
+      ],
+      "flaws": [
+        "Бюджет 1000 грн нижчий за мінімальну ціну харчових наборів у каталозі (1149 грн). Спрацював no_match."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-050",
+    "name": "Buyer meat jerky high budget 2200 UAH",
+    "category": "Savory Meat Jerky",
+    "persona": "Забезпечений турист",
+    "intent": "Хоче великий запас м'ясних снеків на 2200 грн",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "product_form": "food_or_meal",
+      "max_price_uah": 2200,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 12,
+      "general_count": 7,
+      "relaxed_count": 1,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою.",
+            "Бюджет: 1249 ₴ — укладається в ліміт 2200 ₴ (запас 951 ₴)."
+          ]
+        },
+        {
+          "sku": "RE11721",
+          "title": "Набір «Сублімований мікс Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1389,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою.",
+            "Бюджет: 1389 ₴ — укладається в ліміт 2200 ₴ (запас 811 ₴)."
+          ]
+        },
+        {
+          "sku": "RE89329",
+          "title": "Набір «Набір м'ясних снеків М'яско ToGo Фруктово-гострий Race Expert Club» — абонемент на 3 месяца",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою.",
+            "Бюджет: 1500 ₴ — укладається в ліміт 2200 ₴ (запас 700 ₴)."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "WARN",
+      "defect_codes": [
+        "WARN_HIGH_BUDGET_CATALOG_CEILING"
+      ],
+      "flaws": [
+        "СТЕЛЯ КАТАЛОГУ: Покупець готовий сплатити 2200 грн, але найдорожчий набір у каталозі коштує 1500 грн. Магазин втрачає чек на преміум/bulk наборах."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-051",
+    "name": "Hiker savory snacks food_or_meal generic",
+    "category": "Savory Meat Jerky",
+    "persona": "Піший мандрівник",
+    "intent": "Готова їжа та м'ясні снеки для маршруту",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "product_form": "food_or_meal",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 12,
+      "general_count": 7,
+      "relaxed_count": 1,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE11721",
+          "title": "Набір «Сублімований мікс Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1389,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE89329",
+          "title": "Набір «Набір м'ясних снеків М'яско ToGo Фруктово-гострий Race Expert Club» — абонемент на 3 месяца",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-052",
+    "name": "Cyclist savory snacks food_or_meal generic",
+    "category": "Savory Meat Jerky",
+    "persona": "Байкпакер",
+    "intent": "Снеки в підсідельну сумку на велопохід",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "cycling",
+      "product_form": "food_or_meal",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "no_exact_match",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 3,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "ZERO_RESULTS_UNEXPECTED"
+      ],
+      "flaws": [
+        "Повна відсутність результатів (0 товарів, 0 near-miss, 0 floor-anchor) для валідного запиту."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-053",
+    "name": "Runner savory snacks food_or_meal no membership",
+    "category": "Savory Meat Jerky",
+    "persona": "Трейловий атлет",
+    "intent": "М'ясні снеки без абонемента в клуб",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "running",
+      "product_form": "food_or_meal",
+      "membership": "no",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "no_exact_match",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 7,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "ZERO_RESULTS_UNEXPECTED"
+      ],
+      "flaws": [
+        "Повна відсутність результатів (0 товарів, 0 near-miss, 0 floor-anchor) для валідного запиту."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-054",
+    "name": "Hiker savory meat snacks daily use",
+    "category": "Savory Meat Jerky",
+    "persona": "Офісний працівник/турист",
+    "intent": "Здоровий білковий солоний перекус щодня",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "product_form": "food_or_meal",
+      "use_timing": "daily_use",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 12,
+      "general_count": 7,
+      "relaxed_count": 1,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою.",
+            "Час прийому: розраховано на вживання протягом дня для стабільного тонусу."
+          ]
+        },
+        {
+          "sku": "RE11721",
+          "title": "Набір «Сублімований мікс Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1389,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою.",
+            "Час прийому: розраховано на вживання протягом дня для стабільного тонусу."
+          ]
+        },
+        {
+          "sku": "RE89329",
+          "title": "Набір «Набір м'ясних снеків М'яско ToGo Фруктово-гострий Race Expert Club» — абонемент на 3 месяца",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою.",
+            "Час прийому: розраховано на вживання протягом дня для стабільного тонусу."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-055",
+    "name": "Cyclist savory jerky before after training",
+    "category": "Savory Meat Jerky",
+    "persona": "Кроскантрійник",
+    "intent": "Перекус після важкого підйому",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "cycling",
+      "product_form": "food_or_meal",
+      "use_timing": "before_or_after_training",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "no_exact_match",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 3,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "ZERO_RESULTS_UNEXPECTED"
+      ],
+      "flaws": [
+        "Повна відсутність результатів (0 товарів, 0 near-miss, 0 floor-anchor) для валідного запиту."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-056",
+    "name": "Walking savory meat jerky test",
+    "category": "Savory Meat Jerky",
+    "persona": "Нордичний ходок",
+    "intent": "Шукає снеки для скандинавської ходьби (перевірка activity='other')",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "other",
+      "product_form": "food_or_meal",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 12,
+      "general_count": 8,
+      "relaxed_count": 18,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE11721",
+          "title": "Набір «Сублімований мікс Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1389,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE89329",
+          "title": "Набір «Набір м'ясних снеків М'яско ToGo Фруктово-гострий Race Expert Club» — абонемент на 3 месяца",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-057",
+    "name": "Keto athlete salty chicken jerky",
+    "category": "Savory Meat Jerky",
+    "persona": "Кето-спортсмен",
+    "intent": "Суворе обмеження цукру: шукає 0% цукру солоне м'ясо",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 20,
+      "general_count": 0,
+      "relaxed_count": 0,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Склад: сертифікована спортивна продукція з перевіреною сумісністю."
+          ]
+        },
+        {
+          "sku": "RE11721",
+          "title": "Набір «Сублімований мікс Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1389,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Склад: сертифікована спортивна продукція з перевіреною сумісністю."
+          ]
+        },
+        {
+          "sku": "RE89418",
+          "title": "Набір м'ясних снеків (соєвий соус) Race Expert Club — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Склад: сертифікована спортивна продукція з перевіреною сумісністю."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-058",
+    "name": "Hiker tasting meat pack Myasko ToGo",
+    "category": "Savory Meat Jerky",
+    "persona": "Гурман-турист",
+    "intent": "Шукає дегустаційний набір з різними смаками (RE89325)",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "product_form": "food_or_meal",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 12,
+      "general_count": 7,
+      "relaxed_count": 1,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE11721",
+          "title": "Набір «Сублімований мікс Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1389,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE89329",
+          "title": "Набір «Набір м'ясних снеків М'яско ToGo Фруктово-гострий Race Expert Club» — абонемент на 3 месяца",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-059",
+    "name": "Buyer meat jerky ukrainian locale",
+    "category": "Savory Meat Jerky",
+    "persona": "Український покупець",
+    "intent": "Пояснення українською мовою для м'ясних снеків",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "product_form": "food_or_meal",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 12,
+      "general_count": 7,
+      "relaxed_count": 1,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE11721",
+          "title": "Набір «Сублімований мікс Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1389,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE89329",
+          "title": "Набір «Набір м'ясних снеків М'яско ToGo Фруктово-гострий Race Expert Club» — абонемент на 3 месяца",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-060",
+    "name": "Buyer meat jerky russian locale",
+    "category": "Savory Meat Jerky",
+    "persona": "Покупатель",
+    "intent": "Пояснения на русском языке для мясных снеков",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "product_form": "food_or_meal",
+      "locale": "ru"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 12,
+      "general_count": 7,
+      "relaxed_count": 1,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249,
+          "score": null,
+          "why_suitable": [
+            "Целевое назначение: специально скомплектован под задачу «Перекусы и питание».",
+            "Форма продукта: удобный формат — готовая еда и снеки, легко брать с собой."
+          ]
+        },
+        {
+          "sku": "RE11721",
+          "title": "Набір «Сублімований мікс Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1389,
+          "score": null,
+          "why_suitable": [
+            "Целевое назначение: специально скомплектован под задачу «Перекусы и питание».",
+            "Форма продукта: удобный формат — готовая еда и снеки, легко брать с собой."
+          ]
+        },
+        {
+          "sku": "RE89329",
+          "title": "Набір «Набір м'ясних снеків М'яско ToGo Фруктово-гострий Race Expert Club» — абонемент на 3 месяца",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Целевое назначение: специально скомплектован под задачу «Перекусы и питание».",
+            "Форма продукта: удобный формат — готовая еда и снеки, легко брать с собой."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-061",
+    "name": "Hiker explicitly selecting component_class dehydrated_meal",
+    "category": "Camping Rations",
+    "persona": "Гірський турист",
+    "intent": "Клікає у вікторині 'Сублімована туристична їжа' (dehydrated_meal) — критичний тест на 0 результатів!",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "component_class": "dehydrated_meal",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "no_match",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 0,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "CRITICAL_FAIL_DEHYDRATED_MEAL_DEAD_END"
+      ],
+      "flaws": [
+        "ГЛУХИЙ КУТ СУБЛІМАТІВ: Покупець обрав офіційну опцію 'Сублімована туристична їжа' (dehydrated_meal), але двигун видав 0 результатів. Причина: всі 3 набори ЇDLO в quiz-set-audit.json помилково розмічені як 'protein_carbohydrate_food'."
+      ],
+      "qa_notes": [
+        "Покупець похідної їжі отримує порожню сторінку, хоча магазин продає пакети ЇDLO."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-062",
+    "name": "Camper selecting dehydrated_meal budget 1500 UAH",
+    "category": "Camping Rations",
+    "persona": "Кемпер Карпати",
+    "intent": "Шукає сублімовані туристичні страви на 1500 грн",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "component_class": "dehydrated_meal",
+      "max_price_uah": 1500,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "no_match",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 0,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "CRITICAL_FAIL_DEHYDRATED_MEAL_DEAD_END"
+      ],
+      "flaws": [
+        "ГЛУХИЙ КУТ СУБЛІМАТІВ: Покупець обрав офіційну опцію 'Сублімована туристична їжа' (dehydrated_meal), але двигун видав 0 результатів. Причина: всі 3 набори ЇDLO в quiz-set-audit.json помилково розмічені як 'protein_carbohydrate_food'."
+      ],
+      "qa_notes": [
+        "Покупець похідної їжі отримує порожню сторінку, хоча магазин продає пакети ЇDLO."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-063",
+    "name": "Backpacker selecting dehydrated_meal membership no",
+    "category": "Camping Rations",
+    "persona": "Автономний турист",
+    "intent": "Шукає сублімати без клубного членства",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "component_class": "dehydrated_meal",
+      "membership": "no",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "no_match",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 0,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "CRITICAL_FAIL_DEHYDRATED_MEAL_DEAD_END"
+      ],
+      "flaws": [
+        "ГЛУХИЙ КУТ СУБЛІМАТІВ: Покупець обрав офіційну опцію 'Сублімована туристична їжа' (dehydrated_meal), але двигун видав 0 результатів. Причина: всі 3 набори ЇDLO в quiz-set-audit.json помилково розмічені як 'protein_carbohydrate_food'."
+      ],
+      "qa_notes": [
+        "Покупець похідної їжі отримує порожню сторінку, хоча магазин продає пакети ЇDLO."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-064",
+    "name": "Mountain trekker selecting dehydrated_meal for hiking",
+    "category": "Camping Rations",
+    "persona": "Трекер Кавказ/Татри",
+    "intent": "Потрібні готові сублімовані обіди (каша, картопля, макарони)",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "component_class": "dehydrated_meal",
+      "locale": "ru"
+    },
+    "execution": {
+      "status": "no_match",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 0,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "CRITICAL_FAIL_DEHYDRATED_MEAL_DEAD_END"
+      ],
+      "flaws": [
+        "ГЛУХИЙ КУТ СУБЛІМАТІВ: Покупець обрав офіційну опцію 'Сублімована туристична їжа' (dehydrated_meal), але двигун видав 0 результатів. Причина: всі 3 набори ЇDLO в quiz-set-audit.json помилково розмічені як 'protein_carbohydrate_food'."
+      ],
+      "qa_notes": [
+        "Покупець похідної їжі отримує порожню сторінку, хоча магазин продає пакети ЇDLO."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-065",
+    "name": "Bikepacker selecting dehydrated_meal cycling",
+    "category": "Camping Rations",
+    "persona": "Велотурист автономник",
+    "intent": "Шукає сублімати для приготування окропом у велопоході",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "cycling",
+      "component_class": "dehydrated_meal",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "no_match",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 0,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "CRITICAL_FAIL_DEHYDRATED_MEAL_DEAD_END"
+      ],
+      "flaws": [
+        "ГЛУХИЙ КУТ СУБЛІМАТІВ: Покупець обрав офіційну опцію 'Сублімована туристична їжа' (dehydrated_meal), але двигун видав 0 результатів. Причина: всі 3 набори ЇDLO в quiz-set-audit.json помилково розмічені як 'protein_carbohydrate_food'."
+      ],
+      "qa_notes": [
+        "Покупець похідної їжі отримує порожню сторінку, хоча магазин продає пакети ЇDLO."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-066",
+    "name": "Hiker wanting IDLO 2.0 without membership",
+    "category": "Camping Rations",
+    "persona": "Похідник соло",
+    "intent": "Шукає чистий набір їжі ЇDLO 2.0 (RE11494) без клубного абонемента",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "component_class": "protein_carbohydrate_food",
+      "product_form": "food_or_meal",
+      "membership": "no",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 3,
+      "general_count": 2,
+      "relaxed_count": 0,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE89327",
+          "title": "«Набір м'ясних снеків М'яско ToGo «Класика з цитрусом», 8 шт»",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Категорія товарів: у наборі саме Спортивне харчування та батончики (без сторонніх речей).",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE89324",
+          "title": "«Набір м'ясних снеків М'яско ToGo «Курка та индейка», 8 шт»",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Категорія товарів: у наборі саме Спортивне харчування та батончики (без сторонніх речей).",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE89330",
+          "title": "«Набір м'ясних снеків М'яско ToGo «Цитрус та Азія», 8 шт»",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Категорія товарів: у наборі саме Спортивне харчування та батончики (без сторонніх речей).",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-067",
+    "name": "Hiker wanting IDLO with club subscription",
+    "category": "Camping Rations",
+    "persona": "Регулярний мандрівник",
+    "intent": "Шукає набір ЇDLO з бонусною підпискою на клуб (RE11495)",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "component_class": "protein_carbohydrate_food",
+      "product_form": "food_or_meal",
+      "membership": "yes",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 9,
+      "general_count": 5,
+      "relaxed_count": 1,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Категорія товарів: у наборі саме Спортивне харчування та батончики (без сторонніх речей).",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE11721",
+          "title": "Набір «Сублімований мікс Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1389,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Категорія товарів: у наборі саме Спортивне харчування та батончики (без сторонніх речей).",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE89329",
+          "title": "Набір «Набір м'ясних снеків М'яско ToGo Фруктово-гострий Race Expert Club» — абонемент на 3 месяца",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Категорія товарів: у наборі саме Спортивне харчування та батончики (без сторонніх речей).",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "CRITICAL_FAIL_DECEPTIVE_EXPLANATION"
+      ],
+      "flaws": [
+        "НЕПРАВДИВЕ ПОЯСНЕННЯ У КАРТЦІ: Двигун стверджує 'у наборі саме Спортивне харчування та батончики (без сторонніх речей)', але набір [RE11695] «Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці» містить 3-місячний абонемент у клуб або велику банку порошку.",
+        "НЕПРАВДИВЕ ПОЯСНЕННЯ У КАРТЦІ: Двигун стверджує 'у наборі саме Спортивне харчування та батончики (без сторонніх речей)', але набір [RE11721] «Набір «Сублімований мікс Race Expert Club» — абонемент на 3 місяці» містить 3-місячний абонемент у клуб або велику банку порошку.",
+        "НЕПРАВДИВЕ ПОЯСНЕННЯ У КАРТЦІ: Двигун стверджує 'у наборі саме Спортивне харчування та батончики (без сторонніх речей)', але набір [RE89329] «Набір «Набір м'ясних снеків М'яско ToGo Фруктово-гострий Race Expert Club» — абонемент на 3 месяца» містить 3-місячний абонемент у клуб або велику банку порошку."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-068",
+    "name": "Backpacker camp meals low budget 1000 UAH",
+    "category": "Camping Rations",
+    "persona": "Студент турист",
+    "intent": "Шукає похідну їжу до 1000 грн (перевірка floor anchor)",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "product_form": "food_or_meal",
+      "max_price_uah": 1000,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "no_match",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 0,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249
+        }
+      ],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "WARN",
+      "defect_codes": [
+        "WARN_BUDGET_BELOW_MINIMUM"
+      ],
+      "flaws": [
+        "Бюджет 1000 грн нижчий за мінімальну ціну харчових наборів у каталозі (1149 грн). Спрацював no_match."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-069",
+    "name": "Camper camp meals 1600 UAH",
+    "category": "Camping Rations",
+    "persona": "Сім'я в кемпінгу",
+    "intent": "Готовий туристичний раціон на вихідні до 1600 грн",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "product_form": "food_or_meal",
+      "max_price_uah": 1600,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 12,
+      "general_count": 7,
+      "relaxed_count": 1,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою.",
+            "Бюджет: 1249 ₴ — укладається в ліміт 1600 ₴ (запас 351 ₴)."
+          ]
+        },
+        {
+          "sku": "RE11721",
+          "title": "Набір «Сублімований мікс Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1389,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою.",
+            "Бюджет: 1389 ₴ — укладається в ліміт 1600 ₴ (запас 211 ₴)."
+          ]
+        },
+        {
+          "sku": "RE89329",
+          "title": "Набір «Набір м'ясних снеків М'яско ToGo Фруктово-гострий Race Expert Club» — абонемент на 3 месяца",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою.",
+            "Бюджет: 1500 ₴ — укладається в ліміт 1600 ₴ (запас 100 ₴)."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-070",
+    "name": "Expedition leader camp meals high budget 3000 UAH",
+    "category": "Camping Rations",
+    "persona": "Керівник експедиції",
+    "intent": "Шукає великий об'єм туристичного харчування на 3000 грн",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "product_form": "food_or_meal",
+      "max_price_uah": 3000,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 12,
+      "general_count": 7,
+      "relaxed_count": 1,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою.",
+            "Бюджет: 1249 ₴ — укладається в ліміт 3000 ₴ (запас 1751 ₴)."
+          ]
+        },
+        {
+          "sku": "RE11721",
+          "title": "Набір «Сублімований мікс Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1389,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою.",
+            "Бюджет: 1389 ₴ — укладається в ліміт 3000 ₴ (запас 1611 ₴)."
+          ]
+        },
+        {
+          "sku": "RE89329",
+          "title": "Набір «Набір м'ясних снеків М'яско ToGo Фруктово-гострий Race Expert Club» — абонемент на 3 месяца",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою.",
+            "Бюджет: 1500 ₴ — укладається в ліміт 3000 ₴ (запас 1500 ₴)."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "WARN",
+      "defect_codes": [
+        "WARN_HIGH_BUDGET_CATALOG_CEILING"
+      ],
+      "flaws": [
+        "СТЕЛЯ КАТАЛОГУ: Покупець готовий сплатити 3000 грн, але найдорожчий набір у каталозі коштує 1500 грн. Магазин втрачає чек на преміум/bulk наборах."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-071",
+    "name": "Hiker sublimated fruits and ice cream RE11721",
+    "category": "Camping Rations",
+    "persona": "Любитель десертів на вершині",
+    "intent": "Шукає сублімовані фрукти та морозиво (RE11721)",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "product_form": "food_or_meal",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 12,
+      "general_count": 7,
+      "relaxed_count": 1,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE11721",
+          "title": "Набір «Сублімований мікс Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1389,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE89329",
+          "title": "Набір «Набір м'ясних снеків М'яско ToGo Фруктово-гострий Race Expert Club» — абонемент на 3 месяца",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-072",
+    "name": "Hiker IDLO 3.0 turkey jerky and polenta RE88977",
+    "category": "Camping Rations",
+    "persona": "Мандрівник Карпатами",
+    "intent": "Шукає суміш в'яленого м'яса та поленти (RE88977)",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "product_form": "food_or_meal",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 12,
+      "general_count": 7,
+      "relaxed_count": 1,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE11721",
+          "title": "Набір «Сублімований мікс Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1389,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE89329",
+          "title": "Набір «Набір м'ясних снеків М'яско ToGo Фруктово-гострий Race Expert Club» — абонемент на 3 месяца",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-073",
+    "name": "Camper camping food during training trail",
+    "category": "Camping Rations",
+    "persona": "Трейловий турист",
+    "intent": "Їжа під час трекінгу на ходу",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "product_form": "food_or_meal",
+      "use_timing": "during_training",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "no_exact_match",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 20,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "ZERO_RESULTS_UNEXPECTED"
+      ],
+      "flaws": [
+        "Повна відсутність результатів (0 товарів, 0 near-miss, 0 floor-anchor) для валідного запиту."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-074",
+    "name": "Camper camping food daily use camp",
+    "category": "Camping Rations",
+    "persona": "Мешканець базового табору",
+    "intent": "Їжа для базового табору протягом дня",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "product_form": "food_or_meal",
+      "use_timing": "daily_use",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 12,
+      "general_count": 7,
+      "relaxed_count": 1,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою.",
+            "Час прийому: розраховано на вживання протягом дня для стабільного тонусу."
+          ]
+        },
+        {
+          "sku": "RE11721",
+          "title": "Набір «Сублімований мікс Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1389,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою.",
+            "Час прийому: розраховано на вживання протягом дня для стабільного тонусу."
+          ]
+        },
+        {
+          "sku": "RE89329",
+          "title": "Набір «Набір м'ясних снеків М'яско ToGo Фруктово-гострий Race Expert Club» — абонемент на 3 месяца",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою.",
+            "Час прийому: розраховано на вживання протягом дня для стабільного тонусу."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-075",
+    "name": "Hiker food_or_meal generic camping",
+    "category": "Camping Rations",
+    "persona": "Піший мандрівник",
+    "intent": "Харчування для походів у форматі готової їжі",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "product_form": "food_or_meal",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 12,
+      "general_count": 7,
+      "relaxed_count": 1,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE11721",
+          "title": "Набір «Сублімований мікс Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1389,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE89329",
+          "title": "Набір «Набір м'ясних снеків М'яско ToGo Фруктово-гострий Race Expert Club» — абонемент на 3 месяца",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-076",
+    "name": "Hiker food_or_meal camping membership no",
+    "category": "Camping Rations",
+    "persona": "Турист без підписок",
+    "intent": "Харчування для походів без абонементів",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "product_form": "food_or_meal",
+      "membership": "no",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 3,
+      "general_count": 2,
+      "relaxed_count": 0,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE89327",
+          "title": "«Набір м'ясних снеків М'яско ToGo «Класика з цитрусом», 8 шт»",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE89324",
+          "title": "«Набір м'ясних снеків М'яско ToGo «Курка та индейка», 8 шт»",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE89330",
+          "title": "«Набір м'ясних снеків М'яско ToGo «Цитрус та Азія», 8 шт»",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-077",
+    "name": "Mountain hiker IDLO ukrainian locale",
+    "category": "Camping Rations",
+    "persona": "Український альпініст",
+    "intent": "Опис та склад набору ЇDLO українською мовою",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "product_form": "food_or_meal",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 12,
+      "general_count": 7,
+      "relaxed_count": 1,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE11721",
+          "title": "Набір «Сублімований мікс Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1389,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE89329",
+          "title": "Набір «Набір м'ясних снеків М'яско ToGo Фруктово-гострий Race Expert Club» — абонемент на 3 месяца",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-078",
+    "name": "Mountain hiker IDLO russian locale",
+    "category": "Camping Rations",
+    "persona": "Альпинист",
+    "intent": "Описание и состав походной еды на русском языке",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "product_form": "food_or_meal",
+      "locale": "ru"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 12,
+      "general_count": 7,
+      "relaxed_count": 1,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249,
+          "score": null,
+          "why_suitable": [
+            "Целевое назначение: специально скомплектован под задачу «Перекусы и питание».",
+            "Форма продукта: удобный формат — готовая еда и снеки, легко брать с собой."
+          ]
+        },
+        {
+          "sku": "RE11721",
+          "title": "Набір «Сублімований мікс Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1389,
+          "score": null,
+          "why_suitable": [
+            "Целевое назначение: специально скомплектован под задачу «Перекусы и питание».",
+            "Форма продукта: удобный формат — готовая еда и снеки, легко брать с собой."
+          ]
+        },
+        {
+          "sku": "RE89329",
+          "title": "Набір «Набір м'ясних снеків М'яско ToGo Фруктово-гострий Race Expert Club» — абонемент на 3 месяца",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Целевое назначение: специально скомплектован под задачу «Перекусы и питание».",
+            "Форма продукта: удобный формат — готовая еда и снеки, легко брать с собой."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-079",
+    "name": "Multi-day bikepacker camp food 1500 UAH",
+    "category": "Camping Rations",
+    "persona": "Веломандрівник",
+    "intent": "Сублімована їжа для пальника на веломаршруті",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "cycling",
+      "product_form": "food_or_meal",
+      "max_price_uah": 1500,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "no_exact_match",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 3,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "ZERO_RESULTS_UNEXPECTED"
+      ],
+      "flaws": [
+        "Повна відсутність результатів (0 товарів, 0 near-miss, 0 floor-anchor) для валідного запиту."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-080",
+    "name": "Solo trekker camping rations no gear leak",
+    "category": "Camping Rations",
+    "persona": "Легкохід ультралайт",
+    "intent": "Вимагає виключно пакети з їжею, ніяких рушників чи гантелей",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "component_class": "protein_carbohydrate_food",
+      "product_form": "food_or_meal",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 12,
+      "general_count": 7,
+      "relaxed_count": 1,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Категорія товарів: у наборі саме Спортивне харчування та батончики (без сторонніх речей).",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE11721",
+          "title": "Набір «Сублімований мікс Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1389,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Категорія товарів: у наборі саме Спортивне харчування та батончики (без сторонніх речей).",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE89329",
+          "title": "Набір «Набір м'ясних снеків М'яско ToGo Фруктово-гострий Race Expert Club» — абонемент на 3 месяца",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Категорія товарів: у наборі саме Спортивне харчування та батончики (без сторонніх речей).",
+            "Форма продукту: зручний формат — готова їжа та снеки, легко брати із собою."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "CRITICAL_FAIL_DECEPTIVE_EXPLANATION"
+      ],
+      "flaws": [
+        "НЕПРАВДИВЕ ПОЯСНЕННЯ У КАРТЦІ: Двигун стверджує 'у наборі саме Спортивне харчування та батончики (без сторонніх речей)', але набір [RE11695] «Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці» містить 3-місячний абонемент у клуб або велику банку порошку.",
+        "НЕПРАВДИВЕ ПОЯСНЕННЯ У КАРТЦІ: Двигун стверджує 'у наборі саме Спортивне харчування та батончики (без сторонніх речей)', але набір [RE11721] «Набір «Сублімований мікс Race Expert Club» — абонемент на 3 місяці» містить 3-місячний абонемент у клуб або велику банку порошку.",
+        "НЕПРАВДИВЕ ПОЯСНЕННЯ У КАРТЦІ: Двигун стверджує 'у наборі саме Спортивне харчування та батончики (без сторонніх речей)', але набір [RE89329] «Набір «Набір м'ясних снеків М'яско ToGo Фруктово-гострий Race Expert Club» — абонемент на 3 месяца» містить 3-місячний абонемент у клуб або велику банку порошку."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-081",
+    "name": "Gym athlete post-workout food activity fitness crash test",
+    "category": "Fitness Food",
+    "persona": "Атлет у тренажерному залі",
+    "intent": "Шукає протеїнові перекуси з вибором активності 'fitness' (тест валідатора!)",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "fitness",
+      "max_price_uah": 1500,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "VALIDATOR_EXCEPTION",
+      "error_type": "DraftMatchError",
+      "error_message": "activity is not supported for the selected need."
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "CRITICAL_FAIL_VALIDATOR_CRASH"
+      ],
+      "flaws": [
+        "КРИТИЧНИЙ ЗБІЙ ВАЛІДАТОРА: Запит завершився падінням з помилкою DraftMatchError: 'activity is not supported for the selected need.'. Причина: активність 'fitness' відсутня в списку дозволених для food, хоча в каталозі є десятки протеїнових батончиків для залу."
+      ],
+      "qa_notes": [
+        "Користувач отримав системну помилку замість товарної видачі."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-082",
+    "name": "Fitness enthusiast protein bars activity fitness_gym crash test",
+    "category": "Fitness Food",
+    "persona": "Відвідувач фітнес-клубу",
+    "intent": "Шукає батончики, вибираючи активність 'fitness_gym' (тест валідатора!)",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "fitness_gym",
+      "product_form": "bars",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "VALIDATOR_EXCEPTION",
+      "error_type": "DraftMatchError",
+      "error_message": "activity is not supported for the selected need."
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "CRITICAL_FAIL_VALIDATOR_CRASH"
+      ],
+      "flaws": [
+        "КРИТИЧНИЙ ЗБІЙ ВАЛІДАТОРА: Запит завершився падінням з помилкою DraftMatchError: 'activity is not supported for the selected need.'. Причина: активність 'fitness_gym' відсутня в списку дозволених для food, хоча в каталозі є десятки протеїнових батончиків для залу."
+      ],
+      "qa_notes": [
+        "Користувач отримав системну помилку замість товарної видачі."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-083",
+    "name": "Crossfit athlete energy food activity strength_training crash test",
+    "category": "Fitness Food",
+    "persona": "Кросфітер",
+    "intent": "Шукає їжу для тренувань, вибираючи 'strength_training' (тест валідатора!)",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "strength_training",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "VALIDATOR_EXCEPTION",
+      "error_type": "DraftMatchError",
+      "error_message": "activity is not supported for the selected need."
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "CRITICAL_FAIL_VALIDATOR_CRASH"
+      ],
+      "flaws": [
+        "КРИТИЧНИЙ ЗБІЙ ВАЛІДАТОРА: Запит завершився падінням з помилкою DraftMatchError: 'activity is not supported for the selected need.'. Причина: активність 'strength_training' відсутня в списку дозволених для food, хоча в каталозі є десятки протеїнових батончиків для залу."
+      ],
+      "qa_notes": [
+        "Користувач отримав системну помилку замість товарної видачі."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-084",
+    "name": "Gym athlete protein bars using activity other",
+    "category": "Fitness Food",
+    "persona": "Силовий атлет",
+    "intent": "Оминає блокування активності, вибираючи activity='other'",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "other",
+      "product_form": "bars",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 15,
+      "general_count": 8,
+      "relaxed_count": 15,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE11632",
+          "title": "Набір «Розум і Сила»",
+          "price_uah": 1215,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE88934",
+          "title": "Набір «Регулярний зал Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1449,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE89450",
+          "title": "Набір «Fitly мікс» — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "CRITICAL_FAIL_NON_FOOD_LEAK"
+      ],
+      "flaws": [
+        "ВИТІК НЕХАРЧОВИХ ТОВАРІВ У СНЕКИ: Товар [RE11632] «Набір «Розум і Сила»» містить сторонні предмети: 60 капсул Mind Shi 4Mushroom + печиво (ноотропні грибні капсули).",
+        "ВИТІК НЕХАРЧОВИХ ТОВАРІВ У СНЕКИ: Товар [RE88934] «Набір «Регулярний зал Race Expert Club» — абонемент на 3 місяці» містить сторонні предмети: Банка креатину 500 г + шейкер + шкарпетки (силове харчування + одяг)."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-085",
+    "name": "Fitness enthusiast protein bars activity other no membership",
+    "category": "Fitness Food",
+    "persona": "Фітнес-дівчина",
+    "intent": "Шукає батончики без клубної картки через activity='other'",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "other",
+      "product_form": "bars",
+      "membership": "no",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 8,
+      "general_count": 3,
+      "relaxed_count": 5,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE11632",
+          "title": "Набір «Розум і Сила»",
+          "price_uah": 1215,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "RE11659",
+          "title": "Набір «Тиждень бігуна»",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою."
+          ]
+        },
+        {
+          "sku": "Nabir_1118",
+          "title": "Набір «Міцна основа 2.0»",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "CRITICAL_FAIL_NON_FOOD_LEAK"
+      ],
+      "flaws": [
+        "ВИТІК НЕХАРЧОВИХ ТОВАРІВ У СНЕКИ: Товар [RE11632] «Набір «Розум і Сила»» містить сторонні предмети: 60 капсул Mind Shi 4Mushroom + печиво (ноотропні грибні капсули)."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-086",
+    "name": "Bodybuilder snacks activity other component_class check",
+    "category": "Fitness Food",
+    "persona": "Бодібілдер",
+    "intent": "Шукає харчування через 'protein_carbohydrate_food' та activity='other'",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "other",
+      "component_class": "protein_carbohydrate_food",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 38,
+      "general_count": 0,
+      "relaxed_count": 0,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE11688",
+          "title": "Набір «Набір маси»",
+          "price_uah": 1149,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Категорія товарів: у наборі саме Спортивне харчування та батончики (без сторонніх речей)."
+          ]
+        },
+        {
+          "sku": "RE11632",
+          "title": "Набір «Розум і Сила»",
+          "price_uah": 1215,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Категорія товарів: у наборі саме Спортивне харчування та батончики (без сторонніх речей)."
+          ]
+        },
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Категорія товарів: у наборі саме Спортивне харчування та батончики (без сторонніх речей)."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "CRITICAL_FAIL_NON_FOOD_LEAK",
+        "CRITICAL_FAIL_DECEPTIVE_EXPLANATION"
+      ],
+      "flaws": [
+        "ВИТІК НЕХАРЧОВИХ ТОВАРІВ У СНЕКИ: Товар [RE11688] «Набір «Набір маси»» містить сторонні предмети: Банка Anabolic Mass 1 кг + Creatine 300 г (бодібілдинг/гейнер, не снеки).",
+        "ВИТІК НЕХАРЧОВИХ ТОВАРІВ У СНЕКИ: Товар [RE11632] «Набір «Розум і Сила»» містить сторонні предмети: 60 капсул Mind Shi 4Mushroom + печиво (ноотропні грибні капсули).",
+        "НЕПРАВДИВЕ ПОЯСНЕННЯ У КАРТЦІ: Двигун стверджує 'у наборі саме Спортивне харчування та батончики (без сторонніх речей)', але набір [RE11688] «Набір «Набір маси»» містить Банка Anabolic Mass 1 кг + Creatine 300 г (бодібілдинг/гейнер, не снеки).",
+        "НЕПРАВДИВЕ ПОЯСНЕННЯ У КАРТЦІ: Двигун стверджує 'у наборі саме Спортивне харчування та батончики (без сторонніх речей)', але набір [RE11632] «Набір «Розум і Сила»» містить 60 капсул Mind Shi 4Mushroom + печиво (ноотропні грибні капсули).",
+        "НЕПРАВДИВЕ ПОЯСНЕННЯ У КАРТЦІ: Двигун стверджує 'у наборі саме Спортивне харчування та батончики (без сторонніх речей)', але набір [RE11695] «Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці» містить 3-місячний абонемент у клуб або велику банку порошку."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-087",
+    "name": "Gym member protein snacks 1200 UAH activity other",
+    "category": "Fitness Food",
+    "persona": "Студент у залі",
+    "intent": "Шукає перекус до 1200 грн через activity='other'",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "other",
+      "max_price_uah": 1200,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 1,
+      "general_count": 0,
+      "relaxed_count": 0,
+      "returned_count": 1,
+      "results": [
+        {
+          "sku": "RE11688",
+          "title": "Набір «Набір маси»",
+          "price_uah": 1149,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Бюджет: 1149 ₴ — укладається в ліміт 1200 ₴ (запас 51 ₴)."
+          ]
+        }
+      ],
+      "near_miss_results": [
+        {
+          "sku": "RE11632",
+          "title": "Набір «Розум і Сила»",
+          "price_uah": 1215
+        },
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249
+        },
+        {
+          "sku": "RE11721",
+          "title": "Набір «Сублімований мікс Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1389
+        }
+      ],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "CRITICAL_FAIL_NON_FOOD_LEAK"
+      ],
+      "flaws": [
+        "ВИТІК НЕХАРЧОВИХ ТОВАРІВ У СНЕКИ: Товар [RE11688] «Набір «Набір маси»» містить сторонні предмети: Банка Anabolic Mass 1 кг + Creatine 300 г (бодібілдинг/гейнер, не снеки)."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-088",
+    "name": "Fitness girl diet bars 1500 UAH activity other",
+    "category": "Fitness Food",
+    "persona": "Дівчина на кардіо",
+    "intent": "Низькокалорійні батончики до 1500 грн через activity='other'",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "other",
+      "product_form": "bars",
+      "max_price_uah": 1500,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 15,
+      "general_count": 8,
+      "relaxed_count": 15,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE11632",
+          "title": "Набір «Розум і Сила»",
+          "price_uah": 1215,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою.",
+            "Бюджет: 1215 ₴ — укладається в ліміт 1500 ₴ (запас 285 ₴)."
+          ]
+        },
+        {
+          "sku": "RE88934",
+          "title": "Набір «Регулярний зал Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1449,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою.",
+            "Бюджет: 1449 ₴ — укладається в ліміт 1500 ₴ (запас 51 ₴)."
+          ]
+        },
+        {
+          "sku": "RE89450",
+          "title": "Набір «Fitly мікс» — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Форма продукту: зручний формат — батончики, легко брати із собою.",
+            "Бюджет: 1500 ₴ — точно відповідає вашому бюджетному очікуванню."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "CRITICAL_FAIL_NON_FOOD_LEAK"
+      ],
+      "flaws": [
+        "ВИТІК НЕХАРЧОВИХ ТОВАРІВ У СНЕКИ: Товар [RE11632] «Набір «Розум і Сила»» містить сторонні предмети: 60 капсул Mind Shi 4Mushroom + печиво (ноотропні грибні капсули).",
+        "ВИТІК НЕХАРЧОВИХ ТОВАРІВ У СНЕКИ: Товар [RE88934] «Набір «Регулярний зал Race Expert Club» — абонемент на 3 місяці» містить сторонні предмети: Банка креатину 500 г + шейкер + шкарпетки (силове харчування + одяг)."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-089",
+    "name": "Powerlifter post-gym food activity other before_or_after",
+    "category": "Fitness Food",
+    "persona": "Пауерліфтер",
+    "intent": "Їжа після важкого присідного дня",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "other",
+      "use_timing": "before_or_after_training",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 32,
+      "general_count": 0,
+      "relaxed_count": 6,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE11688",
+          "title": "Набір «Набір маси»",
+          "price_uah": 1149,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Час прийому: розраховано на вживання до або після тренування для підзарядки."
+          ]
+        },
+        {
+          "sku": "RE11632",
+          "title": "Набір «Розум і Сила»",
+          "price_uah": 1215,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Час прийому: розраховано на вживання до або після тренування для підзарядки."
+          ]
+        },
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Час прийому: розраховано на вживання до або після тренування для підзарядки."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "CRITICAL_FAIL_NON_FOOD_LEAK"
+      ],
+      "flaws": [
+        "ВИТІК НЕХАРЧОВИХ ТОВАРІВ У СНЕКИ: Товар [RE11688] «Набір «Набір маси»» містить сторонні предмети: Банка Anabolic Mass 1 кг + Creatine 300 г (бодібілдинг/гейнер, не снеки).",
+        "ВИТІК НЕХАРЧОВИХ ТОВАРІВ У СНЕКИ: Товар [RE11632] «Набір «Розум і Сила»» містить сторонні предмети: 60 капсул Mind Shi 4Mushroom + печиво (ноотропні грибні капсули)."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-090",
+    "name": "Fitness coach protein snacks daily use activity other",
+    "category": "Fitness Food",
+    "persona": "Тренер групових програм",
+    "intent": "Швидкий перекус між тренуваннями щодня",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "other",
+      "use_timing": "daily_use",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 24,
+      "general_count": 0,
+      "relaxed_count": 14,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Час прийому: розраховано на вживання протягом дня для стабільного тонусу."
+          ]
+        },
+        {
+          "sku": "RE11721",
+          "title": "Набір «Сублімований мікс Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1389,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Час прийому: розраховано на вживання протягом дня для стабільного тонусу."
+          ]
+        },
+        {
+          "sku": "RE89418",
+          "title": "Набір м'ясних снеків (соєвий соус) Race Expert Club — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Час прийому: розраховано на вживання протягом дня для стабільного тонусу."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "PASS",
+      "defect_codes": [
+        "NONE"
+      ],
+      "flaws": [],
+      "qa_notes": [
+        "Ідеальна відповідність: видано справжні харчові позиції, чесні пояснення, сумісні параметри бюджету та форми."
+      ]
+    }
+  },
+  {
+    "test_id": "FOOD-091",
+    "name": "Ultra-low budget student 400 UAH food request",
+    "category": "Budget & Integrity",
+    "persona": "Студент на мілині",
+    "intent": "Шукає хоч якісь батончики на 400 грн (тест floor_anchor на гейнер/гриби!)",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "running",
+      "max_price_uah": 400,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "floor_anchor",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 0,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": [
+        {
+          "sku": "RE89450",
+          "title": "Набір «Fitly мікс» — абонемент на 3 місяці",
+          "price_uah": 1500
+        },
+        {
+          "sku": "RE11659",
+          "title": "Набір «Тиждень бігуна»",
+          "price_uah": 1500
+        }
+      ]
+    },
+    "evaluation": {
+      "verdict": "WARN",
+      "defect_codes": [
+        "WARN_BUDGET_BELOW_MINIMUM"
+      ],
+      "flaws": [
+        "Бюджет 400 грн нижчий за мінімальну ціну харчових наборів у каталозі (1149 грн). Спрацював floor_anchor."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-092",
+    "name": "Low budget runner 600 UAH food request",
+    "category": "Budget & Integrity",
+    "persona": "Початківець у бігу",
+    "intent": "Шукає перекус до 600 грн (тест floor_anchor)",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "running",
+      "max_price_uah": 600,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "floor_anchor",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 0,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": [
+        {
+          "sku": "RE89450",
+          "title": "Набір «Fitly мікс» — абонемент на 3 місяці",
+          "price_uah": 1500
+        },
+        {
+          "sku": "RE11659",
+          "title": "Набір «Тиждень бігуна»",
+          "price_uah": 1500
+        }
+      ]
+    },
+    "evaluation": {
+      "verdict": "WARN",
+      "defect_codes": [
+        "WARN_BUDGET_BELOW_MINIMUM"
+      ],
+      "flaws": [
+        "Бюджет 600 грн нижчий за мінімальну ціну харчових наборів у каталозі (1149 грн). Спрацював floor_anchor."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-093",
+    "name": "Entry budget hiker 800 UAH food request",
+    "category": "Budget & Integrity",
+    "persona": "Турист-початківець",
+    "intent": "Шукає їжу в похід до 800 грн (тест near_miss на 1149 грн гейнер)",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "hiking",
+      "max_price_uah": 800,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "floor_anchor",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 0,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": [
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249
+        },
+        {
+          "sku": "RE11721",
+          "title": "Набір «Сублімований мікс Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1389
+        }
+      ]
+    },
+    "evaluation": {
+      "verdict": "WARN",
+      "defect_codes": [
+        "WARN_BUDGET_BELOW_MINIMUM"
+      ],
+      "flaws": [
+        "Бюджет 800 грн нижчий за мінімальну ціну харчових наборів у каталозі (1149 грн). Спрацював floor_anchor."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-094",
+    "name": "Tight budget cyclist 950 UAH food request",
+    "category": "Budget & Integrity",
+    "persona": "Велосипедист аматор",
+    "intent": "Шукає батончики до 950 грн (тест near_miss на RE11688 'Набір маси')",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "cycling",
+      "product_form": "bars",
+      "max_price_uah": 950,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "floor_anchor",
+      "exact_count": 0,
+      "general_count": 0,
+      "relaxed_count": 0,
+      "returned_count": 0,
+      "results": [],
+      "near_miss_results": [],
+      "floor_anchor_results": [
+        {
+          "sku": "RE89450",
+          "title": "Набір «Fitly мікс» — абонемент на 3 місяці",
+          "price_uah": 1500
+        },
+        {
+          "sku": "RE11659",
+          "title": "Набір «Тиждень бігуна»",
+          "price_uah": 1500
+        }
+      ]
+    },
+    "evaluation": {
+      "verdict": "WARN",
+      "defect_codes": [
+        "WARN_BUDGET_BELOW_MINIMUM"
+      ],
+      "flaws": [
+        "Бюджет 950 грн нижчий за мінімальну ціну харчових наборів у каталозі (1149 грн). Спрацював floor_anchor."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-095",
+    "name": "High budget corporate buyer 2000 UAH bulk snacks",
+    "category": "Budget & Integrity",
+    "persona": "Корпоративний менеджер",
+    "intent": "Замовляє бокс перекусів в офіс на 2000 грн (перевірка стелі каталогу)",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "running",
+      "max_price_uah": 2000,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 11,
+      "general_count": 0,
+      "relaxed_count": 0,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE89450",
+          "title": "Набір «Fitly мікс» — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Бюджет: 1500 ₴ — укладається в ліміт 2000 ₴ (запас 500 ₴)."
+          ]
+        },
+        {
+          "sku": "RE11659",
+          "title": "Набір «Тиждень бігуна»",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Бюджет: 1500 ₴ — укладається в ліміт 2000 ₴ (запас 500 ₴)."
+          ]
+        },
+        {
+          "sku": "Nabir_1129",
+          "title": "Набір «Енергетичний перекус Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Бюджет: 1500 ₴ — укладається в ліміт 2000 ₴ (запас 500 ₴)."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "WARN",
+      "defect_codes": [
+        "WARN_HIGH_BUDGET_CATALOG_CEILING"
+      ],
+      "flaws": [
+        "СТЕЛЯ КАТАЛОГУ: Покупець готовий сплатити 2000 грн, але найдорожчий набір у каталозі коштує 1500 грн. Магазин втрачає чек на преміум/bulk наборах."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-096",
+    "name": "High budget endurance athlete 2500 UAH food",
+    "category": "Budget & Integrity",
+    "persona": "Марафонець бізнесмен",
+    "intent": "Готовий сплатити 2500 грн за преміум раціон",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "running",
+      "max_price_uah": 2500,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 11,
+      "general_count": 0,
+      "relaxed_count": 0,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE89450",
+          "title": "Набір «Fitly мікс» — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Бюджет: 1500 ₴ — укладається в ліміт 2500 ₴ (запас 1000 ₴)."
+          ]
+        },
+        {
+          "sku": "RE11659",
+          "title": "Набір «Тиждень бігуна»",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Бюджет: 1500 ₴ — укладається в ліміт 2500 ₴ (запас 1000 ₴)."
+          ]
+        },
+        {
+          "sku": "Nabir_1129",
+          "title": "Набір «Енергетичний перекус Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Бюджет: 1500 ₴ — укладається в ліміт 2500 ₴ (запас 1000 ₴)."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "WARN",
+      "defect_codes": [
+        "WARN_HIGH_BUDGET_CATALOG_CEILING"
+      ],
+      "flaws": [
+        "СТЕЛЯ КАТАЛОГУ: Покупець готовий сплатити 2500 грн, але найдорожчий набір у каталозі коштує 1500 грн. Магазин втрачає чек на преміум/bulk наборах."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-097",
+    "name": "Maximum budget athlete 3500 UAH complete food supply",
+    "category": "Budget & Integrity",
+    "persona": "Учасник Ironman",
+    "intent": "Шукає максимальний запас на 3500 грн (каталог закінчується на 1500 грн)",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "cycling",
+      "max_price_uah": 3500,
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 3,
+      "general_count": 0,
+      "relaxed_count": 0,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE89450",
+          "title": "Набір «Fitly мікс» — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Бюджет: 1500 ₴ — укладається в ліміт 3500 ₴ (запас 2000 ₴)."
+          ]
+        },
+        {
+          "sku": "RE11659",
+          "title": "Набір «Тиждень бігуна»",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Бюджет: 1500 ₴ — укладається в ліміт 3500 ₴ (запас 2000 ₴)."
+          ]
+        },
+        {
+          "sku": "RE11660",
+          "title": "Набір «Марафонець»",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Бюджет: 1500 ₴ — укладається в ліміт 3500 ₴ (запас 2000 ₴)."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "CRITICAL_FAIL_NON_FOOD_LEAK",
+        "WARN_HIGH_BUDGET_CATALOG_CEILING"
+      ],
+      "flaws": [
+        "ВИТІК НЕХАРЧОВИХ ТОВАРІВ У СНЕКИ: Товар [RE11660] «Набір «Марафонець»» містить сторонні предмети: Банка креатину 300 г + 5 вуглеводних гелів (бодібілдерський креатин у бігу).",
+        "СТЕЛЯ КАТАЛОГУ: Покупець готовий сплатити 3500 грн, але найдорожчий набір у каталозі коштує 1500 грн. Магазин втрачає чек на преміум/bulk наборах."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-098",
+    "name": "Direct membership filter comparison test",
+    "category": "Budget & Integrity",
+    "persona": "Аналітик вікторини",
+    "intent": "Тестування чіткої роботи прапорця membership='yes' у категорії їжа",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "running",
+      "membership": "yes",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 4,
+      "general_count": 0,
+      "relaxed_count": 0,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE89450",
+          "title": "Набір «Fitly мікс» — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Склад: сертифікована спортивна продукція з перевіреною сумісністю."
+          ]
+        },
+        {
+          "sku": "Nabir_1129",
+          "title": "Набір «Енергетичний перекус Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Склад: сертифікована спортивна продукція з перевіреною сумісністю."
+          ]
+        },
+        {
+          "sku": "RE11019",
+          "title": "Набір «Щоденний комфорт Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Склад: сертифікована спортивна продукція з перевіреною сумісністю."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "CRITICAL_FAIL_NON_FOOD_LEAK"
+      ],
+      "flaws": [
+        "ВИТІК НЕХАРЧОВИХ ТОВАРІВ У СНЕКИ: Товар [RE11019] «Набір «Щоденний комфорт Race Expert Club» — абонемент на 3 місяці» містить сторонні предмети: Шкарпетки + шейкер + скляна пляшка + брелок (одяг та аксесуари)."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-099",
+    "name": "Deceptive explanation truthfulness test bez storonnih rechey",
+    "category": "Budget & Integrity",
+    "persona": "Вимогливий покупець",
+    "intent": "Перевірка твердження '(без сторонніх речей)' при рекомендації батончиків",
+    "request_payload": {
+      "goal_group": "food",
+      "activity": "running",
+      "component_class": "protein_carbohydrate_food",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 11,
+      "general_count": 0,
+      "relaxed_count": 0,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE89450",
+          "title": "Набір «Fitly мікс» — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Категорія товарів: у наборі саме Спортивне харчування та батончики (без сторонніх речей)."
+          ]
+        },
+        {
+          "sku": "RE11659",
+          "title": "Набір «Тиждень бігуна»",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Категорія товарів: у наборі саме Спортивне харчування та батончики (без сторонніх речей)."
+          ]
+        },
+        {
+          "sku": "Nabir_1129",
+          "title": "Набір «Енергетичний перекус Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Категорія товарів: у наборі саме Спортивне харчування та батончики (без сторонніх речей)."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "CRITICAL_FAIL_DECEPTIVE_EXPLANATION"
+      ],
+      "flaws": [
+        "НЕПРАВДИВЕ ПОЯСНЕННЯ У КАРТЦІ: Двигун стверджує 'у наборі саме Спортивне харчування та батончики (без сторонніх речей)', але набір [RE89450] «Набір «Fitly мікс» — абонемент на 3 місяці» містить 3-місячний абонемент у клуб або велику банку порошку.",
+        "НЕПРАВДИВЕ ПОЯСНЕННЯ У КАРТЦІ: Двигун стверджує 'у наборі саме Спортивне харчування та батончики (без сторонніх речей)', але набір [Nabir_1129] «Набір «Енергетичний перекус Race Expert Club» — абонемент на 3 місяці» містить 3-місячний абонемент у клуб або велику банку порошку."
+      ],
+      "qa_notes": []
+    }
+  },
+  {
+    "test_id": "FOOD-100",
+    "name": "Generic bare food request baseline audit",
+    "category": "Budget & Integrity",
+    "persona": "Звичайний покупець",
+    "intent": "Просто обрав 'Перекуси та харчування' без жодних додаткових фільтрів",
+    "request_payload": {
+      "goal_group": "food",
+      "locale": "uk"
+    },
+    "execution": {
+      "status": "matched",
+      "exact_count": 38,
+      "general_count": 0,
+      "relaxed_count": 0,
+      "returned_count": 3,
+      "results": [
+        {
+          "sku": "RE11688",
+          "title": "Набір «Набір маси»",
+          "price_uah": 1149,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Склад: сертифікована спортивна продукція з перевіреною сумісністю."
+          ]
+        },
+        {
+          "sku": "RE11632",
+          "title": "Набір «Розум і Сила»",
+          "price_uah": 1215,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Склад: сертифікована спортивна продукція з перевіреною сумісністю."
+          ]
+        },
+        {
+          "sku": "RE11695",
+          "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1249,
+          "score": null,
+          "why_suitable": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Перекуси та харчування».",
+            "Склад: сертифікована спортивна продукція з перевіреною сумісністю."
+          ]
+        }
+      ],
+      "near_miss_results": [],
+      "floor_anchor_results": []
+    },
+    "evaluation": {
+      "verdict": "FAIL",
+      "defect_codes": [
+        "CRITICAL_FAIL_NON_FOOD_LEAK"
+      ],
+      "flaws": [
+        "ВИТІК НЕХАРЧОВИХ ТОВАРІВ У СНЕКИ: Товар [RE11688] «Набір «Набір маси»» містить сторонні предмети: Банка Anabolic Mass 1 кг + Creatine 300 г (бодібілдинг/гейнер, не снеки).",
+        "ВИТІК НЕХАРЧОВИХ ТОВАРІВ У СНЕКИ: Товар [RE11632] «Набір «Розум і Сила»» містить сторонні предмети: 60 капсул Mind Shi 4Mushroom + печиво (ноотропні грибні капсули)."
+      ],
+      "qa_notes": []
+    }
+  }
+]

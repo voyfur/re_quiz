@@ -75,15 +75,15 @@ DISQUALIFIED_FROM_RECOVERY = {
 
 # The activity branch is deliberately different by the selected buyer need.
 ACTIVITY_OPTIONS_BY_GOAL = {
-    "running": set(),
-    "training": {"strength_training", "functional_training", "mind_body_mobility"},
-    "hydration": {"running", "cycling", "strength_training", "functional_training"},
-    "food": {"running", "cycling", "hiking"},
-    "recovery": {"running", "cycling", "strength_training", "functional_training", "mind_body_mobility"},
-    "outdoors": {"hiking", "walking", "cycling"},
-    "gear": {"running", "hiking", "cycling", "walking", "swimming"},
+    "running": {"running"},
+    "training": {"strength_training", "functional_training", "mind_body_mobility", "fitness_gym"},
+    "hydration": {"running", "cycling", "strength_training", "functional_training", "fitness_gym", "hiking", "walking", "triathlon"},
+    "food": {"running", "cycling", "hiking", "walking", "fitness_gym", "strength_training"},
+    "recovery": {"running", "cycling", "strength_training", "functional_training", "fitness_gym", "mind_body_mobility"},
+    "outdoors": {"hiking", "walking", "cycling", "running"},
+    "gear": {"running", "hiking", "cycling", "walking"},
     "daily": set(),
-    "gift": {"running", "cycling", "strength_training", "hiking", "swimming", "walking"},
+    "gift": {"running", "cycling", "strength_training", "fitness_gym", "hiking", "swimming", "walking"},
 }
 
 COMPONENT_CLASSES_BY_GOAL = {
@@ -112,13 +112,13 @@ USE_SCENARIOS_BY_GOAL = {
 
 USE_TIMINGS_BY_GOAL = {
     "running": {"before_or_after_training", "during_training", "daily_use"},
-    "training": {"before_or_after_training", "during_training", "daily_use", "evening_or_bedtime"},
+    "training": {"before_or_after_training", "during_training", "daily_use", "evening_or_bedtime", "during_day_tone"},
     "hydration": {"before_or_after_training", "during_training", "daily_use"},
     "food": {"before_or_after_training", "during_training", "daily_use"},
-    "recovery": {"before_or_after_training", "during_training", "daily_use", "evening_or_bedtime"},
-    "outdoors": {"during_training", "daily_use"},
-    "gear": {"during_training", "daily_use"},
-    "daily": {"daily_use", "evening_or_bedtime"},
+    "recovery": {"before_or_after_training", "during_training", "daily_use", "evening_or_bedtime", "during_day_tone"},
+    "outdoors": {"during_training", "daily_use", "evening_or_bedtime", "before_or_after_training"},
+    "gear": {"during_training", "daily_use", "before_or_after_training"},
+    "daily": {"daily_use", "evening_or_bedtime", "during_day_tone", "morning_start"},
     "gift": {"daily_use", "during_training", "evening_or_bedtime"},
 }
 
@@ -135,15 +135,15 @@ USE_PLACES_BY_GOAL = {
 }
 
 PRODUCT_FORMS_BY_GOAL = {
-    "running": {"bars", "gel", "food_or_meal", "liquid", "sticks"},
+    "running": {"bars", "gel", "food_or_meal", "liquid", "sticks", "capsules", "powder"},
     "training": {"bars", "capsules", "liquid", "powder", "softgels", "sticks", "tablets"},
-    "hydration": {"bars", "gel", "liquid", "sticks"},
+    "hydration": {"sticks", "tablets", "powder", "capsules", "liquid", "gel"},
     "food": {"bars", "food_or_meal", "gel", "liquid", "sticks"},
-    "recovery": {"capsules", "powder", "softgels", "sticks", "tablets"},
+    "recovery": {"capsules", "powder", "softgels", "sticks", "tablets", "bars"},
     "outdoors": {"bars", "food_or_meal", "gel", "liquid", "sticks"},
     "gear": set(),
-    "daily": {"capsules", "powder", "softgels", "tablets"},
-    "gift": {"apparel", "bars", "capsules", "food_or_meal", "gel", "liquid", "softgels", "sticks", "tablets"},
+    "daily": {"capsules", "powder", "softgels", "tablets", "bars"},
+    "gift": {"bars", "capsules", "liquid", "powder", "softgels", "sticks", "tablets", "food_or_meal"},
 }
 
 SIZE_GOALS = {"running", "outdoors", "gear", "gift"}
@@ -270,7 +270,13 @@ def _season_groups(record):
 def _soft_signals(record, key):
     evidence = record.get("matching_evidence", {})
     if key == "activity":
-        return set(evidence.get("seller_activity_groups", [])) | set(evidence.get("component_activity_groups", []))
+        acts = set(evidence.get("seller_activity_groups", [])) | set(evidence.get("component_activity_groups", []))
+        if "fitness_gym" in acts:
+            acts.add("strength_training")
+            acts.add("functional_training")
+        if "strength_training" in acts or "functional_training" in acts:
+            acts.add("fitness_gym")
+        return acts
     if key == "component_class":
         return set(evidence.get("component_classes", []))
     if key in ("use_scenario", "use_timing", "use_place"):
@@ -286,7 +292,7 @@ def _soft_signals(record, key):
             return scenarios
         if key == "use_timing":
             return values & {
-                "before_or_after_training", "during_training", "daily_use", "evening_or_bedtime",
+                "before_or_after_training", "during_training", "daily_use", "evening_or_bedtime", "during_day_tone", "morning_start"
             }
         if key == "use_place":
             return values & {"hiking_or_camping", "travel_or_road", "work_or_study"}
@@ -586,8 +592,15 @@ def _validate_request(catalog, request):
     size = request.get("shoe_size")
     if size in ("", "any"):
         size = None
-    elif isinstance(size, str) and size.isdecimal():
-        size = int(size)
+    elif isinstance(size, str):
+        if size.isdecimal():
+            size = int(size)
+        elif "-" in size or "–" in size:
+            parts = size.replace("–", "-").split("-")
+            try:
+                size = (int(parts[0]) + int(parts[1])) // 2
+            except (ValueError, IndexError):
+                pass
     if size is not None and (
         isinstance(size, bool) or not isinstance(size, int) or size < 1 or size > 70
     ):
@@ -944,9 +957,9 @@ def _build_why_suitable(record, fit, locale, validated, seller_families, compone
         if matched_cnames:
             cname = ", ".join(matched_cnames)
             if locale == "uk":
-                items.append(f"Категорія товарів: у наборі саме {cname} (без сторонніх речей).")
+                items.append(f"Категорія товарів: у наборі представлено {cname}.")
             else:
-                items.append(f"Категория товаров: в наборе именно {cname} (без посторонних позиций).")
+                items.append(f"Категория товаров: в наборе представлено {cname}.")
 
     req_form = validated.get("product_form")
     form_names = {

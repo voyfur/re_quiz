@@ -338,16 +338,16 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "running",
+              "general_lifestyle",
               "hiking",
-              "walking",
-              "general_lifestyle"
+              "running",
+              "walking"
             ],
             "component_name_activity_groups": [
-              "running",
+              "general_lifestyle",
               "hiking",
-              "walking",
-              "general_lifestyle"
+              "running",
+              "walking"
             ],
             "component_name_activity_cues": {},
             "catalog_tag_activity_groups": [
@@ -375,6 +375,7 @@
           ],
           "season_weather_status": "recorded_claim_or_tag",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -404,7 +405,8 @@
             "Независимая детализация компонентов неполная (0/1 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -736,16 +738,16 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "running",
+              "general_lifestyle",
               "hiking",
-              "walking",
-              "general_lifestyle"
+              "running",
+              "walking"
             ],
             "component_name_activity_groups": [
-              "running",
+              "general_lifestyle",
               "hiking",
-              "walking",
-              "general_lifestyle"
+              "running",
+              "walking"
             ],
             "component_name_activity_cues": {},
             "catalog_tag_activity_groups": [
@@ -773,6 +775,7 @@
           ],
           "season_weather_status": "recorded_claim_or_tag",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -802,7 +805,8 @@
             "Независимая детализация компонентов неполная (0/1 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -1134,16 +1138,16 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "running",
+              "general_lifestyle",
               "hiking",
-              "walking",
-              "general_lifestyle"
+              "running",
+              "walking"
             ],
             "component_name_activity_groups": [
-              "running",
+              "general_lifestyle",
               "hiking",
-              "walking",
-              "general_lifestyle"
+              "running",
+              "walking"
             ],
             "component_name_activity_cues": {},
             "catalog_tag_activity_groups": [
@@ -1171,6 +1175,7 @@
           ],
           "season_weather_status": "recorded_claim_or_tag",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -1200,7 +1205,8 @@
             "Независимая детализация компонентов неполная (0/1 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -1532,16 +1538,16 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "running",
+              "general_lifestyle",
               "hiking",
-              "walking",
-              "general_lifestyle"
+              "running",
+              "walking"
             ],
             "component_name_activity_groups": [
-              "running",
+              "general_lifestyle",
               "hiking",
-              "walking",
-              "general_lifestyle"
+              "running",
+              "walking"
             ],
             "component_name_activity_cues": {},
             "catalog_tag_activity_groups": [
@@ -1569,6 +1575,7 @@
           ],
           "season_weather_status": "recorded_claim_or_tag",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -1598,7 +1605,8 @@
             "Независимая детализация компонентов неполная (0/1 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -1915,15 +1923,15 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "running",
               "fitness_gym",
               "general_lifestyle",
+              "running",
               "walking"
             ],
             "component_name_activity_groups": [
-              "running",
               "fitness_gym",
               "general_lifestyle",
+              "running",
               "walking"
             ],
             "component_name_activity_cues": {},
@@ -1950,6 +1958,7 @@
           "season_weather_signals": [],
           "season_weather_status": "unknown_not_negative",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -1980,7 +1989,8 @@
             "Независимая детализация компонентов неполная (0/1 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -2281,15 +2291,15 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "running",
               "fitness_gym",
               "general_lifestyle",
+              "running",
               "walking"
             ],
             "component_name_activity_groups": [
-              "running",
               "fitness_gym",
               "general_lifestyle",
+              "running",
               "walking"
             ],
             "component_name_activity_cues": {},
@@ -2316,6 +2326,7 @@
           "season_weather_signals": [],
           "season_weather_status": "unknown_not_negative",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -2346,7 +2357,8 @@
             "Независимая детализация компонентов неполная (0/1 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -2646,15 +2658,15 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "running",
               "fitness_gym",
               "general_lifestyle",
+              "running",
               "walking"
             ],
             "component_name_activity_groups": [
-              "running",
               "fitness_gym",
               "general_lifestyle",
+              "running",
               "walking"
             ],
             "component_name_activity_cues": {},
@@ -2681,6 +2693,7 @@
           "season_weather_signals": [],
           "season_weather_status": "unknown_not_negative",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -2711,7 +2724,8 @@
             "Независимая детализация компонентов неполная (0/1 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -5027,15 +5041,15 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "running",
               "fitness_gym",
               "general_lifestyle",
+              "running",
               "walking"
             ],
             "component_name_activity_groups": [
-              "running",
               "fitness_gym",
               "general_lifestyle",
+              "running",
               "walking"
             ],
             "component_name_activity_cues": {},
@@ -5062,6 +5076,7 @@
           "season_weather_signals": [],
           "season_weather_status": "unknown_not_negative",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -5092,7 +5107,8 @@
             "Независимая детализация компонентов неполная (0/1 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -7767,16 +7783,16 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "running",
               "cycling",
-              "triathlon",
-              "fitness_gym"
+              "fitness_gym",
+              "running",
+              "triathlon"
             ],
             "component_name_activity_groups": [
-              "running",
               "cycling",
-              "triathlon",
-              "fitness_gym"
+              "fitness_gym",
+              "running",
+              "triathlon"
             ],
             "component_name_activity_cues": {},
             "catalog_tag_activity_groups": [
@@ -7807,6 +7823,7 @@
           "season_weather_signals": [],
           "season_weather_status": "unknown_not_negative",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -7821,8 +7838,8 @@
             "drivers"
           ],
           "use_contexts": [
-            "during_training",
-            "before_or_after_training"
+            "before_or_after_training",
+            "during_training"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [],
@@ -7835,7 +7852,8 @@
             "Независимая детализация компонентов неполная (0/3 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -10425,16 +10443,16 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "running",
               "cycling",
-              "triathlon",
-              "fitness_gym"
+              "fitness_gym",
+              "running",
+              "triathlon"
             ],
             "component_name_activity_groups": [
-              "running",
               "cycling",
-              "triathlon",
-              "fitness_gym"
+              "fitness_gym",
+              "running",
+              "triathlon"
             ],
             "component_name_activity_cues": {},
             "catalog_tag_activity_groups": [
@@ -10464,6 +10482,7 @@
           ],
           "season_weather_status": "recorded_claim_or_tag",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -10477,8 +10496,8 @@
             "athletes"
           ],
           "use_contexts": [
-            "during_training",
-            "before_or_after_training"
+            "before_or_after_training",
+            "during_training"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [],
@@ -10490,7 +10509,8 @@
             "Независимая детализация компонентов неполная (0/2 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -13878,14 +13898,14 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
+              "fitness_gym",
               "general_lifestyle",
-              "running",
-              "fitness_gym"
+              "running"
             ],
             "component_name_activity_groups": [
+              "fitness_gym",
               "general_lifestyle",
-              "running",
-              "fitness_gym"
+              "running"
             ],
             "component_name_activity_cues": {},
             "catalog_tag_activity_groups": [],
@@ -13923,9 +13943,9 @@
             "athletes"
           ],
           "use_contexts": [
-            "morning_start",
             "daily_use",
-            "during_training"
+            "during_training",
+            "morning_start"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [],
@@ -13938,7 +13958,8 @@
             "Независимая детализация компонентов неполная (0/5 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -13956,12 +13977,10 @@
           ],
           "candidate_tiers": {
             "seller_positioned": [
-              "general_daily_nutrition",
-              "hydration_electrolytes"
+              "general_daily_nutrition"
             ],
             "component_based": [
-              "general_daily_nutrition",
-              "hydration_electrolytes"
+              "general_daily_nutrition"
             ],
             "supplemental_page_copy_needs_manual_review": [
               "bone_joint_support_claim",
@@ -14820,18 +14839,18 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "running",
               "cycling",
-              "triathlon",
               "fitness_gym",
-              "general_lifestyle"
+              "general_lifestyle",
+              "running",
+              "triathlon"
             ],
             "component_name_activity_groups": [
-              "running",
               "cycling",
-              "triathlon",
               "fitness_gym",
-              "general_lifestyle"
+              "general_lifestyle",
+              "running",
+              "triathlon"
             ],
             "component_name_activity_cues": {},
             "catalog_tag_activity_groups": [
@@ -14874,6 +14893,7 @@
           ],
           "season_weather_status": "recorded_claim_or_tag",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -14891,8 +14911,8 @@
           ],
           "target_audience_claims": [],
           "use_contexts": [
-            "during_training",
-            "daily_use"
+            "daily_use",
+            "during_training"
           ],
           "known_conflicts_and_quality_flags": [
             "live_price_differs"
@@ -14905,7 +14925,8 @@
             "Независимая детализация компонентов неполная (0/4 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -16929,7 +16950,8 @@
             "Независимая детализация компонентов неполная (0/4 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -16946,15 +16968,9 @@
           ],
           "candidate_tiers": {
             "seller_positioned": [
-              "endurance_energy",
-              "foot_apparel_comfort",
-              "portable_food_snacks",
               "strength_muscle_training"
             ],
             "component_based": [
-              "endurance_energy",
-              "foot_apparel_comfort",
-              "portable_food_snacks",
               "strength_muscle_training"
             ],
             "supplemental_page_copy_needs_manual_review": [
@@ -19150,7 +19166,8 @@
             "Независимая детализация компонентов неполная (0/3 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -19169,13 +19186,9 @@
           ],
           "candidate_tiers": {
             "seller_positioned": [
-              "endurance_energy",
-              "portable_food_snacks",
               "strength_muscle_training"
             ],
             "component_based": [
-              "endurance_energy",
-              "portable_food_snacks",
               "strength_muscle_training"
             ],
             "supplemental_page_copy_needs_manual_review": [
@@ -21577,16 +21590,16 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "running",
               "fitness_gym",
               "general_lifestyle",
-              "hiking"
+              "hiking",
+              "running"
             ],
             "component_name_activity_groups": [
-              "running",
               "fitness_gym",
               "general_lifestyle",
-              "hiking"
+              "hiking",
+              "running"
             ],
             "component_name_activity_cues": {},
             "catalog_tag_activity_groups": [
@@ -21616,6 +21629,7 @@
           "season_weather_signals": [],
           "season_weather_status": "unknown_not_negative",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -21635,9 +21649,9 @@
             "athletes"
           ],
           "use_contexts": [
-            "during_training",
+            "before_or_after_training",
             "daily_use",
-            "before_or_after_training"
+            "during_training"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [],
@@ -21649,7 +21663,8 @@
             "Независимая детализация компонентов неполная (0/4 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -24980,7 +24995,8 @@
             "Независимая детализация компонентов неполная (0/4 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -24998,11 +25014,9 @@
           ],
           "candidate_tiers": {
             "seller_positioned": [
-              "hydration_electrolytes",
               "strength_muscle_training"
             ],
             "component_based": [
-              "hydration_electrolytes",
               "strength_muscle_training"
             ],
             "supplemental_page_copy_needs_manual_review": [
@@ -26647,7 +26661,8 @@
             "Независимая детализация компонентов неполная (0/5 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -26666,12 +26681,10 @@
           "candidate_tiers": {
             "seller_positioned": [
               "foot_apparel_comfort",
-              "hydration_electrolytes",
               "strength_muscle_training"
             ],
             "component_based": [
               "foot_apparel_comfort",
-              "hydration_electrolytes",
               "strength_muscle_training"
             ],
             "supplemental_page_copy_needs_manual_review": [
@@ -28867,13 +28880,13 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "running",
               "cycling",
+              "running",
               "triathlon"
             ],
             "component_name_activity_groups": [
-              "running",
               "cycling",
+              "running",
               "triathlon"
             ],
             "component_name_activity_cues": {},
@@ -28892,6 +28905,7 @@
             "gate_policy": "Recorded sport/activity mentions are relevance signals, not proof of exclusive compatibility. A hard activity exclusion requires a separately reviewed source fact; tags alone are never a negative filter."
           },
           "component_classes_from_listed_names": [
+            "hydration_items",
             "supplements_vitamins_minerals"
           ],
           "archived_page_component_titles": [
@@ -28907,6 +28921,7 @@
           ],
           "season_weather_status": "recorded_claim_or_tag",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -28922,8 +28937,8 @@
             "athletes"
           ],
           "use_contexts": [
-            "during_training",
-            "before_or_after_training"
+            "before_or_after_training",
+            "during_training"
           ],
           "known_conflicts_and_quality_flags": [
             "live_price_differs"
@@ -28937,6 +28952,9 @@
             "Независимая детализация компонентов неполная (0/2 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
+          ],
+          "product_forms": [
+            "tablets"
           ]
         },
         "matching_proposal": {
@@ -33558,7 +33576,8 @@
             "Независимая детализация компонентов неполная (0/2 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -33574,15 +33593,11 @@
           ],
           "candidate_tiers": {
             "seller_positioned": [
-              "endurance_energy",
               "general_daily_nutrition",
-              "portable_food_snacks",
               "strength_muscle_training"
             ],
             "component_based": [
-              "endurance_energy",
               "general_daily_nutrition",
-              "portable_food_snacks",
               "strength_muscle_training"
             ],
             "supplemental_page_copy_needs_manual_review": [
@@ -34902,13 +34917,13 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "running",
               "cycling",
+              "running",
               "triathlon"
             ],
             "component_name_activity_groups": [
-              "running",
               "cycling",
+              "running",
               "triathlon"
             ],
             "component_name_activity_cues": {},
@@ -34941,6 +34956,7 @@
           ],
           "season_weather_status": "recorded_claim_or_tag",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -34956,8 +34972,8 @@
             "athletes"
           ],
           "use_contexts": [
-            "during_training",
-            "before_or_after_training"
+            "before_or_after_training",
+            "during_training"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [],
@@ -34968,7 +34984,8 @@
             "Независимые спецификации, дозировки, аллергены и противопоказания не установлены для всех компонентов.",
             "Независимая детализация компонентов неполная (0/4 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -35531,8 +35548,9 @@
           "season_weather_signals": [],
           "season_weather_status": "unknown_not_negative",
           "race_formats": [
-            "race_or_event_preparation",
-            "marathon"
+            "half_marathon",
+            "marathon",
+            "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
           "size_sensitive_item_present": true,
@@ -35544,8 +35562,8 @@
           ],
           "target_audience_claims": [],
           "use_contexts": [
-            "during_training",
-            "before_or_after_training"
+            "before_or_after_training",
+            "during_training"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [],
@@ -35558,7 +35576,8 @@
             "Независимые спецификации, дозировки, аллергены и противопоказания не установлены для всех компонентов.",
             "Независимая детализация компонентов неполная (0/3 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -36021,6 +36040,7 @@
           "season_weather_signals": [],
           "season_weather_status": "unknown_not_negative",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -36054,7 +36074,8 @@
             "Независимые спецификации, дозировки, аллергены и противопоказания не установлены для всех компонентов.",
             "Независимая детализация компонентов неполная (0/4 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -37972,13 +37993,13 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "running",
               "cycling",
+              "running",
               "triathlon"
             ],
             "component_name_activity_groups": [
-              "running",
               "cycling",
+              "running",
               "triathlon"
             ],
             "component_name_activity_cues": {},
@@ -38009,6 +38030,7 @@
           "season_weather_signals": [],
           "season_weather_status": "unknown_not_negative",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -38022,8 +38044,8 @@
           ],
           "target_audience_claims": [],
           "use_contexts": [
-            "during_training",
-            "before_or_after_training"
+            "before_or_after_training",
+            "during_training"
           ],
           "known_conflicts_and_quality_flags": [
             "intro_list_mismatch"
@@ -38046,7 +38068,8 @@
             "Независимая детализация компонентов неполная (0/3 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "conflict_review_required",
@@ -48705,6 +48728,7 @@
             "gate_policy": "Recorded sport/activity mentions are relevance signals, not proof of exclusive compatibility. A hard activity exclusion requires a separately reviewed source fact; tags alone are never a negative filter."
           },
           "component_classes_from_listed_names": [
+            "dehydrated_meal",
             "protein_carbohydrate_food"
           ],
           "archived_page_component_titles": [
@@ -48740,6 +48764,9 @@
             "Независимая детализация компонентов неполная (0/6 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
+          ],
+          "product_forms": [
+            "food_or_meal"
           ]
         },
         "matching_proposal": {
@@ -50152,13 +50179,13 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "running",
               "fitness_gym",
+              "running",
               "walking"
             ],
             "component_name_activity_groups": [
-              "running",
               "fitness_gym",
+              "running",
               "walking"
             ],
             "component_name_activity_cues": {},
@@ -50184,6 +50211,7 @@
           "season_weather_signals": [],
           "season_weather_status": "unknown_not_negative",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -50216,7 +50244,8 @@
             "Независимая детализация компонентов неполная (0/1 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -50572,13 +50601,13 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "running",
               "fitness_gym",
+              "running",
               "walking"
             ],
             "component_name_activity_groups": [
-              "running",
               "fitness_gym",
+              "running",
               "walking"
             ],
             "component_name_activity_cues": {},
@@ -50606,6 +50635,7 @@
           "season_weather_signals": [],
           "season_weather_status": "unknown_not_negative",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -50638,7 +50668,8 @@
             "Независимая детализация компонентов неполная (0/2 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -50994,13 +51025,13 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "running",
               "fitness_gym",
+              "running",
               "walking"
             ],
             "component_name_activity_groups": [
-              "running",
               "fitness_gym",
+              "running",
               "walking"
             ],
             "component_name_activity_cues": {},
@@ -51028,6 +51059,7 @@
           "season_weather_signals": [],
           "season_weather_status": "unknown_not_negative",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -51060,7 +51092,8 @@
             "Независимая детализация компонентов неполная (0/2 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -51416,13 +51449,13 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "running",
               "fitness_gym",
+              "running",
               "walking"
             ],
             "component_name_activity_groups": [
-              "running",
               "fitness_gym",
+              "running",
               "walking"
             ],
             "component_name_activity_cues": {},
@@ -51450,6 +51483,7 @@
           "season_weather_signals": [],
           "season_weather_status": "unknown_not_negative",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -51482,7 +51516,8 @@
             "Независимая детализация компонентов неполная (0/2 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -51838,12 +51873,12 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "running",
-              "general_lifestyle"
+              "general_lifestyle",
+              "running"
             ],
             "component_name_activity_groups": [
-              "running",
-              "general_lifestyle"
+              "general_lifestyle",
+              "running"
             ],
             "component_name_activity_cues": {},
             "catalog_tag_activity_groups": [
@@ -51870,6 +51905,7 @@
           "season_weather_signals": [],
           "season_weather_status": "unknown_not_negative",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -51901,7 +51937,8 @@
             "Независимая детализация компонентов неполная (0/2 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -52257,12 +52294,12 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "running",
-              "general_lifestyle"
+              "general_lifestyle",
+              "running"
             ],
             "component_name_activity_groups": [
-              "running",
-              "general_lifestyle"
+              "general_lifestyle",
+              "running"
             ],
             "component_name_activity_cues": {},
             "catalog_tag_activity_groups": [
@@ -52289,6 +52326,7 @@
           "season_weather_signals": [],
           "season_weather_status": "unknown_not_negative",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -52320,7 +52358,8 @@
             "Независимая детализация компонентов неполная (0/2 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -52642,12 +52681,12 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "running",
-              "general_lifestyle"
+              "general_lifestyle",
+              "running"
             ],
             "component_name_activity_groups": [
-              "running",
-              "general_lifestyle"
+              "general_lifestyle",
+              "running"
             ],
             "component_name_activity_cues": {},
             "catalog_tag_activity_groups": [
@@ -52672,6 +52711,7 @@
           "season_weather_signals": [],
           "season_weather_status": "unknown_not_negative",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -52703,7 +52743,8 @@
             "Независимая детализация компонентов неполная (0/1 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -53665,7 +53706,8 @@
             "Независимая детализация компонентов неполная (0/5 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -53686,16 +53728,12 @@
           ],
           "candidate_tiers": {
             "seller_positioned": [
-              "endurance_energy",
               "foot_apparel_comfort",
-              "general_daily_nutrition",
-              "portable_food_snacks"
+              "general_daily_nutrition"
             ],
             "component_based": [
-              "endurance_energy",
               "foot_apparel_comfort",
-              "general_daily_nutrition",
-              "portable_food_snacks"
+              "general_daily_nutrition"
             ],
             "supplemental_page_copy_needs_manual_review": [
               "endurance_energy",
@@ -54167,6 +54205,7 @@
           "season_weather_signals": [],
           "season_weather_status": "unknown_not_negative",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -54199,7 +54238,8 @@
             "Независимые спецификации, дозировки, аллергены и противопоказания не установлены для всех компонентов.",
             "Независимая детализация компонентов неполная (0/5 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -54934,12 +54974,12 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "running",
-              "general_lifestyle"
+              "general_lifestyle",
+              "running"
             ],
             "component_name_activity_groups": [
-              "running",
-              "general_lifestyle"
+              "general_lifestyle",
+              "running"
             ],
             "component_name_activity_cues": {
               "running": [
@@ -54974,6 +55014,7 @@
           "season_weather_signals": [],
           "season_weather_status": "unknown_not_negative",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -55035,7 +55076,8 @@
             "Независимая детализация компонентов неполная (0/3 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "conflict_review_required",
@@ -55054,12 +55096,10 @@
           "candidate_tiers": {
             "seller_positioned": [
               "foot_apparel_comfort",
-              "hydration_electrolytes",
               "running_race_preparation"
             ],
             "component_based": [
               "foot_apparel_comfort",
-              "hydration_electrolytes",
               "running_race_preparation"
             ],
             "supplemental_page_copy_needs_manual_review": [
@@ -58859,12 +58899,12 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "running",
-              "general_lifestyle"
+              "general_lifestyle",
+              "running"
             ],
             "component_name_activity_groups": [
-              "running",
-              "general_lifestyle"
+              "general_lifestyle",
+              "running"
             ],
             "component_name_activity_cues": {},
             "catalog_tag_activity_groups": [
@@ -58900,6 +58940,7 @@
           ],
           "season_weather_status": "recorded_claim_or_tag",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -58929,7 +58970,8 @@
             "Независимая детализация компонентов неполная (0/5 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -61060,14 +61102,14 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
+              "general_lifestyle",
               "running",
-              "walking",
-              "general_lifestyle"
+              "walking"
             ],
             "component_name_activity_groups": [
+              "general_lifestyle",
               "running",
-              "walking",
-              "general_lifestyle"
+              "walking"
             ],
             "component_name_activity_cues": {},
             "catalog_tag_activity_groups": [],
@@ -61099,6 +61141,7 @@
           "season_weather_signals": [],
           "season_weather_status": "unknown_not_negative",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -61130,7 +61173,8 @@
             "Независимая детализация компонентов неполная (0/4 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -61849,14 +61893,14 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
+              "general_lifestyle",
               "running",
-              "walking",
-              "general_lifestyle"
+              "walking"
             ],
             "component_name_activity_groups": [
+              "general_lifestyle",
               "running",
-              "walking",
-              "general_lifestyle"
+              "walking"
             ],
             "component_name_activity_cues": {},
             "catalog_tag_activity_groups": [],
@@ -61888,6 +61932,7 @@
           "season_weather_signals": [],
           "season_weather_status": "unknown_not_negative",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -61919,7 +61964,8 @@
             "Независимая детализация компонентов неполная (0/4 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -66430,13 +66476,13 @@
           "activity_scope": {
             "seller_positioned_activity_groups": [
               "fitness_gym",
-              "running",
-              "general_lifestyle"
+              "general_lifestyle",
+              "running"
             ],
             "component_name_activity_groups": [
               "fitness_gym",
-              "running",
-              "general_lifestyle"
+              "general_lifestyle",
+              "running"
             ],
             "component_name_activity_cues": {},
             "catalog_tag_activity_groups": [],
@@ -66490,7 +66536,8 @@
             "Независимая детализация компонентов неполная (0/4 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -66504,18 +66551,14 @@
           ],
           "candidate_tiers": {
             "seller_positioned": [
-              "endurance_energy",
               "foot_apparel_comfort",
               "general_daily_nutrition",
-              "gift_identity",
-              "portable_food_snacks"
+              "gift_identity"
             ],
             "component_based": [
-              "endurance_energy",
               "foot_apparel_comfort",
               "general_daily_nutrition",
-              "gift_identity",
-              "portable_food_snacks"
+              "gift_identity"
             ],
             "supplemental_page_copy_needs_manual_review": [],
             "catalog_tags_only_or_auxiliary": [],
@@ -67631,12 +67674,12 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "hiking",
-              "general_lifestyle"
+              "general_lifestyle",
+              "hiking"
             ],
             "component_name_activity_groups": [
-              "hiking",
-              "general_lifestyle"
+              "general_lifestyle",
+              "hiking"
             ],
             "component_name_activity_cues": {},
             "catalog_tag_activity_groups": [
@@ -67653,6 +67696,7 @@
             "gate_policy": "Recorded sport/activity mentions are relevance signals, not proof of exclusive compatibility. A hard activity exclusion requires a separately reviewed source fact; tags alone are never a negative filter."
           },
           "component_classes_from_listed_names": [
+            "dehydrated_meal",
             "protein_carbohydrate_food"
           ],
           "archived_page_component_titles": [
@@ -67673,8 +67717,8 @@
           "product_forms_visible_in_listed_names": [],
           "target_audience_claims": [],
           "use_contexts": [
-            "during_day_tone",
-            "daily_use"
+            "daily_use",
+            "during_day_tone"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [],
@@ -67687,6 +67731,9 @@
             "Независимая детализация компонентов неполная (1/4 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
+          ],
+          "product_forms": [
+            "food_or_meal"
           ]
         },
         "matching_proposal": {
@@ -68973,15 +69020,15 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "running",
-              "fitness_gym",
               "cycling",
+              "fitness_gym",
+              "running",
               "triathlon"
             ],
             "component_name_activity_groups": [
-              "running",
-              "fitness_gym",
               "cycling",
+              "fitness_gym",
+              "running",
               "triathlon"
             ],
             "component_name_activity_cues": {},
@@ -69004,6 +69051,7 @@
           "season_weather_signals": [],
           "season_weather_status": "unknown_not_negative",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -69034,7 +69082,8 @@
             "Независимая детализация компонентов неполная (0/5 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -69737,6 +69786,7 @@
           ],
           "season_weather_status": "recorded_claim_or_tag",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -69756,8 +69806,8 @@
             "beginners"
           ],
           "use_contexts": [
-            "during_training",
-            "daily_use"
+            "daily_use",
+            "during_training"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [],
@@ -69767,7 +69817,8 @@
             "Независимые спецификации, дозировки, аллергены и противопоказания не установлены для всех компонентов.",
             "Независимая детализация компонентов неполная (0/4 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -73592,16 +73643,16 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "running",
               "cycling",
-              "triathlon",
-              "fitness_gym"
+              "fitness_gym",
+              "running",
+              "triathlon"
             ],
             "component_name_activity_groups": [
-              "running",
               "cycling",
-              "triathlon",
-              "fitness_gym"
+              "fitness_gym",
+              "running",
+              "triathlon"
             ],
             "component_name_activity_cues": {
               "running": [
@@ -73651,6 +73702,7 @@
           ],
           "season_weather_status": "recorded_claim_or_tag",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -73663,8 +73715,8 @@
           ],
           "target_audience_claims": [],
           "use_contexts": [
-            "during_training",
-            "before_or_after_training"
+            "before_or_after_training",
+            "during_training"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [
@@ -73691,7 +73743,8 @@
             "Независимая детализация компонентов неполная (0/4 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -77785,14 +77838,14 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
+              "general_lifestyle",
               "running",
-              "walking",
-              "general_lifestyle"
+              "walking"
             ],
             "component_name_activity_groups": [
+              "general_lifestyle",
               "running",
-              "walking",
-              "general_lifestyle"
+              "walking"
             ],
             "component_name_activity_cues": {},
             "catalog_tag_activity_groups": [],
@@ -77817,6 +77870,7 @@
           "season_weather_signals": [],
           "season_weather_status": "unknown_not_negative",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -77847,7 +77901,8 @@
             "Независимая детализация компонентов неполная (0/5 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -87434,14 +87489,14 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "running",
               "fitness_gym",
-              "general_lifestyle"
+              "general_lifestyle",
+              "running"
             ],
             "component_name_activity_groups": [
-              "running",
               "fitness_gym",
-              "general_lifestyle"
+              "general_lifestyle",
+              "running"
             ],
             "component_name_activity_cues": {},
             "catalog_tag_activity_groups": [],
@@ -87466,6 +87521,7 @@
           "season_weather_signals": [],
           "season_weather_status": "unknown_not_negative",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -87483,8 +87539,8 @@
           ],
           "target_audience_claims": [],
           "use_contexts": [
-            "daily_use",
-            "before_or_after_training"
+            "before_or_after_training",
+            "daily_use"
           ],
           "known_conflicts_and_quality_flags": [
             "composition_conflict"
@@ -87506,7 +87562,8 @@
             "Независимая детализация компонентов неполная (0/3 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "conflict_review_required",
@@ -91213,15 +91270,15 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
+              "cycling",
               "fitness_gym",
               "running",
-              "cycling",
               "triathlon"
             ],
             "component_name_activity_groups": [
+              "cycling",
               "fitness_gym",
               "running",
-              "cycling",
               "triathlon"
             ],
             "component_name_activity_cues": {},
@@ -91251,6 +91308,7 @@
           "season_weather_signals": [],
           "season_weather_status": "unknown_not_negative",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -91262,8 +91320,8 @@
           ],
           "target_audience_claims": [],
           "use_contexts": [
-            "during_training",
-            "before_or_after_training"
+            "before_or_after_training",
+            "during_training"
           ],
           "known_conflicts_and_quality_flags": [
             "live_price_differs"
@@ -91278,7 +91336,8 @@
             "Независимая детализация компонентов неполная (0/4 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -91777,15 +91836,15 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
+              "cycling",
               "fitness_gym",
               "running",
-              "cycling",
               "triathlon"
             ],
             "component_name_activity_groups": [
+              "cycling",
               "fitness_gym",
               "running",
-              "cycling",
               "triathlon"
             ],
             "component_name_activity_cues": {
@@ -91831,6 +91890,7 @@
           "season_weather_signals": [],
           "season_weather_status": "unknown_not_negative",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -91888,7 +91948,8 @@
             "Независимая детализация компонентов неполная (0/4 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -92759,7 +92820,8 @@
             "Независимая детализация компонентов неполная (0/4 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -92774,13 +92836,9 @@
           ],
           "candidate_tiers": {
             "seller_positioned": [
-              "endurance_energy",
-              "portable_food_snacks",
               "strength_muscle_training"
             ],
             "component_based": [
-              "endurance_energy",
-              "portable_food_snacks",
               "strength_muscle_training"
             ],
             "supplemental_page_copy_needs_manual_review": [
@@ -93748,7 +93806,8 @@
             "Независимая детализация компонентов неполная (0/7 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -93764,15 +93823,9 @@
           ],
           "candidate_tiers": {
             "seller_positioned": [
-              "endurance_energy",
-              "foot_apparel_comfort",
-              "portable_food_snacks",
               "strength_muscle_training"
             ],
             "component_based": [
-              "endurance_energy",
-              "foot_apparel_comfort",
-              "portable_food_snacks",
               "strength_muscle_training"
             ],
             "supplemental_page_copy_needs_manual_review": [
@@ -95168,7 +95221,8 @@
             "Независимая детализация компонентов неполная (0/3 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -95182,15 +95236,9 @@
           ],
           "candidate_tiers": {
             "seller_positioned": [
-              "endurance_energy",
-              "foot_apparel_comfort",
-              "portable_food_snacks",
               "strength_muscle_training"
             ],
             "component_based": [
-              "endurance_energy",
-              "foot_apparel_comfort",
-              "portable_food_snacks",
               "strength_muscle_training"
             ],
             "supplemental_page_copy_needs_manual_review": [
@@ -98641,8 +98689,8 @@
             "drivers"
           ],
           "use_contexts": [
-            "morning_start",
-            "during_day_tone"
+            "during_day_tone",
+            "morning_start"
           ],
           "known_conflicts_and_quality_flags": [
             "live_price_differs"
@@ -98685,7 +98733,8 @@
             "Независимая детализация компонентов неполная (0/6 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -98705,12 +98754,10 @@
           ],
           "candidate_tiers": {
             "seller_positioned": [
-              "general_daily_nutrition",
-              "hydration_electrolytes"
+              "general_daily_nutrition"
             ],
             "component_based": [
-              "general_daily_nutrition",
-              "hydration_electrolytes"
+              "general_daily_nutrition"
             ],
             "supplemental_page_copy_needs_manual_review": [
               "endurance_energy",
@@ -100446,16 +100493,16 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "running",
               "cycling",
-              "triathlon",
-              "fitness_gym"
+              "fitness_gym",
+              "running",
+              "triathlon"
             ],
             "component_name_activity_groups": [
-              "running",
               "cycling",
-              "triathlon",
-              "fitness_gym"
+              "fitness_gym",
+              "running",
+              "triathlon"
             ],
             "component_name_activity_cues": {
               "running": [
@@ -100516,6 +100563,7 @@
           ],
           "season_weather_status": "recorded_claim_or_tag",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -100530,8 +100578,8 @@
             "drivers"
           ],
           "use_contexts": [
-            "during_training",
-            "before_or_after_training"
+            "before_or_after_training",
+            "during_training"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [
@@ -100565,7 +100613,8 @@
             "Независимая детализация компонентов неполная (0/5 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -102010,14 +102059,14 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
+              "cycling",
               "running",
-              "triathlon",
-              "cycling"
+              "triathlon"
             ],
             "component_name_activity_groups": [
+              "cycling",
               "running",
-              "triathlon",
-              "cycling"
+              "triathlon"
             ],
             "component_name_activity_cues": {
               "running": [
@@ -102052,8 +102101,9 @@
           "season_weather_signals": [],
           "season_weather_status": "unknown_not_negative",
           "race_formats": [
-            "race_or_event_preparation",
-            "marathon"
+            "half_marathon",
+            "marathon",
+            "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
           "size_sensitive_item_present": false,
@@ -102066,8 +102116,8 @@
             "drivers"
           ],
           "use_contexts": [
-            "during_training",
-            "before_or_after_training"
+            "before_or_after_training",
+            "during_training"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [
@@ -102115,7 +102165,8 @@
             "Независимые спецификации, дозировки, аллергены и противопоказания не установлены для всех компонентов.",
             "Независимая детализация компонентов неполная (0/4 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -103986,8 +104037,7 @@
             "women"
           ],
           "use_contexts": [
-            "evening_or_bedtime",
-            "before_or_after_training"
+            "evening_or_bedtime"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [
@@ -104029,7 +104079,8 @@
             "Независимая детализация компонентов неполная (0/2 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -104046,15 +104097,11 @@
           ],
           "candidate_tiers": {
             "seller_positioned": [
-              "endurance_energy",
-              "portable_food_snacks",
               "recovery_fatigue",
               "sleep_relaxation_stress",
               "strength_muscle_training"
             ],
             "component_based": [
-              "endurance_energy",
-              "portable_food_snacks",
               "recovery_fatigue",
               "sleep_relaxation_stress",
               "strength_muscle_training"
@@ -106875,8 +106922,8 @@
           ],
           "target_audience_claims": [],
           "use_contexts": [
-            "evening_or_bedtime",
-            "during_day_tone"
+            "during_day_tone",
+            "evening_or_bedtime"
           ],
           "known_conflicts_and_quality_flags": [
             "composition_quantity_unspecified"
@@ -106908,7 +106955,8 @@
             "Независимая детализация компонентов неполная (1/5 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -106919,16 +106967,12 @@
           ],
           "candidate_tiers": {
             "seller_positioned": [
-              "endurance_energy",
               "general_daily_nutrition",
-              "portable_food_snacks",
               "recovery_fatigue",
               "sleep_relaxation_stress"
             ],
             "component_based": [
-              "endurance_energy",
               "general_daily_nutrition",
-              "portable_food_snacks",
               "recovery_fatigue",
               "sleep_relaxation_stress"
             ],
@@ -113334,16 +113378,20 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "hiking",
-              "walking",
+              "cycling",
               "fitness_gym",
-              "general_lifestyle"
+              "general_lifestyle",
+              "hiking",
+              "running",
+              "walking"
             ],
             "component_name_activity_groups": [
-              "hiking",
-              "walking",
+              "cycling",
               "fitness_gym",
-              "general_lifestyle"
+              "general_lifestyle",
+              "hiking",
+              "running",
+              "walking"
             ],
             "component_name_activity_cues": {},
             "catalog_tag_activity_groups": [],
@@ -113381,9 +113429,9 @@
           ],
           "target_audience_claims": [],
           "use_contexts": [
-            "during_day_tone",
             "before_or_after_training",
-            "daily_use"
+            "daily_use",
+            "during_day_tone"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [
@@ -113411,6 +113459,9 @@
             "Независимая детализация компонентов неполная (0/1 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
+          ],
+          "product_forms": [
+            "food_or_meal"
           ]
         },
         "matching_proposal": {
@@ -113971,16 +114022,20 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "hiking",
-              "walking",
+              "cycling",
               "fitness_gym",
-              "general_lifestyle"
+              "general_lifestyle",
+              "hiking",
+              "running",
+              "walking"
             ],
             "component_name_activity_groups": [
-              "hiking",
-              "walking",
+              "cycling",
               "fitness_gym",
-              "general_lifestyle"
+              "general_lifestyle",
+              "hiking",
+              "running",
+              "walking"
             ],
             "component_name_activity_cues": {},
             "catalog_tag_activity_groups": [],
@@ -114018,9 +114073,9 @@
           ],
           "target_audience_claims": [],
           "use_contexts": [
-            "during_day_tone",
             "before_or_after_training",
-            "daily_use"
+            "daily_use",
+            "during_day_tone"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [
@@ -114048,6 +114103,9 @@
             "Независимая детализация компонентов неполная (0/2 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
+          ],
+          "product_forms": [
+            "food_or_meal"
           ]
         },
         "matching_proposal": {
@@ -114575,16 +114633,20 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "hiking",
-              "walking",
+              "cycling",
               "fitness_gym",
-              "general_lifestyle"
+              "general_lifestyle",
+              "hiking",
+              "running",
+              "walking"
             ],
             "component_name_activity_groups": [
-              "hiking",
-              "walking",
+              "cycling",
               "fitness_gym",
-              "general_lifestyle"
+              "general_lifestyle",
+              "hiking",
+              "running",
+              "walking"
             ],
             "component_name_activity_cues": {},
             "catalog_tag_activity_groups": [],
@@ -114618,9 +114680,9 @@
           ],
           "target_audience_claims": [],
           "use_contexts": [
-            "during_day_tone",
             "before_or_after_training",
-            "daily_use"
+            "daily_use",
+            "during_day_tone"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [
@@ -114662,6 +114724,9 @@
             "Независимая детализация компонентов неполная (0/1 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
+          ],
+          "product_forms": [
+            "food_or_meal"
           ]
         },
         "matching_proposal": {
@@ -115149,16 +115214,20 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "hiking",
-              "walking",
+              "cycling",
               "fitness_gym",
-              "general_lifestyle"
+              "general_lifestyle",
+              "hiking",
+              "running",
+              "walking"
             ],
             "component_name_activity_groups": [
-              "hiking",
-              "walking",
+              "cycling",
               "fitness_gym",
-              "general_lifestyle"
+              "general_lifestyle",
+              "hiking",
+              "running",
+              "walking"
             ],
             "component_name_activity_cues": {},
             "catalog_tag_activity_groups": [],
@@ -115185,9 +115254,9 @@
           "product_forms_visible_in_listed_names": [],
           "target_audience_claims": [],
           "use_contexts": [
-            "during_day_tone",
             "before_or_after_training",
-            "daily_use"
+            "daily_use",
+            "during_day_tone"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [
@@ -115229,6 +115298,9 @@
             "Независимая детализация компонентов неполная (0/1 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
+          ],
+          "product_forms": [
+            "food_or_meal"
           ]
         },
         "matching_proposal": {
@@ -115721,16 +115793,20 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "hiking",
-              "walking",
+              "cycling",
               "fitness_gym",
-              "general_lifestyle"
+              "general_lifestyle",
+              "hiking",
+              "running",
+              "walking"
             ],
             "component_name_activity_groups": [
-              "hiking",
-              "walking",
+              "cycling",
               "fitness_gym",
-              "general_lifestyle"
+              "general_lifestyle",
+              "hiking",
+              "running",
+              "walking"
             ],
             "component_name_activity_cues": {},
             "catalog_tag_activity_groups": [],
@@ -115764,9 +115840,9 @@
           ],
           "target_audience_claims": [],
           "use_contexts": [
-            "during_day_tone",
             "before_or_after_training",
-            "daily_use"
+            "daily_use",
+            "during_day_tone"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [
@@ -115801,6 +115877,9 @@
             "Независимая детализация компонентов неполная (0/1 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
+          ],
+          "product_forms": [
+            "food_or_meal"
           ]
         },
         "matching_proposal": {
@@ -116373,16 +116452,20 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "hiking",
-              "walking",
+              "cycling",
               "fitness_gym",
-              "general_lifestyle"
+              "general_lifestyle",
+              "hiking",
+              "running",
+              "walking"
             ],
             "component_name_activity_groups": [
-              "hiking",
-              "walking",
+              "cycling",
               "fitness_gym",
-              "general_lifestyle"
+              "general_lifestyle",
+              "hiking",
+              "running",
+              "walking"
             ],
             "component_name_activity_cues": {},
             "catalog_tag_activity_groups": [],
@@ -116420,9 +116503,9 @@
             "athletes"
           ],
           "use_contexts": [
-            "during_day_tone",
             "before_or_after_training",
-            "daily_use"
+            "daily_use",
+            "during_day_tone"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [
@@ -116464,6 +116547,9 @@
             "Независимая детализация компонентов неполная (0/2 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
+          ],
+          "product_forms": [
+            "food_or_meal"
           ]
         },
         "matching_proposal": {
@@ -116982,16 +117068,20 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "hiking",
-              "walking",
+              "cycling",
               "fitness_gym",
-              "general_lifestyle"
+              "general_lifestyle",
+              "hiking",
+              "running",
+              "walking"
             ],
             "component_name_activity_groups": [
-              "hiking",
-              "walking",
+              "cycling",
               "fitness_gym",
-              "general_lifestyle"
+              "general_lifestyle",
+              "hiking",
+              "running",
+              "walking"
             ],
             "component_name_activity_cues": {},
             "catalog_tag_activity_groups": [],
@@ -117026,9 +117116,9 @@
             "athletes"
           ],
           "use_contexts": [
-            "during_day_tone",
             "before_or_after_training",
-            "daily_use"
+            "daily_use",
+            "during_day_tone"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [
@@ -117063,6 +117153,9 @@
             "Независимая детализация компонентов неполная (0/3 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
+          ],
+          "product_forms": [
+            "food_or_meal"
           ]
         },
         "matching_proposal": {
@@ -117657,16 +117750,20 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "hiking",
-              "walking",
+              "cycling",
               "fitness_gym",
-              "general_lifestyle"
+              "general_lifestyle",
+              "hiking",
+              "running",
+              "walking"
             ],
             "component_name_activity_groups": [
-              "hiking",
-              "walking",
+              "cycling",
               "fitness_gym",
-              "general_lifestyle"
+              "general_lifestyle",
+              "hiking",
+              "running",
+              "walking"
             ],
             "component_name_activity_cues": {},
             "catalog_tag_activity_groups": [],
@@ -117704,9 +117801,9 @@
             "athletes"
           ],
           "use_contexts": [
-            "during_day_tone",
             "before_or_after_training",
-            "daily_use"
+            "daily_use",
+            "during_day_tone"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [
@@ -117741,6 +117838,9 @@
             "Независимая детализация компонентов неполная (0/3 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
+          ],
+          "product_forms": [
+            "food_or_meal"
           ]
         },
         "matching_proposal": {
@@ -118508,14 +118608,14 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
+              "general_lifestyle",
               "hiking",
-              "walking",
-              "general_lifestyle"
+              "walking"
             ],
             "component_name_activity_groups": [
+              "general_lifestyle",
               "hiking",
-              "walking",
-              "general_lifestyle"
+              "walking"
             ],
             "component_name_activity_cues": {
               "hiking": [
@@ -118537,6 +118637,7 @@
             "gate_policy": "Recorded sport/activity mentions are relevance signals, not proof of exclusive compatibility. A hard activity exclusion requires a separately reviewed source fact; tags alone are never a negative filter."
           },
           "component_classes_from_listed_names": [
+            "dehydrated_meal",
             "protein_carbohydrate_food"
           ],
           "archived_page_component_titles": [
@@ -118565,9 +118666,9 @@
             "athletes"
           ],
           "use_contexts": [
-            "during_day_tone",
+            "before_or_after_training",
             "daily_use",
-            "before_or_after_training"
+            "during_day_tone"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [
@@ -118588,6 +118689,9 @@
             "Независимая детализация компонентов неполная (0/8 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
+          ],
+          "product_forms": [
+            "food_or_meal"
           ]
         },
         "matching_proposal": {
@@ -122576,6 +122680,7 @@
           "season_weather_signals": [],
           "season_weather_status": "unknown_not_negative",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -122594,8 +122699,8 @@
           "target_audience_claims": [],
           "use_contexts": [
             "before_or_after_training",
-            "during_training",
-            "daily_use"
+            "daily_use",
+            "during_training"
           ],
           "known_conflicts_and_quality_flags": [
             "live_price_differs"
@@ -122644,7 +122749,8 @@
             "Независимые спецификации, дозировки, аллергены и противопоказания не установлены для всех компонентов.",
             "Независимая детализация компонентов неполная (0/6 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -129386,16 +129492,20 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "hiking",
-              "walking",
+              "cycling",
               "fitness_gym",
-              "general_lifestyle"
+              "general_lifestyle",
+              "hiking",
+              "running",
+              "walking"
             ],
             "component_name_activity_groups": [
-              "hiking",
-              "walking",
+              "cycling",
               "fitness_gym",
-              "general_lifestyle"
+              "general_lifestyle",
+              "hiking",
+              "running",
+              "walking"
             ],
             "component_name_activity_cues": {},
             "catalog_tag_activity_groups": [],
@@ -129439,9 +129549,9 @@
           ],
           "target_audience_claims": [],
           "use_contexts": [
-            "during_day_tone",
             "before_or_after_training",
-            "daily_use"
+            "daily_use",
+            "during_day_tone"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [
@@ -129476,6 +129586,9 @@
             "Независимая детализация компонентов неполная (0/3 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
+          ],
+          "product_forms": [
+            "food_or_meal"
           ]
         },
         "matching_proposal": {
@@ -130065,16 +130178,20 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "hiking",
-              "walking",
+              "cycling",
               "fitness_gym",
-              "general_lifestyle"
+              "general_lifestyle",
+              "hiking",
+              "running",
+              "walking"
             ],
             "component_name_activity_groups": [
-              "hiking",
-              "walking",
+              "cycling",
               "fitness_gym",
-              "general_lifestyle"
+              "general_lifestyle",
+              "hiking",
+              "running",
+              "walking"
             ],
             "component_name_activity_cues": {},
             "catalog_tag_activity_groups": [],
@@ -130114,9 +130231,9 @@
           ],
           "target_audience_claims": [],
           "use_contexts": [
-            "during_day_tone",
             "before_or_after_training",
-            "daily_use"
+            "daily_use",
+            "during_day_tone"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [
@@ -130144,6 +130261,9 @@
             "Независимая детализация компонентов неполная (0/2 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими.",
             "Формат гонки/старта не установлен."
+          ],
+          "product_forms": [
+            "food_or_meal"
           ]
         },
         "matching_proposal": {
@@ -131673,6 +131793,7 @@
           "season_weather_signals": [],
           "season_weather_status": "unknown_not_negative",
           "race_formats": [
+            "half_marathon",
             "race_or_event_preparation"
           ],
           "numeric_distance_km": [],
@@ -131691,8 +131812,8 @@
             "beginners"
           ],
           "use_contexts": [
-            "during_training",
-            "before_or_after_training"
+            "before_or_after_training",
+            "during_training"
           ],
           "known_conflicts_and_quality_flags": [
             "sku_not_listed"
@@ -131750,7 +131871,8 @@
             "Независимые спецификации, дозировки, аллергены и противопоказания не установлены для всех компонентов.",
             "Независимая детализация компонентов неполная (0/6 строк с отдельным источником в исходном аудите).",
             "Текущие цена и наличие требуют live refresh; архивные значения не считать текущими."
-          ]
+          ],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",
@@ -131823,26 +131945,27 @@
         "evidence_pool": {
           "activity_scope": {
             "seller_positioned_activity_groups": [
+              "hiking",
               "running",
-              "triathlon",
-              "hiking"
+              "triathlon"
             ],
             "component_name_activity_groups": [
+              "hiking",
               "running",
-              "triathlon",
-              "hiking"
+              "triathlon"
             ]
           },
           "component_classes_from_listed_names": [
             "hydration_items"
           ],
           "use_contexts": [
-            "during_training",
-            "before_or_after_training"
+            "before_or_after_training",
+            "during_training"
           ],
           "race_formats": [
-            "race_or_event_preparation",
+            "half_marathon",
             "marathon",
+            "race_or_event_preparation",
             "ultra_or_long_distance"
           ],
           "product_forms_visible_in_listed_names": [
@@ -131854,7 +131977,8 @@
           "recorded_size_values": [],
           "season_weather_signals": [],
           "seller_summary_text": "Потужний енергетичний комплекс для підготовки та проходження ультратрейлів та тривалих забігів у горах.",
-          "conflict_notes": []
+          "conflict_notes": [],
+          "product_forms": []
         },
         "matching_proposal": {
           "status": "candidate_direct_seller_positioning",

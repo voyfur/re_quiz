@@ -1,0 +1,3825 @@
+{
+  "agent": "QA Agent 6 - Gear & Apparel Specialist",
+  "total_tests": 100,
+  "summary": {
+    "PASS": 33,
+    "WARN": 22,
+    "FAIL": 45
+  },
+  "flaw_types": {
+    "BUDGET_FLOOR_OR_NEAR_MISS": 6,
+    "NONE": 33,
+    "DEFAULT_SIZE_BIAS": 4,
+    "MINOR_LEAKAGE_OR_MEMBERSHIP": 10,
+    "SUPPLEMENT_CREATINE_LEAK": 29,
+    "DECEPTIVE_EXPLANATION": 5,
+    "SUBOPTIMAL_RECOMMENDATION": 2,
+    "ZERO_RESULTS_UNEXPECTED": 5,
+    "SWIMMING_TAXONOMY_DEAD_END": 5,
+    "SCHEMA_CRASH_UNSANITIZED_INPUT": 1
+  },
+  "tests": [
+    {
+      "test_id": 1,
+      "name": "Runner: Small size socks (37), entry budget",
+      "persona": "Female 10k runner with shoe size 37 on tight budget",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "running",
+        "shoe_size": 37,
+        "max_price_uah": 600,
+        "locale": "uk"
+      },
+      "expected_focus": "Expects size 35-37 socks; tests budget near-miss/floor anchor since socks cost 950 UAH.",
+      "evaluation": {
+        "verdict": "WARN",
+        "flaw_type": "BUDGET_FLOOR_OR_NEAR_MISS",
+        "flaw_summary": "NEAR-MISS ПЕРЕВИЩЕННЯ: Бюджет 600 ₴, товар 950 ₴ (перевищення на 350 ₴).",
+        "all_flaws": [
+          "NEAR-MISS ПЕРЕВИЩЕННЯ: Бюджет 600 ₴, товар 950 ₴ (перевищення на 350 ₴)."
+        ],
+        "top_item": {
+          "set_id": "race-expert-007",
+          "title": "Акційний набір білих шкарпеток, 5 пар «35–37»",
+          "price_uah": 950,
+          "status": "no_match",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Одяг, шкарпетки та екіпірування (без сторонніх речей).",
+            "Розмірний збіг: вказаний розмір 37 входить у діапазон товару.",
+            "Перевищує вибраний бюджет на 350 ₴."
+          ],
+          "expert_summary": "Технологічне спортивне екіпірування: анатомічна посадка по стопі, надійна терморегуляція та активний захист від мозолів і натертостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 2,
+      "name": "Runner: Small size socks (37), regular budget",
+      "persona": "Female runner looking for 5-pack white socks size 37",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "running",
+        "shoe_size": 37,
+        "max_price_uah": 1000,
+        "locale": "uk"
+      },
+      "expected_focus": "Expects exact match: White socks 5 pairs size 35–37 (950 UAH).",
+      "evaluation": {
+        "verdict": "PASS",
+        "flaw_type": "NONE",
+        "flaw_summary": "Ідеальний збіг за спорядженням, розміром, бюджетом та поясненнями.",
+        "all_flaws": [],
+        "top_item": {
+          "set_id": "race-expert-007",
+          "title": "Акційний набір білих шкарпеток, 5 пар «35–37»",
+          "price_uah": 950,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Одяг, шкарпетки та екіпірування (без сторонніх речей).",
+            "Розмірний збіг: вказаний розмір 37 входить у діапазон товару.",
+            "Бюджет: 950 ₴ — укладається в ліміт 1000 ₴ (запас 50 ₴)."
+          ],
+          "expert_summary": "Технологічне спортивне екіпірування: анатомічна посадка по стопі, надійна терморегуляція та активний захист від мозолів і натертостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 3,
+      "name": "Runner: Small size socks (36), dark color, regular budget",
+      "persona": "Runner needing dark training socks size 36",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "running",
+        "shoe_size": 36,
+        "max_price_uah": 1100,
+        "locale": "ru"
+      },
+      "expected_focus": "Expects dark socks 5 pairs size 35–37 (950 UAH).",
+      "evaluation": {
+        "verdict": "PASS",
+        "flaw_type": "NONE",
+        "flaw_summary": "Ідеальний збіг за спорядженням, розміром, бюджетом та поясненнями.",
+        "all_flaws": [],
+        "top_item": {
+          "set_id": "race-expert-007",
+          "title": "Акційний набір білих шкарпеток, 5 пар «35–37»",
+          "price_uah": 950,
+          "status": "matched",
+          "reasons": [
+            "Целевое назначение: специально скомплектован под задачу «Одежда и аксессуары».",
+            "Категория товаров: в наборе именно Одежда, носки и экипировка (без посторонних позиций).",
+            "Размерное совпадение: указанный размер 36 входит в диапазон товара.",
+            "Бюджет: 950 ₴ — укладывается в лимит 1100 ₴ (запас 150 ₴)."
+          ],
+          "expert_summary": "Технологичная спортивная экипировка: анатомическая посадка по стопе, надёжная терморегуляция и активная защита от мозолей и натёртостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 4,
+      "name": "Runner: Small size winter thermal socks (37), cold season",
+      "persona": "Winter runner needing warm thermo socks size 37",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "running",
+        "shoe_size": 37,
+        "season": "cold",
+        "max_price_uah": 1200,
+        "locale": "uk"
+      },
+      "expected_focus": "Expects thermo socks 1+1=3 size 35–37 (1058 UAH).",
+      "evaluation": {
+        "verdict": "PASS",
+        "flaw_type": "NONE",
+        "flaw_summary": "Ідеальний збіг за спорядженням, розміром, бюджетом та поясненнями.",
+        "all_flaws": [],
+        "top_item": {
+          "set_id": "race-expert-004",
+          "title": "Акційний набір термошкарпеток 1+1=3 «35–37»",
+          "price_uah": 1058,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Одяг, шкарпетки та екіпірування (без сторонніх речей).",
+            "Розмірний збіг: вказаний розмір 37 входить у діапазон товару.",
+            "Бюджет: 1058 ₴ — укладається в ліміт 1200 ₴ (запас 142 ₴)."
+          ],
+          "expert_summary": "Технологічне спортивне екіпірування: анатомічна посадка по стопі, надійна терморегуляція та активний захист від мозолів і натертостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 5,
+      "name": "Runner: Medium size socks (39), entry budget",
+      "persona": "Amateur runner size 39 with 700 UAH budget",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "running",
+        "shoe_size": 39,
+        "max_price_uah": 700,
+        "locale": "ru"
+      },
+      "expected_focus": "Expects near miss or floor anchor for size 38–40 socks.",
+      "evaluation": {
+        "verdict": "WARN",
+        "flaw_type": "BUDGET_FLOOR_OR_NEAR_MISS",
+        "flaw_summary": "NEAR-MISS ПЕРЕВИЩЕННЯ: Бюджет 700 ₴, товар 950 ₴ (перевищення на 250 ₴).",
+        "all_flaws": [
+          "NEAR-MISS ПЕРЕВИЩЕННЯ: Бюджет 700 ₴, товар 950 ₴ (перевищення на 250 ₴)."
+        ],
+        "top_item": {
+          "set_id": "race-expert-083",
+          "title": "Акційний набір темних шкарпеток 5 пар \"38 - 40",
+          "price_uah": 950,
+          "status": "no_match",
+          "reasons": [
+            "Целевое назначение: специально скомплектован под задачу «Одежда и аксессуары».",
+            "Категория товаров: в наборе именно Одежда, носки и экипировка (без посторонних позиций).",
+            "Размерное совпадение: указанный размер 39 входит в диапазон товара.",
+            "Превышает выбранный бюджет на 250 ₴."
+          ],
+          "expert_summary": "Технологичная спортивная экипировка: анатомическая посадка по стопе, надёжная терморегуляция и активная защита от мозолей и натёртостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 6,
+      "name": "Runner: Medium size socks (40), white, regular budget",
+      "persona": "Road runner size 40 needing 5-pack white socks",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "running",
+        "shoe_size": 40,
+        "max_price_uah": 1000,
+        "locale": "uk"
+      },
+      "expected_focus": "Expects white socks 5 pairs size 38–40 or 40–42 (950 UAH).",
+      "evaluation": {
+        "verdict": "PASS",
+        "flaw_type": "NONE",
+        "flaw_summary": "Ідеальний збіг за спорядженням, розміром, бюджетом та поясненнями.",
+        "all_flaws": [],
+        "top_item": {
+          "set_id": "race-expert-082",
+          "title": "Акційний набір темних шкарпеток 5 пар \"40 - 42",
+          "price_uah": 950,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Одяг, шкарпетки та екіпірування (без сторонніх речей).",
+            "Розмірний збіг: вказаний розмір 40 входить у діапазон товару.",
+            "Бюджет: 950 ₴ — укладається в ліміт 1000 ₴ (запас 50 ₴)."
+          ],
+          "expert_summary": "Технологічне спортивне екіпірування: анатомічна посадка по стопі, надійна терморегуляція та активний захист від мозолів і натертостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 7,
+      "name": "Runner: Medium size socks (41), dark, regular budget",
+      "persona": "Evening runner size 41 needing dark socks",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "running",
+        "shoe_size": 41,
+        "max_price_uah": 1000,
+        "locale": "ru"
+      },
+      "expected_focus": "Expects dark socks 5 pairs size 40–42 (950 UAH).",
+      "evaluation": {
+        "verdict": "PASS",
+        "flaw_type": "NONE",
+        "flaw_summary": "Ідеальний збіг за спорядженням, розміром, бюджетом та поясненнями.",
+        "all_flaws": [],
+        "top_item": {
+          "set_id": "race-expert-082",
+          "title": "Акційний набір темних шкарпеток 5 пар \"40 - 42",
+          "price_uah": 950,
+          "status": "matched",
+          "reasons": [
+            "Целевое назначение: специально скомплектован под задачу «Одежда и аксессуары».",
+            "Категория товаров: в наборе именно Одежда, носки и экипировка (без посторонних позиций).",
+            "Размерное совпадение: указанный размер 41 входит в диапазон товара.",
+            "Бюджет: 950 ₴ — укладывается в лимит 1000 ₴ (запас 50 ₴)."
+          ],
+          "expert_summary": "Технологичная спортивная экипировка: анатомическая посадка по стопе, надёжная терморегуляция и активная защита от мозолей и натёртостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 8,
+      "name": "Runner: Medium size winter thermal socks (40), cold season",
+      "persona": "Trail runner preparing for winter training size 40",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "running",
+        "shoe_size": 40,
+        "season": "cold",
+        "max_price_uah": 1200,
+        "locale": "uk"
+      },
+      "expected_focus": "Expects thermo socks 1+1=3 size 40–42 (1058 UAH).",
+      "evaluation": {
+        "verdict": "PASS",
+        "flaw_type": "NONE",
+        "flaw_summary": "Ідеальний збіг за спорядженням, розміром, бюджетом та поясненнями.",
+        "all_flaws": [],
+        "top_item": {
+          "set_id": "race-expert-002",
+          "title": "Акційний набір термошкарпеток 1+1=3 «40–42»",
+          "price_uah": 1058,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Одяг, шкарпетки та екіпірування (без сторонніх речей).",
+            "Розмірний збіг: вказаний розмір 40 входить у діапазон товару.",
+            "Бюджет: 1058 ₴ — укладається в ліміт 1200 ₴ (запас 142 ₴)."
+          ],
+          "expert_summary": "Технологічне спортивне екіпірування: анатомічна посадка по стопі, надійна терморегуляція та активний захист від мозолів і натертостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 9,
+      "name": "Runner: Medium size winter thermal socks (39), cold season",
+      "persona": "Cross-country runner size 39 in sub-zero temps",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "running",
+        "shoe_size": 39,
+        "season": "cold",
+        "max_price_uah": 1200,
+        "locale": "ru"
+      },
+      "expected_focus": "Expects thermo socks 1+1=3 size 38–40 (1058 UAH).",
+      "evaluation": {
+        "verdict": "PASS",
+        "flaw_type": "NONE",
+        "flaw_summary": "Ідеальний збіг за спорядженням, розміром, бюджетом та поясненнями.",
+        "all_flaws": [],
+        "top_item": {
+          "set_id": "race-expert-003",
+          "title": "Акційний набір термошкарпеток 1+1=3 «38–40»",
+          "price_uah": 1058,
+          "status": "matched",
+          "reasons": [
+            "Целевое назначение: специально скомплектован под задачу «Одежда и аксессуары».",
+            "Категория товаров: в наборе именно Одежда, носки и экипировка (без посторонних позиций).",
+            "Размерное совпадение: указанный размер 39 входит в диапазон товара.",
+            "Бюджет: 1058 ₴ — укладывается в лимит 1200 ₴ (запас 142 ₴)."
+          ],
+          "expert_summary": "Технологичная спортивная экипировка: анатомическая посадка по стопе, надёжная терморегуляция и активная защита от мозолей и натёртостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 10,
+      "name": "Runner: Large size socks (43), entry budget",
+      "persona": "Marathoner size 43 looking for budget socks under 800 UAH",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "running",
+        "shoe_size": 43,
+        "max_price_uah": 800,
+        "locale": "uk"
+      },
+      "expected_focus": "Expects near miss or floor anchor for size 43–45 socks.",
+      "evaluation": {
+        "verdict": "WARN",
+        "flaw_type": "BUDGET_FLOOR_OR_NEAR_MISS",
+        "flaw_summary": "NEAR-MISS ПЕРЕВИЩЕННЯ: Бюджет 800 ₴, товар 950 ₴ (перевищення на 150 ₴).",
+        "all_flaws": [
+          "NEAR-MISS ПЕРЕВИЩЕННЯ: Бюджет 800 ₴, товар 950 ₴ (перевищення на 150 ₴)."
+        ],
+        "top_item": {
+          "set_id": "race-expert-011",
+          "title": "Акційний набір білих шкарпеток, 5 пар «43–45»",
+          "price_uah": 950,
+          "status": "no_match",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Одяг, шкарпетки та екіпірування (без сторонніх речей).",
+            "Розмірний збіг: вказаний розмір 43 входить у діапазон товару.",
+            "Перевищує вибраний бюджет на 150 ₴."
+          ],
+          "expert_summary": "Технологічне спортивне екіпірування: анатомічна посадка по стопі, надійна терморегуляція та активний захист від мозолів і натертостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 11,
+      "name": "Runner: Large size socks (43), white, regular budget",
+      "persona": "Marathoner size 43 buying white training socks",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "running",
+        "shoe_size": 43,
+        "max_price_uah": 1000,
+        "locale": "uk"
+      },
+      "expected_focus": "Expects exact match: White socks 5 pairs size 43–45 (950 UAH).",
+      "evaluation": {
+        "verdict": "PASS",
+        "flaw_type": "NONE",
+        "flaw_summary": "Ідеальний збіг за спорядженням, розміром, бюджетом та поясненнями.",
+        "all_flaws": [],
+        "top_item": {
+          "set_id": "race-expert-011",
+          "title": "Акційний набір білих шкарпеток, 5 пар «43–45»",
+          "price_uah": 950,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Одяг, шкарпетки та екіпірування (без сторонніх речей).",
+            "Розмірний збіг: вказаний розмір 43 входить у діапазон товару.",
+            "Бюджет: 950 ₴ — укладається в ліміт 1000 ₴ (запас 50 ₴)."
+          ],
+          "expert_summary": "Технологічне спортивне екіпірування: анатомічна посадка по стопі, надійна терморегуляція та активний захист від мозолів і натертостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 12,
+      "name": "Runner: Large size socks (44), dark, regular budget",
+      "persona": "Club runner size 44 needing dark socks 5-pack",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "running",
+        "shoe_size": 44,
+        "max_price_uah": 1000,
+        "locale": "ru"
+      },
+      "expected_focus": "Expects dark socks 5 pairs size 43–45 (950 UAH).",
+      "evaluation": {
+        "verdict": "PASS",
+        "flaw_type": "NONE",
+        "flaw_summary": "Ідеальний збіг за спорядженням, розміром, бюджетом та поясненнями.",
+        "all_flaws": [],
+        "top_item": {
+          "set_id": "race-expert-011",
+          "title": "Акційний набір білих шкарпеток, 5 пар «43–45»",
+          "price_uah": 950,
+          "status": "matched",
+          "reasons": [
+            "Целевое назначение: специально скомплектован под задачу «Одежда и аксессуары».",
+            "Категория товаров: в наборе именно Одежда, носки и экипировка (без посторонних позиций).",
+            "Размерное совпадение: указанный размер 44 входит в диапазон товара.",
+            "Бюджет: 950 ₴ — укладывается в лимит 1000 ₴ (запас 50 ₴)."
+          ],
+          "expert_summary": "Технологичная спортивная экипировка: анатомическая посадка по стопе, надёжная терморегуляция и активная защита от мозолей и натёртостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 13,
+      "name": "Runner: Large size winter thermal socks (43), cold season",
+      "persona": "Winter runner size 43 needing thermal insulation",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "running",
+        "shoe_size": 43,
+        "season": "cold",
+        "max_price_uah": 1200,
+        "locale": "uk"
+      },
+      "expected_focus": "Expects thermo socks 1+1=3 size 43–45 (1058 UAH).",
+      "evaluation": {
+        "verdict": "PASS",
+        "flaw_type": "NONE",
+        "flaw_summary": "Ідеальний збіг за спорядженням, розміром, бюджетом та поясненнями.",
+        "all_flaws": [],
+        "top_item": {
+          "set_id": "race-expert-001",
+          "title": "Акційний набір термошкарпеток 1+1=3 «43–45»",
+          "price_uah": 1058,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Одяг, шкарпетки та екіпірування (без сторонніх речей).",
+            "Розмірний збіг: вказаний розмір 43 входить у діапазон товару.",
+            "Бюджет: 1058 ₴ — укладається в ліміт 1200 ₴ (запас 142 ₴)."
+          ],
+          "expert_summary": "Технологічне спортивне екіпірування: анатомічна посадка по стопі, надійна терморегуляція та активний захист від мозолів і натертостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 14,
+      "name": "Runner: Large size socks (42), warm season",
+      "persona": "Summer runner size 42 looking for light summer socks",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "running",
+        "shoe_size": 42,
+        "season": "warm",
+        "max_price_uah": 1200,
+        "locale": "ru"
+      },
+      "expected_focus": "Tests warm season filtering on running socks; verify if gym sets leak in.",
+      "evaluation": {
+        "verdict": "PASS",
+        "flaw_type": "NONE",
+        "flaw_summary": "Ідеальний збіг за спорядженням, розміром, бюджетом та поясненнями.",
+        "all_flaws": [],
+        "top_item": {
+          "set_id": "race-expert-082",
+          "title": "Акційний набір темних шкарпеток 5 пар \"40 - 42",
+          "price_uah": 950,
+          "status": "general_auto",
+          "reasons": [
+            "Целевое назначение: специально скомплектован под задачу «Одежда и аксессуары».",
+            "Категория товаров: в наборе именно Одежда, носки и экипировка (без посторонних позиций).",
+            "Размерное совпадение: указанный размер 42 входит в диапазон товара.",
+            "Бюджет: 950 ₴ — укладывается в лимит 1200 ₴ (запас 250 ₴)."
+          ],
+          "expert_summary": "Технологичная спортивная экипировка: анатомическая посадка по стопе, надёжная терморегуляция и активная защита от мозолей и натёртостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 15,
+      "name": "Runner: XL size socks (46), entry budget",
+      "persona": "Tall runner size 46 on tight budget 750 UAH",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "running",
+        "shoe_size": 46,
+        "max_price_uah": 750,
+        "locale": "uk"
+      },
+      "expected_focus": "Expects near-miss for size 46–48 socks.",
+      "evaluation": {
+        "verdict": "WARN",
+        "flaw_type": "BUDGET_FLOOR_OR_NEAR_MISS",
+        "flaw_summary": "NEAR-MISS ПЕРЕВИЩЕННЯ: Бюджет 750 ₴, товар 950 ₴ (перевищення на 200 ₴).",
+        "all_flaws": [
+          "NEAR-MISS ПЕРЕВИЩЕННЯ: Бюджет 750 ₴, товар 950 ₴ (перевищення на 200 ₴)."
+        ],
+        "top_item": {
+          "set_id": "race-expert-005",
+          "title": "Акційний набір темних шкарпеток, 5 пар «46–48»",
+          "price_uah": 950,
+          "status": "no_match",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Одяг, шкарпетки та екіпірування (без сторонніх речей).",
+            "Розмірний збіг: вказаний розмір 46 входить у діапазон товару.",
+            "Перевищує вибраний бюджет на 200 ₴."
+          ],
+          "expert_summary": "Технологічне спортивне екіпірування: анатомічна посадка по стопі, надійна терморегуляція та активний захист від мозолів і натертостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 16,
+      "name": "Runner: XL size socks (46), dark, regular budget",
+      "persona": "Heavy runner size 46 needing 5-pack dark socks",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "running",
+        "shoe_size": 46,
+        "max_price_uah": 1000,
+        "locale": "uk"
+      },
+      "expected_focus": "Expects dark socks 5 pairs size 46–48 (950 UAH).",
+      "evaluation": {
+        "verdict": "PASS",
+        "flaw_type": "NONE",
+        "flaw_summary": "Ідеальний збіг за спорядженням, розміром, бюджетом та поясненнями.",
+        "all_flaws": [],
+        "top_item": {
+          "set_id": "race-expert-005",
+          "title": "Акційний набір темних шкарпеток, 5 пар «46–48»",
+          "price_uah": 950,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Одяг, шкарпетки та екіпірування (без сторонніх речей).",
+            "Розмірний збіг: вказаний розмір 46 входить у діапазон товару.",
+            "Бюджет: 950 ₴ — укладається в ліміт 1000 ₴ (запас 50 ₴)."
+          ],
+          "expert_summary": "Технологічне спортивне екіпірування: анатомічна посадка по стопі, надійна терморегуляція та активний захист від мозолів і натертостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 17,
+      "name": "Runner: XL size socks (47), white, regular budget",
+      "persona": "Tall marathoner size 47 needing white socks",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "running",
+        "shoe_size": 47,
+        "max_price_uah": 1000,
+        "locale": "ru"
+      },
+      "expected_focus": "Expects white socks 5 pairs size 46–48 (950 UAH).",
+      "evaluation": {
+        "verdict": "PASS",
+        "flaw_type": "NONE",
+        "flaw_summary": "Ідеальний збіг за спорядженням, розміром, бюджетом та поясненнями.",
+        "all_flaws": [],
+        "top_item": {
+          "set_id": "race-expert-005",
+          "title": "Акційний набір темних шкарпеток, 5 пар «46–48»",
+          "price_uah": 950,
+          "status": "matched",
+          "reasons": [
+            "Целевое назначение: специально скомплектован под задачу «Одежда и аксессуары».",
+            "Категория товаров: в наборе именно Одежда, носки и экипировка (без посторонних позиций).",
+            "Размерное совпадение: указанный размер 47 входит в диапазон товара.",
+            "Бюджет: 950 ₴ — укладывается в лимит 1000 ₴ (запас 50 ₴)."
+          ],
+          "expert_summary": "Технологичная спортивная экипировка: анатомическая посадка по стопе, надёжная терморегуляция и активная защита от мозолей и натёртостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 18,
+      "name": "Runner: XL size winter thermal socks (46), cold season",
+      "persona": "Winter ultramarathoner size 46 needing thermal socks",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "running",
+        "shoe_size": 46,
+        "season": "cold",
+        "max_price_uah": 1200,
+        "locale": "uk"
+      },
+      "expected_focus": "Tests cold season thermal socks for size 46; check if thermo sets stop at 45.",
+      "evaluation": {
+        "verdict": "PASS",
+        "flaw_type": "NONE",
+        "flaw_summary": "Ідеальний збіг за спорядженням, розміром, бюджетом та поясненнями.",
+        "all_flaws": [],
+        "top_item": {
+          "set_id": "race-expert-005",
+          "title": "Акційний набір темних шкарпеток, 5 пар «46–48»",
+          "price_uah": 950,
+          "status": "general_auto",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Одяг, шкарпетки та екіпірування (без сторонніх речей).",
+            "Розмірний збіг: вказаний розмір 46 входить у діапазон товару.",
+            "Бюджет: 950 ₴ — укладається в ліміт 1200 ₴ (запас 250 ₴)."
+          ],
+          "expert_summary": "Технологічне спортивне екіпірування: анатомічна посадка по стопі, надійна терморегуляція та активний захист від мозолів і натертостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 19,
+      "name": "Runner: Unspecified size socks, training scenario",
+      "persona": "Runner not specifying shoe size, looking for training socks",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "running",
+        "shoe_size": "any",
+        "use_scenario": "training",
+        "max_price_uah": 1000,
+        "locale": "uk"
+      },
+      "expected_focus": "Tests size-unspecified behavior; verify whether size 46–48 is blindly forced.",
+      "evaluation": {
+        "verdict": "WARN",
+        "flaw_type": "DEFAULT_SIZE_BIAS",
+        "flaw_summary": "ЗСУВ ЗАМОВЧУВАННЯ: При неуточненому розмірі система нав'язує гігантський розмір «46–48» (бо він найдешевший за 950 грн).",
+        "all_flaws": [
+          "ЗСУВ ЗАМОВЧУВАННЯ: При неуточненому розмірі система нав'язує гігантський розмір «46–48» (бо він найдешевший за 950 грн)."
+        ],
+        "top_item": {
+          "set_id": "race-expert-005",
+          "title": "Акційний набір темних шкарпеток, 5 пар «46–48»",
+          "price_uah": 950,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Одяг, шкарпетки та екіпірування (без сторонніх речей).",
+            "Бюджет: 950 ₴ — укладається в ліміт 1000 ₴ (запас 50 ₴)."
+          ],
+          "expert_summary": "Технологічне спортивне екіпірування: анатомічна посадка по стопі, надійна терморегуляція та активний захист від мозолів і натертостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 20,
+      "name": "Runner: Unspecified size socks, event prep scenario",
+      "persona": "Race participant needing competition socks",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "running",
+        "shoe_size": "any",
+        "use_scenario": "event_preparation",
+        "max_price_uah": 1100,
+        "locale": "ru"
+      },
+      "expected_focus": "Tests event prep socks matching without size.",
+      "evaluation": {
+        "verdict": "WARN",
+        "flaw_type": "DEFAULT_SIZE_BIAS",
+        "flaw_summary": "ЗСУВ ЗАМОВЧУВАННЯ: При неуточненому розмірі система нав'язує гігантський розмір «46–48» (бо він найдешевший за 950 грн).",
+        "all_flaws": [
+          "ЗСУВ ЗАМОВЧУВАННЯ: При неуточненому розмірі система нав'язує гігантський розмір «46–48» (бо він найдешевший за 950 грн)."
+        ],
+        "top_item": {
+          "set_id": "race-expert-005",
+          "title": "Акційний набір темних шкарпеток, 5 пар «46–48»",
+          "price_uah": 950,
+          "status": "matched",
+          "reasons": [
+            "Целевое назначение: специально скомплектован под задачу «Одежда и аксессуары».",
+            "Категория товаров: в наборе именно Одежда, носки и экипировка (без посторонних позиций).",
+            "Бюджет: 950 ₴ — укладывается в лимит 1100 ₴ (запас 150 ₴)."
+          ],
+          "expert_summary": "Технологичная спортивная экипировка: анатомическая посадка по стопе, надёжная терморегуляция и активная защита от мозолей и натёртостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 21,
+      "name": "Runner: Unspecified size socks, everyday scenario",
+      "persona": "Runner wearing sports socks daily",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "running",
+        "shoe_size": "any",
+        "use_scenario": "everyday",
+        "max_price_uah": 1000,
+        "locale": "uk"
+      },
+      "expected_focus": "Tests everyday running sock matching.",
+      "evaluation": {
+        "verdict": "WARN",
+        "flaw_type": "DEFAULT_SIZE_BIAS",
+        "flaw_summary": "ЗСУВ ЗАМОВЧУВАННЯ: При неуточненому розмірі система нав'язує гігантський розмір «46–48» (бо він найдешевший за 950 грн).",
+        "all_flaws": [
+          "ЗСУВ ЗАМОВЧУВАННЯ: При неуточненому розмірі система нав'язує гігантський розмір «46–48» (бо він найдешевший за 950 грн)."
+        ],
+        "top_item": {
+          "set_id": "race-expert-005",
+          "title": "Акційний набір темних шкарпеток, 5 пар «46–48»",
+          "price_uah": 950,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Одяг, шкарпетки та екіпірування (без сторонніх речей).",
+            "Бюджет: 950 ₴ — укладається в ліміт 1000 ₴ (запас 50 ₴)."
+          ],
+          "expert_summary": "Технологічне спортивне екіпірування: анатомічна посадка по стопі, надійна терморегуляція та активний захист від мозолів і натертостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 22,
+      "name": "Runner: Premium budget socks bundle (1500 UAH), size 43",
+      "persona": "Runner ready to spend 1500 UAH on premium sock kit",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "running",
+        "shoe_size": 43,
+        "max_price_uah": 1500,
+        "locale": "uk"
+      },
+      "expected_focus": "Tests premium budget: does it return race-expert-081 or club subscription sets?",
+      "evaluation": {
+        "verdict": "PASS",
+        "flaw_type": "NONE",
+        "flaw_summary": "Ідеальний збіг за спорядженням, розміром, бюджетом та поясненнями.",
+        "all_flaws": [],
+        "top_item": {
+          "set_id": "race-expert-011",
+          "title": "Акційний набір білих шкарпеток, 5 пар «43–45»",
+          "price_uah": 950,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Одяг, шкарпетки та екіпірування (без сторонніх речей).",
+            "Розмірний збіг: вказаний розмір 43 входить у діапазон товару.",
+            "Бюджет: 950 ₴ — укладається в ліміт 1500 ₴ (запас 550 ₴)."
+          ],
+          "expert_summary": "Технологічне спортивне екіпірування: анатомічна посадка по стопі, надійна терморегуляція та активний захист від мозолів і натертостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 23,
+      "name": "Runner: Premium budget socks bundle (1500 UAH), size 40",
+      "persona": "Runner ready to spend 1500 UAH, size 40",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "running",
+        "shoe_size": 40,
+        "max_price_uah": 1500,
+        "locale": "ru"
+      },
+      "expected_focus": "Check premium set composition for size 40.",
+      "evaluation": {
+        "verdict": "PASS",
+        "flaw_type": "NONE",
+        "flaw_summary": "Ідеальний збіг за спорядженням, розміром, бюджетом та поясненнями.",
+        "all_flaws": [],
+        "top_item": {
+          "set_id": "race-expert-082",
+          "title": "Акційний набір темних шкарпеток 5 пар \"40 - 42",
+          "price_uah": 950,
+          "status": "matched",
+          "reasons": [
+            "Целевое назначение: специально скомплектован под задачу «Одежда и аксессуары».",
+            "Категория товаров: в наборе именно Одежда, носки и экипировка (без посторонних позиций).",
+            "Размерное совпадение: указанный размер 40 входит в диапазон товара.",
+            "Бюджет: 950 ₴ — укладывается в лимит 1500 ₴ (запас 550 ₴)."
+          ],
+          "expert_summary": "Технологичная спортивная экипировка: анатомическая посадка по стопе, надёжная терморегуляция и активная защита от мозолей и натёртостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 24,
+      "name": "Runner: High budget (2000 UAH), cold season thermo socks size 44",
+      "persona": "Cold-weather runner with flexible budget 2000 UAH",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "running",
+        "shoe_size": 44,
+        "season": "cold",
+        "max_price_uah": 2000,
+        "locale": "uk"
+      },
+      "expected_focus": "Expects thermo socks size 43-45 (1058 UAH) without irrelevant overpriced items.",
+      "evaluation": {
+        "verdict": "PASS",
+        "flaw_type": "NONE",
+        "flaw_summary": "Ідеальний збіг за спорядженням, розміром, бюджетом та поясненнями.",
+        "all_flaws": [],
+        "top_item": {
+          "set_id": "race-expert-001",
+          "title": "Акційний набір термошкарпеток 1+1=3 «43–45»",
+          "price_uah": 1058,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Одяг, шкарпетки та екіпірування (без сторонніх речей).",
+            "Розмірний збіг: вказаний розмір 44 входить у діапазон товару.",
+            "Бюджет: 1058 ₴ — укладається в ліміт 2000 ₴ (запас 942 ₴)."
+          ],
+          "expert_summary": "Технологічне спортивне екіпірування: анатомічна посадка по стопі, надійна терморегуляція та активний захист від мозолів і натертостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 25,
+      "name": "Runner: High budget (2500 UAH), warm season socks size 41",
+      "persona": "Summer runner with high budget 2500 UAH",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "running",
+        "shoe_size": 41,
+        "season": "warm",
+        "max_price_uah": 2500,
+        "locale": "ru"
+      },
+      "expected_focus": "Tests high budget summer apparel matching.",
+      "evaluation": {
+        "verdict": "WARN",
+        "flaw_type": "MINOR_LEAKAGE_OR_MEMBERSHIP",
+        "flaw_summary": "ВИТІК ЇЖІ/СНЕКІВ: Набір [race-expert-115] 'Набір «Підготовка до забігу»' містить їстівні батончики/печиво/сублімати у розділі спорядження.",
+        "all_flaws": [
+          "ВИТІК ЇЖІ/СНЕКІВ: Набір [race-expert-115] 'Набір «Підготовка до забігу»' містить їстівні батончики/печиво/сублімати у розділі спорядження."
+        ],
+        "top_item": {
+          "set_id": "race-expert-115",
+          "title": "Набір «Підготовка до забігу»",
+          "price_uah": 1500,
+          "status": "matched",
+          "reasons": [
+            "Целевое назначение: специально скомплектован под задачу «Одежда и аксессуары».",
+            "Категория товаров: в наборе именно Одежда, носки и экипировка (без посторонних позиций).",
+            "Размерное совпадение: указанный размер 41 входит в диапазон товара.",
+            "Бюджет: 1500 ₴ — укладывается в лимит 2500 ₴ (запас 1000 ₴)."
+          ],
+          "expert_summary": "Технологичная спортивная экипировка: анатомическая посадка по стопе, надёжная терморегуляция и активная защита от мозолей и натёртостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": false,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 26,
+      "name": "Runner: Race accessories (bib belt, bottle, flask), budget 1500 UAH",
+      "persona": "Marathoner looking for bib belt and flask for race day",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "running",
+        "use_scenario": "event_preparation",
+        "max_price_uah": 1500,
+        "locale": "uk"
+      },
+      "expected_focus": "Expects race prep accessories (race-expert-055, 056, or 115) without creatine or memberships.",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SUPPLEMENT_CREATINE_LEAK",
+        "flaw_summary": "ВИТІК ЇЖІ/СНЕКІВ: Набір [race-expert-197] 'Набір «Бігова екіпіровка»' містить їстівні батончики/печиво/сублімати у розділі спорядження.",
+        "all_flaws": [
+          "ВИТІК ЇЖІ/СНЕКІВ: Набір [race-expert-197] 'Набір «Бігова екіпіровка»' містить їстівні батончики/печиво/сублімати у розділі спорядження.",
+          "НЕПРАВДИВЕ ПОЯСНЕННЯ В WHY_SUITABLE: Система заявляє 'Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).', але набір [race-expert-197] містить сторонні компоненти (креатин/добавки/їжу/абонемент)!"
+        ],
+        "top_item": {
+          "set_id": "race-expert-197",
+          "title": "Набір «Бігова екіпіровка»",
+          "price_uah": 1209,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).",
+            "Бюджет: 1209 ₴ — укладається в ліміт 1500 ₴ (запас 291 ₴)."
+          ],
+          "expert_summary": "Надійний функціональний аксесуар для спорту: максимальна зручність у русі, ергономічний дизайн та довговічні матеріали."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": false,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 27,
+      "name": "Runner: Race bib belt & cap, Russian locale",
+      "persona": "Half-marathon runner needing bib belt and running cap",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "running",
+        "use_scenario": "event_preparation",
+        "max_price_uah": 1500,
+        "locale": "ru"
+      },
+      "expected_focus": "Expects marathon race accessories with clean Russian explanations.",
+      "evaluation": {
+        "verdict": "WARN",
+        "flaw_type": "MINOR_LEAKAGE_OR_MEMBERSHIP",
+        "flaw_summary": "ВИТІК ЇЖІ/СНЕКІВ: Набір [race-expert-197] 'Набір «Бігова екіпіровка»' містить їстівні батончики/печиво/сублімати у розділі спорядження.",
+        "all_flaws": [
+          "ВИТІК ЇЖІ/СНЕКІВ: Набір [race-expert-197] 'Набір «Бігова екіпіровка»' містить їстівні батончики/печиво/сублімати у розділі спорядження."
+        ],
+        "top_item": {
+          "set_id": "race-expert-197",
+          "title": "Набір «Бігова екіпіровка»",
+          "price_uah": 1209,
+          "status": "matched",
+          "reasons": [
+            "Целевое назначение: специально скомплектован под задачу «Одежда и аксессуары».",
+            "Категория товаров: в наборе именно Спортивные аксессуары и фляги (без посторонних позиций).",
+            "Бюджет: 1209 ₴ — укладывается в лимит 1500 ₴ (запас 291 ₴)."
+          ],
+          "expert_summary": "Надёжный функциональный аксессуар для спорта: максимальное удобство в движении, эргономичный дизайн и долговечные материалы."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": false,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 28,
+      "name": "Runner: Running gear with bottle & speed laces (1300 UAH)",
+      "persona": "Road runner wanting water bottle and speed laces",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "running",
+        "use_scenario": "training",
+        "max_price_uah": 1300,
+        "locale": "uk"
+      },
+      "expected_focus": "Tests match for race-expert-197 (1209 UAH: bottle + speed laces + socks + bars).",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SUPPLEMENT_CREATINE_LEAK",
+        "flaw_summary": "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+        "all_flaws": [
+          "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-068] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+          "ПОРУШЕННЯ КАТЕГОРІЇ: Користувач просив спортивні аксесуари, але отримав виключно шкарпетки [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці'.",
+          "НЕПРАВДИВЕ ПОЯСНЕННЯ В WHY_SUITABLE: Система заявляє 'Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).', але набір [race-expert-068] містить сторонні компоненти (креатин/добавки/їжу/абонемент)!"
+        ],
+        "top_item": {
+          "set_id": "race-expert-068",
+          "title": "Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1005,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).",
+            "Бюджет: 1005 ₴ — укладається в ліміт 1300 ₴ (запас 295 ₴)."
+          ],
+          "expert_summary": "Надійний функціональний аксесуар для спорту: максимальна зручність у русі, ергономічний дизайн та довговічні матеріали."
+        },
+        "d1_real_gear": false,
+        "d2_size_match": true,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": false,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 29,
+      "name": "Runner: Accessories, tight budget 800 UAH",
+      "persona": "Student runner needing cheap bib belt / bottle under 800 UAH",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "running",
+        "max_price_uah": 800,
+        "locale": "uk"
+      },
+      "expected_focus": "Tests accessory catalog starvation at <1000 UAH; check floor anchor vs near miss.",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SUPPLEMENT_CREATINE_LEAK",
+        "flaw_summary": "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+        "all_flaws": [
+          "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-068] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+          "ПОРУШЕННЯ КАТЕГОРІЇ: Користувач просив спортивні аксесуари, але отримав виключно шкарпетки [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці'.",
+          "НЕПРАВДИВЕ ПОЯСНЕННЯ В WHY_SUITABLE: Система заявляє 'Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).', але набір [race-expert-068] містить сторонні компоненти (креатин/добавки/їжу/абонемент)!",
+          "NEAR-MISS ПЕРЕВИЩЕННЯ: Бюджет 800 ₴, товар 1005 ₴ (перевищення на 205 ₴)."
+        ],
+        "top_item": {
+          "set_id": "race-expert-068",
+          "title": "Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1005,
+          "status": "no_match",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).",
+            "Перевищує вибраний бюджет на 205 ₴."
+          ],
+          "expert_summary": "Надійний функціональний аксесуар для спорту: максимальна зручність у русі, ергономічний дизайн та довговічні матеріали."
+        },
+        "d1_real_gear": false,
+        "d2_size_match": true,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": false,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 30,
+      "name": "Runner: Accessories, entry budget 600 UAH",
+      "persona": "Budget runner looking for basic running accessory under 600 UAH",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "running",
+        "max_price_uah": 600,
+        "locale": "ru"
+      },
+      "expected_focus": "Tests budget lower bound for sports accessories.",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SUPPLEMENT_CREATINE_LEAK",
+        "flaw_summary": "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+        "all_flaws": [
+          "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-068] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+          "ПОРУШЕННЯ КАТЕГОРІЇ: Користувач просив спортивні аксесуари, але отримав виключно шкарпетки [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці'.",
+          "ЦІНОВИЙ ЯКІР: Бюджет 600 ₴ нижчий за мінімальний у каталозі (950 ₴). Запропоновано базовий набір за 1005 ₴."
+        ],
+        "top_item": {
+          "set_id": "race-expert-068",
+          "title": "Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1005,
+          "status": "floor_anchor",
+          "reasons": [
+            "Целевое назначение: специально скомплектован под задачу «Одежда и аксессуары».",
+            "Категория товаров: в наборе именно Спортивные аксессуары и фляги (без посторонних позиций).",
+            "Минимальный базовый набор в категории (от 1005 ₴, разница с бюджетом 405 ₴)."
+          ],
+          "expert_summary": "Надёжный функциональный аксессуар для спорта: максимальное удобство в движении, эргономичный дизайн и долговечные материалы."
+        },
+        "d1_real_gear": false,
+        "d2_size_match": true,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": false,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 31,
+      "name": "Runner: Accessories, 1000 UAH budget",
+      "persona": "Runner with 1000 UAH wanting sports accessories",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "running",
+        "max_price_uah": 1000,
+        "locale": "uk"
+      },
+      "expected_focus": "Critical test: does engine push race-expert-068 (creatine + socks + club membership) as near-miss?",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SUPPLEMENT_CREATINE_LEAK",
+        "flaw_summary": "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+        "all_flaws": [
+          "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-068] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+          "ПОРУШЕННЯ КАТЕГОРІЇ: Користувач просив спортивні аксесуари, але отримав виключно шкарпетки [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці'.",
+          "НЕПРАВДИВЕ ПОЯСНЕННЯ В WHY_SUITABLE: Система заявляє 'Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).', але набір [race-expert-068] містить сторонні компоненти (креатин/добавки/їжу/абонемент)!",
+          "NEAR-MISS ПЕРЕВИЩЕННЯ: Бюджет 1000 ₴, товар 1005 ₴ (перевищення на 5 ₴)."
+        ],
+        "top_item": {
+          "set_id": "race-expert-068",
+          "title": "Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1005,
+          "status": "no_match",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).",
+            "Перевищує вибраний бюджет на 5 ₴."
+          ],
+          "expert_summary": "Надійний функціональний аксесуар для спорту: максимальна зручність у русі, ергономічний дизайн та довговічні матеріали."
+        },
+        "d1_real_gear": false,
+        "d2_size_match": true,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": false,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 32,
+      "name": "Runner: Accessories, 1200 UAH budget",
+      "persona": "Runner wanting training accessories up to 1200 UAH",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "running",
+        "use_scenario": "training",
+        "max_price_uah": 1200,
+        "locale": "ru"
+      },
+      "expected_focus": "Check whether gym sets (race-expert-068, 040) beat genuine running gear.",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SUPPLEMENT_CREATINE_LEAK",
+        "flaw_summary": "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+        "all_flaws": [
+          "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-068] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+          "ПОРУШЕННЯ КАТЕГОРІЇ: Користувач просив спортивні аксесуари, але отримав виключно шкарпетки [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці'."
+        ],
+        "top_item": {
+          "set_id": "race-expert-068",
+          "title": "Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1005,
+          "status": "matched",
+          "reasons": [
+            "Целевое назначение: специально скомплектован под задачу «Одежда и аксессуары».",
+            "Категория товаров: в наборе именно Спортивные аксессуары и фляги (без посторонних позиций).",
+            "Бюджет: 1005 ₴ — укладывается в лимит 1200 ₴ (запас 195 ₴)."
+          ],
+          "expert_summary": "Надёжный функциональный аксессуар для спорта: максимальное удобство в движении, эргономичный дизайн и долговечные материалы."
+        },
+        "d1_real_gear": false,
+        "d2_size_match": true,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": false,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 33,
+      "name": "Runner: Warm season accessories (bottle, cap)",
+      "persona": "Summer runner needing hydration bottle and sun protection cap",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "running",
+        "season": "warm",
+        "max_price_uah": 1500,
+        "locale": "uk"
+      },
+      "expected_focus": "Expects race-expert-115 (Підготовка до забігу: cap + bottle + bib belt).",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "DECEPTIVE_EXPLANATION",
+        "flaw_summary": "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-025] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+        "all_flaws": [
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-025] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+          "ПОРУШЕННЯ КАТЕГОРІЇ: Користувач просив спортивні аксесуари, але отримав виключно шкарпетки [race-expert-025] 'Набір «Літній старт Race Expert Club» — абонемент на 3 місяці'.",
+          "НЕПРАВДИВЕ ПОЯСНЕННЯ В WHY_SUITABLE: Система заявляє 'Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).', але набір [race-expert-025] містить сторонні компоненти (креатин/добавки/їжу/абонемент)!"
+        ],
+        "top_item": {
+          "set_id": "race-expert-025",
+          "title": "Набір «Літній старт Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1379,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).",
+            "Бюджет: 1379 ₴ — укладається в ліміт 1500 ₴ (запас 121 ₴)."
+          ],
+          "expert_summary": "Надійний функціональний аксесуар для спорту: максимальна зручність у русі, ергономічний дизайн та довговічні матеріали."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 34,
+      "name": "Runner: Cold season accessories",
+      "persona": "Winter runner needing accessories for cold weather training",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "running",
+        "season": "cold",
+        "max_price_uah": 1500,
+        "locale": "ru"
+      },
+      "expected_focus": "Check what accessories match cold season.",
+      "evaluation": {
+        "verdict": "WARN",
+        "flaw_type": "MINOR_LEAKAGE_OR_MEMBERSHIP",
+        "flaw_summary": "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-095] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+        "all_flaws": [
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-095] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+          "ПОРУШЕННЯ КАТЕГОРІЇ: Користувач просив спортивні аксесуари, але отримав виключно шкарпетки [race-expert-095] 'Набір «Бігова екіпіровка Race Expert» — абонемент на 3 місяці'."
+        ],
+        "top_item": {
+          "set_id": "race-expert-095",
+          "title": "Набір «Бігова екіпіровка Race Expert» — абонемент на 3 місяці",
+          "price_uah": 1415,
+          "status": "matched",
+          "reasons": [
+            "Целевое назначение: специально скомплектован под задачу «Одежда и аксессуары».",
+            "Категория товаров: в наборе именно Спортивные аксессуары и фляги (без посторонних позиций).",
+            "Бюджет: 1415 ₴ — укладывается в лимит 1500 ₴ (запас 85 ₴)."
+          ],
+          "expert_summary": "Надёжный функциональный аксессуар для спорта: максимальное удобство в движении, эргономичный дизайн и долговечные материалы."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 35,
+      "name": "Runner: Everyday running accessories",
+      "persona": "Commuter runner wanting everyday running accessories",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "running",
+        "use_scenario": "everyday",
+        "max_price_uah": 1500,
+        "locale": "uk"
+      },
+      "expected_focus": "Tests everyday accessory matching.",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SUPPLEMENT_CREATINE_LEAK",
+        "flaw_summary": "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+        "all_flaws": [
+          "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-068] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+          "ПОРУШЕННЯ КАТЕГОРІЇ: Користувач просив спортивні аксесуари, але отримав виключно шкарпетки [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці'.",
+          "НЕПРАВДИВЕ ПОЯСНЕННЯ В WHY_SUITABLE: Система заявляє 'Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).', але набір [race-expert-068] містить сторонні компоненти (креатин/добавки/їжу/абонемент)!"
+        ],
+        "top_item": {
+          "set_id": "race-expert-068",
+          "title": "Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1005,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).",
+            "Бюджет: 1005 ₴ — укладається в ліміт 1500 ₴ (запас 495 ₴)."
+          ],
+          "expert_summary": "Надійний функціональний аксесуар для спорту: максимальна зручність у русі, ергономічний дизайн та довговічні матеріали."
+        },
+        "d1_real_gear": false,
+        "d2_size_match": true,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": false,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 36,
+      "name": "Runner: Race prep accessories, premium budget 2000 UAH",
+      "persona": "Triathlete with high budget preparing for marathon event",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "running",
+        "use_scenario": "event_preparation",
+        "max_price_uah": 2000,
+        "locale": "uk"
+      },
+      "expected_focus": "Expects top race kit; verify if club memberships or creatine dominate.",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SUPPLEMENT_CREATINE_LEAK",
+        "flaw_summary": "ВИТІК ЇЖІ/СНЕКІВ: Набір [race-expert-197] 'Набір «Бігова екіпіровка»' містить їстівні батончики/печиво/сублімати у розділі спорядження.",
+        "all_flaws": [
+          "ВИТІК ЇЖІ/СНЕКІВ: Набір [race-expert-197] 'Набір «Бігова екіпіровка»' містить їстівні батончики/печиво/сублімати у розділі спорядження.",
+          "НЕПРАВДИВЕ ПОЯСНЕННЯ В WHY_SUITABLE: Система заявляє 'Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).', але набір [race-expert-197] містить сторонні компоненти (креатин/добавки/їжу/абонемент)!"
+        ],
+        "top_item": {
+          "set_id": "race-expert-197",
+          "title": "Набір «Бігова екіпіровка»",
+          "price_uah": 1209,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).",
+            "Бюджет: 1209 ₴ — укладається в ліміт 2000 ₴ (запас 791 ₴)."
+          ],
+          "expert_summary": "Надійний функціональний аксесуар для спорту: максимальна зручність у русі, ергономічний дизайн та довговічні матеріали."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": false,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 37,
+      "name": "Runner: Accessories with shoe size 43 specified",
+      "persona": "Runner buying accessories who also enters shoe size 43",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "running",
+        "shoe_size": 43,
+        "max_price_uah": 1500,
+        "locale": "uk"
+      },
+      "expected_focus": "Tests accessory set with bundled socks: does bundled sock size match size 43?",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SUPPLEMENT_CREATINE_LEAK",
+        "flaw_summary": "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+        "all_flaws": [
+          "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-068] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+          "ПОРУШЕННЯ КАТЕГОРІЇ: Користувач просив спортивні аксесуари, але отримав виключно шкарпетки [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці'.",
+          "НЕПРАВДИВЕ ПОЯСНЕННЯ В WHY_SUITABLE: Система заявляє 'Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).', але набір [race-expert-068] містить сторонні компоненти (креатин/добавки/їжу/абонемент)!"
+        ],
+        "top_item": {
+          "set_id": "race-expert-068",
+          "title": "Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1005,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).",
+            "Розмірний збіг: вказаний розмір 43 входить у діапазон товару.",
+            "Бюджет: 1005 ₴ — укладається в ліміт 1500 ₴ (запас 495 ₴)."
+          ],
+          "expert_summary": "Надійний функціональний аксесуар для спорту: максимальна зручність у русі, ергономічний дизайн та довговічні матеріали."
+        },
+        "d1_real_gear": false,
+        "d2_size_match": true,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": false,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 38,
+      "name": "Runner: Accessories with shoe size 37 specified",
+      "persona": "Female runner buying accessories who enters shoe size 37",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "running",
+        "shoe_size": 37,
+        "max_price_uah": 1500,
+        "locale": "ru"
+      },
+      "expected_focus": "Critical sizing test: sets 056/115/210 bundle socks size 40–42! Will size 37 buyer be rejected or sent size 40–42?",
+      "evaluation": {
+        "verdict": "WARN",
+        "flaw_type": "MINOR_LEAKAGE_OR_MEMBERSHIP",
+        "flaw_summary": "ВИТІК ДОБАВОК/ВІТАМІНІВ: Набір [race-expert-150] 'Набір «Тренувальний ресурс Race Expert Club» — абонемент на 3 місяці' містить фармакологічні добавки (BCAA/карнітин/вітаміни) у розділі одягу та екіпірування.",
+        "all_flaws": [
+          "ВИТІК ДОБАВОК/ВІТАМІНІВ: Набір [race-expert-150] 'Набір «Тренувальний ресурс Race Expert Club» — абонемент на 3 місяці' містить фармакологічні добавки (BCAA/карнітин/вітаміни) у розділі одягу та екіпірування.",
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-150] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням."
+        ],
+        "top_item": {
+          "set_id": "race-expert-150",
+          "title": "Набір «Тренувальний ресурс Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1285,
+          "status": "matched",
+          "reasons": [
+            "Целевое назначение: специально скомплектован под задачу «Одежда и аксессуары».",
+            "Категория товаров: в наборе именно Спортивные аксессуары и фляги (без посторонних позиций).",
+            "Бюджет: 1285 ₴ — укладывается в лимит 1500 ₴ (запас 215 ₴)."
+          ],
+          "expert_summary": "Надёжный функциональный аксессуар для спорта: максимальное удобство в движении, эргономичный дизайн и долговечные материалы."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": false,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 39,
+      "name": "Runner: Accessories with shoe size 46 specified",
+      "persona": "Runner size 46 asking for race accessories",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "running",
+        "shoe_size": 46,
+        "max_price_uah": 1500,
+        "locale": "uk"
+      },
+      "expected_focus": "Critical sizing test: bundled socks in race kits are 40–42 or 43–45. Does it reject or mismatch size 46?",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SUPPLEMENT_CREATINE_LEAK",
+        "flaw_summary": "ВИТІК ДОБАВОК/ВІТАМІНІВ: Набір [race-expert-150] 'Набір «Тренувальний ресурс Race Expert Club» — абонемент на 3 місяці' містить фармакологічні добавки (BCAA/карнітин/вітаміни) у розділі одягу та екіпірування.",
+        "all_flaws": [
+          "ВИТІК ДОБАВОК/ВІТАМІНІВ: Набір [race-expert-150] 'Набір «Тренувальний ресурс Race Expert Club» — абонемент на 3 місяці' містить фармакологічні добавки (BCAA/карнітин/вітаміни) у розділі одягу та екіпірування.",
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-150] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+          "НЕПРАВДИВЕ ПОЯСНЕННЯ В WHY_SUITABLE: Система заявляє 'Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).', але набір [race-expert-150] містить сторонні компоненти (креатин/добавки/їжу/абонемент)!"
+        ],
+        "top_item": {
+          "set_id": "race-expert-150",
+          "title": "Набір «Тренувальний ресурс Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1285,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).",
+            "Бюджет: 1285 ₴ — укладається в ліміт 1500 ₴ (запас 215 ₴)."
+          ],
+          "expert_summary": "Надійний функціональний аксесуар для спорту: максимальна зручність у русі, ергономічний дизайн та довговічні матеріали."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": false,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 40,
+      "name": "Runner: Accessories without club membership",
+      "persona": "Runner who strictly wants accessories, not gym memberships",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "running",
+        "membership": "no",
+        "max_price_uah": 1500,
+        "locale": "uk"
+      },
+      "expected_focus": "Tests membership='no' filtering: does it successfully filter out club subscription kits?",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SUPPLEMENT_CREATINE_LEAK",
+        "flaw_summary": "ВИТІК ЇЖІ/СНЕКІВ: Набір [race-expert-197] 'Набір «Бігова екіпіровка»' містить їстівні батончики/печиво/сублімати у розділі спорядження.",
+        "all_flaws": [
+          "ВИТІК ЇЖІ/СНЕКІВ: Набір [race-expert-197] 'Набір «Бігова екіпіровка»' містить їстівні батончики/печиво/сублімати у розділі спорядження.",
+          "НЕПРАВДИВЕ ПОЯСНЕННЯ В WHY_SUITABLE: Система заявляє 'Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).', але набір [race-expert-197] містить сторонні компоненти (креатин/добавки/їжу/абонемент)!"
+        ],
+        "top_item": {
+          "set_id": "race-expert-197",
+          "title": "Набір «Бігова екіпіровка»",
+          "price_uah": 1209,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).",
+            "Бюджет: 1209 ₴ — укладається в ліміт 1500 ₴ (запас 291 ₴)."
+          ],
+          "expert_summary": "Надійний функціональний аксесуар для спорту: максимальна зручність у русі, ергономічний дизайн та довговічні матеріали."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": false,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 41,
+      "name": "Hiker: Trekking accessories (1500 UAH)",
+      "persona": "Hiker needing outdoor accessories for trail expedition",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "hiking",
+        "use_scenario": "training",
+        "max_price_uah": 1500,
+        "locale": "uk"
+      },
+      "expected_focus": "Expects outdoor/hiking accessories.",
+      "evaluation": {
+        "verdict": "WARN",
+        "flaw_type": "SUBOPTIMAL_RECOMMENDATION",
+        "flaw_summary": "ПОРУШЕННЯ КАТЕГОРІЇ: Користувач просив спортивні аксесуари, але отримав виключно шкарпетки [race-expert-034] 'Набір «Ритм твого руху»'.",
+        "all_flaws": [
+          "ПОРУШЕННЯ КАТЕГОРІЇ: Користувач просив спортивні аксесуари, але отримав виключно шкарпетки [race-expert-034] 'Набір «Ритм твого руху»'."
+        ],
+        "top_item": {
+          "set_id": "race-expert-034",
+          "title": "Набір «Ритм твого руху»",
+          "price_uah": 1500,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).",
+            "Бюджет: 1500 ₴ — точно відповідає вашому бюджетному очікуванню."
+          ],
+          "expert_summary": "Надійний функціональний аксесуар для спорту: максимальна зручність у русі, ергономічний дизайн та довговічні матеріали."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 42,
+      "name": "Hiker: Outdoor accessories, cold season",
+      "persona": "Winter hiker needing outdoor gear for Carpathians",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "hiking",
+        "season": "cold",
+        "max_price_uah": 1500,
+        "locale": "ru"
+      },
+      "expected_focus": "Expects winter trail gear without gym creatine.",
+      "evaluation": {
+        "verdict": "WARN",
+        "flaw_type": "MINOR_LEAKAGE_OR_MEMBERSHIP",
+        "flaw_summary": "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-091] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+        "all_flaws": [
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-091] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+          "ПОРУШЕННЯ КАТЕГОРІЇ: Користувач просив спортивні аксесуари, але отримав виключно шкарпетки [race-expert-091] 'Набір «Подарунок для прогулянок» — абонемент на 3 місяці'."
+        ],
+        "top_item": {
+          "set_id": "race-expert-091",
+          "title": "Набір «Подарунок для прогулянок» — абонемент на 3 місяці",
+          "price_uah": 1379,
+          "status": "matched",
+          "reasons": [
+            "Целевое назначение: специально скомплектован под задачу «Одежда и аксессуары».",
+            "Категория товаров: в наборе именно Спортивные аксессуары и фляги (без посторонних позиций).",
+            "Бюджет: 1379 ₴ — укладывается в лимит 1500 ₴ (запас 121 ₴)."
+          ],
+          "expert_summary": "Надёжный функциональный аксессуар для спорта: максимальное удобство в движении, эргономичный дизайн и долговечные материалы."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 43,
+      "name": "Hiker: Outdoor accessories, budget 1000 UAH",
+      "persona": "Budget hiker looking for accessories under 1000 UAH",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "hiking",
+        "max_price_uah": 1000,
+        "locale": "uk"
+      },
+      "expected_focus": "Tests hiking accessory availability under 1000 UAH.",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "DECEPTIVE_EXPLANATION",
+        "flaw_summary": "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-091] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+        "all_flaws": [
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-091] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+          "ПОРУШЕННЯ КАТЕГОРІЇ: Користувач просив спортивні аксесуари, але отримав виключно шкарпетки [race-expert-091] 'Набір «Подарунок для прогулянок» — абонемент на 3 місяці'.",
+          "НЕПРАВДИВЕ ПОЯСНЕННЯ В WHY_SUITABLE: Система заявляє 'Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).', але набір [race-expert-091] містить сторонні компоненти (креатин/добавки/їжу/абонемент)!",
+          "ЦІНОВИЙ ЯКІР: Бюджет 1000 ₴ нижчий за мінімальний у каталозі (950 ₴). Запропоновано базовий набір за 1379 ₴."
+        ],
+        "top_item": {
+          "set_id": "race-expert-091",
+          "title": "Набір «Подарунок для прогулянок» — абонемент на 3 місяці",
+          "price_uah": 1379,
+          "status": "floor_anchor",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).",
+            "Мінімальний базовий набір у категорії (від 1379 ₴, різниця з бюджетом 379 ₴)."
+          ],
+          "expert_summary": "Надійний функціональний аксесуар для спорту: максимальна зручність у русі, ергономічний дизайн та довговічні матеріали."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 44,
+      "name": "Hiker: Outdoor accessories, event prep (trail race)",
+      "persona": "Trail runner / hiker preparing for 50k mountain race",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "hiking",
+        "use_scenario": "event_preparation",
+        "max_price_uah": 1600,
+        "locale": "ru"
+      },
+      "expected_focus": "Expects trail race preparation accessories.",
+      "evaluation": {
+        "verdict": "WARN",
+        "flaw_type": "SUBOPTIMAL_RECOMMENDATION",
+        "flaw_summary": "ПОРУШЕННЯ КАТЕГОРІЇ: Користувач просив спортивні аксесуари, але отримав виключно шкарпетки [race-expert-034] 'Набір «Ритм твого руху»'.",
+        "all_flaws": [
+          "ПОРУШЕННЯ КАТЕГОРІЇ: Користувач просив спортивні аксесуари, але отримав виключно шкарпетки [race-expert-034] 'Набір «Ритм твого руху»'."
+        ],
+        "top_item": {
+          "set_id": "race-expert-034",
+          "title": "Набір «Ритм твого руху»",
+          "price_uah": 1500,
+          "status": "matched",
+          "reasons": [
+            "Целевое назначение: специально скомплектован под задачу «Одежда и аксессуары».",
+            "Категория товаров: в наборе именно Спортивные аксессуары и фляги (без посторонних позиций).",
+            "Бюджет: 1500 ₴ — укладывается в лимит 1600 ₴ (запас 100 ₴)."
+          ],
+          "expert_summary": "Надёжный функциональный аксессуар для спорта: максимальное удобство в движении, эргономичный дизайн и долговечные материалы."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 45,
+      "name": "Cyclist: Cycling accessories (1500 UAH)",
+      "persona": "Gravel cyclist looking for riding accessories and bottles",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "cycling",
+        "use_scenario": "training",
+        "max_price_uah": 1500,
+        "locale": "uk"
+      },
+      "expected_focus": "Tests cycling accessory recommendations.",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SUPPLEMENT_CREATINE_LEAK",
+        "flaw_summary": "ВИТІК ДОБАВОК/ВІТАМІНІВ: Набір [race-expert-150] 'Набір «Тренувальний ресурс Race Expert Club» — абонемент на 3 місяці' містить фармакологічні добавки (BCAA/карнітин/вітаміни) у розділі одягу та екіпірування.",
+        "all_flaws": [
+          "ВИТІК ДОБАВОК/ВІТАМІНІВ: Набір [race-expert-150] 'Набір «Тренувальний ресурс Race Expert Club» — абонемент на 3 місяці' містить фармакологічні добавки (BCAA/карнітин/вітаміни) у розділі одягу та екіпірування.",
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-150] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+          "НЕПРАВДИВЕ ПОЯСНЕННЯ В WHY_SUITABLE: Система заявляє 'Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).', але набір [race-expert-150] містить сторонні компоненти (креатин/добавки/їжу/абонемент)!"
+        ],
+        "top_item": {
+          "set_id": "race-expert-150",
+          "title": "Набір «Тренувальний ресурс Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1285,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).",
+            "Бюджет: 1285 ₴ — укладається в ліміт 1500 ₴ (запас 215 ₴)."
+          ],
+          "expert_summary": "Надійний функціональний аксесуар для спорту: максимальна зручність у русі, ергономічний дизайн та довговічні матеріали."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": false,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 46,
+      "name": "Cyclist: Cycling accessories, warm season",
+      "persona": "Road cyclist training in hot summer weather needing accessories",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "cycling",
+        "season": "warm",
+        "max_price_uah": 1500,
+        "locale": "ru"
+      },
+      "expected_focus": "Check if summer cycling accessories exist or if gym kits match.",
+      "evaluation": {
+        "verdict": "WARN",
+        "flaw_type": "MINOR_LEAKAGE_OR_MEMBERSHIP",
+        "flaw_summary": "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-025] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+        "all_flaws": [
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-025] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+          "ПОРУШЕННЯ КАТЕГОРІЇ: Користувач просив спортивні аксесуари, але отримав виключно шкарпетки [race-expert-025] 'Набір «Літній старт Race Expert Club» — абонемент на 3 місяці'."
+        ],
+        "top_item": {
+          "set_id": "race-expert-025",
+          "title": "Набір «Літній старт Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1379,
+          "status": "matched",
+          "reasons": [
+            "Целевое назначение: специально скомплектован под задачу «Одежда и аксессуары».",
+            "Категория товаров: в наборе именно Спортивные аксессуары и фляги (без посторонних позиций).",
+            "Бюджет: 1379 ₴ — укладывается в лимит 1500 ₴ (запас 121 ₴)."
+          ],
+          "expert_summary": "Надёжный функциональный аксессуар для спорта: максимальное удобство в движении, эргономичный дизайн и долговечные материалы."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 47,
+      "name": "Cyclist: Cycling accessories, entry budget 700 UAH",
+      "persona": "City cyclist on budget looking for bike gear",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "cycling",
+        "max_price_uah": 700,
+        "locale": "uk"
+      },
+      "expected_focus": "Tests cycling accessory lower budget bound.",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SUPPLEMENT_CREATINE_LEAK",
+        "flaw_summary": "ВИТІК ДОБАВОК/ВІТАМІНІВ: Набір [race-expert-150] 'Набір «Тренувальний ресурс Race Expert Club» — абонемент на 3 місяці' містить фармакологічні добавки (BCAA/карнітин/вітаміни) у розділі одягу та екіпірування.",
+        "all_flaws": [
+          "ВИТІК ДОБАВОК/ВІТАМІНІВ: Набір [race-expert-150] 'Набір «Тренувальний ресурс Race Expert Club» — абонемент на 3 місяці' містить фармакологічні добавки (BCAA/карнітин/вітаміни) у розділі одягу та екіпірування.",
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-150] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+          "НЕПРАВДИВЕ ПОЯСНЕННЯ В WHY_SUITABLE: Система заявляє 'Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).', але набір [race-expert-150] містить сторонні компоненти (креатин/добавки/їжу/абонемент)!",
+          "ЦІНОВИЙ ЯКІР: Бюджет 700 ₴ нижчий за мінімальний у каталозі (950 ₴). Запропоновано базовий набір за 1285 ₴."
+        ],
+        "top_item": {
+          "set_id": "race-expert-150",
+          "title": "Набір «Тренувальний ресурс Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1285,
+          "status": "floor_anchor",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).",
+            "Мінімальний базовий набір у категорії (від 1285 ₴, різниця з бюджетом 585 ₴)."
+          ],
+          "expert_summary": "Надійний функціональний аксесуар для спорту: максимальна зручність у русі, ергономічний дизайн та довговічні матеріали."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": false,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 48,
+      "name": "Walker: Walking accessories for daily fitness",
+      "persona": "Daily 10,000 steps walker looking for comfort accessories",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "walking",
+        "use_scenario": "everyday",
+        "max_price_uah": 1500,
+        "locale": "ru"
+      },
+      "expected_focus": "Check walking accessory matching.",
+      "evaluation": {
+        "verdict": "WARN",
+        "flaw_type": "MINOR_LEAKAGE_OR_MEMBERSHIP",
+        "flaw_summary": "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-091] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+        "all_flaws": [
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-091] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+          "ПОРУШЕННЯ КАТЕГОРІЇ: Користувач просив спортивні аксесуари, але отримав виключно шкарпетки [race-expert-091] 'Набір «Подарунок для прогулянок» — абонемент на 3 місяці'."
+        ],
+        "top_item": {
+          "set_id": "race-expert-091",
+          "title": "Набір «Подарунок для прогулянок» — абонемент на 3 місяці",
+          "price_uah": 1379,
+          "status": "matched",
+          "reasons": [
+            "Целевое назначение: специально скомплектован под задачу «Одежда и аксессуары».",
+            "Категория товаров: в наборе именно Спортивные аксессуары и фляги (без посторонних позиций).",
+            "Бюджет: 1379 ₴ — укладывается в лимит 1500 ₴ (запас 121 ₴)."
+          ],
+          "expert_summary": "Надёжный функциональный аксессуар для спорта: максимальное удобство в движении, эргономичный дизайн и долговечные материалы."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 49,
+      "name": "Walker: Walking accessories, budget 1000 UAH",
+      "persona": "Elderly walker looking for walking accessories up to 1000 UAH",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "walking",
+        "max_price_uah": 1000,
+        "locale": "uk"
+      },
+      "expected_focus": "Check walking accessory matching at 1000 UAH.",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "DECEPTIVE_EXPLANATION",
+        "flaw_summary": "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-091] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+        "all_flaws": [
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-091] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+          "ПОРУШЕННЯ КАТЕГОРІЇ: Користувач просив спортивні аксесуари, але отримав виключно шкарпетки [race-expert-091] 'Набір «Подарунок для прогулянок» — абонемент на 3 місяці'.",
+          "НЕПРАВДИВЕ ПОЯСНЕННЯ В WHY_SUITABLE: Система заявляє 'Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).', але набір [race-expert-091] містить сторонні компоненти (креатин/добавки/їжу/абонемент)!",
+          "ЦІНОВИЙ ЯКІР: Бюджет 1000 ₴ нижчий за мінімальний у каталозі (950 ₴). Запропоновано базовий набір за 1379 ₴."
+        ],
+        "top_item": {
+          "set_id": "race-expert-091",
+          "title": "Набір «Подарунок для прогулянок» — абонемент на 3 місяці",
+          "price_uah": 1379,
+          "status": "floor_anchor",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).",
+            "Мінімальний базовий набір у категорії (від 1379 ₴, різниця з бюджетом 379 ₴)."
+          ],
+          "expert_summary": "Надійний функціональний аксесуар для спорту: максимальна зручність у русі, ергономічний дизайн та довговічні матеріали."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 50,
+      "name": "Walker: Walking accessories, cold season",
+      "persona": "Nordic walker walking in freezing weather",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "walking",
+        "season": "cold",
+        "max_price_uah": 1500,
+        "locale": "uk"
+      },
+      "expected_focus": "Tests cold weather walking gear.",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "DECEPTIVE_EXPLANATION",
+        "flaw_summary": "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-091] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+        "all_flaws": [
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-091] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+          "ПОРУШЕННЯ КАТЕГОРІЇ: Користувач просив спортивні аксесуари, але отримав виключно шкарпетки [race-expert-091] 'Набір «Подарунок для прогулянок» — абонемент на 3 місяці'.",
+          "НЕПРАВДИВЕ ПОЯСНЕННЯ В WHY_SUITABLE: Система заявляє 'Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).', але набір [race-expert-091] містить сторонні компоненти (креатин/добавки/їжу/абонемент)!"
+        ],
+        "top_item": {
+          "set_id": "race-expert-091",
+          "title": "Набір «Подарунок для прогулянок» — абонемент на 3 місяці",
+          "price_uah": 1379,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).",
+            "Бюджет: 1379 ₴ — укладається в ліміт 1500 ₴ (запас 121 ₴)."
+          ],
+          "expert_summary": "Надійний функціональний аксесуар для спорту: максимальна зручність у русі, ергономічний дизайн та довговічні матеріали."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 51,
+      "name": "Athlete: Foam roller & massage ball for recovery",
+      "persona": "Runner needing myofascial release roller and trigger point ball",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "running",
+        "use_scenario": "training",
+        "max_price_uah": 1500,
+        "locale": "uk"
+      },
+      "expected_focus": "Expects race-expert-165 (Релакс та відновлення: Grid Roller + Massage Ball + Kuznetsov mat) or 154.",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SUPPLEMENT_CREATINE_LEAK",
+        "flaw_summary": "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+        "all_flaws": [
+          "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-068] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+          "ПОРУШЕННЯ КАТЕГОРІЇ: Користувач просив спортивні аксесуари, але отримав виключно шкарпетки [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці'.",
+          "НЕПРАВДИВЕ ПОЯСНЕННЯ В WHY_SUITABLE: Система заявляє 'Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).', але набір [race-expert-068] містить сторонні компоненти (креатин/добавки/їжу/абонемент)!"
+        ],
+        "top_item": {
+          "set_id": "race-expert-068",
+          "title": "Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1005,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).",
+            "Бюджет: 1005 ₴ — укладається в ліміт 1500 ₴ (запас 495 ₴)."
+          ],
+          "expert_summary": "Надійний функціональний аксесуар для спорту: максимальна зручність у русі, ергономічний дизайн та довговічні матеріали."
+        },
+        "d1_real_gear": false,
+        "d2_size_match": true,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": false,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 52,
+      "name": "Fitness: Jump rope & ab roller for home workouts",
+      "persona": "Fitness enthusiast wanting jump rope and abdominal roller",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "any",
+        "use_scenario": "training",
+        "max_price_uah": 1500,
+        "locale": "ru"
+      },
+      "expected_focus": "Expects race-expert-153 (Активний рух: jump rope + ab roller + massage ball).",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SUPPLEMENT_CREATINE_LEAK",
+        "flaw_summary": "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+        "all_flaws": [
+          "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-068] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+          "ПОРУШЕННЯ КАТЕГОРІЇ: Користувач просив спортивні аксесуари, але отримав виключно шкарпетки [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці'."
+        ],
+        "top_item": {
+          "set_id": "race-expert-068",
+          "title": "Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1005,
+          "status": "matched",
+          "reasons": [
+            "Целевое назначение: специально скомплектован под задачу «Одежда и аксессуары».",
+            "Категория товаров: в наборе именно Спортивные аксессуары и фляги (без посторонних позиций).",
+            "Бюджет: 1005 ₴ — укладывается в лимит 1500 ₴ (запас 495 ₴)."
+          ],
+          "expert_summary": "Надёжный функциональный аксессуар для спорта: максимальное удобство в движении, эргономичный дизайн и долговечные материалы."
+        },
+        "d1_real_gear": false,
+        "d2_size_match": true,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": false,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 53,
+      "name": "Yogi: Yoga mat & resistance band",
+      "persona": "Yoga practitioner looking for exercise mat and pilates band",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "walking",
+        "use_scenario": "training",
+        "max_price_uah": 1500,
+        "locale": "uk"
+      },
+      "expected_focus": "Expects race-expert-155 (Йога та пілатес: mat + expander); check for protein bar leakage.",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "ZERO_RESULTS_UNEXPECTED",
+        "flaw_summary": "Неочікувана порожня видача для валідного запиту: no_exact_match",
+        "details": "Повідомлення: Точного збігу за підтвердженими даними немає. Нижче можна окремо переглянути варіанти, що не відповідають м’яким перевагам.",
+        "d1_real_gear": false,
+        "d2_size_match": false,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 54,
+      "name": "Fitness: Home fitness kit with grid roller & band",
+      "persona": "Home workout buyer wanting grid roller, band, and bottle",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "any",
+        "use_scenario": "everyday",
+        "max_price_uah": 1500,
+        "locale": "ru"
+      },
+      "expected_focus": "Expects race-expert-154 (Домашній фітнес та тонус).",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SUPPLEMENT_CREATINE_LEAK",
+        "flaw_summary": "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+        "all_flaws": [
+          "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-068] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+          "ПОРУШЕННЯ КАТЕГОРІЇ: Користувач просив спортивні аксесуари, але отримав виключно шкарпетки [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці'."
+        ],
+        "top_item": {
+          "set_id": "race-expert-068",
+          "title": "Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1005,
+          "status": "matched",
+          "reasons": [
+            "Целевое назначение: специально скомплектован под задачу «Одежда и аксессуары».",
+            "Категория товаров: в наборе именно Спортивные аксессуары и фляги (без посторонних позиций).",
+            "Бюджет: 1005 ₴ — укладывается в лимит 1500 ₴ (запас 495 ₴)."
+          ],
+          "expert_summary": "Надёжный функциональный аксессуар для спорта: максимальное удобство в движении, эргономичный дизайн и долговечные материалы."
+        },
+        "d1_real_gear": false,
+        "d2_size_match": true,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": false,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 55,
+      "name": "Athlete: Kuznetsov acupressure mat & relaxation",
+      "persona": "Stressed athlete looking for relaxation and acupressure mat",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "any",
+        "use_scenario": "everyday",
+        "max_price_uah": 1500,
+        "locale": "uk"
+      },
+      "expected_focus": "Expects race-expert-165.",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SUPPLEMENT_CREATINE_LEAK",
+        "flaw_summary": "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+        "all_flaws": [
+          "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-068] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+          "ПОРУШЕННЯ КАТЕГОРІЇ: Користувач просив спортивні аксесуари, але отримав виключно шкарпетки [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці'.",
+          "НЕПРАВДИВЕ ПОЯСНЕННЯ В WHY_SUITABLE: Система заявляє 'Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).', але набір [race-expert-068] містить сторонні компоненти (креатин/добавки/їжу/абонемент)!"
+        ],
+        "top_item": {
+          "set_id": "race-expert-068",
+          "title": "Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1005,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).",
+            "Бюджет: 1005 ₴ — укладається в ліміт 1500 ₴ (запас 495 ₴)."
+          ],
+          "expert_summary": "Надійний функціональний аксесуар для спорту: максимальна зручність у русі, ергономічний дизайн та довговічні матеріали."
+        },
+        "d1_real_gear": false,
+        "d2_size_match": true,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": false,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 56,
+      "name": "Fitness: Training gear, entry budget 750 UAH",
+      "persona": "Beginner wanting fitness equipment under 750 UAH",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "running",
+        "use_scenario": "training",
+        "max_price_uah": 750,
+        "locale": "uk"
+      },
+      "expected_focus": "Tests budget bounds for fitness gear.",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SUPPLEMENT_CREATINE_LEAK",
+        "flaw_summary": "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+        "all_flaws": [
+          "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-068] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+          "ПОРУШЕННЯ КАТЕГОРІЇ: Користувач просив спортивні аксесуари, але отримав виключно шкарпетки [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці'.",
+          "НЕПРАВДИВЕ ПОЯСНЕННЯ В WHY_SUITABLE: Система заявляє 'Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).', але набір [race-expert-068] містить сторонні компоненти (креатин/добавки/їжу/абонемент)!",
+          "NEAR-MISS ПЕРЕВИЩЕННЯ: Бюджет 750 ₴, товар 1005 ₴ (перевищення на 255 ₴)."
+        ],
+        "top_item": {
+          "set_id": "race-expert-068",
+          "title": "Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1005,
+          "status": "no_match",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).",
+            "Перевищує вибраний бюджет на 255 ₴."
+          ],
+          "expert_summary": "Надійний функціональний аксесуар для спорту: максимальна зручність у русі, ергономічний дизайн та довговічні матеріали."
+        },
+        "d1_real_gear": false,
+        "d2_size_match": true,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": false,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 57,
+      "name": "Fitness: Bath towels for training / post-workout",
+      "persona": "Gym-goer wanting high quality cotton bath towels",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "any",
+        "use_scenario": "training",
+        "max_price_uah": 1500,
+        "locale": "ru"
+      },
+      "expected_focus": "Tests match for race-expert-198 / 199 (Банні рушники Шарпей 135x70cm).",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SUPPLEMENT_CREATINE_LEAK",
+        "flaw_summary": "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+        "all_flaws": [
+          "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-068] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+          "ПОРУШЕННЯ КАТЕГОРІЇ: Користувач просив спортивні аксесуари, але отримав виключно шкарпетки [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці'."
+        ],
+        "top_item": {
+          "set_id": "race-expert-068",
+          "title": "Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1005,
+          "status": "matched",
+          "reasons": [
+            "Целевое назначение: специально скомплектован под задачу «Одежда и аксессуары».",
+            "Категория товаров: в наборе именно Спортивные аксессуары и фляги (без посторонних позиций).",
+            "Бюджет: 1005 ₴ — укладывается в лимит 1500 ₴ (запас 495 ₴)."
+          ],
+          "expert_summary": "Надёжный функциональный аксессуар для спорта: максимальное удобство в движении, эргономичный дизайн и долговечные материалы."
+        },
+        "d1_real_gear": false,
+        "d2_size_match": true,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": false,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 58,
+      "name": "Fitness: Towel & shaker set without supplements",
+      "persona": "Functional athlete needing gym towel and shaker bottle",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "running",
+        "use_scenario": "training",
+        "membership": "no",
+        "max_price_uah": 1500,
+        "locale": "uk"
+      },
+      "expected_focus": "Tests towel/shaker set with membership=no.",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SUPPLEMENT_CREATINE_LEAK",
+        "flaw_summary": "ВИТІК ЇЖІ/СНЕКІВ: Набір [race-expert-197] 'Набір «Бігова екіпіровка»' містить їстівні батончики/печиво/сублімати у розділі спорядження.",
+        "all_flaws": [
+          "ВИТІК ЇЖІ/СНЕКІВ: Набір [race-expert-197] 'Набір «Бігова екіпіровка»' містить їстівні батончики/печиво/сублімати у розділі спорядження.",
+          "НЕПРАВДИВЕ ПОЯСНЕННЯ В WHY_SUITABLE: Система заявляє 'Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).', але набір [race-expert-197] містить сторонні компоненти (креатин/добавки/їжу/абонемент)!"
+        ],
+        "top_item": {
+          "set_id": "race-expert-197",
+          "title": "Набір «Бігова екіпіровка»",
+          "price_uah": 1209,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).",
+            "Бюджет: 1209 ₴ — укладається в ліміт 1500 ₴ (запас 291 ₴)."
+          ],
+          "expert_summary": "Надійний функціональний аксесуар для спорту: максимальна зручність у русі, ергономічний дизайн та довговічні матеріали."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": false,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 59,
+      "name": "Runner: Post-run massage gear, Russian locale",
+      "persona": "Marathoner needing recovery roller and massage equipment",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "running",
+        "use_scenario": "training",
+        "max_price_uah": 1500,
+        "locale": "ru"
+      },
+      "expected_focus": "Expects recovery massage tools with accurate Russian verdict.",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SUPPLEMENT_CREATINE_LEAK",
+        "flaw_summary": "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+        "all_flaws": [
+          "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-068] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+          "ПОРУШЕННЯ КАТЕГОРІЇ: Користувач просив спортивні аксесуари, але отримав виключно шкарпетки [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці'."
+        ],
+        "top_item": {
+          "set_id": "race-expert-068",
+          "title": "Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1005,
+          "status": "matched",
+          "reasons": [
+            "Целевое назначение: специально скомплектован под задачу «Одежда и аксессуары».",
+            "Категория товаров: в наборе именно Спортивные аксессуары и фляги (без посторонних позиций).",
+            "Бюджет: 1005 ₴ — укладывается в лимит 1500 ₴ (запас 495 ₴)."
+          ],
+          "expert_summary": "Надёжный функциональный аксессуар для спорта: максимальное удобство в движении, эргономичный дизайн и долговечные материалы."
+        },
+        "d1_real_gear": false,
+        "d2_size_match": true,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": false,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 60,
+      "name": "Fitness: Premium home gym gear (2500 UAH)",
+      "persona": "Buyer with high budget seeking complete mobility & fitness pack",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "any",
+        "use_scenario": "training",
+        "max_price_uah": 2500,
+        "locale": "uk"
+      },
+      "expected_focus": "Tests high budget behavior on fitness accessories.",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SUPPLEMENT_CREATINE_LEAK",
+        "flaw_summary": "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+        "all_flaws": [
+          "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-068] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+          "ПОРУШЕННЯ КАТЕГОРІЇ: Користувач просив спортивні аксесуари, але отримав виключно шкарпетки [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці'.",
+          "НЕПРАВДИВЕ ПОЯСНЕННЯ В WHY_SUITABLE: Система заявляє 'Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).', але набір [race-expert-068] містить сторонні компоненти (креатин/добавки/їжу/абонемент)!"
+        ],
+        "top_item": {
+          "set_id": "race-expert-068",
+          "title": "Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1005,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).",
+            "Бюджет: 1005 ₴ — укладається в ліміт 2500 ₴ (запас 1495 ₴)."
+          ],
+          "expert_summary": "Надійний функціональний аксесуар для спорту: максимальна зручність у русі, ергономічний дизайн та довговічні матеріали."
+        },
+        "d1_real_gear": false,
+        "d2_size_match": true,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": false,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 61,
+      "name": "Fitness: Mobility equipment, cold season",
+      "persona": "Winter athlete training indoors on mobility and core",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "walking",
+        "use_scenario": "training",
+        "season": "cold",
+        "max_price_uah": 1500,
+        "locale": "ru"
+      },
+      "expected_focus": "Tests season interaction with indoor fitness gear.",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "ZERO_RESULTS_UNEXPECTED",
+        "flaw_summary": "Неочікувана порожня видача для валідного запиту: no_exact_match",
+        "details": "Повідомлення: Точного совпадения по подтверждённым данным нет. Ниже можно отдельно посмотреть варианты, которые не совпадают с мягкими предпочтениями.",
+        "d1_real_gear": false,
+        "d2_size_match": false,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 62,
+      "name": "Fitness: Speed jump rope and hand grip for cardio",
+      "persona": "Crossfit athlete wanting speed jump rope with counter",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "running",
+        "use_scenario": "training",
+        "max_price_uah": 1500,
+        "locale": "uk"
+      },
+      "expected_focus": "Expects race-expert-153 (jump rope with counter).",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SUPPLEMENT_CREATINE_LEAK",
+        "flaw_summary": "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+        "all_flaws": [
+          "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-068] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+          "ПОРУШЕННЯ КАТЕГОРІЇ: Користувач просив спортивні аксесуари, але отримав виключно шкарпетки [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці'.",
+          "НЕПРАВДИВЕ ПОЯСНЕННЯ В WHY_SUITABLE: Система заявляє 'Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).', але набір [race-expert-068] містить сторонні компоненти (креатин/добавки/їжу/абонемент)!"
+        ],
+        "top_item": {
+          "set_id": "race-expert-068",
+          "title": "Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1005,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).",
+            "Бюджет: 1005 ₴ — укладається в ліміт 1500 ₴ (запас 495 ₴)."
+          ],
+          "expert_summary": "Надійний функціональний аксесуар для спорту: максимальна зручність у русі, ергономічний дизайн та довговічні матеріали."
+        },
+        "d1_real_gear": false,
+        "d2_size_match": true,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": false,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 63,
+      "name": "Fitness: Yoga mat without membership",
+      "persona": "Yogi strictly refusing club membership",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "any",
+        "use_scenario": "training",
+        "membership": "no",
+        "max_price_uah": 1500,
+        "locale": "uk"
+      },
+      "expected_focus": "Tests yoga mat recommendation with membership exclusion.",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SUPPLEMENT_CREATINE_LEAK",
+        "flaw_summary": "ВИТІК ЇЖІ/СНЕКІВ: Набір [race-expert-197] 'Набір «Бігова екіпіровка»' містить їстівні батончики/печиво/сублімати у розділі спорядження.",
+        "all_flaws": [
+          "ВИТІК ЇЖІ/СНЕКІВ: Набір [race-expert-197] 'Набір «Бігова екіпіровка»' містить їстівні батончики/печиво/сублімати у розділі спорядження.",
+          "НЕПРАВДИВЕ ПОЯСНЕННЯ В WHY_SUITABLE: Система заявляє 'Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).', але набір [race-expert-197] містить сторонні компоненти (креатин/добавки/їжу/абонемент)!"
+        ],
+        "top_item": {
+          "set_id": "race-expert-197",
+          "title": "Набір «Бігова екіпіровка»",
+          "price_uah": 1209,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).",
+            "Бюджет: 1209 ₴ — укладається в ліміт 1500 ₴ (запас 291 ₴)."
+          ],
+          "expert_summary": "Надійний функціональний аксесуар для спорту: максимальна зручність у русі, ергономічний дизайн та довговічні матеріали."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": false,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 64,
+      "name": "Runner: Acupressure & foam roller, budget 1600 UAH",
+      "persona": "Trail runner buying massage equipment for home recovery",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "running",
+        "use_scenario": "everyday",
+        "max_price_uah": 1600,
+        "locale": "uk"
+      },
+      "expected_focus": "Expects massage roller / acupressure kit.",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SUPPLEMENT_CREATINE_LEAK",
+        "flaw_summary": "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+        "all_flaws": [
+          "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-068] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+          "ПОРУШЕННЯ КАТЕГОРІЇ: Користувач просив спортивні аксесуари, але отримав виключно шкарпетки [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці'.",
+          "НЕПРАВДИВЕ ПОЯСНЕННЯ В WHY_SUITABLE: Система заявляє 'Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).', але набір [race-expert-068] містить сторонні компоненти (креатин/добавки/їжу/абонемент)!"
+        ],
+        "top_item": {
+          "set_id": "race-expert-068",
+          "title": "Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1005,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).",
+            "Бюджет: 1005 ₴ — укладається в ліміт 1600 ₴ (запас 595 ₴)."
+          ],
+          "expert_summary": "Надійний функціональний аксесуар для спорту: максимальна зручність у русі, ергономічний дизайн та довговічні матеріали."
+        },
+        "d1_real_gear": false,
+        "d2_size_match": true,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": false,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 65,
+      "name": "Fitness: Everyday fitness accessories, budget 1200 UAH",
+      "persona": "Office worker doing morning exercises, budget 1200 UAH",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "any",
+        "use_scenario": "everyday",
+        "max_price_uah": 1200,
+        "locale": "ru"
+      },
+      "expected_focus": "Tests fitness gear availability under 1200 UAH.",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SUPPLEMENT_CREATINE_LEAK",
+        "flaw_summary": "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+        "all_flaws": [
+          "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-068] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+          "ПОРУШЕННЯ КАТЕГОРІЇ: Користувач просив спортивні аксесуари, але отримав виключно шкарпетки [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці'."
+        ],
+        "top_item": {
+          "set_id": "race-expert-068",
+          "title": "Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1005,
+          "status": "matched",
+          "reasons": [
+            "Целевое назначение: специально скомплектован под задачу «Одежда и аксессуары».",
+            "Категория товаров: в наборе именно Спортивные аксессуары и фляги (без посторонних позиций).",
+            "Бюджет: 1005 ₴ — укладывается в лимит 1200 ₴ (запас 195 ₴)."
+          ],
+          "expert_summary": "Надёжный функциональный аксессуар для спорта: максимальное удобство в движении, эргономичный дизайн и долговечные материалы."
+        },
+        "d1_real_gear": false,
+        "d2_size_match": true,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": false,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 66,
+      "name": "Hiker: Winter trekking thermal socks size 43",
+      "persona": "Carpathian winter hiker needing thermal socks size 43",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "hiking",
+        "shoe_size": 43,
+        "season": "cold",
+        "max_price_uah": 1200,
+        "locale": "uk"
+      },
+      "expected_focus": "Expects thermo socks 1+1=3 size 43–45 (1058 UAH).",
+      "evaluation": {
+        "verdict": "PASS",
+        "flaw_type": "NONE",
+        "flaw_summary": "Ідеальний збіг за спорядженням, розміром, бюджетом та поясненнями.",
+        "all_flaws": [],
+        "top_item": {
+          "set_id": "race-expert-001",
+          "title": "Акційний набір термошкарпеток 1+1=3 «43–45»",
+          "price_uah": 1058,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Одяг, шкарпетки та екіпірування (без сторонніх речей).",
+            "Розмірний збіг: вказаний розмір 43 входить у діапазон товару.",
+            "Бюджет: 1058 ₴ — укладається в ліміт 1200 ₴ (запас 142 ₴)."
+          ],
+          "expert_summary": "Технологічне спортивне екіпірування: анатомічна посадка по стопі, надійна терморегуляція та активний захист від мозолів і натертостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 67,
+      "name": "Hiker: Winter trekking thermal socks size 40",
+      "persona": "Winter mountain trekker needing thermal socks size 40",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "hiking",
+        "shoe_size": 40,
+        "season": "cold",
+        "max_price_uah": 1200,
+        "locale": "ru"
+      },
+      "expected_focus": "Expects thermo socks 1+1=3 size 40–42 (1058 UAH).",
+      "evaluation": {
+        "verdict": "PASS",
+        "flaw_type": "NONE",
+        "flaw_summary": "Ідеальний збіг за спорядженням, розміром, бюджетом та поясненнями.",
+        "all_flaws": [],
+        "top_item": {
+          "set_id": "race-expert-002",
+          "title": "Акційний набір термошкарпеток 1+1=3 «40–42»",
+          "price_uah": 1058,
+          "status": "matched",
+          "reasons": [
+            "Целевое назначение: специально скомплектован под задачу «Одежда и аксессуары».",
+            "Категория товаров: в наборе именно Одежда, носки и экипировка (без посторонних позиций).",
+            "Размерное совпадение: указанный размер 40 входит в диапазон товара.",
+            "Бюджет: 1058 ₴ — укладывается в лимит 1200 ₴ (запас 142 ₴)."
+          ],
+          "expert_summary": "Технологичная спортивная экипировка: анатомическая посадка по стопе, надёжная терморегуляция и активная защита от мозолей и натёртостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 68,
+      "name": "Hiker: Winter trekking thermal socks size 37",
+      "persona": "Female winter trekker needing thermal socks size 37",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "hiking",
+        "shoe_size": 37,
+        "season": "cold",
+        "max_price_uah": 1200,
+        "locale": "uk"
+      },
+      "expected_focus": "Expects thermo socks 1+1=3 size 35–37 (1058 UAH).",
+      "evaluation": {
+        "verdict": "PASS",
+        "flaw_type": "NONE",
+        "flaw_summary": "Ідеальний збіг за спорядженням, розміром, бюджетом та поясненнями.",
+        "all_flaws": [],
+        "top_item": {
+          "set_id": "race-expert-004",
+          "title": "Акційний набір термошкарпеток 1+1=3 «35–37»",
+          "price_uah": 1058,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Одяг, шкарпетки та екіпірування (без сторонніх речей).",
+            "Розмірний збіг: вказаний розмір 37 входить у діапазон товару.",
+            "Бюджет: 1058 ₴ — укладається в ліміт 1200 ₴ (запас 142 ₴)."
+          ],
+          "expert_summary": "Технологічне спортивне екіпірування: анатомічна посадка по стопі, надійна терморегуляція та активний захист від мозолів і натертостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 69,
+      "name": "Hiker: Winter trekking thermal socks size 46",
+      "persona": "Tall winter trekker needing thermal socks size 46",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "hiking",
+        "shoe_size": 46,
+        "season": "cold",
+        "max_price_uah": 1200,
+        "locale": "uk"
+      },
+      "expected_focus": "Tests winter thermal socks for size 46; check catalog size availability.",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "DECEPTIVE_EXPLANATION",
+        "flaw_summary": "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-092] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+        "all_flaws": [
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-092] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+          "НЕПРАВДИВЕ ПОЯСНЕННЯ В WHY_SUITABLE: Система заявляє 'Категорія товарів: у наборі саме Одяг, шкарпетки та екіпірування (без сторонніх речей).', але набір [race-expert-092] містить сторонні компоненти (креатин/добавки/їжу/абонемент)!",
+          "NEAR-MISS ПЕРЕВИЩЕННЯ: Бюджет 1200 ₴, товар 1500 ₴ (перевищення на 300 ₴)."
+        ],
+        "top_item": {
+          "set_id": "race-expert-092",
+          "title": "Набір «Осінній подарунок» — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "status": "no_match",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Одяг, шкарпетки та екіпірування (без сторонніх речей).",
+            "Перевищує вибраний бюджет на 300 ₴."
+          ],
+          "expert_summary": "Технологічне спортивне екіпірування: анатомічна посадка по стопі, надійна терморегуляція та активний захист від мозолів і натертостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 70,
+      "name": "Hiker: Summer trekking socks size 43",
+      "persona": "Summer backpacker needing breathable hiking socks size 43",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "hiking",
+        "shoe_size": 43,
+        "season": "warm",
+        "max_price_uah": 1200,
+        "locale": "ru"
+      },
+      "expected_focus": "Tests summer trekking socks matching.",
+      "evaluation": {
+        "verdict": "WARN",
+        "flaw_type": "MINOR_LEAKAGE_OR_MEMBERSHIP",
+        "flaw_summary": "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-094] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+        "all_flaws": [
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-094] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням."
+        ],
+        "top_item": {
+          "set_id": "race-expert-094",
+          "title": "Набір «Подарунок у похід» — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "status": "no_exact_match",
+          "reasons": [
+            "Целевое назначение: специально скомплектован под задачу «Одежда и аксессуары».",
+            "Категория товаров: в наборе именно Одежда, носки и экипировка (без посторонних позиций).",
+            "Размерное совпадение: указанный размер 43 входит в диапазон товара.",
+            "Превышает выбранный бюджет на 300 ₴."
+          ],
+          "expert_summary": "Технологичная спортивная экипировка: анатомическая посадка по стопе, надёжная терморегуляция и активная защита от мозолей и натёртостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 71,
+      "name": "Hiker: Hiking socks, entry budget 600 UAH",
+      "persona": "Budget backpacker needing hiking socks under 600 UAH",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "hiking",
+        "shoe_size": 40,
+        "max_price_uah": 600,
+        "locale": "uk"
+      },
+      "expected_focus": "Tests budget lower bound for hiking socks.",
+      "evaluation": {
+        "verdict": "WARN",
+        "flaw_type": "BUDGET_FLOOR_OR_NEAR_MISS",
+        "flaw_summary": "ЦІНОВИЙ ЯКІР: Бюджет 600 ₴ нижчий за мінімальний у каталозі (950 ₴). Запропоновано базовий набір за 1058 ₴.",
+        "all_flaws": [
+          "ЦІНОВИЙ ЯКІР: Бюджет 600 ₴ нижчий за мінімальний у каталозі (950 ₴). Запропоновано базовий набір за 1058 ₴."
+        ],
+        "top_item": {
+          "set_id": "race-expert-002",
+          "title": "Акційний набір термошкарпеток 1+1=3 «40–42»",
+          "price_uah": 1058,
+          "status": "floor_anchor",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Одяг, шкарпетки та екіпірування (без сторонніх речей).",
+            "Розмірний збіг: вказаний розмір 40 входить у діапазон товару.",
+            "Мінімальний базовий набір у категорії (від 1058 ₴, різниця з бюджетом 458 ₴)."
+          ],
+          "expert_summary": "Технологічне спортивне екіпірування: анатомічна посадка по стопі, надійна терморегуляція та активний захист від мозолів і натертостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 72,
+      "name": "Hiker: General hiking gear, any component class, size 43",
+      "persona": "Backpacker wanting complete hiking gear pack",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "any",
+        "activity": "hiking",
+        "shoe_size": 43,
+        "max_price_uah": 1500,
+        "locale": "uk"
+      },
+      "expected_focus": "Expects top hiking gear (socks or outdoor pack); check for creatine leaks.",
+      "evaluation": {
+        "verdict": "PASS",
+        "flaw_type": "NONE",
+        "flaw_summary": "Ідеальний збіг за спорядженням, розміром, бюджетом та поясненнями.",
+        "all_flaws": [],
+        "top_item": {
+          "set_id": "race-expert-001",
+          "title": "Акційний набір термошкарпеток 1+1=3 «43–45»",
+          "price_uah": 1058,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Розмірний збіг: вказаний розмір 43 входить у діапазон товару.",
+            "Бюджет: 1058 ₴ — укладається в ліміт 1500 ₴ (запас 442 ₴)."
+          ],
+          "expert_summary": "Технологічне спортивне екіпірування: анатомічна посадка по стопі, надійна терморегуляція та активний захист від мозолів і натертостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 73,
+      "name": "Hiker: Cold season outdoor gift kit (1500 UAH)",
+      "persona": "Buyer looking for warm outdoor gift pack for a hiker",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "any",
+        "activity": "hiking",
+        "season": "cold",
+        "max_price_uah": 1500,
+        "locale": "ru"
+      },
+      "expected_focus": "Tests match for race-expert-094 (Подарунок у похід) or thermal socks.",
+      "evaluation": {
+        "verdict": "PASS",
+        "flaw_type": "NONE",
+        "flaw_summary": "Ідеальний збіг за спорядженням, розміром, бюджетом та поясненнями.",
+        "all_flaws": [],
+        "top_item": {
+          "set_id": "race-expert-001",
+          "title": "Акційний набір термошкарпеток 1+1=3 «43–45»",
+          "price_uah": 1058,
+          "status": "matched",
+          "reasons": [
+            "Целевое назначение: специально скомплектован под задачу «Одежда и аксессуары».",
+            "Бюджет: 1058 ₴ — укладывается в лимит 1500 ₴ (запас 442 ₴)."
+          ],
+          "expert_summary": "Технологичная спортивная экипировка: анатомическая посадка по стопе, надёжная терморегуляция и активная защита от мозолей и натёртостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 74,
+      "name": "Hiker: Everyday hiking socks size 41",
+      "persona": "Trail walker needing sturdy socks for daily trail walks",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "hiking",
+        "shoe_size": 41,
+        "use_scenario": "everyday",
+        "max_price_uah": 1000,
+        "locale": "uk"
+      },
+      "expected_focus": "Expects dark or white sock pack matching size 41.",
+      "evaluation": {
+        "verdict": "WARN",
+        "flaw_type": "BUDGET_FLOOR_OR_NEAR_MISS",
+        "flaw_summary": "NEAR-MISS ПЕРЕВИЩЕННЯ: Бюджет 1000 ₴, товар 1058 ₴ (перевищення на 58 ₴).",
+        "all_flaws": [
+          "NEAR-MISS ПЕРЕВИЩЕННЯ: Бюджет 1000 ₴, товар 1058 ₴ (перевищення на 58 ₴)."
+        ],
+        "top_item": {
+          "set_id": "race-expert-002",
+          "title": "Акційний набір термошкарпеток 1+1=3 «40–42»",
+          "price_uah": 1058,
+          "status": "no_match",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Одяг, шкарпетки та екіпірування (без сторонніх речей).",
+            "Розмірний збіг: вказаний розмір 41 входить у діапазон товару.",
+            "Перевищує вибраний бюджет на 58 ₴."
+          ],
+          "expert_summary": "Технологічне спортивне екіпірування: анатомічна посадка по стопі, надійна терморегуляція та активний захист від мозолів і натертостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 75,
+      "name": "Hiker: Premium hiking gear pack (2000 UAH)",
+      "persona": "Experienced trekker with flexible budget 2000 UAH",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "any",
+        "activity": "hiking",
+        "shoe_size": 43,
+        "max_price_uah": 2000,
+        "locale": "uk"
+      },
+      "expected_focus": "Tests premium hiking gear recommendations.",
+      "evaluation": {
+        "verdict": "PASS",
+        "flaw_type": "NONE",
+        "flaw_summary": "Ідеальний збіг за спорядженням, розміром, бюджетом та поясненнями.",
+        "all_flaws": [],
+        "top_item": {
+          "set_id": "race-expert-001",
+          "title": "Акційний набір термошкарпеток 1+1=3 «43–45»",
+          "price_uah": 1058,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Розмірний збіг: вказаний розмір 43 входить у діапазон товару.",
+            "Бюджет: 1058 ₴ — укладається в ліміт 2000 ₴ (запас 942 ₴)."
+          ],
+          "expert_summary": "Технологічне спортивне екіпірування: анатомічна посадка по стопі, надійна терморегуляція та активний захист від мозолів і натертостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 76,
+      "name": "Cyclist: Cycling socks size 43, regular budget",
+      "persona": "Road cyclist needing cycling socks size 43",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "cycling",
+        "shoe_size": 43,
+        "max_price_uah": 1000,
+        "locale": "uk"
+      },
+      "expected_focus": "Expects technical socks matching size 43.",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "ZERO_RESULTS_UNEXPECTED",
+        "flaw_summary": "Неочікувана порожня видача для валідного запиту: no_match",
+        "details": "Повідомлення: За відповідями та жорсткими обмеженнями відповідних варіантів немає.",
+        "d1_real_gear": false,
+        "d2_size_match": false,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 77,
+      "name": "Cyclist: Cycling socks size 40, regular budget",
+      "persona": "Gravel cyclist needing cycling socks size 40",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "cycling",
+        "shoe_size": 40,
+        "max_price_uah": 1000,
+        "locale": "ru"
+      },
+      "expected_focus": "Expects technical socks matching size 40.",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "ZERO_RESULTS_UNEXPECTED",
+        "flaw_summary": "Неочікувана порожня видача для валідного запиту: no_match",
+        "details": "Повідомлення: По ответам и жёстким ограничениям подходящих вариантов нет.",
+        "d1_real_gear": false,
+        "d2_size_match": false,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 78,
+      "name": "Cyclist: Winter cycling thermal socks size 44",
+      "persona": "Fatbike / winter cyclist needing thermal socks size 44",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "cycling",
+        "shoe_size": 44,
+        "season": "cold",
+        "max_price_uah": 1200,
+        "locale": "uk"
+      },
+      "expected_focus": "Expects thermo socks size 43-45 for winter cycling.",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "ZERO_RESULTS_UNEXPECTED",
+        "flaw_summary": "Неочікувана порожня видача для валідного запиту: no_match",
+        "details": "Повідомлення: За відповідями та жорсткими обмеженнями відповідних варіантів немає.",
+        "d1_real_gear": false,
+        "d2_size_match": false,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 79,
+      "name": "Cyclist: General cycling gear, any component, budget 1500 UAH",
+      "persona": "Cyclist looking for general riding kit up to 1500 UAH",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "any",
+        "activity": "cycling",
+        "max_price_uah": 1500,
+        "locale": "uk"
+      },
+      "expected_focus": "Critical test: does engine recommend BCAA powder + club membership (race-expert-150) as top cycling gear?!",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SUPPLEMENT_CREATINE_LEAK",
+        "flaw_summary": "ВИТІК ДОБАВОК/ВІТАМІНІВ: Набір [race-expert-150] 'Набір «Тренувальний ресурс Race Expert Club» — абонемент на 3 місяці' містить фармакологічні добавки (BCAA/карнітин/вітаміни) у розділі одягу та екіпірування.",
+        "all_flaws": [
+          "ВИТІК ДОБАВОК/ВІТАМІНІВ: Набір [race-expert-150] 'Набір «Тренувальний ресурс Race Expert Club» — абонемент на 3 місяці' містить фармакологічні добавки (BCAA/карнітин/вітаміни) у розділі одягу та екіпірування.",
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-150] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+          "НЕАДЕКВАТНИЙ ЕКСПЕРТНИЙ ВЕРДИКТ: Текст вердикту прославляє бодібілдинг/набір маси для спорядження: 'Потужний комплекс для силових тренувань: підвищує вибухову силу, пікову працездатність та стимулює якісний м'язовий ріст.'."
+        ],
+        "top_item": {
+          "set_id": "race-expert-150",
+          "title": "Набір «Тренувальний ресурс Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1285,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Бюджет: 1285 ₴ — укладається в ліміт 1500 ₴ (запас 215 ₴)."
+          ],
+          "expert_summary": "Потужний комплекс для силових тренувань: підвищує вибухову силу, пікову працездатність та стимулює якісний м'язовий ріст."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": false,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 80,
+      "name": "Cyclist: Cycling gear, event prep (gran fondo)",
+      "persona": "Cyclist preparing for amateur cycling race",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "any",
+        "activity": "cycling",
+        "use_scenario": "event_preparation",
+        "max_price_uah": 1500,
+        "locale": "ru"
+      },
+      "expected_focus": "Check event prep gear for cycling.",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SUPPLEMENT_CREATINE_LEAK",
+        "flaw_summary": "ВИТІК ДОБАВОК/ВІТАМІНІВ: Набір [race-expert-150] 'Набір «Тренувальний ресурс Race Expert Club» — абонемент на 3 місяці' містить фармакологічні добавки (BCAA/карнітин/вітаміни) у розділі одягу та екіпірування.",
+        "all_flaws": [
+          "ВИТІК ДОБАВОК/ВІТАМІНІВ: Набір [race-expert-150] 'Набір «Тренувальний ресурс Race Expert Club» — абонемент на 3 місяці' містить фармакологічні добавки (BCAA/карнітин/вітаміни) у розділі одягу та екіпірування.",
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-150] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+          "НЕАДЕКВАТНИЙ ЕКСПЕРТНИЙ ВЕРДИКТ: Текст вердикту прославляє бодібілдинг/набір маси для спорядження: 'Мощный комплекс для силовых тренировок: повышает взрывную силу, пиковую работоспособность и стимулирует качественный мышечный рост.'."
+        ],
+        "top_item": {
+          "set_id": "race-expert-150",
+          "title": "Набір «Тренувальний ресурс Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1285,
+          "status": "matched",
+          "reasons": [
+            "Целевое назначение: специально скомплектован под задачу «Одежда и аксессуары».",
+            "Бюджет: 1285 ₴ — укладывается в лимит 1500 ₴ (запас 215 ₴)."
+          ],
+          "expert_summary": "Мощный комплекс для силовых тренировок: повышает взрывную силу, пиковую работоспособность и стимулирует качественный мышечный рост."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": false,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 81,
+      "name": "Walker: Walking socks size 37, everyday comfort",
+      "persona": "Daily commuter wanting comfortable socks size 37",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "walking",
+        "shoe_size": 37,
+        "use_scenario": "everyday",
+        "max_price_uah": 1000,
+        "locale": "uk"
+      },
+      "expected_focus": "Expects 5-pack socks size 35–37.",
+      "evaluation": {
+        "verdict": "PASS",
+        "flaw_type": "NONE",
+        "flaw_summary": "Ідеальний збіг за спорядженням, розміром, бюджетом та поясненнями.",
+        "all_flaws": [],
+        "top_item": {
+          "set_id": "race-expert-007",
+          "title": "Акційний набір білих шкарпеток, 5 пар «35–37»",
+          "price_uah": 950,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Одяг, шкарпетки та екіпірування (без сторонніх речей).",
+            "Розмірний збіг: вказаний розмір 37 входить у діапазон товару.",
+            "Бюджет: 950 ₴ — укладається в ліміт 1000 ₴ (запас 50 ₴)."
+          ],
+          "expert_summary": "Технологічне спортивне екіпірування: анатомічна посадка по стопі, надійна терморегуляція та активний захист від мозолів і натертостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 82,
+      "name": "Walker: Walking socks size 40, everyday comfort",
+      "persona": "Office worker walking 10k steps daily, size 40",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "walking",
+        "shoe_size": 40,
+        "use_scenario": "everyday",
+        "max_price_uah": 1000,
+        "locale": "ru"
+      },
+      "expected_focus": "Expects 5-pack socks size 38–40 or 40–42.",
+      "evaluation": {
+        "verdict": "PASS",
+        "flaw_type": "NONE",
+        "flaw_summary": "Ідеальний збіг за спорядженням, розміром, бюджетом та поясненнями.",
+        "all_flaws": [],
+        "top_item": {
+          "set_id": "race-expert-082",
+          "title": "Акційний набір темних шкарпеток 5 пар \"40 - 42",
+          "price_uah": 950,
+          "status": "matched",
+          "reasons": [
+            "Целевое назначение: специально скомплектован под задачу «Одежда и аксессуары».",
+            "Категория товаров: в наборе именно Одежда, носки и экипировка (без посторонних позиций).",
+            "Размерное совпадение: указанный размер 40 входит в диапазон товара.",
+            "Бюджет: 950 ₴ — укладывается в лимит 1000 ₴ (запас 50 ₴)."
+          ],
+          "expert_summary": "Технологичная спортивная экипировка: анатомическая посадка по стопе, надёжная терморегуляция и активная защита от мозолей и натёртостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 83,
+      "name": "Walker: Walking socks size 43, everyday comfort",
+      "persona": "Pedestrian walking outdoors daily, size 43",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "walking",
+        "shoe_size": 43,
+        "use_scenario": "everyday",
+        "max_price_uah": 1000,
+        "locale": "uk"
+      },
+      "expected_focus": "Expects 5-pack socks size 43–45.",
+      "evaluation": {
+        "verdict": "PASS",
+        "flaw_type": "NONE",
+        "flaw_summary": "Ідеальний збіг за спорядженням, розміром, бюджетом та поясненнями.",
+        "all_flaws": [],
+        "top_item": {
+          "set_id": "race-expert-011",
+          "title": "Акційний набір білих шкарпеток, 5 пар «43–45»",
+          "price_uah": 950,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Одяг, шкарпетки та екіпірування (без сторонніх речей).",
+            "Розмірний збіг: вказаний розмір 43 входить у діапазон товару.",
+            "Бюджет: 950 ₴ — укладається в ліміт 1000 ₴ (запас 50 ₴)."
+          ],
+          "expert_summary": "Технологічне спортивне екіпірування: анатомічна посадка по стопі, надійна терморегуляція та активний захист від мозолів і натертостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 84,
+      "name": "Walker: Winter walking thermal socks size 43",
+      "persona": "Winter walker needing warm thermo socks size 43",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "activity": "walking",
+        "shoe_size": 43,
+        "season": "cold",
+        "max_price_uah": 1200,
+        "locale": "uk"
+      },
+      "expected_focus": "Expects thermo socks 1+1=3 size 43–45.",
+      "evaluation": {
+        "verdict": "PASS",
+        "flaw_type": "NONE",
+        "flaw_summary": "Ідеальний збіг за спорядженням, розміром, бюджетом та поясненнями.",
+        "all_flaws": [],
+        "top_item": {
+          "set_id": "race-expert-001",
+          "title": "Акційний набір термошкарпеток 1+1=3 «43–45»",
+          "price_uah": 1058,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Одяг, шкарпетки та екіпірування (без сторонніх речей).",
+            "Розмірний збіг: вказаний розмір 43 входить у діапазон товару.",
+            "Бюджет: 1058 ₴ — укладається в ліміт 1200 ₴ (запас 142 ₴)."
+          ],
+          "expert_summary": "Технологічне спортивне екіпірування: анатомічна посадка по стопі, надійна терморегуляція та активний захист від мозолів і натертостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 85,
+      "name": "Walker: Walking gear, any component, budget 1200 UAH",
+      "persona": "General walker wanting walking equipment up to 1200 UAH",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "any",
+        "activity": "walking",
+        "max_price_uah": 1200,
+        "locale": "ru"
+      },
+      "expected_focus": "Tests general walking gear matching.",
+      "evaluation": {
+        "verdict": "PASS",
+        "flaw_type": "NONE",
+        "flaw_summary": "Ідеальний збіг за спорядженням, розміром, бюджетом та поясненнями.",
+        "all_flaws": [],
+        "top_item": {
+          "set_id": "race-expert-005",
+          "title": "Акційний набір темних шкарпеток, 5 пар «46–48»",
+          "price_uah": 950,
+          "status": "matched",
+          "reasons": [
+            "Целевое назначение: специально скомплектован под задачу «Одежда и аксессуары».",
+            "Бюджет: 950 ₴ — укладывается в лимит 1200 ₴ (запас 250 ₴)."
+          ],
+          "expert_summary": "Технологичная спортивная экипировка: анатомическая посадка по стопе, надёжная терморегуляция и активная защита от мозолей и натёртостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 86,
+      "name": "Swimmer: Swimming gear, any component (1500 UAH)",
+      "persona": "Triathlete / swimmer looking for swimming gear",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "any",
+        "activity": "swimming",
+        "max_price_uah": 1500,
+        "locale": "uk"
+      },
+      "expected_focus": "Critical taxonomy test: ACTIVITY_OPTIONS_BY_GOAL['gear'] includes swimming. Does it return 0 sets?",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SWIMMING_TAXONOMY_DEAD_END",
+        "flaw_summary": "Таксономічний глухий кут: 'swimming' офіційно дозволений у вікторині для 'gear', але в каталозі 0 товарів для плавання!",
+        "details": "Користувач обрав плавання, система дозволила вибір, але повернула status: no_match (0 наборів). Справжній плавець не отримав шапочки, окулярів чи рушника.",
+        "d1_real_gear": false,
+        "d2_size_match": true,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 87,
+      "name": "Swimmer: Swimming accessories (towel, goggles, cap)",
+      "persona": "Pool swimmer looking for swimming accessories",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "activity": "swimming",
+        "max_price_uah": 1500,
+        "locale": "ru"
+      },
+      "expected_focus": "Tests sports_accessories for swimming.",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SWIMMING_TAXONOMY_DEAD_END",
+        "flaw_summary": "Таксономічний глухий кут: 'swimming' офіційно дозволений у вікторині для 'gear', але в каталозі 0 товарів для плавання!",
+        "details": "Користувач обрав плавання, система дозволила вибір, але повернула status: no_match (0 наборів). Справжній плавець не отримав шапочки, окулярів чи рушника.",
+        "d1_real_gear": false,
+        "d2_size_match": true,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 88,
+      "name": "Swimmer: Swimming gear, training scenario",
+      "persona": "Master swimmer training regularly in pool",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "any",
+        "activity": "swimming",
+        "use_scenario": "training",
+        "max_price_uah": 1500,
+        "locale": "uk"
+      },
+      "expected_focus": "Tests swimming gear with training scenario.",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SWIMMING_TAXONOMY_DEAD_END",
+        "flaw_summary": "Таксономічний глухий кут: 'swimming' офіційно дозволений у вікторині для 'gear', але в каталозі 0 товарів для плавання!",
+        "details": "Користувач обрав плавання, система дозволила вибір, але повернула status: no_match (0 наборів). Справжній плавець не отримав шапочки, окулярів чи рушника.",
+        "d1_real_gear": false,
+        "d2_size_match": true,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 89,
+      "name": "Swimmer: Swimming gear, event preparation (open water)",
+      "persona": "Open water swimmer preparing for Bosporus cross",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "any",
+        "activity": "swimming",
+        "use_scenario": "event_preparation",
+        "max_price_uah": 2000,
+        "locale": "ru"
+      },
+      "expected_focus": "Tests open water event prep swimming gear.",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SWIMMING_TAXONOMY_DEAD_END",
+        "flaw_summary": "Таксономічний глухий кут: 'swimming' офіційно дозволений у вікторині для 'gear', але в каталозі 0 товарів для плавання!",
+        "details": "Користувач обрав плавання, система дозволила вибір, але повернула status: no_match (0 наборів). Справжній плавець не отримав шапочки, окулярів чи рушника.",
+        "d1_real_gear": false,
+        "d2_size_match": true,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 90,
+      "name": "Swimmer: Swimming gear, budget 1000 UAH",
+      "persona": "Student swimmer with 1000 UAH budget",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "any",
+        "activity": "swimming",
+        "max_price_uah": 1000,
+        "locale": "uk"
+      },
+      "expected_focus": "Tests swimming gear with tight budget.",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SWIMMING_TAXONOMY_DEAD_END",
+        "flaw_summary": "Таксономічний глухий кут: 'swimming' офіційно дозволений у вікторині для 'gear', але в каталозі 0 товарів для плавання!",
+        "details": "Користувач обрав плавання, система дозволила вибір, але повернула status: no_match (0 наборів). Справжній плавець не отримав шапочки, окулярів чи рушника.",
+        "d1_real_gear": false,
+        "d2_size_match": true,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 91,
+      "name": "Athlete: General gear, running, size 43, no class constraint",
+      "persona": "Runner looking for best gear recommendation without picking class",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "any",
+        "activity": "running",
+        "shoe_size": 43,
+        "max_price_uah": 1500,
+        "locale": "uk"
+      },
+      "expected_focus": "Expects best running gear (socks or accessories); check whether creatine sets outrank gear.",
+      "evaluation": {
+        "verdict": "PASS",
+        "flaw_type": "NONE",
+        "flaw_summary": "Ідеальний збіг за спорядженням, розміром, бюджетом та поясненнями.",
+        "all_flaws": [],
+        "top_item": {
+          "set_id": "race-expert-011",
+          "title": "Акційний набір білих шкарпеток, 5 пар «43–45»",
+          "price_uah": 950,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Розмірний збіг: вказаний розмір 43 входить у діапазон товару.",
+            "Бюджет: 950 ₴ — укладається в ліміт 1500 ₴ (запас 550 ₴)."
+          ],
+          "expert_summary": "Технологічне спортивне екіпірування: анатомічна посадка по стопі, надійна терморегуляція та активний захист від мозолів і натертостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 92,
+      "name": "Athlete: General gear, running, size 40, budget 1000 UAH",
+      "persona": "Runner with 1000 UAH budget, size 40",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "any",
+        "activity": "running",
+        "shoe_size": 40,
+        "max_price_uah": 1000,
+        "locale": "ru"
+      },
+      "expected_focus": "Expects 950 UAH socks matching size 40.",
+      "evaluation": {
+        "verdict": "PASS",
+        "flaw_type": "NONE",
+        "flaw_summary": "Ідеальний збіг за спорядженням, розміром, бюджетом та поясненнями.",
+        "all_flaws": [],
+        "top_item": {
+          "set_id": "race-expert-082",
+          "title": "Акційний набір темних шкарпеток 5 пар \"40 - 42",
+          "price_uah": 950,
+          "status": "matched",
+          "reasons": [
+            "Целевое назначение: специально скомплектован под задачу «Одежда и аксессуары».",
+            "Размерное совпадение: указанный размер 40 входит в диапазон товара.",
+            "Бюджет: 950 ₴ — укладывается в лимит 1000 ₴ (запас 50 ₴)."
+          ],
+          "expert_summary": "Технологичная спортивная экипировка: анатомическая посадка по стопе, надёжная терморегуляция и активная защита от мозолей и натёртостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 93,
+      "name": "Athlete: General gear, cold season, size 43",
+      "persona": "Cold weather multi-sport athlete, size 43",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "any",
+        "season": "cold",
+        "shoe_size": 43,
+        "max_price_uah": 1500,
+        "locale": "uk"
+      },
+      "expected_focus": "Expects thermo socks 1+1=3 size 43-45.",
+      "evaluation": {
+        "verdict": "PASS",
+        "flaw_type": "NONE",
+        "flaw_summary": "Ідеальний збіг за спорядженням, розміром, бюджетом та поясненнями.",
+        "all_flaws": [],
+        "top_item": {
+          "set_id": "race-expert-001",
+          "title": "Акційний набір термошкарпеток 1+1=3 «43–45»",
+          "price_uah": 1058,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Розмірний збіг: вказаний розмір 43 входить у діапазон товару.",
+            "Бюджет: 1058 ₴ — укладається в ліміт 1500 ₴ (запас 442 ₴)."
+          ],
+          "expert_summary": "Технологічне спортивне екіпірування: анатомічна посадка по стопі, надійна терморегуляція та активний захист від мозолів і натертостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 94,
+      "name": "Athlete: General gear, warm season, size 40",
+      "persona": "Warm weather multi-sport athlete, size 40",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "any",
+        "season": "warm",
+        "shoe_size": 40,
+        "max_price_uah": 1500,
+        "locale": "ru"
+      },
+      "expected_focus": "Check warm season general gear matching.",
+      "evaluation": {
+        "verdict": "WARN",
+        "flaw_type": "MINOR_LEAKAGE_OR_MEMBERSHIP",
+        "flaw_summary": "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-025] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+        "all_flaws": [
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-025] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням."
+        ],
+        "top_item": {
+          "set_id": "race-expert-025",
+          "title": "Набір «Літній старт Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1379,
+          "status": "matched",
+          "reasons": [
+            "Целевое назначение: специально скомплектован под задачу «Одежда и аксессуары».",
+            "Размерное совпадение: указанный размер 40 входит в диапазон товара.",
+            "Бюджет: 1379 ₴ — укладывается в лимит 1500 ₴ (запас 121 ₴)."
+          ],
+          "expert_summary": "Специализированный комплекс для водно-солевого баланса: эффективно защищает от обезвоживания, судорог и упадка сил при нагрузках."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 95,
+      "name": "Athlete: General gear, event preparation, budget 1500 UAH",
+      "persona": "Athlete preparing for upcoming sports event",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "any",
+        "use_scenario": "event_preparation",
+        "max_price_uah": 1500,
+        "locale": "uk"
+      },
+      "expected_focus": "Expects event preparation sports gear.",
+      "evaluation": {
+        "verdict": "PASS",
+        "flaw_type": "NONE",
+        "flaw_summary": "Ідеальний збіг за спорядженням, розміром, бюджетом та поясненнями.",
+        "all_flaws": [],
+        "top_item": {
+          "set_id": "race-expert-005",
+          "title": "Акційний набір темних шкарпеток, 5 пар «46–48»",
+          "price_uah": 950,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Бюджет: 950 ₴ — укладається в ліміт 1500 ₴ (запас 550 ₴)."
+          ],
+          "expert_summary": "Технологічне спортивне екіпірування: анатомічна посадка по стопі, надійна терморегуляція та активний захист від мозолів і натертостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 96,
+      "name": "Edge Case: String shoe size '42-44'",
+      "persona": "Buyer entering '42-44' as string instead of single number",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "shoe_size": "42-44",
+        "max_price_uah": 1200,
+        "locale": "uk"
+      },
+      "expected_focus": "Tests schema resilience: does draft_matcher crash with DraftMatchError or sanitize?",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SCHEMA_CRASH_UNSANITIZED_INPUT",
+        "flaw_summary": "Двигун впав з винятком DraftMatchError при передачі діапазону розміру рядком '42-44'.",
+        "details": "Виняток: shoe_size must be a numeric shoe size.. Потрібна санітизація/парсинг діапазонів або прозоре повідомлення.",
+        "d1_real_gear": false,
+        "d2_size_match": false,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": false
+      }
+    },
+    {
+      "test_id": 97,
+      "name": "Edge Case: Extremely low budget (400 UAH) gear search",
+      "persona": "Buyer with only 400 UAH looking for gear",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "max_price_uah": 400,
+        "locale": "ru"
+      },
+      "expected_focus": "Tests floor anchor behavior: gear starts at 950 UAH; does engine give honest floor anchor?",
+      "evaluation": {
+        "verdict": "WARN",
+        "flaw_type": "DEFAULT_SIZE_BIAS",
+        "flaw_summary": "ЗСУВ ЗАМОВЧУВАННЯ: При неуточненому розмірі система нав'язує гігантський розмір «46–48» (бо він найдешевший за 950 грн).",
+        "all_flaws": [
+          "ЗСУВ ЗАМОВЧУВАННЯ: При неуточненому розмірі система нав'язує гігантський розмір «46–48» (бо він найдешевший за 950 грн).",
+          "ЦІНОВИЙ ЯКІР: Бюджет 400 ₴ нижчий за мінімальний у каталозі (950 ₴). Запропоновано базовий набір за 950 ₴."
+        ],
+        "top_item": {
+          "set_id": "race-expert-005",
+          "title": "Акційний набір темних шкарпеток, 5 пар «46–48»",
+          "price_uah": 950,
+          "status": "floor_anchor",
+          "reasons": [
+            "Целевое назначение: специально скомплектован под задачу «Одежда и аксессуары».",
+            "Категория товаров: в наборе именно Одежда, носки и экипировка (без посторонних позиций).",
+            "Минимальный базовый набор в категории (от 950 ₴, разница с бюджетом 550 ₴)."
+          ],
+          "expert_summary": "Технологичная спортивная экипировка: анатомическая посадка по стопе, надёжная терморегуляция и активная защита от мозолей и натёртостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 98,
+      "name": "Edge Case: Ultra-high budget (3000 UAH) gear search",
+      "persona": "Wealthy buyer with 3000 UAH looking for premium sports gear",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "any",
+        "max_price_uah": 3000,
+        "locale": "uk"
+      },
+      "expected_focus": "Check if highest priced sets are legitimate gear or gym subscriptions with creatine.",
+      "evaluation": {
+        "verdict": "PASS",
+        "flaw_type": "NONE",
+        "flaw_summary": "Ідеальний збіг за спорядженням, розміром, бюджетом та поясненнями.",
+        "all_flaws": [],
+        "top_item": {
+          "set_id": "race-expert-005",
+          "title": "Акційний набір темних шкарпеток, 5 пар «46–48»",
+          "price_uah": 950,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Бюджет: 950 ₴ — укладається в ліміт 3000 ₴ (запас 2050 ₴)."
+          ],
+          "expert_summary": "Технологічне спортивне екіпірування: анатомічна посадка по стопі, надійна терморегуляція та активний захист від мозолів і натертостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 99,
+      "name": "Edge Case: Extreme shoe size (50)",
+      "persona": "Giant runner with EU shoe size 50",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "apparel_footwear",
+        "shoe_size": 50,
+        "max_price_uah": 1500,
+        "locale": "ru"
+      },
+      "expected_focus": "Tests out-of-catalog size handling: does engine honestly reject or mismatch?",
+      "evaluation": {
+        "verdict": "WARN",
+        "flaw_type": "MINOR_LEAKAGE_OR_MEMBERSHIP",
+        "flaw_summary": "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-092] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+        "all_flaws": [
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-092] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням."
+        ],
+        "top_item": {
+          "set_id": "race-expert-092",
+          "title": "Набір «Осінній подарунок» — абонемент на 3 місяці",
+          "price_uah": 1500,
+          "status": "matched",
+          "reasons": [
+            "Целевое назначение: специально скомплектован под задачу «Одежда и аксессуары».",
+            "Категория товаров: в наборе именно Одежда, носки и экипировка (без посторонних позиций).",
+            "Бюджет: 1500 ₴ — точно соответствует вашему бюджетному ожиданию."
+          ],
+          "expert_summary": "Технологичная спортивная экипировка: анатомическая посадка по стопе, надёжная терморегуляция и активная защита от мозолей и натёртостей."
+        },
+        "d1_real_gear": true,
+        "d2_size_match": true,
+        "d3_class_alignment": true,
+        "d4_no_supplement_leak": true,
+        "d5_truthful_explanation": true
+      }
+    },
+    {
+      "test_id": 100,
+      "name": "Edge Case: Contradictory request (sports_accessories with shoe size 43)",
+      "persona": "Buyer asking for sports accessories but specifying shoe size 43",
+      "request": {
+        "goal_group": "gear",
+        "component_class": "sports_accessories",
+        "shoe_size": 43,
+        "max_price_uah": 1500,
+        "locale": "uk"
+      },
+      "expected_focus": "Tests engine behavior when asking for accessories while providing shoe size.",
+      "evaluation": {
+        "verdict": "FAIL",
+        "flaw_type": "SUPPLEMENT_CREATINE_LEAK",
+        "flaw_summary": "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+        "all_flaws": [
+          "КРИТИЧНИЙ ВИТІК БОДІБІЛДИНГУ: Набір [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці' містить банку чистого КРЕАТИНУ моногідрату у відповідь на запит спортивного екіпірування!",
+          "ДОМІНУВАННЯ АБОНЕМЕНТА: Набір [race-expert-068] є насамперед 3-місячною підпискою на клуб, а не реальним спортивним спорядженням.",
+          "ПОРУШЕННЯ КАТЕГОРІЇ: Користувач просив спортивні аксесуари, але отримав виключно шкарпетки [race-expert-068] 'Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці'.",
+          "НЕПРАВДИВЕ ПОЯСНЕННЯ В WHY_SUITABLE: Система заявляє 'Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).', але набір [race-expert-068] містить сторонні компоненти (креатин/добавки/їжу/абонемент)!"
+        ],
+        "top_item": {
+          "set_id": "race-expert-068",
+          "title": "Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці",
+          "price_uah": 1005,
+          "status": "matched",
+          "reasons": [
+            "Цільове призначення: спеціально скомплектовано для задачі «Одяг та аксесуари».",
+            "Категорія товарів: у наборі саме Спортивні аксесуари та пляшки (без сторонніх речей).",
+            "Розмірний збіг: вказаний розмір 43 входить у діапазон товару.",
+            "Бюджет: 1005 ₴ — укладається в ліміт 1500 ₴ (запас 495 ₴)."
+          ],
+          "expert_summary": "Надійний функціональний аксесуар для спорту: максимальна зручність у русі, ергономічний дизайн та довговічні матеріали."
+        },
+        "d1_real_gear": false,
+        "d2_size_match": true,
+        "d3_class_alignment": false,
+        "d4_no_supplement_leak": false,
+        "d5_truthful_explanation": false
+      }
+    }
+  ]
+}
