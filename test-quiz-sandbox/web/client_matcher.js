@@ -1,6 +1,6 @@
 // Standalone Client-side Matcher mirroring draft_matcher.py
 (function() {
-  const CONSTANTS = {"GOAL_FAMILIES": {"running": ["running_race_preparation"], "training": ["strength_muscle_training"], "hydration": ["hydration_electrolytes"], "food": ["portable_food_snacks", "endurance_energy"], "recovery": ["recovery_fatigue", "sleep_relaxation_stress"], "outdoors": ["outdoor_travel_hiking"], "gear": ["foot_apparel_comfort"], "daily": ["general_daily_nutrition"], "gift": ["gift_identity"]}, "GOAL_LABELS": {"ru": {"running": "Бег и старты", "training": "Тренировки и сила", "hydration": "Гидратация", "food": "Перекусы и питание", "recovery": "Восстановление и отдых", "outdoors": "Походы и активный отдых", "gear": "Одежда и аксессуары", "daily": "Ежедневное использование", "gift": "Подарок"}, "uk": {"running": "Біг і старти", "training": "Тренування та сила", "hydration": "Гідратація", "food": "Перекуси та харчування", "recovery": "Відновлення та відпочинок", "outdoors": "Походи й активний відпочинок", "gear": "Одяг та аксесуари", "daily": "Щоденне використання", "gift": "Подарунок"}}, "ACTIVITY_OPTIONS_BY_GOAL": {"running": [], "training": ["strength_training", "mind_body_mobility", "functional_training"], "hydration": ["cycling", "strength_training", "functional_training", "running"], "food": ["cycling", "hiking", "running"], "recovery": ["cycling", "strength_training", "mind_body_mobility", "functional_training", "running"], "outdoors": ["cycling", "walking", "hiking"], "gear": ["cycling", "swimming", "hiking", "walking", "running"], "daily": [], "gift": ["cycling", "swimming", "hiking", "walking", "strength_training", "running"]}, "COMPONENT_CLASSES_BY_GOAL": {"running": ["protein_carbohydrate_food", "apparel_footwear", "sports_accessories", "hydration_items"], "training": ["supplements_vitamins_minerals", "protein_carbohydrate_food", "creatine_preworkout", "hydration_items"], "hydration": ["protein_carbohydrate_food", "sports_accessories", "hydration_items"], "food": ["dehydrated_meal", "protein_carbohydrate_food", "hydration_items"], "recovery": ["protein_carbohydrate_food", "creatine_preworkout", "supplements_vitamins_minerals"], "outdoors": ["protein_carbohydrate_food", "dehydrated_meal", "apparel_footwear", "sports_accessories", "hydration_items"], "gear": ["apparel_footwear", "sports_accessories"], "daily": ["protein_carbohydrate_food", "supplements_vitamins_minerals"], "gift": ["supplements_vitamins_minerals", "protein_carbohydrate_food", "apparel_footwear", "sports_accessories", "hydration_items"]}, "USE_SCENARIOS_BY_GOAL": {"running": ["event_preparation", "training", "everyday"], "training": ["training", "everyday"], "hydration": ["event_preparation", "training", "everyday"], "food": ["event_preparation", "training", "everyday"], "recovery": ["training", "everyday"], "outdoors": ["training", "everyday"], "gear": ["event_preparation", "training", "everyday"], "daily": ["everyday"], "gift": ["event_preparation", "training", "everyday"]}, "USE_TIMINGS_BY_GOAL": {"running": ["daily_use", "during_training", "before_or_after_training"], "training": ["daily_use", "evening_or_bedtime", "during_training", "before_or_after_training"], "hydration": ["daily_use", "during_training", "before_or_after_training"], "food": ["daily_use", "during_training", "before_or_after_training"], "recovery": ["daily_use", "evening_or_bedtime", "during_training", "before_or_after_training"], "outdoors": ["daily_use", "during_training"], "gear": ["daily_use", "during_training"], "daily": ["daily_use", "evening_or_bedtime"], "gift": ["daily_use", "evening_or_bedtime", "during_training"]}, "USE_PLACES_BY_GOAL": {"running": ["hiking_or_camping", "travel_or_road"], "training": ["travel_or_road", "work_or_study"], "hydration": ["hiking_or_camping", "travel_or_road"], "food": ["hiking_or_camping", "travel_or_road"], "recovery": ["travel_or_road", "work_or_study"], "outdoors": ["hiking_or_camping", "travel_or_road"], "gear": ["hiking_or_camping", "travel_or_road"], "daily": ["travel_or_road", "work_or_study"], "gift": ["hiking_or_camping", "travel_or_road", "work_or_study"]}, "PRODUCT_FORMS_BY_GOAL": {"running": ["sticks", "liquid", "food_or_meal", "bars", "gel"], "training": ["sticks", "powder", "liquid", "capsules", "tablets", "softgels", "bars"], "hydration": ["liquid", "sticks", "gel", "bars"], "food": ["sticks", "liquid", "food_or_meal", "bars", "gel"], "recovery": ["sticks", "powder", "capsules", "tablets", "softgels"], "outdoors": ["sticks", "liquid", "food_or_meal", "bars", "gel"], "gear": [], "daily": ["tablets", "softgels", "powder", "capsules"], "gift": ["sticks", "capsules", "tablets", "softgels", "gel", "apparel", "liquid", "bars", "food_or_meal"]}, "SIZE_GOALS": ["gear", "outdoors", "gift", "running"], "CONFLICTED_COMPONENT_FAMILIES": {"RE11518": ["hydration_electrolytes"], "RE11807": ["*"], "RE11013": ["portable_food_snacks"], "Nabir_1133": ["general_daily_nutrition"]}, "CONFLICTED_COMPONENT_CLASSES": {"RE11518": ["sports_accessories"], "RE11807": ["*"], "RE11013": ["protein_carbohydrate_food"], "Nabir_1133": ["sports_accessories", "supplements_vitamins_minerals"]}};
+  const CONSTANTS = {"GOAL_FAMILIES": {"running": ["running_race_preparation"], "training": ["strength_muscle_training"], "hydration": ["hydration_electrolytes"], "food": ["endurance_energy", "portable_food_snacks"], "recovery": ["sleep_relaxation_stress", "recovery_fatigue"], "outdoors": ["outdoor_travel_hiking"], "gear": ["foot_apparel_comfort"], "daily": ["general_daily_nutrition"], "gift": ["gift_identity"]}, "GOAL_LABELS": {"ru": {"running": "Бег и старты", "training": "Тренировки и сила", "hydration": "Гидратация", "food": "Перекусы и питание", "recovery": "Восстановление и отдых", "outdoors": "Походы и активный отдых", "gear": "Одежда и аксессуары", "daily": "Ежедневное использование", "gift": "Подарок"}, "uk": {"running": "Біг і старти", "training": "Тренування та сила", "hydration": "Гідратація", "food": "Перекуси та харчування", "recovery": "Відновлення та відпочинок", "outdoors": "Походи й активний відпочинок", "gear": "Одяг та аксесуари", "daily": "Щоденне використання", "gift": "Подарунок"}}, "ACTIVITY_OPTIONS_BY_GOAL": {"running": [], "training": ["mind_body_mobility", "functional_training", "strength_training"], "hydration": ["cycling", "running", "functional_training", "strength_training"], "food": ["cycling", "running", "hiking"], "recovery": ["mind_body_mobility", "cycling", "running", "functional_training", "strength_training"], "outdoors": ["walking", "cycling", "hiking"], "gear": ["swimming", "cycling", "running", "hiking", "walking"], "daily": [], "gift": ["swimming", "cycling", "running", "hiking", "walking", "strength_training"]}, "COMPONENT_CLASSES_BY_GOAL": {"running": ["sports_accessories", "apparel_footwear", "hydration_items", "protein_carbohydrate_food"], "training": ["protein_carbohydrate_food", "creatine_preworkout", "hydration_items", "supplements_vitamins_minerals"], "hydration": ["sports_accessories", "hydration_items", "protein_carbohydrate_food"], "food": ["protein_carbohydrate_food", "hydration_items", "dehydrated_meal"], "recovery": ["protein_carbohydrate_food", "creatine_preworkout", "supplements_vitamins_minerals"], "outdoors": ["hydration_items", "protein_carbohydrate_food", "apparel_footwear", "sports_accessories", "dehydrated_meal"], "gear": ["apparel_footwear", "sports_accessories"], "daily": ["protein_carbohydrate_food", "supplements_vitamins_minerals"], "gift": ["hydration_items", "protein_carbohydrate_food", "supplements_vitamins_minerals", "apparel_footwear", "sports_accessories"]}, "USE_SCENARIOS_BY_GOAL": {"running": ["training", "event_preparation", "everyday"], "training": ["training", "everyday"], "hydration": ["training", "event_preparation", "everyday"], "food": ["training", "event_preparation", "everyday"], "recovery": ["training", "everyday"], "outdoors": ["training", "everyday"], "gear": ["training", "event_preparation", "everyday"], "daily": ["everyday"], "gift": ["training", "event_preparation", "everyday"]}, "USE_TIMINGS_BY_GOAL": {"running": ["during_training", "daily_use", "before_or_after_training"], "training": ["evening_or_bedtime", "during_training", "daily_use", "before_or_after_training"], "hydration": ["during_training", "daily_use", "before_or_after_training"], "food": ["during_training", "daily_use", "before_or_after_training"], "recovery": ["evening_or_bedtime", "during_training", "daily_use", "before_or_after_training"], "outdoors": ["during_training", "daily_use"], "gear": ["during_training", "daily_use"], "daily": ["evening_or_bedtime", "daily_use"], "gift": ["evening_or_bedtime", "during_training", "daily_use"]}, "USE_PLACES_BY_GOAL": {"running": ["hiking_or_camping", "travel_or_road"], "training": ["work_or_study", "travel_or_road"], "hydration": ["hiking_or_camping", "travel_or_road"], "food": ["hiking_or_camping", "travel_or_road"], "recovery": ["work_or_study", "travel_or_road"], "outdoors": ["hiking_or_camping", "travel_or_road"], "gear": ["hiking_or_camping", "travel_or_road"], "daily": ["work_or_study", "travel_or_road"], "gift": ["hiking_or_camping", "work_or_study", "travel_or_road"]}, "PRODUCT_FORMS_BY_GOAL": {"running": ["sticks", "liquid", "food_or_meal", "bars", "gel"], "training": ["tablets", "sticks", "liquid", "capsules", "bars", "softgels", "powder"], "hydration": ["sticks", "liquid", "gel", "bars"], "food": ["sticks", "liquid", "food_or_meal", "bars", "gel"], "recovery": ["tablets", "sticks", "capsules", "softgels", "powder"], "outdoors": ["sticks", "liquid", "food_or_meal", "bars", "gel"], "gear": [], "daily": ["tablets", "capsules", "softgels", "powder"], "gift": ["sticks", "liquid", "food_or_meal", "bars", "gel", "softgels", "apparel", "capsules", "tablets"]}, "SIZE_GOALS": ["gift", "gear", "running", "outdoors"], "CONFLICTED_COMPONENT_FAMILIES": {"RE11518": ["hydration_electrolytes"], "RE11807": ["*"], "RE11013": ["portable_food_snacks"], "Nabir_1133": ["general_daily_nutrition"]}, "CONFLICTED_COMPONENT_CLASSES": {"RE11518": ["sports_accessories"], "RE11807": ["*"], "RE11013": ["protein_carbohydrate_food"], "Nabir_1133": ["sports_accessories", "supplements_vitamins_minerals"]}};
   const CORE_ANSWER_FIELDS = ["activity"];
   const STEERING_ANSWER_FIELDS = ["component_class"];
   const SOFT_ANSWER_FIELDS = [
@@ -438,40 +438,258 @@
     ]);
   }
 
-  function buildResultItem(record, seller, comp, fit, locale, validated, stockInfo = null) {
+  function buildExpertSummary(record, fit, locale, validated = {}) {
     const ev = record.matching_evidence || {};
-    const reasons = [];
-    const goalLabel = CONSTANTS.GOAL_LABELS[locale]?.[record.selected_goal] || record.selected_goal;
+    const goal = record.selected_goal || validated.goal_group || "running";
+    const classes = ev.component_classes || [];
 
-    if (seller.length > 0) {
-      reasons.push(locale === "uk" ? `Продавець позиціонує набір для теми «${goalLabel}».` : `Продавец позиционирует набор для темы «${goalLabel}».`);
-    }
-    if (comp.length > 0) {
-      reasons.push(locale === "uk" ? "У переліку складу є товар, пов'язаний із цією задачею." : "В списке состава есть товар, связанный с этой задачей.");
-    }
-
-    const prefLabels = {
-      activity: ["активности", "активності"],
-      component_class: ["типу товара в наборе", "типу товару в наборі"],
-      use_scenario: ["сценарию", "сценарію"],
-      use_timing: ["времени использования", "часу використання"],
-      use_place: ["месту использования", "місцю використання"],
-      race_format: ["формату старта", "формату старту"],
-      season: ["погоде", "погоді"],
-      product_form: ["форме товара", "формі товару"]
+    const categorySummaries = {
+      protein_carbohydrate_food: {
+        uk: "Збалансований комплекс для підтримки високого темпу та витривалості: дає швидкі й тривалі вуглеводи без важкості в шлунку.",
+        ru: "Сбалансированный комплекс для поддержания высокого темпа и выносливости: даёт быстрые и пролонгированные углеводы без тяжести в желудке."
+      },
+      hydration_items: {
+        uk: "Спеціалізований комплекс для водно-сольового балансу: ефективно захищає від зневоднення, судом і втрати сил під час інтенсивного навантаження.",
+        ru: "Специализированный комплекс для водно-солевого баланса: эффективно защищает от обезвоживания, судорог и упадка сил при нагрузках."
+      },
+      supplements_vitamins_minerals: {
+        uk: "Оптимальна формула для відновлення та щоденного тонусу: знімає м'язову напругу, знижує втому та підтримує імунітет спортсмена.",
+        ru: "Оптимальная формула для восстановления и ежедневного тонуса: снимает мышечное напряжение, снижает усталость и поддерживает иммунитет спортсмена."
+      },
+      creatine_preworkout: {
+        uk: "Потужний комплекс для силових тренувань: підвищує вибухову силу, пікову працездатність та стимулює якісний м'язовий ріст.",
+        ru: "Мощный комплекс для силовых тренировок: повышает взрывную силу, пиковую работоспособность и стимулирует качественный мышечный рост."
+      },
+      apparel_footwear: {
+        uk: "Технологічне спортивне екіпірування: анатомічна посадка по стопі, надійна терморегуляція та активний захист від мозолів і натертостей.",
+        ru: "Технологичная спортивная экипировка: анатомическая посадка по стопе, надёжная терморегуляция и активная защита от мозолей и натёртостей."
+      },
+      dehydrated_meal: {
+        uk: "Поживний автономний раціон для походу: швидке приготування без зайвого посуду, висока калорійність та мінімальна вага в рюкзаку.",
+        ru: "Питательный автономный рацион для похода: быстрое приготовление без лишней посуды, высокая калорийность и минимальный вес в рюкзаке."
+      },
+      sports_accessories: {
+        uk: "Надійний функціональний аксесуар для спорту: максимальна зручність у русі, ергономічний дизайн та довговічні матеріали.",
+        ru: "Надёжный функциональный аксессуар для спорта: максимальное удобство в движении, эргономичный дизайн и долговечные материалы."
+      }
     };
 
-    (fit.matched_preferences || []).forEach(k => {
-      if (k === "shoe_size") return;
-      if (prefLabels[k]) {
-        const label = locale === "uk" ? prefLabels[k][1] : prefLabels[k][0];
-        reasons.push(locale === "uk" ? `Є збіг за ${label}.` : `Есть совпадение по ${label}.`);
-      }
-    });
-
-    if (fit.size_match) {
-      reasons.push(locale === "uk" ? "Вказаний розмір входить у діапазон товару." : "Указанный размер входит в диапазон товара.");
+    const reqClass = validated.component_class;
+    const targetClass = (reqClass && classes.includes(reqClass)) ? reqClass : (classes[0] || null);
+    if (targetClass && categorySummaries[targetClass]) {
+      return categorySummaries[targetClass][locale] || categorySummaries[targetClass].uk;
     }
+
+    const goalSummaries = {
+      running: {
+        uk: "Профільний комплект для бігунів: сфокусований на витривалості, рівномірному розподілі сил і комфорті на дистанції.",
+        ru: "Профильный комплект для бегунов: сфокусирован на выносливости, равномерном распределении сил и комфорте на дистанции."
+      },
+      training: {
+        uk: "Комплект для результативних тренувань: допомагає тренуватися довше, відновлюватися швидше та прогресувати в силі.",
+        ru: "Комплект для результативных тренировок: помогает тренироваться дольше, восстанавливаться быстрее и прогрессировать в силе."
+      },
+      recovery: {
+        uk: "Комплекс для глибокого відновлення: сприяє регенерації м'язів, нормалізації сну та зняттю накопиченого стресу.",
+        ru: "Комплекс для глубокого восстановления: способствует регенерации мышц, нормализации сна и снятию накопившегося стресса."
+      },
+      hydration: {
+        uk: "Освіжаючий баланс електролітів: попереджає судоми та допомагає підтримувати високу працездатність у спеку чи на тренуваннях.",
+        ru: "Освежающий баланс электролитов: предупреждает судороги и помогает поддерживать высокую работоспособность в жару или на тренировках."
+      },
+      gift: {
+        uk: "Презентабельний подарунковий набір для спортсмена: готове фірмове рішення з корисним складом та клубними бонусами.",
+        ru: "Презентабельный подарочный набор для спортсмена: готовое фирменное решение с полезным составом и клубными бонусами."
+      },
+      outdoors: {
+        uk: "Автономний комплект для походу чи активного відпочинку: зручне використання, якісне живлення та надійне спорядження.",
+        ru: "Автономный комплект для похода или активного отдыха: удобное использование, качественное питание и надёжная экипировка."
+      },
+      gear: {
+        uk: "Продумане спортивне екіпірування: захищає від дискомфорту та допомагає зосередитися на спортивному результаті.",
+        ru: "Продуманная спортивная экипировка: защищает от дискомфорта и помогает сосредоточиться на спортивном результате."
+      },
+      daily: {
+        uk: "Щоденний комплекс підтримки організму: допомагає зберігати тонус, енергію та високу концентрацію протягом усього дня.",
+        ru: "Ежедневный комплекс поддержки организма: помогает сохранять тонус, энергию и высокую концентрацию на протяжении всего дня."
+      }
+    };
+    if (goalSummaries[goal]) {
+      return goalSummaries[goal][locale] || goalSummaries[goal].uk;
+    }
+
+    return locale === "uk"
+      ? "Збалансований фірмовий набір Race Expert, скомплектований під вашу активність та цілі тренувань."
+      : "Сбалансированный фирменный набор Race Expert, скомплектованный под вашу активность и цели тренировок.";
+  }
+
+  function buildWhySuitable(record, fit, locale, validated, seller, comp) {
+    validated = validated || {};
+    const items = [];
+    const goal = record.selected_goal || validated.goal_group;
+    const goalLabel = CONSTANTS.GOAL_LABELS[locale]?.[goal] || goal;
+
+    if (seller.length > 0 || comp.length > 0) {
+      items.push(locale === "uk"
+        ? `Цільове призначення: спеціально скомплектовано для задачі «${goalLabel}».`
+        : `Целевое назначение: специально скомплектован под задачу «${goalLabel}».`
+      );
+    }
+
+    const reqClass = validated.component_class;
+    const classNames = {
+      protein_carbohydrate_food: ["Спортивне харчування та батончики", "Спортивное питание и батончики"],
+      supplements_vitamins_minerals: ["Вітаміни та щоденні мінерали", "Витамины и минералы"],
+      creatine_preworkout: ["Креатин та передтренувальні комплекси", "Креатин и предтреники"],
+      sports_accessories: ["Спортивні аксесуари та пляшки", "Спортивные аксессуары и фляги"],
+      apparel_footwear: ["Одяг, шкарпетки та екіпірування", "Одежда, носки и экипировка"],
+      hydration_items: ["Ізотоніки та електроліти", "Изотоники и электролиты"],
+      dehydrated_meal: ["Сублімована туристична їжа", "Сублимированная туристическая еда"]
+    };
+    if (reqClass) {
+      const classesList = Array.isArray(reqClass) ? reqClass : [reqClass];
+      const matched = classesList.map(c => classNames[c]?.[locale === "uk" ? 0 : 1]).filter(Boolean);
+      if (matched.length > 0) {
+        const cname = matched.join(", ");
+        items.push(locale === "uk"
+          ? `Категорія товарів: у наборі саме ${cname} (без сторонніх речей).`
+          : `Категория товаров: в наборе именно ${cname} (без посторонних позиций).`
+        );
+      }
+    }
+
+    const reqForm = validated.product_form;
+    const formNames = {
+      bars: ["батончики", "батончики"],
+      gel: ["енергетичні гелі", "энергетические гели"],
+      liquid: ["рідкі шоти", "жидкие шоты"],
+      sticks: ["стіки з порошком", "стики с порошком"],
+      capsules: ["капсули", "капсулы"],
+      tablets: ["таблетки", "таблетки"],
+      softgels: ["м'які капсули (Omega/D3)", "мягкие капсулы (Omega/D3)"],
+      powder: ["порошок у банках", "порошок в банках"],
+      apparel: ["текстильне екіпірування", "текстильная экипировка"],
+      food_or_meal: ["готова їжа та снеки", "готовая еда и снеки"]
+    };
+    if (reqForm) {
+      const formsList = Array.isArray(reqForm) ? reqForm : [reqForm];
+      const matched = formsList.map(f => formNames[f]?.[locale === "uk" ? 0 : 1]).filter(Boolean);
+      if (matched.length > 0) {
+        const fname = matched.join(", ");
+        items.push(locale === "uk"
+          ? `Форма продукту: зручний формат — ${fname}, легко брати із собою.`
+          : `Форма продукта: удобный формат — ${fname}, легко брать с собой.`
+        );
+      }
+    }
+
+    const reqTiming = validated.use_timing;
+    const timingNames = {
+      during_training: ["під час тренувань на ходу", "во время тренировок на ходу"],
+      before_or_after_training: ["до або після тренування для підзарядки", "до или после тренировки для подзарядки"],
+      evening_or_bedtime: ["увечері перед сном для відпочинку", "вечером перед сном для отдыха"],
+      daily_use: ["протягом дня для стабільного тонусу", "в течение дня для стабильного тонуса"]
+    };
+    if (reqTiming) {
+      const timingsList = Array.isArray(reqTiming) ? reqTiming : [reqTiming];
+      const matched = timingsList.map(t => timingNames[t]?.[locale === "uk" ? 0 : 1]).filter(Boolean);
+      if (matched.length > 0) {
+        const tname = matched.join(", ");
+        items.push(locale === "uk"
+          ? `Час прийому: розраховано на вживання ${tname}.`
+          : `Время приёма: рассчитан на употребление ${tname}.`
+        );
+      }
+    }
+
+    if (fit.size_match && validated.shoe_size) {
+      const size = validated.shoe_size;
+      items.push(locale === "uk"
+        ? `Розмірний збіг: вказаний розмір ${size} входить у діапазон товару.`
+        : `Размерное совпадение: указанный размер ${size} входит в диапазон товара.`
+      );
+    }
+
+    const maxPrice = validated.max_price_uah;
+    const price = record.price_uah || 0;
+    if (typeof maxPrice === "number" && typeof price === "number" && price <= maxPrice) {
+      const diff = maxPrice - price;
+      if (diff >= 50) {
+        items.push(locale === "uk"
+          ? `Бюджет: ${price} ₴ — укладається в ліміт ${maxPrice} ₴ (запас ${diff} ₴).`
+          : `Бюджет: ${price} ₴ — укладывается в лимит ${maxPrice} ₴ (запас ${diff} ₴).`
+        );
+      } else {
+        items.push(locale === "uk"
+          ? `Бюджет: ${price} ₴ — точно відповідає вашому бюджетному очікуванню.`
+          : `Бюджет: ${price} ₴ — точно соответствует вашему бюджетному ожиданию.`
+        );
+      }
+    }
+
+    if (membershipStatus(record) === "includes_membership") {
+      items.push(locale === "uk"
+        ? "Клубні привілеї: включає абонемент Race Expert Club з доступом до спільноти та тренувань."
+        : "Клубные привилегии: включает абонемент Race Expert Club с доступом к сообществу и тренировкам."
+      );
+    }
+
+    if (items.length < 2) {
+      items.push(locale === "uk"
+        ? "Склад: сертифікована спортивна продукція з перевіреною сумісністю."
+        : "Состав: сертифицированная спортивная продукция с проверенной совместимостью."
+      );
+    }
+
+    return items;
+  }
+
+  function buildWhyNotSuitable(record, fit, locale, validated) {
+    validated = validated || {};
+    const tradeoffs = [];
+    const matchType = fit.match_type;
+
+    if (matchType === "near_miss") {
+      const over = fit.price_over_budget_uah || 0;
+      tradeoffs.push(locale === "uk"
+        ? `Перевищує вибраний бюджет на ${over} ₴ (проте містить більший обсяг продукції).`
+        : `Превышает выбранный бюджет на ${over} ₴ (однако содержит больший объём продукции).`
+      );
+    } else if (matchType === "floor_anchor") {
+      const floorP = fit.floor_price_uah || record.price_uah;
+      const over = fit.price_over_budget_uah || 0;
+      tradeoffs.push(locale === "uk"
+        ? `Мінімальний базовий набір у категорії (від ${floorP} ₴, різниця з бюджетом ${over} ₴).`
+        : `Минимальный базовый набор в категории (от ${floorP} ₴, разница с бюджетом ${over} ₴).`
+      );
+    }
+
+    if (fit.size_status === "unknown" && validated.shoe_size) {
+      tradeoffs.push(locale === "uk"
+        ? "Розмір не вказаний окремо в описі (може бути універсальний або еластичний крій)."
+        : "Размер товара не указан в описании (может быть универсальный или эластичный крой)."
+      );
+    }
+
+    const ev = record.matching_evidence || {};
+    if (ev.status === "conflict_review_required") {
+      tradeoffs.push(locale === "uk"
+        ? "У картці є невирішена розбіжність складу; перевірте актуальну сторінку магазину."
+        : "В карточке есть неразрешённое расхождение состава; проверьте актуальную страницу магазина."
+      );
+    }
+
+    return tradeoffs;
+  }
+
+  function buildResultItem(record, seller, comp, fit, locale, validated, stockInfo = null) {
+    const ev = record.matching_evidence || {};
+
+    const expertSummary = buildExpertSummary(record, fit, locale, validated);
+    const whySuitable = buildWhySuitable(record, fit, locale, validated, seller, comp);
+    const whyNotSuitable = buildWhyNotSuitable(record, fit, locale, validated);
+
+    const reasons = [...whySuitable];
     if (fit.match_type === "near_miss") {
       const over = fit.price_over_budget_uah || 0;
       reasons.push(locale === "uk" ? `Перевищує вибраний бюджет на ${over} ₴.` : `Превышает выбранный бюджет на ${over} ₴.`);
@@ -535,6 +753,9 @@
       evidence_status: ev.status || "unknown",
       membership_status: membershipStatus(record),
       size_status: fit.size_status,
+      expert_summary: expertSummary,
+      why_suitable: whySuitable,
+      why_not_suitable: whyNotSuitable,
       reasons,
       data_notes: notes
     };

@@ -102,7 +102,11 @@ const UI_COPY = {
     place_travel_or_road: "У дорозі / подорожі",
     place_work_or_study: "На роботі або навчанні",
     cardPrice: "Вартість за знімком:",
-    openCardBtn: "Переглянути набір на сайті Race Expert →"
+    openCardBtn: "Переглянути набір на сайті Race Expert →",
+    expertVerdictTitle: "Експертний вердикт",
+    whySuitableTitle: "Чому цей набір підходить:",
+    tradeoffsTitle: "Зверніть увагу перед покупкою:",
+    matchScoreLabel: "{pct}% збіг"
   },
   ru: {
     topNotice: "Официальный интерактивный подбор Race Expert · __COUNT__ готовых наборов",
@@ -195,7 +199,11 @@ const UI_COPY = {
     place_travel_or_road: "В дороге / путешествии",
     place_work_or_study: "На работе или учёбе",
     cardPrice: "Цена по снимку:",
-    openCardBtn: "Перейти к набору на сайте Race Expert →"
+    openCardBtn: "Перейти к набору на сайте Race Expert →",
+    expertVerdictTitle: "Экспертный вердикт",
+    whySuitableTitle: "Почему этот набор подходит:",
+    tradeoffsTitle: "Обратите внимание перед покупкой:",
+    matchScoreLabel: "{pct}% совпадение"
   }
 };
 
@@ -417,17 +425,24 @@ function showErrorMessage(msg) {
 
 function createKitCard(item, badgeType = "match") {
   const card = document.createElement("article");
-  card.className = "p-5 rounded-2xl border border-slate-800 bg-slate-950/70 space-y-3.5 hover:border-slate-700 transition relative overflow-hidden";
+  card.className = "p-5 sm:p-6 rounded-2xl border border-slate-800 bg-slate-950/80 space-y-4 hover:border-slate-700 transition relative overflow-hidden shadow-lg";
   card.dataset.sku = item.sku || "";
 
   let badgeHtml = "";
   if (badgeType === "near_miss") {
-    badgeHtml = '<span class="px-2.5 py-1 rounded-md text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">+' + item.price_over_budget_uah + ' ₴ до бюджету</span>';
+    badgeHtml = '<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">+' + item.price_over_budget_uah + ' ₴ ' + (appState.locale === "ru" ? "к бюджету" : "до бюджету") + '</span>';
   } else if (badgeType === "floor_anchor") {
-    badgeHtml = '<span class="px-2.5 py-1 rounded-md text-xs font-bold bg-purple-500/20 text-purple-300 border border-purple-500/30">Базовий старт</span>';
+    badgeHtml = '<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-purple-500/20 text-purple-300 border border-purple-500/30">' + (appState.locale === "ru" ? "Базовый старт" : "Базовий старт") + '</span>';
   } else if (item.match_score_pct) {
-    const color = item.match_score_pct >= 85 ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/30" : "bg-blue-500/20 text-blue-300 border-blue-500/30";
-    badgeHtml = '<span class="px-2.5 py-1 rounded-md text-xs font-bold ' + color + ' border">' + item.match_score_pct + '% відповідність</span>';
+    const pct = item.match_score_pct;
+    const color = pct >= 88
+      ? "bg-emerald-500/15 text-emerald-300 border-emerald-500/30 shadow-emerald-950/20"
+      : (pct >= 75 ? "bg-blue-500/15 text-blue-300 border-blue-500/30" : "bg-amber-500/15 text-amber-300 border-amber-500/30");
+    const dotColor = pct >= 88 ? "bg-emerald-400" : (pct >= 75 ? "bg-blue-400" : "bg-amber-400");
+    badgeHtml = '<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold border shadow-sm ' + color + '">' +
+      '<span class="w-1.5 h-1.5 rounded-full ' + dotColor + '"></span>' +
+      tr("matchScoreLabel", { pct: pct }) +
+      '</span>';
   }
 
   const stockBadge = '<span class="card-stock-badge text-[11px] font-semibold px-2 py-0.5 rounded border border-emerald-500/30 bg-emerald-500/10 text-emerald-400">● ' + (appState.locale === "ru" ? "В наличии" : "В наявності") + '</span>';
@@ -445,17 +460,46 @@ function createKitCard(item, badgeType = "match") {
     '<span class="card-live-indicator text-[11px] text-emerald-400 font-medium hidden">● live</span>' +
     '</div>';
 
-  const reasons = (item.reasons || []).map(r => '<li class="flex items-start gap-2 text-xs sm:text-sm text-slate-300"><span class="text-emerald-400 font-bold shrink-0">✓</span><span>' + r + '</span></li>').join("");
-  const reasonsBlock = reasons ? '<ul class="space-y-1.5 pt-2 border-t border-slate-900">' + reasons + '</ul>' : "";
+  const expertVerdict = item.expert_summary
+    ? '<div class="p-3.5 rounded-xl bg-slate-900/70 border border-slate-800 text-xs sm:text-sm text-slate-200/90 leading-relaxed">' +
+        '<div class="flex items-center gap-1.5 text-[11px] font-bold text-brand-400 uppercase tracking-wider mb-1">' +
+          '<span>💡</span><span>' + tr("expertVerdictTitle") + '</span>' +
+        '</div>' +
+        '<p class="italic text-slate-300">«' + item.expert_summary + '»</p>' +
+      '</div>'
+    : '';
 
-  const notes = (item.data_notes || []).filter(n => !n.includes("Ціна й наявність") && !n.includes("Цена и наличие")).map(n => '<p class="text-xs text-amber-300/80 italic">⚠️ ' + n + '</p>').join("");
+  const suitableList = (item.why_suitable && item.why_suitable.length > 0) ? item.why_suitable : (item.reasons || []);
+  const reasonsHtml = suitableList.map(r => {
+    return '<li class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300 leading-snug">' +
+      '<span class="text-emerald-400 font-bold shrink-0 mt-0.5">✓</span><span>' + r + '</span>' +
+      '</li>';
+  }).join("");
 
-  const cta = '<div class="pt-3">' +
+  const reasonsBlock = reasonsHtml
+    ? '<div class="space-y-2 pt-2 border-t border-slate-900">' +
+        '<span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">' + tr("whySuitableTitle") + '</span>' +
+        '<ul class="space-y-2">' + reasonsHtml + '</ul>' +
+      '</div>'
+    : '';
+
+  const tradeoffs = item.why_not_suitable || [];
+  const tradeoffsHtml = tradeoffs.map(t => '<li>' + t + '</li>').join("");
+  const tradeoffsBlock = (tradeoffs.length > 0)
+    ? '<div class="p-3 rounded-xl bg-amber-500/10 border border-amber-500/20 text-xs sm:text-sm text-amber-200/90 space-y-1.5">' +
+        '<div class="flex items-center gap-1.5 text-[11px] font-bold text-amber-400 uppercase tracking-wider">' +
+          '<span>⚠️</span><span>' + tr("tradeoffsTitle") + '</span>' +
+        '</div>' +
+        '<ul class="space-y-1 pl-4 list-disc list-outside text-amber-200/80 leading-snug">' + tradeoffsHtml + '</ul>' +
+      '</div>'
+    : '';
+
+  const cta = '<div class="pt-2">' +
     '<a href="' + item.source_url + '" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs sm:text-sm font-bold text-white transition">' +
     '<span>' + tr("openCardBtn") + '</span>' +
     '</a></div>';
 
-  card.innerHTML = topRow + title + priceBlock + reasonsBlock + notes + cta;
+  card.innerHTML = topRow + title + priceBlock + expertVerdict + reasonsBlock + tradeoffsBlock + cta;
   return card;
 }
 

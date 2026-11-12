@@ -796,75 +796,260 @@ def _find_floor_anchor(goal_candidates, validated):
     return floor_anchors
 
 
+def _build_expert_summary(record, fit, locale, validated=None):
+    validated = validated or {}
+    evidence = record.get("matching_evidence", {})
+    goal = record.get("selected_goal") or validated.get("goal_group") or "running"
+    classes = evidence.get("component_classes") or []
+
+    category_summaries = {
+        "protein_carbohydrate_food": {
+            "uk": "Збалансований комплекс для підтримки високого темпу та витривалості: дає швидкі й тривалі вуглеводи без важкості в шлунку.",
+            "ru": "Сбалансированный комплекс для поддержания высокого темпа и выносливости: даёт быстрые и пролонгированные углеводы без тяжести в желудке.",
+        },
+        "hydration_items": {
+            "uk": "Спеціалізований комплекс для водно-сольового балансу: ефективно захищає від зневоднення, судом і втрати сил під час інтенсивного навантаження.",
+            "ru": "Специализированный комплекс для водно-солевого баланса: эффективно защищает от обезвоживания, судорог и упадка сил при нагрузках.",
+        },
+        "supplements_vitamins_minerals": {
+            "uk": "Оптимальна формула для відновлення та щоденного тонусу: знімає м'язову напругу, знижує втому та підтримує імунітет спортсмена.",
+            "ru": "Оптимальная формула для восстановления и ежедневного тонуса: снимает мышечное напряжение, снижает усталость и поддерживает иммунитет спортсмена.",
+        },
+        "creatine_preworkout": {
+            "uk": "Потужний комплекс для силових тренувань: підвищує вибухову силу, пікову працездатність та стимулює якісний м'язовий ріст.",
+            "ru": "Мощный комплекс для силовых тренировок: повышает взрывную силу, пиковую работоспособность и стимулирует качественный мышечный рост.",
+        },
+        "apparel_footwear": {
+            "uk": "Технологічне спортивне екіпірування: анатомічна посадка по стопі, надійна терморегуляція та активний захист від мозолів і натертостей.",
+            "ru": "Технологичная спортивная экипировка: анатомическая посадка по стопе, надёжная терморегуляция и активная защита от мозолей и натёртостей.",
+        },
+        "dehydrated_meal": {
+            "uk": "Поживний автономний раціон для походу: швидке приготування без зайвого посуду, висока калорійність та мінімальна вага в рюкзаку.",
+            "ru": "Питательный автономный рацион для похода: быстрое приготовление без лишней посуды, высокая калорийность и минимальный вес в рюкзаке.",
+        },
+        "sports_accessories": {
+            "uk": "Надійний функціональний аксесуар для спорту: максимальна зручність у русі, ергономічний дизайн та довговічні матеріали.",
+            "ru": "Надёжный функциональный аксессуар для спорта: максимальное удобство в движении, эргономичный дизайн и долговечные материалы.",
+        },
+    }
+
+    # Prioritize user's requested component class if present in set
+    req_class = validated.get("component_class")
+    target_class = req_class if (req_class and req_class in classes) else (classes[0] if classes else None)
+    if target_class and target_class in category_summaries:
+        return category_summaries[target_class][locale]
+
+    goal_summaries = {
+        "running": {
+            "uk": "Профільний комплект для бігунів: сфокусований на витривалості, рівномірному розподілі сил і комфорті на дистанції.",
+            "ru": "Профильный комплект для бегунов: сфокусирован на выносливости, равномерном распределении сил и комфорте на дистанции.",
+        },
+        "training": {
+            "uk": "Комплект для результативних тренувань: допомагає тренуватися довше, відновлюватися швидше та прогресувати в силі.",
+            "ru": "Комплект для результативных тренировок: помогает тренироваться дольше, восстанавливаться быстрее и прогрессировать в силе.",
+        },
+        "recovery": {
+            "uk": "Комплекс для глибокого відновлення: сприяє регенерації м'язів, нормалізації сну та зняттю накопиченого стресу.",
+            "ru": "Комплекс для глубокого восстановления: способствует регенерации мышц, нормализации сна и снятию накопившегося стресса.",
+        },
+        "hydration": {
+            "uk": "Освіжаючий баланс електролітів: попереджає судоми та допомагає підтримувати високу працездатність у спеку чи на тренуваннях.",
+            "ru": "Освежающий баланс электролитов: предупреждает судороги и помогает поддерживать высокую работоспособность в жару или на тренировках.",
+        },
+        "gift": {
+            "uk": "Презентабельний подарунковий набір для спортсмена: готове фірмове рішення з корисним складом та клубними бонусами.",
+            "ru": "Презентабельный подарочный набор для спортсмена: готовое фирменное решение с полезным составом и клубными бонусами.",
+        },
+        "outdoors": {
+            "uk": "Автономний комплект для походу чи активного відпочинку: зручне використання, якісне живлення та надійне спорядження.",
+            "ru": "Автономный комплект для похода или активного отдыха: удобное использование, качественное питание и надёжная экипировка.",
+        },
+        "gear": {
+            "uk": "Продумане спортивне екіпірування: захищає від дискомфорту та допомагає зосередитися на спортивному результаті.",
+            "ru": "Продуманная спортивная экипировка: защищает от дискомфорта и помогает сосредоточиться на спортивном результате.",
+        },
+        "daily": {
+            "uk": "Щоденний комплекс підтримки організму: допомагає зберігати тонус, енергію та високу концентрацію протягом усього дня.",
+            "ru": "Ежедневный комплекс поддержки организма: помогает сохранять тонус, энергию и высокую концентрацию на протяжении всего дня.",
+        },
+    }
+    if goal in goal_summaries:
+        return goal_summaries[goal][locale]
+
+    return (
+        "Збалансований фірмовий набір Race Expert, скомплектований під вашу активність та цілі тренувань."
+        if locale == "uk" else
+        "Сбалансированный фирменный набор Race Expert, скомплектованный под вашу активность и цели тренировок."
+    )
+
+
+def _build_why_suitable(record, fit, locale, validated, seller_families, component_families):
+    validated = validated or {}
+    items = []
+    goal = record.get("selected_goal") or validated.get("goal_group")
+    goal_label = GOAL_LABELS[locale].get(goal, goal)
+
+    if seller_families or component_families:
+        if locale == "uk":
+            items.append(f"Цільове призначення: спеціально скомплектовано для задачі «{goal_label}».")
+        else:
+            items.append(f"Целевое назначение: специально скомплектован под задачу «{goal_label}».")
+
+    req_class = validated.get("component_class")
+    class_names = {
+        "protein_carbohydrate_food": ("Спортивне харчування та батончики", "Спортивное питание и батончики"),
+        "supplements_vitamins_minerals": ("Вітаміни та щоденні мінерали", "Витамины и минералы"),
+        "creatine_preworkout": ("Креатин та передтренувальні комплекси", "Креатин и предтреники"),
+        "sports_accessories": ("Спортивні аксесуари та пляшки", "Спортивные аксессуары и фляги"),
+        "apparel_footwear": ("Одяг, шкарпетки та екіпірування", "Одежда, носки и экипировка"),
+        "hydration_items": ("Ізотоніки та електроліти", "Изотоники и электролиты"),
+        "dehydrated_meal": ("Сублімована туристична їжа", "Сублимированная туристическая еда"),
+    }
+    if req_class:
+        classes_list = req_class if isinstance(req_class, (list, tuple, set)) else [req_class]
+        matched_cnames = [class_names[c][0 if locale == "uk" else 1] for c in classes_list if c in class_names]
+        if matched_cnames:
+            cname = ", ".join(matched_cnames)
+            if locale == "uk":
+                items.append(f"Категорія товарів: у наборі саме {cname} (без сторонніх речей).")
+            else:
+                items.append(f"Категория товаров: в наборе именно {cname} (без посторонних позиций).")
+
+    req_form = validated.get("product_form")
+    form_names = {
+        "bars": ("батончики", "батончики"),
+        "gel": ("енергетичні гелі", "энергетические гели"),
+        "liquid": ("рідкі шоти", "жидкие шоты"),
+        "sticks": ("стіки з порошком", "стики с порошком"),
+        "capsules": ("капсули", "капсулы"),
+        "tablets": ("таблетки", "таблетки"),
+        "softgels": ("м'які капсули (Omega/D3)", "мягкие капсулы (Omega/D3)"),
+        "powder": ("порошок у банках", "порошок в банках"),
+        "apparel": ("текстильне екіпірування", "текстильная экипировка"),
+        "food_or_meal": ("готова їжа та снеки", "готовая еда и снеки"),
+    }
+    if req_form:
+        forms_list = req_form if isinstance(req_form, (list, tuple, set)) else [req_form]
+        matched_fnames = [form_names[f][0 if locale == "uk" else 1] for f in forms_list if f in form_names]
+        if matched_fnames:
+            fname = ", ".join(matched_fnames)
+            if locale == "uk":
+                items.append(f"Форма продукту: зручний формат — {fname}, легко брати із собою.")
+            else:
+                items.append(f"Форма продукта: удобный формат — {fname}, легко брать с собой.")
+
+    req_timing = validated.get("use_timing")
+    timing_names = {
+        "during_training": ("під час тренувань на ходу", "во время тренировок на ходу"),
+        "before_or_after_training": ("до або після тренування для підзарядки", "до или после тренировки для подзарядки"),
+        "evening_or_bedtime": ("увечері перед сном для відпочинку", "вечером перед сном для отдыха"),
+        "daily_use": ("протягом дня для стабільного тонусу", "в течение дня для стабильного тонуса"),
+    }
+    if req_timing:
+        timings_list = req_timing if isinstance(req_timing, (list, tuple, set)) else [req_timing]
+        matched_tnames = [timing_names[t][0 if locale == "uk" else 1] for t in timings_list if t in timing_names]
+        if matched_tnames:
+            tname = ", ".join(matched_tnames)
+            if locale == "uk":
+                items.append(f"Час прийому: розраховано на вживання {tname}.")
+            else:
+                items.append(f"Время приёма: рассчитан на употребление {tname}.")
+
+    if fit.get("size_match") and validated.get("shoe_size"):
+        size = validated.get("shoe_size")
+        if locale == "uk":
+            items.append(f"Розмірний збіг: вказаний розмір {size} входить у діапазон товару.")
+        else:
+            items.append(f"Размерное совпадение: указанный размер {size} входит в диапазон товара.")
+
+    max_price = validated.get("max_price_uah")
+    price = record.get("price_uah", 0)
+    if isinstance(max_price, int) and isinstance(price, int) and price <= max_price:
+        diff = max_price - price
+        if diff >= 50:
+            if locale == "uk":
+                items.append(f"Бюджет: {price} ₴ — укладається в ліміт {max_price} ₴ (запас {diff} ₴).")
+            else:
+                items.append(f"Бюджет: {price} ₴ — укладывается в лимит {max_price} ₴ (запас {diff} ₴).")
+        else:
+            if locale == "uk":
+                items.append(f"Бюджет: {price} ₴ — точно відповідає вашому бюджетному очікуванню.")
+            else:
+                items.append(f"Бюджет: {price} ₴ — точно соответствует вашему бюджетному ожиданию.")
+
+    if _membership_status(record) == "includes_membership":
+        if locale == "uk":
+            items.append("Клубні привілеї: включає абонемент Race Expert Club з доступом до спільноти та тренувань.")
+        else:
+            items.append("Клубные привилегии: включает абонемент Race Expert Club с доступом к сообществу и тренировкам.")
+
+    if len(items) < 2:
+        if locale == "uk":
+            items.append("Склад: сертифікована спортивна продукція з перевіреною сумісністю.")
+        else:
+            items.append("Состав: сертифицированная спортивная продукция с проверенной совместимостью.")
+
+    return items
+
+
+def _build_why_not_suitable(record, fit, locale, validated):
+    validated = validated or {}
+    tradeoffs = []
+    match_type = fit.get("match_type")
+
+    if match_type == "near_miss":
+        over = fit.get("price_over_budget_uah", 0)
+        if locale == "uk":
+            tradeoffs.append(f"Перевищує вибраний бюджет на {over} ₴ (проте містить більший обсяг продукції).")
+        else:
+            tradeoffs.append(f"Превышает выбранный бюджет на {over} ₴ (однако содержит больший объём продукции).")
+    elif match_type == "floor_anchor":
+        floor_price = fit.get("floor_price_uah", record.get("price_uah"))
+        over = fit.get("price_over_budget_uah", 0)
+        if locale == "uk":
+            tradeoffs.append(f"Мінімальний базовий набір у категорії (від {floor_price} ₴, різниця з бюджетом {over} ₴).")
+        else:
+            tradeoffs.append(f"Минимальный базовый набор в категории (от {floor_price} ₴, разница с бюджетом {over} ₴).")
+
+    if fit.get("size_status") == "unknown" and validated.get("shoe_size"):
+        if locale == "uk":
+            tradeoffs.append("Розмір не вказаний окремо в описі (може бути універсальний або еластичний крій).")
+        else:
+            tradeoffs.append("Размер товара не указан в описании (может быть универсальный или эластичный крой).")
+
+    evidence = record.get("matching_evidence", {})
+    if evidence.get("status") == "conflict_review_required":
+        if locale == "uk":
+            tradeoffs.append("У картці є невирішена розбіжність складу; перевірте актуальну сторінку магазину.")
+        else:
+            tradeoffs.append("В карточке есть неразрешённое расхождение состава; проверьте актуальную страницу магазина.")
+
+    return tradeoffs
+
+
 def _result(record, seller_families, component_families, fit, locale, validated=None, stock_info=None):
     evidence = record.get("matching_evidence", {})
-    reasons = []
-    matched_preferences = fit["matched_preferences"]
-    goal_label = GOAL_LABELS[locale][record["selected_goal"]]
-    if seller_families:
-        reasons.append(
-            "Продавец позиционирует набор для темы «{}».".format(goal_label)
-            if locale == "ru" else
-            "Продавець позиціонує набір для теми «{}».".format(goal_label)
-        )
-    if component_families:
-        reasons.append(
-            "В списке состава есть товар, связанный с этой задачей."
-            if locale == "ru" else
-            "У переліку складу є товар, пов'язаний із цією задачею."
-        )
-    preference_labels = {
-        "activity": ("активности", "активності"),
-        "component_class": ("типу товара в наборе", "типу товару в наборі"),
-        "use_scenario": ("сценарию", "сценарію"),
-        "use_timing": ("времени использования", "часу використання"),
-        "use_place": ("месту использования", "місцю використання"),
-        "race_format": ("формату старта", "формату старту"),
-        "season": ("погоде", "погоді"),
-        "product_form": ("форме товара", "формі товару"),
-    }
     signal_sources = {}
-    for key in matched_preferences:
-        if key == "shoe_size":
-            continue
-        if key == "use_scenario":
-            contexts = set(evidence.get("use_contexts", []))
-            has_race = bool(set(evidence.get("race_formats", [])) - {"unspecified"})
-            if "event_preparation" in _soft_signals(record, "use_scenario") and not (contexts & {"event_preparation"}):
-                if has_race:
-                    signal_sources["use_scenario"] = "inferred_from_race_format"
-                    reasons.append(
-                        "Сценарий «подготовка к старту» определён по формату старта набора."
-                        if locale == "ru" else
-                        "Сценарій «підготовка до старту» визначений за форматом старту набору."
-                    )
-                    continue
-        ru_label, uk_label = preference_labels[key]
-        reasons.append(
-            "Есть совпадение по {}.".format(ru_label)
-            if locale == "ru" else
-            "Є збіг за {}.".format(uk_label)
-        )
-    if fit["size_match"]:
-        reasons.append(
-            "Указанный размер входит в диапазон товара."
-            if locale == "ru" else
-            "Вказаний розмір входить у діапазон товару."
-        )
+
+    expert_summary = _build_expert_summary(record, fit, locale, validated)
+    why_suitable = _build_why_suitable(record, fit, locale, validated, seller_families, component_families)
+    why_not_suitable = _build_why_not_suitable(record, fit, locale, validated)
+
+    reasons = list(why_suitable)
     if fit.get("match_type") == "near_miss":
         over = fit.get("price_over_budget_uah", 0)
         reasons.append(
-            "Превышает выбранный бюджет на {} ₴.".format(over)
+            f"Превышает выбранный бюджет на {over} ₴."
             if locale == "ru" else
-            "Перевищує вибраний бюджет на {} ₴.".format(over)
+            f"Перевищує вибраний бюджет на {over} ₴."
         )
     elif fit.get("match_type") == "floor_anchor":
         floor_price = fit.get("floor_price_uah")
         over = fit.get("price_over_budget_uah", 0)
         reasons.append(
-            "Минимальный базовый набор в категории (от {} ₴, разница с бюджетом {} ₴).".format(floor_price, over)
+            f"Минимальный базовый набор в категории (от {floor_price} ₴, разница с бюджетом {over} ₴)."
             if locale == "ru" else
-            "Мінімальний базовий набір у категорії (від {} ₴, різниця з бюджетом {} ₴).".format(floor_price, over)
+            f"Мінімальний базовий набір у категорії (від {floor_price} ₴, різниця з бюджетом {over} ₴)."
         )
 
     notes = []
@@ -953,6 +1138,9 @@ def _result(record, seller_families, component_families, fit, locale, validated=
         },
         "size_status": fit["size_status"],
         "signal_sources": signal_sources,
+        "expert_summary": expert_summary,
+        "why_suitable": why_suitable,
+        "why_not_suitable": why_not_suitable,
         "reasons": reasons,
         "data_notes": notes,
     }
