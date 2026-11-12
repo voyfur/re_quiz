@@ -57,9 +57,10 @@ CONFLICTED_COMPONENT_CLASSES = {
     "RE11013": {"protein_carbohydrate_food"},
     "Nabir_1133": {"sports_accessories", "supplements_vitamins_minerals"},
     "RE11020": {"protein_carbohydrate_food"},
+    "RE88957": {"protein_carbohydrate_food"},
 }
 
-# Sets disqualified from Recovery & Sleep due to strength/creatine or gear dominance
+# Sets disqualified from Recovery & Sleep due to strength/creatine, gear dominance, or stimulant/focus actions
 DISQUALIFIED_FROM_RECOVERY = {
     # Strength / Mass / Pre-workout / Creatine
     "RE11680", "RE11522", "RE11742", "RE88934", "RE11661", "RE11637", "RE11783",
@@ -67,6 +68,9 @@ DISQUALIFIED_FROM_RECOVERY = {
     "Nabir_1115", "RE11660", "RE11516", "RE89452", "RE88963",
     # Pure gear / apparel / gifts
     "RE11013", "RE89460", "RE89459", "RE11024", "RE11020", "RE11801",
+    # Nootropics / Focus / Energy / Stimulants (Methyl B12, Cordyceps, Mushrooms for brainwork, Energy formulas)
+    "RE88957", "RE11691", "RE89019", "Nabir_1107", "RE11632", "Nabir_1134", "RE89021",
+    "Nabir_1127", "Nabir_1102", "RE11513", "Nabir_1125",
 }
 
 # The activity branch is deliberately different by the selected buyer need.
@@ -849,6 +853,21 @@ def _build_expert_summary(record, fit, locale, validated=None):
 
     # Prioritize user's requested component class if present in set
     req_class = validated.get("component_class")
+
+    # For recovery goal, always use recovery-oriented summaries
+    if goal == "recovery":
+        if req_class == "protein_carbohydrate_food" or "protein_carbohydrate_food" in classes:
+            return (
+                "Легкозасвоюваний білковий перекус: забезпечує м'язи амінокислотами для якісної регенерації під час відпочинку та сну."
+                if locale == "uk" else
+                "Легкоусвояемый белковый перекус: обеспечивает мышцы аминокислотами для качественной регенерации во время отдыха и сна."
+            )
+        return (
+            "Комплекс для глибокого відновлення: сприяє регенерації м'язів, нормалізації сну та зняттю накопиченого стресу."
+            if locale == "uk" else
+            "Комплекс для глубокого восстановления: способствует регенерации мышц, нормализации сна и снятию накопившегося стресса."
+        )
+
     target_class = req_class if (req_class and req_class in classes) else (classes[0] if classes else None)
     if target_class and target_class in category_summaries:
         return category_summaries[target_class][locale]

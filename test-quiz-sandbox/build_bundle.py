@@ -560,6 +560,17 @@ def build():
     }};
 
     const reqClass = validated.component_class;
+    if (goal === "recovery") {{
+      if (reqClass === "protein_carbohydrate_food" || classes.includes("protein_carbohydrate_food")) {{
+        return locale === "ru"
+          ? "Легкоусвояемый белковый перекус: обеспечивает мышцы аминокислотами для качественной регенерации во время отдыха и сна."
+          : "Легкозасвоюваний білковий перекус: забезпечує м'язи амінокислотами для якісної регенерації під час відпочинку та сну.";
+      }}
+      return locale === "ru"
+        ? "Комплекс для глубокого восстановления: способствует регенерации мышц, нормализации сна и снятию накопившегося стресса."
+        : "Комплекс для глибокого відновлення: сприяє регенерації м'язів, нормалізації сну та зняттю накопиченого стресу.";
+    }}
+
     const targetClass = (reqClass && classes.includes(reqClass)) ? reqClass : (classes[0] || null);
     if (targetClass && categorySummaries[targetClass]) {{
       return categorySummaries[targetClass][locale] || categorySummaries[targetClass].uk;
