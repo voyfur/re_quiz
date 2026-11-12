@@ -1043,5 +1043,27 @@ def build():
     (ROOT / "web" / "client_matcher.js").write_text(client_matcher_code, encoding="utf-8")
     print("client_matcher.js generated")
 
+    # Update standalone HTML bundles: public/index.html and quiz.html
+    bundle_script = f"""  <!-- Scripts -->
+  <script>
+{catalog_js.strip()}
+  </script>
+  <script>
+{client_matcher_code.strip()}
+  </script>"""
+
+    for target_path in (PROJECT_ROOT / "public" / "index.html", PROJECT_ROOT / "quiz.html"):
+        if not target_path.exists():
+            continue
+        content = target_path.read_text(encoding="utf-8")
+        marker_start = "<!-- Scripts -->"
+        marker_ui = "<script>\n\nconst UI_COPY ="
+        idx_start = content.find(marker_start)
+        idx_ui = content.find(marker_ui)
+        if idx_start != -1 and idx_ui != -1:
+            new_content = content[:idx_start] + bundle_script + "\n  " + content[idx_ui:]
+            target_path.write_text(new_content, encoding="utf-8")
+            print(f"Updated {target_path.relative_to(PROJECT_ROOT)} with latest catalog & matcher bundle")
+
 if __name__ == "__main__":
     build()
