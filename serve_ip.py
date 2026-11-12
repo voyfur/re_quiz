@@ -22,6 +22,11 @@ try:
 except ImportError:
     check_stock = None
 
+try:
+    from ai_consultant import consult_ai
+except ImportError:
+    consult_ai = None
+
 def get_local_ips():
     ips = ["127.0.0.1"]
     try:
@@ -72,6 +77,32 @@ class QuietHandler(http.server.SimpleHTTPRequestHandler):
             except Exception as e:
                 self.send_response(500)
                 self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.end_headers()
+                self.wfile.write(json.dumps({"error": str(e)}).encode("utf-8"))
+                return
+        elif self.path == "/api/ai-consult":
+            length = int(self.headers.get("Content-Length", 0))
+            if length <= 0 or length > 65536:
+                self.send_response(400)
+                self.end_headers()
+                return
+            try:
+                body = json.loads(self.rfile.read(length).decode("utf-8"))
+                user_req = body.get("user_request", {})
+                candidates = body.get("candidates", [])
+                locale = body.get("locale", "uk")
+                ai_result = consult_ai(user_req, candidates, locale) if consult_ai else None
+                response_bytes = json.dumps({"ok": bool(ai_result), "data": ai_result}).encode("utf-8")
+                self.send_response(200)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.send_header("Access-Control-Allow-Origin", "*")
+                self.end_headers()
+                self.wfile.write(response_bytes)
+                return
+            except Exception as e:
+                self.send_response(500)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.send_header("Access-Control-Allow-Origin", "*")
                 self.end_headers()
                 self.wfile.write(json.dumps({"error": str(e)}).encode("utf-8"))
                 return

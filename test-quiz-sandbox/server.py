@@ -16,6 +16,11 @@ except ImportError:
     def check_stock(skus):
         return {}
 
+try:
+    from ai_consultant import consult_ai
+except ImportError:
+    consult_ai = None
+
 
 ROOT = Path(__file__).resolve().parent
 WEB_ROOT = ROOT / "web"
@@ -169,6 +174,13 @@ def make_handler(catalog):
                         return
                     stock_data = check_stock(skus)
                     self._send_json(200, {"test_only": True, "stocks": stock_data})
+                    return
+                elif path == "/api/ai-consult":
+                    user_req = request.get("user_request", {})
+                    candidates = request.get("candidates", [])
+                    locale = request.get("locale", "uk")
+                    ai_result = consult_ai(user_req, candidates, locale) if consult_ai else None
+                    self._send_json(200, {"test_only": True, "ok": bool(ai_result), "data": ai_result})
                     return
                 elif path == "/api/draft/recommend":
                     if not catalog or "matching_evidence" not in catalog[0]:

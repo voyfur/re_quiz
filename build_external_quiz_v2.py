@@ -106,6 +106,9 @@ const UI_COPY = {
     expertVerdictTitle: "Експертний вердикт",
     whySuitableTitle: "Чому цей набір підходить:",
     tradeoffsTitle: "Зверніть увагу перед покупкою:",
+    compositionTitle: "Склад набору:",
+    aiConsultantBanner: "Порада AI-консультанта (GPT Luna):",
+    aiAnalyzingBadge: "GPT Luna аналізує склад наборів під ваші критерії...",
     matchScoreLabel: "{pct}% збіг"
   },
   ru: {
@@ -203,6 +206,9 @@ const UI_COPY = {
     expertVerdictTitle: "Экспертный вердикт",
     whySuitableTitle: "Почему этот набор подходит:",
     tradeoffsTitle: "Обратите внимание перед покупкой:",
+    compositionTitle: "Состав набора:",
+    aiConsultantBanner: "Совет AI-консультанта (GPT Luna):",
+    aiAnalyzingBadge: "GPT Luna анализирует состав наборов под ваши критерии...",
     matchScoreLabel: "{pct}% совпадение"
   }
 };
@@ -427,19 +433,20 @@ function createKitCard(item, badgeType = "match") {
   const card = document.createElement("article");
   card.className = "p-5 sm:p-6 rounded-2xl border border-slate-800 bg-slate-950/80 space-y-4 hover:border-slate-700 transition relative overflow-hidden shadow-lg";
   card.dataset.sku = item.sku || "";
+  card.dataset.row = item.catalog_row || "";
 
   let badgeHtml = "";
   if (badgeType === "near_miss") {
-    badgeHtml = '<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">+' + item.price_over_budget_uah + ' ₴ ' + (appState.locale === "ru" ? "к бюджету" : "до бюджету") + '</span>';
+    badgeHtml = '<span class="card-match-badge px-2.5 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">+' + item.price_over_budget_uah + ' ₴ ' + (appState.locale === "ru" ? "к бюджету" : "до бюджету") + '</span>';
   } else if (badgeType === "floor_anchor") {
-    badgeHtml = '<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-purple-500/20 text-purple-300 border border-purple-500/30">' + (appState.locale === "ru" ? "Базовый старт" : "Базовий старт") + '</span>';
+    badgeHtml = '<span class="card-match-badge px-2.5 py-1 rounded-full text-xs font-bold bg-purple-500/20 text-purple-300 border border-purple-500/30">' + (appState.locale === "ru" ? "Базовый старт" : "Базовий старт") + '</span>';
   } else if (item.match_score_pct) {
     const pct = item.match_score_pct;
     const color = pct >= 88
       ? "bg-emerald-500/15 text-emerald-300 border-emerald-500/30 shadow-emerald-950/20"
       : (pct >= 75 ? "bg-blue-500/15 text-blue-300 border-blue-500/30" : "bg-amber-500/15 text-amber-300 border-amber-500/30");
     const dotColor = pct >= 88 ? "bg-emerald-400" : (pct >= 75 ? "bg-blue-400" : "bg-amber-400");
-    badgeHtml = '<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold border shadow-sm ' + color + '">' +
+    badgeHtml = '<span class="card-match-badge inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold border shadow-sm ' + color + '">' +
       '<span class="w-1.5 h-1.5 rounded-full ' + dotColor + '"></span>' +
       tr("matchScoreLabel", { pct: pct }) +
       '</span>';
@@ -460,12 +467,21 @@ function createKitCard(item, badgeType = "match") {
     '<span class="card-live-indicator text-[11px] text-emerald-400 font-medium hidden">● live</span>' +
     '</div>';
 
+  const compositionBlock = item.composition
+    ? '<div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800/80 text-xs text-slate-300 leading-relaxed space-y-1">' +
+        '<div class="flex items-center gap-1.5 text-[11px] font-bold text-slate-400 uppercase tracking-wider">' +
+          '<span>📦</span><span>' + tr("compositionTitle") + '</span>' +
+        '</div>' +
+        '<div class="text-slate-300 line-clamp-3">' + item.composition + '</div>' +
+      '</div>'
+    : '';
+
   const expertVerdict = item.expert_summary
     ? '<div class="p-3.5 rounded-xl bg-slate-900/70 border border-slate-800 text-xs sm:text-sm text-slate-200/90 leading-relaxed">' +
         '<div class="flex items-center gap-1.5 text-[11px] font-bold text-brand-400 uppercase tracking-wider mb-1">' +
           '<span>💡</span><span>' + tr("expertVerdictTitle") + '</span>' +
         '</div>' +
-        '<p class="italic text-slate-300">«' + item.expert_summary + '»</p>' +
+        '<p class="italic text-slate-300 card-expert-text">«' + item.expert_summary + '»</p>' +
       '</div>'
     : '';
 
@@ -499,7 +515,7 @@ function createKitCard(item, badgeType = "match") {
     '<span>' + tr("openCardBtn") + '</span>' +
     '</a></div>';
 
-  card.innerHTML = topRow + title + priceBlock + expertVerdict + reasonsBlock + tradeoffsBlock + cta;
+  card.innerHTML = topRow + title + priceBlock + compositionBlock + expertVerdict + reasonsBlock + tradeoffsBlock + cta;
   return card;
 }
 
@@ -550,6 +566,90 @@ function renderFinalResults() {
 
   // Live stock verification check via OpenCart MySQL API
   checkLiveStock();
+
+  // Asynchronous AI Consultation via GPT Luna
+  requestAiConsultation(req, res);
+}
+
+function requestAiConsultation(req, res) {
+  const box = document.getElementById("aiConsultantBox");
+  if (!box) return;
+  box.className = "p-3.5 rounded-xl bg-brand-500/10 border border-brand-500/20 text-xs sm:text-sm text-brand-300 flex items-center gap-2.5";
+  box.innerHTML = '<span class="animate-pulse text-base">🤖</span><span>' + tr("aiAnalyzingBadge") + '</span>';
+  box.classList.remove("hidden");
+
+  const allKits = [
+    ...(res.results || []),
+    ...(res.near_miss_results || []),
+    ...(res.floor_anchor_results || [])
+  ];
+
+  fetch("/api/ai-consult", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      user_request: req,
+      candidates: allKits,
+      locale: appState.locale
+    })
+  })
+  .then(resp => resp.ok ? resp.json() : null)
+  .then(data => {
+    if (!data || !data.ok || !data.data) {
+      box.classList.add("hidden");
+      return;
+    }
+    const ai = data.data;
+    if (ai.consultant_note) {
+      box.className = "p-4 rounded-xl bg-gradient-to-r from-brand-950/60 via-slate-900 to-slate-900 border border-brand-500/40 text-xs sm:text-sm text-slate-200 space-y-1.5 shadow-lg shadow-brand-500/5";
+      box.innerHTML = '<div class="flex items-center gap-2 font-bold text-brand-400 text-[11px] uppercase tracking-wider">' +
+        '<span>✨</span><span>' + tr("aiConsultantBanner") + '</span>' +
+        '</div>' +
+        '<p class="text-slate-200 leading-relaxed font-medium">' + ai.consultant_note + '</p>';
+    } else {
+      box.classList.add("hidden");
+    }
+
+    if (Array.isArray(ai.validated_candidates)) {
+      ai.validated_candidates.forEach(v => {
+        const card = document.querySelector(`article[data-row="${v.catalog_row}"]`);
+        if (!card) return;
+
+        // If rejected by AI, show AI warning badge
+        if (v.is_appropriate === false && v.rejection_reason) {
+          let warn = card.querySelector(".ai-warning-box");
+          if (!warn) {
+            warn = document.createElement("div");
+            warn.className = "ai-warning-box p-3 rounded-xl bg-rose-500/10 border border-rose-500/30 text-xs text-rose-300 leading-snug space-y-1";
+            card.insertBefore(warn, card.querySelector(".pt-2:last-child"));
+          }
+          warn.innerHTML = '<div class="font-bold text-rose-400 flex items-center gap-1.5"><span>⚠️</span><span>Зауваження AI-консультанта:</span></div><div>' + v.rejection_reason + '</div>';
+        }
+
+        // Update match score if provided
+        if (typeof v.match_score_pct === "number") {
+          const badge = card.querySelector(".card-match-badge");
+          if (badge) {
+            badge.textContent = v.match_score_pct + "% збіг";
+            if (v.match_score_pct < 50) {
+              badge.className = "card-match-badge text-[11px] font-bold px-2 py-0.5 rounded border border-rose-500/40 bg-rose-500/20 text-rose-300";
+            }
+          }
+        }
+
+        // Update expert summary if provided
+        if (v.expert_summary) {
+          const expText = card.querySelector(".card-expert-text");
+          if (expText) {
+            expText.textContent = "«" + v.expert_summary + "»";
+          }
+        }
+      });
+    }
+  })
+  .catch(() => {
+    box.classList.add("hidden");
+  });
 }
 
 function checkLiveStock() {
@@ -936,6 +1036,9 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
         <!-- Result Explanation Banner -->
         <div id="resultMessageBanner" class="p-4 rounded-xl bg-slate-950/80 border border-slate-800 text-xs sm:text-sm text-slate-300 leading-relaxed"></div>
+
+        <!-- AI Consultant Live Banner -->
+        <div id="aiConsultantBox" class="hidden"></div>
 
         <!-- Primary Cards Grid -->
         <div id="primaryCardsList" class="space-y-4"></div>

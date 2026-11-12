@@ -56,6 +56,17 @@ CONFLICTED_COMPONENT_CLASSES = {
     "RE11807": {"*"},
     "RE11013": {"protein_carbohydrate_food"},
     "Nabir_1133": {"sports_accessories", "supplements_vitamins_minerals"},
+    "RE11020": {"protein_carbohydrate_food"},
+}
+
+# Sets disqualified from Recovery & Sleep due to strength/creatine or gear dominance
+DISQUALIFIED_FROM_RECOVERY = {
+    # Strength / Mass / Pre-workout / Creatine
+    "RE11680", "RE11522", "RE11742", "RE88934", "RE11661", "RE11637", "RE11783",
+    "RE11681", "RE11518", "RE11787", "RE88964", "RE11521", "RE11688", "RE11520",
+    "Nabir_1115", "RE11660", "RE11516", "RE89452", "RE88963",
+    # Pure gear / apparel / gifts
+    "RE11013", "RE89460", "RE89459", "RE11024", "RE11020", "RE11801",
 }
 
 # The activity branch is deliberately different by the selected buyer need.
@@ -76,7 +87,7 @@ COMPONENT_CLASSES_BY_GOAL = {
     "training": {"supplements_vitamins_minerals", "creatine_preworkout", "protein_carbohydrate_food", "hydration_items"},
     "hydration": {"hydration_items", "protein_carbohydrate_food", "sports_accessories"},
     "food": {"protein_carbohydrate_food", "hydration_items", "dehydrated_meal"},
-    "recovery": {"supplements_vitamins_minerals", "creatine_preworkout", "protein_carbohydrate_food"},
+    "recovery": {"supplements_vitamins_minerals", "protein_carbohydrate_food"},
     "outdoors": {"dehydrated_meal", "protein_carbohydrate_food", "hydration_items", "sports_accessories", "apparel_footwear"},
     "gear": {"apparel_footwear", "sports_accessories"},
     "daily": {"supplements_vitamins_minerals", "protein_carbohydrate_food"},
@@ -201,12 +212,15 @@ def attach_audit_evidence(catalog, audit):
 
 
 def _matching_families(record, goal_group):
+    sku = record.get("sku")
+    if goal_group == "recovery" and sku in DISQUALIFIED_FROM_RECOVERY:
+        return [], []
     evidence = record.get("matching_evidence", {})
     wanted = GOAL_FAMILIES[goal_group]
     seller = set(evidence.get("seller_families", [])) & wanted
     components = set(evidence.get("component_families", [])) & wanted
 
-    blocked = CONFLICTED_COMPONENT_FAMILIES.get(record.get("sku"), set())
+    blocked = CONFLICTED_COMPONENT_FAMILIES.get(sku, set())
     if "*" in blocked:
         components.clear()
     else:

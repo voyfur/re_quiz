@@ -82,5 +82,26 @@ class TestLogicGuardrails(unittest.TestCase):
                                 f"Question plan too long for goal='{goal}': {final_ids}"
                             )
 
+    def test_recovery_never_recommends_creatine_or_gear(self):
+        res = draft_recommend(self.catalog, {
+            "goal_group": "recovery",
+            "max_price_uah": 800,
+        })
+        all_skus = [r["sku"] for r in res.get("results", [])] + \
+                   [r["sku"] for r in res.get("near_miss_results", [])] + \
+                   [r["sku"] for r in res.get("floor_anchor_results", [])]
+        self.assertNotIn("RE11680", all_skus, "Row 33 (Creatine) recommended for recovery!")
+        self.assertNotIn("RE11020", all_skus, "Gear kit recommended for recovery!")
+
+    def test_running_nutrition_never_recommends_gear_kit_197(self):
+        res = draft_recommend(self.catalog, {
+            "goal_group": "running",
+            "component_class": "protein_carbohydrate_food",
+            "use_scenario": "everyday",
+            "max_price_uah": 1300,
+        })
+        all_skus = [r["sku"] for r in res.get("results", [])]
+        self.assertNotIn("RE11020", all_skus, "Apparel kit RE11020 recommended for sports nutrition!")
+
 if __name__ == "__main__":
     unittest.main()

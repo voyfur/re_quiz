@@ -14,6 +14,7 @@ from draft_matcher import (
     COMPONENT_CLASSES_BY_GOAL,
     CONFLICTED_COMPONENT_CLASSES,
     CONFLICTED_COMPONENT_FAMILIES,
+    DISQUALIFIED_FROM_RECOVERY,
     GOAL_FAMILIES,
     GOAL_LABELS,
     PRODUCT_FORMS_BY_GOAL,
@@ -76,6 +77,7 @@ def build():
         "SIZE_GOALS": list(SIZE_GOALS),
         "CONFLICTED_COMPONENT_FAMILIES": {k: list(v) for k, v in CONFLICTED_COMPONENT_FAMILIES.items()},
         "CONFLICTED_COMPONENT_CLASSES": {k: list(v) for k, v in CONFLICTED_COMPONENT_CLASSES.items()},
+        "DISQUALIFIED_FROM_RECOVERY": list(DISQUALIFIED_FROM_RECOVERY),
     }
 
     client_matcher_code = f"""// Standalone Client-side Matcher mirroring draft_matcher.py
@@ -110,6 +112,9 @@ def build():
   }}
 
   function matchingFamilies(record, goalGroup) {{
+    if (goalGroup === "recovery" && (CONSTANTS.DISQUALIFIED_FROM_RECOVERY || []).includes(record.sku)) {{
+      return {{ seller: [], components: [] }};
+    }}
     const ev = record.matching_evidence || {{}};
     const wanted = new Set(CONSTANTS.GOAL_FAMILIES[goalGroup] || []);
     let seller = [...intersect(new Set(ev.seller_families || []), wanted)];
