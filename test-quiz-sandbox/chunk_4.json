@@ -1,0 +1,1016 @@
+[
+  {
+    "catalog_row": 131,
+    "sku": "RE11814",
+    "title": "Набір «Комфорт травлення Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1189,
+    "composition": "шелуха подорожника NOW Foods Psyllium Husks Whole 454 г; Nutriversum Artichoke, 30 капсул",
+    "description": "увеличение клетчатки, регулярная работа кишечника и комфорт пищеварения; аудитория — люди, желающие добавить клетчатку или имеющие нерегулярный/плотный рацион. Карточка показывает 1 500 UAH против 1 189 UAH в снимке",
+    "current_seller_families": [
+      "digestive_metabolic_claim"
+    ],
+    "current_component_families": [
+      "outdoor_travel_hiking"
+    ],
+    "current_component_classes": [
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": []
+  },
+  {
+    "catalog_row": 132,
+    "sku": "RE11515",
+    "title": "Набір «Старт із добавками Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1125,
+    "composition": "абонемент клуба на 3 месяца; MIAMI VIBES Multi Vitamin, 100 таблеток; NOW D3 2 000 IU, 120 софтгелей; NOW Zinc Gluconate 50 мг, 100 таблеток",
+    "description": "простая база добавок при повышенной физической/умственной нагрузке; конкретный вид спорта не указан. Карточка показывает 1 500 UAH против 1 125 UAH в снимке",
+    "current_seller_families": [],
+    "current_component_families": [],
+    "current_component_classes": [
+      "club_membership",
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": []
+  },
+  {
+    "catalog_row": 133,
+    "sku": "RE11514",
+    "title": "Набір «Кістки, м’язи і нерви Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1435,
+    "composition": "по текущему перечню карточки — Puritan’s Pride Chelated Ca/Mg/Zn, 100 капсул; Nutriversum D3+K2, 60 капсул; NOW Omega-3 1 000 мг, 30 софтгелей ×2",
+    "description": "кости, мышцы, физическая активность и восстановление; вид спорта не указан. **Конфликт состава:** более ранний официальный поисковый фрагмент показывал другой бренд Ca/Mg/Zn и одну упаковку Omega-3; в карточке указаны состав выше. Цена карточки — 1 500 UAH против 1 435 UAH в снимке",
+    "current_seller_families": [
+      "bone_joint_support_claim",
+      "general_daily_nutrition",
+      "outdoor_travel_hiking",
+      "recovery_fatigue",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "general_daily_nutrition"
+    ],
+    "current_component_classes": [
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": [
+      "daily_use"
+    ]
+  },
+  {
+    "catalog_row": 134,
+    "sku": "Nabir_1103",
+    "title": "Набір «Відновлення ресурсів 2.0 Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1500,
+    "composition": "клуб на 3 месяца; батончики с рейши 40 г ×2 (более 12 г белка каждый); ежовик 700 мг, 60 капсул; рейши 700 мг, 60 капсул. Назначение/аудитория по карточке: восстановление и повседневная работоспособность при физической/умственной нагрузке или стрессе; спортсмены и занятые люди. Конкретный спорт не указан. - Теги: purpose:recovery_support; item_type:club_membership_bundle; sport:not_sport_specific; distance:not_applicable; duration:3_months; contains:lion_s_mane; contains:reishi; audience:athletes; audience:busy_people; buyer_weight:not_specified; price:1500_uah",
+    "description": "",
+    "current_seller_families": [
+      "endurance_energy",
+      "focus_cognition",
+      "immune_support_claim",
+      "portable_food_snacks",
+      "recovery_fatigue",
+      "sleep_relaxation_stress"
+    ],
+    "current_component_families": [
+      "portable_food_snacks",
+      "recovery_fatigue",
+      "sleep_relaxation_stress"
+    ],
+    "current_component_classes": [
+      "protein_carbohydrate_food",
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": [
+      "before_or_after_training",
+      "evening_or_bedtime",
+      "travel_or_road",
+      "work_or_study"
+    ]
+  },
+  {
+    "catalog_row": 135,
+    "sku": "Nabir_1102",
+    "title": "Набір «Здоров’я та енергія 2.0 Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1500,
+    "composition": "абонемент клуба на 3 месяца; батончики Reishi по 40 г ×2; DRUMn’BADS Cordyceps 700 мг, 60 капсул; Reishi 700 мг, 60 капсул",
+    "description": "поддержка энергии, иммунитета и восстановления в повседневной активности; конкретный спорт не указан",
+    "current_seller_families": [
+      "endurance_energy",
+      "immune_support_claim",
+      "portable_food_snacks",
+      "recovery_fatigue",
+      "sleep_relaxation_stress"
+    ],
+    "current_component_families": [
+      "gift_identity",
+      "portable_food_snacks"
+    ],
+    "current_component_classes": [
+      "club_membership",
+      "protein_carbohydrate_food",
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": [
+      "before_or_after_training",
+      "daily_use",
+      "evening_or_bedtime",
+      "gift",
+      "work_or_study"
+    ]
+  },
+  {
+    "catalog_row": 136,
+    "sku": "RE89021",
+    "title": "Набір «Ресурс активного дня Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1500,
+    "composition": "клуб на 3 месяца; D3+K2 2 000 IU + 75 мкг, 60 капсул; Olimp Chela-Mag B6 Ashwagandha+Ginseng, 30 капсул; Olimp Mag B6 shot 25 мл; Olimp L-Carnitine Caffeine Extreme Shot 25 мл (доза кофеина не указана)",
+    "description": "ресурс в активный день и при тренировках; отдельная дисциплина не названа",
+    "current_seller_families": [
+      "endurance_energy",
+      "general_daily_nutrition",
+      "recovery_fatigue",
+      "sleep_relaxation_stress",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "general_daily_nutrition",
+      "gift_identity"
+    ],
+    "current_component_classes": [
+      "club_membership",
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": [
+      "daily_use",
+      "during_training",
+      "gift",
+      "travel_or_road",
+      "work_or_study"
+    ]
+  },
+  {
+    "catalog_row": 137,
+    "sku": "RE89018",
+    "title": "Набір «Баланс вуглеводного обміну»",
+    "price_uah": 1500,
+    "composition": "NOW Foods Inositol 500 мг ×100; Swanson Chromium Picolinate 200 мкг ×200; Nutriversum Apple Cider Caps ×90. Назначение по карточке: поддержка углеводного обмена/рациона; спорт не указан. Официальный сохранённый снимок карточки — 2026-11-06; текущая цена отдельно не зафиксирована. - Теги: purpose:carbohydrate_metabolism_support; item_type:supplement_bundle; sport:not_sport_specific; distance:not_applicable; contains:inositol; contains:chromium; contains:apple_cider_vinegar; buyer_weight:not_specified; price:1500_uah",
+    "description": "",
+    "current_seller_families": [
+      "portable_food_snacks"
+    ],
+    "current_component_families": [
+      "portable_food_snacks"
+    ],
+    "current_component_classes": [],
+    "current_use_contexts": []
+  },
+  {
+    "catalog_row": 138,
+    "sku": "RE88960",
+    "title": "Набір «Харчовий баланс»",
+    "price_uah": 1315,
+    "composition": "по нумерованному списку — Nutriversum Apple Cider Caps ×90; Olimp Artichoke Premium ×30; Swanson Milk Thistle 500 мг ×100; Swanson Triphala 500 мг ×100",
+    "description": "поддержка пищевого баланса/пищеварения; конкретный спорт не указан. **Конфликт карточки:** во вступлении также упоминается мультивитаминный комплекс для женщин, которого нет в нумерованном составе. В официальном листинге наблюдалась цена 1 500 UAH против 1 315 UAH в снимке; сама карточка ранее возвращала cache miss",
+    "current_seller_families": [
+      "digestive_metabolic_claim",
+      "general_daily_nutrition",
+      "women_men_audience"
+    ],
+    "current_component_families": [],
+    "current_component_classes": [],
+    "current_use_contexts": []
+  },
+  {
+    "catalog_row": 139,
+    "sku": "RE88959",
+    "title": "Набір «Підтримка травлення та печінки»",
+    "price_uah": 1455,
+    "composition": "Nutriversum Apple Cider Caps ×90; Swanson Artichoke Extract 250 мг ×60; Milk Thistle 500 мг ×100; Triphala 500 мг ×100",
+    "description": "поддержка пищеварения и печени; спорт не указан. Состав получен из сохранённой официальной карточки от 2026-11-06; текущая цена отдельно не зафиксирована",
+    "current_seller_families": [
+      "digestive_metabolic_claim"
+    ],
+    "current_component_families": [],
+    "current_component_classes": [],
+    "current_use_contexts": []
+  },
+  {
+    "catalog_row": 140,
+    "sku": "RE11818",
+    "title": "Набір «Серце й антиоксидантний захист»",
+    "price_uah": 1319,
+    "composition": "NOW Omega-3 1 000 мг ×30; NOW CoQ10 100 мг ×30; Nutriversum Curcuma Ginger ×60; NOW D3 2 000 IU ×30",
+    "description": "поддержка сердечно-сосудистой системы и антиоксидантная поддержка; карточка упоминает спортсменов и активных людей. Состав из сохранённой официальной карточки от 2026-11-06; текущая цена отдельно не зафиксирована",
+    "current_seller_families": [
+      "endurance_energy",
+      "general_daily_nutrition",
+      "immune_support_claim",
+      "sleep_relaxation_stress",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "general_daily_nutrition"
+    ],
+    "current_component_classes": [
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": [
+      "daily_use"
+    ]
+  },
+  {
+    "catalog_row": 141,
+    "sku": "RE11815",
+    "title": "Набір «Підтримка печінки»",
+    "price_uah": 1305,
+    "composition": "NOW Foods Liver Refresh, 90 капсул; Nutriversum Curcuma Ginger, 60 капсул",
+    "description": "поддержка печени, пищеварения и антиоксидантной защиты для спортсменов и активных людей при физической нагрузке, стрессе или несбалансированном питании; отдельный спорт не указан. Карточка показывает 1 500 UAH против 1 305 UAH в снимке",
+    "current_seller_families": [
+      "digestive_metabolic_claim",
+      "sleep_relaxation_stress"
+    ],
+    "current_component_families": [
+      "digestive_metabolic_claim"
+    ],
+    "current_component_classes": [
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": []
+  },
+  {
+    "catalog_row": 142,
+    "sku": "RE11521",
+    "title": "Набір «Старт у спорті»",
+    "price_uah": 1500,
+    "composition": "Nutriversum Creatine, 300 г; BCAA Shot 60 мл ×3; шейкер Myprotein 600 мл; Pocket Pack Vitamin Case Small",
+    "description": "базовое питание и аксессуары для новичков или тех, кто начинает тренироваться; спортивная дисциплина не названа",
+    "current_seller_families": [
+      "endurance_energy",
+      "recovery_fatigue",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "portable_food_snacks"
+    ],
+    "current_component_classes": [
+      "creatine_preworkout",
+      "sports_accessories"
+    ],
+    "current_use_contexts": [
+      "daily_use",
+      "during_training",
+      "travel_or_road"
+    ]
+  },
+  {
+    "catalog_row": 143,
+    "sku": "RE11511",
+    "title": "Набір «Мінімум для зайнятої людини»",
+    "price_uah": 1500,
+    "composition": "по нумерованному списку — NOW Omega-3 1 000 мг, 30 софтгелей ×2; органайзер NOW 7 Day Pill Case. Во вступлении карточки мультивитамин назван третьим элементом, но его нет в нумерованном/извлечённом списке — состав конфликтует",
+    "description": "простой базовый режим для занятых людей с быстрым темпом жизни; конкретный спорт не указан",
+    "current_seller_families": [
+      "endurance_energy",
+      "general_daily_nutrition",
+      "immune_support_claim",
+      "portable_food_snacks",
+      "sleep_relaxation_stress"
+    ],
+    "current_component_families": [
+      "general_daily_nutrition"
+    ],
+    "current_component_classes": [
+      "sports_accessories",
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": [
+      "daily_use",
+      "travel_or_road"
+    ]
+  },
+  {
+    "catalog_row": 144,
+    "sku": "Nabir_1133",
+    "title": "Набір «Базова підтримка організму Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1500,
+    "composition": "по нумерованному перечню — абонемент клуба на 3 месяца; белые носки Race Expert, размер 43–45, 2 пары; шейкер Brave U 700 мл. Во вступлении карточки упомянут мультивитаминный комплекс, отсутствующий в перечне компонентов — состав конфликтует",
+    "description": "ежедневная базовая поддержка; спорт не указан",
+    "current_seller_families": [
+      "endurance_energy",
+      "foot_apparel_comfort",
+      "general_daily_nutrition",
+      "hydration_electrolytes"
+    ],
+    "current_component_families": [
+      "foot_apparel_comfort",
+      "general_daily_nutrition"
+    ],
+    "current_component_classes": [
+      "apparel_footwear",
+      "club_membership",
+      "sports_accessories",
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": [
+      "daily_use",
+      "during_training",
+      "travel_or_road"
+    ]
+  },
+  {
+    "catalog_row": 145,
+    "sku": "Nabir_1132",
+    "title": "Набір «Підтримка та відновлення»",
+    "price_uah": 1309,
+    "composition": "MIAMI VIBES Multi Vitamin, 100 таблеток; Nutriversum Vitamin B-Complex, 30 таблеток; Swanson Boswellia Double Strength 800 мг, 60 капсул",
+    "description": "поддержка при активном распорядке, восстановлении и стрессе; карточка называет спортсменов, активных людей и бегунов. Карточка показывает 1 500 UAH против 1 309 UAH в снимке",
+    "current_seller_families": [
+      "bone_joint_support_claim",
+      "endurance_energy",
+      "general_daily_nutrition",
+      "recovery_fatigue",
+      "running_race_preparation",
+      "sleep_relaxation_stress"
+    ],
+    "current_component_families": [],
+    "current_component_classes": [
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": [
+      "before_or_after_training",
+      "daily_use"
+    ]
+  },
+  {
+    "catalog_row": 146,
+    "sku": "Nabir_1126",
+    "title": "Набір «Основа Енергії та Відновлення»",
+    "price_uah": 1500,
+    "composition": "Nutriversum Iron, 30 таблеток; Nutriversum Vitamin D3+K2, 60 капсул; Nutriversum Magnesium Bisglycinate, 60 капсул",
+    "description": "ежедневная поддержка энергии, костей/мышц, нервной системы и восстановления; карточка упоминает активных людей и спортсменов при нагрузках. Текущая цена карточки — 1 500 UAH",
+    "current_seller_families": [
+      "endurance_energy",
+      "general_daily_nutrition",
+      "recovery_fatigue",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [],
+    "current_component_classes": [
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": [
+      "daily_use"
+    ]
+  },
+  {
+    "catalog_row": 147,
+    "sku": "Nabir_1118",
+    "title": "Набір «Міцна основа 2.0»",
+    "price_uah": 1500,
+    "composition": "Nutrend 100% Whey Protein 400 г; шейкер Myprotein 600 мл; батончик Myprotein Impact Protein Bar ×3 (по 20 г белка; карточка также указывает 236 ккал и 8,6 г клетчатки); Myprotein Protein Brownie ×3 (по 23 г белка, 286 ккал и 4 г сахара)",
+    "description": "регулярные тренировки, восстановление и поддержка мышц; конкретная дисциплина не указана. URL содержит «1117», но поле артикула официальной карточки — Nabir_1118, как в снимке",
+    "current_seller_families": [
+      "endurance_energy",
+      "portable_food_snacks",
+      "recovery_fatigue",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "portable_food_snacks"
+    ],
+    "current_component_classes": [
+      "protein_carbohydrate_food",
+      "sports_accessories"
+    ],
+    "current_use_contexts": [
+      "before_or_after_training",
+      "daily_use",
+      "travel_or_road",
+      "work_or_study"
+    ]
+  },
+  {
+    "catalog_row": 148,
+    "sku": "RE88963",
+    "title": "Набір «Передтренувальний тонус Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1500,
+    "composition": "клуб на 3 месяца; VPLab L-Carnitine Concentrate 500 мл (1 200 мг L-карнитина на 10 мл); Nutriversum AAKG Shot 60 мл ×2 (в каждом 6 000 мг AAKG + 1 000 мг бета-аланина); Nutriversum PWO Shot 60 мл (содержит кофеин, доза не указана); шейкер Brave U 700 мл",
+    "description": "подготовка к интенсивной тренировке для спортсменов и активных людей; дисциплина не названа",
+    "current_seller_families": [
+      "endurance_energy",
+      "focus_cognition",
+      "sleep_relaxation_stress"
+    ],
+    "current_component_families": [
+      "gift_identity"
+    ],
+    "current_component_classes": [
+      "club_membership",
+      "sports_accessories"
+    ],
+    "current_use_contexts": [
+      "before_or_after_training",
+      "during_training",
+      "gift"
+    ]
+  },
+  {
+    "catalog_row": 149,
+    "sku": "RE11800",
+    "title": "Набір «Запас сили»",
+    "price_uah": 1500,
+    "composition": "Nutriversum Creatine Monohydrate Creapure 500 г; мини-шейкер 300 мл",
+    "description": "силовые показатели и физическая работоспособность спортсменов при интенсивных нагрузках. Карточка указывает 3 г креатина на порцию; 3,4 г порошка разводить в 200 мл, принимать до тренировки или в дни отдыха",
+    "current_seller_families": [
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "hydration_electrolytes"
+    ],
+    "current_component_classes": [
+      "creatine_preworkout",
+      "sports_accessories"
+    ],
+    "current_use_contexts": []
+  },
+  {
+    "catalog_row": 150,
+    "sku": "RE11786",
+    "title": "Набір «Тренувальний ресурс Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1285,
+    "composition": "абонемент клуба на 3 месяца; Nutriversum BCAA 2:1:1 Sugar Free, 360 г; Hydria Perform, 5 стиков; шейкер Myprotein 600 мл",
+    "description": "тренировки, гидратация и восстановление при физической нагрузке; конкретная дисциплина не указана. Карточка показывает 1 500 UAH против 1 285 UAH в снимке",
+    "current_seller_families": [
+      "hydration_electrolytes",
+      "outdoor_travel_hiking",
+      "portable_food_snacks",
+      "recovery_fatigue",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "hydration_electrolytes",
+      "portable_food_snacks"
+    ],
+    "current_component_classes": [
+      "club_membership",
+      "hydration_items",
+      "sports_accessories"
+    ],
+    "current_use_contexts": [
+      "before_or_after_training",
+      "daily_use",
+      "during_training"
+    ]
+  },
+  {
+    "catalog_row": 151,
+    "sku": "RE11811",
+    "title": "Набір «М'язове відновлення»",
+    "price_uah": 1500,
+    "composition": "Nutriversum BCAA + GLUTA без сахара чёрная смородина 500 g ×1 (10 g порция); SPONSER Recovery Drink клубника/банан 60 g ×1; Nutriversum Mini Shaker 300 ml ×1. Назначение по описанию набора: поддержка мышц, восстановление и восполнение энергии после интенсивной нагрузки. Аудитория/занятия: спортсмены и активные люди; силовые тренировки, бег, фитнес, CrossFit и высокоинтенсивные занятия. Указанные метрики/состав: порция — 10 g. Неопределённость: существенной неопределённости нет",
+    "description": "",
+    "current_seller_families": [
+      "recovery_fatigue",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "endurance_energy",
+      "recovery_fatigue",
+      "running_race_preparation",
+      "strength_muscle_training"
+    ],
+    "current_component_classes": [
+      "sports_accessories"
+    ],
+    "current_use_contexts": []
+  },
+  {
+    "catalog_row": 152,
+    "sku": "RE11688",
+    "title": "Набір «Набір маси»",
+    "price_uah": 1149,
+    "composition": "Kevin Levrone Anabolic Mass 1,000 g ×1; MIAMI VIBES Pure Creatine Monohydrate 300 g ×1. Назначение по описанию набора: набор мышечной массы и силы, а также восстановление во время интенсивных силовых тренировок. Занятия/аудитория: силовые тренировки; люди, стремящиеся набрать мышечную массу. Указанные метрики/состав: порция Anabolic Mass: 42 g белка и 54 g углеводов; в гейнере также указан креатин. Расхождение цены: официальная карточка Race Expert на 2026-11-06 показывала 1 500 грн, цена в каталоге на эту дату — 1 149 грн. Источник — карточка по ссылке выше. Неопределённость: существенной неопределённости нет",
+    "description": "",
+    "current_seller_families": [
+      "endurance_energy",
+      "portable_food_snacks",
+      "recovery_fatigue",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "hydration_electrolytes",
+      "portable_food_snacks",
+      "recovery_fatigue",
+      "strength_muscle_training"
+    ],
+    "current_component_classes": [
+      "creatine_preworkout"
+    ],
+    "current_use_contexts": [
+      "before_or_after_training",
+      "during_training"
+    ]
+  },
+  {
+    "catalog_row": 153,
+    "sku": "RE11665",
+    "title": "Набір «Активний рух»",
+    "price_uah": 1500,
+    "composition": "скоростная скакалка со счётчиком ×1; двойной ролик для пресса ×1; массажный мяч ×1; кольцевой кистевой эспандер EasyFit Ring 32 kg ×1; Myprotein Layered Bar 60 g ×8 (20.4 g белка/батончик). Назначение по описанию набора: поддержка активного образа жизни, фитнеса и тренировок в разных местах. Занятия/аудитория: домашние, заловые и уличные тренировки; активные люди. Указанные метрики/состав: скакалка: 5–20 min; массаж: 1–3 min. Неопределённость: существенной неопределённости нет",
+    "description": "",
+    "current_seller_families": [
+      "endurance_energy",
+      "portable_food_snacks",
+      "recovery_fatigue",
+      "sleep_relaxation_stress",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "portable_food_snacks"
+    ],
+    "current_component_classes": [
+      "protein_carbohydrate_food"
+    ],
+    "current_use_contexts": [
+      "before_or_after_training",
+      "daily_use"
+    ]
+  },
+  {
+    "catalog_row": 154,
+    "sku": "RE11664",
+    "title": "Набір «Домашній фітнес та тонус»",
+    "price_uah": 1500,
+    "composition": "EasyFit скоростная скакалка 280 cm ×1; EasyFit HARD текстильнаяя лента-эспандер ×1; EasyFit Grid Roller 45 cm ×1; бутылка Race Expert ×1. Назначение по описанию набора: домашние фитнес-тренировки и поддержание тонуса. Занятия: домашние тренировки. Указанные метрики/состав: использование скакалки: 5–20 min. Неопределённость: существенной неопределённости нет",
+    "description": "",
+    "current_seller_families": [
+      "endurance_energy",
+      "hydration_electrolytes",
+      "recovery_fatigue",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "endurance_energy"
+    ],
+    "current_component_classes": [
+      "hydration_items",
+      "sports_accessories"
+    ],
+    "current_use_contexts": [
+      "before_or_after_training",
+      "daily_use",
+      "during_training"
+    ]
+  },
+  {
+    "catalog_row": 155,
+    "sku": "RE11663",
+    "title": "Набір «Йога та пілатес»",
+    "price_uah": 1500,
+    "composition": "EasyFit Polarity Stone коврик ×1; EasyFit EASY текстильнаяя лента-эспандер ×1; Myprotein Layered Bar Triple Chocolate Fudge 60 g ×7 (>20 g белка/батончик). Назначение по описанию набора: занятия йогой, пилатесом, растяжкой и домашние тренировки. Занятия/аудитория: йога, пилатес, растяжка и домашние тренировки. Неопределённость: существенной неопределённости нет",
+    "description": "",
+    "current_seller_families": [
+      "bone_joint_support_claim",
+      "portable_food_snacks",
+      "recovery_fatigue",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "portable_food_snacks"
+    ],
+    "current_component_classes": [
+      "protein_carbohydrate_food"
+    ],
+    "current_use_contexts": [
+      "before_or_after_training",
+      "during_training"
+    ]
+  },
+  {
+    "catalog_row": 156,
+    "sku": "RE11520",
+    "title": "Набір «Тестостерон і витривалість»",
+    "price_uah": 1500,
+    "composition": "Nutrend Test Bomb 90 капсул ×1; Nutriversum Creatine 300 g ×1; Nutriversum BCAA Shot лимон-лайм 60 ml ×2. Назначение по описанию набора: поддержка спортивных результатов, силы и восстановления (позиционирование карточки). Аудитория/занятия: мужчины и активно тренирующиеся люди (согласно описанию набора). Указанные метрики/состав: креатин: 3.4 g на порцию; в Test Bomb перечислены tribulus, maca, ashwagandha, ginseng, arginine, magnesium и zinc. Неопределённость: существенной неопределённости нет",
+    "description": "",
+    "current_seller_families": [
+      "endurance_energy",
+      "recovery_fatigue",
+      "skin_beauty_claim",
+      "sleep_relaxation_stress",
+      "strength_muscle_training",
+      "women_men_audience"
+    ],
+    "current_component_families": [
+      "recovery_fatigue",
+      "women_men_audience"
+    ],
+    "current_component_classes": [
+      "creatine_preworkout",
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": []
+  },
+  {
+    "catalog_row": 157,
+    "sku": "Nabir_1115",
+    "title": "Набір “Спортивний фундамент",
+    "price_uah": 1500,
+    "composition": "Nutriversum creatine (3.4 g/порция; количество в упаковке не указано); Nutriversum Magnesium Bisglycinate; Nutriversum Multi Vitamin Caps Pro (13 витаминов). Назначение по описанию набора: базовая поддержка регулярных тренировок и высоких нагрузок. Аудитория/занятия: в описании прямо названы военные, спортсмены и начинающие заниматься фитнесом. Неопределённость: Количество креатина в упаковке и количество других продуктов в доступном тексте карточки не указаны",
+    "description": "",
+    "current_seller_families": [
+      "endurance_energy",
+      "general_daily_nutrition",
+      "recovery_fatigue"
+    ],
+    "current_component_families": [
+      "general_daily_nutrition",
+      "gift_identity",
+      "hydration_electrolytes"
+    ],
+    "current_component_classes": [
+      "creatine_preworkout",
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": [
+      "before_or_after_training"
+    ]
+  },
+  {
+    "catalog_row": 158,
+    "sku": "RE11654",
+    "title": "Набір «Імунний щит»",
+    "price_uah": 1500,
+    "composition": "NOW C-1000 100 капсул ×1; NOW Zinc Picolinate 50 mg/60 капсул ×1; Nutriversum D3+K2 60 капсул ×1. Назначение по описанию набора: поддержка иммунитета согласно позиционированию набора. Спорт: специализация не указана. Неопределённость: существенной неопределённости нет",
+    "description": "",
+    "current_seller_families": [
+      "immune_support_claim"
+    ],
+    "current_component_families": [
+      "immune_support_claim"
+    ],
+    "current_component_classes": [
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": []
+  },
+  {
+    "catalog_row": 159,
+    "sku": "RE11512",
+    "title": "Набір «Захист і тонус» по програмі \"Ветеранський спорт",
+    "price_uah": 1500,
+    "composition": "Solaray Zinc + Copper 100 капсул; Solaray Vitamin C з Bioflavonoids 100 капсул; Nutriversum Vitamin D3+K2 60 капсул. Назначение по описанию набора: ежедневная поддержка иммунитета, энергии и общего тонуса согласно описанию продавца",
+    "description": "",
+    "current_seller_families": [
+      "endurance_energy",
+      "general_daily_nutrition",
+      "immune_support_claim",
+      "skin_beauty_claim",
+      "sleep_relaxation_stress"
+    ],
+    "current_component_families": [
+      "endurance_energy",
+      "general_daily_nutrition",
+      "immune_support_claim"
+    ],
+    "current_component_classes": [
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": [
+      "daily_use"
+    ]
+  },
+  {
+    "catalog_row": 160,
+    "sku": "RE88943",
+    "title": "Набір «Концентрація в дорозі Race Expert Club» — абонемент на 3 месяца",
+    "price_uah": 1469,
+    "composition": "абонемент Race Expert Club на 3 месяца; Lion’s Mane 700 mg ×60 капсул; Now Foods Acetyl-L-Carnitine 500 mg ×50 капсул; OMNOM батончик 50 g ×1; Hydria Daily стики с электролитами ×3. Назначение по описанию набора: поддержка концентрации в поездках, за рулём, на работе и во время активного отдыха. Занятия/аудитория: поездки, вождение и работа; спортивная дисциплина не указана. Расхождение цены: официальная карточка Race Expert на 2026-11-06 показывала 1 500 грн, цена в каталоге на эту дату — 1 469 грн. Источник — карточка по ссылке выше. Неопределённость: существенной неопределённости нет",
+    "description": "",
+    "current_seller_families": [
+      "endurance_energy",
+      "focus_cognition",
+      "hydration_electrolytes",
+      "outdoor_travel_hiking"
+    ],
+    "current_component_families": [
+      "endurance_energy",
+      "focus_cognition",
+      "general_daily_nutrition",
+      "gift_identity",
+      "hydration_electrolytes",
+      "portable_food_snacks"
+    ],
+    "current_component_classes": [
+      "club_membership",
+      "hydration_items",
+      "protein_carbohydrate_food",
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": [
+      "gift",
+      "travel_or_road",
+      "work_or_study"
+    ]
+  },
+  {
+    "catalog_row": 161,
+    "sku": "RE11691",
+    "title": "Набір «Фокус-формула 2.0 Race Expert Club» — абонемент на 3 месяца",
+    "price_uah": 1500,
+    "composition": "абонемент Race Expert Club на 3 месяца; DRUMn’BADS Lion’s Mane 700 mg ×60 капсул; Swanson Balance B-50 ×100 капсул; Now Foods Omega-3 1,000 mg ×30 мягкие капсулы. Назначение по описанию набора: поддержка концентрации, продуктивности и памяти согласно описанию набора. Спортивное назначение не указано. Неопределённость: существенной неопределённости нет",
+    "description": "",
+    "current_seller_families": [
+      "endurance_energy",
+      "focus_cognition",
+      "general_daily_nutrition",
+      "sleep_relaxation_stress"
+    ],
+    "current_component_families": [
+      "endurance_energy",
+      "focus_cognition",
+      "general_daily_nutrition",
+      "gift_identity"
+    ],
+    "current_component_classes": [
+      "club_membership",
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": [
+      "daily_use",
+      "gift",
+      "work_or_study"
+    ]
+  },
+  {
+    "catalog_row": 162,
+    "sku": "RE11802",
+    "title": "Набір «Витривалість без спраги Race Expert Club» — абонемент на 3 месяца",
+    "price_uah": 1500,
+    "composition": "абонемент Race Expert Club на 3 месяца; Nutriversum EAA Sugar Free 500 g ×1; Hydria Perform стики с электролитами ×5; Brave U Shaker 700 ml ×1. Назначение по описанию набора: поддержка гидратации и выносливости во время интенсивных занятий. Занятия: бег, велоспорт, силовые тренировки и HIIT. Указанные метрики/состав: 12 g EAA растворяют в 300–400 ml; Hydria stick — в 500–850 ml. Неопределённость: существенной неопределённости нет",
+    "description": "",
+    "current_seller_families": [
+      "endurance_energy",
+      "general_daily_nutrition",
+      "hydration_electrolytes",
+      "outdoor_travel_hiking",
+      "recovery_fatigue",
+      "running_race_preparation",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "endurance_energy",
+      "gift_identity",
+      "hydration_electrolytes",
+      "running_race_preparation",
+      "strength_muscle_training"
+    ],
+    "current_component_classes": [
+      "club_membership",
+      "hydration_items",
+      "sports_accessories"
+    ],
+    "current_use_contexts": [
+      "before_or_after_training",
+      "during_training",
+      "gift"
+    ]
+  },
+  {
+    "catalog_row": 163,
+    "sku": "Nabir_1131",
+    "title": "Набір «Протеїновий заряд»",
+    "price_uah": 1500,
+    "composition": "Nutriversum PURE Whey Pro 500 g ×1 (23 g белка/порция; 30 g растворяют в 250 ml воде/молоке); Race Expert & DRUMn’BADS Reishi клюква батончик 40 g ×1; Cordyceps coffee батончик 40 g ×1; Lion’s Mane кокос батончик 40 g ×2. Назначение по описанию набора: протеиновые перекусы и восстановление для регулярно тренирующихся. Занятия/аудитория: регулярные тренировки и активный день; конкретный вид спорта не указан. Неопределённость: существенной неопределённости нет",
+    "description": "",
+    "current_seller_families": [
+      "endurance_energy",
+      "portable_food_snacks",
+      "recovery_fatigue",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "portable_food_snacks",
+      "recovery_fatigue"
+    ],
+    "current_component_classes": [
+      "protein_carbohydrate_food"
+    ],
+    "current_use_contexts": [
+      "before_or_after_training",
+      "daily_use"
+    ]
+  },
+  {
+    "catalog_row": 164,
+    "sku": "RE11660",
+    "title": "Набір «Марафонець»",
+    "price_uah": 1500,
+    "composition": "Nutriversum Creatine 300 g ×1; PF 30 Gel 51 g ×5. Назначение по описанию набора: подготовка и питание во время бега на длинные дистанции. Аудитория/занятия: бегуны на длинные дистанции; в описании названы полумарафон и марафон. Формат: в описании указаны полумарафон и марафон; точное расстояние в километрах не приведено. Указанные метрики/состав: карточка указывает 1–3 gel/hour в зависимости от длительности и интенсивности. Неопределённость: существенной неопределённости нет",
+    "description": "",
+    "current_seller_families": [
+      "endurance_energy",
+      "portable_food_snacks",
+      "recovery_fatigue",
+      "running_race_preparation"
+    ],
+    "current_component_families": [
+      "portable_food_snacks",
+      "running_race_preparation"
+    ],
+    "current_component_classes": [
+      "creatine_preworkout"
+    ],
+    "current_use_contexts": [
+      "before_or_after_training"
+    ]
+  },
+  {
+    "catalog_row": 165,
+    "sku": "RE11662",
+    "title": "Набір «Релакс та відновлення»",
+    "price_uah": 1500,
+    "composition": "EasyFit Grid Roller 45 cm ×1; EasyFit PVC твердий массажный мяч 7.5 cm ×1; Kuznetsov коврик + подушкою/чохлом ×1. Назначение по описанию набора: восстановление после тренировок, расслабление мышц и отдых после активного дня. Аудитория/занятия: спортсмены и активные люди; также названы йога, пилатес и фитнес. Указанные метрики/состав: роллер: 1–3 min; мяч: 2–5 min; коврик: 10–20 min. Неопределённость: существенной неопределённости нет",
+    "description": "",
+    "current_seller_families": [
+      "gift_identity",
+      "recovery_fatigue",
+      "sleep_relaxation_stress",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "recovery_fatigue",
+      "sleep_relaxation_stress",
+      "strength_muscle_training"
+    ],
+    "current_component_classes": [],
+    "current_use_contexts": [
+      "before_or_after_training",
+      "daily_use",
+      "gift"
+    ]
+  },
+  {
+    "catalog_row": 166,
+    "sku": "RE11657",
+    "title": "Набір «Омега + сонце» по програмі",
+    "price_uah": 1315,
+    "composition": "Now Foods Omega-3 1,000 mg, 30 мягкие капсулы ×5 (EPA 360 mg + DHA 240 mg per 2 капсули); Now Foods Vitamin D3 1,000 IU жевательные таблетки з фруктовим смаком 180 таблеток ×1. Назначение по описанию набора: ежедневная поддержка иммунитета, сердца, мозга и костей согласно описанию набора",
+    "description": "",
+    "current_seller_families": [
+      "sleep_relaxation_stress"
+    ],
+    "current_component_families": [
+      "general_daily_nutrition",
+      "immune_support_claim"
+    ],
+    "current_component_classes": [
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": [
+      "daily_use"
+    ]
+  },
+  {
+    "catalog_row": 167,
+    "sku": "RE11651",
+    "title": "Набір «Нічний ZMA»",
+    "price_uah": 1500,
+    "composition": "Now Foods ZMA 800 mg ×90 капсул; Myprotein Layered Bar 60 g ×4 (20.4 g белка/батончик). Назначение по описанию набора: поддержка сна и восстановления при высоких физических нагрузках. Аудитория/занятия: спортсмены и активные люди с высокой физической нагрузкой. Неопределённость: существенной неопределённости нет",
+    "description": "",
+    "current_seller_families": [
+      "general_daily_nutrition",
+      "portable_food_snacks",
+      "recovery_fatigue",
+      "sleep_relaxation_stress",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "general_daily_nutrition",
+      "portable_food_snacks",
+      "recovery_fatigue"
+    ],
+    "current_component_classes": [
+      "protein_carbohydrate_food",
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": [
+      "before_or_after_training",
+      "daily_use",
+      "work_or_study"
+    ]
+  },
+  {
+    "catalog_row": 168,
+    "sku": "RE11658",
+    "title": "Набір «Рівновага дня»",
+    "price_uah": 1455,
+    "composition": "VPLab Magnesium Citrate 90 мягкие капсулы; Nutriversum GABA 60 капсул (750 mg/cap); DRUMn’BADS адаптогенные жевательных конфет ×15; Hydria Perform стік з електролітами ×1. Назначение по описанию набора: поддержка равновесия, концентрации и восстановления согласно описанию набора. Специализированное спортивное применение не указано. Неопределённость: существенной неопределённости нет",
+    "description": "",
+    "current_seller_families": [
+      "endurance_energy",
+      "focus_cognition",
+      "general_daily_nutrition",
+      "hydration_electrolytes",
+      "outdoor_travel_hiking",
+      "recovery_fatigue",
+      "sleep_relaxation_stress",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "focus_cognition",
+      "hydration_electrolytes",
+      "recovery_fatigue"
+    ],
+    "current_component_classes": [
+      "hydration_items",
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": [
+      "before_or_after_training",
+      "daily_use"
+    ]
+  },
+  {
+    "catalog_row": 169,
+    "sku": "Nabir_1112",
+    "title": "Набір «Баланс і спокій» по програмі \"Ветеранський спорт",
+    "price_uah": 1500,
+    "composition": "DRUMn’BADS Amanita червоного мухомора 500 mg, розничная упаковка 60 капсул ([карточка товара Race Expert](https://raceexpert.com.ua/6335-muhomor-chervonij-drumnbads-500-mg-60-kapsul-0-grn-re53)); DRUMn’BADS адаптогенные жевательные конфеты, 3 упаковки ×15. Назначение по описанию набора: поддержка спокойствия, баланса и сна согласно позиционированию продавца",
+    "description": "",
+    "current_seller_families": [
+      "sleep_relaxation_stress"
+    ],
+    "current_component_families": [
+      "sleep_relaxation_stress"
+    ],
+    "current_component_classes": [
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": []
+  },
+  {
+    "catalog_row": 170,
+    "sku": "RE11524",
+    "title": "Набір «Нервова система під захистом Race Expert Club» — абонемент на 3 месяца",
+    "price_uah": 1500,
+    "composition": "Mind Shi CBD Oil Isolate клубника 1,000 mg/10 ml; Nutriversum GABA ×60 капсул; Now Foods Pocket Pack Vitamin Case Small. Назначение по описанию набора: поддержка спокойствия и эмоционального равновесия в условиях стресса согласно описанию набора. Спортивное применение не указано. Неопределённость: существенной неопределённости нет",
+    "description": "",
+    "current_seller_families": [
+      "recovery_fatigue",
+      "sleep_relaxation_stress"
+    ],
+    "current_component_families": [
+      "sleep_relaxation_stress"
+    ],
+    "current_component_classes": [
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": [
+      "daily_use",
+      "evening_or_bedtime",
+      "travel_or_road",
+      "work_or_study"
+    ]
+  },
+  {
+    "catalog_row": 171,
+    "sku": "Nabir_1116",
+    "title": "Набір «Внутрішня рівновага Race Expert Club» — абонемент на 3 месяца",
+    "price_uah": 1500,
+    "composition": "абонемент Race Expert Club на 3 месяца; Nutriversum Magnesium Bisglycinate (товарная упаковка 60 капсул); Nutriversum Multi Vita (60 таблеток); Nutriversum Omega-3 (размер товарной упаковки и множитель набора не подтверждены). Назначение по описанию набора: общее самочувствие и внутреннее равновесие при длительном стрессе",
+    "description": "",
+    "current_seller_families": [],
+    "current_component_families": [
+      "general_daily_nutrition",
+      "sleep_relaxation_stress"
+    ],
+    "current_component_classes": [
+      "club_membership",
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": []
+  },
+  {
+    "catalog_row": 172,
+    "sku": "Nabir_1110",
+    "title": "Набір «Зменшення стресу та регуляція сну Race Expert Club» — абонемент на 3 месяца",
+    "price_uah": 1500,
+    "composition": "абонемент Race Expert Club на 3 месяца; Mind Shi Reishi Mushroom 1,000 mg (розничная упаковка 60 капсул); Mind Shi CBD Oil Isolate, апельсин, 1,000 mg в бутылке 10 ml ([данные производителя](https://www.mindshi.com/cbd-oil-isolate-1000mg-orange)); Myprotein Layered Bars ×3: Triple Chocolate Fudge, Vanilla Birthday Cake и White Gold. Назначение по описанию набора: поддержка сна и снижение стресса согласно позиционированию продавца. Отдельный вид спорта не указан. Неопределённость: карточка набора не указывает множители упаковок Reishi и CBD; фасовка товара Reishi — 60 капсул, CBD — 10 ml",
+    "description": "",
+    "current_seller_families": [
+      "sleep_relaxation_stress"
+    ],
+    "current_component_families": [
+      "portable_food_snacks",
+      "sleep_relaxation_stress"
+    ],
+    "current_component_classes": [
+      "club_membership",
+      "hydration_items",
+      "sports_accessories",
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": []
+  }
+]

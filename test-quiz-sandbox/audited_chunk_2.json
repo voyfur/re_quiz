@@ -1,0 +1,1103 @@
+[
+  {
+    "catalog_row": 43,
+    "sku": "RE88950",
+    "title": "Набір «Щоденна імунна база»",
+    "price_uah": 1459,
+    "composition": "Mind Shi 4Mushroom 1000 mg, 60 caps; UltraVit C 1000 mg, 60 caps; NOW D3 2000 IU, 30 softgels",
+    "goals": [
+      "daily"
+    ],
+    "families": [
+      "daily_wellness_vitality"
+    ],
+    "classes": [
+      "supplements_vitamins_minerals"
+    ],
+    "timings": [
+      "morning_start",
+      "daily_use"
+    ],
+    "activities": [
+      "general_lifestyle"
+    ],
+    "rationale": "Базовий імуномодулюючий та вітамінний комплекс (грибний комплекс, вітамін C та D3) для щоденної підтримки імунітету та захисту клітин від оксидативного стресу."
+  },
+  {
+    "catalog_row": 44,
+    "sku": "RE11650",
+    "title": "Набір «Захист від спеки» по програмі \"Ветеранський спорт\"",
+    "price_uah": 1239,
+    "composition": "Precision Hydration 1000 Tube, 10 таблеток; Precision Fuel & Hydration капсулы с электролитами, 15 caps",
+    "goals": [
+      "hydration",
+      "running"
+    ],
+    "families": [
+      "hydration_electrolytes"
+    ],
+    "classes": [
+      "supplements_vitamins_minerals"
+    ],
+    "timings": [
+      "during_training",
+      "before_or_after_training"
+    ],
+    "activities": [
+      "running",
+      "cycling",
+      "triathlon"
+    ],
+    "rationale": "Висококонцентровані електроліти Precision Hydration (натрій, калій, магній) у шипучих таблетках та капсулах для запобігання гіпонатріємії, зневодненню та м'язовим спазмам під час тривалих навантажень у спеку."
+  },
+  {
+    "catalog_row": 45,
+    "sku": "Nabir_1122",
+    "title": "Набір «Для імунітету Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1465,
+    "composition": "абонемент Race Expert Club на 3 месяца; Mind Shi Chaga Mushroom, 1000 mg; Mind Shi 4Mushroom Complex, 1000 mg",
+    "goals": [
+      "daily"
+    ],
+    "families": [
+      "daily_wellness_vitality"
+    ],
+    "classes": [
+      "supplements_vitamins_minerals"
+    ],
+    "timings": [
+      "daily_use",
+      "morning_start"
+    ],
+    "activities": [
+      "general_lifestyle"
+    ],
+    "rationale": "Адаптогенний та імуномодулюючий грибний комплекс (чага та мікс функціональних грибів) із високим вмістом бета-глюканів для зміцнення вродженого імунітету та антиоксидантного захисту."
+  },
+  {
+    "catalog_row": 46,
+    "sku": "RE89031",
+    "title": "Набір «Імунітет і тонус»",
+    "price_uah": 1500,
+    "composition": "Life Extension D3 25 mcg/1000 IU, 90 мягких капсул; Swanson C-500 with rose hips, 500 mg, 100 caps; NOW Zinc Picolinate, 50 mg, 60 caps. В начале описания упоминается B12, но в нумерованном списке товаров указаны только эти три позиции",
+    "goals": [
+      "daily"
+    ],
+    "families": [
+      "daily_wellness_vitality"
+    ],
+    "classes": [
+      "supplements_vitamins_minerals"
+    ],
+    "timings": [
+      "daily_use",
+      "morning_start"
+    ],
+    "activities": [
+      "general_lifestyle"
+    ],
+    "rationale": "Класична тріада щоденного імунітету (вітамін D3, вітамін C з шипшиною та цинк у біодоступній формі піколінату) для профілактики дефіцитів і підтримки опірності інфекціям."
+  },
+  {
+    "catalog_row": 47,
+    "sku": "RE11820",
+    "title": "Набір «Клітинний захист»",
+    "price_uah": 1269,
+    "composition": "NOW Natural Beta Carotene 25,000 IU, 90 softgels; NOW Green Tea Extract 400 mg, 100 caps",
+    "goals": [
+      "daily"
+    ],
+    "families": [
+      "daily_wellness_vitality",
+      "daytime_energy_focus"
+    ],
+    "classes": [
+      "supplements_vitamins_minerals"
+    ],
+    "timings": [
+      "morning_start",
+      "during_day_tone"
+    ],
+    "activities": [
+      "general_lifestyle"
+    ],
+    "rationale": "Потужні антиоксиданти (бета-каротин та екстракт зеленого чаю з EGCG) для нейтралізації вільних радикалів, захисту мембран клітин від оксидативного стресу та підтримки денного тонусу."
+  },
+  {
+    "catalog_row": 48,
+    "sku": "RE11809",
+    "title": "Набір «Антиоксидантний захист» — абонемент на 3 місяці",
+    "price_uah": 1375,
+    "composition": "абонемент Race Expert Club на 3 месяца; NOW Astaxanthin 4 mg, 60 softgels; Swanson Turmeric 720 mg, 30 caps; NOW D3 2000 IU, 30 softgels; стеклянная бутылка 530 мл",
+    "goals": [
+      "daily",
+      "gear"
+    ],
+    "families": [
+      "daily_wellness_vitality"
+    ],
+    "classes": [
+      "mixed_hybrid"
+    ],
+    "timings": [
+      "daily_use",
+      "morning_start"
+    ],
+    "activities": [
+      "general_lifestyle"
+    ],
+    "rationale": "Комплексний захист від системного запалення та оксидативного стресу (астаксантин, куркумін, вітамін D3) у поєднанні зі скляною пляшкою для підтримки питного режиму."
+  },
+  {
+    "catalog_row": 49,
+    "sku": "RE11807",
+    "title": "Набір «Антиоксидантна формула» — абонемент на 3 місяці",
+    "price_uah": 1369,
+    "composition": "абонемент Race Expert Club на 3 месяца; NOW Foods C-1000 Zinc & D-3, 100 caps; Swanson Turmeric, 720 mg, 30 caps; OstroVit Spiruline, 90 таблеток; Race Expert стеклянная бутылка с чехлом, 530 ml",
+    "goals": [
+      "daily",
+      "gear"
+    ],
+    "families": [
+      "daily_wellness_vitality"
+    ],
+    "classes": [
+      "mixed_hybrid"
+    ],
+    "timings": [
+      "daily_use",
+      "morning_start"
+    ],
+    "activities": [
+      "general_lifestyle"
+    ],
+    "rationale": "Синергія протизапальних нутрієнтів (вітамін C, цинк, D3, куркумін та спіруліна як суперфуд) разом із фірмовою пляшкою для щоденного водного балансу."
+  },
+  {
+    "catalog_row": 50,
+    "sku": "RE11817",
+    "title": "Набір «Ясний фокус Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1255,
+    "composition": "абонемент Race Expert Club на 3 месяца; Mind Shi 4Mushroom 1000 mg, 60 caps; NOW Choline & Inositol 250 mg, 100 caps",
+    "goals": [
+      "daily"
+    ],
+    "families": [
+      "daytime_energy_focus",
+      "daily_wellness_vitality"
+    ],
+    "classes": [
+      "supplements_vitamins_minerals"
+    ],
+    "timings": [
+      "morning_start",
+      "during_day_tone"
+    ],
+    "activities": [
+      "general_lifestyle"
+    ],
+    "rationale": "Ноотропна комбінація холіну та інозитолу для підтримки синтезу ацетилхоліну і мембран нейронів у поєднанні з адаптогенним комплексом грибів для когнітивної концентрації та ясності розуму."
+  },
+  {
+    "catalog_row": 51,
+    "sku": "RE11656",
+    "title": "Набір «Фокус - формула Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1500,
+    "composition": "абонемент Race Expert Club на 3 месяца; Mind Shi Lion’s Mane, 1000 mg, 60 caps; Swanson Balance B-50 Complex, 100 caps; NOW Omega-3, 1000 mg, 30 softgels",
+    "goals": [
+      "daily"
+    ],
+    "families": [
+      "daytime_energy_focus",
+      "daily_wellness_vitality"
+    ],
+    "classes": [
+      "supplements_vitamins_minerals"
+    ],
+    "timings": [
+      "morning_start",
+      "during_day_tone"
+    ],
+    "activities": [
+      "general_lifestyle"
+    ],
+    "rationale": "Потужний нейрокогнітивний стек: їжовик гребінчастий (Lion's Mane для стимуляції нейрогенезу через NGF), повний спектр вітамінів групи B для енергетичного метаболізму та Омега-3 для мембран клітин мозку."
+  },
+  {
+    "catalog_row": 52,
+    "sku": "RE11632",
+    "title": "Набір «Розум і Сила»",
+    "price_uah": 1215,
+    "composition": "Mind Shi 4Mushroom 1000 mg, 60 caps; Myprotein Baked Cookie 75 g x7 (14 g растительного белка в каждом)",
+    "goals": [
+      "training",
+      "food",
+      "daily"
+    ],
+    "families": [
+      "quick_energy_snack",
+      "daytime_energy_focus",
+      "strength_muscle_power"
+    ],
+    "classes": [
+      "mixed_hybrid"
+    ],
+    "timings": [
+      "before_or_after_training",
+      "during_day_tone"
+    ],
+    "activities": [
+      "fitness_gym",
+      "general_lifestyle"
+    ],
+    "rationale": "Поєднання рослинного протеїну з печива Myprotein Baked Cookie для відновлення м'язових волокон та адаптогенного грибного комплексу для підтримки ментальної концентрації та фокусу."
+  },
+  {
+    "catalog_row": 53,
+    "sku": "Nabir_1107",
+    "title": "Набір «Енергія, витривалість та концентрація Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1500,
+    "composition": "абонемент Race Expert Club на 3 месяца; Mind Shi Cordyceps, 1000 mg, 60 caps; Mind Shi Lion’s Mane, 1000 mg, 60 caps",
+    "goals": [
+      "daily",
+      "training"
+    ],
+    "families": [
+      "daytime_energy_focus",
+      "endurance_aerobic_stamina"
+    ],
+    "classes": [
+      "supplements_vitamins_minerals"
+    ],
+    "timings": [
+      "morning_start",
+      "before_or_after_training"
+    ],
+    "activities": [
+      "running",
+      "fitness_gym",
+      "general_lifestyle"
+    ],
+    "rationale": "Синергія кордицепсу (стимуляція синтезу клітинного АТФ та покращення оксигенації тканин) та їжовика гребінчастого (фокус і швидкість реакції) для фізичної витривалості та ментальної працездатності."
+  },
+  {
+    "catalog_row": 54,
+    "sku": "RE11806",
+    "title": "Набір «Енергія дистанції Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1475,
+    "composition": "абонемент Race Expert Club на 3 месяца; DRUMn’BADS liquid cordyceps, 30 ml; Swanson CoQ10 Mini Cap, 10 mg, 100 caps; Precision Hydration 500 Tube, 15 таблеток",
+    "goals": [
+      "running",
+      "hydration",
+      "daily"
+    ],
+    "families": [
+      "endurance_aerobic_stamina",
+      "hydration_electrolytes",
+      "daytime_energy_focus"
+    ],
+    "classes": [
+      "supplements_vitamins_minerals"
+    ],
+    "timings": [
+      "during_training",
+      "before_or_after_training"
+    ],
+    "activities": [
+      "running",
+      "cycling",
+      "triathlon"
+    ],
+    "rationale": "Комплекс для циклічної витривалості на довгих дистанціях: рідкий екстракт кордицепсу та CoQ10 оптимізують мітохондріальне дихання та вироблення енергії, а електроліти PH 500 запобігають зневодненню."
+  },
+  {
+    "catalog_row": 55,
+    "sku": "RE11804",
+    "title": "Набір «Марафонський темп»",
+    "price_uah": 1500,
+    "composition": "Race Expert Run for Help Ukraine кепка; Race Expert пояс для стартового номера with 6 gel loops; Hydria Perform стики с электролитами x10",
+    "goals": [
+      "running",
+      "gear",
+      "hydration"
+    ],
+    "families": [
+      "running_gear_accessories",
+      "hydration_electrolytes",
+      "endurance_aerobic_stamina"
+    ],
+    "classes": [
+      "mixed_hybrid"
+    ],
+    "timings": [
+      "during_training",
+      "before_or_after_training"
+    ],
+    "activities": [
+      "running",
+      "triathlon"
+    ],
+    "rationale": "Стартовий біговий екіпірувальний набір: вентильована кепка від сонця, пояс для стартового номера з петлями під гелі та ізотонічні електроліти Hydria для підтримання водно-сольового балансу на марафоні."
+  },
+  {
+    "catalog_row": 56,
+    "sku": "RE11799",
+    "title": "Набір «Підготовка до забігу»",
+    "price_uah": 1500,
+    "composition": "Race Expert кепка; пояс для стартового номера; бутылка для воды Race Expert, 600 мл; белые носки, размер 40–42",
+    "goals": [
+      "gear",
+      "running"
+    ],
+    "families": [
+      "running_gear_accessories",
+      "foot_apparel_comfort"
+    ],
+    "classes": [
+      "mixed_hybrid"
+    ],
+    "timings": [
+      "before_or_after_training",
+      "during_training"
+    ],
+    "activities": [
+      "running"
+    ],
+    "rationale": "Повний комплект бігового екіпірування для змагань: функціональні шкарпетки із захистом від мозолів, стартовий пояс, пляшка для води та кепка для захисту від перегріву."
+  },
+  {
+    "catalog_row": 57,
+    "sku": "RE11787",
+    "title": "Набір «Сила та гідратація» — абонемент на 3 місяці",
+    "price_uah": 1475,
+    "composition": "Hydria Perform sticks x10; OstroVit Creatine Monohydrate orange, 500 g; Olimp BCAA 4000 Extreme Shot orange, 60 ml",
+    "goals": [
+      "training",
+      "hydration"
+    ],
+    "families": [
+      "strength_muscle_power",
+      "hydration_electrolytes"
+    ],
+    "classes": [
+      "supplements_vitamins_minerals"
+    ],
+    "timings": [
+      "before_or_after_training",
+      "during_training"
+    ],
+    "activities": [
+      "fitness_gym",
+      "running"
+    ],
+    "rationale": "Спортивний комплекс для вибухової сили та збереження м'язів: чистий креатин моногідрат насичує фосфокреатиновий пул, амінокислоти BCAA запобігають катаболізму, а електроліти Hydria підтримують баланс рідини."
+  },
+  {
+    "catalog_row": 58,
+    "sku": "Nabir_1128",
+    "title": "Набір «Витривалість» — абонемент на 3 місяці",
+    "price_uah": 1500,
+    "composition": "абонемент; OstroVit Creatine Monohydrate orange, 500 g; Race Expert × DRUMn’BADS lion’s-mane протеиновый батончик 40 g; cordyceps протеиновый батончик 40 g; reishi протеиновый батончик 40 g; Hydria Perform sticks x7",
+    "goals": [
+      "training",
+      "hydration"
+    ],
+    "families": [
+      "strength_muscle_power",
+      "hydration_electrolytes"
+    ],
+    "classes": [
+      "supplements_vitamins_minerals"
+    ],
+    "timings": [
+      "before_or_after_training",
+      "during_training"
+    ],
+    "activities": [
+      "fitness_gym",
+      "running"
+    ],
+    "rationale": "Спортивний комплекс для силової витривалості та швидкого ресинтезу АТФ: креатин OstroVit оптимізує енергетичний пул м'язів, електроліти Hydria відновлюють гідратацію та нервово-м'язову провідність, а функціональні протеїнові батончики надають додаткову поживну підтримку."
+  },
+  {
+    "catalog_row": 59,
+    "sku": "RE11659",
+    "title": "Набір «Тиждень бігуна»",
+    "price_uah": 1200,
+    "composition": "Sponser Crunchy Protein Bar, 50 g x2; Hydria Perform lemon sticks x6; GU Energy Chews lemonade, 60 g x1. В начале описания упоминается энергетический гель, но нумерованный список товаров его не содержит",
+    "goals": [
+      "running",
+      "food",
+      "hydration"
+    ],
+    "families": [
+      "endurance_aerobic_stamina",
+      "quick_energy_snack",
+      "hydration_electrolytes"
+    ],
+    "classes": [
+      "mixed_hybrid"
+    ],
+    "timings": [
+      "during_training",
+      "before_or_after_training"
+    ],
+    "activities": [
+      "running",
+      "cycling",
+      "triathlon"
+    ],
+    "rationale": "Швидка вуглеводна підзарядка для бігунів (енергетичні дропси GU та протеїнові батончики Sponser) у поєднанні з електролітами Hydria для підтримки гідратації та попередження спазмів."
+  },
+  {
+    "catalog_row": 60,
+    "sku": "RE88965",
+    "title": "Набір «Вечірнє розслаблення Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1500,
+    "composition": "абонемент Race Expert Club на 3 месяца; Reishi 700 mg, 60 caps; NOW 5-HTP 50 mg, 30 caps; KAL Stress B Magnesium Glycinate, 60 caps",
+    "goals": [
+      "recovery"
+    ],
+    "families": [
+      "sleep_relaxation_stress"
+    ],
+    "classes": [
+      "supplements_vitamins_minerals"
+    ],
+    "timings": [
+      "evening_or_bedtime"
+    ],
+    "activities": [
+      "general_lifestyle"
+    ],
+    "rationale": "Нейроседативний комплекс вечірнього відновлення: 5-HTP та біодоступний магній гліцинат стимулюють синтез серотоніну й мелатоніну, а екстракт рейші знижує рівень кортизолу та збудження ЦНС."
+  },
+  {
+    "catalog_row": 61,
+    "sku": "RE88947",
+    "title": "Набір «Спокійний сон Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1485,
+    "composition": "абонемент Race Expert Club на 3 месяца; Reishi 700 mg, 60 caps; KAL Stress B Magnesium Glycinate, 60 caps; NOW Melatonin 3 mg, 60 caps",
+    "goals": [
+      "recovery"
+    ],
+    "families": [
+      "sleep_relaxation_stress"
+    ],
+    "classes": [
+      "supplements_vitamins_minerals"
+    ],
+    "timings": [
+      "evening_or_bedtime"
+    ],
+    "activities": [
+      "general_lifestyle"
+    ],
+    "rationale": "Потужна формула для нормалізації циркадних ритмів: мелатонін прискорює засинання та оптимізує фази глибокого сну, магній гліцинат знімає спазми й напругу м'язів, а рейші стабілізує нервову систему."
+  },
+  {
+    "catalog_row": 62,
+    "sku": "RE11803",
+    "title": "Набір «Польовий сон Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1500,
+    "composition": "абонемент Race Expert Club на 3 месяца; VPLab Ultra Sleep, 60 caps; Nutriversum Melatonin, 60 caps; Race Expert флисовый бафф",
+    "goals": [
+      "recovery",
+      "outdoors",
+      "gear"
+    ],
+    "families": [
+      "sleep_relaxation_stress",
+      "outdoor_travel_hiking"
+    ],
+    "classes": [
+      "mixed_hybrid"
+    ],
+    "timings": [
+      "evening_or_bedtime"
+    ],
+    "activities": [
+      "hiking",
+      "general_lifestyle"
+    ],
+    "rationale": "Спеціалізований набір для повноцінного сну в польових або некомфортних умовах: VPLab Ultra Sleep та мелатонін забезпечують відновлення ЦНС при стресі, а теплий флісовий баф захищає від переохолодження."
+  },
+  {
+    "catalog_row": 63,
+    "sku": "RE89026",
+    "title": "Набір «Нічне відновлення» — абонемент на 3 місяці",
+    "price_uah": 1500,
+    "composition": "абонемент Race Expert Club на 3 месяца; Swanson Triple Magnesium 400 mg, 100 caps; Ashwagandha 450 mg, 100 caps; NOW Melatonin 3 mg, 60 caps; NOW 5-HTP 50 mg, 30 caps",
+    "goals": [
+      "recovery"
+    ],
+    "families": [
+      "sleep_relaxation_stress"
+    ],
+    "classes": [
+      "supplements_vitamins_minerals"
+    ],
+    "timings": [
+      "evening_or_bedtime"
+    ],
+    "activities": [
+      "general_lifestyle"
+    ],
+    "rationale": "Повний стек нічної регенерації: мелатонін та 5-HTP регулюють фази швидкого та повільного сну, ашваганда супресує нічні викиди кортизолу, а три форми магнію забезпечують нервово-м'язову релаксацію."
+  },
+  {
+    "catalog_row": 64,
+    "sku": "RE11523",
+    "title": "Набір «Глибокий сон і відновлення» — абонемент на 3 місяці",
+    "price_uah": 1489,
+    "composition": "абонемент Race Expert Club на 3 месяца; Swanson Ashwagandha, 450 mg, 100 caps; Swanson Melatonin, 3 mg, 60 caps; Swanson Triple Magnesium, 400 mg, 100 caps",
+    "goals": [
+      "recovery"
+    ],
+    "families": [
+      "sleep_relaxation_stress"
+    ],
+    "classes": [
+      "supplements_vitamins_minerals"
+    ],
+    "timings": [
+      "evening_or_bedtime"
+    ],
+    "activities": [
+      "general_lifestyle"
+    ],
+    "rationale": "Формула глибокого сну та зниження тривожності: ашваганда модулює стресову вісь HPA, мелатонін синхронізує фази засинання, а комплекс магнію розслабляє поперечно-посмуговані м'язи."
+  },
+  {
+    "catalog_row": 65,
+    "sku": "RE11694",
+    "title": "Набір «Воля та незламність Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1499,
+    "composition": "абонемент Race Expert Club на 3 месяца; medal «Озброєні волею 2.0»; брелок из гильзы с гравировкой; брелок в виде истребителя; брелок в виде дрона",
+    "goals": [
+      "gift"
+    ],
+    "families": [
+      "gift_identity"
+    ],
+    "classes": [
+      "gear_and_accessories"
+    ],
+    "timings": [
+      "daily_use"
+    ],
+    "activities": [
+      "general_lifestyle"
+    ],
+    "rationale": "Патріотичний подарунковий та сувенірний набір (символічна медаль фінішера «Озброєні волею» та авторські металеві брелоки) для мотивації, підтримки бойового духу та ідентичності."
+  },
+  {
+    "catalog_row": 66,
+    "sku": "RE88958",
+    "title": "Набір «Відпочинок нервової системи Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1500,
+    "composition": "Swanson Full Spectrum Ashwagandha 450 mg, 100 caps x2; NOW 5-HTP 50 mg, 30 caps; OstroVit Magnesium Citrate + B6, 90 таблеток (400 mg magnesium + 15 mg B6 per 3-tab serving)",
+    "goals": [
+      "recovery"
+    ],
+    "families": [
+      "sleep_relaxation_stress"
+    ],
+    "classes": [
+      "supplements_vitamins_minerals"
+    ],
+    "timings": [
+      "evening_or_bedtime",
+      "daily_use"
+    ],
+    "activities": [
+      "general_lifestyle"
+    ],
+    "rationale": "Антистресовий комплекс для розвантаження центральної нервової системи: висока доза ашваганди зменшує хронічну тривожність, 5-HTP підтримує синтез серотоніну, а магній цитрат із вітаміном B6 усуває м'язовий спазм."
+  },
+  {
+    "catalog_row": 67,
+    "sku": "RE88949",
+    "title": "Набір «Спокійний вечір Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1479,
+    "composition": "абонемент Race Expert Club на 3 месяца; Mind Shi Reishi Mushroom 1000 mg, 60 caps; Swanson Full Spectrum Ashwagandha 450 mg, 100 caps",
+    "goals": [
+      "recovery"
+    ],
+    "families": [
+      "sleep_relaxation_stress"
+    ],
+    "classes": [
+      "supplements_vitamins_minerals"
+    ],
+    "timings": [
+      "evening_or_bedtime"
+    ],
+    "activities": [
+      "general_lifestyle"
+    ],
+    "rationale": "М'яка рослинна комбінація адаптогенів (рейші та ашваганда) для зниження вечірнього рівня кортизолу, відновлення психоемоційної рівноваги та підготовки до здорового сну."
+  },
+  {
+    "catalog_row": 68,
+    "sku": "Nabir_1121",
+    "title": "Набір «Чоловіча сила Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1500,
+    "composition": "абонемент Race Expert Club на 3 месяца; тёмные носки RE2 x2 пары и белые носки RE2 x2 пары, размер 40–44; OstroVit Creatine, 500 g; Myprotein Baked Cookie, 75 g",
+    "goals": [
+      "training",
+      "gear"
+    ],
+    "families": [
+      "strength_muscle_power",
+      "foot_apparel_comfort"
+    ],
+    "classes": [
+      "mixed_hybrid"
+    ],
+    "timings": [
+      "before_or_after_training",
+      "daily_use"
+    ],
+    "activities": [
+      "fitness_gym",
+      "running"
+    ],
+    "rationale": "Комплексний набір для силового тренінгу в залі: креатин OstroVit стимулює зростання силових показників та м'язовий анаболізм, протеїнове печиво закриває білкове вікно, а 4 пари спортивних шкарпеток забезпечують комфорт під час навантажень."
+  },
+  {
+    "catalog_row": 69,
+    "sku": "RE89023",
+    "title": "Набір «Чоловіча підтримка 50+ Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1500,
+    "composition": "абонемент Race Expert Club на 3 месяца; Nature’s Way Alive Men’s 50+, 50 tabs; Swanson Ashwagandha 450 mg, 100 caps; NOW Melatonin 3 mg, 60 caps",
+    "goals": [
+      "daily",
+      "recovery"
+    ],
+    "families": [
+      "daily_wellness_vitality",
+      "sleep_relaxation_stress"
+    ],
+    "classes": [
+      "supplements_vitamins_minerals"
+    ],
+    "timings": [
+      "daily_use",
+      "morning_start",
+      "evening_or_bedtime"
+    ],
+    "activities": [
+      "general_lifestyle"
+    ],
+    "rationale": "Віковий комплекс для чоловіків 50+: збалансовані мультивітаміни Alive Men's 50+ для підтримки серцево-судинної системи та енергії, а комбінація ашваганди та мелатоніну покращує якість сну та знижує віковий оксидативний стрес."
+  },
+  {
+    "catalog_row": 70,
+    "sku": "RE89020",
+    "title": "Набір «Жіноча енергія та баланс Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1500,
+    "composition": "абонемент Race Expert Club на 3 месяца; Nature’s Way Alive Women’s Energy; Swanson Ashwagandha 450 mg, 100 caps; Swanson B12 500 mcg, 100 caps",
+    "goals": [
+      "daily"
+    ],
+    "families": [
+      "daily_wellness_vitality",
+      "daytime_energy_focus"
+    ],
+    "classes": [
+      "supplements_vitamins_minerals"
+    ],
+    "timings": [
+      "daily_use",
+      "morning_start"
+    ],
+    "activities": [
+      "general_lifestyle"
+    ],
+    "rationale": "Формула життєвого тонусу та гормонального балансу для активних жінок: мультивітаміни Alive Women's у поєднанні з метилкобаламіном B12 активують енергетичний клітинний обмін, а ашваганда захищає від емоційного вигорання."
+  },
+  {
+    "catalog_row": 71,
+    "sku": "RE88962",
+    "title": "Набір «Чоловічий тонус 50+ Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1500,
+    "composition": "абонемент Race Expert Club на 3 месяца; Alive Men’s 50+, 50 tabs; Ashwagandha 450 mg, 100 caps; NOW Zinc Picolinate 50 mg, 30 caps",
+    "goals": [
+      "daily"
+    ],
+    "families": [
+      "daily_wellness_vitality"
+    ],
+    "classes": [
+      "supplements_vitamins_minerals"
+    ],
+    "timings": [
+      "daily_use",
+      "morning_start"
+    ],
+    "activities": [
+      "general_lifestyle"
+    ],
+    "rationale": "Підтримка чоловічого гормонального фону та бадьорості після 50 років: цинк піколінат та мультивітаміни Alive підтримують синтез тестостерону та імунітет, а ашваганда покращує толерантність до стресу."
+  },
+  {
+    "catalog_row": 72,
+    "sku": "RE88944",
+    "title": "Набір «Чоловічий тонус Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1475,
+    "composition": "абонемент Race Expert Club на 3 месяца; Swanson Maca 500 mg, 60 caps; Ashwagandha 450 mg, 100 caps; NOW D3 5000 IU, 30 softgels; Hydria Daily sticks x5",
+    "goals": [
+      "daily"
+    ],
+    "families": [
+      "daily_wellness_vitality",
+      "daytime_energy_focus"
+    ],
+    "classes": [
+      "supplements_vitamins_minerals"
+    ],
+    "timings": [
+      "daily_use",
+      "morning_start"
+    ],
+    "activities": [
+      "general_lifestyle"
+    ],
+    "rationale": "Комплекс для підвищення тонусу, лібідо та витривалості чоловіків: перуанська мака та висока доза вітаміну D3 підтримують ендокринний профіль і бадьорість, а ашваганда мінімізує негативний вплив стресу."
+  },
+  {
+    "catalog_row": 73,
+    "sku": "RE89418",
+    "title": "Набір м'ясних снеків (соєвий соус) Race Expert Club — абонемент на 3 місяці",
+    "price_uah": 1500,
+    "composition": "абонемент на 3 месяца; RyabChick сушёные ломтики курицы, soy sauce, 30 g x16",
+    "goals": [
+      "food"
+    ],
+    "families": [
+      "quick_energy_snack"
+    ],
+    "classes": [
+      "protein_carbohydrate_food"
+    ],
+    "timings": [
+      "daily_use",
+      "before_or_after_training",
+      "during_day_tone"
+    ],
+    "activities": [
+      "fitness_gym",
+      "hiking",
+      "general_lifestyle"
+    ],
+    "rationale": "Високобілковий натуральний снек (сушене куряче філе в соєвому соусі): містить понад 60% легкозасвоюваного білка без зайвих вуглеводів для швидкого перекусу на роботі, в поході або після тренування."
+  },
+  {
+    "catalog_row": 74,
+    "sku": "RE89416",
+    "title": "Набір м'ясних снеків (мед, гірчиця) Race Expert Club — абонемент на 3 місяці",
+    "price_uah": 1500,
+    "composition": "RyabChick сушёные ломтики курицы, медово-горчичный вкус, 30 g x16; карточка указывает, что в набор входит абонемент Race Expert Club на 3 месяца",
+    "goals": [
+      "food"
+    ],
+    "families": [
+      "quick_energy_snack"
+    ],
+    "classes": [
+      "protein_carbohydrate_food"
+    ],
+    "timings": [
+      "daily_use",
+      "before_or_after_training",
+      "during_day_tone"
+    ],
+    "activities": [
+      "fitness_gym",
+      "hiking",
+      "general_lifestyle"
+    ],
+    "rationale": "Чистий тваринний протеїн у зручному форматі джерків: відновлює амінокислотний пул м'язів, тамує голод під час тривалих поїздок або тренувань, підходить для низьковуглеводних дієт."
+  },
+  {
+    "catalog_row": 75,
+    "sku": "RE11721",
+    "title": "Набір «Сублімований мікс Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1395,
+    "composition": "абонемент Race Expert Club на 3 месяца; ассорти сублимированных фруктов x6; ассорти сублимированного мороженого x6; бутылка Race Expert (объём не указан)",
+    "goals": [
+      "food",
+      "gear",
+      "outdoors"
+    ],
+    "families": [
+      "quick_energy_snack",
+      "outdoor_travel_hiking"
+    ],
+    "classes": [
+      "mixed_hybrid"
+    ],
+    "timings": [
+      "daily_use",
+      "during_day_tone"
+    ],
+    "activities": [
+      "hiking",
+      "general_lifestyle"
+    ],
+    "rationale": "Легкий похідний десертно-вуглеводний снек (сублімовані фрукти та морозиво з тривалим терміном зберігання) у комплекті зі спортивною пляшкою для швидкої енергії в мандрівках та прогулянках."
+  },
+  {
+    "catalog_row": 76,
+    "sku": "RE11695",
+    "title": "Набір «Мандрівний смаколик Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1500,
+    "composition": "абонемент клуба на 3 месяца; 2 упаковки сублимированных фруктов по 6 штук; напиток Napiy ваниль-корица 90 г ×1 и шоколад 90 г ×1",
+    "goals": [
+      "food",
+      "outdoors"
+    ],
+    "families": [
+      "quick_energy_snack",
+      "outdoor_travel_hiking"
+    ],
+    "classes": [
+      "protein_carbohydrate_food"
+    ],
+    "timings": [
+      "daily_use",
+      "during_day_tone",
+      "before_or_after_training"
+    ],
+    "activities": [
+      "hiking",
+      "general_lifestyle"
+    ],
+    "rationale": "Збалансоване портативне харчування для автономних подорожей: сухі білково-вуглеводні шейки Napiy (по 25 г протеїну та клітковина) та хрусткі сублімовані фрукти для здорового перекусу без доступу до кухні."
+  },
+  {
+    "catalog_row": 77,
+    "sku": "RE11557",
+    "title": "Набір «Розумна їжа Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1500,
+    "composition": "абонемент клуба на 3 месяца; напитки Napiy 90 г ×9 (ваниль-корица ×3, шоколад ×3, клубника ×3); шейкер 700 мл",
+    "goals": [
+      "food",
+      "training"
+    ],
+    "families": [
+      "quick_energy_snack",
+      "strength_muscle_power"
+    ],
+    "classes": [
+      "mixed_hybrid"
+    ],
+    "timings": [
+      "daily_use",
+      "before_or_after_training",
+      "during_day_tone"
+    ],
+    "activities": [
+      "fitness_gym",
+      "hiking",
+      "general_lifestyle"
+    ],
+    "rationale": "Повноцінний замінник прийому їжі у форматі шейків Napiy (оптимальне співвідношення білка, повільних вуглеводів та клітковини) разом із герметичним шейкером 700 мл для якісного відновлення або перекусу на ходу."
+  },
+  {
+    "catalog_row": 78,
+    "sku": "RE11495",
+    "title": "Набір «Похідна їжа ЇDLO Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1500,
+    "composition": "абонемент клуба на 3 месяца; картофель с курицей 90 г ×2; полента с овощами 90 г ×2; гречка с веганскими тефтелями 100 г ×2; бануш 100 г ×1; карпатский чай 40 г (5 фильтр-пакетов, каждый на 1 л)",
+    "goals": [
+      "outdoors",
+      "food"
+    ],
+    "families": [
+      "outdoor_travel_hiking",
+      "quick_energy_snack"
+    ],
+    "classes": [
+      "protein_carbohydrate_food"
+    ],
+    "timings": [
+      "daily_use",
+      "during_day_tone"
+    ],
+    "activities": [
+      "hiking",
+      "walking"
+    ],
+    "rationale": "Сублімований раціон гарячого харчування швидкого приготування (страви ЇDLO від 300 до 400 ккал на порцію) та карпатський чай для відновлення глікогену та сил під час трекінгу, експедицій і кемпінгу."
+  },
+  {
+    "catalog_row": 79,
+    "sku": "Nabir_1129",
+    "title": "Набір «Енергетичний перекус Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1500,
+    "composition": "абонемент клуба на 3 месяца; протеиновые батончики 40 г ×13: клюква/рейши ×4, кофе/кордицепс ×5, кокос/ежовик ×4",
+    "goals": [
+      "food",
+      "daily"
+    ],
+    "families": [
+      "quick_energy_snack",
+      "daytime_energy_focus"
+    ],
+    "classes": [
+      "protein_carbohydrate_food"
+    ],
+    "timings": [
+      "during_day_tone",
+      "before_or_after_training"
+    ],
+    "activities": [
+      "running",
+      "fitness_gym",
+      "general_lifestyle"
+    ],
+    "rationale": "Функціональний перекус із додаванням адаптогенів: 13 протеїнових батончиків із кордицепсом (тонус), їжовиком (фокус) та рейші забезпечують швидкі амінокислоти та підтримують денну енергію без стрибків інсуліну."
+  },
+  {
+    "catalog_row": 80,
+    "sku": "RE11822",
+    "title": "Набір «Дорожня гігієна»",
+    "price_uah": 1500,
+    "composition": "гель для душа TRISWIM Body Wash 251 мл; зубная паста NOW Foods Xyli White 181 г; баф Race Expert",
+    "goals": [
+      "gear",
+      "outdoors"
+    ],
+    "families": [
+      "running_gear_accessories",
+      "outdoor_travel_hiking"
+    ],
+    "classes": [
+      "gear_and_accessories"
+    ],
+    "timings": [
+      "daily_use",
+      "before_or_after_training"
+    ],
+    "activities": [
+      "triathlon",
+      "hiking",
+      "general_lifestyle"
+    ],
+    "rationale": "Спортивно-гігієнічний дорожній набір: спеціалізований гель TRISWIM нейтралізує запах хлору, солі та бактерії після басейну й тренувань, зубна паста Xyli White та універсальний баф Race Expert для комфорту в дорозі."
+  },
+  {
+    "catalog_row": 81,
+    "sku": "RE11780",
+    "title": "Набір «Темні шкарпетки» (40-44)",
+    "price_uah": 1500,
+    "composition": "5 пар тёмных носков RE2, размер 40–44",
+    "goals": [
+      "gear",
+      "running"
+    ],
+    "families": [
+      "foot_apparel_comfort",
+      "running_gear_accessories"
+    ],
+    "classes": [
+      "apparel_footwear"
+    ],
+    "timings": [
+      "daily_use",
+      "during_training"
+    ],
+    "activities": [
+      "running",
+      "fitness_gym",
+      "walking"
+    ],
+    "rationale": "Комплект із 5 пар технологічних спортивних шкарпеток RE2 з анатомічною підтримкою стопи, повітропроникними зонами та вологовідвідним волокном для запобігання мозолям під час тривалого бігу й тренувань."
+  },
+  {
+    "catalog_row": 82,
+    "sku": "RE11779",
+    "title": "Акційний набір темних шкарпеток 5 пар \"40 - 42",
+    "price_uah": 950,
+    "composition": "5 пар тёмных носков Race Expert, размер 40–42 (в подробной карточке позиция указана в количестве 5 шт.); материал — 95% полиамид и 5% эластан",
+    "goals": [
+      "gear",
+      "running"
+    ],
+    "families": [
+      "foot_apparel_comfort",
+      "running_gear_accessories"
+    ],
+    "classes": [
+      "apparel_footwear"
+    ],
+    "timings": [
+      "daily_use",
+      "during_training"
+    ],
+    "activities": [
+      "running",
+      "fitness_gym",
+      "walking"
+    ],
+    "rationale": "Анатомічні спортивні шкарпетки Race Expert із посиленою п'ятою та носком, що ефективно відводять вологу, забезпечують терморегуляцію стопи та захищають від тертя у взутті."
+  },
+  {
+    "catalog_row": 83,
+    "sku": "RE11778",
+    "title": "Акційний набір темних шкарпеток 5 пар \"38 - 40",
+    "price_uah": 950,
+    "composition": "5 пар тёмных носков Race Expert, размер 38–40 (в подробной карточке позиция указана в количестве 5 шт.); материал — 95% полиамид и 5% эластан",
+    "goals": [
+      "gear",
+      "running"
+    ],
+    "families": [
+      "foot_apparel_comfort",
+      "running_gear_accessories"
+    ],
+    "classes": [
+      "apparel_footwear"
+    ],
+    "timings": [
+      "daily_use",
+      "during_training"
+    ],
+    "activities": [
+      "running",
+      "fitness_gym",
+      "walking"
+    ],
+    "rationale": "Високоеластичні зносостійкі шкарпетки з безшовною технологією миска та компресійним охопленням склепіння для щоденних пробіжок і спортивних тренувань без ризику натирання."
+  },
+  {
+    "catalog_row": 84,
+    "sku": "RE11777",
+    "title": "Акційний набір темних шкарпеток 5 пар \"35 - 37",
+    "price_uah": 950,
+    "composition": "5 пар тёмных носков Race Expert, размер 35–37 (в подробной карточке позиция указана в количестве 5 шт.); материал — 95% полиамид и 5% эластан",
+    "goals": [
+      "gear",
+      "running"
+    ],
+    "families": [
+      "foot_apparel_comfort",
+      "running_gear_accessories"
+    ],
+    "classes": [
+      "apparel_footwear"
+    ],
+    "timings": [
+      "daily_use",
+      "during_training"
+    ],
+    "activities": [
+      "running",
+      "fitness_gym",
+      "walking"
+    ],
+    "rationale": "Ергономічні бігові шкарпетки зменшеного розміру з поліамідного волокна з додаванням еластану для оптимального облягання стопи, вентиляції та захисту ахіллового сухожилля від натирання."
+  }
+]

@@ -1,0 +1,586 @@
+import json
+
+# Allowed Enums
+GOALS = {'recovery', 'running', 'training', 'hydration', 'food', 'daily', 'gear', 'gift', 'outdoors'}
+FAMILIES = {
+    'sleep_relaxation_stress', 'recovery_fatigue', 'daytime_energy_focus',
+    'strength_muscle_power', 'endurance_aerobic_stamina', 'hydration_electrolytes',
+    'daily_wellness_vitality', 'quick_energy_snack', 'foot_apparel_comfort',
+    'running_gear_accessories', 'gift_identity', 'outdoor_travel_hiking'
+}
+CLASSES = {
+    'protein_carbohydrate_food', 'supplements_vitamins_minerals',
+    'apparel_footwear', 'gear_and_accessories', 'mixed_hybrid'
+}
+TIMINGS = {
+    'morning_start', 'during_day_tone', 'before_or_after_training',
+    'during_training', 'evening_or_bedtime', 'daily_use'
+}
+ACTIVITIES = {
+    'running', 'cycling', 'triathlon', 'fitness_gym', 'hiking', 'walking', 'general_lifestyle'
+}
+
+audited_data = [
+    {
+        "catalog_row": 173,
+        "sku": "Nabir_1106",
+        "title": "Набір «Комплекс для загального зміцнення, спокою та імунітету Race Expert Club» — абонемент на 3 міс",
+        "price_uah": 1500,
+        "composition": "Mind Shi Reishi Mushroom 1,000 mg ×1; Myprotein Layered Bar ×3 (вкусы перечислены; >20 g белка/батончик); Mind Shi Shiitake Mushroom 1,000 mg ×1. Назначение по описанию набора: ежедневная общая поддержка, иммунитет и равновесие при физических и психоэмоциональных нагрузках. Отдельный вид спорта не указан. Неопределённость: В доступном перечне состава отдельно не указан абонемент Race Expert Club, несмотря на пометку Club в названии",
+        "goals": ["daily", "recovery"],
+        "families": ["sleep_relaxation_stress", "daily_wellness_vitality"],
+        "classes": ["supplements_vitamins_minerals"],
+        "timings": ["daily_use", "evening_or_bedtime"],
+        "activities": ["general_lifestyle"],
+        "rationale": "Функціональні гриби рейші (заспокоєння ЦНС, зниження надлишкового кортизолу, відновлення глибокого сну) та шиїтаке (підтримка клітинного імунітету й тонусу) у синергії з білковими батончиками забезпечують щоденну адаптогенну підтримку, стресостійкість та загальне зміцнення організму."
+    },
+    {
+        "catalog_row": 174,
+        "sku": "RE11805",
+        "title": "Набір «М'язове відновлення»",
+        "price_uah": 1500,
+        "composition": "Nutriversum BCAA+GLUTA без сахара 500 g ×1; SPONSER Recovery Drink клубника/банан 60 g ×1; Nutriversum Mini Shaker 300 ml ×1. Назначение по описанию набора: восстановление мышц после интенсивной нагрузки. Занятия/аудитория: силовые тренировки, бег, фитнес, CrossFit и другие высокоинтенсивные занятия; спортсмены. Неопределённость: существенной неопределённости нет",
+        "goals": ["recovery", "training"],
+        "families": ["recovery_fatigue", "strength_muscle_power"],
+        "classes": ["supplements_vitamins_minerals"],
+        "timings": ["before_or_after_training"],
+        "activities": ["fitness_gym", "running"],
+        "rationale": "Комплекс посттренувального відновлення: спеціалізований напій SPONSER Recovery Drink ефективно закриває вуглеводно-білкове вікно та відновлює запаси глікогену, а комплекс BCAA та глутаміну усуває катаболічний розпад білка та прискорює регенерацію мікропошкоджень м'язових волокон."
+    },
+    {
+        "catalog_row": 175,
+        "sku": "Nabir_1111",
+        "title": "Набір «Спокійна концентрація» по програмі \"Ветеранський спорт",
+        "price_uah": 1500,
+        "composition": "DRUMn’BADS Lion’s Mane 700 mg, розничная упаковка 60 капсул ([карточка товара Race Expert](https://raceexpert.com.ua/6780-yizhovik-grebinchastij-drumnbads-700-mg-60-kapsul-48202)); DRUMn’BADS адаптогенные жевательные конфеты, 3 упаковки ×15. Назначение по описанию набора: поддержка спокойной концентрации согласно описанию набора",
+        "goals": ["daily"],
+        "families": ["daytime_energy_focus", "daily_wellness_vitality"],
+        "classes": ["supplements_vitamins_minerals"],
+        "timings": ["morning_start", "during_day_tone", "daily_use"],
+        "activities": ["general_lifestyle", "fitness_gym"],
+        "rationale": "Ноотропний адаптогенний стек без психостимуляторів: екстракт їжовика гребінчастого стимулює синтез фактора росту нервів (NGF), посилює нейропластичність і пам'ять, а адаптогенні пастилки знижують тривожність і допомагають утримувати фокус у стресових умовах."
+    },
+    {
+        "catalog_row": 176,
+        "sku": "RE11516",
+        "title": "Набір «Набір маси»",
+        "price_uah": 1500,
+        "composition": "Nutriversum PURE Whey Pro 500 g ×1; Myprotein shaker 600 ml ×1; Nutriversum BCAA Shot 60 ml ×3. Назначение по описанию набора: набор мышечной массы и восстановление. Аудитория/занятия: спортсмены и тренирующиеся; отдельная дисциплина не выделена. Неопределённость: существенной неопределённости нет",
+        "goals": ["training"],
+        "families": ["strength_muscle_power", "recovery_fatigue"],
+        "classes": ["supplements_vitamins_minerals"],
+        "timings": ["before_or_after_training"],
+        "activities": ["fitness_gym"],
+        "rationale": "Базовий анаболічний набір для силового тренінгу та гіпертрофії: концентрат сироваткового протеїну Pure Whey Pro постачає повний спектр незамінних амінокислот для синтезу м'язових волокон, а рідкі BCAA шоти забезпечують миттєвий антикатаболічний захист під час тренування."
+    },
+    {
+        "catalog_row": 177,
+        "sku": "RE11813",
+        "title": "Набір «Формула краси»",
+        "price_uah": 1500,
+        "composition": "Nutriversum Collagen Heaven 300 g ×1 (10 g collagen на 15 g порцию); Puritan’s Pride Hair, Skin & Nails Formula 60 капсул ×1 (3,000 mcg biotin на рекомендуемую порцию). Назначение по описанию набора: ежедневная нутритивная поддержка кожи, волос, ногтей и соединительной ткани",
+        "goals": ["daily", "recovery"],
+        "families": ["daily_wellness_vitality", "recovery_fatigue"],
+        "classes": ["supplements_vitamins_minerals"],
+        "timings": ["morning_start", "evening_or_bedtime", "daily_use"],
+        "activities": ["general_lifestyle"],
+        "rationale": "Потужна терапевтична доза гідролізованого колагену (10 000 мг) у синергії з гіалуроновою кислотою, високим вмістом біотину (3000 мкг) та антиоксидантними мікроелементами. Стимулює фібробласти, відновлює матрикс сполучної тканини суглобів, зв'язок і забезпечує пружність шкіри."
+    },
+    {
+        "catalog_row": 178,
+        "sku": "RE11744",
+        "title": "Набір «Здоров'я шкіри Race Expert Club» — абонемент на 3 месяца",
+        "price_uah": 1500,
+        "composition": "абонемент Race Expert Club на 3 месяца; Nutriversum Collagen Heaven 300 g ×1; Nutriversum VITA C+MSM лимон 150 g ×1. Назначение по описанию набора: поддержка кожи и соединительной ткани согласно описанию продавца. Спортивная аудитория не указана. Неопределённость: существенной неопределённости нет",
+        "goals": ["daily", "recovery"],
+        "families": ["daily_wellness_vitality", "recovery_fatigue"],
+        "classes": ["supplements_vitamins_minerals"],
+        "timings": ["morning_start", "daily_use"],
+        "activities": ["general_lifestyle", "fitness_gym", "running"],
+        "rationale": "Комплекс хондро- та дерматопротекції: гідролізат колагену доповнений органічною сіркою (МСМ) та вітаміном С, які є незамінними кофакторами синтезу ендогенного колагену та еластину, покращують амортизаційні властивості хрящів і тонус епідермісу."
+    },
+    {
+        "catalog_row": 179,
+        "sku": "RE11682",
+        "title": "Набір «Жіноче здоров’я Race Expert Club» — абонемент на 3 месяца",
+        "price_uah": 1500,
+        "composition": "абонемент Race Expert Club на 3 месяца; VPLab Ultra Women’s Multivitamin 90 капсул ×1; NOW Foods Omega-3 1,000 mg, 30 мягкие капсулы ×1; Nutriversum Vitamin D3+K2 60 капсул ×1. Назначение по описанию набора: ежедневная поддержка женского здоровья, энергии и самочувствия",
+        "goals": ["daily"],
+        "families": ["daily_wellness_vitality"],
+        "classes": ["supplements_vitamins_minerals"],
+        "timings": ["morning_start", "daily_use"],
+        "activities": ["general_lifestyle"],
+        "rationale": "Золотий стандарт щоденної жіночої нутритивної підтримки: комплекс Ultra Women's нормалізує енергетичний метаболізм, Омега-3 жирні кислоти забезпечують кардіоваскулярну протекцію та баланс ліпідів, а тандем D3+K2 гарантує мінералізацію кісток та міцний імунітет."
+    },
+    {
+        "catalog_row": 180,
+        "sku": "Nabir_1125",
+        "title": "Набір «Сяйво та внутрішня енергія Race Expert Club» — абонемент на 3 месяца",
+        "price_uah": 1500,
+        "composition": "абонемент Race Expert Club на 3 месяца; Nutriversum Zinc 30 капсул ×1; Iron 30 таблеток ×1; Biotin 30 таблеток ×1; Vitamin B-Complex 30 таблеток ×1. Назначение по описанию набора: поддержка красоты и энергии согласно описанию набора. Пол и спортивное назначение не указаны. Неопределённость: существенной неопределённости нет",
+        "goals": ["daily"],
+        "families": ["daily_wellness_vitality", "daytime_energy_focus"],
+        "classes": ["supplements_vitamins_minerals"],
+        "timings": ["morning_start", "daily_use"],
+        "activities": ["general_lifestyle"],
+        "rationale": "Таргетний стек проти втоми та дефіцитних станів: біодоступне залізо підвищує синтез гемоглобіну та транспорт кисню до клітин, вітаміни групи B каталізують утворення АТФ у мітохондріях, а цинк та біотин регулюють регенерацію шкірного бар'єра."
+    },
+    {
+        "catalog_row": 181,
+        "sku": "RE89417",
+        "title": "Набір м'ясних снеків (перець, паприка) Race Expert Club — абонемент на 3 месяца",
+        "price_uah": 1500,
+        "composition": "сушеные ломтики курицы с перцем и паприкой, 30 g ×16. Назначение по описанию набора: портативный белковый перекус после тренировки, на работе или в дороге. Аудитория/занятия: спортсмены и активные люди; названы работа, поездки и пешие прогулки. Неопределённость: существенной неопределённости нет",
+        "goals": ["food", "outdoors"],
+        "families": ["quick_energy_snack", "outdoor_travel_hiking"],
+        "classes": ["protein_carbohydrate_food"],
+        "timings": ["during_day_tone", "before_or_after_training", "daily_use"],
+        "activities": ["hiking", "walking", "fitness_gym", "general_lifestyle"],
+        "rationale": "16 порцій (480 г) натурального сушеного філе курки з перцем та паприкою. Концентроване джерело легкозасвоюваного тваринного білка з мінімальним вмістом жирів для тривалої ситості, підтримки м'язів під час тренувань, тривалих походів або подорожей."
+    },
+    {
+        "catalog_row": 182,
+        "sku": "RE89413",
+        "title": "Набір м'ясних снеків (сир Гауда) Race Expert Club — абонемент на 3 месяца",
+        "price_uah": 1500,
+        "composition": "сушеные ломтики курицы с сыром Gouda, 30 g ×16. Назначение по описанию набора: портативный белковый перекус",
+        "goals": ["food", "outdoors"],
+        "families": ["quick_energy_snack", "outdoor_travel_hiking"],
+        "classes": ["protein_carbohydrate_food"],
+        "timings": ["during_day_tone", "before_or_after_training", "daily_use"],
+        "activities": ["hiking", "walking", "fitness_gym", "general_lifestyle"],
+        "rationale": "Портативні м'ясні снеки з добірного курячого філе та витриманого сиру Гауда. Ситний високобілковий перекус, що не потребує зберігання в холодильнику, ідеальний для відновлення сил на хайкінгу, силових тренуваннях чи у дорозі."
+    },
+    {
+        "catalog_row": 183,
+        "sku": "RE89329",
+        "title": "Набір «Набір м'ясних снеків М'яско ToGo Фруктово-гострий Race Expert Club» — абонемент на 3 месяца",
+        "price_uah": 1500,
+        "composition": "8 ×50 g упаковок вяленого мяса (свинина/курица/индейка; медово-острый вкус, традиционный вкус, вишня и апельсин вкусы). Назначение по описанию набора: перекус в дороге, после тренировки или работы и во время активного отдыха. Упомянуты обычные тренировки без указания дисциплины, а также работа, поездки и активный отдых. Неопределённость: Точное количество каждого вкуса/вида мяса в доступном описании не установлено",
+        "goals": ["food", "outdoors"],
+        "families": ["quick_energy_snack", "outdoor_travel_hiking"],
+        "classes": ["protein_carbohydrate_food"],
+        "timings": ["during_day_tone", "before_or_after_training", "daily_use"],
+        "activities": ["hiking", "walking", "fitness_gym", "general_lifestyle"],
+        "rationale": "8 упаковок по 50 г джеркі зі свинини, курки та індички з фруктово-пряними маринадами (вишня, апельсин, медово-гострий). Забезпечує до 25 г чистого білка на порцію без зайвих швидких вуглеводів для походів, офісу чи відновлення."
+    },
+    {
+        "catalog_row": 184,
+        "sku": "RE89328",
+        "title": "Набір «Набір м'ясних снеків М'яско ToGo Солодко-пікантний Race Expert Club» — абонемент на 3 месяца",
+        "price_uah": 1500,
+        "composition": "8 ×50 g упаковок вяленого мяса (курица/индейка/свинина; азиатский вкус, медово-горчичный вкус, вишня и терияки вкусы). Назначение по описанию набора: перекус на работе, в дороге, после тренировки или во время активного отдыха. Конкретная дисциплина не указана; названы работа, поездки, тренировки и активный отдых. Неопределённость: Точное количество каждого вкуса/вида мяса в доступном описании не установлено",
+        "goals": ["food", "outdoors"],
+        "families": ["quick_energy_snack", "outdoor_travel_hiking"],
+        "classes": ["protein_carbohydrate_food"],
+        "timings": ["during_day_tone", "before_or_after_training", "daily_use"],
+        "activities": ["hiking", "walking", "fitness_gym", "general_lifestyle"],
+        "rationale": "Високопротеїнові в'ялені снеки з трьох видів м'яса у солодко-пікантних соусах (теріякі, медово-гірчичний, азійський). Швидке відновлення енергії та амінокислотного пулу під час піших маршрутів, кемпінгу або активного робочого дня."
+    },
+    {
+        "catalog_row": 185,
+        "sku": "RE89327",
+        "title": "«Набір м'ясних снеків М'яско ToGo «Класика з цитрусом», 8 шт»",
+        "price_uah": 1500,
+        "composition": "8 ×50 g: курица, традиционный вкус ×3, курица, лимон ×2, свинина, медово-горчичный вкус ×2, индейка, апельсин ×1. Назначение по описанию набора: ассорти снеков для перекуса; конкретная активность не указана. Конкретная активность не указана. Неопределённость: существенной неопределённости нет",
+        "goals": ["food", "outdoors"],
+        "families": ["quick_energy_snack", "outdoor_travel_hiking"],
+        "classes": ["protein_carbohydrate_food"],
+        "timings": ["during_day_tone", "before_or_after_training", "daily_use"],
+        "activities": ["hiking", "walking", "fitness_gym", "general_lifestyle"],
+        "rationale": "Збалансоване асорті джеркі (400 г сумарно) з курятини, індички та свинини з цитрусовими нотками. Висока білкова щільність забезпечує тривалу ситість і запобігає катаболізму при фізичних навантаженнях поза домом."
+    },
+    {
+        "catalog_row": 186,
+        "sku": "RE89326",
+        "title": "«Набір м'ясних снеків М'яско ToGo «Азійський мікс», 8 шт»",
+        "price_uah": 1500,
+        "composition": "8 ×50 g: курица, азиатский вкус ×2, курица, лимон ×2, свинина, медово-острый вкус ×3, индейка, терияки ×1. Назначение по описанию набора: ассорти снеков для перекуса; конкретная активность не указана. Конкретная активность не указана. Неопределённость: существенной неопределённости нет",
+        "goals": ["food", "outdoors"],
+        "families": ["quick_energy_snack", "outdoor_travel_hiking"],
+        "classes": ["protein_carbohydrate_food"],
+        "timings": ["during_day_tone", "before_or_after_training", "daily_use"],
+        "activities": ["hiking", "walking", "fitness_gym", "general_lifestyle"],
+        "rationale": "М'ясні снеки в азійському стилі з імбирем, теріякі та перцем. Відмінно підходять для підтримання азотистого балансу організму під час гірських походів, подорожей та інтенсивних функціональних тренувань."
+    },
+    {
+        "catalog_row": 187,
+        "sku": "RE89325",
+        "title": "Набір «Набір м'ясних снеків М'яско ToGo Дегустаційний Race Expert Club» — абонемент на 3 месяца",
+        "price_uah": 1500,
+        "composition": "8 different Myasko ToGo вкусы across курица, индейка и свинина. Назначение по описанию набора: дегустационный набор снеков. Конкретная активность не указана. Неопределённость: Количество каждого отдельного вкуса не подтверждено доступным описанием",
+        "goals": ["food", "outdoors"],
+        "families": ["quick_energy_snack", "outdoor_travel_hiking"],
+        "classes": ["protein_carbohydrate_food"],
+        "timings": ["during_day_tone", "before_or_after_training", "daily_use"],
+        "activities": ["hiking", "walking", "fitness_gym", "general_lifestyle"],
+        "rationale": "Повний дегустаційний сет із 8 унікальних смаків сушеного та в'яленого м'яса. Компактне високопоживне джерело амінокислот без консервантів для легкого перекусу в умовах автономності або між тренуваннями."
+    },
+    {
+        "catalog_row": 188,
+        "sku": "RE89324",
+        "title": "«Набір м'ясних снеків М'яско ToGo «Курка та индейка», 8 шт»",
+        "price_uah": 1500,
+        "composition": "8 ×50 g: курица, традиционный вкус ×2, азиатский вкус ×2, лимон ×2; индейка, апельсин ×1, индейка, терияки ×1. Назначение по описанию набора: ассорти снеков для перекуса; конкретная активность не указана. Конкретная активность не указана. Неопределённость: существенной неопределённости нет",
+        "goals": ["food", "outdoors"],
+        "families": ["quick_energy_snack", "outdoor_travel_hiking"],
+        "classes": ["protein_carbohydrate_food"],
+        "timings": ["during_day_tone", "before_or_after_training", "daily_use"],
+        "activities": ["hiking", "walking", "fitness_gym", "general_lifestyle"],
+        "rationale": "Дієтичний сет джеркі з білого м'яса птиці (курка та індичка) з мінімальним вмістом насичених жирів. Забезпечує оптимальний профіль незамінних амінокислот для репарації м'язів у походах і після занять спортом."
+    },
+    {
+        "catalog_row": 189,
+        "sku": "RE89301",
+        "title": "Набір «Набір м'ясних снеків М'яско ToGo Свинячий Race Expert Club» — абонемент на 3 месяца",
+        "price_uah": 1500,
+        "composition": "абонемент Race Expert Club на 3 месяца; вяленое мясо зі свинины 50 g ×8 (медово-острый вкус ×3, медово-горчичный вкус ×2, вишня ×3). Назначение по описанию набора: перекус в дороге и в течение активного дня. Занятия/аудитория: поездки, работа и активный отдых; конкретный вид спорта не указан. Неопределённость: существенной неопределённости нет",
+        "goals": ["food", "outdoors"],
+        "families": ["quick_energy_snack", "outdoor_travel_hiking"],
+        "classes": ["protein_carbohydrate_food"],
+        "timings": ["during_day_tone", "before_or_after_training", "daily_use"],
+        "activities": ["hiking", "walking", "fitness_gym", "general_lifestyle"],
+        "rationale": "8 порцій в'яленої нежирної свинини спеціального соління та сушіння. Калорійний і поживний перекус, багатий на вітаміни групи B та залізо, незамінний для відновлення сил при підвищених енерговитратах у трекінгу."
+    },
+    {
+        "catalog_row": 190,
+        "sku": "RE89297",
+        "title": "Набір «Набір м'ясних снеків М'яско ToGo Курячий Race Expert Club» — абонемент на 3 месяца",
+        "price_uah": 1500,
+        "composition": "абонемент Race Expert Club на 3 месяца; вяленое мясо з курицы 50 g ×9 (традиционный вкус ×3, азиатский вкус ×3, лимон ×3). Назначение по описанию набора: удобный перекус для активного дня или после тренировки. Занятия/аудитория: активные люди, поездки и перекус после тренировки; дисциплина не названа. Неопределённость: существенной неопределённости нет",
+        "goals": ["food", "outdoors"],
+        "families": ["quick_energy_snack", "outdoor_travel_hiking"],
+        "classes": ["protein_carbohydrate_food"],
+        "timings": ["during_day_tone", "before_or_after_training", "daily_use"],
+        "activities": ["hiking", "walking", "fitness_gym", "general_lifestyle"],
+        "rationale": "9 упаковок курячих джеркі з класичними, азійськими та цитрусовими спеціями (450 г). Максимально чистий протеїн для швидкого перекусу на бігу, в дорозі або після силового тренування."
+    },
+    {
+        "catalog_row": 191,
+        "sku": "RE88977",
+        "title": "Набір «Похідна їжа 3.0 Race Expert Club» — абонемент на 3 месяца",
+        "price_uah": 1500,
+        "composition": "вяленое мясо индейки ЇDLO 50 g ×2; вяленое мясо курицы ЇDLO 50 g ×1; перекус из Gouda, кукурузы и орехов 90 g ×1; полента с индейкой 100 g ×1; гороховый суп с индейкой 60 g ×1; кус-кус с клюквой и орехами 100 g ×1; Crava protein cookie 74 g ×1; Myprotein Baked Cookie 75 g ×1 (13 g белка). Назначение по описанию набора: еда для походов, поездок, кемпинга, тренировок или пребывания вне дома",
+        "goals": ["outdoors", "food"],
+        "families": ["outdoor_travel_hiking", "quick_energy_snack"],
+        "classes": ["protein_carbohydrate_food"],
+        "timings": ["during_day_tone", "daily_use", "before_or_after_training"],
+        "activities": ["hiking", "walking", "general_lifestyle"],
+        "rationale": "Повноцінний автономний польовий раціон для кількаденного трекінгу: сублімовані гарячі страви ЇDLO (полента, суп, кускус) забезпечують складні вуглеводи, джеркі з птиці дають чистий білок, а протеїнове печиво та снек із сиром гарантують швидке відновлення енергії на маршруті."
+    },
+    {
+        "catalog_row": 192,
+        "sku": "RE11490",
+        "title": "Набір «LipoBar Мікс»",
+        "price_uah": 1500,
+        "composition": "21 LipoBar 50 g батончиків (гранат ×5, апельсин ×4, марципан ×4, манго ×4, клубника ×4); 16.5 g белка/батончик. Назначение по описанию набора: удобные протеиновые перекусы после тренировки или между приёмами пищи. Занятия/аудитория: обычные тренировки и перекус для активных людей; конкретная дисциплина не указана. Неопределённость: существенной неопределённости нет",
+        "goals": ["food", "training"],
+        "families": ["quick_energy_snack", "strength_muscle_power"],
+        "classes": ["protein_carbohydrate_food"],
+        "timings": ["during_day_tone", "before_or_after_training", "daily_use"],
+        "activities": ["fitness_gym", "running", "general_lifestyle"],
+        "rationale": "Шоубокс із 21 функціонального протеїнового батончика LipoBar (16,5 г сироваткового та молочного білка на порцію). Зручний формат для дотримання норми білка при наборі чистої м'язової маси чи схудненні без зайвого цукру."
+    },
+    {
+        "catalog_row": 193,
+        "sku": "RE11519",
+        "title": "Набір «Швидке відновлення після тренування Race Expert Club» — абонемент на 3 місяці",
+        "price_uah": 1500,
+        "composition": "абонемент Race Expert Club на 3 месяца; Nutriversum Whey Pro 500 g ×1; Nutriversum BCAA Shot 60 ml ×2; Reishi батончик 40 g ×2. Назначение по описанию набора: восстановление после тренировки и восполнение питательных веществ после интенсивной нагрузки. Аудитория/занятия: спортсмены и активные люди; конкретный вид спорта не указан. Неопределённость: существенной неопределённости нет",
+        "goals": ["training", "recovery"],
+        "families": ["recovery_fatigue", "strength_muscle_power"],
+        "classes": ["mixed_hybrid"],
+        "timings": ["before_or_after_training"],
+        "activities": ["fitness_gym", "running"],
+        "rationale": "Комбінований комплекс для відновлення після тренування: сироватковий протеїн Whey Pro забезпечує пул будівельних амінокислот, швидкодіючі шоти BCAA блокують розпад м'язів, а функціональні батончики з грибами рейші допомагають м'яко стабілізувати нервову систему після навантажень."
+    },
+    {
+        "catalog_row": 194,
+        "sku": "Nabir_1100",
+        "title": "Набір «Концентрація і пам’ять 2.0 Race Expert Club» — абонемент на 3 месяца",
+        "price_uah": 1500,
+        "composition": "абонемент Race Expert Club на 3 месяца; Reishi батончик 40 g ×2; Lion’s Mane 700 mg/60 капсул ×1; Cordyceps 700 mg/60 капсул ×1. Назначение по описанию набора: поддержка концентрации и памяти согласно описанию набора",
+        "goals": ["daily"],
+        "families": ["daytime_energy_focus", "daily_wellness_vitality"],
+        "classes": ["supplements_vitamins_minerals"],
+        "timings": ["morning_start", "during_day_tone", "daily_use"],
+        "activities": ["general_lifestyle", "running", "fitness_gym"],
+        "rationale": "Сильний ноотропно-адаптогенний стек: кордицепс підвищує клітинне дихання (VO2 max) та продукцію АТФ, їжовик гребінчастий стимулює синтез фактора NGF для когнітивної ясності та пам'яті, а батончики з рейші збалансовують нервову збудливість."
+    },
+    {
+        "catalog_row": 195,
+        "sku": "RE11819",
+        "title": "Набір «Щоденний захист дитини»",
+        "price_uah": 1425,
+        "composition": "Nutriversum Kid Vita жевательных конфет ×60; KAL Vitamin D-Rex 10 mcg/90 жувальних таблеток ×1; Nordic Naturals Daily Omega Kids/30 мягкие капсулы ×1. Назначение по описанию набора: ежедневный детский набор пищевых добавок",
+        "goals": ["daily"],
+        "families": ["daily_wellness_vitality"],
+        "classes": ["supplements_vitamins_minerals"],
+        "timings": ["morning_start", "daily_use"],
+        "activities": ["general_lifestyle"],
+        "rationale": "Педіатричний щоденний комплекс: збалансовані полівітаміни Kid Vita для імунного захисту дитини, жувальний вітамін D3 для правильної мінералізації кістково-зубної системи та преміальна Омега-3 від Nordic Naturals для розвитку нейрокогнітивних функцій і зору."
+    },
+    {
+        "catalog_row": 196,
+        "sku": "RE11653",
+        "title": "Набір «Вітаміни для вагітних Race Expert Club» — абонемент на 3 месяца",
+        "price_uah": 1500,
+        "composition": "Now Foods folic acid 800 mcg ×250 таблеток ×2; Now Foods Omega-3 1,000 mg, 30 мягкие капсулы ×1; Nutriversum Vitamin D3+K2 60 капсул ×1; абонемент Race Expert Club на 3 месяца. Назначение по описанию набора: набор добавок для женщин, которые планируют беременность или ожидают ребёнка",
+        "goals": ["daily"],
+        "families": ["daily_wellness_vitality"],
+        "classes": ["supplements_vitamins_minerals"],
+        "timings": ["morning_start", "daily_use"],
+        "activities": ["general_lifestyle"],
+        "rationale": "Базова нутритивна підтримка під час планування та перебігу вагітності: фолієва кислота (800 мкг) критично необхідна для запобігання вадам нервової трубки плода, високоочищена Омега-3 забезпечує розвиток мозку малюка, а D3+K2 регулюють кальцієво-фосфорний обмін матері."
+    },
+    {
+        "catalog_row": 197,
+        "sku": "RE11020",
+        "title": "Набір «Бігова екіпіровка»",
+        "price_uah": 1209,
+        "composition": "белые носки RE2 размер 40–44 ×2; стеклянная бутылка Race Expert 530 ml ×1; черные эластичные шнурки для бега ×1 комплект (2 отрезки шнурка + 2 фиксаторы); cordyceps coffee батончик 40 g ×2 (>12 g белка/батончик); reishi клюква батончик 40 g ×2 (~10 g белка/батончик). Назначение по описанию набора: аксессуары и перекусы для более комфортного бега. Занятия: бег; вид забега и дистанция не указаны. Формат/дистанция: не указаны. Расхождение цены: официальная карточка Race Expert на 2026-11-06 показывала 1 500 грн, цена в каталоге на эту дату — 1 209 грн. Источник — карточка по ссылке выше. Неопределённость: существенной неопределённости нет",
+        "goals": ["running", "gear"],
+        "families": ["running_gear_accessories", "foot_apparel_comfort"],
+        "classes": ["mixed_hybrid"],
+        "timings": ["before_or_after_training", "during_training", "daily_use"],
+        "activities": ["running", "triathlon"],
+        "rationale": "Комплексний біговий комплект: дві пари анатомічних бігових шкарпеток RE2 запобігають мозолям і підтримують терморегуляцію стопи, еластичні шнурки з фіксаторами виключають розв'язування на дистанції, пляшка 530 мл слугує для гідратації, а протеїнові батончики дають енергію."
+    },
+    {
+        "catalog_row": 198,
+        "sku": "RE89487",
+        "title": "Набір «Банні рушники Шарпей: темна гама» — абонемент на 3 месяца",
+        "price_uah": 1500,
+        "composition": "3 полотенца, чёрный/тёмно-синий/зелёный, 135×70 cm каждый; 100% хлопок, 500 g/m²; абонемент Race Expert Club на 3 месяца. Назначение по описанию набора: полотенца для душа, тренировок, бассейна, сауны и поездок. Занятия: зал, плавание, сауна и поездки; набор не связан с конкретным видом спорта. Неопределённость: существенной неопределённости нет",
+        "goals": ["gear", "gift"],
+        "families": ["gift_identity", "outdoor_travel_hiking"],
+        "classes": ["gear_and_accessories"],
+        "timings": ["before_or_after_training", "daily_use"],
+        "activities": ["fitness_gym", "general_lifestyle"],
+        "rationale": "Комплект із 3 великих спортивних банних рушників темної гами (135×70 см, 500 г/м², 100% бавовна). Забезпечує гігієну та високе вологопоглинання після інтенсивних тренувань у залі, занять плаванням у басейні або відновлювальних процедур у сауні."
+    },
+    {
+        "catalog_row": 199,
+        "sku": "RE89486",
+        "title": "Набір «Банні рушники Шарпей: класика» — абонемент на 3 месяца",
+        "price_uah": 1500,
+        "composition": "3 полотенца, бежевый/бордовый/серый, 135×70 cm каждый, хлопок 500 g/m²; абонемент Race Expert Club на 3 месяца. Назначение по описанию набора: полотенца для дома, зала, бассейна, сауны или поездок. Занятия/аудитория: дом, зал, бассейн, сауна и поездки; спортсмены упомянуты в описании. Неопределённость: существенной неопределённости нет",
+        "goals": ["gear", "gift"],
+        "families": ["gift_identity", "outdoor_travel_hiking"],
+        "classes": ["gear_and_accessories"],
+        "timings": ["before_or_after_training", "daily_use"],
+        "activities": ["fitness_gym", "general_lifestyle"],
+        "rationale": "Набір із 3 банних рушників класичних кольорів високої щільності (500 г/м², натуральна бавовна). Призначений для спортивної гігієни після навантажень у тренажерному залі, басейні чи лазні, стійкий до частих прань і приємний до тіла."
+    },
+    {
+        "catalog_row": 200,
+        "sku": "RE89481",
+        "title": "Набір «Подарунок для активних днів» — абонемент на 3 месяца",
+        "price_uah": 1500,
+        "composition": "абонемент Race Expert Club на 3 месяца; “Patriotic Pulse” медаль; black сумка-органайзер; белые носки RE2 размер 40–44. Назначение по описанию набора: подарочный набор для активных дней, прогулок и поездок. Занятия: прогулки, поездки и активный отдых. Неопределённость: существенной неопределённости нет",
+        "goals": ["gift", "gear"],
+        "families": ["gift_identity", "foot_apparel_comfort", "running_gear_accessories"],
+        "classes": ["mixed_hybrid"],
+        "timings": ["daily_use"],
+        "activities": ["running", "walking", "general_lifestyle"],
+        "rationale": "Патріотичний клубний подарунковий бокс: пам'ятна медаль 'Patriotic Pulse', компактна сумка-органайзер для речей та бігові анатомічні шкарпетки RE2 з посиленою зоною п'яти й носка для тривалих прогулянок, подорожей та активного способу життя."
+    },
+    {
+        "catalog_row": 201,
+        "sku": "RE11024",
+        "title": "Набір «Подарунок спортсмену Race Expert Club» — абонемент на 3 месяца",
+        "price_uah": 1500,
+        "composition": "абонемент Race Expert Club на 3 месяца; носки RE2, белые и тёмные, размер 40–44 ×1 пара кожного размеру; из латунной гильзы брелок ×2; NOW 7-day pill case; MIAMI VIBES multivitamin 100 tabs. Назначение по описанию набора: подарок для бегунов, спортсменов и активных людей",
+        "goals": ["gift", "gear", "daily"],
+        "families": ["gift_identity", "foot_apparel_comfort", "daily_wellness_vitality"],
+        "classes": ["mixed_hybrid"],
+        "timings": ["morning_start", "daily_use"],
+        "activities": ["running", "fitness_gym", "general_lifestyle"],
+        "rationale": "Комплексний подарунковий сет для спортсмена: вітамінно-мінеральний комплекс Miami Vibes (100 таб) забезпечує щоденний мікронутрієнтний захист, органайзер NOW допомагає структурувати прийом добавок, 2 пари шкарпеток RE2 дарують комфорт стопам, а патріотичні брелоки мають пам'ятну цінність."
+    },
+    {
+        "catalog_row": 202,
+        "sku": "Nabir_1063",
+        "title": "Набір «Пульс нації»",
+        "price_uah": 1500,
+        "composition": "“Patriotic Pulse” медаль; брелок из гильзы; брелок с изображением дрона; F-16 брелок, 35 mm. Назначение по описанию набора: патриотический подарок; символическое назначение набора",
+        "goals": ["gift"],
+        "families": ["gift_identity"],
+        "classes": ["gear_and_accessories"],
+        "timings": ["daily_use"],
+        "activities": ["general_lifestyle"],
+        "rationale": "Патріотичний сувенірний комплект національної пам'яті: медаль 'Patriotic Pulse', брелок із відстріляної гільзи, сувенірні металеві брелоки з бойовим дроном та винищувачем F-16 на знак поваги та вдячності українським захисникам."
+    },
+    {
+        "catalog_row": 203,
+        "sku": "Nabir_1064",
+        "title": "Набір «Україна починається з тебе Race Expert Club» — абонемент на 3 месяца",
+        "price_uah": 1500,
+        "composition": "медаль “Україна в тобі” (зеркальное изображение герба); брелок из гильзы; брелок с изображением дрона; F-16 брелок, 35 mm. Назначение по описанию набора: патриотический подарок и символ Украины. Спортивное назначение не указано. Неопределённость: URL карточки содержит устаревшие название и SKU (“Пульс нації”, Nabir_1063), тогда как название и SKU в каталоге — Nabir_1064/«Україна починається з тебе»",
+        "goals": ["gift"],
+        "families": ["gift_identity"],
+        "classes": ["gear_and_accessories"],
+        "timings": ["daily_use"],
+        "activities": ["general_lifestyle"],
+        "rationale": "Символічний подарунковий набір патріотичної атрибутики: ювелірна медаль 'Україна в тобі' з дзеркальним гербом, брелок з автентичної гільзи, а також мілітарі-брелоки дрона та F-16 для військових, волонтерів та патріотів."
+    },
+    {
+        "catalog_row": 204,
+        "sku": "Nabir_1062",
+        "title": "Набір «Небесна варта Race Expert Club» — абонемент на 3 месяца",
+        "price_uah": 1500,
+        "composition": "“Гвардія небес” медаль с изображением дрона и снаряда; брелок из гильзы; брелок с изображением дрона; F-16 брелок, 35 mm. Назначение по описанию набора: патриотический подарок для военных и людей на пути борьбы",
+        "goals": ["gift"],
+        "families": ["gift_identity"],
+        "classes": ["gear_and_accessories"],
+        "timings": ["daily_use"],
+        "activities": ["general_lifestyle"],
+        "rationale": "Меморіальний патріотичний набір 'Небесна варта', присвячений підрозділам БПЛА та Повітряних сил: медаль 'Гвардія небес', пам'ятна латунна гільза та сувенірні аксесуари сучасного українського війська."
+    },
+    {
+        "catalog_row": 205,
+        "sku": "Nabir_1061",
+        "title": "Набір «Народжені вільними Race Expert Club» — абонемент на 3 месяца",
+        "price_uah": 1500,
+        "composition": "“Незалежність – це каждый з нас” медаль (движущийся дрон); брелок из гильзы; брелок с изображением дрона; F-16 брелок, 35 mm. Назначение по описанию набора: патриотический подарок и символ участия в независимости Украины",
+        "goals": ["gift"],
+        "families": ["gift_identity"],
+        "classes": ["gear_and_accessories"],
+        "timings": ["daily_use"],
+        "activities": ["general_lifestyle"],
+        "rationale": "Патріотичний сувенірний подарунок: авторська медаль 'Незалежність – це кожен з нас' з рухомим елементом дрона, брелок з відстріляної гільзи та мілітарі-підвіси дрона і літака F-16 як символ незламності."
+    },
+    {
+        "catalog_row": 206,
+        "sku": "RE89452",
+        "title": "Набір «Підготовка до тренувань у залі» — абонемент на 3 месяца",
+        "price_uah": 1500,
+        "composition": "абонемент Race Expert Club на 3 месяца; полотенце 135×70 cm; OstroVit Creatine Monohydrate (масса упаковки не указана); Nutriversum FLOW PWO Shot 60 ml, кофеин 200 mg на шот ([карточка Race Expert](https://raceexpert.com.ua/6583-peredtrenuvalnij-napij-nutriversum-flow-pwo-shot-grejpf)); Nutriversum PWO Shot 60 ml, кофеин 200 mg на шот ([данные производителя](https://nutriversum.com/pwo-shot-bubblegum)); Nutriversum AAKG Shot 60 ml, без кофеина ([данные производителя](https://nutriversum.org/pre-Workout-formulas/DARK_-_AAKG_SHOT/)). В карточке набора указано по одной позиции каждого шота; всего два кофеиносодержащих шота, 400 mg кофеина по составу набора. Назначение по описанию набора: подготовка к тренировкам в зале и силовым занятиям. Занятия: тренировки в зале и силовые занятия. Неопределённость: масса упаковки креатина не указана; кофеин рассчитан по двум шотам по 200 mg каждый",
+        "goals": ["training", "gear"],
+        "families": ["strength_muscle_power", "daytime_energy_focus"],
+        "classes": ["mixed_hybrid"],
+        "timings": ["before_or_after_training"],
+        "activities": ["fitness_gym"],
+        "rationale": "Високоефективний передтренувальний арсенал для тренажерного залу: мікронізований креатин збільшує фосфокреатин у міоцитах для вибухової сили, шоти PWO (400 мг кофеїну сумарно) забезпечують максимальну концентрацію ЦНС, AAKG розширює судини для пампінгу, а великий рушник забезпечує санітарну гігієну."
+    },
+    {
+        "catalog_row": 207,
+        "sku": "RE89331",
+        "title": "Набір м'ясних снеків М'яско ToGo Курка та свинка Race Expert Club — абонемент на 3 месяца",
+        "price_uah": 1500,
+        "composition": "абонемент Race Expert Club на 3 месяца; вяленое мясо 50 g ×8: курица, лимон ×2, свинина, медово-острый вкус ×2, свинина, медово-горчичный вкус ×2, свинина, вишня ×2. Назначение по описанию набора: удобный перекус в дороге, на работе или после тренировки. Занятия/аудитория: поездки, работа и активный отдых; конкретный вид спорта не указан. Неопределённость: существенной неопределённости нет",
+        "goals": ["food", "outdoors"],
+        "families": ["quick_energy_snack", "outdoor_travel_hiking"],
+        "classes": ["protein_carbohydrate_food"],
+        "timings": ["during_day_tone", "before_or_after_training", "daily_use"],
+        "activities": ["hiking", "walking", "fitness_gym", "general_lifestyle"],
+        "rationale": "Набір із 8 упаковок в'яленого м'яса (курка та свинина) у кисло-солодких і пряних маринадах. Ситне джерело амінокислот, що не обтяжує травну систему і відмінно підходить для піших переходів, подорожей або перекусу після залу."
+    },
+    {
+        "catalog_row": 208,
+        "sku": "RE89330",
+        "title": "«Набір м'ясних снеків М'яско ToGo «Цитрус та Азія», 8 шт»",
+        "price_uah": 1500,
+        "composition": "8 ×50 g вяленое мясо: курица, азиатский вкус ×3, курица, лимон ×2, свинина, медово-острый вкус ×1, индейка, апельсин ×1, индейка, терияки ×1. Назначение по описанию набора: портативное ассорти снеков для поездок, работы, активного отдыха или после тренировки. Конкретная дисциплина не указана; в карточке названы поездки, работа, перекус после тренировки и активный отдых. Неопределённость: существенной неопределённости нет",
+        "goals": ["food", "outdoors"],
+        "families": ["quick_energy_snack", "outdoor_travel_hiking"],
+        "classes": ["protein_carbohydrate_food"],
+        "timings": ["during_day_tone", "before_or_after_training", "daily_use"],
+        "activities": ["hiking", "walking", "fitness_gym", "general_lifestyle"],
+        "rationale": "М'ясні делікатесні джеркі з курки, індички та свинини з цитрусовими й азійськими нотами. Забезпечують високу щільність протеїну без надлишку жирів, підтримуючи енергетичний статус під час активного відпочинку чи відряджень."
+    },
+    {
+        "catalog_row": 209,
+        "sku": "RE11788",
+        "title": "Набір «LipoBar Мікс Race Expert Club» — абонемент на 3 месяца",
+        "price_uah": 1500,
+        "composition": "абонемент Race Expert Club на 3 месяца; LipoBar 50 g ×21 (гранат ×5, апельсин ×4, марципан ×4, манго ×4, клубника ×4); 16.5 g белка/батончик. Назначение по описанию набора: ассорти протеиновых перекусов для активного дня, после тренировки или между приёмами пищи. Обычный перекус; отдельная дисциплина не указана. Неопределённость: существенной неопределённости нет",
+        "goals": ["food", "training"],
+        "families": ["quick_energy_snack", "strength_muscle_power"],
+        "classes": ["protein_carbohydrate_food"],
+        "timings": ["during_day_tone", "before_or_after_training", "daily_use"],
+        "activities": ["fitness_gym", "running", "general_lifestyle"],
+        "rationale": "Клубний бокс із 21 протеїнового батончика LipoBar (16,5 г білка в кожному). Допомагає легко контролювати добову норму споживання протеїну, стримувати апетит між тренуваннями та забезпечує корисний солодкий перекус без цукру."
+    },
+    {
+        "catalog_row": 210,
+        "sku": None,
+        "title": "Набір «Підготовка до забігу»",
+        "price_uah": 1500,
+        "composition": "Race Expert кепка ×1; пояс для номера с 6 петлями ×1; 600 ml бутылка ×1; белые носки размер 40–42 ×1 пара. Назначение по описанию набора: аксессуары для подготовки к забегу. Аудитория/занятия: начинающие и опытные бегуны. Формат/дистанция: подготовка к забегу; точный формат и дистанция не указаны. Неопределённость: SKU в каталоге не указан; дистанция забега в километрах не приведена",
+        "goals": ["running", "gear"],
+        "families": ["running_gear_accessories", "foot_apparel_comfort"],
+        "classes": ["gear_and_accessories"],
+        "timings": ["during_training", "before_or_after_training"],
+        "activities": ["running", "triathlon"],
+        "rationale": "Готовий комплект бек-офісу для бігового старту: легка повітропроникна кепка Race Expert захищає від сонячного удару, пояс для номера з петлями для 6 гелів позбавляє потреби колоти одяг булавками, ергономічна пляшка 600 мл забезпечує питний режим, а бігові шкарпетки захищають ахілл і стопу від натирань."
+    },
+    {
+        "catalog_row": 211,
+        "sku": "UT-PRO-2026",
+        "title": "Набір «Ultra Trail Marathon Energy & Hydration Pro»",
+        "price_uah": 1650,
+        "composition": "3x SIS Beta Fuel гелі, 2x SIS Go Hydro електроліти, 1x протеїновий батончик Science in Sport",
+        "goals": ["running", "hydration", "outdoors"],
+        "families": ["endurance_aerobic_stamina", "hydration_electrolytes", "outdoor_travel_hiking"],
+        "classes": ["mixed_hybrid"],
+        "timings": ["during_training", "before_or_after_training"],
+        "activities": ["running", "triathlon", "hiking"],
+        "rationale": "Професійний комплекс харчування та гідратації для гірських ультратрейлів: інноваційні ізотонічні вуглеводні гелі SIS Beta Fuel (співвідношення мальтодекстрину до фруктози 1:0.8) постачають до 40 г вуглеводів на порцію без шлункових спазмів, розчинні електроліти SIS Go Hydro підтримують осмотичний баланс плазми та попереджають судоми, а протеїновий батончик SIS захищає м'язи під час тривалого виснаження."
+    }
+]
+
+# Validation
+print(f"Total items: {len(audited_data)}")
+assert len(audited_data) == 39, f"Expected 39, got {len(audited_data)}"
+
+for idx, item in enumerate(audited_data):
+    row = item["catalog_row"]
+    # Check keys
+    for k in ["catalog_row", "sku", "title", "price_uah", "composition", "goals", "families", "classes", "timings", "activities", "rationale"]:
+        assert k in item, f"Missing key {k} in row {row}"
+    
+    # Check enums
+    for g in item["goals"]:
+        assert g in GOALS, f"Invalid goal '{g}' in row {row}"
+    assert len(item["goals"]) > 0, f"Empty goals in row {row}"
+    
+    for f in item["families"]:
+        assert f in FAMILIES, f"Invalid family '{f}' in row {row}"
+    assert len(item["families"]) > 0, f"Empty families in row {row}"
+    
+    for c in item["classes"]:
+        assert c in CLASSES, f"Invalid class '{c}' in row {row}"
+    assert len(item["classes"]) > 0, f"Empty classes in row {row}"
+    
+    for t in item["timings"]:
+        assert t in TIMINGS, f"Invalid timing '{t}' in row {row}"
+    assert len(item["timings"]) > 0, f"Empty timings in row {row}"
+    
+    for a in item["activities"]:
+        assert a in ACTIVITIES, f"Invalid activity '{a}' in row {row}"
+    assert len(item["activities"]) > 0, f"Empty activities in row {row}"
+    
+    # Check critical domain rules
+    comp_l = item["composition"].lower()
+    title_l = item["title"].lower()
+    
+    # Rule 1: NEVER classify brain stimulants (Methyl-B12, Cordyceps, Caffeine, Guarana) or Creatine as recovery!
+    if any(st in comp_l for st in ["кофеин", "кофеїн", "caffeine", "креатин", "creatine", "кордицепс", "cordyceps", "lion’s mane", "ежовик", "їжовик"]):
+        if "recovery" in item["goals"] and not any(rc in comp_l for rc in ["whey", "bcaa", "collagen", "колаген", "recovery drink"]):
+            print(f"WARNING: Potential stimulant/creatine in recovery for row {row}: {comp_l}")
+            assert False, f"Rule 1 violation in row {row}"
+    
+    # Rule 2: Food only if >= 50% real edible food
+    if "food" in item["goals"]:
+        # check if it actually has food
+        has_food = any(f in comp_l for f in ["батончик", "снек", "мясо", "м'ясо", "джерки", "їдло", "печень", "cookie", "полента", "суп", "кус-кус", "куриц", "индейк", "свинин", "ломтики"])
+        assert has_food, f"Classified as food without food ingredients in row {row}"
+    
+    assert len(item["rationale"]) > 20, f"Rationale too short in row {row}"
+
+out_path = "/Users/anatoly/Workspace/03_Business/WORK/Race Expert/Quiz RE/test-quiz-sandbox/audited_chunk_5.json"
+with open(out_path, "w", encoding="utf-8") as f:
+    json.dump(audited_data, f, ensure_ascii=False, indent=2)
+
+print(f"Successfully generated and validated {out_path}")

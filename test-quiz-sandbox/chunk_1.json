@@ -1,0 +1,1082 @@
+[
+  {
+    "catalog_row": 1,
+    "sku": "RE89637",
+    "title": "Акційний набір термошкарпеток 1+1=3 «43–45»",
+    "price_uah": 1058,
+    "composition": "3 пары термошкарпеток Race Expert, размер 43–45 (3 пары по цене 2)",
+    "description": "тепло и комфорт при беге, походах и активности на улице в холодную погоду — как описано на карточке",
+    "current_seller_families": [
+      "foot_apparel_comfort",
+      "outdoor_travel_hiking",
+      "running_race_preparation"
+    ],
+    "current_component_families": [
+      "foot_apparel_comfort"
+    ],
+    "current_component_classes": [
+      "apparel_footwear"
+    ],
+    "current_use_contexts": [
+      "hiking_or_camping"
+    ]
+  },
+  {
+    "catalog_row": 2,
+    "sku": "RE89636",
+    "title": "Акційний набір термошкарпеток 1+1=3 «40–42»",
+    "price_uah": 1058,
+    "composition": "3 пары термошкарпеток Race Expert, размер 40–42 (3 пары по цене 2)",
+    "description": "тепло и комфорт при беге, походах и активности на улице в холодную погоду",
+    "current_seller_families": [
+      "foot_apparel_comfort",
+      "outdoor_travel_hiking",
+      "running_race_preparation"
+    ],
+    "current_component_families": [
+      "foot_apparel_comfort"
+    ],
+    "current_component_classes": [
+      "apparel_footwear"
+    ],
+    "current_use_contexts": [
+      "hiking_or_camping"
+    ]
+  },
+  {
+    "catalog_row": 3,
+    "sku": "RE89635",
+    "title": "Акційний набір термошкарпеток 1+1=3 «38–40»",
+    "price_uah": 1058,
+    "composition": "3 пары термошкарпеток Race Expert, размер 38–40 (3 пары по цене 2)",
+    "description": "тепло и комфорт при беге, походах и активности на улице в холодную погоду",
+    "current_seller_families": [
+      "foot_apparel_comfort",
+      "outdoor_travel_hiking",
+      "running_race_preparation"
+    ],
+    "current_component_families": [
+      "foot_apparel_comfort"
+    ],
+    "current_component_classes": [
+      "apparel_footwear"
+    ],
+    "current_use_contexts": [
+      "hiking_or_camping"
+    ]
+  },
+  {
+    "catalog_row": 4,
+    "sku": "RE89634",
+    "title": "Акційний набір термошкарпеток 1+1=3 «35–37»",
+    "price_uah": 1058,
+    "composition": "3 пары термошкарпеток Race Expert, размер 35–37 (3 пары по цене 2)",
+    "description": "тепло и комфорт при беге, походах и активности на улице в холодную погоду",
+    "current_seller_families": [
+      "foot_apparel_comfort",
+      "outdoor_travel_hiking",
+      "running_race_preparation"
+    ],
+    "current_component_families": [
+      "foot_apparel_comfort"
+    ],
+    "current_component_classes": [
+      "apparel_footwear"
+    ],
+    "current_use_contexts": [
+      "hiking_or_camping"
+    ]
+  },
+  {
+    "catalog_row": 5,
+    "sku": "RE89632",
+    "title": "Акційний набір темних шкарпеток, 5 пар «46–48»",
+    "price_uah": 950,
+    "composition": "5 пар тёмных носков Race Expert, размер 46–48",
+    "description": "комфорт при беге, занятиях спортом и активной повседневной жизни",
+    "current_seller_families": [
+      "foot_apparel_comfort",
+      "running_race_preparation"
+    ],
+    "current_component_families": [
+      "foot_apparel_comfort"
+    ],
+    "current_component_classes": [
+      "apparel_footwear"
+    ],
+    "current_use_contexts": []
+  },
+  {
+    "catalog_row": 6,
+    "sku": "RE89631",
+    "title": "Акційний набір білих шкарпеток, 5 пар «46–48»",
+    "price_uah": 950,
+    "composition": "5 пар белых носков Race Expert, размер 46–48",
+    "description": "комфорт во время тренировок и активной повседневной жизни",
+    "current_seller_families": [
+      "foot_apparel_comfort"
+    ],
+    "current_component_families": [
+      "foot_apparel_comfort"
+    ],
+    "current_component_classes": [
+      "apparel_footwear"
+    ],
+    "current_use_contexts": [
+      "during_training"
+    ]
+  },
+  {
+    "catalog_row": 7,
+    "sku": "RE89630",
+    "title": "Акційний набір білих шкарпеток, 5 пар «35–37»",
+    "price_uah": 950,
+    "composition": "5 пар белых носков Race Expert, размер 35–37",
+    "description": "комфорт во время тренировок и активной повседневной жизни",
+    "current_seller_families": [
+      "foot_apparel_comfort"
+    ],
+    "current_component_families": [
+      "foot_apparel_comfort"
+    ],
+    "current_component_classes": [
+      "apparel_footwear"
+    ],
+    "current_use_contexts": [
+      "during_training"
+    ]
+  },
+  {
+    "catalog_row": 8,
+    "sku": "RE89450",
+    "title": "Набір «Fitly мікс» — абонемент на 3 місяці",
+    "price_uah": 1500,
+    "composition": "абонемент Race Expert Club на 3 месяца; 14 протеиновых батончиков Fitly по 45 г разных вкусов и 11 углеводных батончиков Fitly по 45 г",
+    "description": "иметь под рукой разнообразные перекусы в течение активного дня",
+    "current_seller_families": [
+      "outdoor_travel_hiking",
+      "portable_food_snacks",
+      "sleep_relaxation_stress"
+    ],
+    "current_component_families": [
+      "portable_food_snacks"
+    ],
+    "current_component_classes": [
+      "club_membership",
+      "protein_carbohydrate_food"
+    ],
+    "current_use_contexts": [
+      "before_or_after_training",
+      "daily_use",
+      "gift",
+      "travel_or_road"
+    ]
+  },
+  {
+    "catalog_row": 9,
+    "sku": "RE11522",
+    "title": "Набір «Чиста сила Race Expert Club»",
+    "price_uah": 1399,
+    "composition": "абонемент Race Expert Club на 3 месяца; креатин Myprotein Creatine Monohydrate 500 г; шейкер Myprotein объёмом 600 мл",
+    "description": "",
+    "current_seller_families": [
+      "endurance_energy",
+      "general_daily_nutrition",
+      "hydration_electrolytes",
+      "recovery_fatigue",
+      "skin_beauty_claim",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "hydration_electrolytes",
+      "portable_food_snacks"
+    ],
+    "current_component_classes": [
+      "club_membership",
+      "creatine_preworkout",
+      "sports_accessories"
+    ],
+    "current_use_contexts": [
+      "before_or_after_training",
+      "daily_use",
+      "during_training",
+      "gift",
+      "travel_or_road",
+      "work_or_study"
+    ]
+  },
+  {
+    "catalog_row": 10,
+    "sku": "RE88951",
+    "title": "Набір «Захисний комплекс Race Expert Club»",
+    "price_uah": 1275,
+    "composition": "абонемент Race Expert Club на 3 месяца; экстракт шиитаке Mind Shi, 1 000 мг, 60 капсул; цинк пиколинат Now Foods, 50 мг, 30 капсул; селен Now Foods, 200 мкг, 90 капсул",
+    "description": "поддержка иммунитета, антиоксидантная поддержка и общее самочувствие — формулировки карточки сайта",
+    "current_seller_families": [
+      "general_daily_nutrition",
+      "immune_support_claim"
+    ],
+    "current_component_families": [],
+    "current_component_classes": [
+      "club_membership",
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": []
+  },
+  {
+    "catalog_row": 11,
+    "sku": "RE11023",
+    "title": "Акційний набір білих шкарпеток, 5 пар «43–45»",
+    "price_uah": 950,
+    "composition": "5 пар белых носков Race Expert, размер 43–45",
+    "description": "комфорт во время тренировок и активной повседневной жизни",
+    "current_seller_families": [
+      "foot_apparel_comfort"
+    ],
+    "current_component_families": [
+      "foot_apparel_comfort"
+    ],
+    "current_component_classes": [
+      "apparel_footwear"
+    ],
+    "current_use_contexts": [
+      "during_training"
+    ]
+  },
+  {
+    "catalog_row": 12,
+    "sku": "Nabir_1127",
+    "title": "Набір «Продуктивність на максимум Race Expert Club»",
+    "price_uah": 1379,
+    "composition": "абонемент Race Expert Club на 3 месяца; комплекс Source Naturals Ultra-Mag, 60 таблеток; Mind Shi 4Mushroom Complex, 60 капсул; 2 батончика Race Expert & DRUMn’BADS с ежовиком, по 40 г",
+    "description": "концентрация, выносливость и поддержка нервной системы при высоких нагрузках — по описанию набора",
+    "current_seller_families": [
+      "endurance_energy",
+      "focus_cognition",
+      "immune_support_claim",
+      "portable_food_snacks",
+      "recovery_fatigue",
+      "sleep_relaxation_stress",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "gift_identity",
+      "portable_food_snacks"
+    ],
+    "current_component_classes": [
+      "club_membership",
+      "protein_carbohydrate_food",
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": [
+      "before_or_after_training",
+      "gift",
+      "work_or_study"
+    ]
+  },
+  {
+    "catalog_row": 13,
+    "sku": "RE11025",
+    "title": "Набір «Турбота і стиль Race Expert Club»",
+    "price_uah": 1500,
+    "composition": "абонемент Race Expert Club на 3 месяца; 2 пары тёмных и 2 пары белых носков Race Expert размера 43–45; бутылка 600 мл; брелок Race Expert; витамин D3 Now Foods, 2 000 IU, 120 мягких капсул",
+    "description": "сочетание повседневной заботы о здоровье и функциональных аксессуаров для активного образа жизни",
+    "current_seller_families": [],
+    "current_component_families": [
+      "foot_apparel_comfort",
+      "general_daily_nutrition"
+    ],
+    "current_component_classes": [
+      "apparel_footwear",
+      "club_membership",
+      "hydration_items",
+      "sports_accessories",
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": []
+  },
+  {
+    "catalog_row": 14,
+    "sku": "RE11812",
+    "title": "Набір «Опора руху Race Expert Club»",
+    "price_uah": 1269,
+    "composition": "абонемент Race Expert Club на 3 месяца; Life Extension Bone Restore, 120 капсул; куркума Swanson, 720 мг, 30 капсул; витамин D3 Now Foods, 2 000 IU, 30 мягких капсул",
+    "description": "поддержка костей, суставов и мышц — по описанию сайта",
+    "current_seller_families": [
+      "bone_joint_support_claim",
+      "general_daily_nutrition",
+      "recovery_fatigue",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "bone_joint_support_claim",
+      "general_daily_nutrition"
+    ],
+    "current_component_classes": [
+      "club_membership",
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": [
+      "daily_use",
+      "during_training"
+    ]
+  },
+  {
+    "catalog_row": 15,
+    "sku": "Nabir_1123",
+    "title": "Набір «Комплект для гідратації Race Expert Club»",
+    "price_uah": 1435,
+    "composition": "абонемент Race Expert Club на 3 месяца; 16 стиков Hydria Perform; бутылка Race Expert, 600 мл",
+    "description": "",
+    "current_seller_families": [
+      "bone_joint_support_claim",
+      "endurance_energy",
+      "focus_cognition",
+      "general_daily_nutrition",
+      "gift_identity",
+      "hydration_electrolytes",
+      "recovery_fatigue",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "general_daily_nutrition",
+      "hydration_electrolytes"
+    ],
+    "current_component_classes": [
+      "club_membership",
+      "hydration_items",
+      "sports_accessories"
+    ],
+    "current_use_contexts": [
+      "daily_use",
+      "during_training"
+    ]
+  },
+  {
+    "catalog_row": 16,
+    "sku": "RE88955",
+    "title": "Набір «Активне довголіття Race Expert Club»",
+    "price_uah": 1425,
+    "composition": "абонемент Race Expert Club на 3 месяца; Mind Shi 4Mushroom Complex, 60 капсул; Swanson Balance B-50 Complex, 100 капсул",
+    "description": "ежедневная поддержка обмена веществ, нервной системы и концентрации — по описанию карточки",
+    "current_seller_families": [
+      "endurance_energy",
+      "focus_cognition",
+      "general_daily_nutrition",
+      "sleep_relaxation_stress"
+    ],
+    "current_component_families": [
+      "general_daily_nutrition"
+    ],
+    "current_component_classes": [
+      "club_membership",
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": [
+      "daily_use",
+      "gift"
+    ]
+  },
+  {
+    "catalog_row": 17,
+    "sku": "RE11808",
+    "title": "Набір «Щоденний захист Race Expert Club»",
+    "price_uah": 1500,
+    "composition": "абонемент Race Expert Club на 3 месяца; экстракт шиитаке Mind Shi, 60 капсул; витамин C с биофлавоноидами Solaray, 100 капсул; витамин D3 Now Foods, 2 000 IU, 30 мягких капсул",
+    "description": "поддержка иммунитета и общего самочувствия — по описанию сайта",
+    "current_seller_families": [
+      "endurance_energy",
+      "general_daily_nutrition",
+      "immune_support_claim",
+      "recovery_fatigue",
+      "skin_beauty_claim",
+      "sleep_relaxation_stress",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "general_daily_nutrition",
+      "strength_muscle_training"
+    ],
+    "current_component_classes": [
+      "club_membership",
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": [
+      "daily_use",
+      "work_or_study"
+    ]
+  },
+  {
+    "catalog_row": 18,
+    "sku": "RE89017",
+    "title": "Набір «Вечірній ритуал Race Expert Club»",
+    "price_uah": 1425,
+    "composition": "абонемент Race Expert Club на 3 месяца; рейши Mind Shi, 1 000 мг, 60 капсул; мелатонин Swanson, 3 мг, 120 капсул; комплекс Source Naturals Ultra-Mag, 60 таблеток",
+    "description": "вечернее расслабление и переход к отдыху — по описанию набора",
+    "current_seller_families": [
+      "sleep_relaxation_stress"
+    ],
+    "current_component_families": [],
+    "current_component_classes": [
+      "club_membership",
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": [
+      "evening_or_bedtime"
+    ]
+  },
+  {
+    "catalog_row": 19,
+    "sku": "Nabir_1015",
+    "title": "Набір «Електролітний запас Race Expert Club»",
+    "price_uah": 1500,
+    "composition": "абонемент Race Expert Club на 3 месяца; 20 стиков Hydria Perform",
+    "description": "",
+    "current_seller_families": [
+      "endurance_energy",
+      "general_daily_nutrition",
+      "hydration_electrolytes",
+      "recovery_fatigue",
+      "sleep_relaxation_stress"
+    ],
+    "current_component_families": [
+      "hydration_electrolytes"
+    ],
+    "current_component_classes": [
+      "club_membership",
+      "hydration_items"
+    ],
+    "current_use_contexts": []
+  },
+  {
+    "catalog_row": 20,
+    "sku": "RE88938",
+    "title": "Набір «За кермом Race Expert Club»",
+    "price_uah": 1425,
+    "composition": "абонемент Race Expert Club на 3 месяца; Mind Shi 4Mushroom Complex, 60 капсул; Swanson Balance B-50 Complex, 100 капсул",
+    "description": "поддержка концентрации, ясности мышления и спокойствия во время длительных поездок; набор адресован водителям",
+    "current_seller_families": [
+      "endurance_energy",
+      "focus_cognition",
+      "general_daily_nutrition",
+      "outdoor_travel_hiking",
+      "sleep_relaxation_stress"
+    ],
+    "current_component_families": [],
+    "current_component_classes": [
+      "club_membership",
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": []
+  },
+  {
+    "catalog_row": 21,
+    "sku": "RE89366",
+    "title": "Набір «Три опори здоров’я»",
+    "price_uah": 1435,
+    "composition": "абонемент Race Expert Club на 3 месяца; витамин D3 Now Foods, 2 000 IU, 120 мягких капсул, 2 упаковки; Omega-3 Now Foods, 1 000 мг, 30 мягких капсул; цинк пиколинат Swanson, 22 мг, 60 капсул; небольшой чёрный органайзер",
+    "description": "ежедневное дополнение рациона и удобное хранение добавок — по описанию набора",
+    "current_seller_families": [
+      "bone_joint_support_claim",
+      "general_daily_nutrition",
+      "immune_support_claim",
+      "sleep_relaxation_stress",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "general_daily_nutrition"
+    ],
+    "current_component_classes": [
+      "club_membership",
+      "sports_accessories",
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": [
+      "daily_use",
+      "gift",
+      "work_or_study"
+    ]
+  },
+  {
+    "catalog_row": 22,
+    "sku": "RE88973",
+    "title": "Набір «Щоденна база для офісу Race Expert Club»",
+    "price_uah": 1349,
+    "composition": "абонемент Race Expert Club на 3 месяца; мультивитамины Now Foods Daily Vits Multi, 30 капсул; витамин D3 Now Foods, 2 000 IU, 120 мягких капсул; Mind Shi 4Mushroom Complex, 60 капсул",
+    "description": "ежедневное дополнение рациона в течение насыщенного рабочего дня; название адресует набор офисным работникам",
+    "current_seller_families": [
+      "general_daily_nutrition"
+    ],
+    "current_component_families": [
+      "general_daily_nutrition"
+    ],
+    "current_component_classes": [
+      "club_membership",
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": [
+      "daily_use",
+      "work_or_study"
+    ]
+  },
+  {
+    "catalog_row": 23,
+    "sku": "RE11742",
+    "title": "Набір «Спортивний фундамент» 2.0",
+    "price_uah": 1295,
+    "composition": "по перечню товаров — абонемент Race Expert Club на 3 месяца; креатин Bodyperson Labs Creatine Monohydrate, 500 г; витамин D3 Now Foods, 2 000 IU, 120 мягких капсул; Omega-3 Now Foods, 1 000 мг, 30 мягких капсул, 2 упаковки",
+    "description": "",
+    "current_seller_families": [
+      "bone_joint_support_claim",
+      "endurance_energy",
+      "general_daily_nutrition",
+      "recovery_fatigue",
+      "skin_beauty_claim",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "general_daily_nutrition",
+      "hydration_electrolytes"
+    ],
+    "current_component_classes": [
+      "club_membership",
+      "creatine_preworkout",
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": [
+      "during_training",
+      "gift",
+      "work_or_study"
+    ]
+  },
+  {
+    "catalog_row": 24,
+    "sku": "RE11513",
+    "title": "Набір «Енергія і очищення Race Expert Club»",
+    "price_uah": 1455,
+    "composition": "абонемент Race Expert Club на 3 месяца; органическая спирулина Now Foods, 500 мг, 100 таблеток; цинк пиколинат Now Foods, 50 мг, 60 капсул; 5 стиков Hydria Perform; Omega-3 Now Foods, 1 000 мг, 30 мягких капсул, 2 упаковки",
+    "description": "ежедневная поддержка организма и энергии в активном ритме; описание также упоминает иммунитет, гидратацию и общее самочувствие",
+    "current_seller_families": [
+      "endurance_energy",
+      "general_daily_nutrition",
+      "hydration_electrolytes",
+      "immune_support_claim",
+      "recovery_fatigue",
+      "skin_beauty_claim",
+      "sleep_relaxation_stress"
+    ],
+    "current_component_families": [
+      "general_daily_nutrition"
+    ],
+    "current_component_classes": [
+      "club_membership",
+      "hydration_items",
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": [
+      "daily_use"
+    ]
+  },
+  {
+    "catalog_row": 25,
+    "sku": "RE11021",
+    "title": "Набір «Літній старт Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1379,
+    "composition": "белые носки Race Expert размер 40–44 x2 pairs; glass бутылка Race Expert 530 ml; Hydria Daily peach sticks x8; Hydria Perform lemon sticks x2",
+    "description": "Гидратация и комфорт во время тренировок и активности в жаркую погоду",
+    "current_seller_families": [
+      "general_daily_nutrition",
+      "hydration_electrolytes",
+      "outdoor_travel_hiking",
+      "running_race_preparation"
+    ],
+    "current_component_families": [
+      "foot_apparel_comfort",
+      "general_daily_nutrition",
+      "gift_identity"
+    ],
+    "current_component_classes": [
+      "apparel_footwear",
+      "club_membership",
+      "hydration_items",
+      "sports_accessories"
+    ],
+    "current_use_contexts": [
+      "before_or_after_training",
+      "daily_use",
+      "during_training",
+      "gift",
+      "travel_or_road",
+      "work_or_study"
+    ]
+  },
+  {
+    "catalog_row": 26,
+    "sku": "RE89019",
+    "title": "Набір «Свіжий фокус і щоденна підтримка Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1305,
+    "composition": "абонемент; Mind Shi 4Mushroom Complex 1000 mg, 60 caps; Swanson B12 500 mcg, 100 caps; NOW Omega-3 1000 mg, 30 мягких капсул; NOW D3 2000 IU, 30 мягких капсул",
+    "description": "Ежедневная нутритивная поддержка при высокой умственной нагрузке и офисной работе",
+    "current_seller_families": [
+      "endurance_energy",
+      "focus_cognition",
+      "general_daily_nutrition",
+      "immune_support_claim",
+      "recovery_fatigue",
+      "sleep_relaxation_stress",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "general_daily_nutrition"
+    ],
+    "current_component_classes": [
+      "club_membership",
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": [
+      "daily_use",
+      "work_or_study"
+    ]
+  },
+  {
+    "catalog_row": 27,
+    "sku": "RE88976",
+    "title": "Набір «Заряд для активного дня»",
+    "price_uah": 1399,
+    "composition": "NOW Methyl B12 1000 mcg, 100 lozenges; Swanson Ashwagandha 450 mg, 100 caps; NOW Zinc Picolinate 50 mg, 60 caps; Olimp L-Carnitine 3000 Extreme Shot, 25 ml",
+    "description": "Для высокой физической и умственной активности; в карточке названы спортсмены",
+    "current_seller_families": [],
+    "current_component_families": [],
+    "current_component_classes": [],
+    "current_use_contexts": []
+  },
+  {
+    "catalog_row": 28,
+    "sku": "RE89489",
+    "title": "Набір «Основа регулярних тренувань» — абонемент на 3 місяці",
+    "price_uah": 1500,
+    "composition": "абонемент Race Expert Club на 3 месяца; Race Expert банное полотенце 135 × 70 cm, 100% cotton, 500 g/m²; Nutriversum мини-шейкер 300 ml; Lipobar протеиновые батончики 50 g x6 chocolate and x6 pistachio",
+    "description": "Для регулярных тренировок в зале или дома, активного отдыха и белкового перекуса после нагрузки",
+    "current_seller_families": [
+      "portable_food_snacks",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "portable_food_snacks"
+    ],
+    "current_component_classes": [
+      "club_membership",
+      "protein_carbohydrate_food",
+      "sports_accessories"
+    ],
+    "current_use_contexts": [
+      "before_or_after_training",
+      "daily_use",
+      "during_training",
+      "gift",
+      "travel_or_road",
+      "work_or_study"
+    ]
+  },
+  {
+    "catalog_row": 29,
+    "sku": "RE89488",
+    "title": "Набір «Силовий прогрес» — абонемент на 3 місяці",
+    "price_uah": 1500,
+    "composition": "абонемент Race Expert Club на 3 месяца; Myprotein Creatine Monohydrate 500 g; Fitly шейкер with органайзер для таблеток, 600 ml/7 compartments",
+    "description": "Для силового прогресса и работы над мышечной массой; названы спортсмены и посетители зала",
+    "current_seller_families": [
+      "endurance_energy",
+      "hydration_electrolytes",
+      "portable_food_snacks",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "hydration_electrolytes",
+      "portable_food_snacks"
+    ],
+    "current_component_classes": [
+      "club_membership",
+      "creatine_preworkout",
+      "sports_accessories",
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": [
+      "during_training",
+      "gift",
+      "travel_or_road"
+    ]
+  },
+  {
+    "catalog_row": 30,
+    "sku": "RE88961",
+    "title": "Набір «Креатин і відновлення Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1415,
+    "composition": "абонемент Race Expert Club на 3 месяца; OstroVit Creatine Monohydrate, 500 g; Swanson Triple Magnesium, 400 mg, 100 caps; Nutriversum мини-шейкер, 300 ml; Lipobar, 50 g x2; Hydria Daily stick x1",
+    "description": "Поддержка восстановления и силы после нагрузки; в карточке названы спортсмены",
+    "current_seller_families": [
+      "recovery_fatigue"
+    ],
+    "current_component_families": [
+      "general_daily_nutrition",
+      "hydration_electrolytes"
+    ],
+    "current_component_classes": [
+      "club_membership",
+      "creatine_preworkout",
+      "hydration_items",
+      "sports_accessories"
+    ],
+    "current_use_contexts": []
+  },
+  {
+    "catalog_row": 31,
+    "sku": "RE88934",
+    "title": "Набір «Регулярний зал Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1449,
+    "composition": "абонемент Race Expert Club на 3 месяца; OstroVit Creatine Monohydrate, 500 g; Lipobar протеиновые батончики, 50 g: гранат x8 (16.5 g protein and 6.7 g fiber each), апельсин x7 (16.5 g protein and 7.4 g fiber each)",
+    "description": "Для людей, регулярно посещающих зал и тренирующихся",
+    "current_seller_families": [
+      "endurance_energy",
+      "general_daily_nutrition",
+      "hydration_electrolytes",
+      "portable_food_snacks",
+      "recovery_fatigue",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "gift_identity",
+      "hydration_electrolytes",
+      "portable_food_snacks"
+    ],
+    "current_component_classes": [
+      "club_membership",
+      "creatine_preworkout",
+      "protein_carbohydrate_food"
+    ],
+    "current_use_contexts": [
+      "before_or_after_training",
+      "daily_use",
+      "gift",
+      "work_or_study"
+    ]
+  },
+  {
+    "catalog_row": 32,
+    "sku": "RE11810",
+    "title": "Набір «Міцні кістки Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1419,
+    "composition": "абонемент Race Expert Club на 3 месяца; Nature’s Plus Animal Parade Calcium Chewable, 135 chewables; Solaray Vitamin K2 MK-7 50 mcg, 30 caps; NOW D3 2000 IU, 30 мягких капсул",
+    "description": "Поддержка костей; названы дети, взрослые, спортсмены и люди с физическими нагрузками",
+    "current_seller_families": [
+      "bone_joint_support_claim",
+      "general_daily_nutrition",
+      "sleep_relaxation_stress",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "general_daily_nutrition",
+      "gift_identity"
+    ],
+    "current_component_classes": [
+      "club_membership",
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": [
+      "daily_use",
+      "gift",
+      "work_or_study"
+    ]
+  },
+  {
+    "catalog_row": 33,
+    "sku": "RE11680",
+    "title": "Набір «Силовий старт»",
+    "price_uah": 759,
+    "composition": "MIAMI VIBES PURE Creatine Monohydrate 300 g; NOW D3 2000 IU, 120 мягких капсул; Lipobar протеиновые батончики 50 g x2",
+    "description": "Для начала силовых тренировок, развития силы и мышечной массы и восстановления",
+    "current_seller_families": [
+      "bone_joint_support_claim",
+      "endurance_energy",
+      "general_daily_nutrition",
+      "immune_support_claim",
+      "portable_food_snacks",
+      "recovery_fatigue",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "general_daily_nutrition",
+      "hydration_electrolytes",
+      "portable_food_snacks"
+    ],
+    "current_component_classes": [
+      "creatine_preworkout",
+      "protein_carbohydrate_food",
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": [
+      "before_or_after_training",
+      "work_or_study"
+    ]
+  },
+  {
+    "catalog_row": 34,
+    "sku": "Nabir_1119",
+    "title": "Набір «Ритм твого руху»",
+    "price_uah": 1500,
+    "composition": "white and тёмные носки Race Expert размер 40–42; Race Expert Run for Help Ukraine кепка; бутылка 600 ml; Myprotein Baked Cookie 75 g x3 (13 g protein each)",
+    "description": "Комфорт, гидратация и защита от солнца; названы военнослужащие, спортсмены и активные люди",
+    "current_seller_families": [
+      "endurance_energy",
+      "focus_cognition",
+      "general_daily_nutrition",
+      "gift_identity",
+      "hydration_electrolytes",
+      "portable_food_snacks",
+      "recovery_fatigue"
+    ],
+    "current_component_families": [
+      "foot_apparel_comfort",
+      "gift_identity",
+      "portable_food_snacks"
+    ],
+    "current_component_classes": [
+      "apparel_footwear",
+      "hydration_items",
+      "protein_carbohydrate_food",
+      "sports_accessories"
+    ],
+    "current_use_contexts": [
+      "daily_use"
+    ]
+  },
+  {
+    "catalog_row": 35,
+    "sku": "RE11661",
+    "title": "Набір «Чоловіча база залу Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1485,
+    "composition": "абонемент Race Expert Club на 3 месяца; NOW Daily Vits Multi, 100 таблеток; OstroVit Creatine Monohydrate, 500 g; Lipobar, 50 g x1",
+    "description": "Базовый набор для мужчин, регулярно тренирующихся в зале",
+    "current_seller_families": [
+      "digestive_metabolic_claim",
+      "endurance_energy",
+      "general_daily_nutrition",
+      "immune_support_claim",
+      "portable_food_snacks",
+      "recovery_fatigue",
+      "strength_muscle_training",
+      "women_men_audience"
+    ],
+    "current_component_families": [
+      "general_daily_nutrition",
+      "hydration_electrolytes",
+      "portable_food_snacks"
+    ],
+    "current_component_classes": [
+      "club_membership",
+      "creatine_preworkout",
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": [
+      "before_or_after_training",
+      "daily_use",
+      "gift",
+      "work_or_study"
+    ]
+  },
+  {
+    "catalog_row": 36,
+    "sku": "RE11652",
+    "title": "Набір «Боротьба з кріпатурою»",
+    "price_uah": 1500,
+    "composition": "Swanson Triple Magnesium Complex 400 mg, 100 caps; Hydria Perform стики с электролитами x5",
+    "description": "Для восстановления после тренировок и физической нагрузки",
+    "current_seller_families": [
+      "general_daily_nutrition",
+      "hydration_electrolytes",
+      "portable_food_snacks",
+      "recovery_fatigue",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "hydration_electrolytes",
+      "portable_food_snacks"
+    ],
+    "current_component_classes": [
+      "hydration_items",
+      "sports_accessories",
+      "supplements_vitamins_minerals"
+    ],
+    "current_use_contexts": [
+      "before_or_after_training",
+      "daily_use",
+      "during_training",
+      "travel_or_road",
+      "work_or_study"
+    ]
+  },
+  {
+    "catalog_row": 37,
+    "sku": "RE11637",
+    "title": "Набір «Сила + паливо» — абонемент на 3 місяці",
+    "price_uah": 1275,
+    "composition": "абонемент; Bodyperson Creatine Monohydrate 500 g; Sponser Crunchy Protein Bar 50 g x2",
+    "description": "Поддержка силовых тренировок и питания",
+    "current_seller_families": [
+      "endurance_energy",
+      "hydration_electrolytes",
+      "portable_food_snacks",
+      "recovery_fatigue",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "hydration_electrolytes",
+      "portable_food_snacks"
+    ],
+    "current_component_classes": [
+      "club_membership",
+      "creatine_preworkout"
+    ],
+    "current_use_contexts": [
+      "before_or_after_training",
+      "gift"
+    ]
+  },
+  {
+    "catalog_row": 38,
+    "sku": "RE11636",
+    "title": "Набір «Вибух сили Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1385,
+    "composition": "абонемент; OstroVit Creatine Monohydrate 500 g; Bodyperson Labs Pre-Workout Formula 250 g (contains caffeine per card); Hydria Daily sticks x4",
+    "description": "Для интенсивных тренировок, силы и спортивной работоспособности",
+    "current_seller_families": [
+      "endurance_energy",
+      "focus_cognition",
+      "general_daily_nutrition",
+      "hydration_electrolytes",
+      "skin_beauty_claim",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "general_daily_nutrition",
+      "hydration_electrolytes"
+    ],
+    "current_component_classes": [
+      "club_membership",
+      "creatine_preworkout",
+      "hydration_items"
+    ],
+    "current_use_contexts": [
+      "before_or_after_training",
+      "during_training",
+      "gift",
+      "work_or_study"
+    ]
+  },
+  {
+    "catalog_row": 39,
+    "sku": "RE11783",
+    "title": "Набір \"Запорука сили\" — абонемент на 3 місяці",
+    "price_uah": 1500,
+    "composition": "абонемент Race Expert Club на 3 месяца; OstroVit Creatine Monohydrate orange, 500 g; Nutriversum BCAA 2:1:1 Sugar Free, 500 g",
+    "description": "Для поддержки силовых тренировок",
+    "current_seller_families": [
+      "endurance_energy",
+      "general_daily_nutrition",
+      "hydration_electrolytes",
+      "recovery_fatigue",
+      "skin_beauty_claim",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "hydration_electrolytes"
+    ],
+    "current_component_classes": [
+      "club_membership",
+      "creatine_preworkout"
+    ],
+    "current_use_contexts": [
+      "before_or_after_training",
+      "daily_use",
+      "during_training",
+      "gift"
+    ]
+  },
+  {
+    "catalog_row": 40,
+    "sku": "RE11681",
+    "title": "Набір «Ріст м'язів» — абонемент на 3 місяці",
+    "price_uah": 1225,
+    "composition": "абонемент; Lipobar протеиновый батончик 50 g x2 (16.5 g protein each); Bodyperson Creatine Monohydrate 500 g; Brave U шейкер 700 ml; Hydria Daily sticks x4",
+    "description": "Для работы над ростом мышц",
+    "current_seller_families": [
+      "endurance_energy",
+      "outdoor_travel_hiking",
+      "portable_food_snacks",
+      "recovery_fatigue",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "general_daily_nutrition",
+      "hydration_electrolytes",
+      "portable_food_snacks"
+    ],
+    "current_component_classes": [
+      "club_membership",
+      "creatine_preworkout",
+      "hydration_items",
+      "protein_carbohydrate_food",
+      "sports_accessories"
+    ],
+    "current_use_contexts": [
+      "before_or_after_training",
+      "daily_use",
+      "gift",
+      "travel_or_road",
+      "work_or_study"
+    ]
+  },
+  {
+    "catalog_row": 41,
+    "sku": "RE11518",
+    "title": "Набір «Більше сили на тренуванні» по програмі \"Ветеранський спорт\" — абонемент на 3 місяці",
+    "price_uah": 1335,
+    "composition": "MIAMI VIBES PURE Creatine Monohydrate, 300 g; Nutriversum 2:1:1 BCAA Sugar Free, 360 g. Во вступлении упоминается шейкер, которого нет в нумерованном списке товаров",
+    "description": "Поддержка силовых тренировок; названы спортсмены и бодибилдеры",
+    "current_seller_families": [
+      "endurance_energy",
+      "general_daily_nutrition",
+      "hydration_electrolytes",
+      "recovery_fatigue",
+      "skin_beauty_claim",
+      "strength_muscle_training"
+    ],
+    "current_component_families": [
+      "hydration_electrolytes"
+    ],
+    "current_component_classes": [
+      "club_membership",
+      "creatine_preworkout",
+      "sports_accessories"
+    ],
+    "current_use_contexts": [
+      "before_or_after_training",
+      "daily_use",
+      "during_training"
+    ]
+  },
+  {
+    "catalog_row": 42,
+    "sku": "RE88952",
+    "title": "Набір «Антиоксидантний ресурс Race Expert Club» — абонемент на 3 місяці",
+    "price_uah": 1385,
+    "composition": "абонемент Race Expert Club на 3 месяца; Mind Shi 4Mushroom 1000 mg, 60 caps; NOW Selenium 100 mcg, 100 tabs; NOW Organic Spirulina 500 mg, 100 tabs",
+    "description": "Антиоксидантная поддержка для спортсменов и активных людей при физических и умственных нагрузках",
+    "current_seller_families": [],
+    "current_component_families": [],
+    "current_component_classes": [
+      "club_membership"
+    ],
+    "current_use_contexts": []
+  }
+]
