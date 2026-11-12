@@ -8,18 +8,18 @@
 | Metric | Total | Percentage | Assessment |
 | :--- | :---: | :---: | :--- |
 | **Total Scenarios** | **100** | 100.0% | Complete dedicated gift test suite |
-| **PASS (Clean Success)** | **86** | 86.0% | Accurate recommendations, clear budget handling |
+| **PASS (Clean Success)** | **88** | 88.0% | Accurate recommendations, clear budget handling |
 | **WARN (Human Logic Friction)** | **6** | 6.0% | Sizing risks, dry descriptions, membership conflicts |
-| **FAIL (Critical Defects)** | **8** | 8.0% | Dead-end 0-match traps & taxonomy mismatches |
-| **Overall Usability Rate** | **92** | **92.0%** | (PASS + WARN combined) |
+| **FAIL (Critical Defects)** | **6** | 6.0% | Dead-end 0-match traps & taxonomy mismatches |
+| **Overall Usability Rate** | **94** | **94.0%** | (PASS + WARN combined) |
 
 ### Distribution by Category
 
 | Category | Total | PASS | WARN | FAIL | Pass Rate |
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | **1. Military, Veterans & Patriotic Commemoration** | 25 | 24 | 1 | 0 | 96.0% |
-| **2. Gifts for Runners & Marathoners** | 20 | 18 | 1 | 1 | 90.0% |
-| **3. Gifts for Gym Lifters & Fitness** | 20 | 17 | 0 | 3 | 85.0% |
+| **2. Gifts for Runners & Marathoners** | 20 | 17 | 1 | 2 | 85.0% |
+| **3. Gifts for Gym Lifters & Fitness** | 20 | 20 | 0 | 0 | 100.0% |
 | **4. Universal Sports Gifts (No Sizing Risks)** | 20 | 17 | 3 | 0 | 85.0% |
 | **5. Edge Cases, Cyclists/Swimmers & Logic Flaws** | 15 | 10 | 1 | 4 | 66.7% |
 
@@ -111,9 +111,7 @@
 | ID | Focus / Scenario | Verdict | Specific Flaw / Friction | Recommended Fix |
 | :---: | :--- | :---: | :--- | :--- |
 | #28 | `beginner_runner_2` | **FAIL** | Критичний збій видачі: отримано 0 результатів (status='no_exact_match') при валідному запиті без відображення near-miss чи floor-anchor. |  |
-| #46 | `gym_activity_strength_training` | **FAIL** | Таксономічний розрив (dead-end no_match): інтерфейс квіза запитує 'strength_training', але в каталозі 5 силових подарункових наборів мають тег 'fitness_gym'. Через невідповідність квіз відкинув усі набори (включаючи RE89460, RE11026, рушники) та показав 0 результатів. |  |
-| #47 | `gym_lifter_taxonomy_gap` | **FAIL** | Таксономічний розрив (dead-end no_match): інтерфейс квіза запитує 'strength_training', але в каталозі 5 силових подарункових наборів мають тег 'fitness_gym'. Через невідповідність квіз відкинув усі набори (включаючи RE89460, RE11026, рушники) та показав 0 результатів. |  |
-| #58 | `strength_training_budget_2000` | **FAIL** | Таксономічний розрив (dead-end no_match): інтерфейс квіза запитує 'strength_training', але в каталозі 5 силових подарункових наборів мають тег 'fitness_gym'. Через невідповідність квіз відкинув усі набори (включаючи RE89460, RE11026, рушники) та показав 0 результатів. |  |
+| #44 | `runner_apparel_form` | **FAIL** | Engine exception / crash: DraftMatchError: product_form is not supported for the selected need. |  |
 | #86 | `cyclist_dead_end_1500` | **FAIL** | Глухий кут каталогу (dead-end no_match): активність 'cycling' є опцією в квізі, але в каталозі подарунків немає жодного набору з цим тегом. Квіз не запропонував універсальні подарунки (банні рушники Sharpey, сувеніри, органайзери), видавши порожній екран. |  |
 | #87 | `cyclist_dead_end_2000` | **FAIL** | Глухий кут каталогу (dead-end no_match): активність 'cycling' є опцією в квізі, але в каталозі подарунків немає жодного набору з цим тегом. Квіз не запропонував універсальні подарунки (банні рушники Sharpey, сувеніри, органайзери), видавши порожній екран. |  |
 | #88 | `swimmer_dead_end_1500` | **FAIL** | Глухий кут каталогу (dead-end no_match): активність 'swimming' є опцією в квізі, але в каталозі подарунків немає жодного набору з цим тегом. Квіз не запропонував універсальні подарунки (банні рушники Sharpey, сувеніри, органайзери), видавши порожній екран. |  |
@@ -174,10 +172,10 @@
 | 41 | `runner_gifts` | ru | Бегун: стандартный бюджет 1500 грн для полноценн... | 1500 ₴ | `matched` | Набір «Подарунок початківцю 2.0» — а... | **PASS** |
 | 42 | `runner_gifts` | uk | Щедрий подарунок для бігуна: бюджет 2000 грн | 2000 ₴ | `matched` | Набір «Подарунок початківцю 2.0» — а... | **PASS** |
 | 43 | `runner_gifts` | ru | Премиальный подарок марафонцу: высокий бюджет 35... | 3500 ₴ | `matched` | Набір «Подарунок початківцю 2.0» — а... | **PASS** |
-| 44 | `runner_gifts` | uk | Бігун: шукає текстильні подарунки (баф + шкарпет... | 1500 ₴ | `matched` | Набір «Подарунок початківцю 2.0» — а... | **PASS** |
+| 44 | `runner_gifts` | uk | Бігун: шукає текстильні подарунки (баф + шкарпет... | 1500 ₴ | `error` | N/A | **FAIL** |
 | 45 | `runner_gifts` | uk | Осінньо-зимовий бігун/ходок: набір «Осінній пода... | 1500 ₴ | `matched` | Набір «Подарунок для прогулянок» — а... | **PASS** |
-| 46 | `gym_lifters` | uk | Дівчина атлета: шукає подарунок для хлопця в тре... | 1500 ₴ | `no_match` | N/A | **FAIL** |
-| 47 | `gym_lifters` | ru | Жена бодибилдера: подарок мужу в качалку (тест t... | 1500 ₴ | `no_match` | N/A | **FAIL** |
+| 46 | `gym_lifters` | uk | Дівчина атлета: шукає подарунок для хлопця в тре... | 1500 ₴ | `matched` | Набір «Подарунок військовому-спортсм... | **PASS** |
+| 47 | `gym_lifters` | ru | Жена бодибилдера: подарок мужу в качалку (тест t... | 1500 ₴ | `matched` | Набір «Подарунок військовому-спортсм... | **PASS** |
 | 48 | `gym_lifters` | uk | Відвідувач фітнес-клубу: шукає аксесуари для зал... | 1500 ₴ | `matched` | Набір «Подарунок для прогулянок» — а... | **PASS** |
 | 49 | `gym_lifters` | ru | Фитнес-энтузиаст: набор «Подарок спортсмену» с м... | 1500 ₴ | `matched` | Набір «Подарунок для прогулянок» — а... | **PASS** |
 | 50 | `gym_lifters` | uk | Кросфітер: шукає спортивний набір через опцію ак... | 1500 ₴ | `matched` | Набір «Подарунок для прогулянок» — а... | **PASS** |
@@ -188,7 +186,7 @@
 | 55 | `gym_lifters` | ru | Пауэрлифтер: подарок на день рождения от друзей ... | 1500 ₴ | `matched` | Набір «Подарунок для прогулянок» — а... | **PASS** |
 | 56 | `gym_lifters` | uk | Атлет у залі з розміром взуття 44: пошук набору ... | 1500 ₴ | `matched` | Набір «Подарунок для прогулянок» — а... | **PASS** |
 | 57 | `gym_lifters` | uk | Мініатюрна фітнес-спортсменка: розмір ноги 39 (п... | 1500 ₴ | `matched` | Набір «Воля та незламність Race Expe... | **PASS** |
-| 58 | `gym_lifters` | ru | Тяжелоатлет: бюджет 2000 грн на силовой подарок ... | 2000 ₴ | `no_match` | N/A | **FAIL** |
+| 58 | `gym_lifters` | ru | Тяжелоатлет: бюджет 2000 грн на силовой подарок ... | 2000 ₴ | `matched` | Набір «Подарунок військовому-спортсм... | **PASS** |
 | 59 | `gym_lifters` | uk | Бодібілдер: щедрий подарунок від родини до перем... | 3000 ₴ | `matched` | Набір «Подарунок для прогулянок» — а... | **PASS** |
 | 60 | `gym_lifters` | uk | Спортсмен силового залу: шукає подарунковий бокс... | 1500 ₴ | `matched` | Набір «Спортивний подарунок» | **PASS** |
 | 61 | `gym_lifters` | uk | Клієнти тренера: корпоративний подарунок особист... | 1500 ₴ | `matched` | Набір «Подарунок для прогулянок» — а... | **PASS** |

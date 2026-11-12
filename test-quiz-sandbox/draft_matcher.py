@@ -43,6 +43,67 @@ GOAL_LABELS = {
     },
 }
 
+# 24 sets with confirmed Creatine Monohydrate or Pre-Workout stimulants
+HEAVY_CREATINE_PREWORKOUT_SKUS = {
+    "RE11522",  # Row 9: Myprotein Creatine Monohydrate 500g
+    "RE11742",  # Row 23: Bodyperson Labs Creatine 500g
+    "RE89488",  # Row 29: Myprotein Creatine Monohydrate 500g
+    "RE88961",  # Row 30: OstroVit Creatine Monohydrate 500g
+    "RE88934",  # Row 31: OstroVit Creatine Monohydrate 500g
+    "RE11680",  # Row 33: Miami Vibes Creatine Monohydrate 300g
+    "RE11661",  # Row 35: OstroVit Creatine Monohydrate 500g
+    "RE11637",  # Row 37: Bodyperson Creatine Monohydrate 500g
+    "RE11636",  # Row 38: OstroVit Creatine 500g + Bodyperson Pre-Workout Formula 250g
+    "RE11783",  # Row 39: OstroVit Creatine 500g + Nutriversum Creatine
+    "RE11681",  # Row 40: Bodyperson Creatine Monohydrate 500g
+    "RE11518",  # Row 41: Miami Vibes Creatine Monohydrate 300g
+    "RE11787",  # Row 57: OstroVit Creatine Monohydrate 500g
+    "Nabir_1128", # Row 58: OstroVit Creatine Monohydrate 500g
+    "Nabir_1121", # Row 68: OstroVit Creatine 500g
+    "RE88964",  # Row 121: OstroVit Creatine 500g
+    "RE11521",  # Row 142: Nutriversum Creatine 300g
+    "RE88963",  # Row 148: Pre-workout: AAKG + Beta-alanine + PWO Shot with caffeine
+    "RE11800",  # Row 149: Nutriversum Creatine Creapure 500g
+    "RE11688",  # Row 152: Miami Vibes Creatine 300g + Kevin Levrone Anabolic Mass
+    "RE11520",  # Row 156: Nutriversum Creatine 300g + Test Bomb
+    "Nabir_1115", # Row 157: Nutriversum Creatine + ON Creatine
+    "RE11660",  # Row 164: Nutriversum Creatine 300g + PF 30 Gels
+    "RE89452",  # Row 206: OstroVit Creatine 500g + Nutrend Carnitine 60 000 with synephrine
+}
+
+# Sets with false creatine/preworkout tags in evidence pool that must be purged
+FALSE_CREATINE_TAG_SKUS = {
+    "RE89489": {"creatine_preworkout"},  # Towel + shaker (0g creatine)
+    "RE11632": {"creatine_preworkout"},  # Lion's mane baked cookie (0g creatine)
+    "RE11557": {"creatine_preworkout"},  # Drinks Napiy 90g (0g creatine)
+    "Nabir_1118": {"creatine_preworkout"}, # Whey Protein + shaker + bar (0g creatine)
+    "RE11786": {"creatine_preworkout"},  # BCAA + Hydria Perform (0g creatine)
+    "RE11811": {"creatine_preworkout"},  # BCAA + GLUTA + Recovery shake (0g creatine)
+    "RE11665": {"creatine_preworkout"},  # Jump rope + ab roller (0g creatine)
+    "RE11663": {"creatine_preworkout"},  # Yoga mat + band (0g creatine)
+    "RE11802": {"creatine_preworkout"},  # EAA + Hydria Perform (0g creatine)
+    "RE11651": {"creatine_preworkout"},  # ZMA + bars (0g creatine)
+    "RE11519": {"creatine_preworkout"},  # Whey Pro + BCAA Shot (0g creatine)
+}
+
+# Real creatine/preworkout sets that were missing the creatine_preworkout class in audit
+ADDED_COMPONENT_CLASSES = {
+    "RE11742": {"creatine_preworkout"},  # Bodyperson Labs Creatine 500g
+    "RE11680": {"creatine_preworkout"},  # Pure Creatine Monohydrate 300g
+    "RE11661": {"creatine_preworkout"},  # OstroVit Creatine Monohydrate 500g
+    "RE11637": {"creatine_preworkout"},  # Bodyperson Creatine Monohydrate 500g
+    "RE11636": {"creatine_preworkout"},  # Pre-Workout Formula 250g + Creatine 500g
+    "RE11783": {"creatine_preworkout"},  # OstroVit Creatine 500g + Nutriversum Creatine
+    "RE11518": {"creatine_preworkout"},  # Pure Creatine Monohydrate 300g
+    "RE11787": {"creatine_preworkout"},  # OstroVit Creatine Monohydrate 500g
+    "Nabir_1128": {"creatine_preworkout"}, # OstroVit Creatine Monohydrate 500g
+    "RE88964": {"creatine_preworkout"},  # OstroVit Creatine 500g
+    "RE11688": {"creatine_preworkout"},  # MIAMI VIBES Pure Creatine Monohydrate 300g
+    "RE11520": {"creatine_preworkout"},  # Nutriversum Creatine 300g
+    "Nabir_1115": {"creatine_preworkout"}, # Nutriversum Creatine + ON Creatine
+    "RE11660": {"creatine_preworkout"},  # Nutriversum Creatine 300g
+}
+
 # These families depend on a disputed component in the current evidence map.
 # Seller-positioned signals remain usable; affected component signals do not.
 CONFLICTED_COMPONENT_FAMILIES = {
@@ -58,10 +119,8 @@ CONFLICTED_COMPONENT_CLASSES = {
     "Nabir_1133": {"sports_accessories", "supplements_vitamins_minerals"},
     "RE11020": {"protein_carbohydrate_food"},
     "RE88957": {"protein_carbohydrate_food"},
-    "RE11632": {"creatine_preworkout"},  # Lion's mane baked cookie (0g creatine)
-    "RE11663": {"creatine_preworkout"},  # Yoga mat + band (0g creatine)
-    "RE11665": {"creatine_preworkout"},  # Jump rope + ab roller (0g creatine)
-    "RE11660": {"creatine_preworkout"},  # Marathon kit (endurance gels + salts)
+    "RE11681": {"hydration_items"},
+    **FALSE_CREATINE_TAG_SKUS,
 }
 
 # Sets disqualified from Recovery & Sleep due to strength/creatine, gear dominance, or stimulant/focus actions
@@ -77,12 +136,39 @@ DISQUALIFIED_FROM_RECOVERY = {
     "Nabir_1127", "Nabir_1102", "RE11513", "Nabir_1125",
 }
 
+CONSUMABLE_COMPONENT_CLASSES = {
+    "energy_nutrition",
+    "hydration_items",
+    "protein_carbohydrate_food",
+    "supplements_vitamins_minerals",
+    "food_or_meal",
+    "dehydrated_meal",
+    "creatine_preworkout",
+}
+
+NON_CONSUMABLE_COMPONENT_CLASSES = {
+    "sports_accessories",
+    "apparel_footwear",
+}
+
+CONSUMABLE_PRODUCT_FORMS = {
+    "powder",
+    "tablets",
+    "capsules",
+    "softgels",
+    "gel",
+    "bars",
+    "liquid",
+    "sticks",
+    "food_or_meal",
+}
+
 # The activity branch is deliberately different by the selected buyer need.
 ACTIVITY_OPTIONS_BY_GOAL = {
     "running": {"running"},
     "training": {"strength_training", "functional_training", "mind_body_mobility", "fitness_gym"},
     "hydration": {"running", "cycling", "strength_training", "functional_training", "fitness_gym", "hiking", "walking", "triathlon"},
-    "food": {"running", "cycling", "hiking", "walking", "fitness_gym", "strength_training"},
+    "food": {"running", "cycling", "hiking", "walking", "fitness_gym", "strength_training", "fitness"},
     "recovery": {"running", "cycling", "strength_training", "functional_training", "fitness_gym", "mind_body_mobility"},
     "outdoors": {"hiking", "walking", "cycling", "running"},
     "gear": {"running", "hiking", "cycling", "walking"},
@@ -93,7 +179,7 @@ ACTIVITY_OPTIONS_BY_GOAL = {
 COMPONENT_CLASSES_BY_GOAL = {
     "running": {"protein_carbohydrate_food", "hydration_items", "sports_accessories", "apparel_footwear"},
     "training": {"supplements_vitamins_minerals", "creatine_preworkout", "protein_carbohydrate_food", "hydration_items"},
-    "hydration": {"hydration_items", "protein_carbohydrate_food", "sports_accessories"},
+    "hydration": {"hydration_items", "supplements_vitamins_minerals", "protein_carbohydrate_food", "sports_accessories"},
     "food": {"protein_carbohydrate_food", "hydration_items", "dehydrated_meal"},
     "recovery": {"supplements_vitamins_minerals", "protein_carbohydrate_food"},
     "outdoors": {"dehydrated_meal", "protein_carbohydrate_food", "hydration_items", "sports_accessories", "apparel_footwear"},
@@ -141,7 +227,7 @@ USE_PLACES_BY_GOAL = {
 PRODUCT_FORMS_BY_GOAL = {
     "running": {"bars", "gel", "food_or_meal", "liquid", "sticks", "capsules", "powder"},
     "training": {"bars", "capsules", "liquid", "powder", "softgels", "sticks", "tablets"},
-    "hydration": {"sticks", "tablets", "powder", "capsules", "liquid", "gel"},
+    "hydration": {"sticks", "tablets", "powder", "capsules", "liquid", "gel", "flasks"},
     "food": {"bars", "food_or_meal", "gel", "liquid", "sticks"},
     "recovery": {"capsules", "powder", "softgels", "sticks", "tablets", "bars"},
     "outdoors": {"bars", "food_or_meal", "gel", "liquid", "sticks"},
@@ -188,10 +274,18 @@ def attach_audit_evidence(catalog, audit):
             component_classes.clear()
         else:
             component_classes.difference_update(blocked_classes)
+        added_classes = ADDED_COMPONENT_CLASSES.get(record.get("sku"), set())
+        component_classes.update(added_classes)
         activity_groups = sorted(
             set(activity.get("seller_positioned_activity_groups", []))
             | set(activity.get("component_name_activity_groups", []))
         )
+        # Consumable forms guardrail: non-consumables (pure accessories, apparel, medals, hygiene) NEVER have edible product forms
+        raw_forms = set(pool.get("product_forms_visible_in_listed_names", []))
+        if not (component_classes & CONSUMABLE_COMPONENT_CLASSES):
+            raw_forms.difference_update(CONSUMABLE_PRODUCT_FORMS)
+        product_forms = sorted(raw_forms)
+
         enriched_record = dict(record)
         enriched_record["matching_evidence"] = {
             "status": proposal.get("status", "unknown"),
@@ -205,7 +299,7 @@ def attach_audit_evidence(catalog, audit):
             "component_classes": sorted(component_classes),
             "use_contexts": list(pool.get("use_contexts", [])),
             "race_formats": list(pool.get("race_formats", [])),
-            "product_forms": list(pool.get("product_forms_visible_in_listed_names", [])),
+            "product_forms": product_forms,
             "size_sensitive": bool(pool.get("size_sensitive_item_present")),
             "size_values": [
                 item for item in pool.get("recorded_size_values", [])
@@ -221,13 +315,15 @@ def attach_audit_evidence(catalog, audit):
 
 def _matching_families(record, goal_group):
     sku = record.get("sku")
-    if goal_group == "recovery" and sku in DISQUALIFIED_FROM_RECOVERY:
-        return [], []
-    if goal_group == "gear":
-        # Disqualify sets where creatine or heavy preworkout dominate
+    # Heavy sports pharmacology isolation: Creatine monohydrate & pre-workout stimulants belong strictly to training
+    if goal_group != "training":
+        if sku in HEAVY_CREATINE_PREWORKOUT_SKUS:
+            return [], []
         classes = set(record.get("matching_evidence", {}).get("component_classes", []))
         if "creatine_preworkout" in classes:
             return [], []
+    if goal_group == "recovery" and sku in DISQUALIFIED_FROM_RECOVERY:
+        return [], []
     evidence = record.get("matching_evidence", {})
     wanted = GOAL_FAMILIES[goal_group]
     seller = set(evidence.get("seller_families", [])) & wanted
@@ -280,11 +376,16 @@ def _soft_signals(record, key):
     evidence = record.get("matching_evidence", {})
     if key == "activity":
         acts = set(evidence.get("seller_activity_groups", [])) | set(evidence.get("component_activity_groups", []))
-        if "fitness_gym" in acts:
+        if "fitness_gym" in acts or "fitness" in acts:
+            acts.add("fitness_gym")
+            acts.add("fitness")
             acts.add("strength_training")
             acts.add("functional_training")
         if "strength_training" in acts or "functional_training" in acts:
             acts.add("fitness_gym")
+            acts.add("fitness")
+        if "general_lifestyle" in acts or "hiking" in acts:
+            acts.add("walking")
         return acts
     if key == "component_class":
         return set(evidence.get("component_classes", []))
@@ -448,13 +549,26 @@ def _question_plan(candidates, goal_group, answers):
     answered_followups = [k for k in answered if k not in ("max_price_uah", "locale")]
     comp_class = answered.get("component_class")
 
-    # Critical physical constraints must not be dropped by early exit if sized apparel/gear is selected
-    needs_size = has_size_sensitive and "shoe_size" not in answered and (
-        comp_class == "apparel_footwear" or (goal_group == "gear" and comp_class != "sports_accessories")
+    # Sizing flow: when user selected apparel_footwear OR sizing-sensitive gear in gear goal
+    NUTRITIONAL_CLASSES = {
+        "protein_carbohydrate_food",
+        "supplements_vitamins_minerals",
+        "hydration_items",
+        "creatine_preworkout",
+        "dehydrated_meal",
+    }
+    is_sizing_flow = (comp_class == "apparel_footwear") or (
+        has_size_sensitive and goal_group == "gear" and comp_class not in (NUTRITIONAL_CLASSES | {"sports_accessories"})
     )
 
-    # Early termination: if <= 3 candidates remain or user already answered 2 follow-up questions
-    if (len(remaining) <= 3 or len(answered_followups) >= 2) and not needs_size:
+    # Critical physical constraints must not be dropped by early exit if sized apparel/gear is selected
+    needs_size = has_size_sensitive and "shoe_size" not in answered and is_sizing_flow
+
+    # Maximum followups: 3 for sizing flows (Component -> Shoe Size -> Season), 2 for others
+    max_followups = 3 if (is_sizing_flow or "shoe_size" in answered) else 2
+
+    # Early termination: if <= 3 candidates remain or user already answered max follow-up questions
+    if (len(remaining) <= 3 or len(answered_followups) >= max_followups) and not needs_size:
         if remaining and "max_price_uah" not in answered:
             prices = [record["price_uah"] for record, _seller, _components in remaining if isinstance(record.get("price_uah"), int)]
             questions.append({
@@ -473,8 +587,8 @@ def _question_plan(candidates, goal_group, answers):
         if len(values) > 1 and _would_split(remaining, "component_class", COMPONENT_CLASSES_BY_GOAL.get(goal_group, set())):
             add("component_class", values, "question_component_class")
 
-    # 2. Sizing constraint: If Apparel / Footwear / Gear, ask shoe_size as immediate priority
-    if comp_class == "apparel_footwear" or (goal_group == "gear" and comp_class != "sports_accessories"):
+    # 2. Sizing constraint: If Apparel / Footwear / Sized Gear, ask shoe_size as immediate priority
+    if is_sizing_flow:
         if "shoe_size" not in answered:
             if has_size_sensitive:
                 ranges = sorted({
@@ -484,7 +598,7 @@ def _question_plan(candidates, goal_group, answers):
                 })
                 questions.append({"id": "shoe_size", "title_key": "question_shoe_size", "type": "number", "min": 1, "max": 70, "ranges": ranges})
 
-        if "season" not in answered:
+        if "season" not in answered and len(answered_followups) < max_followups:
             values = _values_in(remaining, "season", {"cold", "warm"})
             if len(values) > 1 and _would_split(remaining, "season", {"cold", "warm"}):
                 add("season", values, "question_season")
@@ -523,11 +637,18 @@ def _question_plan(candidates, goal_group, answers):
             if len(values) > 1 and _would_split(remaining, "use_place", allowed):
                 add("use_place", values, "question_use_place")
 
-    # Product form: ask only for consumable/nutritional items, NEVER for accessories or apparel
-    NUTRITIONAL_CLASSES = {"protein_carbohydrate_food", "supplements_vitamins_minerals", "hydration_items", "dehydrated_meal"}
-    is_nutritional = comp_class in NUTRITIONAL_CLASSES or (not comp_class and goal_group in ("food", "hydration", "daily", "recovery"))
-    if "product_form" not in answered and is_nutritional and comp_class not in ("sports_accessories", "apparel_footwear"):
-        allowed = PRODUCT_FORMS_BY_GOAL.get(goal_group, set())
+    # Product form: ask ONLY for consumable/nutritional items, NEVER for accessories or apparel
+    is_consumable = (
+        comp_class in CONSUMABLE_COMPONENT_CLASSES
+        or (not comp_class and goal_group in ("food", "daily", "recovery"))
+    )
+    is_blocked = (
+        comp_class in NON_CONSUMABLE_COMPONENT_CLASSES
+        or (comp_class and comp_class not in CONSUMABLE_COMPONENT_CLASSES)
+        or goal_group == "gear"
+    )
+    if "product_form" not in answered and is_consumable and not is_blocked:
+        allowed = PRODUCT_FORMS_BY_GOAL.get(goal_group, set()) & CONSUMABLE_PRODUCT_FORMS
         values = _values_in(remaining, "product_form", allowed)
         if len(values) > 1 and _would_split(remaining, "product_form", allowed, min_signals=3):
             add("product_form", values, "question_product_form")
@@ -637,6 +758,12 @@ def _validate_request(catalog, request):
     if membership is not None and membership not in ("yes", "no"):
         raise DraftMatchError("membership must be 'yes', 'no', or 'any'.")
 
+    season_val = request.get("season")
+    if season_val in ("summer", "hot"):
+        request = {**request, "season": "warm"}
+    elif season_val in ("winter",):
+        request = {**request, "season": "cold"}
+
     choice_options = {
         "activity": ACTIVITY_OPTIONS_BY_GOAL[goal_group] | {"other"},
         "component_class": COMPONENT_CLASSES_BY_GOAL[goal_group],
@@ -666,6 +793,22 @@ def _validate_request(catalog, request):
             normalized_choices[key] = val_list if len(val_list) > 1 else val_list[0]
         else:
             raise DraftMatchError("{} must be a string or list of strings.".format(key))
+
+    form_val = normalized_choices.get("product_form")
+    comp_class_val = normalized_choices.get("component_class")
+    if form_val is not None:
+        if comp_class_val in NON_CONSUMABLE_COMPONENT_CLASSES:
+            raise DraftMatchError(
+                f"product_form is not applicable for non-consumable class '{comp_class_val}'."
+            )
+        if comp_class_val and comp_class_val not in CONSUMABLE_COMPONENT_CLASSES:
+            raise DraftMatchError(
+                f"product_form is only applicable for consumable classes, got '{comp_class_val}'."
+            )
+        if goal_group == "gear":
+            raise DraftMatchError(
+                "product_form is not applicable for gear and apparel need."
+            )
 
     return {
         **request,
@@ -805,33 +948,54 @@ def _find_budget_near_misses(goal_candidates, validated, max_delta_pct=0.25, max
 
 
 def _find_floor_anchor(goal_candidates, validated):
-    """Find the lowest-priced compatible baseline sets when user budget is below all matches."""
+    """Find the lowest-priced compatible baseline sets when user budget is below all matches
+    or when requested size is unavailable."""
     maximum = validated.get("max_price_uah")
-    if maximum is None:
-        return []
-
     answers_no_price = {k: v for k, v in validated.items() if k != "max_price_uah"}
     pools = _candidate_pools(goal_candidates, answers_no_price)
 
     # Consider exact pool first, then general pool
     compatible = pools["exact"] if pools["exact"] else pools["general"]
+    has_size_fallback = False
     if not compatible and "shoe_size" in answers_no_price:
         answers_no_size = {k: v for k, v in answers_no_price.items() if k != "shoe_size"}
         pools_fallback = _candidate_pools(goal_candidates, answers_no_size)
         compatible = pools_fallback["exact"] if pools_fallback["exact"] else pools_fallback["general"]
+        has_size_fallback = True
+
+    if not compatible:
+        pools_goal = _candidate_pools(goal_candidates, {})
+        compatible = pools_goal["exact"] if pools_goal["exact"] else pools_goal["general"]
+        has_size_fallback = True
+
     if not compatible:
         return []
 
-    over_budget = [
-        (candidate, fit)
-        for candidate, fit in compatible
-        if isinstance(candidate[0].get("price_uah"), int) and candidate[0]["price_uah"] > maximum
-    ]
-    if not over_budget:
+    if maximum is not None:
+        if has_size_fallback:
+            within_budget = [
+                (c, f) for c, f in compatible
+                if isinstance(c[0].get("price_uah"), int) and c[0]["price_uah"] <= maximum
+            ]
+            selected_candidates = within_budget if within_budget else [
+                (c, f) for c, f in compatible if isinstance(c[0].get("price_uah"), int)
+            ]
+        else:
+            selected_candidates = [
+                (candidate, fit)
+                for candidate, fit in compatible
+                if isinstance(candidate[0].get("price_uah"), int) and candidate[0]["price_uah"] > maximum
+            ]
+    else:
+        selected_candidates = [
+            (c, f) for c, f in compatible if isinstance(c[0].get("price_uah"), int)
+        ]
+
+    if not selected_candidates:
         return []
 
     # Sort strictly by lowest price first, then best fit
-    over_budget.sort(
+    selected_candidates.sort(
         key=lambda entry: (
             entry[0][0]["price_uah"],
             -int(bool(entry[0][1]) and bool(entry[0][2])),
@@ -842,11 +1006,14 @@ def _find_floor_anchor(goal_candidates, validated):
     )
 
     floor_anchors = []
-    for candidate, fit in over_budget[:2]:
+    for candidate, fit in selected_candidates[:2]:
         fit_copy = dict(fit)
         fit_copy["match_type"] = "floor_anchor"
-        fit_copy["price_over_budget_uah"] = candidate[0]["price_uah"] - maximum
-        fit_copy["floor_price_uah"] = candidate[0]["price_uah"]
+        price = candidate[0]["price_uah"]
+        fit_copy["price_over_budget_uah"] = max(0, price - maximum) if maximum is not None else 0
+        fit_copy["floor_price_uah"] = price
+        if has_size_fallback:
+            fit_copy["size_status"] = "size_fallback"
         floor_anchors.append((candidate, fit_copy))
 
     return floor_anchors
@@ -1077,10 +1244,22 @@ def _build_why_not_suitable(record, fit, locale, validated):
     elif match_type == "floor_anchor":
         floor_price = fit.get("floor_price_uah", record.get("price_uah"))
         over = fit.get("price_over_budget_uah", 0)
-        if locale == "uk":
-            tradeoffs.append(f"Мінімальний базовий набір у категорії (від {floor_price} ₴, різниця з бюджетом {over} ₴).")
+        is_size_fallback = fit.get("size_status") == "size_fallback"
+        if over > 0:
+            if locale == "uk":
+                tradeoffs.append(f"Мінімальний базовий набір у категорії (від {floor_price} ₴, різниця з бюджетом {over} ₴).")
+            else:
+                tradeoffs.append(f"Минимальный базовый набор в категории (от {floor_price} ₴, разница с бюджетом {over} ₴).")
+        elif is_size_fallback:
+            if locale == "uk":
+                tradeoffs.append(f"Базовий набір у категорії (від {floor_price} ₴; точний розмір відсутній на складі магазину).")
+            else:
+                tradeoffs.append(f"Базовый набор в категории (от {floor_price} ₴; точный размер отсутствует на складе магазина).")
         else:
-            tradeoffs.append(f"Минимальный базовый набор в категории (от {floor_price} ₴, разница с бюджетом {over} ₴).")
+            if locale == "uk":
+                tradeoffs.append(f"Мінімальний базовий набір у категорії (від {floor_price} ₴).")
+            else:
+                tradeoffs.append(f"Минимальный базовый набор в категории (от {floor_price} ₴).")
 
     if fit.get("size_status") == "unknown" and validated.get("shoe_size"):
         if locale == "uk":
@@ -1117,18 +1296,32 @@ def _result(record, seller_families, component_families, fit, locale, validated=
     elif fit.get("match_type") == "floor_anchor":
         floor_price = fit.get("floor_price_uah")
         over = fit.get("price_over_budget_uah", 0)
-        reasons.append(
-            f"Минимальный базовый набор в категории (от {floor_price} ₴, разница с бюджетом {over} ₴)."
-            if locale == "ru" else
-            f"Мінімальний базовий набір у категорії (від {floor_price} ₴, різниця з бюджетом {over} ₴)."
-        )
+        is_size_fallback = fit.get("size_status") == "size_fallback"
+        if over > 0:
+            reasons.append(
+                f"Минимальный базовый набор в категории (от {floor_price} ₴, разница с бюджетом {over} ₴)."
+                if locale == "ru" else
+                f"Мінімальний базовий набір у категорії (від {floor_price} ₴, різниця з бюджетом {over} ₴)."
+            )
+        elif is_size_fallback:
+            reasons.append(
+                f"Базовый набор в категории (от {floor_price} ₴; точный размер отсутствует на складе магазина)."
+                if locale == "ru" else
+                f"Базовий набір у категорії (від {floor_price} ₴; точний розмір відсутній на складі магазину)."
+            )
+        else:
+            reasons.append(
+                f"Минимальный базовый набор в категории (от {floor_price} ₴)."
+                if locale == "ru" else
+                f"Мінімальний базовий набір у категорії (від {floor_price} ₴)."
+            )
 
     notes = []
-    if fit["size_status"] == "unknown":
+    if fit.get("size_status") in ("unknown", "size_fallback"):
         notes.append(
-            "Размер товара не указан в снимке; совпадение не подтверждено."
+            "Размер товара не указан в снимке или отсутствует на складе; предложен проверенный базовый набор."
             if locale == "ru" else
-            "Розмір товару не вказаний у знімку; збіг не підтверджено."
+            "Розмір товару не вказаний у знімку або відсутній на складі; запропоновано перевірений базовий набір."
         )
     if evidence.get("status") == "conflict_review_required":
         notes.append(
@@ -1306,7 +1499,7 @@ def draft_recommend(catalog, request, stock_map=None):
         ][:3]
 
     floor_anchor_results = []
-    if not results and not near_miss_results and validated.get("max_price_uah") is not None:
+    if not results and not near_miss_results:
         raw_floor_anchors = _find_floor_anchor(goal_candidates, validated)
         ranked_floor_anchors = _rank_candidate_entries(raw_floor_anchors, stock_map=stock_map)
         floor_anchor_results = [
@@ -1343,7 +1536,7 @@ def draft_recommend(catalog, request, stock_map=None):
             "no_exact_match": "Точного совпадения по подтверждённым данным нет. Ниже можно отдельно посмотреть варианты, которые не совпадают с мягкими предпочтениями.",
             "general": "Эти варианты не имеют известных противоречий ответам, но некоторые выбранные предпочтения не подтверждены данными каталога.",
             "relaxed": "Эти варианты показаны по вашему запросу с ослаблением мягких предпочтений. Известные расхождения перечислены в карточках.",
-            "no_match": "По ответам и жёстким ограничениям подходящих вариантов нет.",
+            "no_match": "К сожалению, по вашим критериям подходящих наборов не найдено. Попробуйте изменить критерии поиска или увеличить бюджет.",
             "floor_anchor": "По выбранному бюджету наборов нет. В этой категории полноценные наборы начинаются от {floor} ₴ (включают сопровождение). Ниже предложен базовый вариант.",
         },
         "uk": {
@@ -1352,7 +1545,7 @@ def draft_recommend(catalog, request, stock_map=None):
             "no_exact_match": "Точного збігу за підтвердженими даними немає. Нижче можна окремо переглянути варіанти, що не відповідають м’яким перевагам.",
             "general": "Ці варіанти не мають відомих суперечностей із відповідями, але деякі вибрані переваги не підтверджені даними каталогу.",
             "relaxed": "Ці варіанти показано на ваш запит із послабленням м’яких переваг. Відомі розбіжності перелічено в картках.",
-            "no_match": "За відповідями та жорсткими обмеженнями відповідних варіантів немає.",
+            "no_match": "На жаль, за вашими критеріями підходящих наборів не знайдено. Спробуйте змінити критерії пошуку або збільшити бюджет.",
             "floor_anchor": "За вибраним бюджетом наборів немає. У цій категорії повноцінні набори починаються від {floor} ₴ (включають супровід). Нижче запропоновано базовий варіант.",
         },
     }
@@ -1360,7 +1553,13 @@ def draft_recommend(catalog, request, stock_map=None):
     template = messages[validated["locale"]][message_key]
     if status == "floor_anchor" and floor_anchor_results:
         floor_min = min(item["price_uah"] for item in floor_anchor_results)
-        message = template.format(floor=floor_min)
+        if any(item.get("size_status") == "size_fallback" for item in floor_anchor_results):
+            if validated["locale"] == "ru":
+                message = f"Точного совпадения по указанному размеру не найдено. В этой категории качественные наборы начинаются от {floor_min} ₴. Ниже предложен базовый вариант."
+            else:
+                message = f"Точного збігу за вказаним розміром не знайдено. У цій категорії якісні набори починаються від {floor_min} ₴. Нижче запропоновано базовий варіант."
+        else:
+            message = template.format(floor=floor_min)
     else:
         message = template
 

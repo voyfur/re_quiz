@@ -1,6 +1,15 @@
 // Standalone Client-side Matcher mirroring draft_matcher.py
 (function() {
-  const CONSTANTS = {"GOAL_FAMILIES": {"running": ["running_race_preparation"], "training": ["strength_muscle_training"], "hydration": ["hydration_electrolytes"], "food": ["portable_food_snacks", "endurance_energy"], "recovery": ["recovery_fatigue", "sleep_relaxation_stress"], "outdoors": ["outdoor_travel_hiking"], "gear": ["foot_apparel_comfort"], "daily": ["general_daily_nutrition"], "gift": ["gift_identity"]}, "GOAL_LABELS": {"ru": {"running": "Бег и старты", "training": "Тренировки и сила", "hydration": "Гидратация", "food": "Перекусы и питание", "recovery": "Восстановление и отдых", "outdoors": "Походы и активный отдых", "gear": "Одежда и аксессуары", "daily": "Ежедневное использование", "gift": "Подарок"}, "uk": {"running": "Біг і старти", "training": "Тренування та сила", "hydration": "Гідратація", "food": "Перекуси та харчування", "recovery": "Відновлення та відпочинок", "outdoors": "Походи й активний відпочинок", "gear": "Одяг та аксесуари", "daily": "Щоденне використання", "gift": "Подарунок"}}, "ACTIVITY_OPTIONS_BY_GOAL": {"running": ["running"], "training": ["mind_body_mobility", "fitness_gym", "functional_training", "strength_training"], "hydration": ["walking", "triathlon", "running", "functional_training", "strength_training", "fitness_gym", "cycling", "hiking"], "food": ["hiking", "fitness_gym", "cycling", "running", "walking", "strength_training"], "recovery": ["mind_body_mobility", "fitness_gym", "cycling", "running", "functional_training", "strength_training"], "outdoors": ["running", "hiking", "walking", "cycling"], "gear": ["running", "hiking", "walking", "cycling"], "daily": [], "gift": ["hiking", "fitness_gym", "swimming", "cycling", "running", "walking", "strength_training"]}, "COMPONENT_CLASSES_BY_GOAL": {"running": ["protein_carbohydrate_food", "apparel_footwear", "sports_accessories", "hydration_items"], "training": ["creatine_preworkout", "protein_carbohydrate_food", "hydration_items", "supplements_vitamins_minerals"], "hydration": ["protein_carbohydrate_food", "sports_accessories", "hydration_items"], "food": ["protein_carbohydrate_food", "hydration_items", "dehydrated_meal"], "recovery": ["protein_carbohydrate_food", "supplements_vitamins_minerals"], "outdoors": ["protein_carbohydrate_food", "apparel_footwear", "dehydrated_meal", "sports_accessories", "hydration_items"], "gear": ["apparel_footwear", "sports_accessories"], "daily": ["protein_carbohydrate_food", "supplements_vitamins_minerals"], "gift": ["protein_carbohydrate_food", "apparel_footwear", "supplements_vitamins_minerals", "sports_accessories", "hydration_items"]}, "USE_SCENARIOS_BY_GOAL": {"running": ["event_preparation", "everyday", "training"], "training": ["everyday", "training"], "hydration": ["event_preparation", "everyday", "training"], "food": ["event_preparation", "everyday", "training"], "recovery": ["everyday", "training"], "outdoors": ["everyday", "training"], "gear": ["event_preparation", "everyday", "training"], "daily": ["everyday"], "gift": ["event_preparation", "everyday", "training"]}, "USE_TIMINGS_BY_GOAL": {"running": ["before_or_after_training", "during_training", "daily_use"], "training": ["during_training", "evening_or_bedtime", "during_day_tone", "before_or_after_training", "daily_use"], "hydration": ["before_or_after_training", "during_training", "daily_use"], "food": ["before_or_after_training", "during_training", "daily_use"], "recovery": ["during_training", "evening_or_bedtime", "during_day_tone", "before_or_after_training", "daily_use"], "outdoors": ["before_or_after_training", "during_training", "daily_use", "evening_or_bedtime"], "gear": ["before_or_after_training", "during_training", "daily_use"], "daily": ["morning_start", "daily_use", "evening_or_bedtime", "during_day_tone"], "gift": ["during_training", "daily_use", "evening_or_bedtime"]}, "USE_PLACES_BY_GOAL": {"running": ["travel_or_road", "hiking_or_camping"], "training": ["travel_or_road", "work_or_study"], "hydration": ["travel_or_road", "hiking_or_camping"], "food": ["travel_or_road", "hiking_or_camping"], "recovery": ["travel_or_road", "work_or_study"], "outdoors": ["travel_or_road", "hiking_or_camping"], "gear": ["travel_or_road", "hiking_or_camping"], "daily": ["travel_or_road", "work_or_study"], "gift": ["travel_or_road", "work_or_study", "hiking_or_camping"]}, "PRODUCT_FORMS_BY_GOAL": {"running": ["liquid", "gel", "capsules", "food_or_meal", "bars", "sticks", "powder"], "training": ["liquid", "softgels", "capsules", "tablets", "bars", "sticks", "powder"], "hydration": ["liquid", "gel", "capsules", "tablets", "sticks", "powder"], "food": ["liquid", "gel", "food_or_meal", "bars", "sticks"], "recovery": ["softgels", "capsules", "tablets", "bars", "sticks", "powder"], "outdoors": ["liquid", "gel", "food_or_meal", "bars", "sticks"], "gear": [], "daily": ["softgels", "capsules", "tablets", "bars", "powder"], "gift": ["food_or_meal", "tablets", "bars", "softgels", "powder", "liquid", "capsules", "sticks"]}, "SIZE_GOALS": ["gear", "outdoors", "running", "gift"], "CONFLICTED_COMPONENT_FAMILIES": {"RE11518": ["hydration_electrolytes"], "RE11807": ["*"], "RE11013": ["portable_food_snacks"], "Nabir_1133": ["general_daily_nutrition"]}, "CONFLICTED_COMPONENT_CLASSES": {"RE11518": ["sports_accessories"], "RE11807": ["*"], "RE11013": ["protein_carbohydrate_food"], "Nabir_1133": ["sports_accessories", "supplements_vitamins_minerals"], "RE11020": ["protein_carbohydrate_food"], "RE88957": ["protein_carbohydrate_food"], "RE11632": ["creatine_preworkout"], "RE11663": ["creatine_preworkout"], "RE11665": ["creatine_preworkout"], "RE11660": ["creatine_preworkout"]}, "DISQUALIFIED_FROM_RECOVERY": ["RE11632", "RE89019", "RE11520", "RE11024", "RE11681", "RE11688", "RE89452", "RE11522", "RE11516", "RE88957", "RE89021", "RE11783", "RE11020", "RE88934", "RE88964", "Nabir_1134", "RE89459", "RE11680", "RE11521", "Nabir_1115", "RE11742", "RE88963", "RE89460", "RE11637", "RE11513", "RE11663", "RE11801", "RE11787", "RE11013", "RE11691", "RE11660", "Nabir_1125", "Nabir_1127", "RE11665", "Nabir_1107", "Nabir_1102", "RE11800", "RE11661", "RE11518"]};
+  const CONSTANTS = {"GOAL_FAMILIES": {"running": ["running_race_preparation"], "training": ["strength_muscle_training"], "hydration": ["hydration_electrolytes"], "food": ["endurance_energy", "portable_food_snacks"], "recovery": ["recovery_fatigue", "sleep_relaxation_stress"], "outdoors": ["outdoor_travel_hiking"], "gear": ["foot_apparel_comfort"], "daily": ["general_daily_nutrition"], "gift": ["gift_identity"]}, "GOAL_LABELS": {"ru": {"running": "Бег и старты", "training": "Тренировки и сила", "hydration": "Гидратация", "food": "Перекусы и питание", "recovery": "Восстановление и отдых", "outdoors": "Походы и активный отдых", "gear": "Одежда и аксессуары", "daily": "Ежедневное использование", "gift": "Подарок"}, "uk": {"running": "Біг і старти", "training": "Тренування та сила", "hydration": "Гідратація", "food": "Перекуси та харчування", "recovery": "Відновлення та відпочинок", "outdoors": "Походи й активний відпочинок", "gear": "Одяг та аксесуари", "daily": "Щоденне використання", "gift": "Подарунок"}}, "ACTIVITY_OPTIONS_BY_GOAL": {"running": ["running"], "training": ["mind_body_mobility", "functional_training", "fitness_gym", "strength_training"], "hydration": ["strength_training", "walking", "running", "triathlon", "fitness_gym", "cycling", "hiking", "functional_training"], "food": ["fitness_gym", "strength_training", "walking", "fitness", "cycling", "hiking", "running"], "recovery": ["mind_body_mobility", "fitness_gym", "strength_training", "cycling", "functional_training", "running"], "outdoors": ["cycling", "hiking", "walking", "running"], "gear": ["cycling", "hiking", "walking", "running"], "daily": [], "gift": ["fitness_gym", "strength_training", "walking", "running", "cycling", "hiking", "swimming"]}, "COMPONENT_CLASSES_BY_GOAL": {"running": ["protein_carbohydrate_food", "hydration_items", "apparel_footwear", "sports_accessories"], "training": ["creatine_preworkout", "hydration_items", "supplements_vitamins_minerals", "protein_carbohydrate_food"], "hydration": ["protein_carbohydrate_food", "hydration_items", "supplements_vitamins_minerals", "sports_accessories"], "food": ["protein_carbohydrate_food", "dehydrated_meal", "hydration_items"], "recovery": ["protein_carbohydrate_food", "supplements_vitamins_minerals"], "outdoors": ["protein_carbohydrate_food", "dehydrated_meal", "hydration_items", "apparel_footwear", "sports_accessories"], "gear": ["sports_accessories", "apparel_footwear"], "daily": ["protein_carbohydrate_food", "supplements_vitamins_minerals"], "gift": ["protein_carbohydrate_food", "hydration_items", "apparel_footwear", "sports_accessories", "supplements_vitamins_minerals"]}, "USE_SCENARIOS_BY_GOAL": {"running": ["training", "event_preparation", "everyday"], "training": ["training", "everyday"], "hydration": ["training", "event_preparation", "everyday"], "food": ["training", "event_preparation", "everyday"], "recovery": ["training", "everyday"], "outdoors": ["training", "everyday"], "gear": ["training", "event_preparation", "everyday"], "daily": ["everyday"], "gift": ["training", "event_preparation", "everyday"]}, "USE_TIMINGS_BY_GOAL": {"running": ["daily_use", "before_or_after_training", "during_training"], "training": ["during_day_tone", "during_training", "daily_use", "evening_or_bedtime", "before_or_after_training"], "hydration": ["daily_use", "before_or_after_training", "during_training"], "food": ["daily_use", "before_or_after_training", "during_training"], "recovery": ["during_day_tone", "during_training", "daily_use", "evening_or_bedtime", "before_or_after_training"], "outdoors": ["daily_use", "evening_or_bedtime", "before_or_after_training", "during_training"], "gear": ["daily_use", "before_or_after_training", "during_training"], "daily": ["daily_use", "morning_start", "evening_or_bedtime", "during_day_tone"], "gift": ["daily_use", "evening_or_bedtime", "during_training"]}, "USE_PLACES_BY_GOAL": {"running": ["hiking_or_camping", "travel_or_road"], "training": ["work_or_study", "travel_or_road"], "hydration": ["hiking_or_camping", "travel_or_road"], "food": ["hiking_or_camping", "travel_or_road"], "recovery": ["work_or_study", "travel_or_road"], "outdoors": ["hiking_or_camping", "travel_or_road"], "gear": ["hiking_or_camping", "travel_or_road"], "daily": ["work_or_study", "travel_or_road"], "gift": ["hiking_or_camping", "work_or_study", "travel_or_road"]}, "PRODUCT_FORMS_BY_GOAL": {"running": ["liquid", "sticks", "bars", "gel", "powder", "capsules", "food_or_meal"], "training": ["liquid", "tablets", "bars", "powder", "sticks", "capsules", "softgels"], "hydration": ["liquid", "tablets", "gel", "powder", "sticks", "capsules", "flasks"], "food": ["liquid", "bars", "gel", "sticks", "food_or_meal"], "recovery": ["tablets", "bars", "powder", "sticks", "capsules", "softgels"], "outdoors": ["liquid", "bars", "gel", "sticks", "food_or_meal"], "gear": [], "daily": ["tablets", "bars", "powder", "capsules", "softgels"], "gift": ["liquid", "bars", "softgels", "food_or_meal", "tablets", "powder", "sticks", "capsules"]}, "SIZE_GOALS": ["outdoors", "gift", "running", "gear"], "CONFLICTED_COMPONENT_FAMILIES": {"RE11518": ["hydration_electrolytes"], "RE11807": ["*"], "RE11013": ["portable_food_snacks"], "Nabir_1133": ["general_daily_nutrition"]}, "CONFLICTED_COMPONENT_CLASSES": {"RE11518": ["sports_accessories"], "RE11807": ["*"], "RE11013": ["protein_carbohydrate_food"], "Nabir_1133": ["sports_accessories", "supplements_vitamins_minerals"], "RE11020": ["protein_carbohydrate_food"], "RE88957": ["protein_carbohydrate_food"], "RE11681": ["hydration_items"], "RE89489": ["creatine_preworkout"], "RE11632": ["creatine_preworkout"], "RE11557": ["creatine_preworkout"], "Nabir_1118": ["creatine_preworkout"], "RE11786": ["creatine_preworkout"], "RE11811": ["creatine_preworkout"], "RE11665": ["creatine_preworkout"], "RE11663": ["creatine_preworkout"], "RE11802": ["creatine_preworkout"], "RE11651": ["creatine_preworkout"], "RE11519": ["creatine_preworkout"]}, "DISQUALIFIED_FROM_RECOVERY": ["RE11801", "RE89459", "Nabir_1127", "RE11637", "RE11520", "RE11663", "RE11691", "RE11518", "RE11522", "RE11665", "RE11024", "RE11660", "RE11681", "RE11688", "RE89452", "Nabir_1134", "Nabir_1115", "RE11020", "RE11521", "RE88934", "Nabir_1107", "RE11742", "RE11800", "RE89019", "Nabir_1102", "RE88957", "RE88964", "Nabir_1125", "RE88963", "RE89021", "RE11783", "RE11516", "RE11787", "RE89460", "RE11661", "RE11632", "RE11013", "RE11513", "RE11680"], "HEAVY_CREATINE_PREWORKOUT_SKUS": ["RE11521", "RE88934", "Nabir_1128", "RE11742", "RE89488", "RE11800", "RE11637", "RE88964", "RE11520", "Nabir_1121", "RE11518", "RE11636", "RE11522", "RE88961", "RE88963", "RE11660", "RE11688", "RE89452", "RE11783", "RE11787", "RE11661", "RE11681", "Nabir_1115", "RE11680"], "CONSUMABLE_COMPONENT_CLASSES": ["protein_carbohydrate_food", "dehydrated_meal", "hydration_items", "energy_nutrition", "supplements_vitamins_minerals", "creatine_preworkout", "food_or_meal"], "NON_CONSUMABLE_COMPONENT_CLASSES": ["sports_accessories", "apparel_footwear"], "CONSUMABLE_PRODUCT_FORMS": ["liquid", "bars", "gel", "softgels", "food_or_meal", "tablets", "powder", "sticks", "capsules"]};
+  const CONSUMABLE_COMPONENT_CLASSES = new Set(CONSTANTS.CONSUMABLE_COMPONENT_CLASSES || [
+    "energy_nutrition", "hydration_items", "protein_carbohydrate_food", "supplements_vitamins_minerals", "food_or_meal", "dehydrated_meal", "creatine_preworkout"
+  ]);
+  const NON_CONSUMABLE_COMPONENT_CLASSES = new Set(CONSTANTS.NON_CONSUMABLE_COMPONENT_CLASSES || [
+    "sports_accessories", "apparel_footwear"
+  ]);
+  const CONSUMABLE_PRODUCT_FORMS = new Set(CONSTANTS.CONSUMABLE_PRODUCT_FORMS || [
+    "powder", "tablets", "capsules", "softgels", "gel", "bars", "liquid", "sticks", "food_or_meal"
+  ]);
   const CORE_ANSWER_FIELDS = ["activity"];
   const STEERING_ANSWER_FIELDS = ["component_class"];
   const SOFT_ANSWER_FIELDS = [
@@ -30,6 +39,15 @@
   }
 
   function matchingFamilies(record, goalGroup) {
+    if (goalGroup !== "training") {
+      if ((CONSTANTS.HEAVY_CREATINE_PREWORKOUT_SKUS || []).includes(record.sku)) {
+        return { seller: [], components: [] };
+      }
+      const classes = new Set(record.matching_evidence?.component_classes || []);
+      if (classes.has("creatine_preworkout")) {
+        return { seller: [], components: [] };
+      }
+    }
     if (goalGroup === "recovery" && (CONSTANTS.DISQUALIFIED_FROM_RECOVERY || []).includes(record.sku)) {
       return { seller: [], components: [] };
     }
@@ -216,9 +234,16 @@
     const remaining = candidates;
     const answered = answers || {};
 
-    // Early termination: if <= 3 candidates remain or user already answered 2 follow-up questions, skip directly to budget
+    const hasSizeSensitive = remaining.some(([r]) => r.matching_evidence?.size_sensitive && sizeRanges(r).length > 0);
     const answeredFollowups = Object.keys(answered).filter(k => !["max_price_uah", "locale"].includes(k));
-    if (remaining.length <= 3 || answeredFollowups.length >= 2) {
+    const compClass = answered.component_class;
+
+    const isSizingFlow = compClass === "apparel_footwear" || (hasSizeSensitive && ("component_class" in answered || goalGroup === "gear"));
+    const needsSize = hasSizeSensitive && !("shoe_size" in answered) && isSizingFlow;
+    const maxFollowups = (isSizingFlow || "shoe_size" in answered) ? 3 : 2;
+
+    // Early termination: if <= 3 candidates remain or user already answered max follow-up questions
+    if ((remaining.length <= 3 || answeredFollowups.length >= maxFollowups) && !needsSize) {
       if (remaining.length > 0 && !("max_price_uah" in answered)) {
         const prices = remaining.map(([r]) => r.price_uah).filter(p => typeof p === "number");
         questions.push({
@@ -239,8 +264,8 @@
       if (vals.length > 1) add("component_class", vals, "question_component_class");
     }
 
-    // 2. Activity (Sport): only for sport-specific goals where sport is a deciding factor; NEVER for recovery or daily
-    if (!("activity" in answered) && !["recovery", "daily"].includes(goalGroup)) {
+    // 2. Activity (Sport): only for sport-specific goals where sport is a deciding factor; NEVER for recovery, daily, running, or apparel
+    if (!("activity" in answered) && !["recovery", "daily", "running"].includes(goalGroup) && compClass !== "apparel_footwear") {
       let vals = valuesIn(remaining, "activity", CONSTANTS.ACTIVITY_OPTIONS_BY_GOAL[goalGroup] || []);
       if (vals.length > 1) {
         vals = [...new Set([...vals, "other"])].sort();
@@ -248,14 +273,12 @@
       }
     }
 
-    // 3. Contextual Refinement (Choose at most ONE high-signal question based on component_class):
-    const compClass = answered.component_class;
+    // 3. Contextual Refinement:
 
-    // A. If Apparel / Footwear: ask shoe_size and season
-    if (compClass === "apparel_footwear" || (goalGroup === "gear" && compClass !== "sports_accessories")) {
+    // A. If Apparel / Footwear / Sized Gear: ask shoe_size as immediate priority and season
+    if (isSizingFlow) {
       if (!("shoe_size" in answered)) {
-        const hasSize = remaining.some(([r]) => r.matching_evidence?.size_sensitive && sizeRanges(r).length > 0);
-        if (hasSize) {
+        if (hasSizeSensitive) {
           const s = new Set();
           remaining.forEach(([r]) => {
             sizeRanges(r).forEach(([lo, hi]) => s.add(`${lo}-${hi}`));
@@ -270,7 +293,7 @@
           });
         }
       }
-      if (!("season" in answered)) {
+      if (!("season" in answered) && answeredFollowups.length < maxFollowups) {
         const allowed = ["cold", "warm"];
         const vals = valuesIn(remaining, "season", allowed);
         if (vals.length > 1 && wouldSplit(remaining, "season", allowed)) {
@@ -315,9 +338,15 @@
       }
     }
 
-    // Product form: ask only if forms vary and not apparel
-    if (!("product_form" in answered) && compClass !== "apparel_footwear") {
-      const allowed = CONSTANTS.PRODUCT_FORMS_BY_GOAL[goalGroup] || [];
+    // Product form: ask ONLY for consumable/nutritional items, NEVER for accessories or apparel
+    const isConsumable = CONSUMABLE_COMPONENT_CLASSES.has(compClass)
+      || (!compClass && ["food", "daily", "recovery"].includes(goalGroup));
+    const isBlocked = NON_CONSUMABLE_COMPONENT_CLASSES.has(compClass)
+      || (compClass && !CONSUMABLE_COMPONENT_CLASSES.has(compClass))
+      || goalGroup === "gear";
+
+    if (!("product_form" in answered) && isConsumable && !isBlocked) {
+      const allowed = (CONSTANTS.PRODUCT_FORMS_BY_GOAL[goalGroup] || []).filter(f => CONSUMABLE_PRODUCT_FORMS.has(f));
       const vals = valuesIn(remaining, "product_form", allowed);
       if (vals.length > 1 && wouldSplit(remaining, "product_form", allowed, 3)) {
         add("product_form", vals, "question_product_form");
@@ -419,26 +448,56 @@
 
   function findFloorAnchor(goalCands, validated) {
     const maxP = validated.max_price_uah;
-    if (maxP === undefined || maxP === null) return [];
     const answersNoPrice = { ...validated };
     delete answersNoPrice.max_price_uah;
     const pools = candidatePools(goalCands, answersNoPrice);
-    const comp = pools.exact.length ? pools.exact : pools.general;
+
+    let comp = pools.exact.length ? pools.exact : pools.general;
+    let hasSizeFallback = false;
+    if (!comp.length && "shoe_size" in answersNoPrice) {
+      const answersNoSize = { ...answersNoPrice };
+      delete answersNoSize.shoe_size;
+      const poolsFallback = candidatePools(goalCands, answersNoSize);
+      comp = poolsFallback.exact.length ? poolsFallback.exact : poolsFallback.general;
+      hasSizeFallback = true;
+      if (!comp.length) {
+        const poolsGoal = candidatePools(goalCands, {});
+        comp = poolsGoal.exact.length ? poolsGoal.exact : poolsGoal.general;
+      }
+    }
+
     if (!comp.length) return [];
 
-    const over = comp
-      .filter(([cand]) => typeof cand[0].price_uah === "number" && cand[0].price_uah > maxP)
-      .sort((a, b) => a[0][0].price_uah - b[0][0].price_uah || a[0][0].catalog_row - b[0][0].catalog_row);
-
-    return over.slice(0, 2).map(([cand, fit]) => [
-      cand,
-      {
-        ...fit,
-        match_type: "floor_anchor",
-        price_over_budget_uah: cand[0].price_uah - maxP,
-        floor_price_uah: cand[0].price_uah
+    let selected = [];
+    if (maxP !== undefined && maxP !== null) {
+      if (hasSizeFallback) {
+        const within = comp.filter(([c]) => typeof c[0].price_uah === "number" && c[0].price_uah <= maxP);
+        selected = within.length ? within : comp.filter(([c]) => typeof c[0].price_uah === "number");
+      } else {
+        selected = comp.filter(([c]) => typeof c[0].price_uah === "number" && c[0].price_uah > maxP);
       }
-    ]);
+    } else {
+      selected = comp.filter(([c]) => typeof c[0].price_uah === "number");
+    }
+
+    if (!selected.length) return [];
+
+    selected.sort((a, b) => a[0][0].price_uah - b[0][0].price_uah || a[0][0].catalog_row - b[0][0].catalog_row);
+
+    return selected.slice(0, 2).map(([cand, fit]) => {
+      const price = cand[0].price_uah;
+      const over = (maxP !== undefined && maxP !== null) ? Math.max(0, price - maxP) : 0;
+      return [
+        cand,
+        {
+          ...fit,
+          match_type: "floor_anchor",
+          price_over_budget_uah: over,
+          floor_price_uah: price,
+          size_status: hasSizeFallback ? "size_fallback" : fit.size_status
+        }
+      ];
+    });
   }
 
   function buildExpertSummary(record, fit, locale, validated = {}) {
@@ -809,6 +868,15 @@
   function draftRecommend(catalog, request) {
     const goalGroup = request.goal_group;
     const locale = request.locale === "uk" ? "uk" : "ru";
+
+    const formVal = request.product_form;
+    const compClassVal = request.component_class;
+    if (formVal && formVal !== "any") {
+      if (NON_CONSUMABLE_COMPONENT_CLASSES.has(compClassVal) || (compClassVal && !CONSUMABLE_COMPONENT_CLASSES.has(compClassVal)) || goalGroup === "gear") {
+        throw new Error(`product_form is not applicable for non-consumable class '${compClassVal || goalGroup}'.`);
+      }
+    }
+
     const candidates = goalCandidates(catalog, goalGroup);
     const pools = candidatePools(candidates, request);
     const fallbackMode = request.fallback_mode;
@@ -866,7 +934,7 @@
     }
 
     let floorAnchorResults = [];
-    if (!results.length && !nearMissResults.length && request.max_price_uah != null) {
+    if (!results.length && !nearMissResults.length) {
       const rawFloor = findFloorAnchor(candidates, request);
       floorAnchorResults = rawFloor.slice(0, 2).map(([cand, fit]) => {
         const sInfo = stockMap[cand[0].sku] || null;
@@ -890,7 +958,7 @@
         no_exact_match: "Точного совпадения по подтверждённым данным нет. Ниже можно отдельно посмотреть варианты с ослаблением мягких предпочтений.",
         general: "Эти варианты не имеют известных противоречий ответам, но некоторые предпочтения не подтверждены данными каталога.",
         relaxed: "Эти варианты показаны по вашему запросу с ослаблением мягких предпочтений.",
-        no_match: "По ответам и жёстким ограничениям подходящих вариантов нет.",
+        no_match: "К сожалению, по вашим критериям подходящих наборов не найдено. Попробуйте изменить критерии поиска или увеличить бюджет.",
         floor_anchor: "По выбранному бюджету наборов нет. В этой категории базовые наборы начинаются от {floor} ₴. Ниже предложен стартовый вариант."
       },
       uk: {
@@ -899,7 +967,7 @@
         no_exact_match: "Точного збігу за підтвердженими даними немає. Нижче можна окремо переглянути варіанти з послабленням переваг.",
         general: "Ці варіанти не мають відомих суперечностей із відповідями, але деякі переваги не підтверджені даними каталогу.",
         relaxed: "Ці варіанти показано на ваш запит із послабленням м’яких переваг.",
-        no_match: "За відповідями та жорсткими обмеженнями відповідних варіантів немає.",
+        no_match: "На жаль, за вашими критеріями підходящих наборів не знайдено. Спробуйте змінити критерії пошуку або збільшити бюджет.",
         floor_anchor: "За вибраним бюджетом наборів немає. У цій категорії базові набори починаються від {floor} ₴. Нижче запропоновано стартовий варіант."
       }
     };

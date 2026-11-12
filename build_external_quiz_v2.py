@@ -21,13 +21,27 @@ const UI_COPY = {
     back: "Назад",
     continue: "Продовжити",
     showResults: "Підібрати набори",
-    restart: "Змінити відповіді",
+    restart: "Пройти заново",
+    resultsHeaderComplete: "Підбір завершено",
+    resultsHeaderEmpty: "Немає результатів",
+    resultsFound: "Знайдено наборів: {count}",
+    resultsNotFound: "На жаль, за вашими критеріями наборів не знайдено",
     any: "Не має значення",
     budgetPrompt: "Яка максимальна вартість усього набору?",
     budgetHint: "Підходящі набори за вашими критеріями: від {min} до {max} ₴. Залиште порожнім, якщо без обмежень.",
     budgetPlaceholder: "Наприклад: {min}",
     sizeHint: "У цій категорії зустрічаються розміри: {sizes}.",
     errorRequired: "Будь ласка, оберіть варіант для продовження.",
+    nearMissHeader: "Близько за бюджетом (рекомендовані альтернативи)",
+    floorAnchorHeader: "Базовий стартовий набір у цій категорії",
+    nearMissBadge: "+{amount} ₴ до бюджету",
+    floorAnchorBadge: "Базовий старт",
+    inStockBadge: "● В наявності",
+    orderBadge: "○ Під замовлення",
+    aiWarningTitle: "Зауваження AI-консультанта:",
+    navSubtitle: "Інтерактивний підбір наборів",
+    footerCatalog: "Race Expert · Офіційний каталог __COUNT__ готових наборів «За потребами»",
+    footerSnapshot: "Ціни та наявність наведено на дату локального знімка каталогу",
     goal_running: "Біг і підготовка до стартів",
     goal_training: "Силові тренування та м'язи",
     goal_hydration: "Гідратація та електроліти",
@@ -121,13 +135,27 @@ const UI_COPY = {
     back: "Назад",
     continue: "Продолжить",
     showResults: "Подобрать наборы",
-    restart: "Изменить ответы",
+    restart: "Пройти заново",
+    resultsHeaderComplete: "Подбор завершён",
+    resultsHeaderEmpty: "Нет результатов",
+    resultsFound: "Найдено наборов: {count}",
+    resultsNotFound: "К сожалению, по вашим критериям наборов не найдено",
     any: "Не имеет значения",
     budgetPrompt: "Какова максимальная стоимость всего набора?",
     budgetHint: "Подходящие наборы по вашим критериям: от {min} до {max} ₴. Оставьте пустым, если без ограничений.",
     budgetPlaceholder: "Например: {min}",
     sizeHint: "В этой категории встречаются размеры: {sizes}.",
     errorRequired: "Пожалуйста, выберите вариант для продолжения.",
+    nearMissHeader: "Близко по бюджету (рекомендованные альтернативы)",
+    floorAnchorHeader: "Базовый стартовый набор в этой категории",
+    nearMissBadge: "+{amount} ₴ к бюджету",
+    floorAnchorBadge: "Базовый старт",
+    inStockBadge: "● В наличии",
+    orderBadge: "○ Под заказ",
+    aiWarningTitle: "Замечание AI-консультанта:",
+    navSubtitle: "Интерактивный подбор наборов",
+    footerCatalog: "Race Expert · Официальный каталог __COUNT__ готовых наборов «По потребностям»",
+    footerSnapshot: "Цены и наличие приведены на дату локального снимка каталога",
     goal_running: "Бег и подготовка к стартам",
     goal_training: "Силовые тренировки и масса",
     goal_hydration: "Гидратация и электролиты",
@@ -316,9 +344,10 @@ function renderScreen() {
   } else {
     numBox.classList.add("hidden");
     optionsBox.classList.remove("hidden");
+    const rawOptions = (q.options || []).filter(o => o !== "any");
     const opts = isGoal
       ? ["running", "training", "hydration", "food", "recovery", "outdoors", "gear", "daily", "gift"]
-      : ["any", ...q.options];
+      : [...rawOptions, "any"];
 
     const selectedVal = isGoal ? appState.goal : appState.answers[q.id];
 
@@ -437,9 +466,9 @@ function createKitCard(item, badgeType = "match") {
 
   let badgeHtml = "";
   if (badgeType === "near_miss") {
-    badgeHtml = '<span class="card-match-badge px-2.5 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">+' + item.price_over_budget_uah + ' ₴ ' + (appState.locale === "ru" ? "к бюджету" : "до бюджету") + '</span>';
+    badgeHtml = '<span class="card-match-badge px-2.5 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">' + tr("nearMissBadge", { amount: item.price_over_budget_uah }) + '</span>';
   } else if (badgeType === "floor_anchor") {
-    badgeHtml = '<span class="card-match-badge px-2.5 py-1 rounded-full text-xs font-bold bg-purple-500/20 text-purple-300 border border-purple-500/30">' + (appState.locale === "ru" ? "Базовый старт" : "Базовий старт") + '</span>';
+    badgeHtml = '<span class="card-match-badge px-2.5 py-1 rounded-full text-xs font-bold bg-purple-500/20 text-purple-300 border border-purple-500/30">' + tr("floorAnchorBadge") + '</span>';
   } else if (item.match_score_pct) {
     const pct = item.match_score_pct;
     const color = pct >= 88
@@ -452,7 +481,7 @@ function createKitCard(item, badgeType = "match") {
       '</span>';
   }
 
-  const stockBadge = '<span class="card-stock-badge text-[11px] font-semibold px-2 py-0.5 rounded border border-emerald-500/30 bg-emerald-500/10 text-emerald-400">● ' + (appState.locale === "ru" ? "В наличии" : "В наявності") + '</span>';
+  const stockBadge = '<span class="card-stock-badge text-[11px] font-semibold px-2 py-0.5 rounded border border-emerald-500/30 bg-emerald-500/10 text-emerald-400">' + tr("inStockBadge") + '</span>';
 
   const topRow = '<div class="flex items-center justify-between gap-2">' +
     '<span class="text-xs font-mono text-slate-500">№ ' + item.catalog_row + ' · ' + (item.sku || 'RE-KIT') + '</span>' +
@@ -534,11 +563,31 @@ function renderFinalResults() {
   document.getElementById("progressSection").classList.add("hidden");
   document.getElementById("quizResultsView").classList.remove("hidden");
 
-  document.getElementById("resultsTitle").textContent = res.results.length > 0
-    ? ("Знайдено наборів: " + res.returned_count)
-    : "Підходящих наборів не знайдено";
+  const hasMatches = res.results && res.results.length > 0;
+  const resultsSubHeader = document.getElementById("resultsSubHeader");
+  if (resultsSubHeader) {
+    resultsSubHeader.textContent = hasMatches ? tr("resultsHeaderComplete") : tr("resultsHeaderEmpty");
+    resultsSubHeader.className = hasMatches
+      ? "text-xs font-bold uppercase tracking-wider text-emerald-400 block mb-1"
+      : "text-xs font-bold uppercase tracking-wider text-amber-400 block mb-1";
+  }
+
+  document.getElementById("resultsTitle").textContent = hasMatches
+    ? tr("resultsFound", { count: res.returned_count })
+    : tr("resultsNotFound");
+
+  const restartLabel = tr("restart");
+  const lblTopRestart = document.getElementById("lblRestart");
+  if (lblTopRestart) lblTopRestart.textContent = restartLabel;
+  const lblBottomRestart = document.getElementById("lblBottomRestart");
+  if (lblBottomRestart) lblBottomRestart.textContent = restartLabel;
 
   document.getElementById("resultMessageBanner").textContent = res.message;
+
+  const nearMissHeaderTitle = document.getElementById("nearMissHeaderTitle");
+  if (nearMissHeaderTitle) nearMissHeaderTitle.textContent = tr("nearMissHeader");
+  const floorAnchorHeaderTitle = document.getElementById("floorAnchorHeaderTitle");
+  if (floorAnchorHeaderTitle) floorAnchorHeaderTitle.textContent = tr("floorAnchorHeader");
 
   const cardsBox = document.getElementById("primaryCardsList");
   cardsBox.innerHTML = "";
@@ -673,10 +722,10 @@ function checkLiveStock() {
       if (badge) {
         if (stock.in_stock) {
           badge.className = "card-stock-badge text-[11px] font-semibold px-2 py-0.5 rounded border border-emerald-500/40 bg-emerald-500/20 text-emerald-300";
-          badge.textContent = appState.locale === "ru" ? "● В наличии" : "● В наявності";
+          badge.textContent = tr("inStockBadge");
         } else {
           badge.className = "card-stock-badge text-[11px] font-semibold px-2 py-0.5 rounded border border-rose-500/40 bg-rose-500/20 text-rose-300";
-          badge.textContent = appState.locale === "ru" ? "○ Под заказ" : "○ Під замовлення";
+          badge.textContent = tr("orderBadge");
         }
       }
       if (stock.live_price_uah) {
@@ -799,7 +848,7 @@ document.getElementById("btnNext").onclick = advanceStep;
 document.getElementById("btnShowResults").onclick = advanceStep;
 document.getElementById("btnBack").onclick = goBackStep;
 
-document.getElementById("btnRestart").onclick = () => {
+function restartQuiz() {
   appState.goal = "";
   appState.answers = {};
   appState.history = [];
@@ -808,21 +857,66 @@ document.getElementById("btnRestart").onclick = () => {
   document.getElementById("quizResultsView").classList.add("hidden");
   document.getElementById("progressSection").classList.remove("hidden");
   document.getElementById("quizQuestionView").classList.remove("hidden");
+  const numField = document.getElementById("numericField");
+  if (numField) numField.value = "";
+  const aiBox = document.getElementById("aiConsultantBox");
+  if (aiBox) {
+    aiBox.classList.add("hidden");
+    aiBox.innerHTML = "";
+  }
+  document.getElementById("primaryCardsList").innerHTML = "";
+  document.getElementById("nearMissCardsList").innerHTML = "";
+  document.getElementById("floorAnchorCardsList").innerHTML = "";
   renderScreen();
-};
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+document.getElementById("btnRestart").onclick = restartQuiz;
+const btnBottomRestart = document.getElementById("btnBottomRestart");
+if (btnBottomRestart) btnBottomRestart.onclick = restartQuiz;
+
+function applyLocale() {
+  document.getElementById("btnUk").className = appState.locale === "uk"
+    ? "px-2.5 py-1 rounded-md bg-brand-500 text-white transition shadow-sm"
+    : "px-2.5 py-1 rounded-md text-slate-400 hover:text-white transition";
+  document.getElementById("btnRu").className = appState.locale === "ru"
+    ? "px-2.5 py-1 rounded-md bg-brand-500 text-white transition shadow-sm"
+    : "px-2.5 py-1 rounded-md text-slate-400 hover:text-white transition";
+
+  const topNotice = document.getElementById("topNotice");
+  if (topNotice) topNotice.textContent = tr("topNotice");
+  const navSubtitle = document.getElementById("navSubtitle");
+  if (navSubtitle) navSubtitle.textContent = tr("navSubtitle");
+  const lblBack = document.getElementById("lblBack");
+  if (lblBack) lblBack.textContent = tr("back");
+  const lblNext = document.getElementById("lblNext");
+  if (lblNext) lblNext.textContent = tr("continue");
+  const lblShowResults = document.getElementById("lblShowResults");
+  if (lblShowResults) lblShowResults.textContent = tr("showResults");
+  const lblRestart = document.getElementById("lblRestart");
+  if (lblRestart) lblRestart.textContent = tr("restart");
+  const lblBottomRestart = document.getElementById("lblBottomRestart");
+  if (lblBottomRestart) lblBottomRestart.textContent = tr("restart");
+  const footerCatalog = document.getElementById("footerCatalogText");
+  if (footerCatalog) footerCatalog.textContent = tr("footerCatalog", { count: appState.catalog.length || 207 });
+  const footerSnapshot = document.getElementById("footerSnapshotText");
+  if (footerSnapshot) footerSnapshot.textContent = tr("footerSnapshot");
+
+  if (!document.getElementById("quizResultsView").classList.contains("hidden")) {
+    renderFinalResults();
+  } else {
+    renderScreen();
+  }
+}
 
 document.getElementById("btnUk").onclick = () => {
   appState.locale = "uk";
-  document.getElementById("btnUk").className = "px-2.5 py-1 rounded-md bg-brand-500 text-white transition shadow-sm";
-  document.getElementById("btnRu").className = "px-2.5 py-1 rounded-md text-slate-400 hover:text-white transition";
-  renderScreen();
+  applyLocale();
 };
 
 document.getElementById("btnRu").onclick = () => {
   appState.locale = "ru";
-  document.getElementById("btnRu").className = "px-2.5 py-1 rounded-md bg-brand-500 text-white transition shadow-sm";
-  document.getElementById("btnUk").className = "px-2.5 py-1 rounded-md text-slate-400 hover:text-white transition";
-  renderScreen();
+  applyLocale();
 };
 
 updateEnginePlan();
@@ -923,7 +1017,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         </div>
         <div>
           <span class="font-display font-bold tracking-tight text-lg text-white block leading-tight">Race Expert Quiz</span>
-          <span class="text-[11px] text-slate-400 font-medium block">Інтерактивний підбір наборів</span>
+          <span id="navSubtitle" class="text-[11px] text-slate-400 font-medium block">Інтерактивний підбір наборів</span>
         </div>
       </div>
 
@@ -1026,11 +1120,11 @@ HTML_TEMPLATE = """<!DOCTYPE html>
       <div id="quizResultsView" class="hidden space-y-6">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 border-b border-slate-800">
           <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 block mb-1">Підбір завершено</span>
+            <span id="resultsSubHeader" class="text-xs font-bold uppercase tracking-wider text-emerald-400 block mb-1">Підбір завершено</span>
             <h2 id="resultsTitle" class="text-2xl font-display font-bold text-white tracking-tight"></h2>
           </div>
           <button id="btnRestart" type="button" class="self-start sm:self-auto px-4 py-2 rounded-xl border border-slate-700 hover:border-slate-600 text-xs font-semibold text-slate-300 hover:text-white transition flex items-center gap-1.5">
-            <span>🔄</span> <span id="lblRestart">Змінити відповіді</span>
+            <span>🔄</span> <span id="lblRestart">Пройти заново</span>
           </button>
         </div>
 
@@ -1047,7 +1141,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         <section id="nearMissSection" class="pt-6 border-t border-slate-800/80 space-y-3 hidden">
           <div class="flex items-center gap-2">
             <span class="text-amber-400 text-base">⚡</span>
-            <h3 class="text-xs font-bold uppercase tracking-wider text-amber-400">Близько за бюджетом (рекомендовані альтернативи)</h3>
+            <h3 id="nearMissHeaderTitle" class="text-xs font-bold uppercase tracking-wider text-amber-400">Близько за бюджетом (рекомендовані альтернативи)</h3>
           </div>
           <div id="nearMissCardsList" class="space-y-4"></div>
         </section>
@@ -1056,10 +1150,17 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         <section id="floorAnchorSection" class="pt-6 border-t border-slate-800/80 space-y-3 hidden">
           <div class="flex items-center gap-2">
             <span class="text-purple-400 text-base">🛡️</span>
-            <h3 class="text-xs font-bold uppercase tracking-wider text-purple-400">Базовий стартовий набір у цій категорії</h3>
+            <h3 id="floorAnchorHeaderTitle" class="text-xs font-bold uppercase tracking-wider text-purple-400">Базовий стартовий набір у цій категорії</h3>
           </div>
           <div id="floorAnchorCardsList" class="space-y-4"></div>
         </section>
+
+        <!-- Bottom Restart Action -->
+        <div class="pt-8 pb-4 flex justify-center border-t border-slate-800/80">
+          <button id="btnBottomRestart" type="button" class="px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-brand-500 hover:text-white text-sm font-semibold text-slate-200 transition flex items-center gap-2.5 shadow-lg border border-slate-700 hover:border-brand-500">
+            <span class="text-base">🔄</span> <span id="lblBottomRestart">Пройти заново</span>
+          </button>
+        </div>
       </div>
 
     </div>
@@ -1068,8 +1169,8 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
   <!-- Footer -->
   <footer class="border-t border-slate-900 bg-slate-950/80 py-6 text-center text-xs text-slate-500">
-    <p>Race Expert · Офіційний каталог __COUNT__ готових наборів «За потребами»</p>
-    <p class="mt-1 text-[11px] text-slate-600">Ціни та наявність наведено на дату локального знімка каталогу</p>
+    <p id="footerCatalogText">Race Expert · Офіційний каталог __COUNT__ готових наборів «За потребами»</p>
+    <p id="footerSnapshotText" class="mt-1 text-[11px] text-slate-600">Ціни та наявність наведено на дату локального знімка каталогу</p>
   </footer>
 
   <!-- Scripts -->

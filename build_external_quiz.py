@@ -558,8 +558,24 @@ def build_external_html():
         }}
       }}
 
-      if (!("product_form" in answered)) {{
-        const allowed = CONSTANTS.PRODUCT_FORMS_BY_GOAL[goalGroup] || [];
+      const CONSUMABLE_COMPONENT_CLASSES = new Set([
+        "energy_nutrition", "hydration_items", "protein_carbohydrate_food", "supplements_vitamins_minerals", "food_or_meal", "dehydrated_meal", "creatine_preworkout"
+      ]);
+      const NON_CONSUMABLE_COMPONENT_CLASSES = new Set([
+        "sports_accessories", "apparel_footwear"
+      ]);
+      const CONSUMABLE_PRODUCT_FORMS = new Set([
+        "powder", "tablets", "capsules", "softgels", "gel", "bars", "liquid", "sticks", "food_or_meal"
+      ]);
+
+      const isConsumable = CONSUMABLE_COMPONENT_CLASSES.has(compClass)
+        || (!compClass && ["food", "daily", "recovery"].includes(goalGroup));
+      const isBlocked = NON_CONSUMABLE_COMPONENT_CLASSES.has(compClass)
+        || (compClass && !CONSUMABLE_COMPONENT_CLASSES.has(compClass))
+        || goalGroup === "gear";
+
+      if (!("product_form" in answered) && isConsumable && !isBlocked) {{
+        const allowed = (CONSTANTS.PRODUCT_FORMS_BY_GOAL[goalGroup] || []).filter(f => CONSUMABLE_PRODUCT_FORMS.has(f));
         const vals = valuesIn(remaining, "product_form", allowed);
         if (vals.length > 1 && wouldSplit(remaining, "product_form", allowed)) {{
           add("product_form", vals, "question_product_form");

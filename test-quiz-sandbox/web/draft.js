@@ -9,7 +9,7 @@ const copy = {
     goalTitle: "Для какой ситуации вы ищете набор?",
     goalHint: "Сначала выберите задачу. Следующие вопросы будут зависеть от неё и от ответов.",
     chooseOne: "Выберите один вариант",
-    any: "Неважно",
+    any: "Не имеет значения",
     stepFirst: "Вопрос 1",
     stepCount: "Вопрос {current} из {total}",
     hintActivity: "Если нужного вида нет в списке, выберите «Другая активность»: квиз не подменит её ближайшей категорией.",
@@ -145,7 +145,7 @@ const copy = {
     goalTitle: "Для якої ситуації ви шукаєте набір?",
     goalHint: "Спочатку виберіть задачу. Наступні питання залежатимуть від неї та ваших відповідей.",
     chooseOne: "Виберіть один варіант",
-    any: "Неважливо",
+    any: "Не має значення",
     stepFirst: "Питання 1",
     stepCount: "Питання {current} з {total}",
     hintActivity: "Якщо потрібного виду немає у списку, виберіть «Інша активність»: квіз не замінить її найближчою категорією.",
@@ -358,7 +358,7 @@ function renderSingleOptions(question, options, selectedValue, legend) {
   byId("question-legend").textContent = legend;
   byId("question-fieldset").hidden = false;
   byId("question-number-wrap").hidden = true;
-  const values = question.id === "goal" ? options : ["any", ...options];
+  const values = question.id === "goal" ? options : [...options.filter(o => o !== "any"), "any"];
   values.forEach((value) => {
     const label = element("label", "goal-option");
     const input = document.createElement("input");

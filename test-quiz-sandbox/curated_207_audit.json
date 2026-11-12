@@ -1926,10 +1926,12 @@
     "price_uah": 1500,
     "composition": "абонемент на 3 месяца; RyabChick сушёные ломтики курицы, soy sauce, 30 g x16",
     "goals": [
-      "food"
+      "food",
+      "outdoors"
     ],
     "families": [
-      "quick_energy_snack"
+      "quick_energy_snack",
+      "outdoor_travel_hiking"
     ],
     "classes": [
       "protein_carbohydrate_food"
@@ -1937,12 +1939,16 @@
     "timings": [
       "daily_use",
       "before_or_after_training",
-      "during_day_tone"
+      "during_day_tone",
+      "during_training"
     ],
     "activities": [
       "fitness_gym",
       "hiking",
-      "general_lifestyle"
+      "general_lifestyle",
+      "walking",
+      "cycling",
+      "running"
     ],
     "rationale": "Високобілковий натуральний снек (сушене куряче філе в соєвому соусі): містить понад 60% легкозасвоюваного білка без зайвих вуглеводів для швидкого перекусу на роботі, в поході або після тренування."
   },
@@ -1953,10 +1959,12 @@
     "price_uah": 1500,
     "composition": "RyabChick сушёные ломтики курицы, медово-горчичный вкус, 30 g x16; карточка указывает, что в набор входит абонемент Race Expert Club на 3 месяца",
     "goals": [
-      "food"
+      "food",
+      "outdoors"
     ],
     "families": [
-      "quick_energy_snack"
+      "quick_energy_snack",
+      "outdoor_travel_hiking"
     ],
     "classes": [
       "protein_carbohydrate_food"
@@ -1964,12 +1972,16 @@
     "timings": [
       "daily_use",
       "before_or_after_training",
-      "during_day_tone"
+      "during_day_tone",
+      "during_training"
     ],
     "activities": [
       "fitness_gym",
       "hiking",
-      "general_lifestyle"
+      "general_lifestyle",
+      "walking",
+      "cycling",
+      "running"
     ],
     "rationale": "Чистий тваринний протеїн у зручному форматі джерків: відновлює амінокислотний пул м'язів, тамує голод під час тривалих поїздок або тренувань, підходить для низьковуглеводних дієт."
   },
@@ -2073,15 +2085,19 @@
       "quick_energy_snack"
     ],
     "classes": [
+      "dehydrated_meal",
       "protein_carbohydrate_food"
     ],
     "timings": [
       "daily_use",
-      "during_day_tone"
+      "during_day_tone",
+      "during_training"
     ],
     "activities": [
       "hiking",
-      "walking"
+      "walking",
+      "cycling",
+      "general_lifestyle"
     ],
     "rationale": "Сублімований раціон гарячого харчування швидкого приготування (страви ЇDLO від 300 до 400 ккал на порцію) та карпатський чай для відновлення глікогену та сил під час трекінгу, експедицій і кемпінгу."
   },
@@ -2893,15 +2909,19 @@
       "outdoor_travel_hiking"
     ],
     "classes": [
+      "dehydrated_meal",
       "protein_carbohydrate_food"
     ],
     "timings": [
       "during_day_tone",
-      "daily_use"
+      "daily_use",
+      "during_training"
     ],
     "activities": [
       "hiking",
-      "general_lifestyle"
+      "general_lifestyle",
+      "walking",
+      "cycling"
     ],
     "rationale": "Повноцінний туристичний раціон сублімованих гарячих страв ЇDLO (8 повнорозмірних порцій: макарони по-флотськи, гаспачо з індичкою, картопля, горохове пюре) зі збалансованими складними вуглеводами та білками для автономного польового харчування в походах."
   },
@@ -4767,13 +4787,16 @@
     "timings": [
       "during_day_tone",
       "before_or_after_training",
-      "daily_use"
+      "daily_use",
+      "during_training"
     ],
     "activities": [
       "hiking",
       "walking",
       "fitness_gym",
-      "general_lifestyle"
+      "general_lifestyle",
+      "cycling",
+      "running"
     ],
     "rationale": "16 порцій (480 г) натурального сушеного філе курки з перцем та паприкою. Концентроване джерело легкозасвоюваного тваринного білка з мінімальним вмістом жирів для тривалої ситості, підтримки м'язів під час тренувань, тривалих походів або подорожей."
   },
@@ -4797,13 +4820,16 @@
     "timings": [
       "during_day_tone",
       "before_or_after_training",
-      "daily_use"
+      "daily_use",
+      "during_training"
     ],
     "activities": [
       "hiking",
       "walking",
       "fitness_gym",
-      "general_lifestyle"
+      "general_lifestyle",
+      "cycling",
+      "running"
     ],
     "rationale": "Портативні м'ясні снеки з добірного курячого філе та витриманого сиру Гауда. Ситний високобілковий перекус, що не потребує зберігання в холодильнику, ідеальний для відновлення сил на хайкінгу, силових тренуваннях чи у дорозі."
   },
@@ -4827,7 +4853,8 @@
     "timings": [
       "during_day_tone",
       "before_or_after_training",
-      "daily_use"
+      "daily_use",
+      "during_training"
     ],
     "activities": [
       "hiking",
@@ -4857,7 +4884,8 @@
     "timings": [
       "during_day_tone",
       "before_or_after_training",
-      "daily_use"
+      "daily_use",
+      "during_training"
     ],
     "activities": [
       "hiking",
@@ -4887,7 +4915,8 @@
     "timings": [
       "during_day_tone",
       "before_or_after_training",
-      "daily_use"
+      "daily_use",
+      "during_training"
     ],
     "activities": [
       "hiking",
@@ -4917,7 +4946,8 @@
     "timings": [
       "during_day_tone",
       "before_or_after_training",
-      "daily_use"
+      "daily_use",
+      "during_training"
     ],
     "activities": [
       "hiking",
@@ -4947,7 +4977,8 @@
     "timings": [
       "during_day_tone",
       "before_or_after_training",
-      "daily_use"
+      "daily_use",
+      "during_training"
     ],
     "activities": [
       "hiking",
@@ -4977,7 +5008,8 @@
     "timings": [
       "during_day_tone",
       "before_or_after_training",
-      "daily_use"
+      "daily_use",
+      "during_training"
     ],
     "activities": [
       "hiking",
@@ -5007,7 +5039,8 @@
     "timings": [
       "during_day_tone",
       "before_or_after_training",
-      "daily_use"
+      "daily_use",
+      "during_training"
     ],
     "activities": [
       "hiking",
@@ -5037,7 +5070,8 @@
     "timings": [
       "during_day_tone",
       "before_or_after_training",
-      "daily_use"
+      "daily_use",
+      "during_training"
     ],
     "activities": [
       "hiking",
@@ -5062,17 +5096,20 @@
       "quick_energy_snack"
     ],
     "classes": [
+      "dehydrated_meal",
       "protein_carbohydrate_food"
     ],
     "timings": [
       "during_day_tone",
       "daily_use",
-      "before_or_after_training"
+      "before_or_after_training",
+      "during_training"
     ],
     "activities": [
       "hiking",
       "walking",
-      "general_lifestyle"
+      "general_lifestyle",
+      "cycling"
     ],
     "rationale": "Повноцінний автономний польовий раціон для кількаденного трекінгу: сублімовані гарячі страви ЇDLO (полента, суп, кускус) забезпечують складні вуглеводи, джеркі з птиці дають чистий білок, а протеїнове печиво та снек із сиром гарантують швидке відновлення енергії на маршруті."
   },
@@ -5484,7 +5521,8 @@
     "timings": [
       "during_day_tone",
       "before_or_after_training",
-      "daily_use"
+      "daily_use",
+      "during_training"
     ],
     "activities": [
       "hiking",
@@ -5514,7 +5552,8 @@
     "timings": [
       "during_day_tone",
       "before_or_after_training",
-      "daily_use"
+      "daily_use",
+      "during_training"
     ],
     "activities": [
       "hiking",

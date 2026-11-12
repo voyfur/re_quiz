@@ -9,33 +9,29 @@
 | Metric | Count | Percentage |
 |---|---|---|
 | **Total Test Scenarios** | **100** | **100.0%** |
-| **PASS (Solid Hiker / Camper Experience)** | **39** | **39.0%** |
-| **WARN (Suboptimal / Diluted / Near-Miss / Bias / Omission)** | **43** | **43.0%** |
-| **FAIL (Critical Breakdown / 0 Results / Sizing / Crashes)** | **18** | **18.0%** |
+| **PASS (Solid Hiker / Camper Experience)** | **72** | **72.0%** |
+| **WARN (Suboptimal / Diluted / Near-Miss / Bias / Omission)** | **22** | **22.0%** |
+| **FAIL (Critical Breakdown / 0 Results / Sizing / Crashes)** | **6** | **6.0%** |
 
 ```
-Verdict Distribution: [###################---------------------!!!!!!!!!]
-  PASS: 39 | WARN: 43 | FAIL: 18
+Verdict Distribution: [####################################-----------!!!]
+  PASS: 72 | WARN: 22 | FAIL: 6
 ```
 
 ## 2. Flaw Taxonomy & Defect Distribution
 | Defect Code | Description | Count | Severity |
 |---|---|---|---|
-| `NONE` | Ідеальна відповідність запиту туриста, точний підбір спорядження чи харчування | **39** | PASS |
-| `FORCED_CLUB_MEMBERSHIP_DILUTION` | Більшість наборів розбавлені платним абонементом клубу замість чистих товарів | **28** | WARN |
+| `NONE` | Ідеальна відповідність запиту туриста, точний підбір спорядження чи харчування | **72** | PASS |
 | `BUDGET_FLOOR_OR_NEAR_MISS` | Бюджет покупця (800–1000 ₴) нижчий за мінімальний у каталозі (1058 ₴ для шкарпеток, 1249 ₴ для їжі) | **9** | WARN |
-| `DECEPTIVE_EXPLANATION` | Неправдиві маркетингові твердження: 'без сторонніх речей' при наявності снодійних пігулок або медалей | **5** | CRITICAL FAIL |
+| `FORCED_CLUB_MEMBERSHIP_DILUTION` | Більшість наборів розбавлені платним абонементом клубу замість чистих товарів | **6** | WARN |
 | `SIZING_UNAVAILABLE` | Відсутність у каталозі великих (46–48) або маленьких (34) розмірів термошкарпеток | **4** | CRITICAL FAIL |
-| `CYCLING_TAXONOMY_DEAD_END` | Критичний глухий кут: вибір активності 'cycling' дає 0 результатів, жоден набір не підтримує велопоходи | **3** | CRITICAL FAIL |
-| `SCHEMA_CRASH_UNSANITIZED_INPUT` | Крах двигуна на рядковому діапазоні розміру взуття (наприклад, '40-42') | **2** | CRITICAL FAIL |
-| `SUBOPTIMAL_RECOMMENDATION` | Субоптимальний вибір товару (наприклад, набори з медалями для літнього трекінгу) | **2** | WARN |
-| `SCHEMA_TAXONOMY_CRASH` | Таксономічний крах: контекст 'evening_or_bedtime' відсутній у схемі для outdoors | **2** | CRITICAL FAIL |
-| `DEHYDRATED_FOOD_SELECTION_FAILURE` | Критичний глухий кут: вибір 'dehydrated_meal' дає 0 результатів через невідповідність класу в базі | **1** | CRITICAL FAIL |
+| `MULTI_ITEM_STACK_INCOMPLETE` | Неможливість формування повного стеку (гаряча їжа + джеркі + термошкарпетки) | **3** | WARN |
 | `TAXONOMY_TAGGING_OMISSION` | Помилка тегів: у ЇDLO 2.0 порожній список product_forms, через що фільтр 'food_or_meal' виключає їжу | **1** | CRITICAL FAIL |
 | `DEFAULT_SIZE_BIAS` | При неуточненому розмірі система автоматично нав'язує найбільший розмір 43–45 | **1** | WARN |
-| `MULTI_ITEM_STACK_INCOMPLETE` | Неможливість формування повного стеку (гаряча їжа + джеркі + термошкарпетки) | **1** | WARN |
+| `SUBOPTIMAL_RECOMMENDATION` | Субоптимальний вибір товару (наприклад, набори з медалями для літнього трекінгу) | **1** | WARN |
 | `POOL_ITEM_IN_OUTDOORS` | Невідповідність призначенню: гель для пловців TRISWIM від хлору у наборі для походів | **1** | WARN |
 | `ZERO_RESULTS_UNEXPECTED` | Порожня видача (0 результатів) для валідного туристичного запиту | **1** | WARN |
+| `SIZING_MISMATCH` | Невідповідність розміру шкарпеток у комбінованих наборах (фіксовані 40–44 замість 36/37/46) | **1** | CRITICAL FAIL |
 
 
 ## 3. Critical Athletic & Outdoor Logic Findings
@@ -104,46 +100,46 @@ Verdict Distribution: [###################---------------------!!!!!!!!!]
 ## 4. Comprehensive Test Scenario Log (100 Cases)
 | # | Scenario Name | Budget | Size | Class | Activity | Verdict | Main Flaw / Evaluation Notes |
 |---|---|---|---|---|---|---|---|
-| 001 | Expedition: Dehydrated meal selection  | 1500 ₴ | any | dehydrated_meal | any | **FAIL** | КРИТИЧНИЙ БАГ: Вибір 'Сублімована туристична їжа' (dehydrated_mea |
+| 001 | Expedition: Dehydrated meal selection  | 1500 ₴ | any | dehydrated_meal | any | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
 | 002 | Expedition: ЇDLO 2.0 pure food pack wi | 1500 ₴ | any | protein_carbohydrate_food | any | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
-| 003 | Expedition: ЇDLO Club pack with carpat | 1500 ₴ | any | protein_carbohydrate_food | any | **WARN** | Нав'язування клубу: всі запропоновані набори містять платний 3-мі |
-| 004 | Expedition: ЇDLO 3.0 hot meals + jerky | 1500 ₴ | any | protein_carbohydrate_food | hiking | **WARN** | Нав'язування клубу: всі запропоновані набори містять платний 3-мі |
-| 005 | Expedition: Dehydrated meals for cold  | 1500 ₴ | any | protein_carbohydrate_food | any | **WARN** | Нав'язування клубу: всі запропоновані набори містять платний 3-мі |
+| 003 | Expedition: ЇDLO Club pack with carpat | 1500 ₴ | any | protein_carbohydrate_food | any | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
+| 004 | Expedition: ЇDLO 3.0 hot meals + jerky | 1500 ₴ | any | protein_carbohydrate_food | hiking | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
+| 005 | Expedition: Dehydrated meals for cold  | 1500 ₴ | any | protein_carbohydrate_food | any | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
 | 006 | Expedition: Dehydrated food with produ | 1500 ₴ | any | protein_carbohydrate_food | any | **FAIL** | ПОМИЛКА ТЕГУВАННЯ: Фільтр product_form='food_or_meal' виключив ЇD |
-| 007 | Expedition: Weekend trekking meal pack | 1500 ₴ | any | protein_carbohydrate_food | hiking | **WARN** | Нав'язування клубу: всі запропоновані набори містять платний 3-мі |
+| 007 | Expedition: Weekend trekking meal pack | 1500 ₴ | any | protein_carbohydrate_food | hiking | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
 | 008 | Expedition: Freeze-dried fruit dessert | 1400 ₴ | any | protein_carbohydrate_food | hiking | **WARN** | Нав'язування клубу: всі запропоновані набори містять платний 3-мі |
 | 009 | Expedition: Freeze-dried snacks & choc | 1300 ₴ | any | protein_carbohydrate_food | any | **WARN** | Нав'язування клубу: всі запропоновані набори містять платний 3-мі |
 | 010 | Expedition: Dehydrated rations with bu | 1200 ₴ | any | protein_carbohydrate_food | any | **WARN** | Мінімальний набір харчування коштує 1249 ₴. При бюджеті 1200 ₴ то |
 | 011 | Expedition: Dehydrated meals for Carpa | 1500 ₴ | any | any | hiking | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
-| 012 | Expedition: Dehydrated dinner with veg | 1500 ₴ | any | protein_carbohydrate_food | hiking | **WARN** | Нав'язування клубу: всі запропоновані набори містять платний 3-мі |
-| 013 | Expedition: High-calorie mountaineerin | 1600 ₴ | any | protein_carbohydrate_food | hiking | **WARN** | Нав'язування клубу: всі запропоновані набори містять платний 3-мі |
-| 014 | Expedition: Dehydrated food selection  | 1500 ₴ | any | protein_carbohydrate_food | hiking | **WARN** | Нав'язування клубу: всі запропоновані набори містять платний 3-мі |
-| 015 | Expedition: Dehydrated food selection  | 1500 ₴ | any | protein_carbohydrate_food | hiking | **WARN** | Нав'язування клубу: всі запропоновані набори містять платний 3-мі |
+| 012 | Expedition: Dehydrated dinner with veg | 1500 ₴ | any | protein_carbohydrate_food | hiking | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
+| 013 | Expedition: High-calorie mountaineerin | 1600 ₴ | any | protein_carbohydrate_food | hiking | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
+| 014 | Expedition: Dehydrated food selection  | 1500 ₴ | any | protein_carbohydrate_food | hiking | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
+| 015 | Expedition: Dehydrated food selection  | 1500 ₴ | any | protein_carbohydrate_food | hiking | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
 | 016 | Expedition: Dehydrated meals with timi | 1500 ₴ | any | protein_carbohydrate_food | any | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
-| 017 | Expedition: Dehydrated food without gy | 1500 ₴ | any | protein_carbohydrate_food | any | **WARN** | Нав'язування клубу: всі запропоновані набори містять платний 3-мі |
-| 018 | Expedition: Dehydrated food with timin | 1500 ₴ | any | protein_carbohydrate_food | any | **WARN** | Нав'язування клубу: всі запропоновані набори містять платний 3-мі |
+| 017 | Expedition: Dehydrated food without gy | 1500 ₴ | any | protein_carbohydrate_food | any | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
+| 018 | Expedition: Dehydrated food with timin | 1500 ₴ | any | protein_carbohydrate_food | any | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
 | 019 | Expedition: Lightweight freeze-dried r | 1500 ₴ | any | protein_carbohydrate_food | hiking | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
 | 020 | Expedition: Dehydrated food request wi | 1000 ₴ | any | protein_carbohydrate_food | any | **WARN** | Бюджет 1000 ₴ нижчий за мінімальний у категорії (1058 ₴). Запропо |
 | 021 | Jerky: Meat jerky 8-pack without club  | 1500 ₴ | any | protein_carbohydrate_food | any | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
 | 022 | Jerky: Meat jerky 8-pack Asian mix | 1500 ₴ | any | protein_carbohydrate_food | any | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
 | 023 | Jerky: Meat jerky 8-pack Chicken and T | 1500 ₴ | any | protein_carbohydrate_food | any | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
 | 024 | Jerky: Meat jerky 8-pack Citrus & Asia | 1500 ₴ | any | protein_carbohydrate_food | any | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
-| 025 | Jerky: Meat jerky tasting set with clu | 1500 ₴ | any | protein_carbohydrate_food | hiking | **WARN** | Нав'язування клубу: всі запропоновані набори містять платний 3-мі |
-| 026 | Jerky: Meat jerky pork set with club m | 1500 ₴ | any | protein_carbohydrate_food | any | **WARN** | Нав'язування клубу: всі запропоновані набори містять платний 3-мі |
-| 027 | Jerky: Meat jerky chicken set with clu | 1500 ₴ | any | protein_carbohydrate_food | any | **WARN** | Нав'язування клубу: всі запропоновані набори містять платний 3-мі |
-| 028 | Jerky: Meat jerky chicken & pork combo | 1500 ₴ | any | protein_carbohydrate_food | any | **WARN** | Нав'язування клубу: всі запропоновані набори містять платний 3-мі |
-| 029 | Jerky: Meat jerky sweet and savory spi | 1500 ₴ | any | protein_carbohydrate_food | any | **WARN** | Нав'язування клубу: всі запропоновані набори містять платний 3-мі |
-| 030 | Jerky: Meat jerky fruit & spicy flavor | 1500 ₴ | any | protein_carbohydrate_food | any | **WARN** | Нав'язування клубу: всі запропоновані набори містять платний 3-мі |
-| 031 | Jerky: Meat jerky Gouda cheese snack p | 1500 ₴ | any | protein_carbohydrate_food | any | **WARN** | Нав'язування клубу: всі запропоновані набори містять платний 3-мі |
-| 032 | Jerky: Meat jerky Pepper & Paprika sna | 1500 ₴ | any | protein_carbohydrate_food | any | **WARN** | Нав'язування клубу: всі запропоновані набори містять платний 3-мі |
-| 033 | Jerky: Meat jerky for road travel and  | 1500 ₴ | any | protein_carbohydrate_food | any | **WARN** | Нав'язування клубу: всі запропоновані набори містять платний 3-мі |
-| 034 | Jerky: High-protein meat bites for end | 1500 ₴ | any | protein_carbohydrate_food | hiking | **WARN** | Нав'язування клубу: всі запропоновані набори містять платний 3-мі |
+| 025 | Jerky: Meat jerky tasting set with clu | 1500 ₴ | any | protein_carbohydrate_food | hiking | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
+| 026 | Jerky: Meat jerky pork set with club m | 1500 ₴ | any | protein_carbohydrate_food | any | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
+| 027 | Jerky: Meat jerky chicken set with clu | 1500 ₴ | any | protein_carbohydrate_food | any | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
+| 028 | Jerky: Meat jerky chicken & pork combo | 1500 ₴ | any | protein_carbohydrate_food | any | **WARN** | Неможливість формування стеку: двигун рекомендує окремо лише їжу  |
+| 029 | Jerky: Meat jerky sweet and savory spi | 1500 ₴ | any | protein_carbohydrate_food | any | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
+| 030 | Jerky: Meat jerky fruit & spicy flavor | 1500 ₴ | any | protein_carbohydrate_food | any | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
+| 031 | Jerky: Meat jerky Gouda cheese snack p | 1500 ₴ | any | protein_carbohydrate_food | any | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
+| 032 | Jerky: Meat jerky Pepper & Paprika sna | 1500 ₴ | any | protein_carbohydrate_food | any | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
+| 033 | Jerky: Meat jerky for road travel and  | 1500 ₴ | any | protein_carbohydrate_food | any | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
+| 034 | Jerky: High-protein meat bites for end | 1500 ₴ | any | protein_carbohydrate_food | hiking | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
 | 035 | Jerky: Pure jerky snacks, Russian loca | 1500 ₴ | any | protein_carbohydrate_food | any | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
-| 036 | Jerky: Meat jerky with timing 'daily_u | 1500 ₴ | any | protein_carbohydrate_food | any | **WARN** | Нав'язування клубу: всі запропоновані набори містять платний 3-мі |
+| 036 | Jerky: Meat jerky with timing 'daily_u | 1500 ₴ | any | protein_carbohydrate_food | any | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
 | 037 | Jerky: Meat snacks for walking in natu | 1500 ₴ | any | protein_carbohydrate_food | walking | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
 | 038 | Jerky: Meat snacks with budget 1200 UA | 1200 ₴ | any | protein_carbohydrate_food | any | **WARN** | Мінімальний набір харчування коштує 1249 ₴. При бюджеті 1200 ₴ то |
 | 039 | Jerky: Meat snacks with budget 800 UAH | 800 ₴ | any | protein_carbohydrate_food | any | **WARN** | Бюджет 800 ₴ нижчий за мінімальний у категорії (1058 ₴). Запропон |
-| 040 | Jerky: Meat snacks in warm summer trek | 1500 ₴ | any | protein_carbohydrate_food | any | **WARN** | Нав'язування клубу: всі запропоновані набори містять платний 3-мі |
+| 040 | Jerky: Meat snacks in warm summer trek | 1500 ₴ | any | protein_carbohydrate_food | any | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
 | 041 | Thermal Socks: Small size 35–37 (shoe  | 1200 ₴ | 36 | apparel_footwear | hiking | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
 | 042 | Thermal Socks: Small size 35–37 (shoe  | 1200 ₴ | 37 | apparel_footwear | hiking | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
 | 043 | Thermal Socks: Medium size 38–40 (shoe | 1200 ₴ | 39 | apparel_footwear | hiking | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
@@ -156,8 +152,8 @@ Verdict Distribution: [###################---------------------!!!!!!!!!]
 | 050 | Thermal Socks: Out-of-bounds large siz | 1200 ₴ | 46 | apparel_footwear | hiking | **FAIL** | Каталог не містить термошкарпеток розміру 46 (наявні лише 35–45). |
 | 051 | Thermal Socks: Out-of-bounds large siz | 1200 ₴ | 47 | apparel_footwear | hiking | **FAIL** | Каталог не містить термошкарпеток розміру 47 (наявні лише 35–45). |
 | 052 | Thermal Socks: Out-of-bounds petite si | 1200 ₴ | 34 | apparel_footwear | hiking | **FAIL** | Каталог не містить термошкарпеток розміру 34 (наявні лише 35–45). |
-| 053 | Thermal Socks: String range input '40- | 1200 ₴ | 40-42 | apparel_footwear | hiking | **FAIL** | Крах двигуна через несанітований рядковий розмір взуття: DraftMat |
-| 054 | Thermal Socks: String range input '43- | 1200 ₴ | 43-45 | apparel_footwear | hiking | **FAIL** | Крах двигуна через несанітований рядковий розмір взуття: DraftMat |
+| 053 | Thermal Socks: String range input '40- | 1200 ₴ | 40-42 | apparel_footwear | hiking | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
+| 054 | Thermal Socks: String range input '43- | 1200 ₴ | 43-45 | apparel_footwear | hiking | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
 | 055 | Thermal Socks: Sizing unspecified (Def | 1200 ₴ | any | apparel_footwear | hiking | **WARN** | Зміщення за замовчуванням: за відсутності розміру взуття двигун а |
 | 056 | Thermal Socks: Winter cold season expl | 1200 ₴ | 41 | apparel_footwear | any | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
 | 057 | Thermal Socks: Summer warm season appa | 1500 ₴ | 41 | apparel_footwear | any | **WARN** | Відсутність літніх шкарпеток: на запит літнього екіпірування запр |
@@ -165,16 +161,16 @@ Verdict Distribution: [###################---------------------!!!!!!!!!]
 | 059 | Thermal Socks: Budget 1000 UAH (Close  | 1000 ₴ | 39 | apparel_footwear | any | **WARN** | Бюджет 1000 ₴ нижчий за мінімальний у категорії (1058 ₴). Запропо |
 | 060 | Thermal Socks: Budget 1100 UAH (Comfor | 1100 ₴ | 41 | apparel_footwear | any | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
 | 061 | Multi-Day Stack: Meals + Jerky + Therm | 2500 ₴ | any | any | hiking | **WARN** | Неможливість формування стеку: двигун рекомендує окремо лише їжу  |
-| 062 | Multi-Day Stack: ЇDLO 3.0 combo ration | 1500 ₴ | any | protein_carbohydrate_food | hiking | **WARN** | Нав'язування клубу: всі запропоновані набори містять платний 3-мі |
+| 062 | Multi-Day Stack: ЇDLO 3.0 combo ration | 1500 ₴ | any | protein_carbohydrate_food | hiking | **WARN** | Неможливість формування стеку: двигун рекомендує окремо лише їжу  |
 | 063 | Mountain Ultra: Ultra Trail Marathon E | 2000 ₴ | any | hydration_items | hiking | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
 | 064 | Mountain Ultra: Trail marathon hydrati | 2000 ₴ | any | hydration_items | any | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
 | 065 | Mountain Ultra: Hydration pack under 1 | 1500 ₴ | any | hydration_items | any | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
-| 066 | Field Hygiene: Road & Camp hygiene kit | 1500 ₴ | any | sports_accessories | any | **FAIL** | ОБМАН ПОКУПЦЯ: Двигун стверджує 'у наборі саме Спортивні аксесуар |
-| 067 | Field Night: Camp sleep & relaxation k | 1500 ₴ | any | sports_accessories | any | **FAIL** | Таксономічний збій схеми: use_timing='evening_or_bedtime' заборон |
-| 068 | Expedition Gift: 'Подарунок у похід' ( | 1500 ₴ | any | sports_accessories | any | **FAIL** | ОБМАН ПОКУПЦЯ: Двигун стверджує 'у наборі саме Спортивні аксесуар |
-| 069 | Expedition Gift: 'Подарунок у дорогу'  | 1500 ₴ | any | sports_accessories | any | **FAIL** | ОБМАН ПОКУПЦЯ: Двигун стверджує 'у наборі саме Спортивні аксесуар |
-| 070 | Expedition Gift: 'Подарунок військовом | 1500 ₴ | any | sports_accessories | any | **WARN** | Сумнівне твердження: набір містить пам'ятні військові медалі та ш |
-| 071 | Expedition Gift: 'Подарунок мандрівник | 1500 ₴ | any | sports_accessories | any | **FAIL** | ОБМАН ПОКУПЦЯ: Двигун стверджує 'у наборі саме Спортивні аксесуар |
+| 066 | Field Hygiene: Road & Camp hygiene kit | 1500 ₴ | any | sports_accessories | any | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
+| 067 | Field Night: Camp sleep & relaxation k | 1500 ₴ | any | sports_accessories | any | **WARN** | Нав'язування клубу: всі запропоновані набори містять платний 3-мі |
+| 068 | Expedition Gift: 'Подарунок у похід' ( | 1500 ₴ | any | sports_accessories | any | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
+| 069 | Expedition Gift: 'Подарунок у дорогу'  | 1500 ₴ | any | sports_accessories | any | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
+| 070 | Expedition Gift: 'Подарунок військовом | 1500 ₴ | any | sports_accessories | any | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
+| 071 | Expedition Gift: 'Подарунок мандрівник | 1500 ₴ | any | sports_accessories | any | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
 | 072 | Backcountry Trek: Multi-day mountain g | 2500 ₴ | any | any | hiking | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
 | 073 | Bivouac: Alpine bivouac night kit unde | 1500 ₴ | any | any | hiking | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
 | 074 | Expedition Gear: Buff and accessories  | 1500 ₴ | any | sports_accessories | any | **WARN** | Невідповідність призначенню: набір 'Дорожня гігієна' містить TRIS |
@@ -191,17 +187,17 @@ Verdict Distribution: [###################---------------------!!!!!!!!!]
 | 085 | Budget: Expedition 3000 UAH limit (Cat | 3000 ₴ | any | any | any | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
 | 086 | Activity: Mountain trekking / hiking ( | 1500 ₴ | any | any | hiking | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
 | 087 | Activity: Nature walking / Nordic walk | 1500 ₴ | any | any | walking | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
-| 088 | Activity: Bikepacking / cycle touring  | 1500 ₴ | any | any | cycling | **FAIL** | КРИТИЧНИЙ БАГ: Вибір активності 'cycling' (велопоходи, байкпакінг |
-| 089 | Activity: Gravel bike camping ('cyclin | 1500 ₴ | any | any | cycling | **FAIL** | КРИТИЧНИЙ БАГ: Вибір активності 'cycling' (велопоходи, байкпакінг |
-| 090 | Activity: Cycling multi-day tour needi | 1500 ₴ | any | protein_carbohydrate_food | cycling | **FAIL** | КРИТИЧНИЙ БАГ: Вибір активності 'cycling' (велопоходи, байкпакінг |
-| 091 | Activity: Mountaineering / alpine clim | 1500 ₴ | any | protein_carbohydrate_food | hiking | **WARN** | Нав'язування клубу: всі запропоновані набори містять платний 3-мі |
+| 088 | Activity: Bikepacking / cycle touring  | 1500 ₴ | any | any | cycling | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
+| 089 | Activity: Gravel bike camping ('cyclin | 1500 ₴ | any | any | cycling | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
+| 090 | Activity: Cycling multi-day tour needi | 1500 ₴ | any | protein_carbohydrate_food | cycling | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
+| 091 | Activity: Mountaineering / alpine clim | 1500 ₴ | any | protein_carbohydrate_food | hiking | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
 | 092 | Activity: Nordic walking with warm the | 1200 ₴ | 39 | apparel_footwear | walking | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
 | 093 | Activity: Day-walk park enthusiast nee | 1500 ₴ | any | protein_carbohydrate_food | walking | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
 | 094 | Activity: Walking enthusiast asking fo | 2000 ₴ | any | hydration_items | walking | **WARN** | Набір race-expert-211 підтримує тільки running/hiking, тому для п |
-| 095 | Explanation: Accessories deceptive exp | 1500 ₴ | any | sports_accessories | any | **FAIL** | ОБМАН ПОКУПЦЯ: Двигун стверджує 'у наборі саме Спортивні аксесуар |
-| 096 | Sizing Leak: Summer outdoor apparel fo | 1500 ₴ | 37 | apparel_footwear | any | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
+| 095 | Explanation: Accessories deceptive exp | 1500 ₴ | any | sports_accessories | any | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
+| 096 | Sizing Leak: Summer outdoor apparel fo | 1500 ₴ | 37 | apparel_footwear | any | **FAIL** | Невідповідність розміру: користувач вказав розмір ноги 37, але за |
 | 097 | Sizing Leak: Outdoor apparel for male  | 1500 ₴ | 46 | apparel_footwear | any | **FAIL** | Каталог не містить термошкарпеток розміру 46 (наявні лише 35–45). |
-| 098 | Locale Tone: Outdoor travel in Russian | 1500 ₴ | any | sports_accessories | any | **FAIL** | Таксономічний збій схеми: use_timing='evening_or_bedtime' заборон |
+| 098 | Locale Tone: Outdoor travel in Russian | 1500 ₴ | any | sports_accessories | any | **WARN** | Нав'язування клубу: всі запропоновані набори містять платний 3-мі |
 | 099 | Club Dilution: Hiker explicitly declin | 1500 ₴ | any | any | hiking | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
 | 100 | Clean Outdoors: Pure hiking food and s | 1500 ₴ | 41 | any | hiking | **PASS** | Ідеальна відповідність запиту туриста, точний підбір спорядження  |
 

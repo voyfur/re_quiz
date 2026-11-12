@@ -7831,6 +7831,7 @@
           "recorded_size_values": [],
           "club_membership_included_by_listed_name": true,
           "product_forms_visible_in_listed_names": [
+            "flasks",
             "sticks"
           ],
           "target_audience_claims": [
@@ -10470,7 +10471,6 @@
             "gate_policy": "Recorded sport/activity mentions are relevance signals, not proof of exclusive compatibility. A hard activity exclusion requires a separately reviewed source fact; tags alone are never a negative filter."
           },
           "component_classes_from_listed_names": [
-            "supplements_vitamins_minerals",
             "hydration_items"
           ],
           "archived_page_component_titles": [
@@ -14908,6 +14908,7 @@
           "club_membership_included_by_listed_name": false,
           "product_forms_visible_in_listed_names": [
             "apparel",
+            "flasks",
             "sticks"
           ],
           "target_audience_claims": [],
@@ -23321,6 +23322,7 @@
             "gate_policy": "Recorded sport/activity mentions are relevance signals, not proof of exclusive compatibility. A hard activity exclusion requires a separately reviewed source fact; tags alone are never a negative filter."
           },
           "component_classes_from_listed_names": [
+            "hydration_items",
             "supplements_vitamins_minerals"
           ],
           "archived_page_component_titles": [
@@ -23345,7 +23347,6 @@
           "recorded_size_values": [],
           "club_membership_included_by_listed_name": false,
           "product_forms_visible_in_listed_names": [
-            "bars",
             "capsules",
             "sticks",
             "tablets"
@@ -26616,7 +26617,6 @@
           },
           "component_classes_from_listed_names": [
             "creatine_preworkout",
-            "hydration_items",
             "sports_accessories",
             "supplements_vitamins_minerals"
           ],
@@ -28931,7 +28931,6 @@
           "club_membership_included_by_listed_name": false,
           "product_forms_visible_in_listed_names": [
             "capsules",
-            "sticks",
             "tablets"
           ],
           "target_audience_claims": [
@@ -34943,6 +34942,7 @@
             "gate_policy": "Recorded sport/activity mentions are relevance signals, not proof of exclusive compatibility. A hard activity exclusion requires a separately reviewed source fact; tags alone are never a negative filter."
           },
           "component_classes_from_listed_names": [
+            "hydration_items",
             "supplements_vitamins_minerals"
           ],
           "archived_page_component_titles": [
@@ -36750,11 +36750,9 @@
           ],
           "candidate_tiers": {
             "seller_positioned": [
-              "hydration_electrolytes",
               "strength_muscle_training"
             ],
             "component_based": [
-              "hydration_electrolytes",
               "strength_muscle_training"
             ],
             "supplemental_page_copy_needs_manual_review": [
@@ -37337,11 +37335,9 @@
           ],
           "candidate_tiers": {
             "seller_positioned": [
-              "hydration_electrolytes",
               "strength_muscle_training"
             ],
             "component_based": [
-              "hydration_electrolytes",
               "strength_muscle_training"
             ],
             "supplemental_page_copy_needs_manual_review": [],
@@ -41312,9 +41308,7 @@
           "size_sensitive_item_present": false,
           "recorded_size_values": [],
           "club_membership_included_by_listed_name": true,
-          "product_forms_visible_in_listed_names": [
-            "food_or_meal"
-          ],
+          "product_forms_visible_in_listed_names": [],
           "target_audience_claims": [],
           "use_contexts": [
             "daily_use"
@@ -45628,14 +45622,20 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
+              "cycling",
               "fitness_gym",
+              "general_lifestyle",
               "hiking",
-              "general_lifestyle"
+              "running",
+              "walking"
             ],
             "component_name_activity_groups": [
+              "cycling",
               "fitness_gym",
+              "general_lifestyle",
               "hiking",
-              "general_lifestyle"
+              "running",
+              "walking"
             ],
             "component_name_activity_cues": {},
             "catalog_tag_activity_groups": [
@@ -45679,9 +45679,10 @@
             "athletes"
           ],
           "use_contexts": [
-            "daily_use",
             "before_or_after_training",
-            "during_day_tone"
+            "daily_use",
+            "during_day_tone",
+            "during_training"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [],
@@ -45710,10 +45711,12 @@
           "candidate_tiers": {
             "seller_positioned": [
               "endurance_energy",
+              "outdoor_travel_hiking",
               "portable_food_snacks"
             ],
             "component_based": [
               "endurance_energy",
+              "outdoor_travel_hiking",
               "portable_food_snacks"
             ],
             "supplemental_page_copy_needs_manual_review": [
@@ -46239,14 +46242,20 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
+              "cycling",
               "fitness_gym",
+              "general_lifestyle",
               "hiking",
-              "general_lifestyle"
+              "running",
+              "walking"
             ],
             "component_name_activity_groups": [
+              "cycling",
               "fitness_gym",
+              "general_lifestyle",
               "hiking",
-              "general_lifestyle"
+              "running",
+              "walking"
             ],
             "component_name_activity_cues": {},
             "catalog_tag_activity_groups": [
@@ -46282,9 +46291,10 @@
             "athletes"
           ],
           "use_contexts": [
-            "daily_use",
             "before_or_after_training",
-            "during_day_tone"
+            "daily_use",
+            "during_day_tone",
+            "during_training"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [],
@@ -46310,10 +46320,12 @@
           "candidate_tiers": {
             "seller_positioned": [
               "endurance_energy",
+              "outdoor_travel_hiking",
               "portable_food_snacks"
             ],
             "component_based": [
               "endurance_energy",
+              "outdoor_travel_hiking",
               "portable_food_snacks"
             ],
             "supplemental_page_copy_needs_manual_review": [
@@ -48710,10 +48722,14 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
+              "cycling",
+              "general_lifestyle",
               "hiking",
               "walking"
             ],
             "component_name_activity_groups": [
+              "cycling",
+              "general_lifestyle",
               "hiking",
               "walking"
             ],
@@ -48757,8 +48773,10 @@
           ],
           "target_audience_claims": [],
           "use_contexts": [
+            "before_or_after_training",
             "daily_use",
-            "during_day_tone"
+            "during_day_tone",
+            "during_training"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [],
@@ -49844,9 +49862,7 @@
           "size_sensitive_item_present": false,
           "recorded_size_values": [],
           "club_membership_included_by_listed_name": false,
-          "product_forms_visible_in_listed_names": [
-            "gel"
-          ],
+          "product_forms_visible_in_listed_names": [],
           "target_audience_claims": [
             "athletes"
           ],
@@ -53665,6 +53681,7 @@
             "gate_policy": "Recorded sport/activity mentions are relevance signals, not proof of exclusive compatibility. A hard activity exclusion requires a separately reviewed source fact; tags alone are never a negative filter."
           },
           "component_classes_from_listed_names": [
+            "apparel_footwear",
             "protein_carbohydrate_food",
             "sports_accessories"
           ],
@@ -53688,7 +53705,12 @@
           "race_formats": [],
           "numeric_distance_km": [],
           "size_sensitive_item_present": true,
-          "recorded_size_values": [],
+          "recorded_size_values": [
+            {
+              "type": "shoe_or_sock_size",
+              "value": "40-42"
+            }
+          ],
           "club_membership_included_by_listed_name": false,
           "product_forms_visible_in_listed_names": [
             "apparel",
@@ -55956,8 +55978,7 @@
           ],
           "club_membership_included_by_listed_name": false,
           "product_forms_visible_in_listed_names": [
-            "apparel",
-            "food_or_meal"
+            "apparel"
           ],
           "target_audience_claims": [],
           "use_contexts": [
@@ -56697,9 +56718,7 @@
           "size_sensitive_item_present": false,
           "recorded_size_values": [],
           "club_membership_included_by_listed_name": false,
-          "product_forms_visible_in_listed_names": [
-            "food_or_meal"
-          ],
+          "product_forms_visible_in_listed_names": [],
           "target_audience_claims": [],
           "use_contexts": [
             "daily_use"
@@ -57370,9 +57389,7 @@
           "size_sensitive_item_present": false,
           "recorded_size_values": [],
           "club_membership_included_by_listed_name": false,
-          "product_forms_visible_in_listed_names": [
-            "food_or_meal"
-          ],
+          "product_forms_visible_in_listed_names": [],
           "target_audience_claims": [],
           "use_contexts": [
             "daily_use"
@@ -58192,8 +58209,7 @@
           ],
           "club_membership_included_by_listed_name": false,
           "product_forms_visible_in_listed_names": [
-            "apparel",
-            "food_or_meal"
+            "apparel"
           ],
           "target_audience_claims": [],
           "use_contexts": [
@@ -59715,8 +59731,7 @@
           ],
           "club_membership_included_by_listed_name": false,
           "product_forms_visible_in_listed_names": [
-            "apparel",
-            "food_or_meal"
+            "apparel"
           ],
           "target_audience_claims": [],
           "use_contexts": [
@@ -60457,9 +60472,7 @@
           "size_sensitive_item_present": false,
           "recorded_size_values": [],
           "club_membership_included_by_listed_name": false,
-          "product_forms_visible_in_listed_names": [
-            "food_or_meal"
-          ],
+          "product_forms_visible_in_listed_names": [],
           "target_audience_claims": [],
           "use_contexts": [
             "daily_use"
@@ -61159,8 +61172,7 @@
           ],
           "club_membership_included_by_listed_name": false,
           "product_forms_visible_in_listed_names": [
-            "apparel",
-            "food_or_meal"
+            "apparel"
           ],
           "target_audience_claims": [
             "beginners"
@@ -61950,8 +61962,7 @@
           ],
           "club_membership_included_by_listed_name": false,
           "product_forms_visible_in_listed_names": [
-            "apparel",
-            "food_or_meal"
+            "apparel"
           ],
           "target_audience_claims": [
             "beginners"
@@ -62710,8 +62721,7 @@
           ],
           "club_membership_included_by_listed_name": false,
           "product_forms_visible_in_listed_names": [
-            "apparel",
-            "food_or_meal"
+            "apparel"
           ],
           "target_audience_claims": [
             "athletes"
@@ -64109,9 +64119,7 @@
           "size_sensitive_item_present": false,
           "recorded_size_values": [],
           "club_membership_included_by_listed_name": false,
-          "product_forms_visible_in_listed_names": [
-            "food_or_meal"
-          ],
+          "product_forms_visible_in_listed_names": [],
           "target_audience_claims": [],
           "use_contexts": [
             "daily_use"
@@ -64737,9 +64745,7 @@
           "size_sensitive_item_present": false,
           "recorded_size_values": [],
           "club_membership_included_by_listed_name": false,
-          "product_forms_visible_in_listed_names": [
-            "food_or_meal"
-          ],
+          "product_forms_visible_in_listed_names": [],
           "target_audience_claims": [],
           "use_contexts": [
             "daily_use"
@@ -65358,9 +65364,7 @@
           "size_sensitive_item_present": false,
           "recorded_size_values": [],
           "club_membership_included_by_listed_name": false,
-          "product_forms_visible_in_listed_names": [
-            "food_or_meal"
-          ],
+          "product_forms_visible_in_listed_names": [],
           "target_audience_claims": [],
           "use_contexts": [
             "daily_use"
@@ -66021,9 +66025,7 @@
           "size_sensitive_item_present": false,
           "recorded_size_values": [],
           "club_membership_included_by_listed_name": false,
-          "product_forms_visible_in_listed_names": [
-            "food_or_meal"
-          ],
+          "product_forms_visible_in_listed_names": [],
           "target_audience_claims": [],
           "use_contexts": [
             "daily_use"
@@ -67068,9 +67070,7 @@
           "size_sensitive_item_present": false,
           "recorded_size_values": [],
           "club_membership_included_by_listed_name": false,
-          "product_forms_visible_in_listed_names": [
-            "food_or_meal"
-          ],
+          "product_forms_visible_in_listed_names": [],
           "target_audience_claims": [],
           "use_contexts": [
             "daily_use"
@@ -67679,12 +67679,16 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
+              "cycling",
               "general_lifestyle",
-              "hiking"
+              "hiking",
+              "walking"
             ],
             "component_name_activity_groups": [
+              "cycling",
               "general_lifestyle",
-              "hiking"
+              "hiking",
+              "walking"
             ],
             "component_name_activity_cues": {},
             "catalog_tag_activity_groups": [
@@ -67724,8 +67728,10 @@
           ],
           "target_audience_claims": [],
           "use_contexts": [
+            "before_or_after_training",
             "daily_use",
-            "during_day_tone"
+            "during_day_tone",
+            "during_training"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [],
@@ -68132,9 +68138,7 @@
           "size_sensitive_item_present": false,
           "recorded_size_values": [],
           "club_membership_included_by_listed_name": false,
-          "product_forms_visible_in_listed_names": [
-            "food_or_meal"
-          ],
+          "product_forms_visible_in_listed_names": [],
           "target_audience_claims": [],
           "use_contexts": [
             "daily_use"
@@ -68536,9 +68540,7 @@
           "size_sensitive_item_present": false,
           "recorded_size_values": [],
           "club_membership_included_by_listed_name": false,
-          "product_forms_visible_in_listed_names": [
-            "food_or_meal"
-          ],
+          "product_forms_visible_in_listed_names": [],
           "target_audience_claims": [],
           "use_contexts": [
             "daily_use"
@@ -73715,6 +73717,7 @@
           "recorded_size_values": [],
           "club_membership_included_by_listed_name": false,
           "product_forms_visible_in_listed_names": [
+            "flasks",
             "gel",
             "sticks"
           ],
@@ -91321,6 +91324,7 @@
           "recorded_size_values": [],
           "club_membership_included_by_listed_name": true,
           "product_forms_visible_in_listed_names": [
+            "powder",
             "sticks"
           ],
           "target_audience_claims": [],
@@ -100576,6 +100580,7 @@
           "recorded_size_values": [],
           "club_membership_included_by_listed_name": true,
           "product_forms_visible_in_listed_names": [
+            "powder",
             "sticks"
           ],
           "target_audience_claims": [
@@ -112237,16 +112242,20 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "hiking",
-              "walking",
+              "cycling",
               "fitness_gym",
-              "general_lifestyle"
+              "general_lifestyle",
+              "hiking",
+              "running",
+              "walking"
             ],
             "component_name_activity_groups": [
-              "hiking",
-              "walking",
+              "cycling",
               "fitness_gym",
-              "general_lifestyle"
+              "general_lifestyle",
+              "hiking",
+              "running",
+              "walking"
             ],
             "component_name_activity_cues": {},
             "catalog_tag_activity_groups": [],
@@ -112279,9 +112288,10 @@
             "athletes"
           ],
           "use_contexts": [
-            "during_day_tone",
             "before_or_after_training",
-            "daily_use"
+            "daily_use",
+            "during_day_tone",
+            "during_training"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [
@@ -112769,16 +112779,20 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
-              "hiking",
-              "walking",
+              "cycling",
               "fitness_gym",
-              "general_lifestyle"
+              "general_lifestyle",
+              "hiking",
+              "running",
+              "walking"
             ],
             "component_name_activity_groups": [
-              "hiking",
-              "walking",
+              "cycling",
               "fitness_gym",
-              "general_lifestyle"
+              "general_lifestyle",
+              "hiking",
+              "running",
+              "walking"
             ],
             "component_name_activity_cues": {},
             "catalog_tag_activity_groups": [],
@@ -112812,9 +112826,10 @@
             "athletes"
           ],
           "use_contexts": [
-            "during_day_tone",
             "before_or_after_training",
-            "daily_use"
+            "daily_use",
+            "during_day_tone",
+            "during_training"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [
@@ -113440,7 +113455,8 @@
           "use_contexts": [
             "before_or_after_training",
             "daily_use",
-            "during_day_tone"
+            "during_day_tone",
+            "during_training"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [
@@ -114084,7 +114100,8 @@
           "use_contexts": [
             "before_or_after_training",
             "daily_use",
-            "during_day_tone"
+            "during_day_tone",
+            "during_training"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [
@@ -114691,7 +114708,8 @@
           "use_contexts": [
             "before_or_after_training",
             "daily_use",
-            "during_day_tone"
+            "during_day_tone",
+            "during_training"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [
@@ -115267,7 +115285,8 @@
           "use_contexts": [
             "before_or_after_training",
             "daily_use",
-            "during_day_tone"
+            "during_day_tone",
+            "during_training"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [
@@ -115853,7 +115872,8 @@
           "use_contexts": [
             "before_or_after_training",
             "daily_use",
-            "during_day_tone"
+            "during_day_tone",
+            "during_training"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [
@@ -116516,7 +116536,8 @@
           "use_contexts": [
             "before_or_after_training",
             "daily_use",
-            "during_day_tone"
+            "during_day_tone",
+            "during_training"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [
@@ -117129,7 +117150,8 @@
           "use_contexts": [
             "before_or_after_training",
             "daily_use",
-            "during_day_tone"
+            "during_day_tone",
+            "during_training"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [
@@ -117814,7 +117836,8 @@
           "use_contexts": [
             "before_or_after_training",
             "daily_use",
-            "during_day_tone"
+            "during_day_tone",
+            "during_training"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [
@@ -118619,11 +118642,13 @@
           "effect_claim_status": "Seller/page-copy claims only; positioning and supplemental page claims are separated. Independent clinical or performance efficacy was not evaluated. Do not state these as verified outcomes.",
           "activity_scope": {
             "seller_positioned_activity_groups": [
+              "cycling",
               "general_lifestyle",
               "hiking",
               "walking"
             ],
             "component_name_activity_groups": [
+              "cycling",
               "general_lifestyle",
               "hiking",
               "walking"
@@ -118679,7 +118704,8 @@
           "use_contexts": [
             "before_or_after_training",
             "daily_use",
-            "during_day_tone"
+            "during_day_tone",
+            "during_training"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [
@@ -125105,8 +125131,7 @@
           ],
           "club_membership_included_by_listed_name": true,
           "product_forms_visible_in_listed_names": [
-            "apparel",
-            "food_or_meal"
+            "apparel"
           ],
           "target_audience_claims": [],
           "use_contexts": [
@@ -126406,9 +126431,7 @@
           "size_sensitive_item_present": false,
           "recorded_size_values": [],
           "club_membership_included_by_listed_name": false,
-          "product_forms_visible_in_listed_names": [
-            "food_or_meal"
-          ],
+          "product_forms_visible_in_listed_names": [],
           "target_audience_claims": [],
           "use_contexts": [
             "daily_use"
@@ -126897,9 +126920,7 @@
           "size_sensitive_item_present": false,
           "recorded_size_values": [],
           "club_membership_included_by_listed_name": false,
-          "product_forms_visible_in_listed_names": [
-            "food_or_meal"
-          ],
+          "product_forms_visible_in_listed_names": [],
           "target_audience_claims": [],
           "use_contexts": [
             "daily_use"
@@ -127473,9 +127494,7 @@
           "size_sensitive_item_present": false,
           "recorded_size_values": [],
           "club_membership_included_by_listed_name": false,
-          "product_forms_visible_in_listed_names": [
-            "food_or_meal"
-          ],
+          "product_forms_visible_in_listed_names": [],
           "target_audience_claims": [],
           "use_contexts": [
             "daily_use"
@@ -127926,9 +127945,7 @@
           "size_sensitive_item_present": false,
           "recorded_size_values": [],
           "club_membership_included_by_listed_name": false,
-          "product_forms_visible_in_listed_names": [
-            "food_or_meal"
-          ],
+          "product_forms_visible_in_listed_names": [],
           "target_audience_claims": [],
           "use_contexts": [
             "daily_use"
@@ -129562,7 +129579,8 @@
           "use_contexts": [
             "before_or_after_training",
             "daily_use",
-            "during_day_tone"
+            "during_day_tone",
+            "during_training"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [
@@ -130244,7 +130262,8 @@
           "use_contexts": [
             "before_or_after_training",
             "daily_use",
-            "during_day_tone"
+            "during_day_tone",
+            "during_training"
           ],
           "known_conflicts_and_quality_flags": [],
           "conflict_notes": [
@@ -131981,9 +132000,9 @@
             "ultra_or_long_distance"
           ],
           "product_forms_visible_in_listed_names": [
+            "bars",
             "gel",
-            "sticks",
-            "bars"
+            "tablets"
           ],
           "size_sensitive_item_present": false,
           "recorded_size_values": [],
