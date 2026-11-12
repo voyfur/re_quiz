@@ -58,14 +58,18 @@ CONFLICTED_COMPONENT_CLASSES = {
     "Nabir_1133": {"sports_accessories", "supplements_vitamins_minerals"},
     "RE11020": {"protein_carbohydrate_food"},
     "RE88957": {"protein_carbohydrate_food"},
+    "RE11632": {"creatine_preworkout"},  # Lion's mane baked cookie (0g creatine)
+    "RE11663": {"creatine_preworkout"},  # Yoga mat + band (0g creatine)
+    "RE11665": {"creatine_preworkout"},  # Jump rope + ab roller (0g creatine)
+    "RE11660": {"creatine_preworkout"},  # Marathon kit (endurance gels + salts)
 }
 
 # Sets disqualified from Recovery & Sleep due to strength/creatine, gear dominance, or stimulant/focus actions
 DISQUALIFIED_FROM_RECOVERY = {
-    # Strength / Mass / Pre-workout / Creatine
+    # Strength / Mass / Pre-workout / Creatine / Fitness Gear
     "RE11680", "RE11522", "RE11742", "RE88934", "RE11661", "RE11637", "RE11783",
     "RE11681", "RE11518", "RE11787", "RE88964", "RE11521", "RE11688", "RE11520",
-    "Nabir_1115", "RE11660", "RE11516", "RE89452", "RE88963",
+    "Nabir_1115", "RE11660", "RE11516", "RE89452", "RE88963", "RE11800", "RE11665", "RE11663",
     # Pure gear / apparel / gifts
     "RE11013", "RE89460", "RE89459", "RE11024", "RE11020", "RE11801",
     # Nootropics / Focus / Energy / Stimulants (Methyl B12, Cordyceps, Mushrooms for brainwork, Energy formulas)
@@ -219,6 +223,11 @@ def _matching_families(record, goal_group):
     sku = record.get("sku")
     if goal_group == "recovery" and sku in DISQUALIFIED_FROM_RECOVERY:
         return [], []
+    if goal_group == "gear":
+        # Disqualify sets where creatine or heavy preworkout dominate
+        classes = set(record.get("matching_evidence", {}).get("component_classes", []))
+        if "creatine_preworkout" in classes:
+            return [], []
     evidence = record.get("matching_evidence", {})
     wanted = GOAL_FAMILIES[goal_group]
     seller = set(evidence.get("seller_families", [])) & wanted
@@ -298,7 +307,10 @@ def _soft_signals(record, key):
             return values & {"hiking_or_camping", "travel_or_road", "work_or_study"}
         return values
     if key == "race_format":
-        return set(evidence.get("race_formats", [])) - {"unspecified"}
+        formats = set(evidence.get("race_formats", [])) - {"unspecified"}
+        if "marathon" in formats or "race_or_event_preparation" in formats:
+            formats.add("half_marathon")
+        return formats
     if key == "season":
         return _season_groups(record)
     if key == "product_form":
@@ -407,9 +419,13 @@ def _values_in(candidates, key, allowed):
 
 
 def _would_split(candidates, key, allowed, min_signals=2):
-    """Return True if at least min_signals candidates have a known signal for allowed values."""
-    with_signal = sum(1 for record, _, _ in candidates if _soft_signals(record, key) & allowed)
-    return with_signal >= min_signals
+    """Return True if at least min_signals candidates have a known signal for allowed values,
+    and there are at least 2 distinct signal profiles (so the question actually partitions the pool)."""
+    with_signal = [c for c in candidates if _soft_signals(c[0], key) & allowed]
+    if len(with_signal) < min_signals:
+        return False
+    distinct_profiles = {frozenset(_soft_signals(c[0], key) & allowed) for c in with_signal}
+    return len(distinct_profiles) > 1
 
 
 def _question_plan(candidates, goal_group, answers):
@@ -422,9 +438,23 @@ def _question_plan(candidates, goal_group, answers):
     remaining = candidates
     answered = answers
 
-    # Early termination: if <= 3 candidates remain or user already answered 2 follow-up questions, skip directly to budget
+    # Check if size-sensitive items are present among remaining candidates
+    has_size_sensitive = any(
+        record.get("matching_evidence", {}).get("size_sensitive")
+        and _size_ranges(record)
+        for record, _seller, _components in remaining
+    )
+
     answered_followups = [k for k in answered if k not in ("max_price_uah", "locale")]
-    if len(remaining) <= 3 or len(answered_followups) >= 2:
+    comp_class = answered.get("component_class")
+
+    # Critical physical constraints must not be dropped by early exit if sized apparel/gear is selected
+    needs_size = has_size_sensitive and "shoe_size" not in answered and (
+        comp_class == "apparel_footwear" or (goal_group == "gear" and comp_class != "sports_accessories")
+    )
+
+    # Early termination: if <= 3 candidates remain or user already answered 2 follow-up questions
+    if (len(remaining) <= 3 or len(answered_followups) >= 2) and not needs_size:
         if remaining and "max_price_uah" not in answered:
             prices = [record["price_uah"] for record, _seller, _components in remaining if isinstance(record.get("price_uah"), int)]
             questions.append({
@@ -440,29 +470,13 @@ def _question_plan(candidates, goal_group, answers):
     # 1. Primary filter: Component Class (What type of product do you need in the kit?)
     if "component_class" not in answered:
         values = _values_in(remaining, "component_class", COMPONENT_CLASSES_BY_GOAL.get(goal_group, set()))
-        if len(values) > 1:
+        if len(values) > 1 and _would_split(remaining, "component_class", COMPONENT_CLASSES_BY_GOAL.get(goal_group, set())):
             add("component_class", values, "question_component_class")
 
-    # 2. Activity (Sport): only for sport-specific goals where sport is a deciding factor; NEVER for recovery or daily
-    if "activity" not in answered and goal_group not in ("recovery", "daily"):
-        allowed = ACTIVITY_OPTIONS_BY_GOAL.get(goal_group, set())
-        values = _values_in(remaining, "activity", allowed)
-        if values and len(values) > 1:
-            values = sorted(set(values) | {"other"})
-            add("activity", values, "question_activity")
-
-    # 3. Contextual Refinement (Choose at most ONE high-signal question based on component_class):
-    comp_class = answered.get("component_class")
-
-    # A. If Apparel / Footwear: ask shoe_size and season
+    # 2. Sizing constraint: If Apparel / Footwear / Gear, ask shoe_size as immediate priority
     if comp_class == "apparel_footwear" or (goal_group == "gear" and comp_class != "sports_accessories"):
         if "shoe_size" not in answered:
-            has_size = any(
-                record.get("matching_evidence", {}).get("size_sensitive")
-                and _size_ranges(record)
-                for record, _seller, _components in remaining
-            )
-            if has_size:
+            if has_size_sensitive:
                 ranges = sorted({
                     "{}-{}".format(lower, upper)
                     for record, _seller, _components in remaining
@@ -475,22 +489,27 @@ def _question_plan(candidates, goal_group, answers):
             if len(values) > 1 and _would_split(remaining, "season", {"cold", "warm"}):
                 add("season", values, "question_season")
 
+    # 3. Activity (Sport): only for sport-specific goals where sport is a deciding factor; NEVER for recovery, daily, running, or apparel
+    if "activity" not in answered and goal_group not in ("recovery", "daily", "running") and comp_class != "apparel_footwear":
+        allowed = ACTIVITY_OPTIONS_BY_GOAL.get(goal_group, set())
+        values = _values_in(remaining, "activity", allowed)
+        if values and len(values) > 1 and _would_split(remaining, "activity", allowed):
+            values = sorted(set(values) | {"other"})
+            add("activity", values, "question_activity")
+
+    # 4. Contextual Refinement:
+
     # B. If Recovery: ask timing (evening/bedtime vs post-training); NEVER ask place for bedtime!
-    elif goal_group == "recovery" or comp_class == "supplements_vitamins_minerals":
+    if goal_group == "recovery" or comp_class == "supplements_vitamins_minerals":
         if "use_timing" not in answered:
             allowed = USE_TIMINGS_BY_GOAL.get(goal_group, set())
             values = _values_in(remaining, "use_timing", allowed)
             if len(values) > 1 and _would_split(remaining, "use_timing", allowed):
                 add("use_timing", values, "question_use_timing")
 
-    # C. If Running nutrition/hydration: check race format only if event preparation
+    # C. If Running: ask race format directly (distance/format)
     elif goal_group == "running":
-        if "use_scenario" not in answered:
-            allowed = USE_SCENARIOS_BY_GOAL.get(goal_group, set())
-            values = _values_in(remaining, "use_scenario", allowed)
-            if len(values) > 1 and _would_split(remaining, "use_scenario", allowed):
-                add("use_scenario", values, "question_use_scenario")
-        elif answered.get("use_scenario") == "event_preparation" and "race_format" not in answered:
+        if "race_format" not in answered:
             allowed = {"half_marathon", "marathon", "race_or_event_preparation", "ultra_or_long_distance"}
             values = _values_in(remaining, "race_format", allowed)
             if len(values) > 1 and _would_split(remaining, "race_format", allowed):
@@ -504,8 +523,10 @@ def _question_plan(candidates, goal_group, answers):
             if len(values) > 1 and _would_split(remaining, "use_place", allowed):
                 add("use_place", values, "question_use_place")
 
-    # Product form: ask only if forms vary and not apparel
-    if "product_form" not in answered and comp_class != "apparel_footwear":
+    # Product form: ask only for consumable/nutritional items, NEVER for accessories or apparel
+    NUTRITIONAL_CLASSES = {"protein_carbohydrate_food", "supplements_vitamins_minerals", "hydration_items", "dehydrated_meal"}
+    is_nutritional = comp_class in NUTRITIONAL_CLASSES or (not comp_class and goal_group in ("food", "hydration", "daily", "recovery"))
+    if "product_form" not in answered and is_nutritional and comp_class not in ("sports_accessories", "apparel_footwear"):
         allowed = PRODUCT_FORMS_BY_GOAL.get(goal_group, set())
         values = _values_in(remaining, "product_form", allowed)
         if len(values) > 1 and _would_split(remaining, "product_form", allowed, min_signals=3):
@@ -794,6 +815,10 @@ def _find_floor_anchor(goal_candidates, validated):
 
     # Consider exact pool first, then general pool
     compatible = pools["exact"] if pools["exact"] else pools["general"]
+    if not compatible and "shoe_size" in answers_no_price:
+        answers_no_size = {k: v for k, v in answers_no_price.items() if k != "shoe_size"}
+        pools_fallback = _candidate_pools(goal_candidates, answers_no_size)
+        compatible = pools_fallback["exact"] if pools_fallback["exact"] else pools_fallback["general"]
     if not compatible:
         return []
 

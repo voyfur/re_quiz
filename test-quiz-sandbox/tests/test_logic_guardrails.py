@@ -103,5 +103,31 @@ class TestLogicGuardrails(unittest.TestCase):
         all_skus = [r["sku"] for r in res.get("results", [])]
         self.assertNotIn("RE11020", all_skus, "Apparel kit RE11020 recommended for sports nutrition!")
 
+    def test_hydration_excludes_empty_bottles_and_socks(self):
+        res = draft_recommend(self.catalog, {"goal_group": "hydration", "max_price_uah": 2000})
+        all_skus = [r["sku"] for r in res.get("results", [])]
+        self.assertNotIn("RE89475", all_skus, "Empty bottle + socks kit RE89475 recommended for hydration!")
+        self.assertNotIn("RE11801", all_skus, "Cap + belt + bottle kit RE11801 recommended for hydration!")
+
+    def test_gear_never_recommends_creatine_monohydrate(self):
+        res = draft_recommend(self.catalog, {"goal_group": "gear", "max_price_uah": 2500})
+        all_skus = [r["sku"] for r in res.get("results", [])]
+        self.assertNotIn("RE11522", all_skus, "Creatine kit RE11522 recommended for gear!")
+        self.assertNotIn("RE89488", all_skus, "Creatine kit RE89488 recommended for gear!")
+        self.assertNotIn("RE11681", all_skus, "Creatine kit RE11681 recommended for gear!")
+
+    def test_nabir_1015_matches_hydration_items(self):
+        from draft_matcher import _candidate_fit, _goal_candidates
+        candidates = _goal_candidates(self.catalog, "hydration")
+        nabir_1015 = next((c for c in candidates if c[0]["sku"] == "Nabir_1015"), None)
+        self.assertIsNotNone(nabir_1015, "Nabir_1015 missing from hydration candidates")
+        fit = _candidate_fit(nabir_1015, {"goal_group": "hydration", "component_class": "hydration_items"})
+        self.assertEqual(fit["match_type"], "exact", "Nabir_1015 should be an exact match for hydration_items")
+
+    def test_accessories_never_ask_product_form(self):
+        plan = draft_options(self.catalog, "outdoors", {"component_class": "sports_accessories"})["question_plan"]
+        question_ids = [q["id"] for q in plan]
+        self.assertNotIn("product_form", question_ids, "product_form should never be asked for sports accessories!")
+
 if __name__ == "__main__":
     unittest.main()

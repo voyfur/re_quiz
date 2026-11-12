@@ -10470,7 +10470,8 @@
             "gate_policy": "Recorded sport/activity mentions are relevance signals, not proof of exclusive compatibility. A hard activity exclusion requires a separately reviewed source fact; tags alone are never a negative filter."
           },
           "component_classes_from_listed_names": [
-            "supplements_vitamins_minerals"
+            "supplements_vitamins_minerals",
+            "hydration_items"
           ],
           "archived_page_component_titles": [
             "Электролитный комплекс Hydria Perform, 20 шт. - 83 грн/1 шт."
@@ -45671,7 +45672,9 @@
           "size_sensitive_item_present": false,
           "recorded_size_values": [],
           "club_membership_included_by_listed_name": true,
-          "product_forms_visible_in_listed_names": [],
+          "product_forms_visible_in_listed_names": [
+            "food_or_meal"
+          ],
           "target_audience_claims": [
             "athletes"
           ],
@@ -46272,7 +46275,9 @@
           "size_sensitive_item_present": false,
           "recorded_size_values": [],
           "club_membership_included_by_listed_name": true,
-          "product_forms_visible_in_listed_names": [],
+          "product_forms_visible_in_listed_names": [
+            "food_or_meal"
+          ],
           "target_audience_claims": [
             "athletes"
           ],
@@ -48747,7 +48752,9 @@
           "size_sensitive_item_present": false,
           "recorded_size_values": [],
           "club_membership_included_by_listed_name": true,
-          "product_forms_visible_in_listed_names": [],
+          "product_forms_visible_in_listed_names": [
+            "food_or_meal"
+          ],
           "target_audience_claims": [],
           "use_contexts": [
             "daily_use",
@@ -58985,12 +58992,10 @@
           "candidate_tiers": {
             "seller_positioned": [
               "foot_apparel_comfort",
-              "hydration_electrolytes",
               "running_race_preparation"
             ],
             "component_based": [
               "foot_apparel_comfort",
-              "hydration_electrolytes",
               "running_race_preparation"
             ],
             "supplemental_page_copy_needs_manual_review": [
@@ -67714,7 +67719,9 @@
           "size_sensitive_item_present": false,
           "recorded_size_values": [],
           "club_membership_included_by_listed_name": false,
-          "product_forms_visible_in_listed_names": [],
+          "product_forms_visible_in_listed_names": [
+            "food_or_meal"
+          ],
           "target_audience_claims": [],
           "use_contexts": [
             "daily_use",
@@ -69836,12 +69843,10 @@
           "candidate_tiers": {
             "seller_positioned": [
               "foot_apparel_comfort",
-              "hydration_electrolytes",
               "running_race_preparation"
             ],
             "component_based": [
               "foot_apparel_comfort",
-              "hydration_electrolytes",
               "running_race_preparation"
             ],
             "supplemental_page_copy_needs_manual_review": [
@@ -112267,7 +112272,9 @@
           "size_sensitive_item_present": false,
           "recorded_size_values": [],
           "club_membership_included_by_listed_name": false,
-          "product_forms_visible_in_listed_names": [],
+          "product_forms_visible_in_listed_names": [
+            "food_or_meal"
+          ],
           "target_audience_claims": [
             "athletes"
           ],
@@ -112798,7 +112805,9 @@
           "size_sensitive_item_present": false,
           "recorded_size_values": [],
           "club_membership_included_by_listed_name": false,
-          "product_forms_visible_in_listed_names": [],
+          "product_forms_visible_in_listed_names": [
+            "food_or_meal"
+          ],
           "target_audience_claims": [
             "athletes"
           ],
@@ -115251,7 +115260,9 @@
           "size_sensitive_item_present": false,
           "recorded_size_values": [],
           "club_membership_included_by_listed_name": false,
-          "product_forms_visible_in_listed_names": [],
+          "product_forms_visible_in_listed_names": [
+            "food_or_meal"
+          ],
           "target_audience_claims": [],
           "use_contexts": [
             "before_or_after_training",
@@ -131956,7 +131967,8 @@
             ]
           },
           "component_classes_from_listed_names": [
-            "hydration_items"
+            "hydration_items",
+            "protein_carbohydrate_food"
           ],
           "use_contexts": [
             "before_or_after_training",
