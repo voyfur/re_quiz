@@ -37,6 +37,18 @@ class TestHtmlBundle(unittest.TestCase):
         self.assertIn("window.QUIZ_CATALOG", self.html_content)
         self.assertIn("window.QUIZ_MATCHER", self.html_content)
 
+    def test_restart_buttons_present_and_wired(self):
+        # Top restart button
+        self.assertIn('id="btnRestart"', self.html_content)
+        self.assertIn('id="lblRestart"', self.html_content)
+        # Bottom restart button
+        self.assertIn('id="btnBottomRestart"', self.html_content)
+        self.assertIn('id="lblBottomRestart"', self.html_content)
+        # Check copy and handler binding
+        self.assertIn('restart: "Пройти заново"', self.html_content)
+        self.assertIn('btnBottomRestart.onclick = restartQuiz', self.html_content)
+        self.assertIn('document.getElementById("btnRestart").onclick = restartQuiz', self.html_content)
+
     def test_node_execution_and_matcher_scenarios(self):
         node_script = """
         const fs = require('fs');
