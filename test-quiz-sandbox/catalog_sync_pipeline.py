@@ -95,8 +95,16 @@ def run_sync(
     skipped_count = 0
     audit_warnings = []
 
-    max_row = max(existing_by_row.keys()) if existing_by_row else 0
-    next_set_num = len(catalog) + 1
+    existing_set_nums = []
+    for item in catalog:
+        sid = str(item.get("set_id") or "")
+        m = re.search(r"(\d+)$", sid)
+        if m:
+            existing_set_nums.append(int(m.group(1)))
+    next_set_num = (max(existing_set_nums) + 1) if existing_set_nums else 1
+
+    existing_rows = [int(item["catalog_row"]) for item in catalog if item.get("catalog_row") is not None]
+    max_row = max(existing_rows) if existing_rows else 0
 
     for kit in candidate_kits:
         sku = kit.get("sku") or kit.get("model")
@@ -178,6 +186,16 @@ def run_sync(
             }
             audit_records.append(new_audit_record)
             new_kits_added += 1
+
+    # 5. Ensure all set_ids and catalog_rows are strictly unique
+    seen_ids = set()
+    for item in catalog:
+        sid = item.get("set_id")
+        if not sid or sid in seen_ids:
+            sid = f"race-expert-{next_set_num:03d}"
+            next_set_num += 1
+            item["set_id"] = sid
+        seen_ids.add(sid)
 
     # 5. Save changes if not dry_run
     if not dry_run and (new_kits_added > 0 or prices_updated > 0):
