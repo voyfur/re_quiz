@@ -8,6 +8,7 @@ and updates the production catalog bundle.
 import os
 import sys
 import json
+import re
 import logging
 import argparse
 from datetime import datetime
