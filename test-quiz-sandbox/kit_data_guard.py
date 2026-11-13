@@ -47,12 +47,13 @@ class KitDataGuard:
                 # Warning if no explicit size extracted
                 issues.append("RULE1_WARNING: Apparel item without explicit size_values.")
 
-        # Rule 2: Hydration / Marathon Integrity Guard
-        if any(f in race_formats for f in ["marathon", "half_marathon", "ultra_trail"]):
-            needed = {"energy_nutrition", "hydration_items"}
-            if not (classes & needed):
-                issues.append("RULE2_WARNING: Endurance distance set lacks energy/hydration components. Adding energy_nutrition.")
-                classes.add("energy_nutrition")
+        # Rule 2: Hydration / Marathon Integrity Guard (applies to nutrition/hydration sets, not pure apparel)
+        if "apparel_footwear" not in classes:
+            if any(f in race_formats for f in ["marathon", "half_marathon", "ultra_trail"]):
+                needed = {"energy_nutrition", "hydration_items"}
+                if not (classes & needed):
+                    issues.append("RULE2_WARNING: Endurance distance set lacks energy/hydration components. Adding energy_nutrition.")
+                    classes.add("energy_nutrition")
 
         # Rule 3: Creatine Isolation Guard
         if fixed.get("has_creatine") or "creatine_preworkout" in classes:

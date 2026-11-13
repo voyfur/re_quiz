@@ -175,7 +175,7 @@ class HeuristicKitTagger:
 class LLMKitTagger:
     """Calls OpenAI API to perform high-fidelity structured catalog extraction."""
 
-    def __init__(self, api_key: Optional[str] = None, model: str = "gpt-4o-mini"):
+    def __init__(self, api_key: Optional[str] = None, model: str = "gpt-6-luna"):
         from ai_consultant import _get_api_key
         self.api_key = api_key or _get_api_key()
         self.model = model
@@ -201,12 +201,12 @@ class LLMKitTagger:
 
         payload = {
             "model": self.model,
+            "reasoning_effort": "none",
             "messages": [
                 {"role": "system", "content": PROMPT_SYSTEM},
                 {"role": "user", "content": user_content}
             ],
             "response_format": {"type": "json_object"},
-            "temperature": 0.2
         }
 
         try:
