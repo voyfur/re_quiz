@@ -32,17 +32,25 @@ AUDIT_PATH = (
     if (PROJECT_ROOT / "wiki" / "projects" / "quiz-set-audit.json").exists()
     else ROOT / "quiz-set-audit.json"
 )
+
+INDEX_PATH = (
+    ROOT / "public" / "index.html"
+    if (ROOT / "public" / "index.html").exists()
+    else (ROOT / "index.html" if (ROOT / "index.html").exists() else WEB_ROOT / "index.html")
+)
+
 STATIC_FILES = {
-    "/": WEB_ROOT / "index.html",
-    "/index.html": WEB_ROOT / "index.html",
+    "/": INDEX_PATH,
+    "/index.html": INDEX_PATH,
+    "/quiz.html": ROOT / "quiz.html" if (ROOT / "quiz.html").exists() else INDEX_PATH,
     "/app.js": WEB_ROOT / "app.js",
     "/styles.css": WEB_ROOT / "styles.css",
     "/draft": WEB_ROOT / "draft.html",
     "/draft.html": WEB_ROOT / "draft.html",
     "/draft.js": WEB_ROOT / "draft.js",
     "/draft.css": WEB_ROOT / "draft.css",
-    "/catalog_data.js": WEB_ROOT / "catalog_data.js",
-    "/client_matcher.js": WEB_ROOT / "client_matcher.js",
+    "/catalog_data.js": ROOT / "public" / "catalog_data.js" if (ROOT / "public" / "catalog_data.js").exists() else WEB_ROOT / "catalog_data.js",
+    "/client_matcher.js": ROOT / "public" / "client_matcher.js" if (ROOT / "public" / "client_matcher.js").exists() else WEB_ROOT / "client_matcher.js",
 }
 MAX_REQUEST_BYTES = 32768
 
@@ -110,7 +118,16 @@ def make_handler(catalog):
             self.send_header("Content-Length", str(len(body)))
             self.send_header("Cache-Control", "no-store")
             self.send_header("X-Content-Type-Options", "nosniff")
-            self.send_header("Content-Security-Policy", "default-src 'self'; connect-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'")
+            self.send_header(
+                "Content-Security-Policy",
+                "default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval'; "
+                "connect-src 'self' https:; "
+                "img-src 'self' https: data:; "
+                "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
+                "font-src 'self' https://fonts.gstatic.com data:; "
+                "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com; "
+                "base-uri 'none'; form-action 'self'; frame-ancestors *"
+            )
             self.end_headers()
             self.wfile.write(body)
 
@@ -143,14 +160,24 @@ def make_handler(catalog):
 
             file_path = STATIC_FILES.get(path)
             if file_path is None or not file_path.is_file():
-                self._send_json(404, {"test_only": True, "error": "Not found", "results": []})
-                return
+                candidate_pub = ROOT / "public" / path.lstrip("/")
+                candidate_root = ROOT / path.lstrip("/")
+                if candidate_pub.is_file():
+                    file_path = candidate_pub
+                elif candidate_root.is_file() and not str(candidate_root).endswith((".py", ".env")):
+                    file_path = candidate_root
+                else:
+                    self._send_json(404, {"test_only": True, "error": "Not found", "results": []})
+                    return
 
             content_type = mimetypes.guess_type(str(file_path))[0] or "application/octet-stream"
             body = file_path.read_bytes()
             if content_type.startswith("text/") or content_type in ("application/javascript",):
                 content_type += "; charset=utf-8"
             self._send(200, body, content_type)
+
+        def do_HEAD(self):
+            self.do_GET()
 
         def do_POST(self):
             path = urlsplit(self.path).path
