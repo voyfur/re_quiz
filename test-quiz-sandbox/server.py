@@ -4,6 +4,7 @@ import argparse
 import ipaddress
 import json
 import mimetypes
+import os
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, urlsplit
@@ -26,7 +27,11 @@ ROOT = Path(__file__).resolve().parent
 WEB_ROOT = ROOT / "web"
 CATALOG_PATH = ROOT / "catalog.json"
 PROJECT_ROOT = ROOT.parent
-AUDIT_PATH = PROJECT_ROOT / "wiki" / "projects" / "quiz-set-audit.json"
+AUDIT_PATH = (
+    PROJECT_ROOT / "wiki" / "projects" / "quiz-set-audit.json"
+    if (PROJECT_ROOT / "wiki" / "projects" / "quiz-set-audit.json").exists()
+    else ROOT / "quiz-set-audit.json"
+)
 STATIC_FILES = {
     "/": WEB_ROOT / "index.html",
     "/index.html": WEB_ROOT / "index.html",
@@ -149,7 +154,7 @@ def make_handler(catalog):
 
         def do_POST(self):
             path = urlsplit(self.path).path
-            if path not in ("/api/recommend", "/api/draft/recommend", "/api/check-stock"):
+            if path not in ("/api/recommend", "/api/draft/recommend", "/api/check-stock", "/api/ai-consult"):
                 self._send_json(404, {"test_only": True, "error": "Not found", "results": []})
                 return
 
@@ -219,14 +224,16 @@ def make_handler(catalog):
     return QuizHandler
 
 
-def create_server(host="127.0.0.1", port=8765, catalog_path=CATALOG_PATH, audit_path=None):
-    """Create an HTTP server bound only to a loopback IP address."""
+def create_server(host=None, port=None, catalog_path=CATALOG_PATH, audit_path=None):
+    """Create an HTTP server bound to loopback or private IP address."""
+    host = host or os.getenv("BIND_HOST", "127.0.0.1")
+    port = port if port is not None else int(os.getenv("PORT", "8765"))
     try:
         address = ipaddress.ip_address(host)
     except ValueError:
-        raise ValueError("host must be a numeric loopback IP address")
-    if not address.is_loopback:
-        raise ValueError("test quiz server may bind only to a loopback address")
+        raise ValueError("host must be a numeric IP address")
+    if address.is_unspecified or not (address.is_loopback or address.is_private):
+        raise ValueError("test quiz server may bind only to a loopback or private address")
 
     catalog = _load_catalog(catalog_path)
     if audit_path is not None:
@@ -241,8 +248,8 @@ def create_server(host="127.0.0.1", port=8765, catalog_path=CATALOG_PATH, audit_
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--host", default="127.0.0.1", help="loopback IP only (default: 127.0.0.1)")
-    parser.add_argument("--port", default=8765, type=int)
+    parser.add_argument("--host", default=os.getenv("BIND_HOST", "127.0.0.1"), help="loopback or private IP")
+    parser.add_argument("--port", default=int(os.getenv("PORT", "8765")), type=int)
     parser.add_argument("--catalog", type=Path, default=CATALOG_PATH)
     args = parser.parse_args()
     audit_path = AUDIT_PATH if args.catalog == CATALOG_PATH else None
