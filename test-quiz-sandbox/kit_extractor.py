@@ -36,7 +36,7 @@ class OpenCartKitExtractor:
         else:
             self.stock_checker = stock_checker
 
-    def fetch_all_candidate_kits(self, limit: Optional[int] = None) -> List[Dict[str, Any]]:
+    def fetch_all_candidate_kits(self, limit: Optional[int] = None, allowed_product_ids: Optional[set] = None) -> List[Dict[str, Any]]:
         """Fetch candidate kits from oc_product and oc_product_description."""
         from stock_checker import _mysql_query
 
@@ -132,6 +132,10 @@ class OpenCartKitExtractor:
                     "source_url": f"https://raceexpert.com.ua/index.php?route=product/product&product_id={data['product_id']}"
                 })
 
+        if allowed_product_ids is not None:
+            before_cnt = len(results)
+            results = [r for r in results if str(r.get("product_id")) in allowed_product_ids]
+            logger.info(f"Filtered by 'За потребами' category: {before_cnt} -> {len(results)} kits.")
         return results
 
     def close(self):
@@ -181,7 +185,7 @@ class MockKitExtractor:
                 }
             ]
 
-    def fetch_all_candidate_kits(self, limit: Optional[int] = None) -> List[Dict[str, Any]]:
+    def fetch_all_candidate_kits(self, limit: Optional[int] = None, allowed_product_ids: Optional[set] = None) -> List[Dict[str, Any]]:
         if limit:
             return self.sample_records[:limit]
         return list(self.sample_records)

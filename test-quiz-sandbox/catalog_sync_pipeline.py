@@ -22,6 +22,7 @@ sys.path.insert(0, str(ROOT))
 from kit_extractor import OpenCartKitExtractor, MockKitExtractor
 from kit_ai_tagger import LLMKitTagger, HeuristicKitTagger
 from kit_data_guard import KitDataGuard
+from category_guard import fetch_category_allowed_product_ids
 from build_bundle import build as build_bundle
 
 logging.basicConfig(
@@ -56,7 +57,8 @@ def run_sync(
     mock: bool = False,
     dry_run: bool = False,
     use_llm: bool = True,
-    limit: Optional[int] = None
+    limit: Optional[int] = None,
+    category_only: bool = True
 ) -> Dict[str, Any]:
     start_time = datetime.now()
     logger.info(f"Starting Race Expert Quiz Catalog Sync (mock={mock}, dry_run={dry_run}, use_llm={use_llm})")
@@ -71,9 +73,16 @@ def run_sync(
             logger.error(f"Failed to connect to OpenCart MySQL: {e}. Falling back to Mock.")
             extractor = MockKitExtractor()
 
-    # 2. Extract kits from OpenCart
+    # 2. Extract kits from OpenCart (Strictly filtered to 'За потребами' category)
+    allowed_ids = None
+    if not mock and category_only:
+        try:
+            allowed_ids = fetch_category_allowed_product_ids()
+        except Exception as e:
+            logger.warning(f"Could not fetch category allowed IDs: {e}")
+
     try:
-        candidate_kits = extractor.fetch_all_candidate_kits(limit=limit)
+        candidate_kits = extractor.fetch_all_candidate_kits(limit=limit, allowed_product_ids=allowed_ids)
         logger.info(f"Extracted {len(candidate_kits)} candidate kit records from OpenCart.")
     finally:
         extractor.close()
