@@ -1,0 +1,16 @@
+[Unit]
+Description=Race Expert Quiz OpenCart AI Auto-Sync Service
+After=network.target
+
+[Service]
+Type=oneshot
+User=quizform
+WorkingDirectory=/opt/race-expert-quiz/test-quiz-sandbox
+EnvironmentFile=-/etc/race-expert-quiz/mysql.env
+EnvironmentFile=-/etc/race-expert-quiz/openai.env
+ExecStart=/usr/bin/python3 /opt/race-expert-quiz/test-quiz-sandbox/catalog_sync_pipeline.py
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
