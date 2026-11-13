@@ -1376,6 +1376,8 @@ def _result(record, seller_families, component_families, fit, locale, validated=
         "source_url": record["source_url"],
         "price_uah": current_price_uah,
         "catalog_price_uah": record["price_uah"],
+        "composition": record.get("composition"),
+        "component_classes": evidence.get("component_classes", []),
         "stock_info": stock_info or {
             "sku": record.get("sku"),
             "in_stock": True,

@@ -73,8 +73,8 @@ def consult_ai(user_request, candidates, locale="uk"):
             "sku": rec.get("sku"),
             "title": rec.get("title"),
             "price_uah": rec.get("price_uah"),
-            "composition": (rec.get("composition") or "")[:200],
-            "component_classes": ev.get("component_classes", [])
+            "composition": (rec.get("composition") or "")[:300],
+            "component_classes": ev.get("component_classes", []) or rec.get("component_classes", [])
         })
 
     user_query = {

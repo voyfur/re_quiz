@@ -177,8 +177,23 @@ def make_handler(catalog):
                     return
                 elif path == "/api/ai-consult":
                     user_req = request.get("user_request", {})
-                    candidates = request.get("candidates", [])
+                    raw_candidates = request.get("candidates", [])
                     locale = request.get("locale", "uk")
+                    catalog_by_row = {item.get("catalog_row"): item for item in catalog} if catalog else {}
+                    candidates = []
+                    for c in raw_candidates:
+                        if isinstance(c, dict):
+                            full_item = catalog_by_row.get(c.get("catalog_row"))
+                            if full_item:
+                                enriched = dict(full_item)
+                                enriched.update(c)
+                                if not enriched.get("composition"):
+                                    enriched["composition"] = full_item.get("composition")
+                                if not enriched.get("matching_evidence"):
+                                    enriched["matching_evidence"] = full_item.get("matching_evidence")
+                                candidates.append(enriched)
+                                continue
+                        candidates.append(c)
                     ai_result = consult_ai(user_req, candidates, locale) if consult_ai else None
                     self._send_json(200, {"test_only": True, "ok": bool(ai_result), "data": ai_result})
                     return
