@@ -1,125 +1,255 @@
-# Race Expert Quiz Selection Engine
+# Race Expert Quiz & Starter Box Builder
 
-Интеллектуальная рекомендательная система для автоматического подбора готовых наборов спортивного питания, добавок и экипировки каталога магазина [Race Expert](https://raceexpert.com.ua).
+Інтелектуальний сервіс генерації персональних стартових та тренувальних боксів (Т-наборів) для інтернет-магазину [Race Expert](https://raceexpert.com.ua).
 
----
-
-## 🚀 Ключевые возможности
-
-1. **4-слойная доказательная база (Evidence-Tiered Scoring)**:
-   - Слой 1: Позиционирование продавца (до 20%);
-   - Слой 2: Документированный состав компонентов (до 15%);
-   - Слой 3: Мягкие предпочтения покупателя: спорт, сценарий, время, место, форма (до 45%);
-   - Слой 4: Жёсткие ограничения: бюджет и размер обуви/одежды (до 20%).
-   - Прозрачный скоринг **Match Confidence Score (0–99%)** с текстовыми объяснениями для покупателя.
-
-2. **100% защита от тупиков (Cascade Matching Architecture)**:
-   - **Exact Matches**: идеальное совпадение по всем подтверждённым признакам;
-   - **General Matches**: совпадение по ключевым факторам при неполных второстепенных данных;
-   - **Near-Miss Fallback**: умный подбор совместимых наборов с небольшим превышением бюджета (+100–350 ₴);
-   - **Floor Price Anchor**: автоматическое предложение стартового базового набора категории при заниженном бюджете.
-
-3. **Онлайн-проверка наличия и цен (Stock Verification Subsystem)**:
-   - Подключение к OpenCart MySQL по протоколу **TLS 1.3**;
-   - Автоматическая проверка складских остатков (`quantity > 0` и `status == 1`);
-   - Приоритезация позиций в наличии при ранжировании;
-   - Бесшовный **Next Best Match**: автоматическое замещение на лучший аналог при отсутствии товара на складе;
-   - Синхронизация цен в реальном времени.
-
-4. **Двойная среда исполнения (Dual-Engine)**:
-   - **Python Backend**: легковесный сервер API (`server.py` + `draft_matcher.py`);
-   - **Client-Side JS Engine**: автономный компилированный модуль (`client_matcher.js` + `public/index.html`), работающий даже при локальном открытии файла без сервера (`file://`).
-
-5. **Адаптивный двуязычный интерфейс (Windows 98 Style UI)**:
-   - Мгновенное переключение языка на лету (`УКР` / `РУС`);
-   - Свободный 8-направленный ресайз виджета за любую грань и угол;
-   - Быстрые пресеты размера: **S** (620px), **M** (780px), **L** (980px).
-
-6. **Агентский скилл онбординга (`race-expert-kit-onboarding`)**:
-   - Автоматическое добавление новых товаров по ссылке на страницу магазина: скрейпинг, восполнение белых пятен через веб-поиск, нормализация в таксономию каталога, пересборка бандлов и аудит скоринга.
+Сервіс покриває 5 ключових дисциплін: **Біг, Велоспорт, Триатлон, Зал / Фітнес, Походи / ЇDLO**.
 
 ---
 
-## 📁 Структура проекта
+## 🚀 Ключові можливості системи
 
-```
-Quiz RE/
-├── test-quiz-sandbox/                 # Ядро движка и локальная песочница
-│   ├── catalog.json                   # Нормализованный JSON-каталог (206 наборов)
-│   ├── draft_matcher.py               # Основной алгоритм фильтрации и скоринга
-│   ├── stock_checker.py               # TLS 1.3 клиент для верификации склада OpenCart
-│   ├── server.py                      # HTTP API (/api/options, /api/recommend, /api/check-stock)
-│   ├── build_bundle.py                # Генератор клиентских JS-модулей
-│   ├── web/                           # Файлы витрины песочницы (/draft)
-│   │   ├── catalog_data.js            # Сериализованные данные для браузера
-│   │   ├── client_matcher.js          # Зеркальный клиентский JS-движок
-│   │   ├── draft.html / draft.js      # Интерактивный интерфейс квиза
-│   │   └── draft.css                  # Стили интерфейса
-│   └── tests/                         # Набор из 39 автоматических тестов
+1. **Миттєвий алгоритмічний підбір (< 5 мс):**
+   - Усі каталоги товарів та матриці сумісності попередньо валідовані та зберігаються в оптимізованому JSON-форматі.
+   - Відсутнє блокуюче навантаження на базу даних OpenCart під час кожного кліку покупця.
+
+2. **Захист від шлункового дискомфорту (Single Gel Brand Rule):**
+   - Алгоритм бігових та мультиспортивних наборів закріплює єдиний базовий бренд гелів (Nutrend, SiS, Maurten, Precision Fuel або PowerBar) на всю дистанцію.
+   - Запобігає небезпечному змішуванню різноосмолярних вуглеводних формул (наприклад, мальтодекстрин SiS проти ізомальтулози Nutrend).
+
+3. **3-рівнева оптимізація під точний бюджет покупця:**
+   - Пресети вартості: **Базовий / Економ, Оптимальний, Максимальний / Pro** та підтримка довільного бюджету покупця (Custom Number).
+   - Розумний алгоритм балансування кількості та вартості: пріоритет віддається життєво необхідним позиціям харчування та гідратації, а спеціалізовані аксесуари захищені від випадкової заміни.
+
+4. **Інтерактивний вибір товарів покупцем:**
+   - На фінальному екрані покупець може гнучко знімати або повертати окремі товари за допомогою інтерактивних галочок `[✓ В кошик]`.
+   - Загальна сума боксу перераховується на льоту на клієнті.
+
+5. **Пакетне додавання в кошик OpenCart за 1 клік:**
+   - Весь сформований бокс передається в кошик покупця одним атомарним POST-запитом без черги запитів та затримок.
+
+---
+
+## 📁 Структура репозиторію
+
+```text
+├── server.py                   # Легковаговий виробничий HTTP-сервер (Python 3.10+)
+├── runner_box_engine.py        # Алгоритмічний рушій підбору бігових боксів
+├── multi_sport_engine.py       # Алгоритмічний рушій для велоспорту, триатлону, залу та походів
+├── stock_checker.py            # Модуль перевірки залишків товарів у MySQL OpenCart
+├── luna_box_consultant.py      # ШІ-консультант Луна (GPT-аналіз боксу під завдання атлета)
 │
-├── public/
-│   └── index.html                     # Автономная single-file страница квиза
-├── quiz.html                          # Скомпилированный дистрибутив квиза
-├── build_external_quiz_v2.py          # Сборщик standalone HTML
-├── serve_ip.py                        # Внешний веб-сервер для демонстрации
+├── running_catalog.json        # Очищений каталог товарів для бігу
+├── cycling_catalog.json        # Каталог товарів для велоспорту
+├── triathlon_catalog.json      # Каталог товарів для триатлону
+├── gym_catalog.json            # Каталог товарів для фітнесу та залу
+├── outdoor_catalog.json        # Каталог сублімованого харчування та походів (ЇDLO)
 │
-├── .agents/skills/race-expert-kit-onboarding/  # Скилл автоматического онбординга
-├── wiki/                              # Полная база знаний и спецификации (LLM Wiki)
-│   ├── projects/
-│   │   ├── quiz-engine-technical-documentation.md   # Полная техническая спецификация
-│   │   ├── quiz-set-audit.json                      # Аудит-реестр 206 наборов
-│   │   └── quiz-buyer-scenario-audit-100.md         # Результаты аудита на 150 сценариях
-│   └── sources/
-│       └── mysql-readonly-access-and-product-query-guide.md # Руководство по БД OpenCart
-└── spec.md                            # Спецификация требований квиза
+├── public/                     # Клієнтський інтерфейс
+│   ├── runner_box.html         # Адаптивний UI (Tailwind CSS CDN, мобільна оптимізація)
+│   └── runner_box.js           # Логіка форми, фільтрів, розрахунку та зв'язку з кошиком
+│
+├── integrations/               # Готові модулі інтеграції
+│   └── opencart/               # PHP-контролер пакетного додавання в кошик OpenCart
+│       └── catalog/controller/api/quiz_cart.php
+│
+├── Dockerfile                  # Production-образ (Python 3.12-slim)
+├── docker-compose.yml          # Маніфест швидкого запуску контейнера
+├── .env.example                # Шаблон змінних оточення з коментарями
+├── requirements.txt            # Залежності середовища та тестів
+└── tests/                      # Автоматизовані тести перевірки конфігурації та логіки
 ```
 
 ---
 
-## 🛠️ Быстрый старт
+## 🛠️ Швидкий старт та розгортання
 
-### 1. Настройка окружения
-Скопируйте пример переменных окружения:
-```bash
-cp .env.example .env
+### Варіант 1: Запуск через Docker Compose (Рекомендовано)
+
+1. Клонуйте репозиторій на сервер:
+   ```bash
+   git clone https://github.com/race-expert/quiz.git /var/www/raceexpert-quiz
+   cd /var/www/raceexpert-quiz
+   ```
+
+2. Створіть файл оточення:
+   ```bash
+   cp .env.example .env
+   ```
+
+3. Запустіть сервіс у фоновому режимі:
+   ```bash
+   docker compose up -d
+   ```
+
+Сервіс автоматично запуститься на порту `8000` із перезапуском у разі збоїв (`restart: always`) та перевіркою працездатності (healthcheck).
+
+---
+
+### Варіант 2: Запуск через systemd (Native Linux Service)
+
+Якщо на сервері не використовується Docker, сервіс можна запустити як штатну службу Linux:
+
+1. Створіть юніт-файл `/etc/systemd/system/quiz.service`:
+   ```ini
+   [Unit]
+   Description=Race Expert Quiz & Starter Box Builder
+   After=network.target
+
+   [Service]
+   Type=simple
+   User=www-data
+   WorkingDirectory=/var/www/raceexpert-quiz
+   EnvironmentFile=/var/www/raceexpert-quiz/.env
+   ExecStart=/usr/bin/python3 /var/www/raceexpert-quiz/server.py
+   Restart=always
+   RestartSec=5
+
+   [Install]
+   WantedBy=multi-user.target
+   ```
+
+2. Активуйте та запустіть службу:
+   ```bash
+   sudo systemctl daemon-reload
+   sudo systemctl enable --now quiz.service
+   sudo systemctl status quiz.service
+   ```
+
+---
+
+## 🌐 Налаштування Nginx Reverse Proxy (Основний домен магазину)
+
+**Рекомендований маршрут:** `https://raceexpert.com.ua/quiz/`
+
+Проксіювання запитів через Nginx основного домену забезпечує три критичні переваги:
+1. **Єдиний домен (`Same-Origin`):** Квіз і OpenCart знаходяться в одному джерелі.
+2. **Спільні Cookies сесії OpenCart (`OCSESSID`):** Коли покупець додає бокс у кошик, браузер автоматично передає активну сесійну куку OpenCart. Немає блокування сторонніх cookies сучасними браузерами (Safari ITP, Chrome Privacy Sandbox).
+3. **Відсутність проблем із CORS:** Запити виконуються без додаткових заголовків і preflight-затримок OPTIONS.
+
+### Конфігурація Nginx
+
+Додайте цей блок усередину `server { ... }` основного сайту `/etc/nginx/sites-available/raceexpert.com.ua`:
+
+```nginx
+# Race Expert Quiz & Box Builder
+location /quiz/ {
+    proxy_pass http://127.0.0.1:8000/;
+    proxy_http_version 1.1;
+    
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    
+    # Підтримка передачі cookies сесії OpenCart (OCSESSID)
+    proxy_pass_header Set-Cookie;
+    proxy_cookie_path / /;
+
+    proxy_connect_timeout 10s;
+    proxy_read_timeout 60s;
+}
 ```
-При необходимости заполните реквизиты Telegram-бота и базы данных OpenCart в `.env`.
 
-### 2. Запуск локального сервера песочницы
+Після збереження перевірте конфігурацію та перезавантажте Nginx:
 ```bash
-python3 test-quiz-sandbox/server.py --port 8765
-```
-Откройте в браузере: [http://127.0.0.1:8765/draft](http://127.0.0.1:8765/draft)
-
-### 3. Демонстрация по сети (IP)
-Для показа заказчику или тестирования с мобильного устройства:
-```bash
-python3 serve_ip.py --host 0.0.0.0 --port 8080
+sudo nginx -t && sudo systemctl reload nginx
 ```
 
 ---
 
-## 🧪 Тестирование
+## 🛒 Інтеграція з кошиком OpenCart
 
-Полный набор из 39 юнит-, интеграционных и API тестов:
+У репозиторії підготовлено готовий PHP-контролер для OpenCart 3.x / 4.x:
+`integrations/opencart/catalog/controller/api/quiz_cart.php`
+
+### Встановлення контролера:
+1. Скопіюйте файл у структуру каталогу магазину:
+   ```bash
+   cp /var/www/raceexpert-quiz/integrations/opencart/catalog/controller/api/quiz_cart.php \
+      /var/www/raceexpert.com.ua/catalog/controller/api/quiz_cart.php
+   ```
+
+2. Контролер реєструє ендпоінт:
+   `POST /index.php?route=api/quiz_cart/add_bulk`
+
+3. **Як це працює:**
+   - Приймає JSON-масив товарів:
+     ```json
+     {
+       "items": [
+         {"product_id": 1940, "quantity": 4},
+         {"product_id": 3110, "quantity": 1},
+         {"product_id": 5422, "quantity": 2}
+       ]
+     }
+     ```
+   - Викликає нативний метод OpenCart `$this->cart->add($product_id, $quantity)` для кожної позиції.
+   - Очищує закешовані методи доставки та оплати в сесії (`shipping_methods`, `payment_methods`), гарантуючи актуальний перерахунок кошика.
+   - Повертає статус успіху, загальну кількість товарів та URL для переходу в кошик:
+     ```json
+     {
+       "success": true,
+       "added_items": 7,
+       "total_items": 7,
+       "redirect": "https://raceexpert.com.ua/index.php?route=checkout/cart"
+     }
+     ```
+
+---
+
+## 🔍 Перевірка роботи API через curl
+
+### 1. Генерація боксу за видом спорту
 ```bash
-PYTHONPATH=test-quiz-sandbox pytest test-quiz-sandbox/tests/
+curl -X POST http://127.0.0.1:8000/api/generate-sport-box \
+  -H "Content-Type: application/json" \
+  -d '{
+    "sport": "running",
+    "distance": "marathon",
+    "pace_target": "sub330",
+    "weather": "hot",
+    "stomach_type": "normal",
+    "caffeine_preference": "boost",
+    "body_concerns": ["cramps"],
+    "gear_needed": ["belt"],
+    "price_tier": "standard"
+  }'
 ```
 
-Прогон аудита на 150 сценариях покупателей:
+### 2. Запит консультації ШІ Луни
 ```bash
-python3 test-quiz-sandbox/scenario_audit_100.py
+curl -X POST http://127.0.0.1:8000/api/luna-consult-box \
+  -H "Content-Type: application/json" \
+  -d '{
+    "locale": "uk",
+    "user_inputs": {"sport": "cycling", "distance": "century"},
+    "generated_box": {"sport_name": "Велоспорт", "total_base_price": 1450}
+  }'
+```
+
+### 3. Тест пакетного додавання в кошик OpenCart
+```bash
+curl -X POST https://raceexpert.com.ua/index.php?route=api/quiz_cart/add_bulk \
+  -H "Content-Type: application/json" \
+  -H "Cookie: OCSESSID=your_opencart_session_id" \
+  -d '{
+    "items": [
+      {"product_id": 1940, "quantity": 2}
+    ]
+  }'
 ```
 
 ---
 
-## 📦 Пересборка бандлов
+## 🧪 Автоматизоване тестування
 
-При изменении каталога или алгоритма пересоберите клиентские файлы:
+Репозиторій покритий повним набором автоматичних тестів (`pytest`):
+- 250 стрес-сценаріїв для всіх 5 видів спорту (по 50 на кожну дисципліну);
+- 20 комплексних персон бігунів;
+- тести цілісності каталогів та перевірки наявності;
+- тести Docker-середовища, змінних оточення та контролера OpenCart.
+
+Запуск усіх тестів:
 ```bash
-# Пересборка JS-файлов браузера:
-python3 test-quiz-sandbox/build_bundle.py
-
-# Сборка автономного standalone HTML (public/index.html и quiz.html):
-python3 build_external_quiz_v2.py
+pytest -v
 ```
