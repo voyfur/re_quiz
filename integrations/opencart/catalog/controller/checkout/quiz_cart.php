@@ -1,13 +1,17 @@
 <?php
 /**
- * Race Expert Quiz - OpenCart Bulk Cart Controller
+ * Race Expert Quiz - OpenCart Bulk Cart Controller (Customer Session Mode)
  *
  * Allows adding multiple products from a starter/training box into the buyer's
  * current OpenCart session in a single atomic HTTP request.
  *
- * Route: index.php?route=api/quiz_cart/add_bulk
+ * Placed in catalog/controller/checkout/ so OpenCart properly binds the buyer's
+ * OCSESSID cookie (in OpenCart 2.x/3.x, routes starting with 'api/' ignore cookies
+ * and require an api_token).
+ *
+ * Route: index.php?route=checkout/quiz_cart/add_bulk
  */
-class ControllerApiQuizCart extends Controller {
+class ControllerCheckoutQuizCart extends Controller {
     public function add_bulk() {
         $this->response->addHeader('Content-Type: application/json');
         $json = array();
@@ -25,7 +29,7 @@ class ControllerApiQuizCart extends Controller {
                 $option = isset($item['option']) && is_array($item['option']) ? $item['option'] : array();
 
                 if ($product_id > 0 && $quantity > 0) {
-                    // Call standard OpenCart cart add method
+                    // Call standard OpenCart cart add method with active customer session
                     $this->cart->add($product_id, $quantity, $option);
                     $added_count++;
                 }
@@ -37,10 +41,15 @@ class ControllerApiQuizCart extends Controller {
             unset($this->session->data['payment_methods']);
             unset($this->session->data['payment_method']);
 
-            $json['success'] = true;
-            $json['added_items'] = $added_count;
-            $json['total_items'] = $this->cart->countProducts();
-            $json['redirect'] = $this->url->link('checkout/cart', '', true);
+            if ($added_count > 0) {
+                $json['success'] = true;
+                $json['added_items'] = $added_count;
+                $json['total_items'] = $this->cart->countProducts();
+                $json['redirect'] = $this->url->link('checkout/cart', '', true);
+            } else {
+                $json['success'] = false;
+                $json['error'] = 'Жоден товар зі списку не має коректного product_id';
+            }
         } else {
             $json['success'] = false;
             $json['error'] = 'Порожній або некоректний список товарів для додавання';

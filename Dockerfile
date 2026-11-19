@@ -27,8 +27,8 @@ COPY public/ ./public/
 # Expose standard application port
 EXPOSE 8000
 
-# Container healthcheck
+# Container healthcheck using fast JSON health endpoint
 HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
-    CMD curl -f http://127.0.0.1:8000/ || exit 1
+    CMD curl -f http://127.0.0.1:8000/api/health || exit 1
 
 CMD ["python3", "server.py"]

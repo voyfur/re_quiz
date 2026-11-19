@@ -17,6 +17,7 @@ def test_dockerfile_structure():
     assert "FROM python:3.12-slim" in content
     assert "WORKDIR /app" in content
     assert "EXPOSE 8000" in content
+    assert "api/health" in content
     assert 'CMD ["python3", "server.py"]' in content
 
 def test_docker_compose_structure():
@@ -25,3 +26,5 @@ def test_docker_compose_structure():
     content = dc_path.read_text(encoding="utf-8")
     assert "8000" in content
     assert "restart: always" in content
+    assert "api/health" in content
+

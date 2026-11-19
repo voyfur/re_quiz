@@ -50,7 +50,7 @@
 │
 ├── integrations/               # Готові модулі інтеграції
 │   └── opencart/               # PHP-контролер пакетного додавання в кошик OpenCart
-│       └── catalog/controller/api/quiz_cart.php
+│       └── catalog/controller/checkout/quiz_cart.php
 │
 ├── Dockerfile                  # Production-образ (Python 3.12-slim)
 ├── docker-compose.yml          # Маніфест швидкого запуску контейнера
@@ -159,20 +159,25 @@ sudo nginx -t && sudo systemctl reload nginx
 
 ## 🛒 Інтеграція з кошиком OpenCart
 
-У репозиторії підготовлено готовий PHP-контролер для OpenCart 3.x / 4.x:
-`integrations/opencart/catalog/controller/api/quiz_cart.php`
+У репозиторії підготовлено готовий PHP-контролер для OpenCart 2.3 / 3.x:
+`integrations/opencart/catalog/controller/checkout/quiz_cart.php`
+
+> **Важливе архітектурне зауваження:** Контролер розміщується саме в `catalog/controller/checkout/` (маршрут `checkout/quiz_cart/add_bulk`), а не в `api/`. В OpenCart обробник сесії для маршрутів з префіксом `api/` ігнорує сесійні cookies покупця (`OCSESSID`) та очікує системний токен. Розміщення в `checkout/` забезпечує 100% збереження кошика реального покупця у браузері.
 
 ### Встановлення контролера:
 1. Скопіюйте файл у структуру каталогу магазину:
    ```bash
-   cp /var/www/raceexpert-quiz/integrations/opencart/catalog/controller/api/quiz_cart.php \
-      /var/www/raceexpert.com.ua/catalog/controller/api/quiz_cart.php
+   cp /var/www/raceexpert-quiz/integrations/opencart/catalog/controller/checkout/quiz_cart.php \
+      /var/www/raceexpert.com.ua/catalog/controller/checkout/quiz_cart.php
    ```
 
 2. Контролер реєструє ендпоінт:
-   `POST /index.php?route=api/quiz_cart/add_bulk`
+   `POST /index.php?route=checkout/quiz_cart/add_bulk`
 
-3. **Як це працює:**
+3. **Підтримка OpenCart 4.x (опціонально):**
+   Для OpenCart 4.x файл контролера розміщується у `extension/raceexpert/catalog/controller/checkout/quiz_cart.php` із простором імен `namespace Opencart\Catalog\Controller\Extension\Raceexpert\Checkout;` та успадкуванням `extends \Opencart\System\Engine\Controller`.
+
+4. **Як це працює:**
    - Приймає JSON-масив товарів:
      ```json
      {
@@ -199,7 +204,12 @@ sudo nginx -t && sudo systemctl reload nginx
 
 ## 🔍 Перевірка роботи API через curl
 
-### 1. Генерація боксу за видом спорту
+### 1. Перевірка статусу працездатності (Healthcheck)
+```bash
+curl -f http://127.0.0.1:8000/api/health
+```
+
+### 2. Генерація боксу за видом спорту
 ```bash
 curl -X POST http://127.0.0.1:8000/api/generate-sport-box \
   -H "Content-Type: application/json" \
@@ -216,7 +226,7 @@ curl -X POST http://127.0.0.1:8000/api/generate-sport-box \
   }'
 ```
 
-### 2. Запит консультації ШІ Луни
+### 3. Запит консультації ШІ Луни
 ```bash
 curl -X POST http://127.0.0.1:8000/api/luna-consult-box \
   -H "Content-Type: application/json" \
@@ -227,9 +237,9 @@ curl -X POST http://127.0.0.1:8000/api/luna-consult-box \
   }'
 ```
 
-### 3. Тест пакетного додавання в кошик OpenCart
+### 4. Тест пакетного додавання в кошик OpenCart
 ```bash
-curl -X POST https://raceexpert.com.ua/index.php?route=api/quiz_cart/add_bulk \
+curl -X POST https://raceexpert.com.ua/index.php?route=checkout/quiz_cart/add_bulk \
   -H "Content-Type: application/json" \
   -H "Cookie: OCSESSID=your_opencart_session_id" \
   -d '{

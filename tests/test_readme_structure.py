@@ -14,8 +14,8 @@ def test_readme_exists_and_contains_deployment_guide():
         "location /quiz/",
         "proxy_pass",
         "OCSESSID",
-        "quiz_cart.php",
-        "add_bulk",
+        "checkout/quiz_cart.php",
+        "checkout/quiz_cart/add_bulk",
         "curl -X POST",
         "/api/generate-sport-box"
     ]

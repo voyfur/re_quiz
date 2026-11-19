@@ -35,4 +35,4 @@
 - wiki/projects/quiz-custom-running-box-spec-v3.md
 - Dockerfile
 - docker-compose.yml
-- integrations/opencart/catalog/controller/api/quiz_cart.php
+- integrations/opencart/catalog/controller/checkout/quiz_cart.php

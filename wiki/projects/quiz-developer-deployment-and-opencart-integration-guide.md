@@ -107,7 +107,7 @@ OpenCart за замовчуванням має стандартний марш�
 ### Підхід 2: Пакетний контролер (Bulk Add Endpoint — НАЙКРАЩА ПРАКТИКА)
 Програміст створює один простий PHP-контролер у структурі OpenCart (20 рядків коду), який приймає весь сформований бокс за один швидкий запит.
 
-**Рекомендований маршрут:** `POST /index.php?route=api/quiz_cart/add_bulk` або `POST /index.php?route=checkout/cart/add_bulk`
+**Рекомендований маршрут:** `POST /index.php?route=checkout/quiz_cart/add_bulk` (розміщується саме в `catalog/controller/checkout/quiz_cart.php`, щоб OpenCart прив'язував куку сесії `OCSESSID` реального покупця, на відміну від маршрутів `api/`, які ігнорують сесії покупців).
 
 **Формат вхідного JSON від квізу:**
 ```json
@@ -120,10 +120,10 @@ OpenCart за замовчуванням має стандартний марш�
 }
 ```
 
-**Готовий шаблон PHP-контролера для OpenCart 3.x / 4.x (`catalog/controller/api/quiz_cart.php` або `catalog/controller/checkout/cart.php`):**
+**Готовий шаблон PHP-контролера для OpenCart 2.3 / 3.x (`catalog/controller/checkout/quiz_cart.php`):**
 ```php
 <?php
-class ControllerApiQuizCart extends Controller {
+class ControllerCheckoutQuizCart extends Controller {
     public function add_bulk() {
         $this->response->addHeader('Content-Type: application/json');
         $json = array();
@@ -141,7 +141,7 @@ class ControllerApiQuizCart extends Controller {
                 $option = isset($item['option']) ? $item['option'] : array();
 
                 if ($product_id > 0 && $quantity > 0) {
-                    // Стандартний системний виклик OpenCart додавання в кошик
+                    // Стандартний системний виклик OpenCart додавання в кошик сесії покупця
                     $this->cart->add($product_id, $quantity, $option);
                     $added_count++;
                 }
@@ -153,10 +153,15 @@ class ControllerApiQuizCart extends Controller {
             unset($this->session->data['payment_methods']);
             unset($this->session->data['payment_method']);
 
-            $json['success'] = true;
-            $json['added_items'] = $added_count;
-            $json['total_items'] = $this->cart->countProducts();
-            $json['redirect'] = $this->url->link('checkout/cart', '', true);
+            if ($added_count > 0) {
+                $json['success'] = true;
+                $json['added_items'] = $added_count;
+                $json['total_items'] = $this->cart->countProducts();
+                $json['redirect'] = $this->url->link('checkout/cart', '', true);
+            } else {
+                $json['success'] = false;
+                $json['error'] = 'Жоден товар не має коректного ID';
+            }
         } else {
             $json['success'] = false;
             $json['error'] = 'Порожній або некоректний список товарів';
