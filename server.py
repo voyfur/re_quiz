@@ -26,7 +26,7 @@ if SANDBOX_ROOT.exists():
 
 CATALOG_PATH = SANDBOX_ROOT / "catalog.json" if (SANDBOX_ROOT / "catalog.json").exists() else ROOT / "catalog.json"
 AUDIT_PATH = SANDBOX_ROOT / "quiz-set-audit.json" if (SANDBOX_ROOT / "quiz-set-audit.json").exists() else ROOT / "quiz-set-audit.json"
-INDEX_PATH = ROOT / "public" / "index.html" if (ROOT / "public" / "index.html").exists() else (ROOT / "quiz.html" if (ROOT / "quiz.html").exists() else ROOT / "index.html")
+INDEX_PATH = ROOT / "public" / "runner_box.html" if (ROOT / "public" / "runner_box.html").exists() else (ROOT / "public" / "index.html" if (ROOT / "public" / "index.html").exists() else ROOT / "index.html")
 
 MAX_BODY = 200_000
 
@@ -47,6 +47,22 @@ try:
     from ai_consultant import consult_ai
 except ImportError:
     consult_ai = None
+
+try:
+    from runner_box_engine import generate_runner_box
+except ImportError:
+    generate_runner_box = None
+
+try:
+    from multi_sport_engine import generate_custom_sport_box
+except ImportError:
+    generate_custom_sport_box = None
+
+try:
+    from luna_box_consultant import consult_luna_for_box
+except ImportError:
+    consult_luna_for_box = None
+
 
 
 def read_dotenv(path: Path) -> dict[str, str]:
@@ -100,11 +116,20 @@ if CATALOG_PATH.exists() and AUDIT_PATH.exists():
         except Exception:
             CATALOG = []
 
+RUNNING_CATALOG_PATH = ROOT / "running_catalog.json"
+RUNNING_CATALOG = []
+if RUNNING_CATALOG_PATH.exists():
+    try:
+        RUNNING_CATALOG = json.loads(RUNNING_CATALOG_PATH.read_text(encoding="utf-8"))
+        print(f"Loaded {len(RUNNING_CATALOG)} running catalog items.")
+    except Exception as e:
+        print(f"Warning: Failed to load running_catalog.json: {e}")
+
 
 class QuizHTTPHandler(BaseHTTPRequestHandler):
     server_version = "RaceExpertQuiz/2.0"
 
-    def send_json(self, status: int, payload: dict) -> None:
+    def send_json(self, status: int, payload: dict, is_head: bool = False) -> None:
         body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
         self.send_response(status)
         self.send_header("Content-Type", "application/json; charset=utf-8")
@@ -114,10 +139,38 @@ class QuizHTTPHandler(BaseHTTPRequestHandler):
         self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, HEAD")
         self.send_header("Access-Control-Allow-Headers", "Content-Type")
         self.end_headers()
-        self.wfile.write(body)
+        if not is_head:
+            self.wfile.write(body)
 
-    def do_HEAD(self) -> None:
-        self.do_GET()
+    def _send_html(self, file_path: Path, is_head: bool = False) -> None:
+        if not file_path.is_file():
+            self.send_error(404, f"{file_path.name} not found")
+            return
+        body = file_path.read_bytes()
+        self.send_response(200)
+        self.send_header("Content-Type", "text/html; charset=utf-8")
+        self.send_header("Content-Length", str(len(body)))
+        self.send_header("Cache-Control", "no-cache")
+        self.send_header("X-Content-Type-Options", "nosniff")
+        self.send_header(
+            "Content-Security-Policy",
+            "default-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://fonts.googleapis.com https://fonts.gstatic.com; img-src 'self' data: https:;"
+        )
+        self.end_headers()
+        if not is_head:
+            self.wfile.write(body)
+
+    def _send_static_file(self, local_file: Path, is_head: bool = False) -> None:
+        content_type = mimetypes.guess_type(str(local_file))[0] or "application/octet-stream"
+        body = local_file.read_bytes()
+        self.send_response(200)
+        self.send_header("Content-Type", content_type)
+        self.send_header("Content-Length", str(len(body)))
+        self.send_header("Cache-Control", "no-cache")
+        self.send_header("X-Content-Type-Options", "nosniff")
+        self.end_headers()
+        if not is_head:
+            self.wfile.write(body)
 
     def do_OPTIONS(self) -> None:
         self.send_response(204)
@@ -126,24 +179,15 @@ class QuizHTTPHandler(BaseHTTPRequestHandler):
         self.send_header("Access-Control-Allow-Headers", "Content-Type")
         self.end_headers()
 
-    def do_GET(self) -> None:
+    def _handle_get_or_head(self, is_head: bool = False) -> None:
         path = self.path.split("?")[0]
         if path in {"", "/", "/index.html", "/quiz.html"}:
-            if not INDEX_PATH.is_file():
-                self.send_error(404, "index.html not found")
-                return
-            body = INDEX_PATH.read_bytes()
-            self.send_response(200)
-            self.send_header("Content-Type", "text/html; charset=utf-8")
-            self.send_header("Content-Length", str(len(body)))
-            self.send_header("Cache-Control", "no-cache")
-            self.send_header("X-Content-Type-Options", "nosniff")
-            self.send_header(
-                "Content-Security-Policy",
-                "default-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://fonts.googleapis.com https://fonts.gstatic.com;"
-            )
-            self.end_headers()
-            self.wfile.write(body)
+            self._send_html(INDEX_PATH, is_head=is_head)
+            return
+
+        if path in {"/runner-box", "/box", "/runner_box.html", "/sport-box", "/sport-box.html"}:
+            box_path = ROOT / "public" / "runner_box.html"
+            self._send_html(box_path, is_head=is_head)
             return
 
         if path == "/api/health":
@@ -151,36 +195,37 @@ class QuizHTTPHandler(BaseHTTPRequestHandler):
                 "status": "ok",
                 "app": "Race Expert Quiz",
                 "catalog_count": len(CATALOG),
+                "running_catalog_count": len(RUNNING_CATALOG),
                 "ai_enabled": bool(consult_ai),
                 "timestamp": datetime.now(ZoneInfo("Europe/Kyiv")).isoformat(),
-            })
+            }, is_head=is_head)
             return
 
         if path == "/api/options":
             if draft_options and CATALOG:
-                self.send_json(200, draft_options(CATALOG))
+                self.send_json(200, draft_options(CATALOG), is_head=is_head)
             else:
-                self.send_json(200, {"catalog_count": len(CATALOG)})
+                self.send_json(200, {"catalog_count": len(CATALOG)}, is_head=is_head)
             return
 
-        # Fallback to local files if any (e.g. catalog_data.js, client_matcher.js, etc.)
+        # Fallback to local files if any (e.g. runner_box.js, catalog_data.js, client_matcher.js, etc.)
         for search_dir in [ROOT / "public", SANDBOX_ROOT / "web", ROOT]:
             local_file = search_dir / path.lstrip("/")
             if local_file.is_file() and not str(local_file).endswith((".env", ".py")):
-                content_type = mimetypes.guess_type(str(local_file))[0] or "application/octet-stream"
-                body = local_file.read_bytes()
-                self.send_response(200)
-                self.send_header("Content-Type", content_type)
-                self.send_header("Content-Length", str(len(body)))
-                self.end_headers()
-                self.wfile.write(body)
+                self._send_static_file(local_file, is_head=is_head)
                 return
 
         self.send_error(404)
 
+    def do_HEAD(self) -> None:
+        self._handle_get_or_head(is_head=True)
+
+    def do_GET(self) -> None:
+        self._handle_get_or_head(is_head=False)
+
     def do_POST(self) -> None:
         path = self.path.split("?")[0]
-        if path not in {"/api/check-stock", "/api/draft/recommend", "/api/submit", "/api/ai-consult"}:
+        if path not in {"/api/check-stock", "/api/draft/recommend", "/api/submit", "/api/ai-consult", "/api/generate-runner-box", "/api/generate-sport-box", "/api/luna-consult-box"}:
             self.send_error(404)
             return
 
@@ -269,6 +314,40 @@ class QuizHTTPHandler(BaseHTTPRequestHandler):
             except Exception as e:
                 self.send_json(500, {"ok": False, "message": str(e)})
             return
+
+        if path in {"/api/generate-runner-box", "/api/generate-sport-box"}:
+            sport = payload.get("sport", "running")
+            try:
+                if generate_custom_sport_box:
+                    box = generate_custom_sport_box(sport, payload)
+                    self.send_json(200, box)
+                    return
+                elif generate_runner_box and RUNNING_CATALOG:
+                    box = generate_runner_box(payload, RUNNING_CATALOG)
+                    self.send_json(200, box)
+                    return
+                else:
+                    self.send_json(500, {"error": "Box engine not available"})
+                    return
+            except Exception as e:
+                self.send_json(500, {"error": f"Failed to generate box: {e}"})
+            return
+
+        if path == "/api/luna-consult-box":
+            if not consult_luna_for_box:
+                self.send_json(500, {"error": "Luna consultant module not available"})
+                return
+            try:
+                user_inputs = payload.get("user_inputs", {})
+                generated_box = payload.get("generated_box", {})
+                locale = payload.get("locale", "uk")
+                result = consult_luna_for_box(user_inputs, generated_box, locale)
+                self.send_json(200, result)
+            except Exception as e:
+                self.send_json(500, {"error": f"Luna consultation error: {e}"})
+            return
+
+
 
 
 def main():

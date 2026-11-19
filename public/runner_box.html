@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Стартовий бокс бігуна та спортсмена (Індивідуальний підбір) — Race Expert</title>
+  <meta name="description" content="Конструктор персонального стартового боксу спортивного харчування та екіпірування для бігу, велоспорту, триатлону, залу та походів від інтернет-магазину Race Expert">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#0066ff',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af'
+            },
+            accent: {
+              500: '#f59e0b',
+              600: '#d97706'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      -webkit-tap-highlight-color: transparent;
+      background-color: #f8fafc;
+      color: #0f172a;
+    }
+    .re-shadow-sm {
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+    }
+    .re-shadow-md {
+      box-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.08), 0 2px 6px -2px rgba(15, 23, 42, 0.04);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col font-sans antialiased selection:bg-blue-600 selection:text-white">
+
+  <!-- TOP PROMO BAR (authentic from Race Expert live store) -->
+  <aside aria-label="Спеціальні пропозиції" class="bg-sky-50 border-b border-sky-100 py-1.5 px-4 text-center text-xs font-semibold text-blue-700">
+    <div class="max-w-6xl mx-auto flex items-center justify-center gap-2">
+      <svg class="w-4 h-4 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
+      <span>Безкоштовна доставка від 2 500 грн по всій Україні</span>
+    </div>
+  </aside>
+
+  <!-- STORE HEADER (exact Race Expert visual replica from mobile screenshot) -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 re-shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-3">
+      
+      <!-- Top Row: Logo, Messengers, Phone, Icons -->
+      <div class="flex items-center justify-between gap-3">
+        
+        <!-- Left: Menu & Logo -->
+        <div class="flex items-center gap-3">
+          <button type="button" aria-label="Відкрити головне меню" class="p-2 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors md:hidden">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </button>
+          
+          <a href="https://raceexpert.com.ua" class="flex items-center gap-2.5 group">
+            <!-- Race Expert Icon -->
+            <div class="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center text-white font-display font-black text-lg tracking-tighter shadow-sm group-hover:bg-blue-700 transition-colors">
+              <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                <path d="M4 18l6-6-6-6h4l6 6-6 6H4zm8 0l6-6-6-6h4l6 6-6 6h-4z"/>
+              </svg>
+            </div>
+            <div>
+              <span class="font-display font-extrabold text-lg tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors block leading-none">
+                RACE EXPERT
+              </span>
+              <span class="text-[10px] font-semibold text-slate-500 uppercase tracking-wider block mt-0.5">
+                Здоров’я | Рух | Енергія
+              </span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Center: Messengers & Store Phone -->
+        <div class="flex items-center gap-2 sm:gap-3 text-xs">
+          <!-- Viber -->
+          <a href="viber://chat?number=%2B380688234690" target="_blank" rel="noopener" aria-label="Viber чат" class="w-7 h-7 rounded-full bg-[#7360F2] text-white flex items-center justify-center hover:opacity-90 transition-opacity" title="Viber">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.08L2 22l5.08-1.38C8.54 21.5 10.23 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z"/></svg>
+          </a>
+          <!-- Telegram -->
+          <a href="https://t.me/raceexpert" target="_blank" rel="noopener" aria-label="Telegram чат" class="w-7 h-7 rounded-full bg-[#229ED9] text-white flex items-center justify-center hover:opacity-90 transition-opacity" title="Telegram">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .37z"/></svg>
+          </a>
+          <!-- WhatsApp -->
+          <a href="https://wa.me/380688234690" target="_blank" rel="noopener" aria-label="WhatsApp чат" class="w-7 h-7 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:opacity-90 transition-opacity" title="WhatsApp">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31c-.82-1.31-1.26-2.83-1.26-4.38 0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 012.41 5.83c.01 4.54-3.69 8.23-8.22 8.23z"/></svg>
+          </a>
+          
+          <a href="tel:+380688234690" class="font-bold text-slate-900 hover:text-blue-600 transition-colors text-xs sm:text-sm ml-1 tracking-tight hidden sm:inline">
+            +380 (68) 823 46 90
+          </a>
+        </div>
+
+        <!-- Right: Profile, Wishlist, Cart -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          <a href="https://raceexpert.com.ua/index.php?route=account/login" aria-label="Особистий кабінет" class="p-2 text-slate-700 hover:text-blue-600 transition-colors hidden sm:inline-flex" title="Особистий кабінет">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+          </a>
+          
+          <a href="https://raceexpert.com.ua/index.php?route=account/wishlist" aria-label="Список бажань" class="p-2 text-slate-700 hover:text-rose-600 transition-colors relative" title="Список бажань">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+            <span class="absolute top-1 right-1 w-4 h-4 rounded-full bg-blue-600 text-white text-[10px] font-bold flex items-center justify-center">0</span>
+          </a>
+
+          <a href="https://raceexpert.com.ua/index.php?route=checkout/cart" aria-label="Кошик покупок" class="p-2 text-slate-700 hover:text-blue-600 transition-colors relative" title="Кошик">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+            <span id="nav-cart-count" class="absolute top-1 right-1 w-4 h-4 rounded-full bg-blue-600 text-white text-[10px] font-bold flex items-center justify-center">0</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Rating & Store Reviews Row -->
+      <div class="flex items-center gap-2 mt-2 pt-2 border-t border-slate-100 text-[11px] font-medium text-slate-600">
+        <div class="flex text-amber-400">★★★★★</div>
+        <span class="font-bold text-slate-800">4.9</span>
+        <span class="text-slate-400">•</span>
+        <a href="https://raceexpert.com.ua" class="hover:underline text-slate-500">2 492 відгуки про магазин</a>
+      </div>
+
+      <!-- Search Bar (rounded pill with blue button) -->
+      <search class="mt-2.5">
+        <form action="https://raceexpert.com.ua/index.php" method="GET" class="relative flex items-center">
+          <input type="hidden" name="route" value="product/search">
+          <label for="store-search-input" class="sr-only">Пошук товарів</label>
+          <input 
+            type="search" 
+            id="store-search-input"
+            name="search" 
+            placeholder="Пошук серед 10 000 товарів" 
+            class="w-full bg-slate-50 hover:bg-white focus:bg-white text-slate-800 placeholder:text-slate-400 text-xs sm:text-sm pl-4 pr-12 py-2.5 rounded-full border border-slate-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition-all re-shadow-sm"
+          >
+          <button type="submit" aria-label="Шукати на сайті" class="absolute right-1 w-8 h-8 rounded-full bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center transition-colors shadow-sm">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+          </button>
+        </form>
+      </search>
+    </div>
+  </header>
+
+  <!-- MAIN PAGE CONTENT (DIRECTLY THE QUIZ / CUSTOM BOX BUILDER) -->
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 pt-4 pb-12">
+    
+    <!-- COMPACT TITLE & SPORT SELECTOR -->
+    <div class="mb-4">
+      <h1 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight leading-tight">
+        Конструктор стартового боксу спортсмена
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-500 mt-0.5">
+        Індивідуальний підбір харчування та екіпірування під вашу дистанцію та цілі (1 хвилина)
+      </p>
+    </div>
+
+    <!-- SPORT SELECTOR TABS -->
+    <div class="bg-white border border-slate-200 rounded-2xl p-4 re-shadow-sm mb-5">
+      <div class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2.5 px-1 flex items-center justify-between">
+        <span>Оберіть напрямок або вид спорту:</span>
+        <span id="active-sport-badge" class="text-blue-700 font-semibold bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-200">🏃 Біг (478 товарів)</span>
+      </div>
+      
+      <div class="grid grid-cols-2 sm:grid-cols-5 gap-2.5" id="sport-selector">
+        <button type="button" data-sport="running" class="sport-btn p-3 rounded-xl border-2 border-blue-600 bg-blue-50 text-blue-900 font-bold text-xs flex flex-col items-center gap-1 transition-all re-shadow-sm">
+          <span class="text-2xl">🏃</span>
+          <span>Біг</span>
+        </button>
+        <button type="button" data-sport="cycling" class="sport-btn p-3 rounded-xl border border-slate-200 bg-white hover:border-blue-400 hover:bg-slate-50 text-slate-700 font-semibold text-xs flex flex-col items-center gap-1 transition-all">
+          <span class="text-2xl">🚴</span>
+          <span>Велоспорт</span>
+        </button>
+        <button type="button" data-sport="triathlon" class="sport-btn p-3 rounded-xl border border-slate-200 bg-white hover:border-blue-400 hover:bg-slate-50 text-slate-700 font-semibold text-xs flex flex-col items-center gap-1 transition-all">
+          <span class="text-2xl">🏊🚴</span>
+          <span>Триатлон</span>
+        </button>
+        <button type="button" data-sport="gym" class="sport-btn p-3 rounded-xl border border-slate-200 bg-white hover:border-blue-400 hover:bg-slate-50 text-slate-700 font-semibold text-xs flex flex-col items-center gap-1 transition-all">
+          <span class="text-2xl">🏋️</span>
+          <span>Фітнес / Зал</span>
+        </button>
+        <button type="button" data-sport="outdoor" class="sport-btn p-3 rounded-xl border border-slate-200 bg-white hover:border-blue-400 hover:bg-slate-50 text-slate-700 font-semibold text-xs flex flex-col items-center gap-1 transition-all col-span-2 sm:col-span-1">
+          <span class="text-2xl">🏕️</span>
+          <span>Походи (ЇDLO)</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- STEPPER SECTION (QUESTIONS / CONFIGURATOR) -->
+    <div id="stepper-container" class="space-y-6">
+      
+      <!-- Stepper Progress Header -->
+      <div id="running-stepper-header" class="space-y-2 bg-white border border-slate-200 p-4 rounded-xl re-shadow-sm">
+        <div class="flex items-center justify-between text-xs font-semibold">
+          <button id="quiz-back-btn" type="button" class="invisible opacity-0 transition-all duration-200 text-slate-600 hover:text-blue-600 flex items-center gap-1 py-1 px-2 rounded-md hover:bg-slate-100">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            <span>Назад</span>
+          </button>
+          <span id="stepper-counter" class="text-blue-700 font-bold tracking-wider">Крок 1 з 7</span>
+        </div>
+        <div class="w-full bg-slate-100 rounded-full h-2.5 overflow-hidden border border-slate-200">
+          <div id="stepper-progress-bar" class="bg-blue-600 h-full rounded-full transition-all duration-300" style="width: 14%;"></div>
+        </div>
+      </div>
+
+      <!-- QUESTIONS CONTAINER -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-5 md:p-8 re-shadow-md">
+        
+        <!-- OTHER SPORTS DYNAMIC CONTAINER -->
+        <div id="other-sports-container" class="hidden space-y-6"></div>
+
+        <!-- RUNNING FLOW (STEPS 1-7) -->
+        <div id="running-steps-container" class="space-y-6">
+
+          <!-- STEP 1: DISTANCE -->
+          <div id="step-1" class="flex flex-col space-y-6">
+            <div>
+              <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-blue-50 text-blue-700 text-xs font-semibold border border-blue-200 mb-2">
+                <span>🏃‍♂️</span> <span>Забіг</span>
+              </div>
+              <h2 class="text-xl md:text-2xl font-bold text-slate-900 tracking-tight">
+                Яку дистанцію ви плануєте бігти?
+              </h2>
+              <p class="text-sm text-slate-500 mt-1">
+                Двигун розрахує необхідну кількість вуглеводів, енергетичних гелів та об’єм гідратації.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              <button type="button" data-q="distance" data-val="10k" class="p-4 rounded-xl border border-slate-200 bg-white hover:border-blue-400 hover:bg-blue-50/20 text-left transition-all group flex flex-col justify-between re-shadow-sm">
+                <div>
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors">10 км</span>
+                    <span class="text-xs font-semibold text-slate-600 px-2 py-0.5 bg-slate-100 rounded">~40-60 хв</span>
+                  </div>
+                  <p class="text-xs text-slate-500">Швидкий темповий забіг або перший офіційний старт.</p>
+                </div>
+                <div class="mt-3 text-[11px] text-blue-600 font-semibold">2 гелі + ізотонік + пояс + магній</div>
+              </button>
+
+              <button type="button" data-q="distance" data-val="21k" class="p-4 rounded-xl border-2 border-blue-600 bg-blue-50 text-left transition-all group flex flex-col justify-between re-shadow-sm">
+                <div>
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-base font-bold text-blue-900 group-hover:text-blue-600 transition-colors">Півмарафон (21.1 км)</span>
+                    <span class="text-xs font-semibold text-blue-800 px-2 py-0.5 bg-blue-100 rounded">~1:30-2:15</span>
+                  </div>
+                  <p class="text-xs text-slate-600">Класична перевірка витривалості та швидкісної витримки.</p>
+                </div>
+                <div class="mt-3 text-[11px] text-blue-700 font-bold">4 гелі + мармелад + солі + рекавері</div>
+              </button>
+
+              <button type="button" data-q="distance" data-val="42k" class="p-4 rounded-xl border border-slate-200 bg-white hover:border-blue-400 hover:bg-blue-50/20 text-left transition-all group flex flex-col justify-between re-shadow-sm">
+                <div>
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors">Марафон (42.2 км)</span>
+                    <span class="text-xs font-semibold text-slate-600 px-2 py-0.5 bg-slate-100 rounded">~3:00-4:30</span>
+                  </div>
+                  <p class="text-xs text-slate-500">Королівська дистанція. Потребує суворого графіка харчування.</p>
+                </div>
+                <div class="mt-3 text-[11px] text-blue-600 font-semibold">7 гелів + солі + Chamois + шкарпетки</div>
+              </button>
+
+              <button type="button" data-q="distance" data-val="trail" class="p-4 rounded-xl border border-slate-200 bg-white hover:border-blue-400 hover:bg-blue-50/20 text-left transition-all group flex flex-col justify-between re-shadow-sm">
+                <div>
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors">Трейл / Ультра</span>
+                    <span class="text-xs font-semibold text-slate-600 px-2 py-0.5 bg-slate-100 rounded">3+ години</span>
+                  </div>
+                  <p class="text-xs text-slate-500">Гори, пересічна місцевість, набір висоти та повна автономність.</p>
+                </div>
+                <div class="mt-3 text-[11px] text-blue-600 font-semibold">Гелі + тверде паливо + фляги + захист</div>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 2: PACE / TARGET -->
+          <div id="step-2" class="hidden flex-col space-y-6">
+            <div>
+              <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-blue-50 text-blue-700 text-xs font-semibold border border-blue-200 mb-2">
+                <span>⏱️</span> <span>Ціль забігу</span>
+              </div>
+              <h2 class="text-xl md:text-2xl font-bold text-slate-900 tracking-tight">
+                Який ваш орієнтовний темп та завдання?
+              </h2>
+              <p class="text-sm text-slate-500 mt-1">
+                Від інтенсивності залежить швидкість всмоктування та потреба у кофеїнових активаторах.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+              <button type="button" data-q="pace_target" data-val="record" class="p-4 rounded-xl border border-slate-200 bg-white hover:border-blue-400 hover:bg-blue-50/20 text-left transition-all group re-shadow-sm">
+                <span class="text-2xl block mb-2">⚡</span>
+                <span class="text-base font-bold text-slate-900 group-hover:text-blue-600 block">Особистий рекорд</span>
+                <p class="text-xs text-slate-500 mt-1">Максимальний темп, пульс у 4-5 зоні. Потрібні висококонцентровані гелі.</p>
+              </button>
+
+              <button type="button" data-q="pace_target" data-val="steady" class="p-4 rounded-xl border-2 border-blue-600 bg-blue-50 text-left transition-all group re-shadow-sm">
+                <span class="text-2xl block mb-2">🎯</span>
+                <span class="text-base font-bold text-blue-900 block">Стабільний рівний темп</span>
+                <p class="text-xs text-slate-600 mt-1">Комфортний запланований час без зривів. Збалансоване паливо.</p>
+              </button>
+
+              <button type="button" data-q="pace_target" data-val="finish" class="p-4 rounded-xl border border-slate-200 bg-white hover:border-blue-400 hover:bg-blue-50/20 text-left transition-all group re-shadow-sm">
+                <span class="text-2xl block mb-2">🏅</span>
+                <span class="text-base font-bold text-slate-900 group-hover:text-blue-600 block">Головне — фінішувати</span>
+                <p class="text-xs text-slate-500 mt-1">Перший забіг, збереження сил і гарантований фініш без судом.</p>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 3: WEATHER -->
+          <div id="step-3" class="hidden flex-col space-y-6">
+            <div>
+              <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-blue-50 text-blue-700 text-xs font-semibold border border-blue-200 mb-2">
+                <span>🌡️</span> <span>Умови</span>
+              </div>
+              <h2 class="text-xl md:text-2xl font-bold text-slate-900 tracking-tight">
+                Яка очікується погода на старті?
+              </h2>
+              <p class="text-sm text-slate-500 mt-1">
+                При температурі понад +22°C втрата солей зростає вдвічі, що провокує судоми.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              <button type="button" data-q="weather" data-val="hot" class="p-4 rounded-xl border border-slate-200 bg-white hover:border-blue-400 hover:bg-blue-50/20 text-left transition-all group re-shadow-sm">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="text-base font-bold text-slate-900 group-hover:text-blue-600">☀️ Спека (+23°C і вище)</span>
+                  <span class="text-xs font-semibold text-rose-600 bg-rose-50 px-2 py-0.5 rounded">Судоми!</span>
+                </div>
+                <p class="text-xs text-slate-500">Посилене потовиділення. Обов'язкові сольові капсули та концентрований ізотонік.</p>
+              </button>
+
+              <button type="button" data-q="weather" data-val="moderate" class="p-4 rounded-xl border-2 border-blue-600 bg-blue-50 text-left transition-all group re-shadow-sm">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="text-base font-bold text-blue-900">🌤️ Помірна (+14°C ... +22°C)</span>
+                  <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">Ідеально</span>
+                </div>
+                <p class="text-xs text-slate-600">Оптимальні бігові умови для особистих рекордів.</p>
+              </button>
+
+              <button type="button" data-q="weather" data-val="cold" class="p-4 rounded-xl border border-slate-200 bg-white hover:border-blue-400 hover:bg-blue-50/20 text-left transition-all group re-shadow-sm">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="text-base font-bold text-slate-900 group-hover:text-blue-600">❄️ Прохолодно (+5°C ... +13°C)</span>
+                </div>
+                <p class="text-xs text-slate-500">Почуття спраги притуплене. Потрібні рідкі гелі, які не гуснуть на холоді.</p>
+              </button>
+
+              <button type="button" data-q="weather" data-val="rainy" class="p-4 rounded-xl border border-slate-200 bg-white hover:border-blue-400 hover:bg-blue-50/20 text-left transition-all group re-shadow-sm">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="text-base font-bold text-slate-900 group-hover:text-blue-600">🌧️ Дощ або сильний вітер</span>
+                </div>
+                <p class="text-xs text-slate-500">Ризик натертостей мокрим одягом та переохолодження.</p>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 4: STOMACH SENSITIVITY -->
+          <div id="step-4" class="hidden flex-col space-y-6">
+            <div>
+              <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-blue-50 text-blue-700 text-xs font-semibold border border-blue-200 mb-2">
+                <span>🛡️</span> <span>ШКТ та Дієта</span>
+              </div>
+              <h2 class="text-xl md:text-2xl font-bold text-slate-900 tracking-tight">
+                Як ваш шлунок реагує на спортивне харчування?
+              </h2>
+              <p class="text-sm text-slate-500 mt-1">
+                Гідрогелі Maurten та PF&H інкапсулюють вуглеводи й не викликають розладів при високому пульсі.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+              <button type="button" data-q="stomach_type" data-val="normal" class="p-4 rounded-xl border-2 border-blue-600 bg-blue-50 text-left transition-all group re-shadow-sm">
+                <span class="text-2xl block mb-2">👌</span>
+                <span class="text-base font-bold text-blue-900 block">Звичайний шлунок</span>
+                <p class="text-xs text-slate-600 mt-1">Добре переношу стандартні гелі SiS, Nutrend, PowerBar.</p>
+              </button>
+
+              <button type="button" data-q="stomach_type" data-val="sensitive" class="p-4 rounded-xl border border-slate-200 bg-white hover:border-blue-400 hover:bg-blue-50/20 text-left transition-all group re-shadow-sm">
+                <span class="text-2xl block mb-2">🌿</span>
+                <span class="text-base font-bold text-slate-900 group-hover:text-blue-600 block">Чутливий ШКТ</span>
+                <p class="text-xs text-slate-500 mt-1">Буває важкість або нудота. Підбирати м'які гідрогелі з нейтральним pH.</p>
+              </button>
+
+              <button type="button" data-q="stomach_type" data-val="vegan" class="p-4 rounded-xl border border-slate-200 bg-white hover:border-blue-400 hover:bg-blue-50/20 text-left transition-all group re-shadow-sm">
+                <span class="text-2xl block mb-2">🌱</span>
+                <span class="text-base font-bold text-slate-900 group-hover:text-blue-600 block">100% Веган / Рослинне</span>
+                <p class="text-xs text-slate-500 mt-1">Тільки рослинні інгредієнти, без тваринного желатину чи молочних білків.</p>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 5: CAFFEINE PREFERENCE -->
+          <div id="step-5" class="hidden flex-col space-y-6">
+            <div>
+              <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-blue-50 text-blue-700 text-xs font-semibold border border-blue-200 mb-2">
+                <span>⚡</span> <span>Кофеїн</span>
+              </div>
+              <h2 class="text-xl md:text-2xl font-bold text-slate-900 tracking-tight">
+                Чи потрібен вам кофеїновий буст на фініш?
+              </h2>
+              <p class="text-sm text-slate-500 mt-1">
+                Кофеїн стимулює ЦНС і знижує відчуття втоми на останніх кілометрах.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              <button type="button" data-q="caffeine_preference" data-val="boost" class="p-4 rounded-xl border-2 border-blue-600 bg-blue-50 text-left transition-all group re-shadow-sm">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="text-base font-bold text-blue-900">🚀 Так, потрібен буст на фініш</span>
+                  <span class="text-xs font-semibold text-blue-800 bg-blue-100 px-2 py-0.5 rounded">+75-100мг</span>
+                </div>
+                <p class="text-xs text-slate-600">Додати 1-2 кофеїнові гелі для прискорення на останніх кілометрах.</p>
+              </button>
+
+              <button type="button" data-q="caffeine_preference" data-val="none" class="p-4 rounded-xl border border-slate-200 bg-white hover:border-blue-400 hover:bg-blue-50/20 text-left transition-all group re-shadow-sm">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="text-base font-bold text-slate-900 group-hover:text-blue-600">🚫 Суворо БЕЗ кофеїну</span>
+                  <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">0 мг</span>
+                </div>
+                <p class="text-xs text-slate-500">Чутливість серця, високий пульс або вечірній старт. Жодного міліграма кофеїну.</p>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 6: BODY CONCERNS -->
+          <div id="step-6" class="hidden flex-col space-y-6">
+            <div>
+              <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-blue-50 text-blue-700 text-xs font-semibold border border-blue-200 mb-2">
+                <span>🩹</span> <span>Турбота про тіло</span>
+              </div>
+              <h2 class="text-xl md:text-2xl font-bold text-slate-900 tracking-tight">
+                Чи є специфічні зони ризику під час бігу?
+              </h2>
+              <p class="text-sm text-slate-500 mt-1">
+                Оберіть усе, що турбує (можна обрати кілька варіантів або пропустити):
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="body-concerns-grid">
+              <label class="cursor-pointer p-4 rounded-xl border border-slate-200 bg-white hover:border-blue-400 transition-all flex items-start gap-3.5 re-shadow-sm">
+                <input type="checkbox" name="body_concern" value="cramps" class="mt-1 w-5 h-5 text-blue-600 rounded border-slate-300 focus:ring-blue-500">
+                <div>
+                  <span class="text-sm font-bold text-slate-900 block">Судоми литок або спазми</span>
+                  <span class="text-xs text-slate-500 block mt-0.5">Додати рідкий магній Magneslife Strong та електроліти</span>
+                </div>
+              </label>
+
+              <label class="cursor-pointer p-4 rounded-xl border border-slate-200 bg-white hover:border-blue-400 transition-all flex items-start gap-3.5 re-shadow-sm">
+                <input type="checkbox" name="body_concern" value="chafing" class="mt-1 w-5 h-5 text-blue-600 rounded border-slate-300 focus:ring-blue-500">
+                <div>
+                  <span class="text-sm font-bold text-slate-900 block">Натирання шкіри (Chamois Butt'r)</span>
+                  <span class="text-xs text-slate-500 block mt-0.5">Крем від натертостей стегон, пахв та мозолів стопи</span>
+                </div>
+              </label>
+
+              <label class="cursor-pointer p-4 rounded-xl border border-slate-200 bg-white hover:border-blue-400 transition-all flex items-start gap-3.5 re-shadow-sm">
+                <input type="checkbox" name="body_concern" value="joints" class="mt-1 w-5 h-5 text-blue-600 rounded border-slate-300 focus:ring-blue-500">
+                <div>
+                  <span class="text-sm font-bold text-slate-900 block">Коліна та зв'язки</span>
+                  <span class="text-xs text-slate-500 block mt-0.5">Шоковий захист суглобів та хондропротекторний догляд</span>
+                </div>
+              </label>
+
+              <label class="cursor-pointer p-4 rounded-xl border border-slate-200 bg-white hover:border-blue-400 transition-all flex items-start gap-3.5 re-shadow-sm">
+                <input type="checkbox" name="body_concern" value="recovery_shake" class="mt-1 w-5 h-5 text-blue-600 rounded border-slate-300 focus:ring-blue-500">
+                <div>
+                  <span class="text-sm font-bold text-slate-900 block">Швидке відновлення м'язів</span>
+                  <span class="text-xs text-slate-500 block mt-0.5">Відновлювальний білково-вуглеводний шейк SiS REGO або Regener</span>
+                </div>
+              </label>
+            </div>
+
+            <div class="pt-2">
+              <button id="step-6-continue-btn" type="button" class="w-full py-3.5 px-6 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm tracking-wide shadow-md transition-all">
+                Продовжити ➔
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 7: PRICE TIER & GEAR NEEDED -->
+          <div id="step-7" class="hidden flex-col space-y-6">
+            <div>
+              <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-blue-50 text-blue-700 text-xs font-semibold border border-blue-200 mb-2">
+                <span>🎯</span> <span>Фінал</span>
+              </div>
+              <h2 class="text-xl md:text-2xl font-bold text-slate-900 tracking-tight">
+                Оберіть ціновий сегмент та потрібні аксесуари
+              </h2>
+              <p class="text-sm text-slate-500 mt-1">
+                Ми підберемо бренди під ваш бюджет із гарантією наявності на складі в Україні.
+              </p>
+            </div>
+
+            <!-- PRICE TIER SELECTOR & CUSTOM BUDGET -->
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <label class="text-xs font-bold text-slate-700 uppercase tracking-wider block">Ціновий рівень або власний бюджет:</label>
+                <span class="text-[11px] text-slate-500 font-medium">Оберіть категорію або вкажіть суму</span>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="running-price-tier-grid">
+                <button type="button" data-q="price_tier" data-val="economy" class="p-3.5 rounded-xl border border-slate-200 bg-white hover:border-blue-400 text-left transition-all re-shadow-sm cursor-pointer">
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm font-bold text-emerald-600 block">🟢 Економ</span>
+                    <span class="text-[11px] font-extrabold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200" id="running-price-badge-economy">до 900–1 200 ₴</span>
+                  </div>
+                  <span class="text-xs text-slate-500 mt-1 block leading-snug">Базовий надійний набір (Nutrend, Sporter, Olimp)</span>
+                </button>
+
+                <button type="button" data-q="price_tier" data-val="standard" class="p-3.5 rounded-xl border-2 border-blue-600 bg-blue-50 text-left transition-all re-shadow-sm cursor-pointer">
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm font-bold text-blue-700 block">🔵 Оптимальний</span>
+                    <span class="text-[11px] font-extrabold text-blue-700 bg-blue-100/60 px-2 py-0.5 rounded-md border border-blue-200" id="running-price-badge-standard">до 1 500–2 000 ₴</span>
+                  </div>
+                  <span class="text-xs text-slate-700 mt-1 block leading-snug">Золотий стандарт ціна/якість (SiS, Sponser, PF&H)</span>
+                </button>
+
+                <button type="button" data-q="price_tier" data-val="premium" class="p-3.5 rounded-xl border border-slate-200 bg-white hover:border-blue-400 text-left transition-all re-shadow-sm cursor-pointer">
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm font-bold text-purple-700 block">🟣 PRO / Еліта</span>
+                    <span class="text-[11px] font-extrabold text-purple-700 bg-purple-50 px-2 py-0.5 rounded-md border border-purple-200" id="running-price-badge-premium">від 2 500+ ₴</span>
+                  </div>
+                  <span class="text-xs text-slate-500 mt-1 block leading-snug">Преміум гідрогелі (Maurten, Beta Fuel 80/90)</span>
+                </button>
+              </div>
+
+              <!-- CUSTOM BUDGET INPUT -->
+              <div class="p-4 rounded-xl border-2 border-dashed border-slate-300 bg-slate-50/70 hover:bg-slate-50 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3.5" id="running-custom-budget-container">
+                <div class="flex-1">
+                  <label for="running-custom-budget-input" class="text-xs font-bold text-slate-800 flex items-center gap-2 cursor-pointer">
+                    <span class="text-base">💰</span> <span>Вказати точний максимальний бюджет (грн):</span>
+                  </label>
+                  <span class="text-[11px] text-slate-500 block mt-0.5">
+                    Введіть вашу бажану суму (наприклад: 1 500 грн) — алгоритм точно вкладеться у цей ліміт.
+                  </span>
+                </div>
+                <div class="relative w-full sm:w-44 flex-shrink-0">
+                  <input 
+                    type="number" 
+                    id="running-custom-budget-input" 
+                    name="custom_budget" 
+                    min="300" 
+                    max="50000" 
+                    step="50" 
+                    placeholder="Напр. 1500" 
+                    class="w-full pl-3.5 pr-10 py-2.5 rounded-xl border border-slate-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 font-extrabold text-slate-900 text-sm outline-none bg-white transition-all"
+                  >
+                  <span class="absolute right-3.5 top-2.5 text-xs font-bold text-slate-400 pointer-events-none">грн</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- GEAR CHECKBOXES -->
+            <div class="space-y-2.5 pt-2">
+              <label class="text-xs font-bold text-slate-600 uppercase tracking-wider block">Які аксесуари додати до боксу?</label>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="gear-needed-grid">
+                <label class="cursor-pointer p-3.5 rounded-xl border border-slate-200 bg-white hover:border-blue-400 transition-all flex items-center gap-3 re-shadow-sm">
+                  <input type="checkbox" name="gear" value="belt" checked class="w-4 h-4 text-blue-600 rounded border-slate-300 focus:ring-blue-500">
+                  <span class="text-xs font-bold text-slate-800">Пояс для номера та гелів</span>
+                </label>
+
+                <label class="cursor-pointer p-3.5 rounded-xl border border-slate-200 bg-white hover:border-blue-400 transition-all flex items-center gap-3 re-shadow-sm">
+                  <input type="checkbox" name="gear" value="socks" class="w-4 h-4 text-blue-600 rounded border-slate-300 focus:ring-blue-500">
+                  <span class="text-xs font-bold text-slate-800">Бігові шкарпетки RE Ultra</span>
+                </label>
+
+                <label class="cursor-pointer p-3.5 rounded-xl border border-slate-200 bg-white hover:border-blue-400 transition-all flex items-center gap-3 re-shadow-sm">
+                  <input type="checkbox" name="gear" value="flask" class="w-4 h-4 text-blue-600 rounded border-slate-300 focus:ring-blue-500">
+                  <span class="text-xs font-bold text-slate-800">М'яка бігова фляга 500 мл</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- SUBMIT BUTTON -->
+            <div class="pt-4">
+              <button id="step-7-submit" type="button" class="w-full py-4 px-6 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-base tracking-wide shadow-lg shadow-blue-600/25 transition-all flex items-center justify-center gap-2">
+                <span>Сформувати мій Стартовий бокс ➔</span>
+              </button>
+            </div>
+          </div>
+
+        </div> <!-- END RUNNING STEPS -->
+      </div> <!-- END QUESTIONS CONTAINER -->
+
+    </div> <!-- END STEPPER CONTAINER -->
+
+    <!-- RESULT SCREEN -->
+    <div id="result-container" class="hidden space-y-6">
+      
+      <!-- BIG TOP RESTART BAR («Почати заново») -->
+      <div class="bg-white border-2 border-blue-500/30 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-md bg-gradient-to-r from-blue-50/80 via-white to-indigo-50/80">
+        <div class="flex items-center gap-3.5 text-center sm:text-left">
+          <div class="w-12 h-12 rounded-2xl bg-blue-600 text-white flex items-center justify-center font-black text-2xl shadow-sm flex-shrink-0 mx-auto sm:mx-0">
+            🔄
+          </div>
+          <div>
+            <div class="text-base sm:text-lg font-black text-slate-900 leading-tight">
+              Бажаєте протестувати інший варіант або дистанцію?
+            </div>
+            <div class="text-xs text-slate-500 mt-0.5">
+              Скидає поточні параметри та повертає до вибору виду спорту і цілей
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="restart-quiz-btn w-full sm:w-auto py-3.5 px-8 rounded-xl bg-blue-600 hover:bg-blue-700 active:scale-95 text-white font-extrabold text-base sm:text-lg shadow-lg shadow-blue-600/25 transition-all flex items-center justify-center gap-2.5 flex-shrink-0 cursor-pointer">
+          <svg class="w-5 h-5 stroke-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+          <span>Почати заново</span>
+        </button>
+      </div>
+
+      <!-- BOX HEADER SUMMARY -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 re-shadow-md">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-5">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-bold border border-emerald-200 mb-2">
+              <span>✅</span> <span>Бокс успішно розраховано</span>
+            </div>
+            <h2 id="box-distance-title" class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">
+              Стартовий бокс спортсмена
+            </h2>
+            <div id="box-budget-badge" class="hidden mt-2 inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-blue-50 text-blue-900 text-xs font-semibold border border-blue-200 flex-wrap"></div>
+            <p class="text-sm text-slate-600 mt-1">
+              Всі позиції є на складі в Україні. Ви можете змінювати смаки, розміри та прибирати непотрібне галочками.
+            </p>
+          </div>
+
+          <button type="button" class="restart-quiz-btn py-2.5 px-5 rounded-xl border border-blue-200 bg-blue-50 hover:bg-blue-100 text-blue-700 font-bold text-xs sm:text-sm transition-all self-start md:self-center flex items-center gap-1.5 shadow-sm cursor-pointer">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+            <span>Почати заново</span>
+          </button>
+        </div>
+
+        <!-- LUNA AI EXPERT CONSULTATION CARD -->
+        <div id="luna-card" class="mt-5 p-5 rounded-xl bg-gradient-to-br from-blue-50/70 via-white to-indigo-50/70 border border-blue-200 re-shadow-sm">
+          <div class="flex items-center justify-between gap-3 mb-3">
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs shadow-sm">
+                Л
+              </div>
+              <div>
+                <h3 class="text-sm font-bold text-slate-900">Порада спортивного нутриціолога Race Expert</h3>
+                <p class="text-[11px] text-slate-500">Автоматичний аналіз фізіології від консультанта Луни</p>
+              </div>
+            </div>
+            <span id="luna-safety-badge" class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200">
+              100% сумісність
+            </span>
+          </div>
+
+          <div id="luna-loading" class="py-4 text-center text-xs text-slate-500">
+            <svg class="animate-spin h-5 w-5 text-blue-600 mx-auto mb-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg>
+            Готуємо тактичний графік прийому харчування...
+          </div>
+
+          <div id="luna-content" class="hidden space-y-3 text-xs leading-relaxed text-slate-700">
+            <p id="luna-verdict" class="font-semibold text-slate-900"></p>
+            <p id="luna-strategy"></p>
+            <div id="luna-timeline" class="space-y-1.5 pt-1">
+              <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider block">Графік прийому на дистанції:</span>
+              <div id="luna-timeline-list" class="space-y-1.5"></div>
+            </div>
+            <div class="p-3 rounded-lg bg-amber-50 border border-amber-200 text-amber-900 text-xs">
+              <span class="font-bold">💡 Лайфхак від експерта:</span> <span id="luna-pro-tip"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLOTS CONTAINER (Dynamic 4-Slot Breakdown: Energy, Hydration, Gear, Care) -->
+      <div id="slots-container" class="space-y-5"></div>
+
+      <!-- CHECKOUT NOTIFICATION & STATUS -->
+      <div id="checkout-status-message" class="hidden p-4 rounded-xl text-center text-sm font-semibold bg-white border border-slate-200 re-shadow-sm"></div>
+
+      <!-- BOTTOM STICKY BAR -->
+      <div id="sticky-bar" class="sticky bottom-0 z-30 bg-white/95 backdrop-blur-md border-t border-slate-200 p-4 rounded-2xl re-shadow-md">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <div class="text-xs text-slate-500">
+              Всього обрано: <span id="selected-items-count" class="font-bold text-slate-800">0 товарів</span>
+            </div>
+            <div class="text-2xl font-black text-blue-700 leading-tight" id="total-box-price">
+              0 грн
+            </div>
+          </div>
+
+          <div class="flex items-center gap-2.5 flex-wrap sm:flex-nowrap">
+            <button type="button" class="restart-quiz-btn py-3.5 px-5 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-700 font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5 cursor-pointer">
+              <span>🔄 Почати заново</span>
+            </button>
+            <button id="buy-box-btn" type="button" class="py-3.5 px-6 sm:px-8 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-sm sm:text-base tracking-wide shadow-lg shadow-blue-600/25 transition-all flex items-center justify-center gap-2 cursor-pointer">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg>
+              <span>Купити обрані товари</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- END RESULT CONTAINER -->
+
+    <!-- AUTHENTIC RACE EXPERT PRODUCT GRID ("СПОРТИВНЕ ХАРЧУВАННЯ" matching the uploaded screenshot) -->
+    <section aria-label="Спортивне харчування" class="mt-10">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
+          Спортивне харчування
+        </h2>
+        <a href="https://raceexpert.com.ua/sportivne-harchuvannya/" class="text-xs font-bold text-blue-600 hover:underline">
+          Дивитися весь каталог ➔
+        </a>
+      </div>
+
+      <!-- 4 Product Cards in exact Race Expert catalog card style -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+        
+        <!-- Card 1: PureGold Whey Gold (exact from screenshot) -->
+        <article class="bg-white border border-slate-200 rounded-xl p-3.5 sm:p-4 hover:border-blue-400 transition-all flex flex-col justify-between re-shadow-sm group">
+          <div>
+            <div class="w-full aspect-square rounded-lg bg-slate-50 flex items-center justify-center p-2 mb-3 overflow-hidden">
+              <img 
+                src="https://raceexpert.com.ua/image/cache/catalog/9becd4f3-adf8-11f1-8335-00155d645e06-800x800.jpg" 
+                alt="Сироватковий протеїн PureGold Compact Whey Gold" 
+                class="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-200"
+                onerror="this.src='https://placehold.co/300x300/f8fafc/64748b?text=PUREGOLD'"
+              >
+            </div>
+            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">PUREGOLD</span>
+            <h3 class="text-xs sm:text-sm font-bold text-slate-900 leading-snug line-clamp-2 group-hover:text-blue-600 transition-colors">
+              <a href="https://raceexpert.com.ua/7125-sirovatkovij-proteyin-pgp-compact-whey-gold-solona-kara">Сироватковий протеїн PureGold Compact Whey Gold (солона карамель) 500 г</a>
+            </h3>
+          </div>
+          <div class="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-sm sm:text-base font-extrabold text-slate-900">1 150 грн</span>
+            <button type="button" aria-label="Купити PureGold" class="w-8 h-8 rounded-lg bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center transition-colors shadow-sm">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 2: SiS Go Energy (exact from screenshot) -->
+        <article class="bg-white border border-slate-200 rounded-xl p-3.5 sm:p-4 hover:border-blue-400 transition-all flex flex-col justify-between re-shadow-sm group">
+          <div>
+            <div class="w-full aspect-square rounded-lg bg-slate-50 flex items-center justify-center p-2 mb-3 overflow-hidden">
+              <img 
+                src="https://raceexpert.com.ua/image/cache/catalog/9becd4f3-adf8-11f1-8335-00155d645e06-800x800.jpg" 
+                alt="Напій енергетичний SiS Go Energy" 
+                class="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-200"
+                onerror="this.src='https://placehold.co/300x300/f8fafc/64748b?text=SiS+Energy'"
+              >
+            </div>
+            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">SCIENCE IN SPORT (SIS)</span>
+            <h3 class="text-xs sm:text-sm font-bold text-slate-900 leading-snug line-clamp-2 group-hover:text-blue-600 transition-colors">
+              <a href="https://raceexpert.com.ua">Напій енергетичний SiS Go Energy (чорна смородина) 1,6 кг</a>
+            </h3>
+          </div>
+          <div class="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-sm sm:text-base font-extrabold text-slate-900">2 809 грн</span>
+            <button type="button" aria-label="Купити SiS Go Energy" class="w-8 h-8 rounded-lg bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center transition-colors shadow-sm">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 3: Chamois Butt'r Original -->
+        <article class="bg-white border border-slate-200 rounded-xl p-3.5 sm:p-4 hover:border-blue-400 transition-all flex flex-col justify-between re-shadow-sm group">
+          <div>
+            <div class="w-full aspect-square rounded-lg bg-slate-50 flex items-center justify-center p-2 mb-3 overflow-hidden">
+              <img 
+                src="https://raceexpert.com.ua/image/cache/catalog/9becd4f3-adf8-11f1-8335-00155d645e06-800x800.jpg" 
+                alt="Крем від натертостей Chamois Butt'r" 
+                class="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-200"
+                onerror="this.src='https://placehold.co/300x300/f8fafc/64748b?text=CHAMOIS'"
+              >
+            </div>
+            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">CHAMOIS BUTT'R</span>
+            <h3 class="text-xs sm:text-sm font-bold text-slate-900 leading-snug line-clamp-2 group-hover:text-blue-600 transition-colors">
+              <a href="https://raceexpert.com.ua">Крем від натертостей шкіри Chamois Butt'r Original 237 мл</a>
+            </h3>
+          </div>
+          <div class="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-sm sm:text-base font-extrabold text-slate-900">890 грн</span>
+            <button type="button" aria-label="Купити Chamois Butt'r" class="w-8 h-8 rounded-lg bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center transition-colors shadow-sm">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 4: Race Expert Ultra Socks Pack -->
+        <article class="bg-white border border-slate-200 rounded-xl p-3.5 sm:p-4 hover:border-blue-400 transition-all flex flex-col justify-between re-shadow-sm group">
+          <div>
+            <div class="w-full aspect-square rounded-lg bg-slate-50 flex items-center justify-center p-2 mb-3 overflow-hidden">
+              <img 
+                src="https://raceexpert.com.ua/image/cache/catalog/9becd4f3-adf8-11f1-8335-00155d645e06-800x800.jpg" 
+                alt="Шкарпетки Race Expert Ultra" 
+                class="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-200"
+                onerror="this.src='https://placehold.co/300x300/f8fafc/64748b?text=RE+Socks'"
+              >
+            </div>
+            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">RACE EXPERT</span>
+            <h3 class="text-xs sm:text-sm font-bold text-slate-900 leading-snug line-clamp-2 group-hover:text-blue-600 transition-colors">
+              <a href="https://raceexpert.com.ua">Шкарпетки спортивні Race Expert Ultra (набір 5 пар)</a>
+            </h3>
+          </div>
+          <div class="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-sm sm:text-base font-extrabold text-slate-900">950 грн</span>
+            <button type="button" aria-label="Купити шкарпетки" class="w-8 h-8 rounded-lg bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center transition-colors shadow-sm">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg>
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- STORE FOOTER (authentic Race Expert store footer) -->
+  <footer class="bg-white border-t border-slate-200 py-10 mt-auto text-xs text-slate-600">
+    <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <div class="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-sm">
+            >>
+          </div>
+          <span class="font-display font-extrabold text-base text-slate-900">RACE EXPERT</span>
+        </div>
+        <p class="text-slate-500 leading-relaxed">
+          Спеціалізований інтернет-магазин спортивного харчування, ізотоніків, амінокислот та екіпірування для бігунів, велосипедистів і триатлетів.
+        </p>
+      </div>
+      <div>
+        <h4 class="font-bold text-slate-900 mb-2.5 uppercase tracking-wider text-[11px]">Контакти</h4>
+        <ul class="space-y-1.5 text-slate-500">
+          <li>Телефон: <a href="tel:+380688234690" class="hover:underline text-slate-900 font-bold">+380 (68) 823 46 90</a></li>
+          <li>Месенджери: Telegram, Viber, WhatsApp</li>
+          <li>Графік роботи: Пн–Нд: 09:00 – 20:00</li>
+          <li>Адреса: Україна, м. Київ</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-slate-900 mb-2.5 uppercase tracking-wider text-[11px]">Доставка та Оплата</h4>
+        <ul class="space-y-1.5 text-slate-500">
+          <li>Нова Пошта (відділення, поштомати, кур'єр)</li>
+          <li>Безкоштовна доставка від 2 500 грн</li>
+          <li>Онлайн-оплата карткою Visa / Mastercard</li>
+          <li>Оплата при отриманні (післяплата)</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-slate-900 mb-2.5 uppercase tracking-wider text-[11px]">Офіційна продукція</h4>
+        <p class="text-slate-500 leading-relaxed">
+          100% оригінальні товари від офіційних світових брендів: SiS (Science in Sport), Maurten, Precision Fuel & Hydration, PureGold, ЇDLO, Chamois Butt'r, Sponser, Nutrend, PowerBar.
+        </p>
+        <p class="text-slate-400 mt-3 text-[11px]">© 2026 Race Expert. Всі права захищено.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script src="/runner_box.js"></script>
+</body>
+</html>
