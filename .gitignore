@@ -1,11 +1,31 @@
-# Secrets and local runtime files
+# Secrets and environment configs
 .env
-.env.local
+.env.*
+!.env.example
+
+# Python runtime and caches
 __pycache__/
 *.py[cod]
+*$py.class
+*.so
 .pytest_cache/
-.playwright-cli/
+.coverage
+htmlcov/
+
+# Logs and runtime databases
 *.log
+logs/
+*.pid
+
+# IDE and OS files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.idea/
+.vscode/
 
-
+# Antigravity / Agent internals
+.system_generated/
+.playwright-cli/
