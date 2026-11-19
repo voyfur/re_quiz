@@ -368,3 +368,15 @@
 - Raw: `raw/sessions/2026-11-11-implement-live-stock-availability-checking-via-o.md`
 - Tags: `activity:implementation`, `status:completed`, `task:live-stock-checking-and-github-publishing`, `project:quiz-product-set-generator`, `component:stock-verification`, `component:matching-rules`, `topic:database-access`, `topic:quiz`, `topic:architecture`, `file:test-quiz-sandbox/stock_checker.py`, `file:wiki/projects/quiz-engine-technical-documentation.md`
 - Status: `completed`
+
+## [2026-11-18] session | Implement Multi-Sport Complete Packs, Transparent Tier Pricing, Custom Budget Optimizer, and Production Deployment
+
+- Raw: `raw/sessions/2026-11-18-implement-multi-sport-complete-packs-transparent.md`
+- Tags: `activity:implementation`, `task:multi-sport-complete-packs`, `project:quiz-product-set-generator`, `component:engine`, `component:frontend`, `file:multi_sport_engine.py`, `file:runner_box_engine.py`, `file:public/runner_box.html`, `file:public/runner_box.js`
+- Status: `completed`
+
+## [2026-11-18] session | Enforce Single Gel Brand Rule, Interactive Deselection Checkboxes, and 250 Stress Scenarios Audit
+
+- Raw: `raw/sessions/2026-11-18-enforce-single-gel-brand-rule-interactive-desele.md`
+- Tags: `activity:testing`, `task:single-gel-brand-and-250-scenarios`, `project:quiz-product-set-generator`, `component:engine`, `component:frontend`, `component:testing`, `file:runner_box_engine.py`, `file:multi_sport_engine.py`, `file:public/runner_box.js`, `file:public/runner_box.html`, `file:running_catalog.json`
+- Status: `completed`

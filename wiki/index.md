@@ -11,6 +11,9 @@
 
 ## Knowledge
 
+- [Інструкція для розробника: розгортання квіз-сервісу та інтеграція з OpenCart](projects/quiz-developer-deployment-and-opencart-integration-guide.md) — варіанти запуску на сервері (Nginx reverse proxy, Docker, systemd), вирішення питань Same-Origin/CORS та PHP-контролер пакетного додавання товарів у кошик OpenCart.
+- [Архітектура мультиспортивних повних тренувальних та стартових боксів (Т-набори, v4.0)](projects/quiz-multi-sport-complete-pack-architecture.md) — 5 видів спорту, 10 фізіологічних доменів, ліквідація андерф'юелінгу, 3-рівнева оптимізація під довільний бюджет покупця, 100% наявність на складі та запуск на бойовому VPS 185.25.119.96.
+- [Специфікація Custom Running Box Builder (v3.0)](projects/quiz-custom-running-box-spec-v3.md) — динамічний конфігуратор стартового боксу бігуна з 4 слотами, 478 очищеними SKU та перевіркою TDD.
 - [Проект № 5 — Генератор наборов товаров через квиз](projects/project-5-quiz-product-set-generator.md) — статус проекта, решения и открытые вопросы; черновик спецификации v1 уже подготовлен.
 - [Исследование выбора спортивного питания и товаров спортсменами](projects/quiz-athlete-product-selection-research.md) — первичные исследования, украинский локальный сигнал, ограничения доказательств и рекомендации для динамических вопросов; теги — вспомогательный сигнал.
 - [ТЗ на правила подбора квиза по 206 наборам](projects/quiz-matching-rules-technical-brief.md) — единая рабочая карта полного аудита и черновых динамических переходов; [реестр](projects/quiz-set-audit.json) содержит максимум найденных сигналов для 206/206 наборов. Текст архива доступен по 132 наборам, 74 остаются пробелом, 11 конфликтов сохранены для сверки; ни один набор пока не отсеян окончательно.
@@ -59,6 +62,13 @@
 - [`raw/sources/2026-11-09-athlete-product-selection-research-request.md`](../raw/sources/2026-11-09-athlete-product-selection-research-request.md) — поручение исследовать, как спортсмены выбирают спортивные товары и наборы; теги — вторичный сигнал, квиз — динамический, набор выбирает backend.
 - [`raw/sources/2026-11-09-quiz-buyer-scenario-audit-request.md`](../raw/sources/2026-11-09-quiz-buyer-scenario-audit-request.md) — запрос на 100 логических сценариев квиза со спортивной перспективы.
 - [`raw/sources/2026-11-09-quiz-audit-synthesis-implementation-plan-request.md`](../raw/sources/2026-11-09-quiz-audit-synthesis-implementation-plan-request.md) — запрос свести результаты 100 сценариев и составить план исправления; пользователь будет тестировать `/draft` в следующем чате.
+- [`raw/sources/2026-11-17-multi-sport-complete-packs-request.md`](../raw/sources/2026-11-17-multi-sport-complete-packs-request.md) — запит на повні Т-набори для 5 видів спорту та усунення недогодовування (underfueling).
+- [`raw/sources/2026-11-17-transparent-price-tiers-and-custom-budget-request.md`](../raw/sources/2026-11-17-transparent-price-tiers-and-custom-budget-request.md) — прозорі граничні ціни на пресетах та введення довільного бюджету (custom number).
+- [`raw/sources/2026-11-17-strict-ukrainian-language-and-banner-cleanup.md`](../raw/sources/2026-11-17-strict-ukrainian-language-and-banner-cleanup.md) — сувора українська мова, кнопка «Почати заново», видалення промо-блоку.
+- [`raw/sources/2026-11-17-production-vps-deployment-and-live-verification.md`](../raw/sources/2026-11-17-production-vps-deployment-and-live-verification.md) — розміщення та запуск на сервері 185.25.119.96 із очищенням старих файлів.
+- [`raw/sources/2026-11-18-single-brand-gels-and-checkboxes-request.md`](../raw/sources/2026-11-18-single-brand-gels-and-checkboxes-request.md) — правило єдиного бренду гелів для бігу (без змішування Nutrend/SiS) та інтерактивні галочки вибору/зняття товарів перед додаванням у кошик.
+- [`raw/sources/2026-11-18-50-tests-per-category-request.md`](../raw/sources/2026-11-18-50-tests-per-category-request.md) — запуск 5 паралельних агентів для створення та виконання по 50 стрес-тестів на кожну категорію спорту (250 тестів сумарно).
+- [`raw/sources/2026-11-19-programmer-handoff-and-deployment-preparation.md`](../raw/sources/2026-11-19-programmer-handoff-and-deployment-preparation.md) — підготовка сервісу до передачі програмісту магазину через GitHub, варіанти розгортання та інтеграція з ендпоінтами OpenCart.
 
 ## Session recall
 
