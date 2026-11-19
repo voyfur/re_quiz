@@ -1,0 +1,6 @@
+# Race Expert Quiz & Starter Box Builder
+# Core server runs on Python standard library (http.server) with zero external runtime dependencies.
+
+# Optional / Testing dependencies:
+pytest>=8.0.0
+pytest-asyncio>=0.23.0
