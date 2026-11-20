@@ -8,7 +8,24 @@ from typing import Dict, List, Any
 
 
 def generate_runner_box(inputs: Dict[str, Any], catalog: List[Dict[str, Any]]) -> Dict[str, Any]:
-    distance = inputs.get("distance", "21k")
+    raw_dist = str(inputs.get("distance", "21k")).lower().strip()
+    dist_map = {
+        "marathon": "42k",
+        "full_marathon": "42k",
+        "full": "42k",
+        "42": "42k",
+        "42.2k": "42k",
+        "half": "21k",
+        "half_marathon": "21k",
+        "half-marathon": "21k",
+        "21": "21k",
+        "21.1k": "21k",
+        "10": "10k",
+        "ultra": "trail",
+        "ultramarathon": "trail",
+        "trail_run": "trail"
+    }
+    distance = dist_map.get(raw_dist, raw_dist if raw_dist in {"10k", "21k", "42k", "trail"} else "21k")
     pace_target = inputs.get("pace_target", "steady")
     caffeine_pref = inputs.get("caffeine_preference", "none")
     weather = inputs.get("weather", "moderate")
