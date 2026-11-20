@@ -29,6 +29,7 @@
 
 ## Relevant Pages
 
+- DEVELOPER_GUIDE.md
 - README.md
 - wiki/projects/quiz-developer-deployment-and-opencart-integration-guide.md
 - wiki/projects/quiz-multi-sport-complete-pack-architecture.md
