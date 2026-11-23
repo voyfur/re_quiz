@@ -286,7 +286,10 @@ class StockChecker:
         sock = None
         try:
             sock = self._ensure_connection()
-            safe_skus = [s.replace("'", "") for s in clean_skus]
+            safe_skus = ["".join(c for c in s if c.isalnum() or c in "-_/.") for s in clean_skus]
+            safe_skus = [s for s in safe_skus if s]
+            if not safe_skus:
+                return {}
             sku_list_str = ",".join(f"'{s}'" for s in safe_skus)
             sql = f"""
             SELECT product_id, model, sku, price, quantity, stock_status_id, subtract, status

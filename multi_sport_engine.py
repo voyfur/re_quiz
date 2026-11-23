@@ -21,6 +21,7 @@ _CATALOGS: Dict[str, List[Dict[str, Any]]] = {}
 
 def load_catalog(sport: str) -> List[Dict[str, Any]]:
     global _CATALOGS
+    sport = (sport or "running").lower().strip()
     if sport in _CATALOGS:
         return _CATALOGS[sport]
 
@@ -1586,6 +1587,9 @@ def generate_outdoor_box(inputs: Dict[str, Any], catalog: List[Dict[str, Any]]) 
 
 
 def generate_custom_sport_box(sport: str, inputs: Dict[str, Any]) -> Dict[str, Any]:
+    sport = (sport or "running").lower().strip()
+    if not inputs or not isinstance(inputs, dict):
+        inputs = {}
     catalog = load_catalog(sport)
 
     if sport == "running":

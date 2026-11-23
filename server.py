@@ -210,12 +210,31 @@ class QuizHTTPHandler(BaseHTTPRequestHandler):
                 self.send_json(200, {"catalog_count": len(CATALOG)}, is_head=is_head)
             return
 
-        # Fallback to local files if any (e.g. runner_box.js, catalog_data.js, client_matcher.js, etc.)
-        for search_dir in [ROOT / "public", SANDBOX_ROOT / "web", ROOT]:
-            local_file = search_dir / path.lstrip("/")
-            if local_file.is_file() and not str(local_file).endswith((".env", ".py")):
-                self._send_static_file(local_file, is_head=is_head)
-                return
+        # Fallback to local static files in public directory
+        # Strictly prevent path traversal and disallow access outside public directory
+        public_dirs = [ROOT / "public"]
+        if SANDBOX_ROOT.exists() and (SANDBOX_ROOT / "web").exists():
+            public_dirs.append(SANDBOX_ROOT / "web")
+
+        clean_path = path.lstrip("/")
+        # Disallow hidden files or sensitive file patterns
+        if ".." in clean_path or clean_path.startswith("."):
+            self.send_error(403)
+            return
+
+        disallowed_exts = (".env", ".py", ".sh", ".yml", ".yaml", ".ini", ".jsonl", ".md", ".txt", ".php", ".git", ".bak")
+        if clean_path.lower().endswith(disallowed_exts):
+            self.send_error(403)
+            return
+
+        for search_dir in public_dirs:
+            try:
+                local_file = (search_dir / clean_path).resolve()
+                if local_file.is_file() and local_file.is_relative_to(search_dir.resolve()):
+                    self._send_static_file(local_file, is_head=is_head)
+                    return
+            except Exception:
+                pass
 
         self.send_error(404)
 
@@ -236,8 +255,14 @@ class QuizHTTPHandler(BaseHTTPRequestHandler):
         except ValueError:
             self.send_json(400, {"error": "Invalid Content-Length"})
             return
-        if length <= 0 or length > MAX_BODY:
-            self.send_json(413, {"error": "Body empty or too large"})
+        if length < 0:
+            self.send_json(400, {"error": "Content-Length cannot be negative"})
+            return
+        if length == 0:
+            self.send_json(400, {"error": "Body cannot be empty"})
+            return
+        if length > MAX_BODY:
+            self.send_json(413, {"error": "Body too large"})
             return
 
         try:
@@ -247,12 +272,17 @@ class QuizHTTPHandler(BaseHTTPRequestHandler):
             self.send_json(400, {"error": "Invalid UTF-8 JSON"})
             return
 
+        if not isinstance(payload, dict):
+            self.send_json(400, {"error": "JSON payload must be an object"})
+            return
+
         if path == "/api/check-stock":
             skus = payload.get("skus", [])
             if not isinstance(skus, list):
                 self.send_json(400, {"error": "skus must be a list"})
                 return
-            stock_data = check_stock(skus)
+            clean_skus = [str(s).strip() for s in skus if s is not None and str(s).strip()]
+            stock_data = check_stock(clean_skus)
             self.send_json(200, {"ok": True, "stocks": stock_data})
             return
 

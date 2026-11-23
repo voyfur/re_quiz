@@ -8,6 +8,11 @@ from typing import Dict, List, Any
 
 
 def generate_runner_box(inputs: Dict[str, Any], catalog: List[Dict[str, Any]]) -> Dict[str, Any]:
+    if not inputs or not isinstance(inputs, dict):
+        inputs = {}
+    if not catalog or not isinstance(catalog, list):
+        catalog = []
+
     raw_dist = str(inputs.get("distance", "21k")).lower().strip()
     dist_map = {
         "marathon": "42k",
@@ -30,8 +35,17 @@ def generate_runner_box(inputs: Dict[str, Any], catalog: List[Dict[str, Any]]) -
     caffeine_pref = inputs.get("caffeine_preference", "none")
     weather = inputs.get("weather", "moderate")
     stomach_type = inputs.get("stomach_type", "normal")
-    body_concerns = set(inputs.get("body_concerns", []))
-    gear_needed = set(inputs.get("gear_needed", []))
+
+    raw_concerns = inputs.get("body_concerns", [])
+    if isinstance(raw_concerns, str):
+        raw_concerns = [raw_concerns]
+    body_concerns = set(raw_concerns) if isinstance(raw_concerns, (list, set, tuple)) else set()
+
+    raw_gear = inputs.get("gear_needed", [])
+    if isinstance(raw_gear, str):
+        raw_gear = [raw_gear]
+    gear_needed = set(raw_gear) if isinstance(raw_gear, (list, set, tuple)) else set()
+
     price_tier = inputs.get("price_tier", "standard")
 
     # Custom budget handling
@@ -40,6 +54,8 @@ def generate_runner_box(inputs: Dict[str, Any], catalog: List[Dict[str, Any]]) -
     if raw_budget:
         try:
             custom_budget = float(raw_budget)
+            if custom_budget <= 0:
+                custom_budget = None
         except (ValueError, TypeError):
             custom_budget = None
 

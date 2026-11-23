@@ -10,7 +10,8 @@ import urllib.error
 import pytest
 from luna_box_consultant import consult_luna_for_box
 
-def test_luna_fallback_offline_templates_for_all_sports():
+@patch("luna_box_consultant.get_api_key", return_value=None)
+def test_luna_fallback_offline_templates_for_all_sports(mock_key):
     sports = ["running", "cycling", "triathlon", "gym", "outdoor"]
     for sp in sports:
         res = consult_luna_for_box(
@@ -19,7 +20,7 @@ def test_luna_fallback_offline_templates_for_all_sports():
             locale="uk"
         )
         assert res["ok"] is True
-        assert res["source"] in ("luna_expert_template", "openai_luna")
+        assert res["source"] == "luna_expert_template"
         data = res["data"]
         assert "expert_verdict" in data
         assert "tactical_strategy" in data

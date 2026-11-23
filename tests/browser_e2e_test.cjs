@@ -124,6 +124,43 @@ async function runBrowserE2E(serverUrl) {
     }
     console.log(`[Browser E2E] Price dynamically updated: -${initialPrice - updatedPrice} грн!`);
 
+    // 6B. Test Item Swapping (🔀 button - tests fix for care_recovery slot)
+    console.log('[Browser E2E] Testing item flavor/brand swap button...');
+    const swapBtns = await page.$$('.swap-item-btn');
+    console.log(`[Browser E2E] Found ${swapBtns.length} swap buttons in DOM`);
+    if (swapBtns.length > 0) {
+      await page.evaluate(() => {
+        const btn = document.querySelector('.swap-item-btn');
+        if (btn) btn.click();
+      });
+      await new Promise(r => setTimeout(r, 300));
+      console.log('[Browser E2E] Item swap button clicked successfully with zero JS errors!');
+    }
+
+    // 6C. Test Select All / Deselect All Controls
+    console.log('[Browser E2E] Testing Deselect All...');
+    await page.click('#deselect-all-items-btn');
+    await new Promise(r => setTimeout(r, 300));
+    const deselectPriceText = await page.$eval('#total-box-price', el => el.textContent.trim());
+    const deselectPrice = parseFloat(deselectPriceText.replace(/[^\d.]/g, ''));
+    console.log(`[Browser E2E] Price after Deselect All: ${deselectPrice} грн`);
+    if (deselectPrice !== 0) {
+      throw new Error(`Expected total price 0 after deselect all, got ${deselectPrice}`);
+    }
+
+    // Verify buy button is disabled when 0 items selected
+    const buyBtnDisabled = await page.$eval('#buy-box-btn', btn => btn.disabled);
+    if (!buyBtnDisabled) throw new Error('Buy button should be disabled when 0 items selected');
+    console.log('[Browser E2E] Buy button correctly disabled on zero selection.');
+
+    console.log('[Browser E2E] Testing Select All...');
+    await page.click('#select-all-items-btn');
+    await new Promise(r => setTimeout(r, 300));
+    const reselectPriceText = await page.$eval('#total-box-price', el => el.textContent.trim());
+    const reselectPrice = parseFloat(reselectPriceText.replace(/[^\d.]/g, ''));
+    console.log(`[Browser E2E] Price after Select All: ${reselectPrice} грн`);
+    if (reselectPrice <= 0) throw new Error(`Invalid price after select all: ${reselectPrice}`);
+
     // 7. Verify OpenCart Cart Addition Request
     console.log('[Browser E2E] Enabling FORCE_LIVE_OPENCART in page context...');
     await page.evaluate(() => {

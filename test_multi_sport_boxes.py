@@ -215,7 +215,10 @@ def test_gym_zero_caffeine_protein_bars_pack():
     assert energy_item["quantity_recommended"] >= 4, f"Expected pack of bars, got {energy_item['quantity_recommended']}"
 
 
-def test_luna_consultation_all_sports():
+from unittest.mock import patch
+
+@patch("luna_box_consultant.get_api_key", return_value=None)
+def test_luna_consultation_all_sports(mock_key):
     for sport in ["cycling", "triathlon", "gym", "outdoor"]:
         inputs = {"sport": sport, "price_tier": "standard"}
         box = generate_custom_sport_box(sport, inputs)

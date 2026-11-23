@@ -1021,9 +1021,10 @@
             ${savings > 0 ? `<span class="bg-emerald-100 text-emerald-800 text-[11px] font-extrabold px-2 py-0.5 rounded border border-emerald-200">Економія: ${savings} грн</span>` : '<span class="bg-emerald-100 text-emerald-800 text-[11px] font-extrabold px-2 py-0.5 rounded border border-emerald-200">✓ В межах бюджету</span>'}
           `;
         } else {
-          const tierLabel = box.budget_info.tier === 'economy' 
+          const tier = box.budget_info.price_tier || box.budget_info.tier;
+          const tierLabel = box.budget_info.tier_label || (tier === 'economy' 
             ? '🟢 Економ' 
-            : (box.budget_info.tier === 'premium' ? '🟣 PRO / Еліта' : '🔵 Оптимальний');
+            : (tier === 'premium' ? '🟣 PRO / Еліта' : '🔵 Оптимальний'));
           budgetBadge.innerHTML = `
             <span>Цінова категорія: <strong class="text-blue-950 font-bold">${tierLabel}</strong></span>
             <span class="text-slate-300">•</span>
@@ -1346,8 +1347,9 @@
     document.querySelectorAll('.swap-item-btn').forEach((btn) => {
       btn.addEventListener('click', () => {
         const key = btn.dataset.itemKey;
-        const [slot, idxStr] = key.split('_');
-        const idx = parseInt(idxStr, 10);
+        const lastUnder = key.lastIndexOf('_');
+        const slot = key.substring(0, lastUnder);
+        const idx = parseInt(key.substring(lastUnder + 1), 10);
         const item = state.boxData.slots[slot][idx];
         if (!item || !item.alternatives || item.alternatives.length === 0) return;
 
