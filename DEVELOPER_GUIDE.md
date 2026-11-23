@@ -33,7 +33,7 @@
 
 1. **Клонуйте репозиторій на сервер магазину:**
    ```bash
-   git clone https://github.com/race-expert/quiz.git /var/www/raceexpert-quiz
+   git clone https://github.com/voyfur/re_quiz.git /var/www/raceexpert-quiz
    cd /var/www/raceexpert-quiz
    ```
 
@@ -259,7 +259,39 @@ sudo nginx -t && sudo systemctl reload nginx
 
 ---
 
-### 4. Тест пакетного додавання в кошик OpenCart
+### 4. Перевірка залишків та цін у реальному часі (Stock Check)
+* **URL:** `POST http://127.0.0.1:8000/api/check-stock`
+* **Headers:** `Content-Type: application/json`
+* **Призначення:** Верифікація актуальних залишків та цін за списком артикулів (SKU/Model) напряму в таблиці `oc_product` OpenCart MySQL.
+* **Приклад curl:**
+  ```bash
+  curl -X POST http://127.0.0.1:8000/api/check-stock \
+    -H "Content-Type: application/json" \
+    -d '{
+      "skus": ["RE89450", "RE12345", "SIS-GEL-01"]
+    }' | jq .
+  ```
+* **Приклад відповіді:**
+  ```json
+  {
+    "ok": true,
+    "stocks": {
+      "RE89450": {
+        "sku": "RE89450",
+        "product_id": 7149,
+        "in_stock": true,
+        "quantity": 15,
+        "live_price_uah": 1525.0,
+        "stock_status_text_uk": "В наявності",
+        "is_live_check": true
+      }
+    }
+  }
+  ```
+
+---
+
+### 5. Тест пакетного додавання в кошик OpenCart
 * **URL:** `POST https://raceexpert.com.ua/index.php?route=checkout/quiz_cart/add_bulk`
 * **Headers:** `Content-Type: application/json`, `Cookie: OCSESSID=<сесія>`
 * **Приклад curl:**
@@ -348,5 +380,5 @@ cp .env.example .env
 4. **Крок 4: Запуск регресійних тестів**
    ```bash
    pytest -v
-   # Усі 441 тест мають пройти з результатом 100% PASS
+   # Усі 690 тестів мають пройти з результатом 100% PASS (включаючи 225 E2E-сценаріїв та Chrome Headless)
    ```

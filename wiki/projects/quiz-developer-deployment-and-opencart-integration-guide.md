@@ -81,7 +81,7 @@ services:
 ```
 Програмісту достатньо виконати:
 ```bash
-git clone https://github.com/race-expert/quiz.git
+git clone https://github.com/voyfur/re_quiz.git
 cd quiz
 docker compose up -d
 ```

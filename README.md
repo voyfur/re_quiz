@@ -69,7 +69,7 @@
 
 1. Клонуйте репозиторій на сервер:
    ```bash
-   git clone https://github.com/race-expert/quiz.git /var/www/raceexpert-quiz
+   git clone https://github.com/voyfur/re_quiz.git /var/www/raceexpert-quiz
    cd /var/www/raceexpert-quiz
    ```
 
