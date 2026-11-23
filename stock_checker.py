@@ -16,9 +16,8 @@ from pathlib import Path
 from typing import Dict, List, Optional, Tuple, Any
 
 # Root paths
-SANDBOX_ROOT = Path(__file__).resolve().parent
-PROJECT_ROOT = SANDBOX_ROOT.parent
-DOTENV_PATH = PROJECT_ROOT / ".env"
+ROOT = Path(__file__).resolve().parent
+DOTENV_PATH = ROOT / ".env" if (ROOT / ".env").exists() else ROOT.parent / ".env"
 
 
 def _load_env_file(path: Path) -> Dict[str, str]:

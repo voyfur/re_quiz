@@ -13,7 +13,8 @@
 - Engine Input Hardening: Added type resilience in runner_box_engine.py and multi_sport_engine.py for string-wrapped arrays, non-dict inputs, negative budgets, and case-insensitive sport names.
 - Frontend Bug Fixes: Fixed JavaScript item swap crash in runner_box.js on the care_recovery slot (by correctly splitting on the last underscore) and resolved budget_info.price_tier vs tier property mismatch for preset badges.
 - Test Suite Speedup: Mocked get_api_key in test_mock_luna_consultant.py and test_multi_sport_boxes.py, eliminating 60+ seconds of live network timeouts and reducing test run time from 82s to 24s.
-- 225 Radically Diverse E2E Suite: Created tests/test_e2e_220_diverse_scenarios.py covering 220 unique real-world customer personas across all 5 sports (44 running, 44 cycling, 44 triathlon, 44 gym, 44 outdoor) plus 5 core integration invariants. All 690 project tests pass cleanly.
+- Real Services End-to-End Verification: Tested live physical connection to OpenCart MySQL (raceexpertcomua) via SSH tunnel to VPS-61125, verifying actual SKU stock and live prices (e.g. RE89450 -> 15 in stock, 1525 UAH; RE89445 -> 3 in stock, 679 UAH). Verified live OpenAI GPT-4o-mini API calls for Luna consultant generating literary Ukrainian pacing and timeline steps. Added tests/test_live_services_e2e.py to automate live integration checks.
+- 225 Radically Diverse E2E Suite: Created tests/test_e2e_220_diverse_scenarios.py covering 220 unique real-world customer personas across all 5 sports (44 running, 44 cycling, 44 triathlon, 44 gym, 44 outdoor) plus 5 core integration invariants. All 690+ project tests pass cleanly.
 
 ## Open Tasks
 
