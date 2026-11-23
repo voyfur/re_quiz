@@ -2,24 +2,22 @@
 
 ## Active Context
 
-- Last session: `raw/sessions/2026-11-19-developer-handoff-and-deployment-preparation.md`
-- Current objective: Full Test Suite Completed: Unit Tests, Mock Tests, and End-to-End Tests (Docker, PHP 8.2 Execution, Concurrency Stress, and Real Headless Chrome Browser Automation) — 465/465 Passed (100%)
+- Last session: `raw/sessions/2026-11-20-execute-comprehensive-unit-mock-and-real-browser.md`
+- Current objective: Execute Comprehensive Unit, Mock, and Real-Browser E2E Tests and Push 10 Commits to GitHub
 
 ## Current Decisions
 
-- Production Docker Environment: Created lightweight `Dockerfile` (Python 3.12-slim) with healthcheck and `docker-compose.yml` (port 8000, restart: always, logs volume).
-- OpenCart Bulk Add Controller: Implemented `integrations/opencart/catalog/controller/api/quiz_cart.php` and verified real PHP execution via `php:8.2-alpine` container harness (`tests/test_php_opencart_execution.py`).
-- Comprehensive Mock Test Suite: Added mock test suites for MySQL stock checking with optimistic fallback (`tests/test_mock_stock_checker.py`), OpenAI Luna GPT consultant with offline template fallbacks (`tests/test_mock_luna_consultant.py`), and Telegram order notification webhooks (`tests/test_mock_telegram_alert.py`).
-- Live Server & Concurrency Stress E2E: Verified customer journey across all 5 sports and single-brand gel rule (`tests/test_e2e_live_server_customer_journey.py`) and multi-threaded stress under 10 concurrent threads (`tests/test_e2e_concurrency_stress.py`).
-- Real Headless Google Chrome E2E Testing: Automated complete customer flow via Puppeteer driving real Google Chrome (`tests/test_e2e_real_browser.py` + `tests/browser_e2e_test.cjs`) covering sport switching, box generation, DOM item deselection, live price recalculation, and intercepted bulk OpenCart cart addition.
-- Security & CSP Hardening: Enhanced server Content-Security-Policy with `connect-src 'self' https:;` ensuring seamless API and OpenCart cart communication in modern browsers.
-- 100% Test Pass Rate: Total of 465 tests passing across all suites.
+- PHP 8.2 OpenCart Execution Harness: Created isolated Docker-based execution test with php:8.2-alpine to verify quiz_cart.php bulk adding to session cart without requiring local PHP installation on developer machine.
+- CSP Connect-Src Directive: Added connect-src 'self' https:; to Content-Security-Policy header in server.py, preventing modern Chrome/Safari browsers from blocking cross-origin or secure OpenCart cart API requests.
+- Distance Normalization: Added distance synonym mapping in runner_box_engine.py (marathon -> 42k, half -> 21k, ultra -> trail) ensuring natural language inputs produce valid boxes.
+- Real Headless Chrome E2E Suite: Automated complete interactive journey in Google Chrome via Puppeteer, verifying DOM elements (#result-container, #total-box-price), interactive checkbox toggling, and network interception of add_bulk POST payload.
+- GitHub Production Push: Successfully delivered all 10 local commits (Docker, OpenCart controller, README, DEVELOPER_GUIDE, .env.example, 465-test suite) to remote repository https://github.com/voyfur/re_quiz on branch main (commit 020618b).
 
 ## Open Tasks
 
-- 1. Передати посилання на GitHub репозиторій сторонньому розробнику магазину Race Expert.
-- 2. Надати розробнику параметри доступу до тестового або бойового сервера для налаштування Nginx reverse proxy (`raceexpert.com.ua/quiz/`).
-- 3. Скопіювати `quiz_cart.php` у бойовий каталог OpenCart та протестувати наскрізне додавання сформованого боксу в реальний кошик сайту.
+- 1. Надати сторонньому програмісту посилання на GitHub репозиторій https://github.com/voyfur/re_quiz та підготовлене повідомлення для швидкого старту.
+- 2. Програмісту: розгорнути сервіс на сервері через Docker (docker compose up -d).
+- 3. Програмісту: скопіювати quiz_cart.php в OpenCart та прописати proxy_pass у Nginx магазину.
 
 ## Blockers
 
@@ -27,15 +25,13 @@
 
 ## Next Action
 
-- Передати підготовлений репозиторій програмісту Race Expert для розміщення на сервері магазину та підключення до OpenCart.
+- Очікувати розгортання сервісу програмістом магазину на бойовому або тестовому сервері raceexpert.com.ua.
 
 ## Relevant Pages
 
-- DEVELOPER_GUIDE.md
 - README.md
+- DEVELOPER_GUIDE.md
 - wiki/projects/quiz-developer-deployment-and-opencart-integration-guide.md
-- wiki/projects/quiz-multi-sport-complete-pack-architecture.md
-- wiki/projects/quiz-custom-running-box-spec-v3.md
 - Dockerfile
 - docker-compose.yml
 - integrations/opencart/catalog/controller/checkout/quiz_cart.php

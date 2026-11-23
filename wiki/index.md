@@ -69,6 +69,7 @@
 - [`raw/sources/2026-11-18-single-brand-gels-and-checkboxes-request.md`](../raw/sources/2026-11-18-single-brand-gels-and-checkboxes-request.md) — правило єдиного бренду гелів для бігу (без змішування Nutrend/SiS) та інтерактивні галочки вибору/зняття товарів перед додаванням у кошик.
 - [`raw/sources/2026-11-18-50-tests-per-category-request.md`](../raw/sources/2026-11-18-50-tests-per-category-request.md) — запуск 5 паралельних агентів для створення та виконання по 50 стрес-тестів на кожну категорію спорту (250 тестів сумарно).
 - [`raw/sources/2026-11-19-programmer-handoff-and-deployment-preparation.md`](../raw/sources/2026-11-19-programmer-handoff-and-deployment-preparation.md) — підготовка сервісу до передачі програмісту магазину через GitHub, варіанти розгортання та інтеграція з ендпоінтами OpenCart.
+- [`raw/sources/2026-11-20-unit-mock-and-real-browser-e2e-testing-and-github-push.md`](../raw/sources/2026-11-20-unit-mock-and-real-browser-e2e-testing-and-github-push.md) — вичерпне unit-, mock- та real-browser E2E тестування (465 тестів) та відправка репозиторію на GitHub (коміт `020618b`).
 
 ## Session recall
 

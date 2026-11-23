@@ -6,7 +6,7 @@ title: "Інструкція для розробника: розгортання
 description: "Технічна інструкція для передачі репозиторію програмісту Race Expert: варіанти розгортання (Docker, systemd, Nginx reverse proxy), архітектура ендпоінтів та пакетне додавання товарів у кошик OpenCart."
 tags: ["project:quiz-product-set-generator", "topic:deployment", "topic:opencart-integration", "topic:api", "topic:architecture", "workflow:implementation", "language:uk"]
 source: {"raw_path": "raw/sources/2026-11-19-programmer-handoff-and-deployment-preparation.md"}
-dates: {"added_at": "2026-11-19T18:22:00+02:00", "updated_at": "2026-11-19T18:22:00+02:00"}
+dates: {"added_at": "2026-11-19T18:22:00+02:00", "updated_at": "2026-11-23T10:30:00+02:00"}
 relations: [{"type": "applies-to", "target": "project.quiz-product-set-generator"}, {"type": "references", "target": "document.quiz-multi-sport-complete-pack-architecture"}, {"type": "references", "target": "source.mysql-readonly-access-and-product-query-guide"}]
 aliases: ["Developer Deployment & OpenCart Integration Guide", "Інструкція розробника для деплою", "OpenCart API інтеграція квізу"]
 status: "active"
@@ -222,10 +222,34 @@ OPENAI_API_KEY=...
 
 ## 6. Чек-лист передачі репозиторію через GitHub
 
-Перед тим як надати посилання на GitHub програмісту, у репозиторії мають бути підготовлені:
+У репозиторії [`https://github.com/voyfur/re_quiz`](https://github.com/voyfur/re_quiz) (гілка `main`, коміт `020618b`) повністю підготовлені:
 - [x] Повна документація архітектури та алгоритмів.
-- [ ] Очищений файл `.gitignore` (виключено персональні `.env`, кеші `__pycache__`, системні логи).
-- [ ] Готовий `Dockerfile` та `docker-compose.yml`.
-- [ ] Файл `.env.example` з коментарями для кожного параметра.
-- [ ] Файл `README.md` із швидким стартом у 3 команди (`git clone`, `docker compose up -d`).
-- [ ] PHP-файл контролера `quiz_cart.php` у папці `integrations/opencart/`, щоб програміст міг просто скопіювати його в OpenCart.
+- [x] Очищений та захищений файл `.gitignore` (виключено персональні `.env`, кеші `__pycache__`, `node_modules`, системні логи).
+- [x] Готовий легковаговий `Dockerfile` (Python 3.12-slim) та `docker-compose.yml`.
+- [x] Файл `.env.example` з детальними коментарями для кожного параметра.
+- [x] Файл `README.md` із швидким стартом у 3 команди (`git clone`, `docker compose up -d`).
+- [x] Україномовний посібник `DEVELOPER_GUIDE.md` для швидкого введення в контекст.
+- [x] PHP-файл контролера `quiz_cart.php` у папці `integrations/opencart/catalog/controller/checkout/quiz_cart.php`, протестований у контейнері PHP 8.2.
+- [x] Повний регресійний набір із 465 тестів зі 100% успішним проходженням.
+
+---
+
+## 7. Комплексна верифікація та тестування (465 тестів)
+
+Перед передачею розробнику сервіс пройшов повний аудит надійності:
+1. **PHP 8.2 OpenCart Controller Tests (`tests/test_php_opencart_execution.py`):**
+   * Виконання файлу контролера `quiz_cart.php` в середовищі `php:8.2-alpine` Docker.
+   * Валідація синтаксису (`php -l`), атомарного наповнення кошика `$this->cart->add()`, очищення сесійних кешів OpenCart та обробки помилкових ID / порожніх запитів (4/4 passed).
+2. **Mock-тести зовнішніх сервісів (`test_mock_stock_checker.py`, `test_mock_luna_consultant.py`, `test_mock_telegram_alert.py`):**
+   * Перевірка алгоритму хешування паролів MySQL OpenCart та оптимістичного каталожного fallback.
+   * Перевірка генерації рекомендацій Луни через OpenAI API з безшовним відновленням із вбудованих шаблонів при 429/збої мережі для всіх 5 видів спорту.
+   * Перевірка webhook-сповіщень Telegram (10/10 passed).
+3. **E2E перевірка Docker-контейнера (`tests/test_e2e_docker_container.py`):**
+   * Збірка бойового образу, перевірка `/api/health`, коректності статичних файлів HTML/JS та формування боксу (3/3 passed).
+4. **Навантажувальний стрес-тест (`tests/test_e2e_concurrency_stress.py`):**
+   * 50 важких одночасних запитів підбору у 10 паралельних потоках, середній час відповіді < 40 мс (1/1 passed).
+5. **Real Google Chrome Browser Automation (`tests/test_e2e_real_browser.py` + `tests/browser_e2e_test.cjs`):**
+   * Запуск повноцінного Google Chrome через Puppeteer.
+   * Перемикання на велоспорт, генерація боксу (2590 грн), інтерактивне зняття галочки товару (перерахунок до 2140 грн, -450 грн), клік «Купити бокс» та перехоплення сформованого пакетного JSON-запиту в OpenCart (1/1 passed).
+6. **Hardening Content-Security-Policy (CSP):**
+   * У `server.py` додано `connect-src 'self' https:;`, що гарантує відсутність блокувань запитів до кошика магазину сучасними веб-браузерами.
